@@ -430,9 +430,9 @@ V2 kits remain supported for built-in agents and existing customizations. V3 wor
 @z
 
 @x
-Run AI agents on Docker-managed cloud infrastructure with `sbx --cloud`. Cloud support is experimental and requires an active Docker Agentic Platform subscription. See [Get started with cloud sandboxes](https://docs.docker.com/ai/sandboxes/cloud/).
+Run AI agents on Docker-managed cloud infrastructure with `sbx --cloud`. Cloud support requires an active Docker Agentic Platform subscription. See [Get started with cloud sandboxes](https://docs.docker.com/ai/sandboxes/cloud/).
 @y
-Run AI agents on Docker-managed cloud infrastructure with `sbx --cloud`. Cloud support is experimental and requires an active Docker Agentic Platform subscription. See [Get started with cloud sandboxes](https://docs.docker.com/ai/sandboxes/cloud/).
+Run AI agents on Docker-managed cloud infrastructure with `sbx --cloud`. Cloud support requires an active Docker Agentic Platform subscription. See [Get started with cloud sandboxes](https://docs.docker.com/ai/sandboxes/cloud/).
 @z
 
 @x

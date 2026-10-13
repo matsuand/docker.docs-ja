@@ -43,6 +43,118 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.95.0
+@y
+## 4.95.0
+@z
+
+@x
+{{< release-date date="2026-10-12" >}}
+@y
+{{< release-date date="2026-10-12" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.95.0" build_path="/242831/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.95.0" build_path="/242831/" >}}
+@z
+
+@x
+### Updates
+@y
+### 機能更新 {#updates}
+@z
+
+@x
+- [Docker Compose v5.6.0](https://github.com/docker/compose/releases/tag/v5.6.0)
+- [Docker Offload v0.6.73](https://github.com/docker/cloud/releases/tag/v0.6.73)
+- [Docker Scout CLI v1.26.0](https://github.com/docker/scout-cli/releases/tag/v1.26.0)
+- [Docker Agent v1.145.0](https://github.com/docker/docker-agent/releases/tag/v1.145.0)
+@y
+- [Docker Compose v5.6.0](https://github.com/docker/compose/releases/tag/v5.6.0)
+- [Docker Offload v0.6.73](https://github.com/docker/cloud/releases/tag/v0.6.73)
+- [Docker Scout CLI v1.26.0](https://github.com/docker/scout-cli/releases/tag/v1.26.0)
+- [Docker Agent v1.145.0](https://github.com/docker/docker-agent/releases/tag/v1.145.0)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Fixed the engine restarting right after Docker Desktop starts when an admin policy enables Enhanced Container Isolation.
+- Fixed automatic update downloads starting before sign-in on machines that enforce sign-in, which could ignore an organization's policy disabling updates.
+- Fixed long Ask Gordon conversations where the end of responses was hidden behind the user's message, and where scrolling up jumped around or got stuck.
+- Fixed **Settings** accepting a disk image location inside the Docker Desktop installation directory, which the installer replaces on every update. Fixes [docker/desktop-feedback#667](https://github.com/docker/desktop-feedback/issues/667).
+- Fixed **Quit** doing nothing in the error dialog shown when the Docker Engine fails, and the dialog taking around 2 minutes to appear when the engine fails while starting.
+- Fixed an issue where Gordon AI chat displayed the final answer inside the collapsed Activity section instead of below it when token usage was hidden by the gateway.
+- Fixed an issue where gathering diagnostics from the error dialog failed repeatedly when Docker Desktop could not start.
+- Fixed Kubernetes occasionally failing to start when a Registry Access Management image pull hit a transient network timeout.
+- Added `docker desktop auth status` CLI subcommand to display Docker Hub login status, username, email, plan, and organization membership, with `--format pretty|json` output options.
+@y
+- Fixed the engine restarting right after Docker Desktop starts when an admin policy enables Enhanced Container Isolation.
+- Fixed automatic update downloads starting before sign-in on machines that enforce sign-in, which could ignore an organization's policy disabling updates.
+- Fixed long Ask Gordon conversations where the end of responses was hidden behind the user's message, and where scrolling up jumped around or got stuck.
+- Fixed **Settings** accepting a disk image location inside the Docker Desktop installation directory, which the installer replaces on every update. Fixes [docker/desktop-feedback#667](https://github.com/docker/desktop-feedback/issues/667).
+- Fixed **Quit** doing nothing in the error dialog shown when the Docker Engine fails, and the dialog taking around 2 minutes to appear when the engine fails while starting.
+- Fixed an issue where Gordon AI chat displayed the final answer inside the collapsed Activity section instead of below it when token usage was hidden by the gateway.
+- Fixed an issue where gathering diagnostics from the error dialog failed repeatedly when Docker Desktop could not start.
+- Fixed Kubernetes occasionally failing to start when a Registry Access Management image pull hit a transient network timeout.
+- Added `docker desktop auth status` CLI subcommand to display Docker Hub login status, username, email, plan, and organization membership, with `--format pretty|json` output options.
+@z
+
+@x
+#### For Mac
+@y
+#### Mac 向け {#for-mac}
+@z
+
+@x
+- Fixed Docker Desktop being unable to start subprocesses after being launched a second time.
+@y
+- Fixed Docker Desktop being unable to start subprocesses after being launched a second time.
+@z
+
+@x
+#### For Windows
+@y
+#### Windows 向け {#for-windows}
+@z
+
+@x
+- Fixed an issue on Windows with WSL 3.0.1 where `docker info` reported `Docker Desktop (containerized)` instead of `Docker Desktop`, causing `docker debug` to fail when Registry Access Management is enabled.
+- Fixed a Windows update failure where `app.asar` was reported as locked by Docker Desktop.
+- Fixed the Windows installer deleting the WSL data disk during an update when the data root was inside the installation directory. Fixes [docker/desktop-feedback#667](https://github.com/docker/desktop-feedback/issues/667).
+- Fixed Docker Desktop failing to start with the Hyper-V backend when the Windows hosts file is protected by an antivirus or endpoint security tool.
+- Fixed issues on Windows with WSL/MSYS2 native symlink (LX symlink) handling, sparse stream exports via backup tar, and a race condition in named pipe listener close.
+- Added a dedicated error message when the Hyper-V virtual machine cannot start because the host does not have enough free memory.
+- Fixed an intermittent MSI installation failure (error code 1603) on Windows caused by analytics custom actions racing with other installer steps.
+- Fixed a per-user installation on Windows silently completing on machines where the Virtual Machine Platform feature is disabled, leaving Docker Desktop unable to start.
+- The Windows installer now fails with an explicit error when a per-user installation is attempted from the SYSTEM account (e.g. deployed via SCCM or Intune), instead of silently installing into the SYSTEM profile.
+- Fixed an issue where the Hyper-V VM could fail to start after a restart because its disk was still being compacted.
+@y
+- Fixed an issue on Windows with WSL 3.0.1 where `docker info` reported `Docker Desktop (containerized)` instead of `Docker Desktop`, causing `docker debug` to fail when Registry Access Management is enabled.
+- Fixed a Windows update failure where `app.asar` was reported as locked by Docker Desktop.
+- Fixed the Windows installer deleting the WSL data disk during an update when the data root was inside the installation directory. Fixes [docker/desktop-feedback#667](https://github.com/docker/desktop-feedback/issues/667).
+- Fixed Docker Desktop failing to start with the Hyper-V backend when the Windows hosts file is protected by an antivirus or endpoint security tool.
+- Fixed issues on Windows with WSL/MSYS2 native symlink (LX symlink) handling, sparse stream exports via backup tar, and a race condition in named pipe listener close.
+- Added a dedicated error message when the Hyper-V virtual machine cannot start because the host does not have enough free memory.
+- Fixed an intermittent MSI installation failure (error code 1603) on Windows caused by analytics custom actions racing with other installer steps.
+- Fixed a per-user installation on Windows silently completing on machines where the Virtual Machine Platform feature is disabled, leaving Docker Desktop unable to start.
+- The Windows installer now fails with an explicit error when a per-user installation is attempted from the SYSTEM account (e.g. deployed via SCCM or Intune), instead of silently installing into the SYSTEM profile.
+- Fixed an issue where the Hyper-V VM could fail to start after a restart because its disk was still being compacted.
+@z
+
+@x
 ## 4.94.0
 @y
 ## 4.94.0

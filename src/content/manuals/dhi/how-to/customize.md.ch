@@ -257,18 +257,22 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
 @z
 
 @x
-   1. In the **Scripts** section, you can add, edit, or remove scripts.
+   1. In the **Files** section, you can add, edit, or remove files.
 @y
-   1. In the **Scripts** section, you can add, edit, or remove scripts.
+   1. In the **Files** section, you can add, edit, or remove files.
 @z
 
 @x
-      Scripts let you add files to the container image that you can access at runtime. They are not executed during
-      the build process. This is useful for services that require pre-start initialization, such as setup scripts or
+      Files let you add static content to the container image that you can
+      access at runtime, such as configuration files or setup scripts. Files
+      are not executed during the build process. This is useful for services
+      that require initialization before they start, such as setup scripts or
       file writes to directories like `/var/lock` or `/out`.
 @y
-      Scripts let you add files to the container image that you can access at runtime. They are not executed during
-      the build process. This is useful for services that require pre-start initialization, such as setup scripts or
+      Files let you add static content to the container image that you can
+      access at runtime, such as configuration files or setup scripts. Files
+      are not executed during the build process. This is useful for services
+      that require initialization before they start, such as setup scripts or
       file writes to directories like `/var/lock` or `/out`.
 @z
 
@@ -279,15 +283,57 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
 @z
 
 @x
-      - The path where the script will be placed
-      - The script content
-      - The UID and GID ownership of the script
-      - The octal file permissions of the script
+      - The path where the file will be placed
+      - The file content
+      - The UID and GID ownership of the file
+      - The octal file permissions of the file
 @y
-      - The path where the script will be placed
-      - The script content
-      - The UID and GID ownership of the script
-      - The octal file permissions of the script
+      - The path where the file will be placed
+      - The file content
+      - The UID and GID ownership of the file
+      - The octal file permissions of the file
+@z
+
+@x
+      > [!NOTE]
+      >
+      > If your organization's DHI subscription is in the EU region, the
+      > **Add** option in the **Files** section is greyed out. File content
+      > isn't supported in the EU region. For details, see [EU data
+      > residency](../explore/eu-region.md).
+@y
+      > [!NOTE]
+      >
+      > If your organization's DHI subscription is in the EU region, the
+      > **Add** option in the **Files** section is greyed out. File content
+      > isn't supported in the EU region. For details, see [EU data
+      > residency](../explore/eu-region.md).
+@z
+
+@x
+   1. In the **Symlinks** section, you can add, edit, or remove symbolic links.
+@y
+   1. In the **Symlinks** section, you can add, edit, or remove symbolic links.
+@z
+
+@x
+      You must specify the following:
+@y
+      You must specify the following:
+@z
+
+@x
+      - The path where the symlink will be placed
+      - The source path that the symlink points to
+@y
+      - The path where the symlink will be placed
+      - The source path that the symlink points to
+@z
+
+@x
+      Optionally, you can specify the UID and GID ownership of the symlink.
+@y
+      Optionally, you can specify the UID and GID ownership of the symlink.
 @z
 
 @x
@@ -508,7 +554,7 @@ Define a `dhi_customization` resource for each customization:
 Define a `dhi_customization` resource for each customization:
 @z
 
-% snip command...
+% snip code...
 
 @x
 The `dhi_customization` resource also supports optional configuration blocks
@@ -768,6 +814,22 @@ executed during the build.
 | `mode` | Octal file permissions, such as `"0644"`. Quote the value to prevent YAML from treating the leading zero as octal notation. |
 | `uid` | User ID of the file owner. |
 | `gid` | Group ID of the file owner. |
+@z
+
+@x
+> [!NOTE]
+>
+> If your organization's DHI subscription is in the EU region, you can't add
+> files with `contents` in the `paths` field. File content isn't supported in
+> the EU region. For details, see [EU data
+> residency](../explore/eu-region.md).
+@y
+> [!NOTE]
+>
+> If your organization's DHI subscription is in the EU region, you can't add
+> files with `contents` in the `paths` field. File content isn't supported in
+> the EU region. For details, see [EU data
+> residency](../explore/eu-region.md).
 @z
 
 @x

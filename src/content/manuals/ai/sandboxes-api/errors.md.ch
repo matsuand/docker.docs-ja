@@ -12,16 +12,6 @@ keywords: docker sandboxes API errors, REST errors, API retries, idempotency key
 @z
 
 @x
-> [!NOTE]
-> The Docker Sandboxes API and SDK are experimental. Features, interfaces,
-> and behavior may change.
-@y
-> [!NOTE]
-> The Docker Sandboxes API and SDK are experimental. Features, interfaces,
-> and behavior may change.
-@z
-
-@x
 Before retrying a failed request, check whether the service already started
 the work. For example, a create request can succeed even if your application
 loses the response. Retrying without checking can create a second sandbox.

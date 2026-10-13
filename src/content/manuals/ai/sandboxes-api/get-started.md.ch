@@ -16,16 +16,6 @@ keywords: Docker Sandboxes API tutorial, cloud sandbox TypeScript, create sandbo
 @z
 
 @x
-> [!NOTE]
-> The Docker Sandboxes API and SDK are experimental. Features, interfaces,
-> and behavior may change.
-@y
-> [!NOTE]
-> The Docker Sandboxes API and SDK are experimental. Features, interfaces,
-> and behavior may change.
-@z
-
-@x
 Create a cloud sandbox, run a command inside it, and delete it using the Docker
 Sandboxes TypeScript SDK. This tutorial uses the bundled `shell` kit to print
 `Hello from Docker Sandboxes`. You don't need an AI agent or a model provider

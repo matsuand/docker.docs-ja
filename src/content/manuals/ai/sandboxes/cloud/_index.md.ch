@@ -14,22 +14,6 @@ keywords: docker sandboxes, cloud sandboxes, sbx cloud, ai agents, agentic platf
 @z
 
 @x
-      text: Experimental
-@y
-      text: 試験的
-@z
-
-@x
-> [!NOTE]
-> Cloud sandbox support in the `sbx` CLI is experimental. Features and behavior
-> may change.
-@y
-> [!NOTE]
-> Cloud sandbox support in the `sbx` CLI is experimental. Features and behavior
-> may change.
-@z
-
-@x
 Cloud sandboxes run AI agents on Docker-managed infrastructure instead of your
 local machine. Use them when you need an isolated environment that doesn't
 depend on the compute resources or virtualization support of your host.

@@ -16,16 +16,6 @@ keywords: docker sandboxes API concepts, sandbox kits, sandbox images, cloud san
 @z
 
 @x
-> [!NOTE]
-> The Docker Sandboxes API and SDK are experimental. Features, interfaces,
-> and behavior may change.
-@y
-> [!NOTE]
-> The Docker Sandboxes API and SDK are experimental. Features, interfaces,
-> and behavior may change.
-@z
-
-@x
 An application uses the Docker Sandboxes API to create sandboxes, connect to
 them, and track their state. Choose the environment for your sandbox, then
 learn how to work with its resources throughout their lifecycle.

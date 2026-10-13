@@ -42,12 +42,12 @@ vendor that can grant fine-grained access to your Docker resources.
 @x
 OIDC connections follow the OpenID Connect (OIDC) standard. Establishing a
 trust relationship involves creating the connection, configuring a
-workflow, and testing. For example, a trust relationship between Docker and
+workflow, and testing. A connection, then, is the named trust relationship in Docker Home that workflows point to. For example, a trust relationship between Docker and
 GitHub follows these steps:
 @y
 OIDC connections follow the OpenID Connect (OIDC) standard. Establishing a
 trust relationship involves creating the connection, configuring a
-workflow, and testing. For example, a trust relationship between Docker and
+workflow, and testing. A connection, then, is the named trust relationship in Docker Home that workflows point to. For example, a trust relationship between Docker and
 GitHub follows these steps:
 @z
 
@@ -94,7 +94,9 @@ For how OIDC connections compare to organization access tokens, see
 @x
 - [Create an OIDC connection](/manuals/security/authentication/oidc-connections/create-manage.md)
 - [OIDC rulesets and subject claims](/manuals/security/authentication/oidc-connections/rulesets-claims.md)
+- [Troubleshoot OIDC connections](/manuals/security/authentication/oidc-connections/troubleshoot.md)
 @y
 - [Create an OIDC connection](manuals/security/authentication/oidc-connections/create-manage.md)
 - [OIDC rulesets and subject claims](manuals/security/authentication/oidc-connections/rulesets-claims.md)
+- [Troubleshoot OIDC connections](manuals/security/authentication/oidc-connections/troubleshoot.md)
 @z

@@ -77,6 +77,7 @@ docker desktop COMMAND [OPTIONS]
 | `version`            | Show the Docker Desktop CLI plugin version information |
 | `kubernetes`         | Manage Kubernetes    |
 | `diagnose`           | Diagnose Docker Desktop and upload the diagnostics. |
+| `auth status`        | Show the current Docker Hub authentication status. Available with version 4.95 and later. |
 @y
 | Command              | Description                              |
 |:---------------------|:-----------------------------------------|
@@ -93,6 +94,7 @@ docker desktop COMMAND [OPTIONS]
 | `version`            | Show the Docker Desktop CLI plugin version information |
 | `kubernetes`         | Manage Kubernetes    |
 | `diagnose`           | Diagnose Docker Desktop and upload the diagnostics. |
+| `auth status`        | Show the current Docker Hub authentication status. Available with version 4.95 and later. |
 @z
 
 @x

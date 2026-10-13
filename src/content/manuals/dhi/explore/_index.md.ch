@@ -100,6 +100,18 @@ description: Learn about Docker Hardened Images, their purpose, how they are bui
 @z
 
 @x
+    - title: EU data residency
+      description: Learn how Docker stores your mirrored and customized images in the EU when your subscription is in the EU region.
+      icon: globe-alt
+      link: /dhi/explore/eu-region/
+@y
+    - title: EU data residency
+      description: Learn how Docker stores your mirrored and customized images in the EU when your subscription is in the EU region.
+      icon: globe-alt
+      link: __SUBDIR__/dhi/explore/eu-region/
+@z
+
+@x
     - title: Security concepts
       description: Learn the core concepts behind Docker Hardened Images — signed attestations, immutable digests, SLSA, VEX, and more.
       icon: clipboard-document-check

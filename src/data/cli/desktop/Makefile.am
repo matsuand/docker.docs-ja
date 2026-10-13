@@ -4,6 +4,8 @@
 
 bases = \
 	docker_desktop.yaml                          \
+	docker_desktop_auth.yaml                     \
+	docker_desktop_auth_status.yaml              \
 	docker_desktop_diagnose.yaml                 \
 	docker_desktop_disable.yaml                  \
 	docker_desktop_disable_model_runner.yaml     \

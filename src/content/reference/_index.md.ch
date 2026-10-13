@@ -85,6 +85,18 @@ description: Docker プラットフォームの API、CLI、ドライバー仕�
 % grid_apis:
 
 @x
+  - title: Sandboxes API
+    description: Create cloud sandboxes, run processes, and manage sandbox resources.
+    icon: code-bracket
+    link: /reference/api/sandboxes/latest/
+@y
+  - title: Sandboxes API
+    description: クラウド上のサンドボックスの生成、プロセス実行、リソース管理を行います。
+    icon: code-bracket
+    link: __SUBDIR__/reference/api/sandboxes/latest/
+@z
+
+@x
   - title: Engine API
     description: The main API for Docker, provides programmatic access to a daemon.
     icon: code-bracket

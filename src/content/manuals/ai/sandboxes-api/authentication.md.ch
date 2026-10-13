@@ -14,16 +14,6 @@ keywords: docker sandboxes API authentication, sandbox authorization, bearer tok
 @z
 
 @x
-> [!NOTE]
-> The Docker Sandboxes API and SDK are experimental. Features, interfaces,
-> and behavior may change.
-@y
-> [!NOTE]
-> The Docker Sandboxes API and SDK are experimental. Features, interfaces,
-> and behavior may change.
-@z
-
-@x
 Use browser sign-in when running an application interactively, or a personal
 access token (PAT) for automation. The SDK obtains short-lived access tokens
 and renews them as needed.

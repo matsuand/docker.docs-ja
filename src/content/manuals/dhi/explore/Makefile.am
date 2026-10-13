@@ -8,6 +8,7 @@ bases = \
 	_index.md               \
 	available.md            \
 	build-process.md        \
+	eu-region.md            \
 	malware-scanning.md     \
 	responsibility.md       \
 	scanner-integrations.md \

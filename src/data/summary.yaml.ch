@@ -664,6 +664,24 @@ Docker Hardened Images:
 @z
 
 @x
+Docker Hardened Images Enterprise:
+  subscription: [Docker Hardened Images Enterprise]
+@y
+Docker Hardened Images Enterprise:
+  subscription: [Docker Hardened Images Enterprise]
+@z
+
+@x
+Docker Hardened Images EU data residency:
+  availability: Early Access
+  subscription: [Docker Hardened Images Select or Enterprise]
+@y
+Docker Hardened Images EU data residency:
+  availability: 早期アクセス
+  subscription: [Docker Hardened Images Select or Enterprise]
+@z
+
+@x
 Docker Init:
   requires: Docker Desktop [4.27](/manuals/desktop/release-notes.md#4270) and later
 @y

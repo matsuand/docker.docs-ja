@@ -16,16 +16,6 @@ keywords: docker sandboxes SDK, TypeScript SDK, JavaScript, npm, install sandbox
 @z
 
 @x
-> [!NOTE]
-> The Docker Sandboxes API and SDK are experimental. Features, interfaces,
-> and behavior may change.
-@y
-> [!NOTE]
-> The Docker Sandboxes API and SDK are experimental. Features, interfaces,
-> and behavior may change.
-@z
-
-@x
 Use the Docker Sandboxes SDK to create and manage cloud sandboxes from
 JavaScript or TypeScript. The SDK includes methods for running commands,
 transferring files, and waiting for a sandbox to start or stop.

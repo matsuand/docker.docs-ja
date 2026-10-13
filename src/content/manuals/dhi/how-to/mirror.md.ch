@@ -345,6 +345,26 @@ repositories](manuals/docker-hub/repos/_index.md) for details.
 @z
 
 @x
+### Mirrors in the EU region
+@y
+### Mirrors in the EU region
+@z
+
+@x
+If your organization's DHI subscription is in the EU region, Docker creates
+your mirrored repositories on Docker Hub in the EU. Mirrors created before your
+subscription moved to the EU region stay in their original region. For
+details, including how to get a subscription in the EU region, see [EU data
+residency](../explore/eu-region.md).
+@y
+If your organization's DHI subscription is in the EU region, Docker creates
+your mirrored repositories on Docker Hub in the EU. Mirrors created before your
+subscription moved to the EU region stay in their original region. For
+details, including how to get a subscription in the EU region, see [EU data
+residency](../explore/eu-region.md).
+@z
+
+@x
 ### Stop mirroring a repository
 @y
 ### Stop mirroring a repository

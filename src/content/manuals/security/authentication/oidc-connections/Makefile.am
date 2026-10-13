@@ -5,7 +5,8 @@
 bases = \
 	_index.md          \
 	create-manage.md   \
-	rulesets-claims.md
+	rulesets-claims.md \
+	troubleshoot.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

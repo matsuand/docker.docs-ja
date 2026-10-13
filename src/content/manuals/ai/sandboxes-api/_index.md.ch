@@ -16,22 +16,6 @@ keywords: docker sandboxes API, cloud sandboxes API, sandbox SDK, TypeScript SDK
 @z
 
 @x
-      text: Experimental
-@y
-      text: 試験的
-@z
-
-@x
-> [!NOTE]
-> The Docker Sandboxes API and SDK are experimental. Features, interfaces,
-> and behavior may change.
-@y
-> [!NOTE]
-> The Docker Sandboxes API and SDK are experimental. Features, interfaces,
-> and behavior may change.
-@z
-
-@x
 Use the Docker Sandboxes API to create cloud sandboxes, run commands, and
 transfer files from your applications and automated workflows. You can also
 manage related resources, including images, snapshots, volumes, and secrets.
