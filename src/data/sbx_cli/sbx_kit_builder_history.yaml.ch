@@ -3,13 +3,13 @@
 
 @x
 name: sbx kit builder history
-synopsis: Inspect kit build history in the builder sandbox
+synopsis: Show kit build history in the builder sandbox
 experimental: true
 description: |-
     Inspect kit build history in the builder sandbox.
 @y
 name: sbx kit builder history
-synopsis: Inspect kit build history in the builder sandbox
+synopsis: Show kit build history in the builder sandbox
 experimental: true
 description: |-
     Inspect kit build history in the builder sandbox.
@@ -60,16 +60,16 @@ usage: sbx kit builder history COMMAND
 @x
     - sbx kit builder - Manage the kit builder sandbox
     - sbx kit builder history export - Export a kit build record into a bundle
-    - sbx kit builder history inspect - Inspect a kit build record
-    - sbx kit builder history logs - Print a kit build's logs
+    - sbx kit builder history inspect - Show a kit build record
+    - sbx kit builder history logs - Show a kit build's logs
     - sbx kit builder history ls - List kit build records
     - sbx kit builder history rm - Remove kit build records
     - sbx kit builder history trace - Show the execution trace of a kit build
 @y
     - sbx kit builder - Manage the kit builder sandbox
     - sbx kit builder history export - Export a kit build record into a bundle
-    - sbx kit builder history inspect - Inspect a kit build record
-    - sbx kit builder history logs - Print a kit build's logs
+    - sbx kit builder history inspect - Show a kit build record
+    - sbx kit builder history logs - Show a kit build's logs
     - sbx kit builder history ls - List kit build records
     - sbx kit builder history rm - Remove kit build records
     - sbx kit builder history trace - Show the execution trace of a kit build

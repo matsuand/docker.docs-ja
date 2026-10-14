@@ -63,6 +63,18 @@ usage: sbx policy ls [SANDBOX] [flags]
         Filter policies by how they were created: "default", "added", "provisioned", or "approval"
 @z
 
+@x decision
+      usage: 'Filter policies by decision: "allow" or "deny"'
+@y
+      usage: 'Filter policies by decision: "allow" or "deny"'
+@z
+
+@x format
+      usage: 'Output format: table, json or yaml'
+@y
+      usage: 'Output format: table, json or yaml'
+@z
+
 @x help
       usage: help for ls
 @y
@@ -76,9 +88,9 @@ usage: sbx policy ls [SANDBOX] [flags]
 @z
 
 @x json
-      usage: Output filtered policy rules as JSON
+      usage: Output in JSON format
 @y
-      usage: Output filtered policy rules as JSON
+      usage: Output in JSON format
 @z
 
 @x protocol

@@ -4,11 +4,11 @@
 @x
 name: sbx daemon log-level set
 synopsis: 'Set a category''s log level (target: proxy, general, or all)'
-usage: sbx daemon log-level set <target> <level> [flags]
+usage: sbx daemon log-level set TARGET LEVEL [flags]
 @y
 name: sbx daemon log-level set
 synopsis: 'Set a category''s log level (target: proxy, general, or all)'
-usage: sbx daemon log-level set <target> <level> [flags]
+usage: sbx daemon log-level set TARGET LEVEL [flags]
 @z
 
 % options:
@@ -35,10 +35,26 @@ usage: sbx daemon log-level set <target> <level> [flags]
       usage: Enable debug logging
 @z
 
+@x
+example: |4-
+      sbx daemon log-level set proxy debug
+@y
+example: |4-
+      sbx daemon log-level set proxy debug
+@z
+
+@x
+      # Every category at once
+      sbx daemon log-level set all info
+@y
+      # Every category at once
+      sbx daemon log-level set all info
+@z
+
 % see_also:
 
 @x
-    - sbx daemon log-level - Inspect or change sandboxd's per-category log levels
+    - sbx daemon log-level - Show or change sandboxd's per-category log levels
 @y
-    - sbx daemon log-level - Inspect or change sandboxd's per-category log levels
+    - sbx daemon log-level - Show or change sandboxd's per-category log levels
 @z

@@ -4,14 +4,22 @@
 @x
 name: sbx mcp inspect
 synopsis: Show MCP server details
-usage: sbx mcp inspect <name> [flags]
+usage: sbx mcp inspect NAME [flags]
 @y
 name: sbx mcp inspect
 synopsis: Show MCP server details
-usage: sbx mcp inspect <name> [flags]
+usage: sbx mcp inspect NAME [flags]
 @z
 
 % options:
+
+@x
+    - name: format
+      usage: 'Output format: table, json or yaml'
+@y
+    - name: format
+      usage: 'Output format: table, json or yaml'
+@z
 
 @x help
       usage: help for inspect

@@ -42,6 +42,28 @@ description: |
 @z
 
 @x
+    Command secrets run from a fresh temporary directory on the host during
+    verification and refresh. The host temporary directory must be absolute and must
+    remain outside writable sandbox mounts. Relative references such as ./helper or
+    cat token no longer resolve against the project or daemon working directory. Use an absolute
+    helper path outside shared workspaces. sbx does not copy helpers, inspect their
+    dependencies, or confine their execution. Helpers and any code or configuration
+    they load must remain outside writable sandbox mounts. Explicit paths into shared
+    workspaces and broad mounts exposing host configuration or the host temporary
+    directory remain unsafe, including mounts added later with sbx mount.
+@y
+    Command secrets run from a fresh temporary directory on the host during
+    verification and refresh. The host temporary directory must be absolute and must
+    remain outside writable sandbox mounts. Relative references such as ./helper or
+    cat token no longer resolve against the project or daemon working directory. Use an absolute
+    helper path outside shared workspaces. sbx does not copy helpers, inspect their
+    dependencies, or confine their execution. Helpers and any code or configuration
+    they load must remain outside writable sandbox mounts. Explicit paths into shared
+    workspaces and broad mounts exposing host configuration or the host temporary
+    directory remain unsafe, including mounts added later with sbx mount.
+@z
+
+@x
       secrets:
         github:
           command: gh auth token
@@ -216,107 +238,115 @@ description: |
 @z
 
 @x
-      ── ENVIRONMENT PLAN
-         claude-proj
+      ENVIRONMENT
+        Name:   claude-proj
+        File:   /Users/me/proj/sbxenv.yaml
 @y
-      ── ENVIRONMENT PLAN
-         claude-proj
+      ENVIRONMENT
+        Name:   claude-proj
+        File:   /Users/me/proj/sbxenv.yaml
 @z
 
 @x
-         secrets:
-      +    anthropic:
-      +      ref: op://vault/anthropic/key
-      +      refresh: 55m
+      SECRETS
+        + anthropic
+            ref: op://vault/anthropic/key
+            refresh: 55m
 @y
-         secrets:
-      +    anthropic:
-      +      ref: op://vault/anthropic/key
-      +      refresh: 55m
+      SECRETS
+        + anthropic
+            ref: op://vault/anthropic/key
+            refresh: 55m
 @z
 
 @x
-         lifecycle:
-           initialize:
-      ~      - command: make setup -> make setup && make seed
-               workdir: /Users/me/proj
+      LIFECYCLE
+        ~ initialize: make setup && make seed
+            command: make setup -> make setup && make seed
+            workdir: /Users/me/proj
 @y
-         lifecycle:
-           initialize:
-      ~      - command: make setup -> make setup && make seed
-               workdir: /Users/me/proj
+      LIFECYCLE
+        ~ initialize: make setup && make seed
+            command: make setup -> make setup && make seed
+            workdir: /Users/me/proj
 @z
 
 @x
-         Plan: + 1 to add, ~ 1 to change, - 0 to destroy.
+        1 to add · 1 to change · 0 to destroy
 @y
-         Plan: + 1 to add, ~ 1 to change, - 0 to destroy.
+        1 to add · 1 to change · 0 to destroy
 @z
 
 @x
-         Approve this plan? [y/N]
+      Approve this plan? (y/N)
 @y
-         Approve this plan? [y/N]
+      Approve this plan? (y/N)
 @z
 
 @x
-    The plan is your file: the same keys, nested the same way, in the order the
-    blocks are declared in, so a line is looked up where it was written. What the
-    plan adds is the margin, and the two values a line moves between. The totals
-    name every symbol the margin can carry: "+ to add" and "~ to change" above,
+    The plan groups resources by the block of the file that declares them, in the
+    order the blocks are declared, so a row is looked up where it was written. The
+    mark in front of a row is what applying does to the resource, and the totals
+    name every mark a plan can carry: "+ to add" and "~ to change" above,
     "- to destroy" for what "sbx env rm" takes away, "> to run" for a command that
     runs again — a command converges to nothing, so it runs on every apply that
     reaches it — and "! to forget" for a resource this environment applied and no
-    longer declares. Where the file has nothing to
-    say, a note in the margin does: that a resource is missing, or that the work
-    waits for the next create, since a port, a credential, a kit or a postCreate
-    command comes with the sandbox, so attaching to one that already exists leaves it
-    for the next one that is built. A resource that is as it was, and already
-    approved, is left out: what is on screen is what there is to read.
+    longer declares. Where the file has nothing to say, the text after the row's name does:
+    that a resource is missing, or that the work waits for the next create, since a
+    port, a credential, a kit or a postCreate command comes with the sandbox, so
+    attaching to one that already exists leaves it for the next one that is built. A
+    resource that is as it was, and already approved, is left out: what is on screen
+    is what there is to read.
 @y
-    The plan is your file: the same keys, nested the same way, in the order the
-    blocks are declared in, so a line is looked up where it was written. What the
-    plan adds is the margin, and the two values a line moves between. The totals
-    name every symbol the margin can carry: "+ to add" and "~ to change" above,
+    The plan groups resources by the block of the file that declares them, in the
+    order the blocks are declared, so a row is looked up where it was written. The
+    mark in front of a row is what applying does to the resource, and the totals
+    name every mark a plan can carry: "+ to add" and "~ to change" above,
     "- to destroy" for what "sbx env rm" takes away, "> to run" for a command that
     runs again — a command converges to nothing, so it runs on every apply that
     reaches it — and "! to forget" for a resource this environment applied and no
-    longer declares. Where the file has nothing to
-    say, a note in the margin does: that a resource is missing, or that the work
-    waits for the next create, since a port, a credential, a kit or a postCreate
-    command comes with the sandbox, so attaching to one that already exists leaves it
-    for the next one that is built. A resource that is as it was, and already
-    approved, is left out: what is on screen is what there is to read.
+    longer declares. Where the file has nothing to say, the text after the row's name does:
+    that a resource is missing, or that the work waits for the next create, since a
+    port, a credential, a kit or a postCreate command comes with the sandbox, so
+    attaching to one that already exists leaves it for the next one that is built. A
+    resource that is as it was, and already approved, is left out: what is on screen
+    is what there is to read.
 @z
 
 @x
-    An attribute shows what the environment declares, so an edited kit argument or
-    variable reads as what it was against what it becomes, and a "command:" or "ref:"
-    secret shows where the credential comes from — a command that resolves one runs on
-    this machine. A secret's literal "value:" is the one exception: a plan is both shown
-    here and written to state, so it is named and stands in as a "sha256:" digest.
+    The lines under a row are the attributes the environment declares, so an edited
+    kit argument or variable reads as what it was against what it becomes, and a
+    "command:" or "ref:" secret shows where the credential comes from — a command
+    that resolves one runs on this machine. A secret's literal "value:" is the one
+    exception: a plan is both shown here and written to state, so it is named and
+    stands in as a "sha256:" digest.
 @y
-    An attribute shows what the environment declares, so an edited kit argument or
-    variable reads as what it was against what it becomes, and a "command:" or "ref:"
-    secret shows where the credential comes from — a command that resolves one runs on
-    this machine. A secret's literal "value:" is the one exception: a plan is both shown
-    here and written to state, so it is named and stands in as a "sha256:" digest.
+    The lines under a row are the attributes the environment declares, so an edited
+    kit argument or variable reads as what it was against what it becomes, and a
+    "command:" or "ref:" secret shows where the credential comes from — a command
+    that resolves one runs on this machine. A secret's literal "value:" is the one
+    exception: a plan is both shown here and written to state, so it is named and
+    stands in as a "sha256:" digest.
 @z
 
 @x
-         kits:
-      ~    - source: ./mixins/tool
-      ~      args:
-      ~        version: 1.2.3 -> 1.2.4
-         env:
-      ~    GOFLAGS: -mod=mod -> -mod=readonly
+      KITS
+        ~ ./mixins/tool
+            args.version: 1.2.3 -> 1.2.4
 @y
-         kits:
-      ~    - source: ./mixins/tool
-      ~      args:
-      ~        version: 1.2.3 -> 1.2.4
-         env:
-      ~    GOFLAGS: -mod=mod -> -mod=readonly
+      KITS
+        ~ ./mixins/tool
+            args.version: 1.2.3 -> 1.2.4
+@z
+
+@x
+      ENV
+        ~ GOFLAGS
+            value: -mod=mod -> -mod=readonly
+@y
+      ENV
+        ~ GOFLAGS
+            value: -mod=mod -> -mod=readonly
 @z
 
 @x
@@ -370,12 +400,12 @@ description: |
 @z
 
 @x
-    Use --auto-approve (-y) where there is no terminal to answer on. Where an
+    Use --force (-f) where there is no terminal to answer on. Where an
     environment's commands are your own and run many times a day,
     "sbx settings set env.rememberHostCommands true" asks about them only when
     they change.
 @y
-    Use --auto-approve (-y) where there is no terminal to answer on. Where an
+    Use --force (-f) where there is no terminal to answer on. Where an
     environment's commands are your own and run many times a day,
     "sbx settings set env.rememberHostCommands true" asks about them only when
     they change.
@@ -481,12 +511,12 @@ description: |
 
 @x
       sbx --cloud env plan ./sbxenv.yaml
-      sbx --cloud env run --auto-approve --detached ./sbxenv.yaml
+      sbx --cloud env run --force --detach ./sbxenv.yaml
       sbx --cloud env exec ./sbxenv.yaml -- git status
       sbx --cloud env rm --force ./sbxenv.yaml
 @y
       sbx --cloud env plan ./sbxenv.yaml
-      sbx --cloud env run --auto-approve --detached ./sbxenv.yaml
+      sbx --cloud env run --force --detach ./sbxenv.yaml
       sbx --cloud env exec ./sbxenv.yaml -- git status
       sbx --cloud env rm --force ./sbxenv.yaml
 @z

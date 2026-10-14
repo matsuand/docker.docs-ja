@@ -20,6 +20,14 @@ keywords: docker sandboxes, sbx, local development, build, test, ports, host ser
 @z
 
 @x
+This page describes local sandboxes, host services, and local port mappings.
+For cloud endpoints, see [Expose a port](../cloud/usage.md#expose-a-port).
+@y
+This page describes local sandboxes, host services, and local port mappings.
+For cloud endpoints, see [Expose a port](../cloud/usage.md#expose-a-port).
+@z
+
+@x
 Use a sandbox's private runtime to build images, run tests, and connect local
 tools to development services across the sandbox boundary.
 @y
@@ -180,14 +188,14 @@ lists them in detail:
 @x
 ```console
 $ sbx ls
-SANDBOX         AGENT   STATUS   PORTS                    WORKSPACE
-my-sandbox      claude  running  127.0.0.1:8080->3000/tcp4 /home/user/proj
+SANDBOX      AGENT    STATUS      PORTS                       WORKSPACE         CREATED
+my-sandbox   claude   ● running   127.0.0.1:8080->3000/tcp4    /home/user/proj    2m
 ```
 @y
 ```console
 $ sbx ls
-SANDBOX         AGENT   STATUS   PORTS                    WORKSPACE
-my-sandbox      claude  running  127.0.0.1:8080->3000/tcp4 /home/user/proj
+SANDBOX      AGENT    STATUS      PORTS                       WORKSPACE         CREATED
+my-sandbox   claude   ● running   127.0.0.1:8080->3000/tcp4    /home/user/proj    2m
 ```
 @z
 

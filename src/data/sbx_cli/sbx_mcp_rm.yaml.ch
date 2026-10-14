@@ -4,11 +4,11 @@
 @x
 name: sbx mcp rm
 synopsis: Remove a registered MCP server
-usage: sbx mcp rm <name> [flags]
+usage: sbx mcp rm NAME [flags]
 @y
 name: sbx mcp rm
 synopsis: Remove a registered MCP server
-usage: sbx mcp rm <name> [flags]
+usage: sbx mcp rm NAME [flags]
 @z
 
 % options:

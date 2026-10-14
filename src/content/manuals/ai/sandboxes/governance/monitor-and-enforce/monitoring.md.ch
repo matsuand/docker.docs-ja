@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Monitoring policies
 @y
@@ -162,11 +164,11 @@ A `STATUS` column also appears when you pass `--include-inactive`; see
 @z
 
 @x
-When organization governance is active, the output starts with a summary line
+When organization governance is active, the output starts with a summary block
 showing which organization manages the policy, the sync state, and how many
 inactive rules are hidden:
 @y
-When organization governance is active, the output starts with a summary line
+When organization governance is active, the output starts with a summary block
 showing which organization manages the policy, the sync state, and how many
 inactive rules are hidden:
 @z
@@ -174,11 +176,17 @@ inactive rules are hidden:
 @x
 ```console
 $ sbx policy ls
-Governance: Managed by my-org | Sync: OK, last synced 08:21:01 | Hidden: 9 inactive rules. Show with: sbx policy ls --include-inactive
+POLICY RULES
+  Governance: Managed by my-org
+  Sync:       OK, last synced 08:21:01
+  Hidden:     9 inactive rules. Show with: sbx policy ls --include-inactive
 @y
 ```console
 $ sbx policy ls
-Governance: Managed by my-org | Sync: OK, last synced 08:21:01 | Hidden: 9 inactive rules. Show with: sbx policy ls --include-inactive
+POLICY RULES
+  Governance: Managed by my-org
+  Sync:       OK, last synced 08:21:01
+  Hidden:     9 inactive rules. Show with: sbx policy ls --include-inactive
 @z
 
 @x
@@ -246,11 +254,15 @@ example, to confirm which allow rules the organization policy overrides — pass
 @x
 ```console
 $ sbx policy ls --include-inactive
-Governance: Managed by my-org | Sync: OK, last synced 08:41:06
+POLICY RULES
+  Governance: Managed by my-org
+  Sync:       OK, last synced 08:41:06
 @y
 ```console
 $ sbx policy ls --include-inactive
-Governance: Managed by my-org | Sync: OK, last synced 08:41:06
+POLICY RULES
+  Governance: Managed by my-org
+  Sync:       OK, last synced 08:41:06
 @z
 
 @x
@@ -460,26 +472,26 @@ which rules matched:
 @x
 ```console
 $ sbx policy log
-Blocked requests:
+BLOCKED REQUESTS
 SANDBOX      TYPE     HOST                   PROXY        RULE            REASON         LAST SEEN        COUNT
 my-sandbox   network  blocked.example.com    transparent  domain-blocked  default-deny   10:15:25 29-Jan  1
 @y
 ```console
 $ sbx policy log
-Blocked requests:
+BLOCKED REQUESTS
 SANDBOX      TYPE     HOST                   PROXY        RULE            REASON         LAST SEEN        COUNT
 my-sandbox   network  blocked.example.com    transparent  domain-blocked  default-deny   10:15:25 29-Jan  1
 @z
 
 @x
-Allowed requests:
+ALLOWED REQUESTS
 SANDBOX      TYPE     HOST                   PROXY          RULE             REASON   LAST SEEN        COUNT
 my-sandbox   network  api.anthropic.com      forward        domain-allowed            10:15:23 29-Jan  42
 my-sandbox   network  registry.npmjs.org     forward-bypass domain-allowed            10:15:20 29-Jan  18
 my-sandbox   network  app.example.com        browser-open                             10:15:10 29-Jan  1
 ```
 @y
-Allowed requests:
+ALLOWED REQUESTS
 SANDBOX      TYPE     HOST                   PROXY          RULE             REASON   LAST SEEN        COUNT
 my-sandbox   network  api.anthropic.com      forward        domain-allowed            10:15:23 29-Jan  42
 my-sandbox   network  registry.npmjs.org     forward-bypass domain-allowed            10:15:20 29-Jan  18
@@ -536,13 +548,25 @@ $ sbx policy log my-sandbox
 @z
 
 @x
-Use `--limit N` to show only the last `N` entries, `--json` for
+Use `--limit N` to show only the last `N` entries, `--json` or `--format yaml` for
 machine-readable output, or `--type network` to filter by policy type.
 `sbx policy log` records network traffic only; filesystem mount decisions
 aren't available in the log yet.
 @y
-Use `--limit N` to show only the last `N` entries, `--json` for
+Use `--limit N` to show only the last `N` entries, `--json` or `--format yaml` for
 machine-readable output, or `--type network` to filter by policy type.
 `sbx policy log` records network traffic only; filesystem mount decisions
 aren't available in the log yet.
+@z
+
+@x
+Structured output uses the same document for local and cloud sandboxes:
+`{updated_at, allowed: [...], blocked: [...]}`. Each entry includes `sandbox_id`,
+`host`, `proxy_type`, `rule`, `reason`, `count`, `first_seen`, and `last_seen`.
+The `--limit` flag applies to structured output too.
+@y
+Structured output uses the same document for local and cloud sandboxes:
+`{updated_at, allowed: [...], blocked: [...]}`. Each entry includes `sandbox_id`,
+`host`, `proxy_type`, `rule`, `reason`, `count`, `first_seen`, and `last_seen`.
+The `--limit` flag applies to structured output too.
 @z

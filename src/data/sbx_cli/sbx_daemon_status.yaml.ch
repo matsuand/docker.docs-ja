@@ -3,15 +3,21 @@
 
 @x
 name: sbx daemon status
-synopsis: Check sandboxd daemon status
+synopsis: Show sandboxd daemon status
 usage: sbx daemon status [flags]
 @y
 name: sbx daemon status
-synopsis: Check sandboxd daemon status
+synopsis: Show sandboxd daemon status
 usage: sbx daemon status [flags]
 @z
 
 % options:
+
+@x format
+      usage: 'Output format: table, json or yaml'
+@y
+      usage: 'Output format: table, json or yaml'
+@z
 
 @x help
       usage: help for status
@@ -20,9 +26,9 @@ usage: sbx daemon status [flags]
 @z
 
 @x json
-      usage: Output as JSON
+      usage: Output in JSON format
 @y
-      usage: Output as JSON
+      usage: Output in JSON format
 @z
 
 % inherited_options:
@@ -39,6 +45,22 @@ usage: sbx daemon status [flags]
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      sbx daemon status
+@y
+example: |4-
+      sbx daemon status
+@z
+
+@x
+      # Machine-readable output
+      sbx daemon status --format json
+@y
+      # Machine-readable output
+      sbx daemon status --format json
 @z
 
 % see_also:

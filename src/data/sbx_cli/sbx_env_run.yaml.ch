@@ -87,12 +87,6 @@ usage: sbx env run [PATH...] [flags]
 
 % options:
 
-@x auto-approve
-      usage: Apply the environment plan without asking
-@y
-      usage: Apply the environment plan without asking
-@z
-
 @x clone
       usage: |
         Override workspace.clone in sbxenv.yaml (see 'sbx create --clone')
@@ -101,7 +95,7 @@ usage: sbx env run [PATH...] [flags]
         Override workspace.clone in sbxenv.yaml (see 'sbx create --clone')
 @z
 
-@x detached
+@x detach
       usage: Create/start the sandbox without attaching
 @y
       usage: Create/start the sandbox without attaching
@@ -121,6 +115,12 @@ usage: sbx env run [PATH...] [flags]
 @y
       usage: |
         File of name=value environment arguments, one per line (can be repeated); --env-arg overrides
+@z
+
+@x force
+      usage: Apply the environment plan without asking
+@y
+      usage: Apply the environment plan without asking
 @z
 
 @x help
@@ -153,10 +153,30 @@ usage: sbx env run [PATH...] [flags]
         Name for the sandbox, overriding 'name:' in sbxenv.yaml and the derived <agent>-<directory> (every 'sbx env' command addressing this environment needs the same value)
 @z
 
+@x
+    - name: on-timeout
+      usage: |
+        What happens when --ttl lapses: 'stop' stops the sandbox in place so it can be started again later, 'restart' keeps it running by stopping and immediately starting it, or 'delete' removes it. Omit the flag and the server stops the sandbox when it can be started again later, and deletes it otherwise. With 'restart' a supplied --ttl must be at least 1h (cloud only). Only applies when the sandbox is created; 'sbx --cloud env run' refuses it when attaching to an existing one.
+@y
+    - name: on-timeout
+      usage: |
+        What happens when --ttl lapses: 'stop' stops the sandbox in place so it can be started again later, 'restart' keeps it running by stopping and immediately starting it, or 'delete' removes it. Omit the flag and the server stops the sandbox when it can be started again later, and deletes it otherwise. With 'restart' a supplied --ttl must be at least 1h (cloud only). Only applies when the sandbox is created; 'sbx --cloud env run' refuses it when attaching to an existing one.
+@z
+
 @x skip-host-commands
       usage: Skip the host lifecycle commands the environment declares
 @y
       usage: Skip the host lifecycle commands the environment declares
+@z
+
+@x
+    - name: ttl
+      usage: |
+        Cloud sandbox time-to-live before it times out (e.g. 30m, 2h, 1h30m; units are case-insensitive; cloud only; default: server-side). Only applies when the sandbox is created; 'sbx --cloud env run' refuses it when attaching to an existing one
+@y
+    - name: ttl
+      usage: |
+        Cloud sandbox time-to-live before it times out (e.g. 30m, 2h, 1h30m; units are case-insensitive; cloud only; default: server-side). Only applies when the sandbox is created; 'sbx --cloud env run' refuses it when attaching to an existing one
 @z
 
 % inherited_options:
@@ -173,6 +193,22 @@ usage: sbx env run [PATH...] [flags]
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      sbx env run
+@y
+example: |4-
+      sbx env run
+@z
+
+@x
+      # Start without attaching
+      sbx env run --detach ./project
+@y
+      # Start without attaching
+      sbx env run --detach ./project
 @z
 
 % see_also:

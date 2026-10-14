@@ -3,11 +3,11 @@
 
 @x
 name: sbx daemon log-level
-synopsis: Inspect or change sandboxd's per-category log levels
+synopsis: Show or change sandboxd's per-category log levels
 usage: sbx daemon log-level [COMMAND]
 @y
 name: sbx daemon log-level
-synopsis: Inspect or change sandboxd's per-category log levels
+synopsis: Show or change sandboxd's per-category log levels
 usage: sbx daemon log-level [COMMAND]
 @z
 

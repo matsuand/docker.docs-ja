@@ -53,11 +53,11 @@ description: |-
 
 @x
     To create a sandbox without attaching, use "sbx create" instead, or
-    pass --detached (-d) to print the sandbox ID and exit without opening an
+    pass --detach (-d) to print the sandbox ID and exit without opening an
     interactive session.
 @y
     To create a sandbox without attaching, use "sbx create" instead, or
-    pass --detached (-d) to print the sandbox ID and exit without opening an
+    pass --detach (-d) to print the sandbox ID and exit without opening an
     interactive session.
 @z
 
@@ -93,21 +93,21 @@ description: |-
     Running an agent that has existing sandboxes, running or stopped, prompts you
     to pick one to reuse or to create a new one. Pass --new to skip the prompt and
     always create a fresh sandbox. --name NAME reuses and restarts the sandbox of
-    that name when it exists and creates it otherwise. A launch that bakes a kit
-    template (a sandbox kit or a mixin with build content) always creates fresh.
-    --detached skips the prompt: with --name it restarts that sandbox when it
+    that name when it exists and creates it otherwise. A sandbox kit launch always
+    creates fresh, as does a launch that bakes a mixin with build content.
+    --detach skips the prompt: with --name it restarts that sandbox when it
     exists, otherwise it creates a new one. A non-interactive run without
-    --detached is refused, so scripts pass --detached (e.g.
+    --detach is refused, so scripts pass --detach (e.g.
     sbx --cloud run -d claude && sbx --cloud exec ...).
 @y
     Running an agent that has existing sandboxes, running or stopped, prompts you
     to pick one to reuse or to create a new one. Pass --new to skip the prompt and
     always create a fresh sandbox. --name NAME reuses and restarts the sandbox of
-    that name when it exists and creates it otherwise. A launch that bakes a kit
-    template (a sandbox kit or a mixin with build content) always creates fresh.
-    --detached skips the prompt: with --name it restarts that sandbox when it
+    that name when it exists and creates it otherwise. A sandbox kit launch always
+    creates fresh, as does a launch that bakes a mixin with build content.
+    --detach skips the prompt: with --name it restarts that sandbox when it
     exists, otherwise it creates a new one. A non-interactive run without
-    --detached is refused, so scripts pass --detached (e.g.
+    --detach is refused, so scripts pass --detach (e.g.
     sbx --cloud run -d claude && sbx --cloud exec ...).
 @z
 
@@ -163,20 +163,22 @@ usage: sbx run [flags] [AGENT|SANDBOX_KIT] [PATH...] [-- AGENT_ARGS...]
         Add a per-sandbox network deny rule at creation time. Can be specified multiple times. The rule applies only to the new sandbox and can be listed or removed later with 'sbx policy ls <NAME>' or 'sbx policy rm network --sandbox <NAME> --resource <HOST>'. Safe under centralized governance because a local deny can only narrow, never widen, egress.
 @z
 
-@x detach-keys
+@x detach
       usage: |
-        Override the detach gesture that leaves the session running (Docker-style, e.g. "ctrl-\", "ctrl-x,ctrl-d"). Default: Ctrl-\. Use this when the default collides with an agent's keymap (cloud only).
+        Start the sandbox and print its ID without opening an agent session
 @y
       usage: |
-        Override the detach gesture that leaves the session running (Docker-style, e.g. "ctrl-\", "ctrl-x,ctrl-d"). Default: Ctrl-\. Use this when the default collides with an agent's keymap (cloud only).
+        Start the sandbox and print its ID without opening an agent session
 @z
 
-@x detached
+@x
+    - name: detach-keys
       usage: |
-        Start the sandbox and print its ID without opening an agent session
+        Override the detach gesture that leaves the session running (Docker-style, e.g. "ctrl-\", "ctrl-x,ctrl-d"). Default: Ctrl-\. Use this when the default collides with an agent's keymap (cloud only).
 @y
+    - name: detach-keys
       usage: |
-        Start the sandbox and print its ID without opening an agent session
+        Override the detach gesture that leaves the session running (Docker-style, e.g. "ctrl-\", "ctrl-x,ctrl-d"). Default: Ctrl-\. Use this when the default collides with an agent's keymap (cloud only).
 @z
 
 @x env
@@ -272,9 +274,11 @@ usage: sbx run [flags] [AGENT|SANDBOX_KIT] [PATH...] [-- AGENT_ARGS...]
 @z
 
 @x pull
-      usage: Image pull policy (always|missing|never)
+      usage: |
+        Image pull policy (always|missing|never; default: never for saved local snapshots, missing for v3 kit compositions, otherwise always)
 @y
-      usage: Image pull policy (always|missing|never)
+      usage: |
+        Image pull policy (always|missing|never; default: never for saved local snapshots, missing for v3 kit compositions, otherwise always)
 @z
 
 @x rm
@@ -415,10 +419,10 @@ example: |4-
 
 @x
       # Create a cloud sandbox non-interactively and print its ID
-      sbx --cloud run --detached claude
+      sbx --cloud run --detach claude
 @y
       # Create a cloud sandbox non-interactively and print its ID
-      sbx --cloud run --detached claude
+      sbx --cloud run --detach claude
 @z
 
 @x

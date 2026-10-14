@@ -816,14 +816,14 @@ List all stored secrets:
 @x
 ```console
 $ sbx secret ls
-SCOPE      TYPE      NAME      SECRET
-(global)   service   github    gho_GCaw4o****...****43qy
+SCOPE      SERVICE   SECRET
+(global)   github    gho_GCaw4o****...****43qy
 ```
 @y
 ```console
 $ sbx secret ls
-SCOPE      TYPE      NAME      SECRET
-(global)   service   github    gho_GCaw4o****...****43qy
+SCOPE      SERVICE   SECRET
+(global)   github    gho_GCaw4o****...****43qy
 ```
 @z
 
@@ -918,12 +918,24 @@ interact with GitHub APIs on your behalf.
 @z
 
 @x
-SSH agent forwarding is enabled by default. When `SSH_AUTH_SOCK` is set,
+SSH agent forwarding is enabled by default. V3 kits must also request
+[`ssh-agent@1`](/manuals/ai/sandboxes/customize/author/capabilities.md#support-by-capability)
+for the phase where they need it. Without that request, no agent socket is
+forwarded to a v3 sandbox.
+@y
+SSH agent forwarding is enabled by default. V3 kits must also request
+[`ssh-agent@1`](manuals/ai/sandboxes/customize/author/capabilities.md#support-by-capability)
+for the phase where they need it. Without that request, no agent socket is
+forwarded to a v3 sandbox.
+@z
+
+@x
+When `SSH_AUTH_SOCK` is set,
 Docker Sandboxes uses the value from the client that creates, starts, or joins
 each sandbox. It forwards that agent into the sandbox and sets `SSH_AUTH_SOCK`
 there.
 @y
-SSH agent forwarding is enabled by default. When `SSH_AUTH_SOCK` is set,
+When `SSH_AUTH_SOCK` is set,
 Docker Sandboxes uses the value from the client that creates, starts, or joins
 each sandbox. It forwards that agent into the sandbox and sets `SSH_AUTH_SOCK`
 there.
@@ -949,12 +961,12 @@ $ sbx settings set ssh.agentSocketPath "$SSH_AUTH_SOCK"
 
 @x
 An empty [`ssh.agentSocketPath`](settings.md#sshagentsocketpath), which is the
-default, uses each client's current `SSH_AUTH_SOCK` instead. Use
+default, uses the agent supplied by each client instead. Use
 [`ssh.agentForwardingEnabled`](settings.md#sshagentforwardingenabled) to turn
 forwarding on or off.
 @y
 An empty [`ssh.agentSocketPath`](settings.md#sshagentsocketpath), which is the
-default, uses each client's current `SSH_AUTH_SOCK` instead. Use
+default, uses the agent supplied by each client instead. Use
 [`ssh.agentForwardingEnabled`](settings.md#sshagentforwardingenabled) to turn
 forwarding on or off.
 @z
@@ -1416,14 +1428,14 @@ to `credentials.yaml`.
 @z
 
 @x
-In non-interactive contexts (CI or `--detached`), there's no one to answer the
+In non-interactive contexts (CI or `--detach`), there's no one to answer the
 prompt. In `sbx`, the sandbox starts with the credential withheld when no
 binding exists. For a required credential, `sbx` prints a warning rather than
 failing sandbox creation. This is a limitation of `sbx` enforcement: kit authors
 shouldn't rely on a required credential being available merely because the
 sandbox started.
 @y
-In non-interactive contexts (CI or `--detached`), there's no one to answer the
+In non-interactive contexts (CI or `--detach`), there's no one to answer the
 prompt. In `sbx`, the sandbox starts with the credential withheld when no
 binding exists. For a required credential, `sbx` prints a warning rather than
 failing sandbox creation. This is a limitation of `sbx` enforcement: kit authors

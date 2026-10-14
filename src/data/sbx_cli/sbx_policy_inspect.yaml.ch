@@ -3,12 +3,12 @@
 
 @x
 name: sbx policy inspect
-synopsis: Inspect policy or rule details
+synopsis: Show policy or rule details
 description: |-
     Inspect full detail for a selected policy or rule.
 @y
 name: sbx policy inspect
-synopsis: Inspect policy or rule details
+synopsis: Show policy or rule details
 description: |-
     Inspect full detail for a selected policy or rule.
 @z
@@ -34,12 +34,18 @@ description: |-
 @z
 
 @x
-usage: sbx policy inspect <policy-or-rule> [flags]
+usage: sbx policy inspect POLICY|RULE [flags]
 @y
-usage: sbx policy inspect <policy-or-rule> [flags]
+usage: sbx policy inspect POLICY|RULE [flags]
 @z
 
 % options:
+
+@x format
+      usage: 'Output format: table, json or yaml'
+@y
+      usage: 'Output format: table, json or yaml'
+@z
 
 @x help
       usage: help for inspect

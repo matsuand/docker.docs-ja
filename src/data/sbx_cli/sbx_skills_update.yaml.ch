@@ -26,9 +26,9 @@ description: |-
 @z
 
 @x
-usage: sbx skills update [skill]... [flags]
+usage: sbx skills update [SKILL...] [flags]
 @y
-usage: sbx skills update [skill]... [flags]
+usage: sbx skills update [SKILL...] [flags]
 @z
 
 % options:
@@ -53,6 +53,24 @@ usage: sbx skills update [skill]... [flags]
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      # Update every skill added from a repository
+      sbx skills update
+@y
+example: |4-
+      # Update every skill added from a repository
+      sbx skills update
+@z
+
+@x
+      # Update one skill
+      sbx skills update my-skill
+@y
+      # Update one skill
+      sbx skills update my-skill
 @z
 
 % see_also:

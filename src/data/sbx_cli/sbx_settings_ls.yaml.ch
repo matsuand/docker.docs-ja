@@ -2,12 +2,12 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-name: sbx settings list
+name: sbx settings ls
 synopsis: List settings
 description: |-
     List known settings with their evaluated value, type, source, and description.
 @y
-name: sbx settings list
+name: sbx settings ls
 synopsis: List settings
 description: |-
     List known settings with their evaluated value, type, source, and description.
@@ -17,34 +17,40 @@ description: |-
     The SOURCE column shows where the value came from (default, envvar, or
     override). RESTART identifies settings that require 'sbx daemon restart' for
     existing daemon-side consumers. Long values and descriptions are truncated to
-    keep the table readable; use --no-trunc or --json for complete output. Use
-    'sbx settings get <key>' to print one value in full.
+    keep the table readable; use --no-trunc or --format json for complete output. Use
+    'sbx settings get KEY' to print one value in full.
 @y
     The SOURCE column shows where the value came from (default, envvar, or
     override). RESTART identifies settings that require 'sbx daemon restart' for
     existing daemon-side consumers. Long values and descriptions are truncated to
-    keep the table readable; use --no-trunc or --json for complete output. Use
-    'sbx settings get <key>' to print one value in full.
+    keep the table readable; use --no-trunc or --format json for complete output. Use
+    'sbx settings get KEY' to print one value in full.
 @z
 
 @x
-usage: sbx settings list [flags]
+usage: sbx settings ls [flags]
 @y
-usage: sbx settings list [flags]
+usage: sbx settings ls [flags]
 @z
 
 % options:
 
-@x help
-      usage: help for list
+@x format
+      usage: 'Output format: table, json or yaml'
 @y
-      usage: help for list
+      usage: 'Output format: table, json or yaml'
+@z
+
+@x help
+      usage: help for ls
+@y
+      usage: help for ls
 @z
 
 @x json
-      usage: Print complete setting records as JSON
+      usage: Output in JSON format
 @y
-      usage: Print complete setting records as JSON
+      usage: Output in JSON format
 @z
 
 @x no-trunc
@@ -72,19 +78,19 @@ usage: sbx settings list [flags]
 @x
 example: |4-
       # List settings as a table
-      sbx settings list
+      sbx settings ls
 @y
 example: |4-
       # List settings as a table
-      sbx settings list
+      sbx settings ls
 @z
 
 @x
       # List settings as JSON
-      sbx settings list --json
+      sbx settings ls --format json
 @y
       # List settings as JSON
-      sbx settings list --json
+      sbx settings ls --format json
 @z
 
 % see_also:

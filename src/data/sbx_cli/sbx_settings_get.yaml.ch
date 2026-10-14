@@ -22,12 +22,18 @@ description: |-
 @z
 
 @x
-usage: sbx settings get <key> [flags]
+usage: sbx settings get KEY [flags]
 @y
-usage: sbx settings get <key> [flags]
+usage: sbx settings get KEY [flags]
 @z
 
 % options:
+
+@x format
+      usage: 'Output format: table, json or yaml'
+@y
+      usage: 'Output format: table, json or yaml'
+@z
 
 @x help
       usage: help for get
@@ -36,9 +42,9 @@ usage: sbx settings get <key> [flags]
 @z
 
 @x json
-      usage: Print the complete setting record as JSON
+      usage: Output in JSON format
 @y
-      usage: Print the complete setting record as JSON
+      usage: Output in JSON format
 @z
 
 % inherited_options:

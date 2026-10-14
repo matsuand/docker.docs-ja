@@ -74,9 +74,9 @@ description: |-
 @z
 
 @x
-usage: sbx policy init <allow-all|balanced|deny-all> [flags]
+usage: sbx policy init allow-all|balanced|deny-all [flags]
 @y
-usage: sbx policy init <allow-all|balanced|deny-all> [flags]
+usage: sbx policy init allow-all|balanced|deny-all [flags]
 @z
 
 % options:

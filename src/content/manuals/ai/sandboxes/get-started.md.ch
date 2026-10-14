@@ -240,27 +240,27 @@ From another terminal, list your sandboxes:
 @x
 ```console
 $ sbx ls
-SANDBOX       AGENT    STATUS    PORTS   WORKSPACE
-my-sandbox    claude   running           ~/my-project
+SANDBOX      AGENT    STATUS      PORTS   WORKSPACE      CREATED
+my-sandbox   claude   ● running           ~/my-project   2m
 ```
 @y
 ```console
 $ sbx ls
-SANDBOX       AGENT    STATUS    PORTS   WORKSPACE
-my-sandbox    claude   running           ~/my-project
+SANDBOX      AGENT    STATUS      PORTS   WORKSPACE      CREATED
+my-sandbox   claude   ● running           ~/my-project   2m
 ```
 @z
 
 @x
-Each row shows a sandbox's name, the agent running in it, its status, any
-[published ports](usage.md#publish-ports), and its
-workspace — the host directory shared into the sandbox. That workspace is the
-one part of your machine the agent can see.
+Each row shows a sandbox's name, agent, status,
+[published ports](usage.md#publish-ports), workspace, and age. The workspace is
+the host directory shared into the sandbox and the one part of your machine
+the agent can see.
 @y
-Each row shows a sandbox's name, the agent running in it, its status, any
-[published ports](usage.md#publish-ports), and its
-workspace — the host directory shared into the sandbox. That workspace is the
-one part of your machine the agent can see.
+Each row shows a sandbox's name, agent, status,
+[published ports](usage.md#publish-ports), workspace, and age. The workspace is
+the host directory shared into the sandbox and the one part of your machine
+the agent can see.
 @z
 
 @x

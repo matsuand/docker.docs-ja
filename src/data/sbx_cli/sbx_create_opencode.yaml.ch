@@ -201,6 +201,12 @@ usage: sbx create opencode [PATH...] [flags]
         Name for the sandbox (defaults to <agent>-<workdir>; at least two characters, starting with a letter or number, containing only letters, numbers, hyphens and periods (periods are rejected with --cloud); 'default' is reserved)
 @z
 
+@x no-progress
+      usage: Suppress progress output
+@y
+      usage: Suppress progress output
+@z
+
 @x on-timeout
       usage: |
         What happens when --ttl lapses: 'stop' stops the sandbox in place so it can be started again later, 'restart' keeps it running by stopping and immediately starting it, or 'delete' removes it. Omit the flag and the server stops the sandbox when it can be started again later, and deletes it otherwise. With 'restart' a supplied --ttl must be at least 1h (cloud only).
@@ -218,15 +224,11 @@ usage: sbx create opencode [PATH...] [flags]
 @z
 
 @x pull
-      usage: Image pull policy (always|missing|never)
+      usage: |
+        Image pull policy (always|missing|never; default: never for saved local snapshots, missing for v3 kit compositions, otherwise always)
 @y
-      usage: Image pull policy (always|missing|never)
-@z
-
-@x quiet
-      usage: Suppress verbose output
-@y
-      usage: Suppress verbose output
+      usage: |
+        Image pull policy (always|missing|never; default: never for saved local snapshots, missing for v3 kit compositions, otherwise always)
 @z
 
 @x skills

@@ -22,9 +22,9 @@ description: |-
 @z
 
 @x
-usage: sbx mcp auth rm [server-name] [flags]
+usage: sbx mcp auth rm [SERVER] [flags]
 @y
-usage: sbx mcp auth rm [server-name] [flags]
+usage: sbx mcp auth rm [SERVER] [flags]
 @z
 
 % options:
@@ -54,9 +54,9 @@ usage: sbx mcp auth rm [server-name] [flags]
 @z
 
 @x json
-      usage: Output in JSON format (alias for --format json)
+      usage: Output in JSON format
 @y
-      usage: Output in JSON format (alias for --format json)
+      usage: Output in JSON format
 @z
 
 % inherited_options:

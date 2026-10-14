@@ -3,12 +3,12 @@
 
 @x
 name: sbx volume rm
-synopsis: Delete a persistent volume
+synopsis: Remove a persistent volume
 description: |-
     Delete a persistent volume by name.
 @y
 name: sbx volume rm
-synopsis: Delete a persistent volume
+synopsis: Remove a persistent volume
 description: |-
     Delete a persistent volume by name.
 @z
@@ -35,10 +35,22 @@ usage: sbx volume rm NAME [flags]
       usage: Skip confirmation prompt
 @z
 
+@x format
+      usage: 'Output format: table, json or yaml'
+@y
+      usage: 'Output format: table, json or yaml'
+@z
+
 @x help
       usage: help for rm
 @y
       usage: help for rm
+@z
+
+@x json
+      usage: Output in JSON format
+@y
+      usage: Output in JSON format
 @z
 
 % inherited_options:

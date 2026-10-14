@@ -10,12 +10,18 @@ synopsis: Show Docker Sandboxes version information
 @z
 
 @x
-usage: sbx version
+usage: sbx version [flags]
 @y
-usage: sbx version
+usage: sbx version [flags]
 @z
 
 % options:
+
+@x format
+      usage: 'Output format: table, json or yaml'
+@y
+      usage: 'Output format: table, json or yaml'
+@z
 
 @x help
       usage: help for version
@@ -24,11 +30,9 @@ usage: sbx version
 @z
 
 @x json
-      usage: |
-        Output in JSON format, including the server version and, when the backend reports them, the runtime component versions
+      usage: Output in JSON format
 @y
-      usage: |
-        Output in JSON format, including the server version and, when the backend reports them, the runtime component versions
+      usage: Output in JSON format
 @z
 
 % inherited_options:
@@ -45,6 +49,22 @@ usage: sbx version
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      sbx version
+@y
+example: |4-
+      sbx version
+@z
+
+@x
+      # Include daemon and build details
+      sbx version --debug
+@y
+      # Include daemon and build details
+      sbx version --debug
 @z
 
 % see_also:

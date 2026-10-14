@@ -66,13 +66,13 @@ usage: sbx volume COMMAND
 @x
     - sbx - Manage AI coding agent sandboxes.
     - sbx volume create - Create a new persistent volume
-    - sbx volume inspect - Show details for a volume
+    - sbx volume inspect - Show volume details
     - sbx volume ls - List persistent volumes
-    - sbx volume rm - Delete a persistent volume
+    - sbx volume rm - Remove a persistent volume
 @y
     - sbx - Manage AI coding agent sandboxes.
     - sbx volume create - Create a new persistent volume
-    - sbx volume inspect - Show details for a volume
+    - sbx volume inspect - Show volume details
     - sbx volume ls - List persistent volumes
-    - sbx volume rm - Delete a persistent volume
+    - sbx volume rm - Remove a persistent volume
 @z

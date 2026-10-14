@@ -97,6 +97,12 @@ usage: sbx ports SANDBOX [flags]
 
 % options:
 
+@x format
+      usage: 'Output format: table, json or yaml'
+@y
+      usage: 'Output format: table, json or yaml'
+@z
+
 @x help
       usage: help for ports
 @y
@@ -104,9 +110,9 @@ usage: sbx ports SANDBOX [flags]
 @z
 
 @x json
-      usage: Output in JSON format (for port listing)
+      usage: Output in JSON format
 @y
-      usage: Output in JSON format (for port listing)
+      usage: Output in JSON format
 @z
 
 @x publish

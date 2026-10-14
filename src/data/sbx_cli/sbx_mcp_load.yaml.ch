@@ -44,9 +44,9 @@ description: |-
 @z
 
 @x
-usage: sbx mcp load <name> --sandbox <sandbox> [flags]
+usage: sbx mcp load NAME --sandbox SANDBOX [flags]
 @y
-usage: sbx mcp load <name> --sandbox <sandbox> [flags]
+usage: sbx mcp load NAME --sandbox SANDBOX [flags]
 @z
 
 % options:

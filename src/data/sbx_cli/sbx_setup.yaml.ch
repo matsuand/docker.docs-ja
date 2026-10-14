@@ -20,15 +20,15 @@ description: |-
 @x
     Agent secrets are detected from the built-in agent kit specs and the
     env vars set on this host, and accepted secrets are imported into the global
-    secrets store (the same store as "sbx secret set"). When SSH_AUTH_SOCK is set,
-    setup can enable SSH-agent forwarding and either use each client's current
-    socket or persist a fixed socket path.
+    secrets store (the same store as "sbx secret set"). Setup can enable SSH-agent
+    forwarding using each client's SSH_AUTH_SOCK, or the native Windows OpenSSH
+    agent pipe when that variable is unset. A fixed endpoint can also be configured.
 @y
     Agent secrets are detected from the built-in agent kit specs and the
     env vars set on this host, and accepted secrets are imported into the global
-    secrets store (the same store as "sbx secret set"). When SSH_AUTH_SOCK is set,
-    setup can enable SSH-agent forwarding and either use each client's current
-    socket or persist a fixed socket path.
+    secrets store (the same store as "sbx secret set"). Setup can enable SSH-agent
+    forwarding using each client's SSH_AUTH_SOCK, or the native Windows OpenSSH
+    agent pipe when that variable is unset. A fixed endpoint can also be configured.
 @z
 
 @x

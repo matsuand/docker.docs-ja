@@ -61,7 +61,7 @@ usage: sbx kit COMMAND
     - sbx - Manage AI coding agent sandboxes.
     - sbx kit add - Add a mixin to a sandbox
     - sbx kit builder - Manage the kit builder sandbox
-    - sbx kit inspect - Display details about a kit artifact
+    - sbx kit inspect - Show kit artifact details
     - sbx kit pack - Package a directory as a kit artifact
     - sbx kit provenance - Show the SLSA provenance attached to a kit
     - sbx kit pull - Pull a kit artifact from an OCI registry
@@ -73,7 +73,7 @@ usage: sbx kit COMMAND
     - sbx - Manage AI coding agent sandboxes.
     - sbx kit add - Add a mixin to a sandbox
     - sbx kit builder - Manage the kit builder sandbox
-    - sbx kit inspect - Display details about a kit artifact
+    - sbx kit inspect - Show kit artifact details
     - sbx kit pack - Package a directory as a kit artifact
     - sbx kit provenance - Show the SLSA provenance attached to a kit
     - sbx kit pull - Pull a kit artifact from an OCI registry

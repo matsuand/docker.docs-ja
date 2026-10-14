@@ -77,14 +77,14 @@ usage: sbx template COMMAND
 
 @x
     - sbx - Manage AI coding agent sandboxes.
-    - sbx template inspect - Show full metadata for a single template
+    - sbx template inspect - Show template details
     - sbx template load - Load an image from a tar file into the sandbox runtime
     - sbx template ls - List template images
     - sbx template rm - Remove a template image
     - sbx template save - Save a snapshot of the sandbox as a template
 @y
     - sbx - Manage AI coding agent sandboxes.
-    - sbx template inspect - Show full metadata for a single template
+    - sbx template inspect - Show template details
     - sbx template load - Load an image from a tar file into the sandbox runtime
     - sbx template ls - List template images
     - sbx template rm - Remove a template image

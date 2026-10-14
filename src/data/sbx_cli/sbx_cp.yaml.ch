@@ -30,9 +30,9 @@ description: |-
 @z
 
 @x
-usage: sbx cp [flags] SRC DST
+usage: sbx cp SRC DST [flags]
 @y
-usage: sbx cp [flags] SRC DST
+usage: sbx cp SRC DST [flags]
 @z
 
 % options:

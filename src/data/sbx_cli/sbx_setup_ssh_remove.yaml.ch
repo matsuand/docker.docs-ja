@@ -3,10 +3,10 @@
 
 @x
 name: sbx setup ssh remove
-synopsis: Remove SSH client config for the current local app instance
+synopsis: Remove SSH config and desktop targets; keep sandboxes
 @y
 name: sbx setup ssh remove
-synopsis: Remove SSH client config for the current local app instance
+synopsis: Remove SSH config and desktop targets; keep sandboxes
 @z
 
 @x
@@ -37,6 +37,12 @@ usage: sbx setup ssh remove [flags]
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x
+example: '  sbx setup ssh remove'
+@y
+example: '  sbx setup ssh remove'
 @z
 
 % see_also:

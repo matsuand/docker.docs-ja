@@ -39,16 +39,16 @@ usage: sbx daemon COMMAND
 
 @x
     - sbx - Manage AI coding agent sandboxes.
-    - sbx daemon log-level - Inspect or change sandboxd's per-category log levels
+    - sbx daemon log-level - Show or change sandboxd's per-category log levels
     - sbx daemon restart - Restart the sandboxd daemon
     - sbx daemon start - Start the sandboxd daemon
-    - sbx daemon status - Check sandboxd daemon status
+    - sbx daemon status - Show sandboxd daemon status
     - sbx daemon stop - Stop the sandboxd daemon
 @y
     - sbx - Manage AI coding agent sandboxes.
-    - sbx daemon log-level - Inspect or change sandboxd's per-category log levels
+    - sbx daemon log-level - Show or change sandboxd's per-category log levels
     - sbx daemon restart - Restart the sandboxd daemon
     - sbx daemon start - Start the sandboxd daemon
-    - sbx daemon status - Check sandboxd daemon status
+    - sbx daemon status - Show sandboxd daemon status
     - sbx daemon stop - Stop the sandboxd daemon
 @z

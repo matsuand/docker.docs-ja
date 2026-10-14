@@ -3,12 +3,12 @@
 
 @x
 name: sbx ttl
-synopsis: Inspect or extend a cloud sandbox's TTL
+synopsis: Show or extend a cloud sandbox's TTL
 description: |-
     Inspect or extend a cloud sandbox's TTL.
 @y
 name: sbx ttl
-synopsis: Inspect or extend a cloud sandbox's TTL
+synopsis: Show or extend a cloud sandbox's TTL
 description: |-
     Inspect or extend a cloud sandbox's TTL.
 @z
@@ -48,12 +48,18 @@ description: |-
 @z
 
 @x
-usage: sbx ttl [+DURATION] SANDBOX
+usage: sbx ttl [+DURATION] SANDBOX [flags]
 @y
-usage: sbx ttl [+DURATION] SANDBOX
+usage: sbx ttl [+DURATION] SANDBOX [flags]
 @z
 
 % options:
+
+@x format
+      usage: 'Output format: table, json or yaml'
+@y
+      usage: 'Output format: table, json or yaml'
+@z
 
 @x help
       usage: help for ttl
@@ -62,9 +68,9 @@ usage: sbx ttl [+DURATION] SANDBOX
 @z
 
 @x json
-      usage: Output as JSON
+      usage: Output in JSON format
 @y
-      usage: Output as JSON
+      usage: Output in JSON format
 @z
 
 % inherited_options:
@@ -81,6 +87,24 @@ usage: sbx ttl [+DURATION] SANDBOX
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      # Show the remaining TTL
+      sbx --cloud ttl my-sandbox
+@y
+example: |4-
+      # Show the remaining TTL
+      sbx --cloud ttl my-sandbox
+@z
+
+@x
+      # Extend it by two hours
+      sbx --cloud ttl +2h my-sandbox
+@y
+      # Extend it by two hours
+      sbx --cloud ttl +2h my-sandbox
 @z
 
 % see_also:

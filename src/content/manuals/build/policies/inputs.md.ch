@@ -41,6 +41,7 @@ Build inputs correspond to Dockerfile instructions:
 | `FROM alpine:latest`                    | Image      | `input.image`  |
 | `COPY --from=builder /app /app`         | Image      | `input.image`  |
 | `ADD https://example.com/file.tar.gz /` | HTTP       | `input.http`   |
+| `RUN curl https://example.com/`        | HTTP       | `input.http`   |
 | `ADD git@github.com:user/repo.git /src` | Git        | `input.git`    |
 | Build context (`.`)                     | Local      | `input.local`  |
 @y
@@ -49,6 +50,7 @@ Build inputs correspond to Dockerfile instructions:
 | `FROM alpine:latest`                    | Image      | `input.image`  |
 | `COPY --from=builder /app /app`         | Image      | `input.image`  |
 | `ADD https://example.com/file.tar.gz /` | HTTP       | `input.http`   |
+| `RUN curl https://example.com/`        | HTTP       | `input.http`   |
 | `ADD git@github.com:user/repo.git /src` | Git        | `input.git`    |
 | Build context (`.`)                     | Local      | `input.local`  |
 @z
@@ -67,10 +69,12 @@ Each input type has specific fields available for policy evaluation.
 
 @x
 HTTP inputs represent files downloaded over HTTP or HTTPS using the `ADD`
-instruction.
+instruction, or requests from `RUN` instructions when BuildKit's proxy is
+enabled. See [Block URLs in build steps](./usage.md#block-urls-in-build-steps).
 @y
 HTTP inputs represent files downloaded over HTTP or HTTPS using the `ADD`
-instruction.
+instruction, or requests from `RUN` instructions when BuildKit's proxy is
+enabled. See [Block URLs in build steps](./usage.md#block-urls-in-build-steps).
 @z
 
 @x

@@ -36,9 +36,9 @@ usage: sbx kit pack DIRECTORY [flags]
 @z
 
 @x output
-      usage: 'Output ZIP file path (default: <name>.zip)'
+      usage: 'Output file path; must end in .zip (default: <name>.zip)'
 @y
-      usage: 'Output ZIP file path (default: <name>.zip)'
+      usage: 'Output file path; must end in .zip (default: <name>.zip)'
 @z
 
 % inherited_options:
@@ -47,6 +47,22 @@ usage: sbx kit pack DIRECTORY [flags]
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      sbx kit pack ./my-kit
+@y
+example: |4-
+      sbx kit pack ./my-kit
+@z
+
+@x
+      # Choose the archive name
+      sbx kit pack ./my-kit --output dist/my-kit.zip
+@y
+      # Choose the archive name
+      sbx kit pack ./my-kit --output dist/my-kit.zip
 @z
 
 % see_also:

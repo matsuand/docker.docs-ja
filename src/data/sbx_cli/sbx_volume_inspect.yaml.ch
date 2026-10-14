@@ -3,20 +3,32 @@
 
 @x
 name: sbx volume inspect
-synopsis: Show details for a volume
+synopsis: Show volume details
 usage: sbx volume inspect NAME [flags]
 @y
 name: sbx volume inspect
-synopsis: Show details for a volume
+synopsis: Show volume details
 usage: sbx volume inspect NAME [flags]
 @z
 
 % options:
 
+@x format
+      usage: 'Output format: table, json or yaml'
+@y
+      usage: 'Output format: table, json or yaml'
+@z
+
 @x help
       usage: help for inspect
 @y
       usage: help for inspect
+@z
+
+@x json
+      usage: Output in JSON format
+@y
+      usage: Output in JSON format
 @z
 
 % inherited_options:

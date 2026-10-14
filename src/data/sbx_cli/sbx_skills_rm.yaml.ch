@@ -24,9 +24,9 @@ description: |-
 @z
 
 @x
-usage: sbx skills rm <skill>... [flags]
+usage: sbx skills rm SKILL... [flags]
 @y
-usage: sbx skills rm <skill>... [flags]
+usage: sbx skills rm SKILL... [flags]
 @z
 
 % options:
@@ -57,6 +57,22 @@ usage: sbx skills rm <skill>... [flags]
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      sbx skills rm my-skill
+@y
+example: |4-
+      sbx skills rm my-skill
+@z
+
+@x
+      # Skip the confirmation prompt
+      sbx skills rm --force my-skill
+@y
+      # Skip the confirmation prompt
+      sbx skills rm --force my-skill
 @z
 
 % see_also:

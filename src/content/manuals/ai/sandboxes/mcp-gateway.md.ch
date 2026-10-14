@@ -12,6 +12,16 @@ keywords: docker sandboxes, sbx, MCP gateway, Model Context Protocol, MCP server
 @z
 
 @x
+This page describes the local MCP gateway. Cloud sandboxes use MCP servers
+configured in Docker Agentic Platform: see
+[Load an MCP server](cloud/usage.md#load-an-mcp-server).
+@y
+This page describes the local MCP gateway. Cloud sandboxes use MCP servers
+configured in Docker Agentic Platform: see
+[Load an MCP server](cloud/usage.md#load-an-mcp-server).
+@z
+
+@x
 Docker Sandboxes includes an MCP gateway for connecting agents to Model Context
 Protocol servers. The gateway gives the agent inside the sandbox one MCP
 endpoint, while `sbx` manages the registered servers, OAuth credentials, and
@@ -110,15 +120,17 @@ the registration. After registration, verify that the server is registered:
 @x
 ```console
 $ sbx mcp ls
-NAME                 TYPE     URL/COMMAND
-notion               remote   https://mcp.notion.com/mcp
 ```
 @y
 ```console
 $ sbx mcp ls
-NAME                 TYPE     URL/COMMAND
-notion               remote   https://mcp.notion.com/mcp
 ```
+@z
+
+@x
+The listing shows each server's transport, status, gateway, and details.
+@y
+The listing shows each server's transport, status, gateway, and details.
 @z
 
 @x
@@ -586,6 +598,40 @@ development, private servers, or custom container flags.
 @z
 
 @x
+### Docker Hardened Image
+@y
+### Docker Hardened Image
+@z
+
+@x
+For an MCP server packaged as a Docker Hardened Image, pass its `dhi.io`
+reference instead of a registry or manifest URL:
+@y
+For an MCP server packaged as a Docker Hardened Image, pass its `dhi.io`
+reference instead of a registry or manifest URL:
+@z
+
+@x
+```console
+$ sbx mcp add fetch --url dhi.io/fetch-mcp:latest
+```
+@y
+```console
+$ sbx mcp add fetch --url dhi.io/fetch-mcp:latest
+```
+@z
+
+@x
+Use a tag or digest: `dhi.io/<IMAGE>:<TAG>` or
+`dhi.io/<IMAGE>@sha256:<DIGEST>`. For images from other registries, use a
+server-manifest URL or an [explicit command](#from-an-explicit-command).
+@y
+Use a tag or digest: `dhi.io/<IMAGE>:<TAG>` or
+`dhi.io/<IMAGE>@sha256:<DIGEST>`. For images from other registries, use a
+server-manifest URL or an [explicit command](#from-an-explicit-command).
+@z
+
+@x
 ## Authorize OAuth-backed servers
 @y
 ## Authorize OAuth-backed servers
@@ -602,20 +648,10 @@ authorization flow by default:
 @x
 ```console
 $ sbx mcp add notion --url https://mcp.notion.com/mcp
-Resolving MCP server "notion"...
-Open this URL to authorize MCP server "notion":
-https://api.notion.com/v1/oauth/authorize?...
-MCP server "notion" authorized
-MCP server "notion" registered (type: remote)
 ```
 @y
 ```console
 $ sbx mcp add notion --url https://mcp.notion.com/mcp
-Resolving MCP server "notion"...
-Open this URL to authorize MCP server "notion":
-https://api.notion.com/v1/oauth/authorize?...
-MCP server "notion" authorized
-MCP server "notion" registered (type: remote)
 ```
 @z
 
@@ -740,17 +776,53 @@ Store the secret, then run `sbx mcp auth <server>`.
 @z
 
 @x
-MCP OAuth client secrets use the name `mcp:<server>:client_secret`. The store
-also maintains a `mcp:<server>:client_secret:identity` record that binds the
-secret to the OAuth client. For secrets stored by a version that used
-`mcp:<server>.client_secret`, set the secret again using the colon-separated
-name.
+#### Change the OAuth client
 @y
-MCP OAuth client secrets use the name `mcp:<server>:client_secret`. The store
-also maintains a `mcp:<server>:client_secret:identity` record that binds the
-secret to the OAuth client. For secrets stored by a version that used
-`mcp:<server>.client_secret`, set the secret again using the colon-separated
-name.
+#### Change the OAuth client
+@z
+
+@x
+If you re-register a server name with a different client ID, issuer, or token
+endpoint, `sbx` refuses to use the secret bound to the previous client.
+After verifying that the registration points to the intended client and
+provider, store that client's secret, clear the old binding, and authorize:
+@y
+If you re-register a server name with a different client ID, issuer, or token
+endpoint, `sbx` refuses to use the secret bound to the previous client.
+After verifying that the registration points to the intended client and
+provider, store that client's secret, clear the old binding, and authorize:
+@z
+
+@x
+```console
+$ sbx secret set mcp:slack:client_secret
+$ sbx secret rm mcp:slack:client_secret:identity
+$ sbx mcp auth slack
+```
+@y
+```console
+$ sbx secret set mcp:slack:client_secret
+$ sbx secret rm mcp:slack:client_secret:identity
+$ sbx mcp auth slack
+```
+@z
+
+@x
+Setting a secret alone doesn't clear the old binding. The `:identity` record
+is metadata that binds the stored secret to its OAuth client. Authorization
+records the binding for the new client.
+@y
+Setting a secret alone doesn't clear the old binding. The `:identity` record
+is metadata that binds the stored secret to its OAuth client. Authorization
+records the binding for the new client.
+@z
+
+@x
+For secrets stored under the legacy name `mcp:<server>.client_secret`, set
+the secret again using `mcp:<server>:client_secret`.
+@y
+For secrets stored under the legacy name `mcp:<server>.client_secret`, set
+the secret again using `mcp:<server>:client_secret`.
 @z
 
 @x
@@ -950,6 +1022,60 @@ $ sbx mcp auth status notion --json
 @z
 
 @x
+### Override the OAuth resource indicator
+@y
+### Override the OAuth resource indicator
+@z
+
+@x
+Use `--resource` when your OAuth provider requires a token audience that
+differs from the resource identifier discovered by `sbx`. By default, `sbx`
+uses the server's protected-resource metadata, or the endpoint URL if the
+metadata is absent. Check the value with `sbx mcp inspect <SERVER>` before
+setting an override:
+@y
+Use `--resource` when your OAuth provider requires a token audience that
+differs from the resource identifier discovered by `sbx`. By default, `sbx`
+uses the server's protected-resource metadata, or the endpoint URL if the
+metadata is absent. Check the value with `sbx mcp inspect <SERVER>` before
+setting an override:
+@z
+
+@x
+```console
+$ sbx mcp add serverx --url https://mcp.serverx.example/mcp \
+  --resource https://api.serverx.example/mcp
+```
+@y
+```console
+$ sbx mcp add serverx --url https://mcp.serverx.example/mcp \
+  --resource https://api.serverx.example/mcp
+```
+@z
+
+@x
+Use the resource URI supplied by your provider. It must have a scheme and host
+and no fragment. To change an existing registration's value, remove the
+registration and add it again.
+@y
+Use the resource URI supplied by your provider. It must have a scheme and host
+and no fragment. To change an existing registration's value, remove the
+registration and add it again.
+@z
+
+@x
+This override requires OAuth authorization on the host. The hosted gateway
+doesn't use it unless you also supply `--oauth-authorization-server` or
+`--client-id` to route authorization through the host. Without those flags,
+`sbx mcp add` warns that the hosted gateway won't use the override.
+@y
+This override requires OAuth authorization on the host. The hosted gateway
+doesn't use it unless you also supply `--oauth-authorization-server` or
+`--client-id` to route authorization through the host. Without those flags,
+`sbx mcp add` warns that the hosted gateway won't use the override.
+@z
+
+@x
 ## Choose an MCP mode
 @y
 ## Choose an MCP mode
@@ -1097,13 +1223,11 @@ To attach an already-registered server to a running sandbox, use
 ```console
 $ sbx mcp add linear --url https://mcp.linear.app/mcp
 $ sbx mcp load linear --sandbox my-session
-MCP server "linear" loaded into sandbox "my-session" (live)
 ```
 @y
 ```console
 $ sbx mcp add linear --url https://mcp.linear.app/mcp
 $ sbx mcp load linear --sandbox my-session
-MCP server "linear" loaded into sandbox "my-session" (live)
 ```
 @z
 

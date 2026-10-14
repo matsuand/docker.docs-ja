@@ -76,7 +76,7 @@ usage: sbx COMMAND
     - sbx skills - (Experimental) Manage skills available in sandboxes
     - sbx stop - Stop one or more sandboxes without removing them
     - sbx template - Manage sandbox templates
-    - sbx ttl - Inspect or extend a cloud sandbox's TTL
+    - sbx ttl - Show or extend a cloud sandbox's TTL
     - sbx tui - Open the interactive TUI dashboard
     - sbx version - Show Docker Sandboxes version information
     - sbx volume - Manage persistent volumes (cloud-only)
@@ -107,7 +107,7 @@ usage: sbx COMMAND
     - sbx skills - (Experimental) Manage skills available in sandboxes
     - sbx stop - Stop one or more sandboxes without removing them
     - sbx template - Manage sandbox templates
-    - sbx ttl - Inspect or extend a cloud sandbox's TTL
+    - sbx ttl - Show or extend a cloud sandbox's TTL
     - sbx tui - Open the interactive TUI dashboard
     - sbx version - Show Docker Sandboxes version information
     - sbx volume - Manage persistent volumes (cloud-only)

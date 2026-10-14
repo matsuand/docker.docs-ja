@@ -50,9 +50,9 @@ description: |-
 @z
 
 @x
-usage: sbx settings set <key> <value> [flags]
+usage: sbx settings set KEY VALUE [flags]
 @y
-usage: sbx settings set <key> <value> [flags]
+usage: sbx settings set KEY VALUE [flags]
 @z
 
 % options:

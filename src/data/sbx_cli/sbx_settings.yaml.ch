@@ -66,13 +66,13 @@ usage: sbx settings COMMAND
 @x
     - sbx - Manage AI coding agent sandboxes.
     - sbx settings get - Get the value of a setting
-    - sbx settings list - List settings
+    - sbx settings ls - List settings
     - sbx settings set - Set a setting override
     - sbx settings unset - Remove a setting override
 @y
     - sbx - Manage AI coding agent sandboxes.
     - sbx settings get - Get the value of a setting
-    - sbx settings list - List settings
+    - sbx settings ls - List settings
     - sbx settings set - Set a setting override
     - sbx settings unset - Remove a setting override
 @z

@@ -6,6 +6,7 @@ bases = \
 	_index.md         \
 	base-images.md    \
 	build-an-agent.md \
+	capabilities.md   \
 	distribute.md     \
 	kit-sets.md       \
 	patterns.md       \

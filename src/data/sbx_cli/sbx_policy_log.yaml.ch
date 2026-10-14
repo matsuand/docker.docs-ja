@@ -31,6 +31,12 @@ usage: sbx policy log [SANDBOX] [flags]
 
 % options:
 
+@x format
+      usage: 'Output format: table, json or yaml'
+@y
+      usage: 'Output format: table, json or yaml'
+@z
+
 @x help
       usage: help for log
 @y
@@ -47,12 +53,6 @@ usage: sbx policy log [SANDBOX] [flags]
       usage: Maximum number of log entries to show
 @y
       usage: Maximum number of log entries to show
-@z
-
-@x quiet
-      usage: Only display log entries
-@y
-      usage: Only display log entries
 @z
 
 @x type

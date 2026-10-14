@@ -3,12 +3,12 @@
 
 @x
 name: sbx template inspect
-synopsis: Show full metadata for a single template
+synopsis: Show template details
 description: |-
     Show full metadata for a single template.
 @y
 name: sbx template inspect
-synopsis: Show full metadata for a single template
+synopsis: Show template details
 description: |-
     Show full metadata for a single template.
 @z
@@ -34,6 +34,12 @@ usage: sbx template inspect NAME|ID [flags]
 @z
 
 % options:
+
+@x format
+      usage: 'Output format: table, json or yaml'
+@y
+      usage: 'Output format: table, json or yaml'
+@z
 
 @x help
       usage: help for inspect

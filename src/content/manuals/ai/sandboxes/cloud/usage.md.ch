@@ -221,11 +221,11 @@ opening an agent session:
 
 @x
 ```console
-$ sbx --cloud run --detached claude --name cloud-task
+$ sbx --cloud run --detach claude --name cloud-task
 ```
 @y
 ```console
-$ sbx --cloud run --detached claude --name cloud-task
+$ sbx --cloud run --detach claude --name cloud-task
 ```
 @z
 
@@ -581,11 +581,11 @@ $ sbx --cloud attach cloud-project
 
 @x
 You can also use `sbx --cloud run claude --name cloud-project`, or run the agent
-without `--name` and select the sandbox when prompted. Add `--detached` to a
+without `--name` and select the sandbox when prompted. Add `--detach` to a
 named run to resume without attaching.
 @y
 You can also use `sbx --cloud run claude --name cloud-project`, or run the agent
-without `--name` and select the sandbox when prompted. Add `--detached` to a
+without `--name` and select the sandbox when prompted. Add `--detach` to a
 named run to resume without attaching.
 @z
 
@@ -665,12 +665,12 @@ $ sbx --cloud run --rm claude
 
 @x
 The detach gesture is turned off for that session, and you can't combine
-`--rm` with `--detached`. If the session ends without completing, for example
+`--rm` with `--detach`. If the session ends without completing, for example
 because the connection drops, the sandbox is kept and the CLI prints the
 command to remove it.
 @y
 The detach gesture is turned off for that session, and you can't combine
-`--rm` with `--detached`. If the session ends without completing, for example
+`--rm` with `--detach`. If the session ends without completing, for example
 because the connection drops, the sandbox is kept and the CLI prints the
 command to remove it.
 @z
@@ -740,13 +740,21 @@ exit overwrites the stored snapshot.
 @z
 
 @x
-Cloud templates have their own store. A local template is not available to
-`sbx --cloud` until you transfer it. To capture a running cloud sandbox and
-create another sandbox from that template:
+### Save and reuse a template
 @y
-Cloud templates have their own store. A local template is not available to
-`sbx --cloud` until you transfer it. To capture a running cloud sandbox and
-create another sandbox from that template:
+### Save and reuse a template
+@z
+
+@x
+Save a running cloud sandbox as a template to reuse its configured filesystem.
+Before saving, remove credentials written to the sandbox filesystem: snapshots
+include those files. Managed cloud secrets stay in the secret store. See
+[Authenticate cloud agents](credentials.md).
+@y
+Save a running cloud sandbox as a template to reuse its configured filesystem.
+Before saving, remove credentials written to the sandbox filesystem: snapshots
+include those files. Managed cloud secrets stay in the secret store. See
+[Authenticate cloud agents](credentials.md).
 @z
 
 @x
@@ -762,6 +770,18 @@ $ sbx --cloud create --name cloud-copy --template cloud-template
 @z
 
 @x
+By default, saving a template captures disk state, and sandboxes created from
+it cold-boot from that filesystem. To resume from the running sandbox's state
+instead, add `--capture-mode all` to `template save`. This captures memory,
+disk, and the microVM checkpoint, and takes longer to load.
+@y
+By default, saving a template captures disk state, and sandboxes created from
+it cold-boot from that filesystem. To resume from the running sandbox's state
+instead, add `--capture-mode all` to `template save`. This captures memory,
+disk, and the microVM checkpoint, and takes longer to load.
+@z
+
+@x
 The template supplies its CPU and memory configuration. Do not combine
 `--template` with an agent name, `--cpus`, or `--memory`. To launch an OCI image
 directly instead, use `--image-ref` with explicit CPU and memory values.
@@ -772,13 +792,49 @@ directly instead, use `--image-ref` with explicit CPU and memory values.
 @z
 
 @x
-Snapshots include credentials written to the sandbox filesystem. Remove those
-credentials before saving a template. Managed cloud secrets stay in the secret
-store. See [Authenticate cloud agents](credentials.md).
+### Import a local template
 @y
-Snapshots include credentials written to the sandbox filesystem. Remove those
-credentials before saving a template. Managed cloud secrets stay in the secret
-store. See [Authenticate cloud agents](credentials.md).
+### Import a local template
+@z
+
+@x
+Cloud templates have a separate store. To use a local template in the cloud,
+upload its tar file with a name that is unique in your account:
+@y
+Cloud templates have a separate store. To use a local template in the cloud,
+upload its tar file with a name that is unique in your account:
+@z
+
+@x
+```console
+$ sbx --cloud template load my-template.tar cloud-template \
+  --cpus 2 --memory-mib 4096
+```
+@y
+```console
+$ sbx --cloud template load my-template.tar cloud-template \
+  --cpus 2 --memory-mib 4096
+```
+@z
+
+@x
+Both resource flags are required and must match a
+[cloud size](#choose-resources-and-platform). Like `template save`,
+`template load` uses disk capture by default and accepts `--capture-mode all` to capture
+memory and checkpoint state as well. Uploading or saving large templates can
+take several minutes.
+@y
+Both resource flags are required and must match a
+[cloud size](#choose-resources-and-platform). Like `template save`,
+`template load` uses disk capture by default and accepts `--capture-mode all` to capture
+memory and checkpoint state as well. Uploading or saving large templates can
+take several minutes.
+@z
+
+@x
+### Customize with kits
+@y
+### Customize with kits
 @z
 
 @x
@@ -803,7 +859,19 @@ arguments to kits supplied with `--kit`.
 For example, configure a v2 mixin that declares a `version` argument:
 @z
 
-% snip command...
+@x
+```console
+$ sbx --cloud create --name cloud-tools claude \
+    --kit docker.io/<NAMESPACE>/company-cli:1.0.0 \
+    --kit-arg company-cli.version=1.2
+```
+@y
+```console
+$ sbx --cloud create --name cloud-tools claude \
+    --kit docker.io/<NAMESPACE>/company-cli:1.0.0 \
+    --kit-arg company-cli.version=1.2
+```
+@z
 
 @x
 Replace the kit reference and argument with those from your kit's

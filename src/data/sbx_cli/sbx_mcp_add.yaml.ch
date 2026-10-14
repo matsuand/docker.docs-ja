@@ -510,9 +510,9 @@ description: |-
 @z
 
 @x
-usage: sbx mcp add <name> (--url <url> | --command <cmd>) [flags]
+usage: sbx mcp add NAME (--url URL | --command COMMAND) [flags]
 @y
-usage: sbx mcp add <name> (--url <url> | --command <cmd>) [flags]
+usage: sbx mcp add NAME (--url URL | --command COMMAND) [flags]
 @z
 
 % options:

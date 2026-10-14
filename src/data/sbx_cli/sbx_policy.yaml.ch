@@ -53,7 +53,7 @@ usage: sbx policy COMMAND
     - sbx policy check - Check whether policy allows an access request
     - sbx policy deny - Add a deny rule for sandboxes
     - sbx policy init - Initialize the global network policy
-    - sbx policy inspect - Inspect policy or rule details
+    - sbx policy inspect - Show policy or rule details
     - sbx policy log - Show sandbox policy logs
     - sbx policy ls - List sandbox policies
     - sbx policy reset - Reset policies to defaults
@@ -64,7 +64,7 @@ usage: sbx policy COMMAND
     - sbx policy check - Check whether policy allows an access request
     - sbx policy deny - Add a deny rule for sandboxes
     - sbx policy init - Initialize the global network policy
-    - sbx policy inspect - Inspect policy or rule details
+    - sbx policy inspect - Show policy or rule details
     - sbx policy log - Show sandbox policy logs
     - sbx policy ls - List sandbox policies
     - sbx policy reset - Reset policies to defaults

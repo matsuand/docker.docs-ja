@@ -217,22 +217,22 @@ For Docker Model Runner, see
 
 @x
 Select a provider supported by `llmman` and a model available from that
-provider. For example, to run Codex with an OpenAI model, export `OPENAI_API_KEY`
-in your host shell, restart the daemon to pick it up, then run:
+provider. For example, store your OpenAI API key on the host, then run Codex
+with an OpenAI model:
 @y
 Select a provider supported by `llmman` and a model available from that
-provider. For example, to run Codex with an OpenAI model, export `OPENAI_API_KEY`
-in your host shell, restart the daemon to pick it up, then run:
+provider. For example, store your OpenAI API key on the host, then run Codex
+with an OpenAI model:
 @z
 
 @x
 ```console
-$ sbx daemon restart
+$ sbx secret set openai
 $ sbx run --provider openai --model gpt-5-nano codex
 ```
 @y
 ```console
-$ sbx daemon restart
+$ sbx secret set openai
 $ sbx run --provider openai --model gpt-5-nano codex
 ```
 @z
@@ -254,38 +254,90 @@ variable names, see the [llmman provider documentation](https://github.com/llmma
 @z
 
 @x
-Make the provider's API key available in the host shell that starts the
-Docker Sandboxes daemon. For a custom endpoint, choose the variable name
-with [`apiKeyEnv`](#connect-a-custom-endpoint).
+Store the API key with `sbx secret set <PROVIDER_ID>`, using the same ID as
+`--provider` or `--overflow-provider`. This also works for a custom provider
+ID defined in `model.providers`. Sandbox-scoped secrets take precedence over
+global secrets.
 @y
-Make the provider's API key available in the host shell that starts the
-Docker Sandboxes daemon. For a custom endpoint, choose the variable name
-with [`apiKeyEnv`](#connect-a-custom-endpoint).
+Store the API key with `sbx secret set <PROVIDER_ID>`, using the same ID as
+`--provider` or `--overflow-provider`. This also works for a custom provider
+ID defined in `model.providers`. Sandbox-scoped secrets take precedence over
+global secrets.
 @z
 
 @x
-`llmman` inherits the daemon's environment. After setting or changing a key,
-run `sbx daemon restart` from the shell containing the updated variable.
+The sandbox sends a placeholder in place of the key. The host proxy replaces
+it with the stored key only in authentication headers on requests to the host's
+`llmman` service. That service uses the key to authenticate requests to the
+selected provider. The real key stays outside the sandbox.
+@y
+The sandbox sends a placeholder in place of the key. The host proxy replaces
+it with the stored key only in authentication headers on requests to the host's
+`llmman` service. That service uses the key to authenticate requests to the
+selected provider. The real key stays outside the sandbox.
+@z
+
+@x
+Docker Sandboxes configures this injection automatically when you select the
+provider. You don't need `sbx secret set-custom` or domain injection rules for
+this workflow.
+@y
+Docker Sandboxes configures this injection automatically when you select the
+provider. You don't need `sbx secret set-custom` or domain injection rules for
+this workflow.
+@z
+
+@x
+> [!WARNING]
+> Model-provider credentials are protected differently from other sandbox
+> credentials. For other credentials, the proxy restricts injection to their
+> configured domains. For model providers, it supplies the key to the host's
+> `llmman` service instead. That service can forward the key to other endpoints
+> it supports; selecting `--provider` does not restrict the key to that
+> provider's endpoint.
+@y
+> [!WARNING]
+> Model-provider credentials are protected differently from other sandbox
+> credentials. For other credentials, the proxy restricts injection to their
+> configured domains. For model providers, it supplies the key to the host's
+> `llmman` service instead. That service can forward the key to other endpoints
+> it supports; selecting `--provider` does not restrict the key to that
+> provider's endpoint.
+@z
+
+@x
+If no stored secret is available, make the key available in the host shell
+that starts the daemon. For a custom endpoint, choose the variable name with
+[`apiKeyEnv`](#connect-a-custom-endpoint).
+@y
+If no stored secret is available, make the key available in the host shell
+that starts the daemon. For a custom endpoint, choose the variable name with
+[`apiKeyEnv`](#connect-a-custom-endpoint).
+@z
+
+@x
+`llmman` inherits the daemon's environment. After setting or changing a key
+in that environment, run `sbx daemon restart` from the shell containing the
+updated variable.
 This restarts the model service and interrupts model requests from sandboxes
 using it. Setting a variable only in the shell where you run `sbx run --model`
 doesn't update an already-running service.
 @y
-`llmman` inherits the daemon's environment. After setting or changing a key,
-run `sbx daemon restart` from the shell containing the updated variable.
+`llmman` inherits the daemon's environment. After setting or changing a key
+in that environment, run `sbx daemon restart` from the shell containing the
+updated variable.
 This restarts the model service and interrupts model requests from sandboxes
 using it. Setting a variable only in the shell where you run `sbx run --model`
 doesn't update an already-running service.
 @z
 
 @x
-Provider authentication for this route is handled by `llmman` on the host.
-Credentials stored with `sbx secret set` aren't automatically supplied to it.
-For the agents' default authentication flows, see
+Using a stored secret avoids restarting the daemon to load a key from its
+environment. For the agents' default authentication flows, see
 [Manage credentials](credentials.md).
 @y
-Provider authentication for this route is handled by `llmman` on the host.
-Credentials stored with `sbx secret set` aren't automatically supplied to it.
-For the agents' default authentication flows, see
+Using a stored secret avoids restarting the daemon to load a key from its
+environment. For the agents' default authentication flows, see
 [Manage credentials](credentials.md).
 @z
 
@@ -331,11 +383,11 @@ For an OpenAI-compatible endpoint, define a provider named `company`:
 
 @x
 ```console
-$ sbx settings set model.providers '{"company":{"url":"https://inference.example.com/v1","wire":"openai","apiKeyEnv":"COMPANY_API_KEY"}}'
+$ sbx settings set model.providers '{"company":{"url":"https://inference.example.com/v1","wire":"openai"}}'
 ```
 @y
 ```console
-$ sbx settings set model.providers '{"company":{"url":"https://inference.example.com/v1","wire":"openai","apiKeyEnv":"COMPANY_API_KEY"}}'
+$ sbx settings set model.providers '{"company":{"url":"https://inference.example.com/v1","wire":"openai"}}'
 ```
 @z
 
@@ -352,33 +404,35 @@ replaces the whole object, so include any existing providers you want to keep.
 | --- | --- |
 | `url` | Required HTTP or HTTPS base URL, usually ending in `/v1`. Use the base URL, without `/chat/completions` or `/messages`. |
 | `wire` | The endpoint's API format: `openai` (default) or `anthropic`. This describes the endpoint, regardless of which agent you run. |
-| `apiKeyEnv` | Name of the host environment variable containing the API key. Omit it for an endpoint that doesn't require a key. |
+| `apiKeyEnv` | Name of an optional host environment variable containing the API key. Used as a fallback when no stored provider secret is available. |
 | `name` | Optional display name. Defaults to the provider ID. |
 @y
 | Field | Description |
 | --- | --- |
 | `url` | Required HTTP or HTTPS base URL, usually ending in `/v1`. Use the base URL, without `/chat/completions` or `/messages`. |
 | `wire` | The endpoint's API format: `openai` (default) or `anthropic`. This describes the endpoint, regardless of which agent you run. |
-| `apiKeyEnv` | Name of the host environment variable containing the API key. Omit it for an endpoint that doesn't require a key. |
+| `apiKeyEnv` | Name of an optional host environment variable containing the API key. Used as a fallback when no stored provider secret is available. |
 | `name` | Optional display name. Defaults to the provider ID. |
 @z
 
 @x
-Export `COMPANY_API_KEY` in your host shell as described in
-[Provider authentication](#provider-authentication), then select the provider
-and a model served by that endpoint:
+If the endpoint requires an API key, store it using the provider ID
+(`company`). Docker Sandboxes configures authentication when you select that
+provider with `--provider`:
 @y
-Export `COMPANY_API_KEY` in your host shell as described in
-[Provider authentication](#provider-authentication), then select the provider
-and a model served by that endpoint:
+If the endpoint requires an API key, store it using the provider ID
+(`company`). Docker Sandboxes configures authentication when you select that
+provider with `--provider`:
 @z
 
 @x
 ```console
+$ sbx secret set company
 $ sbx run --provider company --model <MODEL_NAME> claude
 ```
 @y
 ```console
+$ sbx secret set company
 $ sbx run --provider company --model <MODEL_NAME> claude
 ```
 @z
@@ -421,6 +475,54 @@ by `llmman`.
 Changing the model recreates the sandbox container. The workspace and
 kit-owned volumes persist. Omit `--provider` to select a local model managed
 by `llmman`.
+@z
+
+@x
+## Choose a reasoning level
+@y
+## Choose a reasoning level
+@z
+
+@x
+Use `--variant` with `--model` to select a reasoning level supported by your
+model. For example, replace `<MODEL_NAME>` with an OpenAI model that supports
+`high` reasoning effort to start Codex at that level:
+@y
+Use `--variant` with `--model` to select a reasoning level supported by your
+model. For example, replace `<MODEL_NAME>` with an OpenAI model that supports
+`high` reasoning effort to start Codex at that level:
+@z
+
+@x
+```console
+$ sbx run --provider openai --model <MODEL_NAME> --variant high codex
+```
+@y
+```console
+$ sbx run --provider openai --model <MODEL_NAME> --variant high codex
+```
+@z
+
+@x
+Available values depend on the model and agent. Reasoning levels are `minimal`,
+`low`, `medium`, `high`, `xhigh`, and `max`. Some models support `none` to disable
+thinking or `thinking` to enable it. Omit `--variant` to use the default.
+@y
+Available values depend on the model and agent. Reasoning levels are `minimal`,
+`low`, `medium`, `high`, `xhigh`, and `max`. Some models support `none` to disable
+thinking or `thinking` to enable it. Omit `--variant` to use the default.
+@z
+
+@x
+Claude Code doesn't support `none` or `minimal`. For Claude Code and Codex,
+`--variant` requires an attached session and can't be combined with `--detach`.
+In OpenCode, it selects the initial variant, which you can change inside
+OpenCode.
+@y
+Claude Code doesn't support `none` or `minimal`. For Claude Code and Codex,
+`--variant` requires an attached session and can't be combined with `--detach`.
+In OpenCode, it selects the initial variant, which you can change inside
+OpenCode.
 @z
 
 @x

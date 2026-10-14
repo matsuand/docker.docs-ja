@@ -3,6 +3,7 @@
 ##
 
 bases = \
+	copy-as-prompt.html      \
 	desktop-install.html     \
 	desktop-install-v2.html  \
 	experimental.html        \
@@ -27,6 +28,7 @@ copyfiles = \
 	button.markdown.md              \
 	card.html                       \
 	card.markdown.md                \
+	copy-as-prompt.markdown.md      \
 	desktop-install-v2.markdown.md  \
 	experimental.markdown.md        \
 	file.html                       \

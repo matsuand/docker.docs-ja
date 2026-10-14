@@ -67,6 +67,7 @@ bases = \
 	sbx_mcp_load.yaml                    \
 	sbx_mcp_ls.yaml                      \
 	sbx_mcp_rm.yaml                      \
+	sbx_mcp_unload.yaml                  \
 	sbx_move.yaml                        \
 	sbx_policy.yaml                      \
 	sbx_policy_allow.yaml                \
@@ -95,7 +96,7 @@ bases = \
 	sbx_secret_set-custom.yaml           \
 	sbx_settings.yaml                    \
 	sbx_settings_get.yaml                \
-	sbx_settings_list.yaml               \
+	sbx_settings_ls.yaml                 \
 	sbx_settings_set.yaml                \
 	sbx_settings_unset.yaml              \
 	sbx_setup.yaml                       \

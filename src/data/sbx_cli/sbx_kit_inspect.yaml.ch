@@ -3,13 +3,13 @@
 
 @x
 name: sbx kit inspect
-synopsis: Display details about a kit artifact
+synopsis: Show kit artifact details
 experimental: true
 description: |-
     Load and display details about a kit artifact.
 @y
 name: sbx kit inspect
-synopsis: Display details about a kit artifact
+synopsis: Show kit artifact details
 experimental: true
 description: |-
     Load and display details about a kit artifact.
@@ -29,6 +29,12 @@ usage: sbx kit inspect REFERENCE [flags]
 
 % options:
 
+@x format
+      usage: 'Output format: table, json or yaml'
+@y
+      usage: 'Output format: table, json or yaml'
+@z
+
 @x help
       usage: help for inspect
 @y
@@ -47,6 +53,24 @@ usage: sbx kit inspect REFERENCE [flags]
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      sbx kit inspect ./my-kit
+      sbx kit inspect ghcr.io/myorg/my-kit:1.0
+@y
+example: |4-
+      sbx kit inspect ./my-kit
+      sbx kit inspect ghcr.io/myorg/my-kit:1.0
+@z
+
+@x
+      # Machine-readable output
+      sbx kit inspect ghcr.io/myorg/my-kit:1.0 --format json
+@y
+      # Machine-readable output
+      sbx kit inspect ghcr.io/myorg/my-kit:1.0 --format json
 @z
 
 % see_also:

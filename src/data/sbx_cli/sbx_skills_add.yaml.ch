@@ -40,9 +40,9 @@ description: |-
 @z
 
 @x
-usage: sbx skills add <repository> [flags]
+usage: sbx skills add REPOSITORY [flags]
 @y
-usage: sbx skills add <repository> [flags]
+usage: sbx skills add REPOSITORY [flags]
 @z
 
 % options:

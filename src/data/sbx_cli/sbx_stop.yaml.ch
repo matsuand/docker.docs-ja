@@ -27,7 +27,7 @@ description: |-
     returns once the request is accepted. Watch the sandbox reach the stopped
     state with "sbx --cloud ls".
     Restart it — same ID — with "sbx --cloud attach SANDBOX", with
-    "sbx --cloud run AGENT --name NAME" (also non-interactively with --detached),
+    "sbx --cloud run AGENT --name NAME" (also non-interactively with --detach),
     or by running its agent again and picking it from the prompt.
 @y
     With --cloud, stop suspends each sandbox in place: its full state (memory +
@@ -35,7 +35,7 @@ description: |-
     returns once the request is accepted. Watch the sandbox reach the stopped
     state with "sbx --cloud ls".
     Restart it — same ID — with "sbx --cloud attach SANDBOX", with
-    "sbx --cloud run AGENT --name NAME" (also non-interactively with --detached),
+    "sbx --cloud run AGENT --name NAME" (also non-interactively with --detach),
     or by running its agent again and picking it from the prompt.
 @z
 
@@ -52,17 +52,29 @@ description: |-
 @z
 
 @x
-usage: sbx stop SANDBOX [SANDBOX...]
+usage: sbx stop SANDBOX... [flags]
 @y
-usage: sbx stop SANDBOX [SANDBOX...]
+usage: sbx stop SANDBOX... [flags]
 @z
 
 % options:
+
+@x format
+      usage: 'Output format: table, json or yaml'
+@y
+      usage: 'Output format: table, json or yaml'
+@z
 
 @x help
       usage: help for stop
 @y
       usage: help for stop
+@z
+
+@x json
+      usage: Output in JSON format
+@y
+      usage: Output in JSON format
 @z
 
 % inherited_options:
@@ -79,6 +91,22 @@ usage: sbx stop SANDBOX [SANDBOX...]
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      sbx stop my-sandbox
+@y
+example: |4-
+      sbx stop my-sandbox
+@z
+
+@x
+      # Stop several at once
+      sbx stop one two
+@y
+      # Stop several at once
+      sbx stop one two
 @z
 
 % see_also:

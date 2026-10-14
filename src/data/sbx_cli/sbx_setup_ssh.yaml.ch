@@ -20,13 +20,15 @@ description: |-
 @z
 
 @x
-    No SSH client key is needed — authentication is handled by the daemon's Unix
-    socket (OS user boundary) combined with an active Docker login. Sign in first
-    (sbx login).
+    No SSH client key is needed — authentication is handled by the daemon's local
+    socket or named pipe (OS user boundary) combined with an active Docker login. Sign in first
+    (sbx login). On macOS and Windows, use --auto-create to install the fixed codex.sbx and
+    claude.sbx desktop profiles. Sandboxes are created with the standard resource defaults.
 @y
-    No SSH client key is needed — authentication is handled by the daemon's Unix
-    socket (OS user boundary) combined with an active Docker login. Sign in first
-    (sbx login).
+    No SSH client key is needed — authentication is handled by the daemon's local
+    socket or named pipe (OS user boundary) combined with an active Docker login. Sign in first
+    (sbx login). On macOS and Windows, use --auto-create to install the fixed codex.sbx and
+    claude.sbx desktop profiles. Sandboxes are created with the standard resource defaults.
 @z
 
 @x
@@ -41,6 +43,14 @@ usage: sbx setup ssh [flags]
       usage: ssh_config Host pattern to write
 @y
       usage: ssh_config Host pattern to write
+@z
+
+@x auto-create
+      usage: |
+        enable managed Codex and Claude Desktop profiles on macOS and Windows
+@y
+      usage: |
+        enable managed Codex and Claude Desktop profiles on macOS and Windows
 @z
 
 @x help
@@ -79,8 +89,8 @@ example: |4-
 
 @x
     - sbx setup - (Experimental) Detect host configuration and prepare Docker Sandboxes
-    - sbx setup ssh remove - Remove SSH client config for the current local app instance
+    - sbx setup ssh remove - Remove SSH config and desktop targets; keep sandboxes
 @y
     - sbx setup - (Experimental) Detect host configuration and prepare Docker Sandboxes
-    - sbx setup ssh remove - Remove SSH client config for the current local app instance
+    - sbx setup ssh remove - Remove SSH config and desktop targets; keep sandboxes
 @z

@@ -41,10 +41,10 @@ description: |-
 
 @x
     Use --dry-run to list what would be removed without removing anything, and
-    --json with it for machine-readable output.
+    --format json or --format yaml with it for machine-readable output.
 @y
     Use --dry-run to list what would be removed without removing anything, and
-    --json with it for machine-readable output.
+    --format json or --format yaml with it for machine-readable output.
 @z
 
 @x
@@ -101,6 +101,12 @@ usage: sbx prune [flags]
         Skip confirmation prompts and remove even if in use (e.g. an open SSH connection)
 @z
 
+@x format
+      usage: 'Output format: table, json or yaml'
+@y
+      usage: 'Output format: table, json or yaml'
+@z
+
 @x help
       usage: help for prune
 @y
@@ -108,9 +114,9 @@ usage: sbx prune [flags]
 @z
 
 @x json
-      usage: Output the --dry-run listing in JSON format
+      usage: Output in JSON format
 @y
-      usage: Output the --dry-run listing in JSON format
+      usage: Output in JSON format
 @z
 
 % inherited_options:
@@ -127,6 +133,32 @@ usage: sbx prune [flags]
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      # Show what would be removed
+      sbx prune --dry-run
+@y
+example: |4-
+      # Show what would be removed
+      sbx prune --dry-run
+@z
+
+@x
+      # Remove without asking
+      sbx prune --force
+@y
+      # Remove without asking
+      sbx prune --force
+@z
+
+@x
+      # Only sandboxes stopped before a point in time
+      sbx prune --filter until=2026-01-01T00:00:00Z
+@y
+      # Only sandboxes stopped before a point in time
+      sbx prune --filter until=2026-01-01T00:00:00Z
 @z
 
 % see_also:

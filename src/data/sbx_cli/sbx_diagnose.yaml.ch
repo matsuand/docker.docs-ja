@@ -4,14 +4,22 @@
 @x
 name: sbx diagnose
 synopsis: Diagnose common issues with your sbx installation
-usage: sbx diagnose
+usage: sbx diagnose [flags]
 @y
 name: sbx diagnose
 synopsis: Diagnose common issues with your sbx installation
-usage: sbx diagnose
+usage: sbx diagnose [flags]
 @z
 
 % options:
+
+@x
+    - name: format
+      usage: 'Output format: table, json, yaml or github-issue'
+@y
+    - name: format
+      usage: 'Output format: table, json, yaml or github-issue'
+@z
 
 @x help
       usage: help for diagnose
@@ -20,15 +28,9 @@ usage: sbx diagnose
 @z
 
 @x json
-      usage: Output in JSON format (alias for --output json)
+      usage: Output in JSON format
 @y
-      usage: Output in JSON format (alias for --output json)
-@z
-
-@x output
-      usage: 'Output format: "json" or "github-issue"'
-@y
-      usage: 'Output format: "json" or "github-issue"'
+      usage: Output in JSON format
 @z
 
 @x upload
@@ -51,6 +53,30 @@ usage: sbx diagnose
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      sbx diagnose
+@y
+example: |4-
+      sbx diagnose
+@z
+
+@x
+      # Print the report as JSON
+      sbx diagnose --format json
+@y
+      # Print the report as JSON
+      sbx diagnose --format json
+@z
+
+@x
+      # Upload the report to Docker support
+      sbx diagnose --upload
+@y
+      # Upload the report to Docker support
+      sbx diagnose --upload
 @z
 
 % see_also:

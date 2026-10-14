@@ -17,13 +17,13 @@ keywords: build policies, policy eval, docker buildx, policy development, debugg
 @z
 
 @x
-Build policies validate inputs before builds execute. This guide covers how to
-develop policies iteratively and apply them to real builds with `docker buildx
-build` and `docker buildx bake`.
+Build policies validate build inputs and can check HTTP(S) requests during build
+steps. This guide covers how to develop policies iteratively and apply them to
+builds with `docker buildx build` and `docker buildx bake`.
 @y
-Build policies validate inputs before builds execute. This guide covers how to
-develop policies iteratively and apply them to real builds with `docker buildx
-build` and `docker buildx bake`.
+Build policies validate build inputs and can check HTTP(S) requests during build
+steps. This guide covers how to develop policies iteratively and apply them to
+builds with `docker buildx build` and `docker buildx bake`.
 @z
 
 @x
@@ -168,16 +168,12 @@ Test other sources:
 Test other sources:
 @z
 
-@x
-```console
+@x with code
 $ docker buildx policy eval https://example.com              # Test HTTP
 $ docker buildx policy eval https://github.com/org/repo.git  # Test Git
-```
 @y
-```console
 $ docker buildx policy eval https://example.com              # Test HTTP
 $ docker buildx policy eval https://github.com/org/repo.git  # Test Git
-```
 @z
 
 @x
@@ -355,6 +351,97 @@ Use only your specified policy:
 % snip command...
 
 @x
+## Block URLs in build steps
+@y
+## Block URLs in build steps
+@z
+
+@x
+To check HTTP(S) requests from `RUN` instructions, add
+`"caps": {"exec.proxy": true}` to the policy's `decision` object. This enables
+BuildKit's proxy, which checks requests against your `input.http` rules.
+By default, these rules only apply to `ADD` downloads.
+@y
+To check HTTP(S) requests from `RUN` instructions, add
+`"caps": {"exec.proxy": true}` to the policy's `decision` object. This enables
+BuildKit's proxy, which checks requests against your `input.http` rules.
+By default, these rules only apply to `ADD` downloads.
+@z
+
+@x
+Save this policy as `Dockerfile.rego` alongside your Dockerfile to allow Debian
+package downloads and block requests to other hosts:
+@y
+Save this policy as `Dockerfile.rego` alongside your Dockerfile to allow Debian
+package downloads and block requests to other hosts:
+@z
+
+% snip code...
+
+@x
+Test it with this Dockerfile:
+@y
+Test it with this Dockerfile:
+@z
+
+% snip code...
+% snip command...
+
+@x
+The package downloads from `deb.debian.org` succeed. The proxy denies the request
+to `example.com` with HTTP 403, and `curl -f` fails the build. Use `--no-cache`
+when testing to run the steps again.
+@y
+The package downloads from `deb.debian.org` succeed. The proxy denies the request
+to `example.com` with HTTP 403, and `curl -f` fails the build. Use `--no-cache`
+when testing to run the steps again.
+@z
+
+@x
+To restrict individual URLs, use `input.http.url` or match both `input.http.host`
+and `input.http.path`. See the [HTTP input reference](./inputs.md#http-inputs).
+@y
+To restrict individual URLs, use `input.http.url` or match both `input.http.host`
+and `input.http.path`. See the [HTTP input reference](./inputs.md#http-inputs).
+@z
+
+@x
+The proxy supports Linux build steps. Applications must use the injected proxy
+environment variables and trust BuildKit's certificate for HTTPS. BuildKit adds
+the certificate to the system trust store. Traffic that bypasses the proxy is
+blocked.
+@y
+The proxy supports Linux build steps. Applications must use the injected proxy
+environment variables and trust BuildKit's certificate for HTTPS. BuildKit adds
+the certificate to the system trust store. Traffic that bypasses the proxy is
+blocked.
+@z
+
+@x
+### Enable the proxy for a CI builder
+@y
+### Enable the proxy for a CI builder
+@z
+
+@x
+For a dedicated CI builder, enable the proxy for all builds with
+`--buildkitd-flags '--proxy-network'`:
+@y
+For a dedicated CI builder, enable the proxy for all builds with
+`--buildkitd-flags '--proxy-network'`:
+@z
+
+% snip command...
+
+@x
+This replaces the `exec.proxy` opt-in in each policy file. You still need a
+policy to restrict URLs.
+@y
+This replaces the `exec.proxy` opt-in in each policy file. You still need a
+policy to restrict URLs.
+@z
+
+@x
 ## Using policies with bake
 @y
 ## Using policies with bake
@@ -426,7 +513,13 @@ Build with the appropriate target:
 Build with the appropriate target:
 @z
 
-% snip command...
+@x within code
+$ docker buildx bake development  # Uses permissive policy
+$ docker buildx bake production   # Uses strict policies
+@y
+$ docker buildx bake development  # Uses permissive policy
+$ docker buildx bake production   # Uses strict policies
+@z
 
 @x
 ### Bake with policy options
@@ -508,15 +601,24 @@ directory. For a file named `app.Dockerfile`, it looks for
 `app.Dockerfile.rego`.
 @z
 
-@x within text
-├── Dockerfile.rego          # Loaded automatically for Dockerfile
-@y
-├── Dockerfile.rego          # Loaded automatically for Dockerfile
-@z
 @x
+```text
+project/
+├── Dockerfile
+├── Dockerfile.rego          # Loaded automatically for Dockerfile
+├── app.Dockerfile
 ├── app.Dockerfile.rego      # Loaded automatically for app.Dockerfile
+└── src/
+```
 @y
+```text
+project/
+├── Dockerfile
+├── Dockerfile.rego          # Loaded automatically for Dockerfile
+├── app.Dockerfile
 ├── app.Dockerfile.rego      # Loaded automatically for app.Dockerfile
+└── src/
+```
 @z
 
 @x
@@ -684,20 +786,32 @@ Test different source types:
 Test different source types:
 @z
 
-@x within command
+@x
+```console
 # HTTP downloads
+$ docker buildx policy eval --print https://releases.hashicorp.com/terraform/1.5.0/terraform.zip
 @y
+```console
 # HTTP downloads
+$ docker buildx policy eval --print https://releases.hashicorp.com/terraform/1.5.0/terraform.zip
 @z
+
 @x
 # Images (requires docker-image:// prefix)
+$ docker buildx policy eval --print docker-image://alpine:3.19
 @y
 # Images (requires docker-image:// prefix)
+$ docker buildx policy eval --print docker-image://alpine:3.19
 @z
+
 @x
 # Local context
+$ docker buildx policy eval --print .
+```
 @y
 # Local context
+$ docker buildx policy eval --print .
+```
 @z
 
 @x
@@ -730,7 +844,15 @@ For example, to test a source against the policy for `app.Dockerfile`:
 For example, to test a source against the policy for `app.Dockerfile`:
 @z
 
-% snip command...
+@x
+```console
+$ docker buildx policy eval --filename app.Dockerfile .
+```
+@y
+```console
+$ docker buildx policy eval --filename app.Dockerfile .
+```
+@z
 
 @x
 This loads `app.Dockerfile.rego` and tests whether it allows the source `.`
@@ -746,7 +868,17 @@ Test different sources against your policy:
 Test different sources against your policy:
 @z
 
-% snip command...
+@x
+```console
+$ docker buildx policy eval --filename app.Dockerfile https://github.com/org/repo.git
+$ docker buildx policy eval --filename app.Dockerfile docker-image://alpine:3.19
+```
+@y
+```console
+$ docker buildx policy eval --filename app.Dockerfile https://github.com/org/repo.git
+$ docker buildx policy eval --filename app.Dockerfile docker-image://alpine:3.19
+```
+@z
 
 @x
 ### Reset automatic loading
@@ -760,7 +892,15 @@ To use only your specified policies and ignore automatic `.rego` files:
 To use only your specified policies and ignore automatic `.rego` files:
 @z
 
-% snip command...
+@x
+```console
+$ docker buildx build --policy reset=true,filename=custom.rego .
+```
+@y
+```console
+$ docker buildx build --policy reset=true,filename=custom.rego .
+```
+@z
 
 @x
 This skips `Dockerfile.rego` and loads only `custom.rego`.
@@ -780,7 +920,15 @@ Disable policy evaluation for testing or emergencies:
 Disable policy evaluation for testing or emergencies:
 @z
 
-% snip command...
+@x
+```console
+$ docker buildx build --policy disabled=true .
+```
+@y
+```console
+$ docker buildx build --policy disabled=true .
+```
+@z
 
 @x
 The build proceeds without any policy checks. Use this carefully - you're

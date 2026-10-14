@@ -22,9 +22,9 @@ description: |-
 @z
 
 @x
-usage: sbx settings unset <key> [flags]
+usage: sbx settings unset KEY [flags]
 @y
-usage: sbx settings unset <key> [flags]
+usage: sbx settings unset KEY [flags]
 @z
 
 % options:

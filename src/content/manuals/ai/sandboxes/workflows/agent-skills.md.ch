@@ -204,28 +204,28 @@ $ sbx skills import --dry-run
 @z
 
 @x
-The command scans the following directories in order and copies each skill
-subdirectory into the shared store. When the sandbox starts, `sbx` mounts the
-store at the path the agent reads inside the sandbox.
+The preview scans the host sources in the following order. The table also
+shows where supported agents read the shared store inside the sandbox:
 @y
-The command scans the following directories in order and copies each skill
-subdirectory into the shared store. When the sandbox starts, `sbx` mounts the
-store at the path the agent reads inside the sandbox.
+The preview scans the host sources in the following order. The table also
+shows where supported agents read the shared store inside the sandbox:
 @z
 
 @x
 | Agent       | Host source         | Sandbox mount target          |
 | ----------- | ------------------- | ----------------------------- |
-| Claude Code | `~/.claude/skills`  | `/home/agent/.claude/skills`  |
 | Codex and Devin | `~/.agents/skills` | `/home/agent/.agents/skills` |
+| Claude Code | `~/.claude/skills`  | `/home/agent/.claude/skills`  |
+| OpenCode | `~/.config/opencode/skills` | `/home/agent/.config/opencode/skills` |
 | Copilot     | `~/.copilot/skills` | `/home/agent/.copilot/skills` |
 | Cursor      | `~/.cursor/skills`  | `/home/agent/.cursor/skills`  |
 | Droid       | `~/.factory/skills` | `/home/agent/.factory/skills` |
 @y
 | Agent       | Host source         | Sandbox mount target          |
 | ----------- | ------------------- | ----------------------------- |
-| Claude Code | `~/.claude/skills`  | `/home/agent/.claude/skills`  |
 | Codex and Devin | `~/.agents/skills` | `/home/agent/.agents/skills` |
+| Claude Code | `~/.claude/skills`  | `/home/agent/.claude/skills`  |
+| OpenCode | `~/.config/opencode/skills` | `/home/agent/.config/opencode/skills` |
 | Copilot     | `~/.copilot/skills` | `/home/agent/.copilot/skills` |
 | Cursor      | `~/.cursor/skills`  | `/home/agent/.cursor/skills`  |
 | Droid       | `~/.factory/skills` | `/home/agent/.factory/skills` |
@@ -242,9 +242,9 @@ from the first source in the table wins and `sbx` warns about the others.
 @z
 
 @x
-Import the skills:
+Copy the skills into the shared store:
 @y
-Import the skills:
+Copy the skills into the shared store:
 @z
 
 @x
@@ -255,6 +255,18 @@ $ sbx skills import
 ```console
 $ sbx skills import
 ```
+@z
+
+@x
+Import copies each skill directory, including directories reached through a
+symlink at the top level of a source. It skips symlinks inside skill directories
+and loose files in the source directory. If a skill depends on linked files,
+replace those links with files before importing it.
+@y
+Import copies each skill directory, including directories reached through a
+symlink at the top level of a source. It skips symlinks inside skill directories
+and loose files in the source directory. If a skill depends on linked files,
+replace those links with files before importing it.
 @z
 
 @x

@@ -1128,17 +1128,19 @@ command can consume a bundled file from `files/home/`, but not one from
 @x
 `sbx kit add` recreates the sandbox rather than modifying it in place. It
 supports mixin kits limited to
-`environment.variables`, `setup.install`, and `permissions.network.allow`,
-which follow the same order as sandbox creation. It rejects a kit that declares
-static files, `setup.startup`, or `setup.files`. To use those fields, recreate
-the sandbox with the kit.
+`environment.variables`, `setup.install`, `setup.startup`, and
+`permissions.network.allow`, which follow the same order as sandbox creation.
+Startup commands run after the kit is added and on each subsequent sandbox
+start. The command rejects kits that declare static files or `setup.files`.
+To use those fields, create the sandbox with the kit included.
 @y
 `sbx kit add` recreates the sandbox rather than modifying it in place. It
 supports mixin kits limited to
-`environment.variables`, `setup.install`, and `permissions.network.allow`,
-which follow the same order as sandbox creation. It rejects a kit that declares
-static files, `setup.startup`, or `setup.files`. To use those fields, recreate
-the sandbox with the kit.
+`environment.variables`, `setup.install`, `setup.startup`, and
+`permissions.network.allow`, which follow the same order as sandbox creation.
+Startup commands run after the kit is added and on each subsequent sandbox
+start. The command rejects kits that declare static files or `setup.files`.
+To use those fields, create the sandbox with the kit included.
 @z
 
 @x
@@ -1638,8 +1640,9 @@ The `sbx kit` subcommands validate, inspect, and publish kits:
   for sharing.
 - `sbx kit push <path> <ref>` — publish to an OCI registry (for example,
   `ghcr.io/myorg/my-kit:1.0`).
-- `sbx kit pull <ref>` — download a kit from a registry as a ZIP file to
-  the working directory.
+- `sbx kit pull <ref>` — download a kit to the working directory as `.zip`
+  for schema v1 or `.tar.gz` for schema v2. Use `--output <FILE>` to choose
+  the output path.
 @y
 - `sbx kit validate <path>` — check that a kit directory or ZIP is
   well-formed.
@@ -1649,8 +1652,9 @@ The `sbx kit` subcommands validate, inspect, and publish kits:
   for sharing.
 - `sbx kit push <path> <ref>` — publish to an OCI registry (for example,
   `ghcr.io/myorg/my-kit:1.0`).
-- `sbx kit pull <ref>` — download a kit from a registry as a ZIP file to
-  the working directory.
+- `sbx kit pull <ref>` — download a kit to the working directory as `.zip`
+  for schema v1 or `.tar.gz` for schema v2. Use `--output <FILE>` to choose
+  the output path.
 @z
 
 @x
@@ -1747,6 +1751,40 @@ $ sbx kit push ./my-kit/ ghcr.io/myorg/my-kit:1.0 --sign
 ZIP kits can't carry verifiable signatures.
 @y
 ZIP kits can't carry verifiable signatures.
+@z
+
+@x
+### Inspect provenance
+@y
+### Inspect provenance
+@z
+
+@x
+Pushing a kit also attaches a provenance attestation that records its content
+digests, declared sandbox image, and source Git commit when pushed from a
+working tree. Inspect it to check the source of a published kit:
+@y
+Pushing a kit also attaches a provenance attestation that records its content
+digests, declared sandbox image, and source Git commit when pushed from a
+working tree. Inspect it to check the source of a published kit:
+@z
+
+@x
+```console
+$ sbx kit provenance ghcr.io/myorg/my-kit:1.0
+```
+@y
+```console
+$ sbx kit provenance ghcr.io/myorg/my-kit:1.0
+```
+@z
+
+@x
+Provenance is unsigned by default. Use `sbx kit push --sign` to sign both the
+kit manifest and its provenance when publishing.
+@y
+Provenance is unsigned by default. Use `sbx kit push --sign` to sign both the
+kit manifest and its provenance when publishing.
 @z
 
 @x

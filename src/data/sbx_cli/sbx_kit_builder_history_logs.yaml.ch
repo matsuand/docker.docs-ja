@@ -3,12 +3,12 @@
 
 @x
 name: sbx kit builder history logs
-synopsis: Print a kit build's logs
+synopsis: Show a kit build's logs
 experimental: true
 usage: sbx kit builder history logs [ARGS...] [flags]
 @y
 name: sbx kit builder history logs
-synopsis: Print a kit build's logs
+synopsis: Show a kit build's logs
 experimental: true
 usage: sbx kit builder history logs [ARGS...] [flags]
 @z
@@ -37,10 +37,20 @@ usage: sbx kit builder history logs [ARGS...] [flags]
       usage: Enable debug logging
 @z
 
+@x
+example: |4-
+      sbx kit builder history logs
+      sbx kit builder history logs 3b6l9x
+@y
+example: |4-
+      sbx kit builder history logs
+      sbx kit builder history logs 3b6l9x
+@z
+
 % see_also:
 
 @x
-    - sbx kit builder history - Inspect kit build history in the builder sandbox
+    - sbx kit builder history - Show kit build history in the builder sandbox
 @y
-    - sbx kit builder history - Inspect kit build history in the builder sandbox
+    - sbx kit builder history - Show kit build history in the builder sandbox
 @z

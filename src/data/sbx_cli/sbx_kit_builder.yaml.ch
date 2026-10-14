@@ -63,12 +63,12 @@ usage: sbx kit builder COMMAND
 
 @x
     - sbx kit - (Experimental) Manage kit artifacts
-    - sbx kit builder history - Inspect kit build history in the builder sandbox
+    - sbx kit builder history - Show kit build history in the builder sandbox
     - sbx kit builder rm - Remove the kit builder sandbox and its build cache
     - sbx kit builder status - Show the kit builder sandbox and build-cache state
 @y
     - sbx kit - (Experimental) Manage kit artifacts
-    - sbx kit builder history - Inspect kit build history in the builder sandbox
+    - sbx kit builder history - Show kit build history in the builder sandbox
     - sbx kit builder rm - Remove the kit builder sandbox and its build cache
     - sbx kit builder status - Show the kit builder sandbox and build-cache state
 @z

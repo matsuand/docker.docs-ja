@@ -45,10 +45,26 @@ usage: sbx kit builder history rm [ARGS...] [flags]
       usage: Enable debug logging
 @z
 
+@x
+example: |4-
+      sbx kit builder history rm 3b6l9x
+@y
+example: |4-
+      sbx kit builder history rm 3b6l9x
+@z
+
+@x
+      # Skip the confirmation prompt
+      sbx kit builder history rm --yes 3b6l9x
+@y
+      # Skip the confirmation prompt
+      sbx kit builder history rm --yes 3b6l9x
+@z
+
 % see_also:
 
 @x
-    - sbx kit builder history - Inspect kit build history in the builder sandbox
+    - sbx kit builder history - Show kit build history in the builder sandbox
 @y
-    - sbx kit builder history - Inspect kit build history in the builder sandbox
+    - sbx kit builder history - Show kit build history in the builder sandbox
 @z

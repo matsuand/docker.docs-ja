@@ -63,14 +63,48 @@ $ sbx diagnose
 
 @x
 The command prints a summary of checks that passed, warned, or failed, along
-with suggested fixes. Use `--output json` to get machine-readable output, or
-`--output github-issue` to generate a Markdown snippet suitable for pasting
+with suggested fixes. Use `--json` or `--format yaml` for machine-readable
+output, or `--format github-issue` to generate a Markdown snippet suitable for pasting
 into a GitHub issue.
 @y
 The command prints a summary of checks that passed, warned, or failed, along
-with suggested fixes. Use `--output json` to get machine-readable output, or
-`--output github-issue` to generate a Markdown snippet suitable for pasting
+with suggested fixes. Use `--json` or `--format yaml` for machine-readable
+output, or `--format github-issue` to generate a Markdown snippet suitable for pasting
 into a GitHub issue.
+@z
+
+@x
+## Sandbox is not responding
+@y
+## Sandbox is not responding
+@z
+
+@x
+If `sbx ls` shows `running (not responding)`, Docker Sandboxes has detected
+that the sandbox isn't responding to commands. Stop and start that sandbox,
+then retry your command:
+@y
+If `sbx ls` shows `running (not responding)`, Docker Sandboxes has detected
+that the sandbox isn't responding to commands. Stop and start that sandbox,
+then retry your command:
+@z
+
+@x
+```console
+$ sbx stop <SANDBOX_NAME>
+$ sbx start <SANDBOX_NAME>
+```
+@y
+```console
+$ sbx stop <SANDBOX_NAME>
+$ sbx start <SANDBOX_NAME>
+```
+@z
+
+@x
+Files saved in the sandbox are kept when you stop and start it.
+@y
+Files saved in the sandbox are kept when you stop and start it.
 @z
 
 @x
@@ -330,12 +364,10 @@ allowlist:
 @x
 ```console
 $ sbx run claude --kit "git+https://github.com/docker/sbx-kits-contrib.git#dir=vale"
-ERROR: resolve kits: kit "git+https://github.com/docker/sbx-kits-contrib.git#dir=vale" cannot be installed — its source is not in your allowlist.
 ```
 @y
 ```console
 $ sbx run claude --kit "git+https://github.com/docker/sbx-kits-contrib.git#dir=vale"
-ERROR: resolve kits: kit "git+https://github.com/docker/sbx-kits-contrib.git#dir=vale" cannot be installed — its source is not in your allowlist.
 ```
 @z
 
@@ -914,12 +946,12 @@ though the directory is a valid Git repository:
 @x
 ```console
 > sbx run --clone claude \\wsl.localhost\Ubuntu\home\you\repo
-ERROR: --clone requires a Git repository, but \\wsl.localhost\Ubuntu\home\you\repo is not in a Git repository
+error: --clone requires a Git repository, but \\wsl.localhost\Ubuntu\home\you\repo is not in a Git repository
 ```
 @y
 ```console
 > sbx run --clone claude \\wsl.localhost\Ubuntu\home\you\repo
-ERROR: --clone requires a Git repository, but \\wsl.localhost\Ubuntu\home\you\repo is not in a Git repository
+error: --clone requires a Git repository, but \\wsl.localhost\Ubuntu\home\you\repo is not in a Git repository
 ```
 @z
 
@@ -957,13 +989,11 @@ the command again:
 ```console
 > git config --global --add safe.directory '%(prefix)///wsl.localhost/Ubuntu/home/you/repo'
 > sbx run --clone claude \\wsl.localhost\Ubuntu\home\you\repo
-✓ Git repository detected: \\wsl.localhost\Ubuntu\home\you\repo
 ```
 @y
 ```console
 > git config --global --add safe.directory '%(prefix)///wsl.localhost/Ubuntu/home/you/repo'
 > sbx run --clone claude \\wsl.localhost\Ubuntu\home\you\repo
-✓ Git repository detected: \\wsl.localhost\Ubuntu\home\you\repo
 ```
 @z
 
@@ -1177,13 +1207,13 @@ local state, the daemon may fail to start with a database version mismatch:
 
 @x
 ```text
-ERROR: failed to start backend in-process: start backend: creating containerd
+error: failed to start backend in-process: start backend: creating containerd
 server: ... database is at major version 6, but this binary only supports up
 to major version 1
 ```
 @y
 ```text
-ERROR: failed to start backend in-process: start backend: creating containerd
+error: failed to start backend in-process: start backend: creating containerd
 server: ... database is at major version 6, but this binary only supports up
 to major version 1
 ```
@@ -1397,4 +1427,14 @@ The bundle contains daemon logs, diagnostic check results, and basic system
 information. When `--upload` is confirmed, the bundle is uploaded to Docker
 support and the command prints a diagnostics ID. Include this ID in your
 issue so the team can correlate it with the uploaded bundle.
+@z
+
+@x
+Without terminal input, `sbx diagnose --upload` saves the bundle locally and
+skips the upload. Check for a diagnostics ID to confirm that the upload
+succeeded.
+@y
+Without terminal input, `sbx diagnose --upload` saves the bundle locally and
+skips the upload. Check for a diagnostics ID to confirm that the upload
+succeeded.
 @z

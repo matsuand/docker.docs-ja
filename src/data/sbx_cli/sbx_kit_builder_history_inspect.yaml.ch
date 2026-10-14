@@ -3,12 +3,12 @@
 
 @x
 name: sbx kit builder history inspect
-synopsis: Inspect a kit build record
+synopsis: Show a kit build record
 experimental: true
 usage: sbx kit builder history inspect [ARGS...] [flags]
 @y
 name: sbx kit builder history inspect
-synopsis: Inspect a kit build record
+synopsis: Show a kit build record
 experimental: true
 usage: sbx kit builder history inspect [ARGS...] [flags]
 @z
@@ -37,10 +37,28 @@ usage: sbx kit builder history inspect [ARGS...] [flags]
       usage: Enable debug logging
 @z
 
+@x
+example: |4-
+      # The most recent build
+      sbx kit builder history inspect
+@y
+example: |4-
+      # The most recent build
+      sbx kit builder history inspect
+@z
+
+@x
+      # One build by record reference
+      sbx kit builder history inspect 3b6l9x
+@y
+      # One build by record reference
+      sbx kit builder history inspect 3b6l9x
+@z
+
 % see_also:
 
 @x
-    - sbx kit builder history - Inspect kit build history in the builder sandbox
+    - sbx kit builder history - Show kit build history in the builder sandbox
 @y
-    - sbx kit builder history - Inspect kit build history in the builder sandbox
+    - sbx kit builder history - Show kit build history in the builder sandbox
 @z

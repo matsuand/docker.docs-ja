@@ -37,10 +37,16 @@ usage: sbx kit builder history export [ARGS...] [flags]
       usage: Enable debug logging
 @z
 
+@x
+example: '  sbx kit builder history export 3b6l9x --output build.dockerbuild'
+@y
+example: '  sbx kit builder history export 3b6l9x --output build.dockerbuild'
+@z
+
 % see_also:
 
 @x
-    - sbx kit builder history - Inspect kit build history in the builder sandbox
+    - sbx kit builder history - Show kit build history in the builder sandbox
 @y
-    - sbx kit builder history - Inspect kit build history in the builder sandbox
+    - sbx kit builder history - Show kit build history in the builder sandbox
 @z

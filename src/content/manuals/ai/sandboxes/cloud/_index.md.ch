@@ -108,6 +108,22 @@ $ sbx login
 @z
 
 @x
+For CI and other environments without a browser, sign in with a Docker
+Personal Access Token (PAT) for the subscribed account:
+@y
+For CI and other environments without a browser, sign in with a Docker
+Personal Access Token (PAT) for the subscribed account:
+@z
+
+% snip command...
+
+@x
+For PAT setup instructions, see [CI and headless use](../workflows/automation.md).
+@y
+For PAT setup instructions, see [CI and headless use](../workflows/automation.md).
+@z
+
+@x
 Check cloud connectivity and account access:
 @y
 Check cloud connectivity and account access:

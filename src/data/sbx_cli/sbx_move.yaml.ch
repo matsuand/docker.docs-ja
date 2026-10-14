@@ -130,12 +130,14 @@ description: |-
 @x
     The cloud sandbox a move creates expires. The default is the server's TTL,
     typically 1h: stopped in place on expiry when the account and sandbox
-    support it, deleted otherwise. Choose with --ttl and --on-timeout.
+    support it, deleted otherwise. Choose with --ttl and --on-timeout;
+    '--on-timeout restart' keeps the destination running instead of expiring.
     Extend later with 'sbx --cloud ttl'.
 @y
     The cloud sandbox a move creates expires. The default is the server's TTL,
     typically 1h: stopped in place on expiry when the account and sandbox
-    support it, deleted otherwise. Choose with --ttl and --on-timeout.
+    support it, deleted otherwise. Choose with --ttl and --on-timeout;
+    '--on-timeout restart' keeps the destination running instead of expiring.
     Extend later with 'sbx --cloud ttl'.
 @z
 
@@ -169,10 +171,10 @@ usage: sbx move SANDBOX [flags]
 
 @x on-timeout
       usage: |
-        What happens to the destination cloud sandbox when its TTL lapses: 'stop' stops it in place so it can be started again later, or 'delete' removes it. Not every sandbox supports 'stop', and an explicit request the server refuses fails the move. Default: stop when the sandbox supports it, else the server default (delete). Only with --to cloud
+        What happens to the destination cloud sandbox when its TTL lapses: 'stop' stops it in place so it can be started again later, 'restart' keeps it running by stopping and immediately starting it, or 'delete' removes it. Not every sandbox supports 'stop', and an explicit request the server refuses fails the move after the source has been stopped and uploaded, so the sandbox is restored but the transfer is spent. With 'restart' a supplied --ttl must be at least 1h. Default: stop when the sandbox supports it, else the server default (delete). Only with --to cloud
 @y
       usage: |
-        What happens to the destination cloud sandbox when its TTL lapses: 'stop' stops it in place so it can be started again later, or 'delete' removes it. Not every sandbox supports 'stop', and an explicit request the server refuses fails the move. Default: stop when the sandbox supports it, else the server default (delete). Only with --to cloud
+        What happens to the destination cloud sandbox when its TTL lapses: 'stop' stops it in place so it can be started again later, 'restart' keeps it running by stopping and immediately starting it, or 'delete' removes it. Not every sandbox supports 'stop', and an explicit request the server refuses fails the move after the source has been stopped and uploaded, so the sandbox is restored but the transfer is spent. With 'restart' a supplied --ttl must be at least 1h. Default: stop when the sandbox supports it, else the server default (delete). Only with --to cloud
 @z
 
 @x to

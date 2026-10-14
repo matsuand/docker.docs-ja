@@ -34,7 +34,7 @@ keywords:
 @x
       text: Experimental
 @y
-      text: Experimental
+      text: 試験的
 @z
 
 @x
@@ -182,15 +182,45 @@ existing sandbox.
 @z
 
 @x
-This placement keeps the environment file outside the agent's writable
-workspace. If you later add `additionalWorkspaces`, keep `sbxenv.yaml`
-outside those directories too. See the [`workspace` guidance](#workspace)
-for details.
+### Protect the environment file
 @y
-This placement keeps the environment file outside the agent's writable
-workspace. If you later add `additionalWorkspaces`, keep `sbxenv.yaml`
-outside those directories too. See the [`workspace` guidance](#workspace)
-for details.
+### Protect the environment file
+@z
+
+@x
+Environment files can declare lifecycle and secret commands that run on your
+host. Keep them outside writable sandbox mounts so the agent cannot change
+what a later invocation runs. This applies to both the primary workspace and
+`additionalWorkspaces`.
+@y
+Environment files can declare lifecycle and secret commands that run on your
+host. Keep them outside writable sandbox mounts so the agent cannot change
+what a later invocation runs. This applies to both the primary workspace and
+`additionalWorkspaces`.
+@z
+
+@x
+If you need to keep an environment file in a direct-mounted workspace, place
+it directly in the workspace root. `sbx` mounts the file read-only by default,
+but a file in a subdirectory can still be replaced by renaming its parent
+directory.
+@y
+If you need to keep an environment file in a direct-mounted workspace, place
+it directly in the workspace root. `sbx` mounts the file read-only by default,
+but a file in a subdirectory can still be replaced by renaming its parent
+directory.
+@z
+
+@x
+For a local environment where you intend the agent to edit the file, set
+`sandboxOptions.writableEnvFiles: true`. The plan reports that the file is
+writable. Use this option only when you trust the agent to change commands
+that future invocations run on your host.
+@y
+For a local environment where you intend the agent to edit the file, set
+`sandboxOptions.writableEnvFiles: true`. The plan reports that the file is
+writable. Use this option only when you trust the agent to change commands
+that future invocations run on your host.
 @z
 
 @x
@@ -865,27 +895,27 @@ remove it afterward:
 
 @x
 ```console
-$ sbx env create --auto-approve
+$ sbx env create --force
 $ sbx env exec -- npm test
 $ sbx env rm --force
 ```
 @y
 ```console
-$ sbx env create --auto-approve
+$ sbx env create --force
 $ sbx env exec -- npm test
 $ sbx env rm --force
 ```
 @z
 
 @x
-`--auto-approve` approves the plan for that invocation without recording
-consent for later invocations. Use the flag for each unattended `create` or
-`run`. The `--force` flag approves the destroy plan and removes the sandbox even
+For `create` and `run`, `--force` approves the plan for that invocation without
+recording consent for later invocations. Use the flag for each unattended `create` or
+`run`. For `rm`, `--force` approves the destroy plan and removes the sandbox even
 when it is in use.
 @y
-`--auto-approve` approves the plan for that invocation without recording
-consent for later invocations. Use the flag for each unattended `create` or
-`run`. The `--force` flag approves the destroy plan and removes the sandbox even
+For `create` and `run`, `--force` approves the plan for that invocation without
+recording consent for later invocations. Use the flag for each unattended `create` or
+`run`. For `rm`, `--force` approves the destroy plan and removes the sandbox even
 when it is in use.
 @z
 
@@ -911,6 +941,12 @@ account and CLI requirements, see [Cloud sandboxes](../cloud/_index.md).
 @y
 Use `sbx --cloud env` to manage a cloud sandbox from an environment file. For
 account and CLI requirements, see [Cloud sandboxes](../cloud/_index.md).
+@z
+
+@x
+#### Create a cloud environment
+@y
+#### Create a cloud environment
 @z
 
 @x
@@ -952,91 +988,179 @@ sandboxOptions:
 @z
 
 @x
+Resource limits must match a [cloud size](../cloud/usage.md#choose-resources-and-platform).
 Review the plan, create the sandbox without attaching, and run a command:
 @y
+Resource limits must match a [cloud size](../cloud/usage.md#choose-resources-and-platform).
 Review the plan, create the sandbox without attaching, and run a command:
 @z
 
 @x
 ```console
 $ sbx --cloud env plan ./cloud.sbxenv.yaml
-$ sbx --cloud env run --detached ./cloud.sbxenv.yaml
+$ sbx --cloud env create ./cloud.sbxenv.yaml
 $ sbx --cloud env exec ./cloud.sbxenv.yaml -- printenv PROJECT_NAME
 ```
 @y
 ```console
 $ sbx --cloud env plan ./cloud.sbxenv.yaml
-$ sbx --cloud env run --detached ./cloud.sbxenv.yaml
+$ sbx --cloud env create ./cloud.sbxenv.yaml
 $ sbx --cloud env exec ./cloud.sbxenv.yaml -- printenv PROJECT_NAME
 ```
 @z
 
 @x
+To attach to the agent, use `sbx --cloud env run ./cloud.sbxenv.yaml`.
+@y
+To attach to the agent, use `sbx --cloud env run ./cloud.sbxenv.yaml`.
+@z
+
+@x
+#### Adapt a local environment file
+@y
+#### Adapt a local environment file
+@z
+
+@x
 Cloud environments support agents and kits, environment variables, CPU and
 memory limits, credentials for supported providers, and host lifecycle commands.
-Resource limits must match a [cloud size](../cloud/usage.md#choose-resources-and-platform).
 Lifecycle commands still run on your machine with your privileges.
 @y
 Cloud environments support agents and kits, environment variables, CPU and
 memory limits, credentials for supported providers, and host lifecycle commands.
-Resource limits must match a [cloud size](../cloud/usage.md#choose-resources-and-platform).
 Lifecycle commands still run on your machine with your privileges.
 @z
 
 @x
-Remove `workspace`, `additionalWorkspaces`, clone options, `ports`, `registries`,
-and MCP server definitions from a local file before using it in cloud mode.
-Cloud environments also reject local sandbox options such as GPU, USB,
-display, shared skills, templates, and governance profiles. These checks run
-before host commands or provisioning. Transfer project files with
-[`sbx --cloud cp`](../cloud/usage.md#transfer-files) or clone a repository inside
-the sandbox.
+Before using a local file in cloud mode, remove:
 @y
-Remove `workspace`, `additionalWorkspaces`, clone options, `ports`, `registries`,
-and MCP server definitions from a local file before using it in cloud mode.
-Cloud environments also reject local sandbox options such as GPU, USB,
-display, shared skills, templates, and governance profiles. These checks run
-before host commands or provisioning. Transfer project files with
-[`sbx --cloud cp`](../cloud/usage.md#transfer-files) or clone a repository inside
-the sandbox.
+Before using a local file in cloud mode, remove:
+@z
+
+@x
+- `workspace`, `additionalWorkspaces`, and clone options
+- `ports`, `registries`, and MCP server definitions
+- Local sandbox options: GPU, USB, display, shared skills, templates, and
+  governance profiles
+@y
+- `workspace`, `additionalWorkspaces`, and clone options
+- `ports`, `registries`, and MCP server definitions
+- Local sandbox options: GPU, USB, display, shared skills, templates, and
+  governance profiles
+@z
+
+@x
+Unsupported settings are rejected before host commands or provisioning run.
+Transfer project files with [`sbx --cloud cp`](../cloud/usage.md#transfer-files)
+or clone a repository inside the sandbox.
+@y
+Unsupported settings are rejected before host commands or provisioning run.
+Transfer project files with [`sbx --cloud cp`](../cloud/usage.md#transfer-files)
+or clone a repository inside the sandbox.
+@z
+
+@x
+#### Set expiration
+@y
+#### Set expiration
+@z
+
+@x
+Set expiration when creating a cloud environment with `--ttl` and
+`--on-timeout`. For example, restart the sandbox when it expires:
+@y
+Set expiration when creating a cloud environment with `--ttl` and
+`--on-timeout`. For example, restart the sandbox when it expires:
+@z
+
+@x
+```console
+$ sbx --cloud env create --ttl 4h --on-timeout restart ./cloud.sbxenv.yaml
+```
+@y
+```console
+$ sbx --cloud env create --ttl 4h --on-timeout restart ./cloud.sbxenv.yaml
+```
+@z
+
+@x
+The `restart` action stops and immediately starts the sandbox. With this action,
+an explicit `--ttl` must be at least one hour. You can also choose `stop` or
+`delete`; see [Configure expiration](../cloud/usage.md#configure-expiration).
+@y
+The `restart` action stops and immediately starts the sandbox. With this action,
+an explicit `--ttl` must be at least one hour. You can also choose `stop` or
+`delete`; see [Configure expiration](../cloud/usage.md#configure-expiration).
+@z
+
+@x
+These flags apply only when creating a cloud sandbox. `sbx --cloud env run`
+accepts them when creating a sandbox, but rejects them when attaching to an
+existing one. Local environment commands reject both flags.
+@y
+These flags apply only when creating a cloud sandbox. `sbx --cloud env run`
+accepts them when creating a sandbox, but rejects them when attaching to an
+existing one. Local environment commands reject both flags.
+@z
+
+@x
+#### Configure credentials
+@y
+#### Configure credentials
 @z
 
 @x
 The plan shows inherited cloud credentials. Sandbox-scoped credentials override
-account defaults, and credentials declared in `secrets` override both. Declare
-literal values or use [`snapshot: true`](#secrets) to resolve a host command or
-vault reference once. Dynamic secret sources and custom credential providers
-aren't supported. Credential bindings require cloud support for kit credentials
-and explicit approval of the kit's injection domains.
+account defaults, and credentials declared in `secrets` override both.
 @y
 The plan shows inherited cloud credentials. Sandbox-scoped credentials override
-account defaults, and credentials declared in `secrets` override both. Declare
-literal values or use [`snapshot: true`](#secrets) to resolve a host command or
-vault reference once. Dynamic secret sources and custom credential providers
-aren't supported. Credential bindings require cloud support for kit credentials
-and explicit approval of the kit's injection domains.
+account defaults, and credentials declared in `secrets` override both.
 @z
 
 @x
-Changes to secrets and bindings require recreating the sandbox. Updated `env`
-values apply to subsequent sessions. Rejoining a running agent keeps that
-process's environment.
+Declare literal values or use [`snapshot: true`](#secrets) to resolve a host
+command or vault reference once. Dynamic secret sources and custom credential
+providers aren't supported. Credential bindings require cloud support for kit
+credentials and explicit approval of the kit's injection domains.
 @y
-Changes to secrets and bindings require recreating the sandbox. Updated `env`
-values apply to subsequent sessions. Rejoining a running agent keeps that
-process's environment.
+Declare literal values or use [`snapshot: true`](#secrets) to resolve a host
+command or vault reference once. Dynamic secret sources and custom credential
+providers aren't supported. Credential bindings require cloud support for kit
+credentials and explicit approval of the kit's injection domains.
 @z
 
 @x
-Use the same machine, Docker identity, cloud endpoint, and ordered file paths
-for later commands. `sbx login` keeps environment state associated with your
-Docker identity. With `DOCKER_ACCESS_TOKEN`, changing the token starts a separate
-state scope.
+Changes to secrets and bindings require recreating the sandbox.
 @y
-Use the same machine, Docker identity, cloud endpoint, and ordered file paths
-for later commands. `sbx login` keeps environment state associated with your
-Docker identity. With `DOCKER_ACCESS_TOKEN`, changing the token starts a separate
-state scope.
+Changes to secrets and bindings require recreating the sandbox.
+@z
+
+@x
+#### Reuse the environment
+@y
+#### Reuse the environment
+@z
+
+@x
+For later commands, use the same machine, cloud endpoint, and ordered file
+paths, and sign in with the same Docker account using `sbx login`.
+@y
+For later commands, use the same machine, cloud endpoint, and ordered file
+paths, and sign in with the same Docker account using `sbx login`.
+@z
+
+@x
+Updated `env` values apply to subsequent sessions. Rejoining a running agent
+keeps that process's environment.
+@y
+Updated `env` values apply to subsequent sessions. Rejoining a running agent
+keeps that process's environment.
+@z
+
+@x
+#### Remove the environment
+@y
+#### Remove the environment
 @z
 
 @x
@@ -1058,13 +1182,19 @@ $ sbx --cloud env rm ./cloud.sbxenv.yaml
 @x
 Removal deletes the sandbox and only the secrets provisioned by this
 environment. Inherited secrets remain. Global bindings remain unless you pass
-`--prune-bindings`. For unattended runs, use `--auto-approve` with `create` or
-`run`, and `--force` with `rm`.
+`--prune-bindings`. For unattended runs, use `--force` with `create`, `run`, or
+`rm` to approve the plan.
 @y
 Removal deletes the sandbox and only the secrets provisioned by this
 environment. Inherited secrets remain. Global bindings remain unless you pass
-`--prune-bindings`. For unattended runs, use `--auto-approve` with `create` or
-`run`, and `--force` with `rm`.
+`--prune-bindings`. For unattended runs, use `--force` with `create`, `run`, or
+`rm` to approve the plan.
+@z
+
+@x
+#### Recover from interrupted creation
+@y
+#### Recover from interrupted creation
 @z
 
 @x
@@ -1130,15 +1260,59 @@ domains remain visible so you can review them.
 @z
 
 @x
+Changes appear under the same keys and nesting as the environment file.
+For example, this plan changes `GOFLAGS` from `-mod=mod` to `-mod=readonly`:
+@y
+Changes appear under the same keys and nesting as the environment file.
+For example, this plan changes `GOFLAGS` from `-mod=mod` to `-mod=readonly`:
+@z
+
+@x
+```text
+   env:
+~    GOFLAGS: -mod=mod -> -mod=readonly
+```
+@y
+```text
+   env:
+~    GOFLAGS: -mod=mod -> -mod=readonly
+```
+@z
+
+@x
+Read the symbol beside each entry before approving the plan:
+@y
+Read the symbol beside each entry before approving the plan:
+@z
+
+@x
+| Symbol | Effect of applying the entry |
+| ------ | ---------------------------- |
+| `+` | Add a resource |
+| `~` | Change a resource |
+| `-` | Destroy a resource |
+| `>` | Run a host command again |
+| `!` | Stop tracking a resource that is no longer declared, without deleting it |
+@y
+| Symbol | Effect of applying the entry |
+| ------ | ---------------------------- |
+| `+` | Add a resource |
+| `~` | Change a resource |
+| `-` | Destroy a resource |
+| `>` | Run a host command again |
+| `!` | Stop tracking a resource that is no longer declared, without deleting it |
+@z
+
+@x
 Interactive approval is recorded for the environment under the `sbx` state
 directory. Plans without host commands apply silently on later invocations until
 the environment changes or a resource is missing. An approval provided with
-`--auto-approve` applies only to that invocation.
+`--force` applies only to that invocation.
 @y
 Interactive approval is recorded for the environment under the `sbx` state
 directory. Plans without host commands apply silently on later invocations until
 the environment changes or a resource is missing. An approval provided with
-`--auto-approve` applies only to that invocation.
+`--force` applies only to that invocation.
 @z
 
 @x
@@ -1432,11 +1606,11 @@ that declares it.
 @z
 
 @x
-`sbx` mounts the environment file read-only inside the sandbox. Keep the file
-outside direct-mounted workspaces or directly in a workspace root.
+For environment file placement and write protection, see
+[Protect the environment file](#protect-the-environment-file).
 @y
-`sbx` mounts the environment file read-only inside the sandbox. Keep the file
-outside direct-mounted workspaces or directly in a workspace root.
+For environment file placement and write protection, see
+[Protect the environment file](#protect-the-environment-file).
 @z
 
 @x
@@ -1503,6 +1677,7 @@ paths resolve from the directory of the environment file that declares them.
 | `display`     | boolean         | `false`  | Provision a display socket for graphical applications |
 | `gpu`         | boolean         | `false`  | Pass the host GPU through to the sandbox               |
 | `usb`         | list of strings | None     | USB device selectors to pass through to the sandbox   |
+| `writableEnvFiles` | boolean     | `false`  | Let the sandbox write to shared environment files; local only |
 @y
 | Field         | Type            | Default  | Description                                           |
 | ------------- | --------------- | -------- | ----------------------------------------------------- |
@@ -1515,6 +1690,7 @@ paths resolve from the directory of the environment file that declares them.
 | `display`     | boolean         | `false`  | Provision a display socket for graphical applications |
 | `gpu`         | boolean         | `false`  | Pass the host GPU through to the sandbox               |
 | `usb`         | list of strings | None     | USB device selectors to pass through to the sandbox   |
+| `writableEnvFiles` | boolean     | `false`  | Let the sandbox write to shared environment files; local only |
 @z
 
 @x
@@ -1684,14 +1860,14 @@ commands.
 @x
 Plans containing lifecycle commands or credential `command` sources require
 approval for every invocation by default, even when the command text hasn't
-changed. Approve one invocation with `--auto-approve`, skip lifecycle commands
+changed. Approve one invocation with `--force`, skip lifecycle commands
 with `--skip-host-commands`, or turn on
 [`env.rememberHostCommands`](settings.md#envrememberhostcommands) to remember
 approval until the commands change:
 @y
 Plans containing lifecycle commands or credential `command` sources require
 approval for every invocation by default, even when the command text hasn't
-changed. Approve one invocation with `--auto-approve`, skip lifecycle commands
+changed. Approve one invocation with `--force`, skip lifecycle commands
 with `--skip-host-commands`, or turn on
 [`env.rememberHostCommands`](settings.md#envrememberhostcommands) to remember
 approval until the commands change:
