@@ -7,13 +7,15 @@
 title: Kits
 description: Use sandbox kits and share environments as kit sets composed from workloads and mixins.
 keywords: sandboxes, sbx, kits, v3, workloads, mixins
-weight: 90
-linkTitle: Kits
 @y
 title: Kits
 description: Use sandbox kits and share environments as kit sets composed from workloads and mixins.
 keywords: sandboxes, sbx, kits, v3, workloads, mixins
-weight: 90
+@z
+
+@x
+linkTitle: Kits
+@y
 linkTitle: Kits
 @z
 
@@ -46,13 +48,11 @@ once, then reuse them across projects and share them with your team.
 @z
 
 @x
-This page covers v3 kits, which require `sbx` v0.45 or later. See
-[Version compatibility](#version-compatibility) for compatibility with earlier
-kit formats.
+Docker recommends v3 kits. This section covers v3. For the supported v2
+format, see [Kits v2](/manuals/ai/sandboxes/customize/kits-v2.md).
 @y
-This page covers v3 kits, which require `sbx` v0.45 or later. See
-[Version compatibility](#version-compatibility) for compatibility with earlier
-kit formats.
+Docker recommends v3 kits. This section covers v3. For the supported v2
+format, see [Kits v2](manuals/ai/sandboxes/customize/kits-v2.md).
 @z
 
 @x
@@ -75,14 +75,14 @@ kit as a container image containing its files and descriptor.
 
 @x
 You identify a published kit by its container image reference, such as
-`me/my-kit:latest`. When you use the kit, `sbx` prepares its files and applies
-its settings. You can use one kit for a complete environment or combine kits
-that contribute different parts.
+`docker.io/docker/sbx-kit-claude:2.1.267`. When you use the kit, `sbx`
+prepares its files and applies its settings. You can use one kit for a
+complete environment or combine kits that contribute different parts.
 @y
 You identify a published kit by its container image reference, such as
-`me/my-kit:latest`. When you use the kit, `sbx` prepares its files and applies
-its settings. You can use one kit for a complete environment or combine kits
-that contribute different parts.
+`docker.io/docker/sbx-kit-claude:2.1.267`. When you use the kit, `sbx`
+prepares its files and applies its settings. You can use one kit for a
+complete environment or combine kits that contribute different parts.
 @z
 
 @x
@@ -155,20 +155,20 @@ For example, this command runs a workload with a mixin:
 
 @x
 ```console
-$ sbx run me/my-agent-kit:latest --kit me/my-mixin:latest
+$ sbx run docker.io/docker/sbx-kit-claude:2.1.267 --kit docker.io/sbx/playwright:1.61.1
 ```
 @y
 ```console
-$ sbx run me/my-agent-kit:latest --kit me/my-mixin:latest
+$ sbx run docker.io/docker/sbx-kit-claude:2.1.267 --kit docker.io/sbx/playwright:1.61.1
 ```
 @z
 
 @x
-The workload supplies the environment and launch command. The mixin adds its
-tools and configuration to that environment.
+The Claude Code workload starts the agent, and the Playwright mixin adds
+browser-testing tools.
 @y
-The workload supplies the environment and launch command. The mixin adds its
-tools and configuration to that environment.
+The Claude Code workload starts the agent, and the Playwright mixin adds
+browser-testing tools.
 @z
 
 @x
@@ -215,7 +215,7 @@ their image digests when you build it. You can also use a set in an environment
 file.
 @y
 To share a combination without publishing another kit, list the workload and
-mixins in a [sandbox environment file](/manuals/ai/sandboxes/configuration/environment-files.md).
+mixins in a [sandbox environment file](manuals/ai/sandboxes/configuration/environment-files.md).
 Docker Sandboxes composes those kits when it creates the sandbox. An environment
 file can also configure the workspace and host resources. Choose a set when you
 want one published reference with a fixed list of components; the set records
@@ -240,35 +240,33 @@ and add mixins. To customize and publish your own combination, see
 @z
 
 @x
-V3 kits cannot be combined with v1 or v2 kits in the same sandbox. To use
-v3, select a v3 workload and use v3 for every mixin you add.
+V3 requires `sbx` v0.45 or later. Every kit in a v3 sandbox must use v3:
+select a v3 workload and add only v3 mixins.
 @y
-V3 kits cannot be combined with v1 or v2 kits in the same sandbox. To use
-v3, select a v3 workload and use v3 for every mixin you add.
+V3 requires `sbx` v0.45 or later. Every kit in a v3 sandbox must use v3:
+select a v3 workload and add only v3 mixins.
 @z
 
 @x
-The built-in agent names, such as `claude` and `codex`, select v2 kits.
-You can't add a v3 mixin to these built-ins. For example,
-`sbx run claude --kit ./some-v3-mixin` fails because it mixes kit versions.
-Instead, select a v3 workload by its published image, local path, or Git
-reference, as shown in [Run a kit](/manuals/ai/sandboxes/customize/use-kits.md#run-a-kit).
+Built-in agent names such as `claude` and `codex` select v2 kits, so
+`sbx run claude --kit ./some-v3-mixin` fails. To use that mixin, choose a
+[v3 workload](/manuals/ai/sandboxes/customize/use-kits.md#published-v3-workloads)
+by its image, local path, or Git reference.
 @y
-The built-in agent names, such as `claude` and `codex`, select v2 kits.
-You can't add a v3 mixin to these built-ins. For example,
-`sbx run claude --kit ./some-v3-mixin` fails because it mixes kit versions.
-Instead, select a v3 workload by its published image, local path, or Git
-reference, as shown in [Run a kit](manuals/ai/sandboxes/customize/use-kits.md#run-a-kit).
+Built-in agent names such as `claude` and `codex` select v2 kits, so
+`sbx run claude --kit ./some-v3-mixin` fails. To use that mixin, choose a
+[v3 workload](manuals/ai/sandboxes/customize/use-kits.md#published-v3-workloads)
+by its image, local path, or Git reference.
 @z
 
 @x
-V2 remains supported, including the built-in agents and
-existing v2 customizations. See [Kits v2](/manuals/ai/sandboxes/customize/kits-v2.md) for maintenance
-and migration guidance.
+A kit's capabilities can require a later release or a local sandbox. See
+[Kit capability support](/manuals/ai/sandboxes/customize/author/capabilities.md)
+for details. V2 remains supported and is not deprecated.
 @y
-V2 remains supported, including the built-in agents and
-existing v2 customizations. See [Kits v2](manuals/ai/sandboxes/customize/kits-v2.md) for maintenance
-and migration guidance.
+A kit's capabilities can require a later release or a local sandbox. See
+[Kit capability support](manuals/ai/sandboxes/customize/author/capabilities.md)
+for details. V2 remains supported and is not deprecated.
 @z
 
 @x
@@ -294,11 +292,9 @@ and migration guidance.
 @z
 
 @x
-For the earlier format used by built-in agents, see [Kits v2](/manuals/ai/sandboxes/customize/kits-v2.md).
 To save an environment you've configured inside a sandbox,
 see [Save a sandbox as a template](/manuals/ai/sandboxes/usage.md#saving-a-sandbox-as-a-template).
 @y
-For the earlier format used by built-in agents, see [Kits v2](manuals/ai/sandboxes/customize/kits-v2.md).
 To save an environment you've configured inside a sandbox,
 see [Save a sandbox as a template](manuals/ai/sandboxes/usage.md#saving-a-sandbox-as-a-template).
 @z

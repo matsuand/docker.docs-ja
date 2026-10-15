@@ -34,11 +34,11 @@ and applies the kit's settings.
 @z
 
 @x
-This page shows how to run published kits, combine them with mixins, and
-customize their settings.
+Docker recommends v3 kits. V2 remains supported and is the default format
+for built-in agent references such as `claude` and `codex`.
 @y
-This page shows how to run published kits, combine them with mixins, and
-customize their settings.
+Docker recommends v3 kits. V2 remains supported and is the default format
+for built-in agent references such as `claude` and `codex`.
 @z
 
 @x
@@ -68,11 +68,97 @@ $ sbx run docker.io/docker/sbx-kit-codex:0.155.1 --name codex-v3-kit
 @z
 
 @x
-This starts Codex using a v3 kit from Docker Hub. The built-in `codex`
-shortcut uses a v2 kit to preserve compatibility with existing customizations.
+### Published v3 workloads
 @y
-This starts Codex using a v3 kit from Docker Hub. The built-in `codex`
-shortcut uses a v2 kit to preserve compatibility with existing customizations.
+### Published v3 workloads
+@z
+
+@x
+Use these published v3 workloads in place of built-in shortcuts when adding
+v3 mixins with `sbx run` or `sbx create`.
+@y
+Use these published v3 workloads in place of built-in shortcuts when adding
+v3 mixins with `sbx run` or `sbx create`.
+@z
+
+@x
+A workload's agent name comes from the last component of its repository name.
+It must differ from built-in agent names: `docker/sbx-kit-claude` registers
+`sbx-kit-claude`, while `sbx/claude` conflicts with built-in `claude` and
+fails to register. Changing the sandbox's `--name` doesn't change the agent name.
+@y
+A workload's agent name comes from the last component of its repository name.
+It must differ from built-in agent names: `docker/sbx-kit-claude` registers
+`sbx-kit-claude`, while `sbx/claude` conflicts with built-in `claude` and
+fails to register. Changing the sandbox's `--name` doesn't change the agent name.
+@z
+
+@x
+| Built-in agent | V3 workload OCI reference |
+| --- | --- |
+| `claude` | `docker.io/docker/sbx-kit-claude:2.1.267` |
+| `codex` | `docker.io/docker/sbx-kit-codex:0.155.1` |
+| `copilot` | `docker.io/docker/sbx-kit-copilot:1.0.86` |
+| `cursor` | `docker.io/docker/sbx-kit-cursor:2026.09.18-9a7762b` |
+| `devin` | `docker.io/docker/sbx-kit-devin:3000.10.31` |
+| `docker-agent` | `docker.io/docker/sbx-kit-docker-agent:1.141.0` |
+| `droid` | `docker.io/docker/sbx-kit-droid:0.223.0` |
+| `kiro` | `docker.io/docker/sbx-kit-kiro:1.0.0` |
+| `opencode` | `docker.io/docker/sbx-kit-opencode:1.18.31` |
+| `shell` | `docker.io/docker/sbx-kit-shell:1.0.0` |
+@y
+| Built-in agent | V3 workload OCI reference |
+| --- | --- |
+| `claude` | `docker.io/docker/sbx-kit-claude:2.1.267` |
+| `codex` | `docker.io/docker/sbx-kit-codex:0.155.1` |
+| `copilot` | `docker.io/docker/sbx-kit-copilot:1.0.86` |
+| `cursor` | `docker.io/docker/sbx-kit-cursor:2026.09.18-9a7762b` |
+| `devin` | `docker.io/docker/sbx-kit-devin:3000.10.31` |
+| `docker-agent` | `docker.io/docker/sbx-kit-docker-agent:1.141.0` |
+| `droid` | `docker.io/docker/sbx-kit-droid:0.223.0` |
+| `kiro` | `docker.io/docker/sbx-kit-kiro:1.0.0` |
+| `opencode` | `docker.io/docker/sbx-kit-opencode:1.18.31` |
+| `shell` | `docker.io/docker/sbx-kit-shell:1.0.0` |
+@z
+
+@x
+For a [sandbox environment file](/manuals/ai/sandboxes/configuration/environment-files.md),
+list the workload reference under `kits` and set `agent` to its repository
+name, such as `sbx-kit-claude`.
+@y
+For a [sandbox environment file](manuals/ai/sandboxes/configuration/environment-files.md),
+list the workload reference under `kits` and set `agent` to its repository
+name, such as `sbx-kit-claude`.
+@z
+
+@x
+Published `sbx/*` mixins, such as `sbx/playwright` and `sbx/codex-mixin`, can
+be combined with these workloads. Their sources are on the
+[v3 branch of docker/sbx-kits-contrib](https://github.com/docker/sbx-kits-contrib/tree/v3).
+For more source examples, see
+[sandbox-kit-spec](https://github.com/docker/sandbox-kit-spec/tree/main/examples).
+@y
+Published `sbx/*` mixins, such as `sbx/playwright` and `sbx/codex-mixin`, can
+be combined with these workloads. Their sources are on the
+[v3 branch of docker/sbx-kits-contrib](https://github.com/docker/sbx-kits-contrib/tree/v3).
+For more source examples, see
+[sandbox-kit-spec](https://github.com/docker/sandbox-kit-spec/tree/main/examples).
+@z
+
+@x
+Use a version tag to select a kit release, or a digest to identify exact
+content. A `latest` tag can move to a kit that needs a later `sbx` release.
+V3 format support starts at v0.45, but a kit's capabilities can require a
+later version or a local sandbox. Check
+[Kit capability support](/manuals/ai/sandboxes/customize/author/capabilities.md)
+and the publisher's requirements before choosing a kit.
+@y
+Use a version tag to select a kit release, or a digest to identify exact
+content. A `latest` tag can move to a kit that needs a later `sbx` release.
+V3 format support starts at v0.45, but a kit's capabilities can require a
+later version or a local sandbox. Check
+[Kit capability support](manuals/ai/sandboxes/customize/author/capabilities.md)
+and the publisher's requirements before choosing a kit.
 @z
 
 @x
@@ -251,12 +337,10 @@ instructions intact.
 
 @x
 Mixins add tools and configuration to a workload. Use `--kit` to add a mixin
-when creating a sandbox. For v3 kits, both the workload and the mixin must
-use v3.
+when creating a sandbox.
 @y
 Mixins add tools and configuration to a workload. Use `--kit` to add a mixin
-when creating a sandbox. For v3 kits, both the workload and the mixin must
-use v3.
+when creating a sandbox.
 @z
 
 @x
@@ -302,18 +386,6 @@ applies the files and settings from both the workload and the mixin.
 @z
 
 @x
-Built-in shortcuts such as `claude` and `codex` use v2 kits and require
-[v2 mixins](/manuals/ai/sandboxes/customize/kits-v2.md).
-See [Version compatibility](/manuals/ai/sandboxes/customize/_index.md#version-compatibility)
-for details.
-@y
-Built-in shortcuts such as `claude` and `codex` use v2 kits and require
-[v2 mixins](manuals/ai/sandboxes/customize/kits-v2.md).
-See [Version compatibility](manuals/ai/sandboxes/customize/_index.md#version-compatibility)
-for details.
-@z
-
-@x
 ### Combine multiple mixins
 @y
 ### Combine multiple mixins
@@ -347,7 +419,7 @@ names in a composition.
 To publish your combination as one reference, see
 [Compose a kit set](manuals/ai/sandboxes/customize/author/kit-sets.md).
 To keep the kits separate in a shared sandbox configuration, list them in a
-[sandbox environment file](/manuals/ai/sandboxes/configuration/environment-files.md).
+[sandbox environment file](manuals/ai/sandboxes/configuration/environment-files.md).
 Give each published kit its own image repository name. Different tags of the
 same repository have the same kit name, and Docker Sandboxes rejects duplicate
 names in a composition.

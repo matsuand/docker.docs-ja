@@ -150,6 +150,16 @@ ports:
 @z
 
 @x
+> [!NOTE]
+> This example uses kits v2, the format used by built-in agents. For v3, see
+> [Add v3 kits](#add-v3-kits).
+@y
+> [!NOTE]
+> This example uses kits v2, the format used by built-in agents. For v3, see
+> [Add v3 kits](#add-v3-kits).
+@z
+
+@x
 From `web-app-env`, run the environment:
 @y
 From `web-app-env`, run the environment:
@@ -694,6 +704,82 @@ can adapt for a project.
 @z
 
 @x
+### Add v3 kits
+@y
+### Add v3 kits
+@z
+
+@x
+To add v3 mixins, include a v3 workload in `kits` and set `agent` to the
+workload's name.
+@y
+To add v3 mixins, include a v3 workload in `kits` and set `agent` to the
+workload's name.
+@z
+
+@x
+For example, save this as `web-app-env/v3.sbxenv.yaml` to use a v3 Claude Code
+workload with the v3 Playwright mixin:
+@y
+For example, save this as `web-app-env/v3.sbxenv.yaml` to use a v3 Claude Code
+workload with the v3 Playwright mixin:
+@z
+
+@x
+```yaml
+schemaVersion: "1"
+name: web-app-v3
+agent: sbx-kit-claude
+workspace: ./web-app
+@y
+```yaml
+schemaVersion: "1"
+name: web-app-v3
+agent: sbx-kit-claude
+workspace: ./web-app
+@z
+
+@x
+kits:
+  - docker.io/docker/sbx-kit-claude:2.1.267
+  - docker.io/sbx/playwright:1.61.1
+```
+@y
+kits:
+  - docker.io/docker/sbx-kit-claude:2.1.267
+  - docker.io/sbx/playwright:1.61.1
+```
+@z
+
+@x
+From `web-app-env`, run:
+@y
+From `web-app-env`, run:
+@z
+
+@x
+```console
+$ sbx env run v3.sbxenv.yaml
+```
+@y
+```console
+$ sbx env run v3.sbxenv.yaml
+```
+@z
+
+@x
+The `agent` value, `sbx-kit-claude`, matches the last component of the
+workload's repository name. The `web-app-v3` name creates a separate sandbox.
+For other agents, see the
+[published v3 workloads](/manuals/ai/sandboxes/customize/use-kits.md#published-v3-workloads).
+@y
+The `agent` value, `sbx-kit-claude`, matches the last component of the
+workload's repository name. The `web-app-v3` name creates a separate sandbox.
+For other agents, see the
+[published v3 workloads](manuals/ai/sandboxes/customize/use-kits.md#published-v3-workloads).
+@z
+
+@x
 ### Combine team defaults and personal settings
 @y
 ### Combine team defaults and personal settings
@@ -1495,18 +1581,14 @@ true`.
 `kits` accepts local directories, ZIP archives, OCI registry references, and
 Git URLs prefixed with `git+https://` or `git+ssh://`. Kits can install tools,
 configure the sandbox, and give the agent project-specific instructions.
-The examples on this page pair built-in agents with v2 mixins. See
-[Kits v2](/manuals/ai/sandboxes/customize/kits-v2.md) for that format, or
-[Version compatibility](/manuals/ai/sandboxes/customize/_index.md#version-compatibility)
-when selecting v3 kits.
+Built-in agents use v2 mixins. For v3 workloads and mixins, see
+[Add v3 kits](#add-v3-kits).
 @y
 `kits` accepts local directories, ZIP archives, OCI registry references, and
 Git URLs prefixed with `git+https://` or `git+ssh://`. Kits can install tools,
 configure the sandbox, and give the agent project-specific instructions.
-The examples on this page pair built-in agents with v2 mixins. See
-[Kits v2](manuals/ai/sandboxes/customize/kits-v2.md) for that format, or
-[Version compatibility](manuals/ai/sandboxes/customize/_index.md#version-compatibility)
-when selecting v3 kits.
+Built-in agents use v2 mixins. For v3 workloads and mixins, see
+[Add v3 kits](#add-v3-kits).
 @z
 
 @x

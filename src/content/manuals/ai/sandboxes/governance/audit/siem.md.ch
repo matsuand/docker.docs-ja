@@ -12,11 +12,11 @@ linkTitle: SIEM forwarding
 @z
 
 @x
-description: Forward Docker AI Governance audit events to Splunk, Dynatrace, Datadog, or Sumo Logic.
-keywords: docker sandboxes, SIEM, audit logs, Splunk, Dynatrace, Datadog, Sumo Logic, AI Governance, forwarding, NDJSON
+description: Forward Docker AI Governance audit events to Splunk, Dynatrace, Datadog, Sumo Logic, or CrowdStrike Falcon Next-Gen SIEM.
+keywords: docker sandboxes, SIEM, audit logs, Splunk, Dynatrace, Datadog, Sumo Logic, CrowdStrike, Falcon Next-Gen SIEM, AI Governance, forwarding, NDJSON
 @y
-description: Forward Docker AI Governance audit events to Splunk, Dynatrace, Datadog, or Sumo Logic.
-keywords: docker sandboxes, SIEM, audit logs, Splunk, Dynatrace, Datadog, Sumo Logic, AI Governance, forwarding, NDJSON
+description: Forward Docker AI Governance audit events to Splunk, Dynatrace, Datadog, Sumo Logic, or CrowdStrike Falcon Next-Gen SIEM.
+keywords: docker sandboxes, SIEM, audit logs, Splunk, Dynatrace, Datadog, Sumo Logic, CrowdStrike, Falcon Next-Gen SIEM, AI Governance, forwarding, NDJSON
 @z
 
 @x
@@ -50,6 +50,7 @@ with the supplied credential before saving.
 | Dynatrace                        | Dynatrace Log Management using the Log Ingest API               |
 | Datadog                          | Datadog Logs using the HTTP log intake API                      |
 | Sumo Logic                       | Sumo Logic using an HTTP Source                                 |
+| CrowdStrike Falcon Next-Gen SIEM | Falcon Next-Gen SIEM using an HEC / HTTP Event Connector        |
 @y
 | Destination                      | Description                                                     |
 | -------------------------------- | --------------------------------------------------------------- |
@@ -57,6 +58,7 @@ with the supplied credential before saving.
 | Dynatrace                        | Dynatrace Log Management using the Log Ingest API               |
 | Datadog                          | Datadog Logs using the HTTP log intake API                      |
 | Sumo Logic                       | Sumo Logic using an HTTP Source                                 |
+| CrowdStrike Falcon Next-Gen SIEM | Falcon Next-Gen SIEM using an HEC / HTTP Event Connector        |
 @z
 
 @x
@@ -90,9 +92,13 @@ organization. If you haven't already, enable it under **AI Platform** >
 @z
 
 @x
-Gather credentials from your SIEM before configuring forwarding:
+Gather the endpoint URL and credential from your SIEM before configuring
+forwarding. Some destinations require you to create a connector or source
+first:
 @y
-Gather credentials from your SIEM before configuring forwarding:
+Gather the endpoint URL and credential from your SIEM before configuring
+forwarding. Some destinations require you to create a connector or source
+first:
 @z
 
 @x
@@ -104,6 +110,9 @@ Gather credentials from your SIEM before configuring forwarding:
   [Datadog documentation](https://docs.datadoghq.com/).
 - **Sumo Logic**: HTTP Source URL and an auth token from an HTTP Logs &
   Metrics source. See [Sumo Logic documentation](https://www.sumologic.com/help/).
+- **CrowdStrike Falcon Next-Gen SIEM**: API URL and an API key from an HEC /
+  HTTP Event Connector. Append `/raw` to the API URL when you add the
+  destination. See [CrowdStrike documentation](https://library.humio.com/logscale-api/log-shippers-hec-raw.html).
 @y
 - **Splunk Cloud**: HEC ingest URL and an HEC token. Optionally, a Splunk index
   name. See [Splunk documentation](https://docs.splunk.com/).
@@ -113,6 +122,9 @@ Gather credentials from your SIEM before configuring forwarding:
   [Datadog documentation](https://docs.datadoghq.com/).
 - **Sumo Logic**: HTTP Source URL and an auth token from an HTTP Logs &
   Metrics source. See [Sumo Logic documentation](https://www.sumologic.com/help/).
+- **CrowdStrike Falcon Next-Gen SIEM**: API URL and an API key from an HEC /
+  HTTP Event Connector. Append `/raw` to the API URL when you add the
+  destination. See [CrowdStrike documentation](https://library.humio.com/logscale-api/log-shippers-hec-raw.html).
 @z
 
 @x

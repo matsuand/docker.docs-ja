@@ -33,6 +33,9 @@ copyfiles = \
 	mcp-docker-grafana-loki-3.webp                       \
 	mcp-grafana-dashboards.webp                          \
 	mcp-grafana-summary-dashboard.webp                   \
+	mistral-vibe-sandbox-credential.jpg                  \
+	mistral-vibe-sandbox-models.jpg                      \
+	mistral-vibe-sandbox-repair.jpg                      \
 	r.webp                                               \
 	traefik-in-development.webp                          \
 	traefik-non-containerized-workload-architecture.webp \
