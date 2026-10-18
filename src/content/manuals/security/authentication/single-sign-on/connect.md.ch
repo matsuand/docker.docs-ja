@@ -268,29 +268,83 @@ hours. Docker automatically checks for the record during this time.
 @x
 1. From [app.docker.com](https://app.docker.com), choose your organization.
 1. Select **Identity & auth**, then **SSO and SCIM**.
-1. Select **Create Connection**. Name the connection, then choose **SAML 2.0**.
-1. Keep this window open. You need to copy and paste these values in your IdP
-   window:
-   - **Entity ID**
-   - **ACS URL**
-   - **Connection ID**
+1. Select **Create Connection** and name the connection.
 @y
 1. From [app.docker.com](https://app.docker.com), choose your organization.
 1. Select **Identity & auth**, then **SSO and SCIM**.
-1. Select **Create Connection**. Name the connection, then choose **SAML 2.0**.
-1. Keep this window open. You need to copy and paste these values in your IdP
-   window:
-   - **Entity ID**
-   - **ACS URL**
-   - **Connection ID**
+1. Select **Create Connection** and name the connection.
 @z
 
 @x
-You will return here to finish connecting after creating an SSO connection in
-your IdP.
+The dialog offers two connection types. Select the type that matches the
+identity provider tab you use in the next step.
 @y
-You will return here to finish connecting after creating an SSO connection in
-your IdP.
+The dialog offers two connection types. Select the type that matches the
+identity provider tab you use in the next step.
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="SAML 2.0" >}}
+@y
+{{< tabs >}}
+{{< tab name="SAML 2.0" >}}
+@z
+
+@x
+Use this type for the Okta SAML and Entra ID SAML 2.0 tabs.
+@y
+Use this type for the Okta SAML and Entra ID SAML 2.0 tabs.
+@z
+
+@x
+1. Select **SAML 2.0**.
+1. Copy **Entity ID**, **ACS URL**, and **Connection ID**. For SAML
+   configuration, paste these values into your identity provider.
+@y
+1. Select **SAML 2.0**.
+1. Copy **Entity ID**, **ACS URL**, and **Connection ID**. For SAML
+   configuration, paste these values into your identity provider.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Azure AD (OIDC)" >}}
+@y
+{{< /tab >}}
+{{< tab name="Azure AD (OIDC)" >}}
+@z
+
+@x
+Use this type for the Azure OpenID Connect (OIDC) tab.
+@y
+Use this type for the Azure OpenID Connect (OIDC) tab.
+@z
+
+@x
+1. Select **Azure AD (OIDC)**.
+1. Copy **Redirect URI**. For Azure AD configuration, paste the Redirect
+   URI, also called the **Reply URL**, into your identity provider.
+@y
+1. Select **Azure AD (OIDC)**.
+1. Copy **Redirect URI**. For Azure AD configuration, paste the Redirect
+   URI, also called the **Reply URL**, into your identity provider.
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
+Keep this window open. You will return here to finish connecting after
+creating an SSO connection in your IdP.
+@y
+Keep this window open. You will return here to finish connecting after
+creating an SSO connection in your IdP.
 @z
 
 @x
@@ -441,14 +495,16 @@ permissions.
 1. Name the application "Docker".
 1. Set account types and paste the **Redirect URI** from Docker.
 1. Select **Register**.
-1. Copy the **Client ID**.
+1. On the app registration **Overview** page, copy **Application (client)
+   ID**. This value is the Docker **Client ID**.
 @y
 1. Sign in to [Microsoft Entra admin center](https://entra.microsoft.com/).
 1. Go to **App Registration** and select **New Registration**.
 1. Name the application "Docker".
 1. Set account types and paste the **Redirect URI** from Docker.
 1. Select **Register**.
-1. Copy the **Client ID**.
+1. On the app registration **Overview** page, copy **Application (client)
+   ID**. This value is the Docker **Client ID**.
 @z
 
 @x
@@ -460,11 +516,37 @@ permissions.
 @x
 1. In your app, go to **Certificates & secrets**.
 1. Select **New client secret**, describe and configure duration, then **Add**.
-1. Copy the **value** of the new secret.
+1. Copy the secret **Value**, not the **Secret ID**. The **Value** is the
+   Docker **Client Secret**.
 @y
 1. In your app, go to **Certificates & secrets**.
 1. Select **New client secret**, describe and configure duration, then **Add**.
-1. Copy the **value** of the new secret.
+1. Copy the secret **Value**, not the **Secret ID**. The **Value** is the
+   Docker **Client Secret**.
+@z
+
+@x
+   **Value** is the secret string Entra generated. Docker uses it when someone
+   signs in with this connection. Entra shows the **Value** on this screen
+   only. If you leave the page or refresh it, the column is blank. Create a
+   new secret and copy its **Value** before you leave.
+@y
+   **Value** is the secret string Entra generated. Docker uses it when someone
+   signs in with this connection. Entra shows the **Value** on this screen
+   only. If you leave the page or refresh it, the column is blank. Create a
+   new secret and copy its **Value** before you leave.
+@z
+
+@x
+   **Secret ID** is the identifier for that row. It stays visible so you can
+   tell two secrets apart, see which secret is about to expire, or delete a
+   specific one. Entra does not accept the **Secret ID** as the **Client
+   Secret**.
+@y
+   **Secret ID** is the identifier for that row. It stays visible so you can
+   tell two secrets apart, see which secret is about to expire, or delete a
+   specific one. Entra does not accept the **Secret ID** as the **Client
+   Secret**.
 @z
 
 @x
@@ -590,16 +672,16 @@ Complete the integration by pasting your IdP values into Docker.
 @x
 1. Return to Docker Home.
 1. Paste the following values:
-   - **Client ID**
-   - **Client Secret**
+   - **Client ID**: the **Application (client) ID** you copied
+   - **Client Secret**: the secret **Value** you copied
    - **Azure AD Domain**
 1. Optional. Select a default team, if required by your org.
 1. Review and select **Create connection**.
 @y
 1. Return to Docker Home.
 1. Paste the following values:
-   - **Client ID**
-   - **Client Secret**
+   - **Client ID**: the **Application (client) ID** you copied
+   - **Client Secret**: the secret **Value** you copied
    - **Azure AD Domain**
 1. Optional. Select a default team, if required by your org.
 1. Review and select **Create connection**.
@@ -737,9 +819,9 @@ Before enforcing SSO, users accessing Docker through the CLI must
 [create a personal access token (PAT)](manuals/security/access-tokens/personal-access-tokens.md).
 The PAT replaces their password for authentication. For CI/CD and other
 automation, replace passwords with a PAT or an
-[organization access token (OAT)](/manuals/security/access-tokens/organization-access-tokens.md).
+[organization access token (OAT)](manuals/security/access-tokens/organization-access-tokens.md).
 For GitHub Actions, you can use an
-[OIDC connection](/manuals/security/authentication/oidc-connections/_index.md)
+[OIDC connection](manuals/security/authentication/oidc-connections/_index.md)
 instead of storing a long-lived token.
 @z
 

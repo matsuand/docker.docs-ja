@@ -276,6 +276,12 @@ tags:
 @z
 
 @x
+      `sandbox:use` is a separate grouping for Cloud Sandboxes. A repository scope does not include it, and it does not include a repository scope. A request can include `sandbox:use` on its own or with one repository scope.
+@y
+      `sandbox:use` is a separate grouping for Cloud Sandboxes. A repository scope does not include it, and it does not include a repository scope. A request can include `sandbox:use` on its own or with one repository scope.
+@z
+
+@x
       ***Treat your personal access token like your password and keep it secret. You cannot retrieve your token after it is generated.***
     summary: Personal Access Tokens
     kind: nav
@@ -6194,7 +6200,7 @@ components:
         scopes:
           type: array
           description: |
-            Valid scopes: "repo:admin", "repo:write", "repo:read", "repo:public_read"
+            Valid scopes: "repo:admin", "repo:write", "repo:read", "repo:public_read", "sandbox:use". Include one repository scope, "sandbox:use", or both.
           example:
             - repo:read
           items:
@@ -8439,7 +8445,7 @@ components:
         scopes:
           type: array
           description: |
-            Valid scopes: "repo:admin", "repo:write", "repo:read", "repo:public_read"
+            Valid scopes: "repo:admin", "repo:write", "repo:read", "repo:public_read", "sandbox:use". Include one repository scope, "sandbox:use", or both.
           example:
             - repo:read
           items:

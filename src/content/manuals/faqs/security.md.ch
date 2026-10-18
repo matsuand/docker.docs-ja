@@ -346,12 +346,12 @@ For detailed instructions, see [Configure single sign-on](manuals/security/authe
 @x
 Not with JIT alone. JIT provisions users when they authenticate, but it
 doesn't deprovision users who leave your IdP. You must
-[remove those users](/manuals/accounts/organization/manage/members.md#remove-a-member-from-the-organization)
+[remove those users](/manuals/accounts/organization/manage/members.md#remove-member-from-organization)
 manually.
 @y
 Not with JIT alone. JIT provisions users when they authenticate, but it
 doesn't deprovision users who leave your IdP. You must
-[remove those users](manuals/accounts/organization/manage/members.md#remove-a-member-from-the-organization)
+[remove those users](manuals/accounts/organization/manage/members.md#remove-member-from-organization)
 manually.
 @z
 

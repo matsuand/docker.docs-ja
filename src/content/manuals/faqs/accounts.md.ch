@@ -33,6 +33,9 @@ keywords:
   - convert Docker account
   - sign in after convert
   - organization owner
+  - personal access token
+  - auto-generated token
+  - incorrect authentication credentials
 @y
 description: FAQs about Docker IDs, account creation, organizations, companies, seats, and members
 keywords:
@@ -55,6 +58,9 @@ keywords:
   - convert Docker account
   - sign in after convert
   - organization owner
+  - personal access token
+  - auto-generated token
+  - incorrect authentication credentials
 @z
 
 @x
@@ -145,6 +151,102 @@ Docker ID for you.
 If you have a trademark for your Docker ID,
 [Docker Support](https://hub.docker.com/support/contact/) can retrieve the
 Docker ID for you.
+@z
+
+@x
+### Why did one of my personal access tokens disappear?
+@y
+### Why did one of my personal access tokens disappear?
+@z
+
+@x
+Signing in to Docker Desktop creates an auto-generated personal access
+token for CLI authentication. An account can have five of these tokens.
+When Docker Desktop creates another one, it deletes the least recently
+used auto-generated token. A token that has never been used is ranked
+by when it was created. The deleted token is removed from your token
+list.
+@y
+Signing in to Docker Desktop creates an auto-generated personal access
+token for CLI authentication. An account can have five of these tokens.
+When Docker Desktop creates another one, it deletes the least recently
+used auto-generated token. A token that has never been used is ranked
+by when it was created. The deleted token is removed from your token
+list.
+@z
+
+@x
+Tokens you create yourself are not deleted this way. They stay in the
+list until you delete them. A revoked token stays in the list with a
+status of **Revoked**.
+@y
+Tokens you create yourself are not deleted this way. They stay in the
+list until you delete them. A revoked token stays in the list with a
+status of **Revoked**.
+@z
+
+@x
+For how these tokens are created and how to tell them apart, see
+[Auto-generated PATs](/manuals/security/access-tokens/personal-access-tokens.md#auto-generated-tokens).
+@y
+For how these tokens are created and how to tell them apart, see
+[Auto-generated PATs](manuals/security/access-tokens/personal-access-tokens.md#auto-generated-tokens).
+@z
+
+@x
+### Why does sign-in fail with "Incorrect authentication credentials"?
+@y
+### Why does sign-in fail with "Incorrect authentication credentials"?
+@z
+
+@x
+`docker login` returns `Incorrect authentication credentials` when the
+username and secret don't match a credential that can sign in. The
+message is the same when a personal access token is wrong, expired,
+inactive, or revoked, and when the username is not the account that
+owns the token.
+@y
+`docker login` returns `Incorrect authentication credentials` when the
+username and secret don't match a credential that can sign in. The
+message is the same when a personal access token is wrong, expired,
+inactive, or revoked, and when the username is not the account that
+owns the token.
+@z
+
+@x
+Check the following:
+@y
+Check the following:
+@z
+
+@x
+1. The username is the Docker ID of the account that owns the token.
+   Use an organization name only with an
+   [organization access token](/manuals/security/access-tokens/organization-access-tokens.md).
+2. You pasted the full token, with no spaces or line breaks. Docker
+   shows a token only once. If you no longer have it,
+   [create a new personal access token](/manuals/security/access-tokens/personal-access-tokens.md#create).
+3. On the **Personal access tokens** page, find the token and use its
+   status:
+   - **Expired:** Create a new token. You can't change the expiration
+     date.
+   - **Inactive:** Select **Activate**.
+   - **Revoked:** The token can't be used again. Delete it and create
+     a new one.
+@y
+1. The username is the Docker ID of the account that owns the token.
+   Use an organization name only with an
+   [organization access token](manuals/security/access-tokens/organization-access-tokens.md).
+2. You pasted the full token, with no spaces or line breaks. Docker
+   shows a token only once. If you no longer have it,
+   [create a new personal access token](manuals/security/access-tokens/personal-access-tokens.md#create).
+3. On the **Personal access tokens** page, find the token and use its
+   status:
+   - **Expired:** Create a new token. You can't change the expiration
+     date.
+   - **Inactive:** Select **Activate**.
+   - **Revoked:** The token can't be used again. Delete it and create
+     a new one.
 @z
 
 @x
@@ -463,14 +565,14 @@ Company owners don't occupy a seat unless one of the following is true:
 When you first create a company, your account is both a company owner and an
 organization owner, so it occupies a seat as long as you remain an organization
 owner. To free up that seat,
-[assign another user as the organization owner](/manuals/accounts/organization/manage/members.md#update-a-member-role)
+[assign another user as the organization owner](/manuals/accounts/organization/manage/members.md#update-member-role)
 and remove yourself from the organization. You keep full administrative access
 as a company owner without using a subscription seat.
 @y
 When you first create a company, your account is both a company owner and an
 organization owner, so it occupies a seat as long as you remain an organization
 owner. To free up that seat,
-[assign another user as the organization owner](manuals/accounts/organization/manage/members.md#update-a-member-role)
+[assign another user as the organization owner](manuals/accounts/organization/manage/members.md#update-member-role)
 and remove yourself from the organization. You keep full administrative access
 as a company owner without using a subscription seat.
 @z

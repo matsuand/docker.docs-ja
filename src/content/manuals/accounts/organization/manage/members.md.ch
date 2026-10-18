@@ -13,27 +13,29 @@ linkTitle: Members
 @z
 
 @x
-description: Invite and manage organization members in Docker Home. Assign
-  roles, resend or remove invitations, add members to teams, and export a CSV
-  member list.
+description: >-
+  Invite organization members in Docker Home, assign roles and licenses,
+  manage teams, remove members with or without SCIM, and export a CSV member
+  list.
 keywords: members, invite members, organization members, Docker Home, Docker
   Hub, export member list, edit roles, manage invitations, CSV invite, bulk
   invite, resend invitation, remove member, accept invitation, teams, pending
-  invitations, organization owner, licenses
+  invitations, organization owner, licenses, SCIM, IdP, group mapping
 @y
-description: Invite and manage organization members in Docker Home. Assign
-  roles, resend or remove invitations, add members to teams, and export a CSV
-  member list.
+description: >-
+  Invite organization members in Docker Home, assign roles and licenses,
+  manage teams, remove members with or without SCIM, and export a CSV member
+  list.
 keywords: members, invite members, organization members, Docker Home, Docker
   Hub, export member list, edit roles, manage invitations, CSV invite, bulk
   invite, resend invitation, remove member, accept invitation, teams, pending
-  invitations, organization owner, licenses
+  invitations, organization owner, licenses, SCIM, IdP, group mapping
 @z
 
 @x
-Learn how to invite and manage members for your organization in Docker Home.
+Invite and manage members for your organization in Docker Home.
 @y
-Learn how to invite and manage members for your organization in Docker Home.
+Invite and manage members for your organization in Docker Home.
 @z
 
 @x
@@ -397,9 +399,9 @@ owners can add a member to one or more teams within an organization.
 @z
 
 @x
-### Add a member to a team
+### Add member
 @y
-### Add a member to a team
+### Add member
 @z
 
 @x
@@ -423,51 +425,9 @@ An invitee must accept the invitation before you can add them to a team.
 @z
 
 @x
-### Remove members from teams
+### Update member role
 @y
-### Remove members from teams
-@z
-
-@x
-If your organization uses single sign-on (SSO) with
-[SCIM](/manuals/security/provisioning/scim/_index.md) enabled,
-remove members from your identity provider (IdP). That removes them from
-Docker automatically. If SCIM is disabled, remove members manually in Docker
-using the following steps.
-@y
-If your organization uses single sign-on (SSO) with
-[SCIM](manuals/security/provisioning/scim/_index.md) enabled,
-remove members from your identity provider (IdP). That removes them from
-Docker automatically. If SCIM is disabled, remove members manually in Docker
-using the following steps.
-@z
-
-@x
-Removing a member from a team revokes their access to that team's permitted
-resources.
-@y
-Removing a member from a team revokes their access to that team's permitted
-resources.
-@z
-
-@x
-1. Sign in to [Docker Home](https://app.docker.com/) and select your
-   organization.
-1. Select **Teams**, then select the team.
-1. Select the **X** next to the member's name to remove them from the team.
-1. When prompted, select **Remove** to confirm.
-@y
-1. Sign in to [Docker Home](https://app.docker.com/) and select your
-   organization.
-1. Select **Teams**, then select the team.
-1. Select the **X** next to the member's name to remove them from the team.
-1. When prompted, select **Remove** to confirm.
-@z
-
-@x
-### Update a member role
-@y
-### Update a member role
+### Update member role
 @z
 
 @x
@@ -507,9 +467,53 @@ assign a new owner first so you can change your own role.
 @z
 
 @x
-### Remove a member from the organization
+### Remove members from teams
 @y
-### Remove a member from the organization
+### Remove members from teams
+@z
+
+@x
+If your organization uses
+[SCIM group mapping](/manuals/security/provisioning/scim/group-mapping.md) to
+manage teams, update team membership in your identity provider (IdP). You can
+also remove a member from a team in Docker Home with the following steps.
+@y
+If your organization uses
+[SCIM group mapping](manuals/security/provisioning/scim/group-mapping.md) to
+manage teams, update team membership in your identity provider (IdP). You can
+also remove a member from a team in Docker Home with the following steps.
+@z
+
+@x
+Removing a member from a team revokes their access to that team's permitted
+resources. To remove someone from the organization entirely when SCIM is
+enabled, see
+[Remove member from organization](#remove-member-from-organization).
+@y
+Removing a member from a team revokes their access to that team's permitted
+resources. To remove someone from the organization entirely when SCIM is
+enabled, see
+[Remove member from organization](#remove-member-from-organization).
+@z
+
+@x
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+   organization.
+1. Select **Teams**, then select the team.
+1. Select the **X** next to the member's name to remove them from the team.
+1. When prompted, select **Remove** to confirm.
+@y
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+   organization.
+1. Select **Teams**, then select the team.
+1. Select the **X** next to the member's name to remove them from the team.
+1. When prompted, select **Remove** to confirm.
+@z
+
+@x
+## Remove member from organization
+@y
+## Remove member from organization
 @z
 
 @x
@@ -641,11 +645,11 @@ After you invite and manage members, explore these related topics:
 [scim-role-mapping]: /manuals/security/provisioning/scim/_index.md
 [scim-provisioning]: /manuals/security/provisioning/scim/_index.md
 @y
-[roles-permissions]: manuals/security/roles-and-permissions/_index.md
-[license-invitations]: manuals/accounts/organization/manage/manage-licenses.md#invitations
-[manage-licenses]: manuals/accounts/organization/manage/manage-licenses.md
-[bulk-invites]: __SUBDIR__/reference/api/hub/latest/operations/postV2InvitesBulk/
+[roles-permissions]: /manuals/security/roles-and-permissions/_index.md
+[license-invitations]: /manuals/accounts/organization/manage/manage-licenses.md#invitations
+[manage-licenses]: /manuals/accounts/organization/manage/manage-licenses.md
+[bulk-invites]: /reference/api/hub/latest/operations/postV2InvitesBulk/
 [docker-pricing]: https://www.docker.com/pricing?ref=Docs&refAction=DocsAdminMembers
-[scim-role-mapping]: manuals/security/provisioning/scim/_index.md
-[scim-provisioning]: manuals/security/provisioning/scim/_index.md
+[scim-role-mapping]: /manuals/security/provisioning/scim/_index.md
+[scim-provisioning]: /manuals/security/provisioning/scim/_index.md
 @z

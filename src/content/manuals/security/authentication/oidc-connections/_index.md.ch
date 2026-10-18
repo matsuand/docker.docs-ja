@@ -7,12 +7,12 @@
 title: OIDC connections overview
 linkTitle: OIDC connections
 description: Authenticate GitHub Actions to Docker with short-lived OpenID Connect tokens
-keywords: oidc connections, openid connect, github actions, jwt, subject claims, rulesets, enterprise security, workload authentication
+keywords: oidc connections, openid connect, github actions, jwt, subject claims, rulesets, connection limits, enterprise security, workload authentication
 @y
 title: OIDC connections overview
 linkTitle: OIDC connections
 description: Authenticate GitHub Actions to Docker with short-lived OpenID Connect tokens
-keywords: oidc connections, openid connect, github actions, jwt, subject claims, rulesets, enterprise security, workload authentication
+keywords: oidc connections, openid connect, github actions, jwt, subject claims, rulesets, connection limits, enterprise security, workload authentication
 @z
 
 @x
@@ -42,13 +42,15 @@ vendor that can grant fine-grained access to your Docker resources.
 @x
 OIDC connections follow the OpenID Connect (OIDC) standard. Establishing a
 trust relationship involves creating the connection, configuring a
-workflow, and testing. A connection, then, is the named trust relationship in Docker Home that workflows point to. For example, a trust relationship between Docker and
-GitHub follows these steps:
+workflow, and testing. A connection, then, is the named trust relationship
+in Docker Home that workflows point to. For example, a trust relationship
+between Docker and GitHub follows these steps:
 @y
 OIDC connections follow the OpenID Connect (OIDC) standard. Establishing a
 trust relationship involves creating the connection, configuring a
-workflow, and testing. A connection, then, is the named trust relationship in Docker Home that workflows point to. For example, a trust relationship between Docker and
-GitHub follows these steps:
+workflow, and testing. A connection, then, is the named trust relationship
+in Docker Home that workflows point to. For example, a trust relationship
+between Docker and GitHub follows these steps:
 @z
 
 @x
@@ -83,6 +85,54 @@ For how OIDC connections compare to organization access tokens, see
 @y
 For how OIDC connections compare to organization access tokens, see
 [Access tokens](manuals/security/access-tokens/_index.md).
+@z
+
+@x
+## Connection limits
+@y
+## Connection limits
+@z
+
+@x
+The number of OIDC connections an organization can have depends on its
+subscription:
+@y
+The number of OIDC connections an organization can have depends on its
+subscription:
+@z
+
+@x
+| Subscription | Maximum OIDC connections |
+| :----------- | :----------------------- |
+| Team         | 10                       |
+| [Docker-Sponsored Open Source](/manuals/docker-hub/repos/manage/trusted-content/dsos-program.md) | 10 |
+| Business     | 100                      |
+@y
+| Subscription | Maximum OIDC connections |
+| :----------- | :----------------------- |
+| Team         | 10                       |
+| [Docker-Sponsored Open Source](manuals/docker-hub/repos/manage/trusted-content/dsos-program.md) | 10 |
+| Business     | 100                      |
+@z
+
+@x
+Active and deactivated connections count toward the limit, but deleted
+connections don't. When your organization reaches the limit, the
+**Create OIDC connection** button is disabled. To create another
+connection, delete one you no longer need.
+@y
+Active and deactivated connections count toward the limit, but deleted
+connections don't. When your organization reaches the limit, the
+**Create OIDC connection** button is disabled. To create another
+connection, delete one you no longer need.
+@z
+
+@x
+Each connection can have up to five rulesets. See
+[Rulesets](/manuals/security/authentication/oidc-connections/rulesets-claims.md#rulesets).
+@y
+Each connection can have up to five rulesets. See
+[Rulesets](manuals/security/authentication/oidc-connections/rulesets-claims.md#rulesets).
 @z
 
 @x

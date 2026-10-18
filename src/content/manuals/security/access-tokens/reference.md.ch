@@ -1,24 +1,32 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+
 @x
 title: Access token reference
 linkTitle: Reference
 description: >-
-  Personal access token permissions, organization access token scopes,
-  and the Docker Hub API endpoints an organization access token can call.
+  Personal access token permissions, Cloud Sandboxes access,
+  organization access token scopes, and the Docker Hub API endpoints
+  an organization access token can call.
 keywords: >-
   access token reference, personal access token permissions,
-  organization access token scopes, Docker Hub API, OAT, PAT
+  repository permissions, organization access token scopes,
+  Docker Hub API, OAT, PAT, Cloud Sandboxes, sandbox:use,
+  Allow Cloud Sandboxes access, No repository access
 @y
 title: Access token reference
 linkTitle: Reference
 description: >-
-  Personal access token permissions, organization access token scopes,
-  and the Docker Hub API endpoints an organization access token can call.
+  Personal access token permissions, Cloud Sandboxes access,
+  organization access token scopes, and the Docker Hub API endpoints
+  an organization access token can call.
 keywords: >-
   access token reference, personal access token permissions,
-  organization access token scopes, Docker Hub API, OAT, PAT
+  repository permissions, organization access token scopes,
+  Docker Hub API, OAT, PAT, Cloud Sandboxes, sandbox:use,
+  Allow Cloud Sandboxes access, No repository access
 @z
 
 @x
@@ -36,15 +44,33 @@ or a set of scopes when you create the token.
 @z
 
 @x
-Each personal access token (PAT) has one permission level that you select when you
-[create the token](/manuals/security/access-tokens/personal-access-tokens.md#create-a-personal-access-token).
-The token applies to every repository your account can access. You
-can't limit a token to a single repository.
+A personal access token (PAT) has two separate access settings:
+repository permissions and Cloud Sandboxes access. You set both when
+you
+[create the token](/manuals/security/access-tokens/personal-access-tokens.md#create).
+Select at least one permission.
 @y
-Each personal access token (PAT) has one permission level that you select when you
-[create the token](manuals/security/access-tokens/personal-access-tokens.md#create-a-personal-access-token).
-The token applies to every repository your account can access. You
-can't limit a token to a single repository.
+A personal access token (PAT) has two separate access settings:
+repository permissions and Cloud Sandboxes access. You set both when
+you
+[create the token](manuals/security/access-tokens/personal-access-tokens.md#create).
+Select at least one permission.
+@z
+
+@x
+### Repository permissions
+@y
+### Repository permissions
+@z
+
+@x
+The repository permission applies to every repository your account can
+access. You can't limit a token to a single repository. Select **No
+repository access** when the token should not access repositories.
+@y
+The repository permission applies to every repository your account can
+access. You can't limit a token to a single repository. Select **No
+repository access** when the token should not access repositories.
 @z
 
 @x
@@ -56,9 +82,6 @@ can't limit a token to a single repository.
   images to any repository your account manages.
 - **Repo Read, Write, Delete:** Everything in **Repo Read & Write**,
   plus delete images and manage your repositories.
-- **Cloud Sandboxes:** Authenticate to the
-  [Docker Cloud Sandboxes API](/manuals/ai/sandboxes-api/authentication.md).
-  Cloud Sandboxes is a paid feature.
 @y
 - **Repo Public Read-only:** View, search, and pull images from public
   repositories. This is the default.
@@ -68,19 +91,50 @@ can't limit a token to a single repository.
   images to any repository your account manages.
 - **Repo Read, Write, Delete:** Everything in **Repo Read & Write**,
   plus delete images and manage your repositories.
-- **Cloud Sandboxes:** Authenticate to the
-  [Docker Cloud Sandboxes API](manuals/ai/sandboxes-api/authentication.md).
-  Cloud Sandboxes is a paid feature.
 @z
 
 @x
-Choose the lowest permission that covers what the token needs to do.
-For example, a CI job that only pulls a private base image needs
-**Repo Read-only**. You can change PAT permissions at any time if the PAT is active or inactive, but not expired. 
+Choose the lowest repository permission that covers what the token
+needs to do. For example, a CI job that only pulls a private base
+image needs **Repo Read-only**. You can change PAT permissions at any
+time if the PAT is active or inactive, but not expired.
 @y
-Choose the lowest permission that covers what the token needs to do.
-For example, a CI job that only pulls a private base image needs
-**Repo Read-only**. You can change PAT permissions at any time if the PAT is active or inactive, but not expired. 
+Choose the lowest repository permission that covers what the token
+needs to do. For example, a CI job that only pulls a private base
+image needs **Repo Read-only**. You can change PAT permissions at any
+time if the PAT is active or inactive, but not expired.
+@z
+
+@x
+### Cloud Sandboxes access
+@y
+### Cloud Sandboxes access
+@z
+
+@x
+Cloud Sandboxes access is separate from the repository permission.
+@y
+Cloud Sandboxes access is separate from the repository permission.
+@z
+
+@x
+- **Allow Cloud Sandboxes access:** Select this in Docker Home to let
+  the token create and use Docker Cloud Sandboxes. You can add it to
+  any repository permission in the list, or use it with **No
+  repository access**.
+- `sandbox:use`: The scope a PAT needs to authenticate to Cloud
+  Sandboxes. Selecting **Allow Cloud Sandboxes access** adds this
+  scope to the token. See
+  [Cloud Sandboxes authentication](/manuals/ai/sandboxes-api/authentication.md).
+@y
+- **Allow Cloud Sandboxes access:** Select this in Docker Home to let
+  the token create and use Docker Cloud Sandboxes. You can add it to
+  any repository permission in the list, or use it with **No
+  repository access**.
+- `sandbox:use`: The scope a PAT needs to authenticate to Cloud
+  Sandboxes. Selecting **Allow Cloud Sandboxes access** adds this
+  scope to the token. See
+  [Cloud Sandboxes authentication](manuals/ai/sandboxes-api/authentication.md).
 @z
 
 @x
@@ -97,8 +151,8 @@ or
 [edit](/manuals/security/access-tokens/organization-access-tokens.md#update-deactivate-or-delete)
 the token. In Docker
 Home, each scope shows its name and a short description while the value
-in the table is what the token carries. You can change OAT scopes at any time if the OAT is active or inactive,
-but not expired.
+in the table is what the token carries. You can change OAT scopes at any
+time if the OAT is active or inactive, but not expired.
 @y
 Scopes control what an organization access token (OAT) can do. You choose
 them when you
@@ -107,8 +161,8 @@ or
 [edit](manuals/security/access-tokens/organization-access-tokens.md#update-deactivate-or-delete)
 the token. In Docker
 Home, each scope shows its name and a short description while the value
-in the table is what the token carries. You can change OAT scopes at any time if the OAT is active or inactive,
-but not expired.
+in the table is what the token carries. You can change OAT scopes at any
+time if the OAT is active or inactive, but not expired.
 @z
 
 @x
@@ -442,11 +496,11 @@ the replacement endpoint instead:
 @z
 
 @x
-- [Create a PAT](/manuals/security/access-tokens/personal-access-tokens.md#create-a-personal-access-token)
+- [Create a PAT](/manuals/security/access-tokens/personal-access-tokens.md#create)
 - [Create an OAT](/manuals/security/access-tokens/organization-access-tokens.md#create-an-organization-access-token)
 - [Choose a PAT or OAT](/manuals/security/access-tokens/_index.md)
 @y
-- [Create a PAT](manuals/security/access-tokens/personal-access-tokens.md#create-a-personal-access-token)
+- [Create a PAT](manuals/security/access-tokens/personal-access-tokens.md#create)
 - [Create an OAT](manuals/security/access-tokens/organization-access-tokens.md#create-an-organization-access-token)
 - [Choose a PAT or OAT](manuals/security/access-tokens/_index.md)
 @z

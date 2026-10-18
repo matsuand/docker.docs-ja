@@ -1110,9 +1110,11 @@ mode:
 @z
 
 @x
-This choice persists across sandbox restarts.
+This choice persists across sandbox restarts unless you
+[unload every server in the static set](#remove-a-server-from-a-running-sandbox).
 @y
-This choice persists across sandbox restarts.
+This choice persists across sandbox restarts unless you
+[unload every server in the static set](#remove-a-server-from-a-running-sandbox).
 @z
 
 @x
@@ -1239,6 +1241,82 @@ restarts.
 Connected agent sessions receive a tool-list update, so the added tools become
 visible without reconnecting. The loaded server remains attached across sandbox
 restarts.
+@z
+
+@x
+## Remove a server from a running sandbox
+@y
+## Remove a server from a running sandbox
+@z
+
+@x
+In Docker Sandboxes v0.48.0 and later, use `sbx mcp unload` to detach a server
+from a running sandbox's local MCP gateway. This works in both static and
+dynamic modes. Cloud sandboxes and hosted MCP gateways don't support unloading
+servers.
+@y
+In Docker Sandboxes v0.48.0 and later, use `sbx mcp unload` to detach a server
+from a running sandbox's local MCP gateway. This works in both static and
+dynamic modes. Cloud sandboxes and hosted MCP gateways don't support unloading
+servers.
+@z
+
+@x
+```console
+$ sbx mcp unload linear --sandbox my-session
+```
+@y
+```console
+$ sbx mcp unload linear --sandbox my-session
+```
+@z
+
+@x
+Connected agent sessions receive a tool-list update, so the server's tools are
+removed without restarting the agent. The command also removes the saved
+attachment so the server isn't restored when the sandbox or daemon restarts.
+The server's host registration and credentials remain available, and other
+sandboxes that have loaded the server are unaffected.
+@y
+Connected agent sessions receive a tool-list update, so the server's tools are
+removed without restarting the agent. The command also removes the saved
+attachment so the server isn't restored when the sandbox or daemon restarts.
+The server's host registration and credentials remain available, and other
+sandboxes that have loaded the server are unaffected.
+@z
+
+@x
+To attach the server again:
+@y
+To attach the server again:
+@z
+
+@x
+```console
+$ sbx mcp load linear --sandbox my-session
+```
+@y
+```console
+$ sbx mcp load linear --sandbox my-session
+```
+@z
+
+@x
+In dynamic mode, the agent can also find and attach the registered server
+again. Unloading a server doesn't prevent the agent from reloading it.
+@y
+In dynamic mode, the agent can also find and attach the registered server
+again. Unloading a server doesn't prevent the agent from reloading it.
+@z
+
+@x
+If you unload all servers from a static sandbox, it stays in static mode for
+the current session. After restarting the Docker Sandboxes daemon and
+reconnecting, the agent can find and attach registered servers.
+@y
+If you unload all servers from a static sandbox, it stays in static mode for
+the current session. After restarting the Docker Sandboxes daemon and
+reconnecting, the agent can find and attach registered servers.
 @z
 
 @x
@@ -1369,6 +1447,18 @@ $ sbx mcp rm notion
 ```console
 $ sbx mcp rm notion
 ```
+@z
+
+@x
+Removing a registration doesn't detach the server from sandboxes that have
+already loaded it. Use
+[`sbx mcp unload`](#remove-a-server-from-a-running-sandbox) for each sandbox
+before removing the registration.
+@y
+Removing a registration doesn't detach the server from sandboxes that have
+already loaded it. Use
+[`sbx mcp unload`](#remove-a-server-from-a-running-sandbox) for each sandbox
+before removing the registration.
 @z
 
 @x

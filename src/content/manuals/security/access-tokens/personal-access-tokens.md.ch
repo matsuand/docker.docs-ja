@@ -7,22 +7,24 @@
 title: Create and manage personal access tokens
 linkTitle: Personal access tokens
 description: >-
-  Create a personal access token, set its permissions and expiration,
-  and sign in to the Docker CLI.
+  Create a personal access token, set repository permissions and Cloud
+  Sandboxes access, set expiration, and sign in to the Docker CLI.
 keywords: >-
   personal access token, PAT, Docker Hub, docker login,
-  CLI authentication, token permissions, token expiration,
-  two-factor authentication, SSO
+  CLI authentication, token permissions, repository permissions,
+  token expiration, two-factor authentication, SSO, Cloud Sandboxes,
+  sandbox:use, Allow Cloud Sandboxes access, No repository access
 @y
 title: Create and manage personal access tokens
 linkTitle: Personal access tokens
 description: >-
-  Create a personal access token, set its permissions and expiration,
-  and sign in to the Docker CLI.
+  Create a personal access token, set repository permissions and Cloud
+  Sandboxes access, set expiration, and sign in to the Docker CLI.
 keywords: >-
   personal access token, PAT, Docker Hub, docker login,
-  CLI authentication, token permissions, token expiration,
-  two-factor authentication, SSO
+  CLI authentication, token permissions, repository permissions,
+  token expiration, two-factor authentication, SSO, Cloud Sandboxes,
+  sandbox:use, Allow Cloud Sandboxes access, No repository access
 @z
 
 @x
@@ -33,32 +35,24 @@ keywords: >-
 
 @x
 A personal access token (PAT) lets you sign in to Docker Hub without
-your password. Use a token for the Docker CLI, scripts, continuous
-integration (CI) jobs, and other tools that should act as your account.
+your password. You can create several tokens and revoke one without
+changing your password. From Docker Home, you can view the token list,
+which shows when each token was last used.
 @y
 A personal access token (PAT) lets you sign in to Docker Hub without
-your password. Use a token for the Docker CLI, scripts, continuous
-integration (CI) jobs, and other tools that should act as your account.
+your password. You can create several tokens and revoke one without
+changing your password. From Docker Home, you can view the token list,
+which shows when each token was last used.
 @z
 
 @x
-Each token has one permission level. You can create several tokens and
-revoke one without changing your password. The token list shows when
-each token was last used.
+Treat PATs like passwords and keep them secure. Store tokens in a
+credential manager and never commit them to source code. Before you
+create a PAT, you must verify your email address.
 @y
-Each token has one permission level. You can create several tokens and
-revoke one without changing your password. The token list shows when
-each token was last used.
-@z
-
-@x
-When two-factor authentication is turned on, or single sign-on is
-enforced, password sign-in to the CLI isn't supported. Sign in with a
-PAT instead.
-@y
-When two-factor authentication is turned on, or single sign-on is
-enforced, password sign-in to the CLI isn't supported. Sign in with a
-PAT instead.
+Treat PATs like passwords and keep them secure. Store tokens in a
+credential manager and never commit them to source code. Before you
+create a PAT, you must verify your email address.
 @z
 
 @x
@@ -76,17 +70,27 @@ PAT instead.
 @z
 
 @x
-## Create a personal access token
+## Create a personal access token {#create}
 @y
-## Create a personal access token
+## Create a personal access token {#create}
 @z
 
 @x
-Treat PATs like passwords and keep them secure. Store tokens in a
-credential manager and never commit them to source code. Before you create a PAT, you must verify your email address. To create a PAT:
+When you create a PAT, you choose one repository permission and whether
+the token can use Cloud Sandboxes. You can combine these to fit the
+task. For example, a token can use Cloud Sandboxes with no repository
+access, or it can push images and use Cloud Sandboxes.
 @y
-Treat PATs like passwords and keep them secure. Store tokens in a
-credential manager and never commit them to source code. Before you create a PAT, you must verify your email address. To create a PAT:
+When you create a PAT, you choose one repository permission and whether
+the token can use Cloud Sandboxes. You can combine these to fit the
+task. For example, a token can use Cloud Sandboxes with no repository
+access, or it can push images and use Cloud Sandboxes.
+@z
+
+@x
+To create a PAT:
+@y
+To create a PAT:
 @z
 
 @x
@@ -98,13 +102,23 @@ credential manager and never commit them to source code. Before you create a PAT
 1. Configure your token:
    - **Access token description:** Enter a name for the token, up to
      100 characters. This field is required.
-   - **Expiration date:** Optional. Select **30 days**, **90 days**, or
-     **Custom**. With **Custom**, choose a date and hour up to one year
-     from today. The default, **None**, creates a token that doesn't
-     expire.
-   - **Access permissions:** Select one
-     [permission level](/manuals/security/access-tokens/reference.md#personal-access-token-permissions).
-     The default is **Repo Public Read-only**.
+   - **Expiration date:** Optional. The default is **None**, which
+     creates a token that doesn't expire.
+     - Select **30 days**, **90 days**, or **Custom**.
+     - With **Custom**, choose a date and hour up to one year from
+       today.
+   - **Access permissions:** Set a repository permission and, if you
+     need it, Cloud Sandboxes access. Select at least
+     [one permission](/manuals/security/access-tokens/reference.md#personal-access-token-permissions).
+     - **Repository permissions:** The default is **Repo Public
+       Read-only**.
+       - Select one level.
+       - Select **No repository access** when the token should not
+         access repositories.
+     - **Allow Cloud Sandboxes access:** Select this to let the token
+       create and use Cloud Sandboxes. You can add it to any
+       repository permission, or use it with **No repository
+       access**.
 1. Select **Generate**. Copy the token and save it. Docker shows the
    token once and doesn't store it. You can't retrieve it after you
    leave the page.
@@ -117,22 +131,32 @@ credential manager and never commit them to source code. Before you create a PAT
 1. Configure your token:
    - **Access token description:** Enter a name for the token, up to
      100 characters. This field is required.
-   - **Expiration date:** Optional. Select **30 days**, **90 days**, or
-     **Custom**. With **Custom**, choose a date and hour up to one year
-     from today. The default, **None**, creates a token that doesn't
-     expire.
-   - **Access permissions:** Select one
-     [permission level](manuals/security/access-tokens/reference.md#personal-access-token-permissions).
-     The default is **Repo Public Read-only**.
+   - **Expiration date:** Optional. The default is **None**, which
+     creates a token that doesn't expire.
+     - Select **30 days**, **90 days**, or **Custom**.
+     - With **Custom**, choose a date and hour up to one year from
+       today.
+   - **Access permissions:** Set a repository permission and, if you
+     need it, Cloud Sandboxes access. Select at least
+     [one permission](manuals/security/access-tokens/reference.md#personal-access-token-permissions).
+     - **Repository permissions:** The default is **Repo Public
+       Read-only**.
+       - Select one level.
+       - Select **No repository access** when the token should not
+         access repositories.
+     - **Allow Cloud Sandboxes access:** Select this to let the token
+       create and use Cloud Sandboxes. You can add it to any
+       repository permission, or use it with **No repository
+       access**.
 1. Select **Generate**. Copy the token and save it. Docker shows the
    token once and doesn't store it. You can't retrieve it after you
    leave the page.
 @z
 
 @x
-## Sign in
+## Sign in with a personal access token {#sign-in}
 @y
-## Sign in
+## Sign in with a personal access token {#sign-in}
 @z
 
 @x
@@ -164,9 +188,9 @@ If sign-in fails with `Incorrect authentication credentials`, see
 @z
 
 @x
-## Update or delete
+## Update or delete a personal access token {#update-or-delete}
 @y
-## Update or delete
+## Update or delete a personal access token {#update-or-delete}
 @z
 
 @x
@@ -225,10 +249,10 @@ date.
 
 @x
 1. If you selected **Edit**, change the **Access token description** or
-   **Scopes**, then select **Save token**.
+   **Access permissions**, then select **Save token**.
 @y
 1. If you selected **Edit**, change the **Access token description** or
-   **Scopes**, then select **Save token**.
+   **Access permissions**, then select **Save token**.
 @z
 
 @x
@@ -322,11 +346,13 @@ Best practices for fair use include:
 @x
 - [Choose a PAT or OAT](/manuals/security/access-tokens/_index.md)
 - [Look up PAT permissions](/manuals/security/access-tokens/reference.md#personal-access-token-permissions)
+- [Authenticate to Cloud Sandboxes](/manuals/ai/sandboxes-api/authentication.md)
 - [Create an OAT](/manuals/security/access-tokens/organization-access-tokens.md)
 - [Turn on two-factor authentication](/manuals/security/authentication/2fa/_index.md)
 @y
 - [Choose a PAT or OAT](manuals/security/access-tokens/_index.md)
 - [Look up PAT permissions](manuals/security/access-tokens/reference.md#personal-access-token-permissions)
+- [Authenticate to Cloud Sandboxes](manuals/ai/sandboxes-api/authentication.md)
 - [Create an OAT](manuals/security/access-tokens/organization-access-tokens.md)
 - [Turn on two-factor authentication](manuals/security/authentication/2fa/_index.md)
 @z

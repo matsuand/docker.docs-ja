@@ -90,11 +90,13 @@ Connect (OIDC) connections authenticate CI workloads such as GitHub Actions.
 @z
 
 @x
-SSO requires a Docker Business subscription. OIDC connections require a
-Docker Team or Business subscription.
+SSO requires a Docker Business subscription, or an
+[AI Governance](/manuals/accounts/organization/manage/manage-licenses.md)
+license. OIDC connections require a Docker Team or Business subscription.
 @y
-SSO requires a Docker Business subscription. OIDC connections require a
-Docker Team or Business subscription.
+SSO requires a Docker Business subscription, or an
+[AI Governance](/manuals/accounts/organization/manage/manage-licenses.md)
+license. OIDC connections require a Docker Team or Business subscription.
 @z
 
 @x

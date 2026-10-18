@@ -2177,12 +2177,6 @@ Fixed Enhanced Container Isolation not being enforced when the sign-in completed
 @z
 
 @x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.77.0" build_path="/228796/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.77.0" build_path="/228796/" >}}
-@z
-
-@x
 ### New
 @y
 ### 新機能 {#new}
@@ -2284,12 +2278,6 @@ Fixed Enhanced Container Isolation not being enforced when the sign-in completed
 {{< release-date date="2026-06-01" >}}
 @y
 {{< release-date date="2026-06-01" >}}
-@z
-
-@x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.76.0" build_path="/228118/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.76.0" build_path="/228118/" >}}
 @z
 
 @x
@@ -2425,12 +2413,6 @@ Fixed Enhanced Container Isolation not being enforced when the sign-in completed
 @z
 
 @x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.75.0" build_path="/227598/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.75.0" build_path="/227598/" >}}
-@z
-
-@x
 ### Updates
 @y
 ### 機能更新 {#updates}
@@ -2510,12 +2492,6 @@ Fixed Enhanced Container Isolation not being enforced when the sign-in completed
 {{< release-date date="2026-05-19" >}}
 @y
 {{< release-date date="2026-05-19" >}}
-@z
-
-@x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.74.0" build_path="/227015/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.74.0" build_path="/227015/" >}}
 @z
 
 @x
@@ -2611,12 +2587,6 @@ Fixed Enhanced Container Isolation not being enforced when the sign-in completed
 @z
 
 @x
-{{< desktop-install-v2 win=true version="4.73.1" build_path="/226574/" >}}
-@y
-{{< desktop-install-v2 win=true version="4.73.1" build_path="/226574/" >}}
-@z
-
-@x
 ### Bug fixes and enhancements
 @y
 ### バグフィックスと拡張 {#bug-fixes-and-enhancements}
@@ -2644,12 +2614,6 @@ Fixed Enhanced Container Isolation not being enforced when the sign-in completed
 {{< release-date date="2026-05-11" >}}
 @y
 {{< release-date date="2026-05-11" >}}
-@z
-
-@x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.73.0" build_path="/226246/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.73.0" build_path="/226246/" >}}
 @z
 
 @x
@@ -2716,12 +2680,6 @@ Fixed Enhanced Container Isolation not being enforced when the sign-in completed
 {{< release-date date="2026-05-06" >}}
 @y
 {{< release-date date="2026-05-06" >}}
-@z
-
-@x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.72.0" build_path="/225998/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.72.0" build_path="/225998/" >}}
 @z
 
 @x
@@ -2839,12 +2797,6 @@ Fixed Enhanced Container Isolation not being enforced when the sign-in completed
 @z
 
 @x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.71.0" build_path="/225177/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.71.0" build_path="/225177/" >}}
-@z
-
-@x
 > [!IMPORTANT]
 >
 > Support for RHEL 8 has ended. Installing Docker Desktop will require RHEL 9 or RHEL 10 in the next release.
@@ -2940,12 +2892,6 @@ Fixed Enhanced Container Isolation not being enforced when the sign-in completed
 {{< release-date date="2026-04-20" >}}
 @y
 {{< release-date date="2026-04-20" >}}
-@z
-
-@x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.70.0" build_path="/224270/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.70.0" build_path="/224270/" >}}
 @z
 
 @x
@@ -3049,12 +2995,6 @@ Fixed Enhanced Container Isolation not being enforced when the sign-in completed
 @z
 
 @x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.69.0" build_path="/224084/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.69.0" build_path="/224084/" >}}
-@z
-
-@x
 ### Updates
 @y
 ### 機能更新 {#updates}
@@ -3144,12 +3084,6 @@ Fixed Enhanced Container Isolation not being enforced when the sign-in completed
 {{< release-date date="2026-04-07" >}}
 @y
 {{< release-date date="2026-04-07" >}}
-@z
-
-@x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.68.0" build_path="/223695/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.68.0" build_path="/223695/" >}}
 @z
 
 @x

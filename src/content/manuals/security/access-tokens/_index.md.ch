@@ -8,31 +8,37 @@ title: Access tokens
 linkTitle: Access tokens
 description: >-
   Choose a personal or organization access token to authenticate to
-  Docker Hub.
+  Docker Hub and Cloud Sandboxes.
 keywords: >-
   access tokens, personal access tokens, organization access tokens,
-  PAT, OAT, Docker Hub, Docker security
+  PAT, OAT, Docker Hub, Docker security, Cloud Sandboxes,
+  repository permissions, sandbox:use
 @y
 title: Access tokens
 linkTitle: Access tokens
 description: >-
   Choose a personal or organization access token to authenticate to
-  Docker Hub.
+  Docker Hub and Cloud Sandboxes.
 keywords: >-
   access tokens, personal access tokens, organization access tokens,
-  PAT, OAT, Docker Hub, Docker security
+  PAT, OAT, Docker Hub, Docker security, Cloud Sandboxes,
+  repository permissions, sandbox:use
 @z
 
 % grid:
 
 @x
   - title: Personal access tokens
-    description: Authenticate the Docker CLI and tools with a token tied to your account.
+    description: >-
+      Authenticate the Docker CLI and tools with a token tied to your
+      account.
     icon: lock-closed
     link: /security/access-tokens/personal-access-tokens/
 @y
   - title: Personal access tokens
-    description: Authenticate the Docker CLI and tools with a token tied to your account.
+    description: >-
+      Authenticate the Docker CLI and tools with a token tied to your
+      account.
     icon: lock-closed
     link: __SUBDIR__/security/access-tokens/personal-access-tokens/
 @z
@@ -84,9 +90,31 @@ password.
 @z
 
 @x
-## PATs
+Pick a PAT for work that runs as you, or an OAT for organization-owned
+automation.
 @y
-## PATs
+Pick a PAT for work that runs as you, or an OAT for organization-owned
+automation.
+@z
+
+@x
+## Personal access tokens (PATs) {#pats}
+@y
+## Personal access tokens (PATs) {#pats}
+@z
+
+@x
+A PAT has
+[one repository permission](/manuals/security/access-tokens/reference.md#personal-access-token-permissions)
+for every repository the account can access. A PAT can also grant
+[Cloud Sandboxes access](/manuals/security/access-tokens/reference.md#cloud-sandboxes-access),
+which is a separate setting on the token.
+@y
+A PAT has
+[one repository permission](manuals/security/access-tokens/reference.md#personal-access-token-permissions)
+for every repository the account can access. A PAT can also grant
+[Cloud Sandboxes access](manuals/security/access-tokens/reference.md#cloud-sandboxes-access),
+which is a separate setting on the token.
 @z
 
 @x
@@ -106,19 +134,9 @@ in those cases.
 @z
 
 @x
-A PAT uses
-[one permission level](/manuals/security/access-tokens/reference.md#personal-access-token-permissions)
-for every repository the account can access.
+## Organization access tokens (OATs) {#oats}
 @y
-A PAT uses
-[one permission level](manuals/security/access-tokens/reference.md#personal-access-token-permissions)
-for every repository the account can access.
-@z
-
-@x
-## OATs
-@y
-## OATs
+## Organization access tokens (OATs) {#oats}
 @z
 
 @x

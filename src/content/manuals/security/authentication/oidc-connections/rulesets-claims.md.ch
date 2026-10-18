@@ -76,11 +76,15 @@ Each ruleset has these fields:
 @x
 You can add one to five rulesets on a connection. If more than one
 ruleset matches a token, Docker grants the union of their resources and
-scopes.
+scopes. Your subscription also limits how many connections your
+organization can have. See
+[Connection limits](/manuals/security/authentication/oidc-connections/_index.md#connection-limits).
 @y
 You can add one to five rulesets on a connection. If more than one
 ruleset matches a token, Docker grants the union of their resources and
-scopes.
+scopes. Your subscription also limits how many connections your
+organization can have. See
+[Connection limits](/manuals/security/authentication/oidc-connections/_index.md#connection-limits).
 @z
 
 @x

@@ -8,23 +8,23 @@ title: Custom role permissions reference
 linkTitle: Permissions reference
 description: >-
   Permissions available for Docker custom roles across organization management,
-  Docker Hub, billing, AI Governance, Docker Hardened Images, and Docker
-  Offload.
+  Docker Hub, billing, licensing, AI Governance, Docker Hardened Images,
+  Docker Offload, and Docker Cloud Sandboxes.
 keywords: >-
   custom roles, custom role permissions, Docker, Docker Hub, organization
-  management, billing, AI Governance, access tokens, SSO, SCIM, OIDC, DHI,
-  Docker Offload, security
+  management, billing, licensing, licenses, AI Governance, access tokens, SSO,
+  SCIM, OIDC, DHI, Docker Offload, Cloud Sandboxes, security
 @y
 title: Custom role permissions reference
 linkTitle: Permissions reference
 description: >-
   Permissions available for Docker custom roles across organization management,
-  Docker Hub, billing, AI Governance, Docker Hardened Images, and Docker
-  Offload.
+  Docker Hub, billing, licensing, AI Governance, Docker Hardened Images,
+  Docker Offload, and Docker Cloud Sandboxes.
 keywords: >-
   custom roles, custom role permissions, Docker, Docker Hub, organization
-  management, billing, AI Governance, access tokens, SSO, SCIM, OIDC, DHI,
-  Docker Offload, security
+  management, billing, licensing, licenses, AI Governance, access tokens, SSO,
+  SCIM, OIDC, DHI, Docker Offload, Cloud Sandboxes, security
 @z
 
 @x
@@ -35,12 +35,14 @@ keywords: >-
 
 @x
 Custom roles use permissions from organization management, Docker Hub,
-billing, AI Governance, Docker Hardened Images, and Docker Offload. Use
-the following tables to [create or edit a custom role](manage.md).
+billing, licensing, AI Governance, Docker Hardened Images, Docker
+Offload, and Docker Cloud Sandboxes. Use the following tables to [create
+or edit a custom role](manage.md).
 @y
 Custom roles use permissions from organization management, Docker Hub,
-billing, AI Governance, Docker Hardened Images, and Docker Offload. Use
-the following tables to [create or edit a custom role](manage.md).
+billing, licensing, AI Governance, Docker Hardened Images, Docker
+Offload, and Docker Cloud Sandboxes. Use the following tables to [create
+or edit a custom role](manage.md).
 @z
 
 @x
@@ -132,6 +134,22 @@ the following tables to [create or edit a custom role](manage.md).
 @z
 
 @x
+## Licensing
+@y
+## Licensing
+@z
+
+@x
+| Permission      | Description                                                                                                                         |
+| :-------------- | :---------------------------------------------------------------------------------------------------------------------------------- |
+| Manage licenses | Assign and revoke licenses for members and manage auto-assign rules. Does not include purchasing or changing the number of licenses |
+@y
+| Permission      | Description                                                                                                                         |
+| :-------------- | :---------------------------------------------------------------------------------------------------------------------------------- |
+| Manage licenses | Assign and revoke licenses for members and manage auto-assign rules. Does not include purchasing or changing the number of licenses |
+@z
+
+@x
 ## AI Governance
 @y
 ## AI Governance
@@ -160,13 +178,15 @@ the following tables to [create or edit a custom role](manage.md).
 @z
 
 @x
-| Permission         | Description                                      |
-| :----------------- | :----------------------------------------------- |
-| Create DHI mirrors | Create Docker Hardened Image mirror repositories |
+| Permission            | Description                                                     |
+| :-------------------- | :-------------------------------------------------------------- |
+| Create DHI mirrors    | Create Docker Hardened Image mirror repositories                |
+| Manage customizations | Create, update, and delete Docker Hardened Image customizations |
 @y
-| Permission         | Description                                      |
-| :----------------- | :----------------------------------------------- |
-| Create DHI mirrors | Create Docker Hardened Image mirror repositories |
+| Permission            | Description                                                     |
+| :-------------------- | :-------------------------------------------------------------- |
+| Create DHI mirrors    | Create Docker Hardened Image mirror repositories                |
+| Manage customizations | Create, update, and delete Docker Hardened Image customizations |
 @z
 
 @x
@@ -183,6 +203,22 @@ the following tables to [create or edit a custom role](manage.md).
 | Permission        | Description                                    |
 | :---------------- | :--------------------------------------------- |
 | Offload Read-Only | View Offload account status, leases, and zones |
+@z
+
+@x
+## Cloud Sandboxes
+@y
+## Cloud Sandboxes
+@z
+
+@x
+| Permission          | Description                           |
+| :------------------ | :------------------------------------ |
+| Use Cloud Sandboxes | Create and use Docker Cloud Sandboxes |
+@y
+| Permission          | Description                           |
+| :------------------ | :------------------------------------ |
+| Use Cloud Sandboxes | Create and use Docker Cloud Sandboxes |
 @z
 
 @x

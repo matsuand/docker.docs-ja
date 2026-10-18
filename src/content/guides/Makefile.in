@@ -317,6 +317,7 @@ bases = \
 	dhi-vex-walkthrough.md                       \
 	django.md                                    \
 	dotnet.md                                    \
+	firecrawl-sandbox-kit.md                     \
 	genai-claude-code-mcp.md                     \
 	gha.md                                       \
 	go-prometheus-monitoring.md                  \

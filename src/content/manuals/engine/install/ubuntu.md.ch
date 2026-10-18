@@ -85,10 +85,12 @@ Docker Engine をインストールするには、以下に示す 64 ビット U
 @z
 
 @x
+- Ubuntu Stonking 26.10
 - Ubuntu Resolute 26.04 (LTS)
 - Ubuntu Noble 24.04 (LTS)
 - Ubuntu Jammy 22.04 (LTS)
 @y
+- Ubuntu Stonking 26.10
 - Ubuntu Resolute 26.04 (LTS)
 - Ubuntu Noble 24.04 (LTS)
 - Ubuntu Jammy 22.04 (LTS)
