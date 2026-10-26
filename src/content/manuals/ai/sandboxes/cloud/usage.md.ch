@@ -340,6 +340,14 @@ Replace the example with `ssh <sandbox-id>@sbx_cloud`, using the
 @z
 
 @x
+Cloud SSH honors your host's configured upstream proxy. If the proxy refuses
+SSH connections, see [Cloud SSH proxy configuration](../configuration/upstream-proxy.md#cloud-ssh).
+@y
+Cloud SSH honors your host's configured upstream proxy. If the proxy refuses
+SSH connections, see [Cloud SSH proxy configuration](../configuration/upstream-proxy.md#cloud-ssh).
+@z
+
+@x
 ## Transfer files
 @y
 ## Transfer files
@@ -895,10 +903,10 @@ with `--kit-arg` override values from the file.
 
 @x
 To declare reusable cloud configuration in a file, see
-[Use a cloud environment](../configuration/environment-files.md#use-a-cloud-environment).
+[Use environment files in the cloud](environment-files.md).
 @y
 To declare reusable cloud configuration in a file, see
-[Use a cloud environment](../configuration/environment-files.md#use-a-cloud-environment).
+[Use environment files in the cloud](environment-files.md).
 @z
 
 @x

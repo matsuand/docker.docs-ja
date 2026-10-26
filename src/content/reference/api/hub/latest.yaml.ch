@@ -496,7 +496,7 @@ paths:
       operationId: PostUsers2FALogin
       security: []
       description: |
-        When a user has two-factor authentication (2FA) enabled, this is the second call to perform after `/v2/users/login` call.
+        When a user has two-factor authentication (2FA) enabled, this is the second call to perform after `/v2/auth/token` call.
 @y
       requestBody:
         content:
@@ -526,7 +526,7 @@ paths:
       operationId: PostUsers2FALogin
       security: []
       description: |
-        When a user has two-factor authentication (2FA) enabled, this is the second call to perform after `/v2/users/login` call.
+        When a user has two-factor authentication (2FA) enabled, this is the second call to perform after `/v2/auth/token` call.
 @z
 
 @x
@@ -684,18 +684,8 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - description: Page number to return.
-          in: query
-          name: page
-          schema:
-            type: number
-            default: 1
-        - description: Number of results per page.
-          in: query
-          name: page_size
-          schema:
-            type: number
-            default: 10
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/page_size"
       responses:
         "200":
           description: OK
@@ -873,18 +863,8 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - description: Page number to return.
-          in: query
-          name: page
-          schema:
-            type: number
-            default: 1
-        - description: Number of results per page.
-          in: query
-          name: page_size
-          schema:
-            type: number
-            default: 10
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/page_size"
       responses:
         "200":
           description: OK
@@ -1724,32 +1704,13 @@ paths:
           schema:
             type: string
             format: date-time
-        - name: page
-          description: page - specify page number. Page number to get.
-          in: query
-          required: false
-          schema:
-            type: integer
-            format: int32
-            default: 1
-        - name: page_size
-          description: page_size - specify page size. Number of events to return per page.
-          in: query
-          required: false
-          schema:
-            type: integer
-            format: int32
-            default: 25
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/page_size"
       tags:
         - audit-logs
-  /v2/orgs/{name}/settings:
+  /v2/orgs/{org_name}/settings:
     parameters:
-      - in: path
-        name: name
-        description: Name of the organization.
-        required: true
-        schema:
-          type: string
+      - $ref: "#/components/parameters/org_name"
     get:
       summary: Get organization settings
       description: |
@@ -1891,32 +1852,13 @@ paths:
           schema:
             type: string
             format: date-time
-        - name: page
-          description: page - specify page number. Page number to get.
-          in: query
-          required: false
-          schema:
-            type: integer
-            format: int32
-            default: 1
-        - name: page_size
-          description: page_size - specify page size. Number of events to return per page.
-          in: query
-          required: false
-          schema:
-            type: integer
-            format: int32
-            default: 25
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/page_size"
       tags:
         - audit-logs
-  /v2/orgs/{name}/settings:
+  /v2/orgs/{org_name}/settings:
     parameters:
-      - in: path
-        name: name
-        description: Name of the organization.
-        required: true
-        schema:
-          type: string
+      - $ref: "#/components/parameters/org_name"
     get:
       summary: Get organization settings
       description: |
@@ -1993,7 +1935,9 @@ paths:
         "404":
           $ref: "#/components/responses/NotFound"
       operationId: putV2OrgsByNameSettings
-  /v2/orgs/{name}/access-tokens:
+  /v2/orgs/{org_name}/access-tokens:
+    parameters:
+      - $ref: "#/components/parameters/org_name"
     post:
       summary: Create access token
       description: |
@@ -2033,18 +1977,8 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - description: Page number to return.
-          in: query
-          name: page
-          schema:
-            type: number
-            default: 1
-        - description: Number of results per page.
-          in: query
-          name: page_size
-          schema:
-            type: number
-            default: 10
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/page_size"
       responses:
         "200":
           description: OK
@@ -2188,7 +2122,9 @@ paths:
         "404":
           $ref: "#/components/responses/NotFound"
       operationId: putV2OrgsByNameSettings
-  /v2/orgs/{name}/access-tokens:
+  /v2/orgs/{org_name}/access-tokens:
+    parameters:
+      - $ref: "#/components/parameters/org_name"
     post:
       summary: Create access token
       description: |
@@ -2228,18 +2164,8 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - description: Page number to return.
-          in: query
-          name: page
-          schema:
-            type: number
-            default: 1
-        - description: Number of results per page.
-          in: query
-          name: page_size
-          schema:
-            type: number
-            default: 10
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/page_size"
       responses:
         "200":
           description: OK
@@ -2350,18 +2276,8 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - in: query
-          name: page
-          required: false
-          schema:
-            type: integer
-          description: Page number to get. Defaults to 1.
-        - in: query
-          name: page_size
-          required: false
-          schema:
-            type: integer
-          description: Number of items to get per page. Defaults to 10. Max of 100.
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/page_size"
       responses:
         "200":
           $ref: "#/components/responses/list_tags"
@@ -2380,18 +2296,8 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - in: query
-          name: page
-          required: false
-          schema:
-            type: integer
-          description: Page number to get. Defaults to 1.
-        - in: query
-          name: page_size
-          required: false
-          schema:
-            type: integer
-          description: Number of items to get per page. Defaults to 10. Max of 100.
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/page_size"
       responses:
         "200":
           $ref: "#/components/responses/list_tags"
@@ -2793,23 +2699,8 @@ paths:
         - bearerAuth: []
         - {}
       parameters:
-        - in: query
-          name: page
-          required: false
-          schema:
-            type: integer
-            minimum: 1
-            default: 1
-          description: Page number to get. Defaults to 1.
-        - in: query
-          name: page_size
-          required: false
-          schema:
-            type: integer
-            minimum: 1
-            maximum: 100
-            default: 10
-          description: Number of repositories to get per page. Defaults to 10. Max of 100.
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/page_size"
         - in: query
           name: name
           required: false
@@ -2942,23 +2833,8 @@ paths:
         - bearerAuth: []
         - {}
       parameters:
-        - in: query
-          name: page
-          required: false
-          schema:
-            type: integer
-            minimum: 1
-            default: 1
-          description: Page number to get. Defaults to 1.
-        - in: query
-          name: page_size
-          required: false
-          schema:
-            type: integer
-            minimum: 1
-            maximum: 100
-            default: 10
-          description: Number of repositories to get per page. Defaults to 10. Max of 100.
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/page_size"
         - in: query
           name: name
           required: false
@@ -4285,11 +4161,7 @@ paths:
         - $ref: "#/components/parameters/group_name"
         - $ref: "#/components/parameters/page"
         - $ref: "#/components/parameters/page_size"
-        - in: query
-          name: search
-          schema:
-            type: string
-          description: Search members by username, full_name or email.
+        - $ref: "#/components/parameters/search"
       summary: List members of a group
       description: |
         List the members (users) that are in a group.
@@ -4320,11 +4192,7 @@ paths:
         - $ref: "#/components/parameters/group_name"
         - $ref: "#/components/parameters/page"
         - $ref: "#/components/parameters/page_size"
-        - in: query
-          name: search
-          schema:
-            type: string
-          description: Search members by username, full_name or email.
+        - $ref: "#/components/parameters/search"
       summary: List members of a group
       description: |
         List the members (users) that are in a group.
@@ -6052,7 +5920,7 @@ components:
         - code
       properties:
         login_2fa_token:
-          description: The intermediate 2FA token returned from `/v2/users/login` API.
+          description: The intermediate 2FA token returned from `/v2/auth/token` API.
           type: string
           example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
         code:
@@ -8297,7 +8165,7 @@ components:
         - code
       properties:
         login_2fa_token:
-          description: The intermediate 2FA token returned from `/v2/users/login` API.
+          description: The intermediate 2FA token returned from `/v2/auth/token` API.
           type: string
           example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
         code:
@@ -9735,15 +9603,19 @@ components:
     page:
       in: query
       name: page
+      required: false
       description: Page number (starts on 1).
       schema:
         type: integer
+        default: 1
     page_size:
       in: query
       name: page_size
+      required: false
       description: Number of items (rows) per page.
       schema:
         type: integer
+        default: 10
     invites:
       in: query
       name: invites
@@ -9754,8 +9626,8 @@ components:
       in: query
       name: search
       schema:
-        type: integer
-      description: Search term.
+        type: string
+      description: Search members by username, full_name or email
     scim_attributes:
       in: query
       name: attributes
@@ -10216,15 +10088,19 @@ security: []
     page:
       in: query
       name: page
+      required: false
       description: Page number (starts on 1).
       schema:
         type: integer
+        default: 1
     page_size:
       in: query
       name: page_size
+      required: false
       description: Number of items (rows) per page.
       schema:
         type: integer
+        default: 10
     invites:
       in: query
       name: invites
@@ -10235,8 +10111,8 @@ security: []
       in: query
       name: search
       schema:
-        type: integer
-      description: Search term.
+        type: string
+      description: Search members by username, full_name or email
     scim_attributes:
       in: query
       name: attributes

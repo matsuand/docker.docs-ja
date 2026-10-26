@@ -46,7 +46,7 @@ usage: sbx mcp COMMAND
     - sbx mcp add - Register an MCP server
     - sbx mcp auth - Authorize MCP servers
     - sbx mcp inspect - Show MCP server details
-    - sbx mcp load - Load an already-registered MCP server into a running sandbox
+    - sbx mcp load - Load an already-registered MCP server into a sandbox
     - sbx mcp ls - List MCP servers
     - sbx mcp rm - Remove a registered MCP server
 @y
@@ -54,7 +54,7 @@ usage: sbx mcp COMMAND
     - sbx mcp add - Register an MCP server
     - sbx mcp auth - Authorize MCP servers
     - sbx mcp inspect - Show MCP server details
-    - sbx mcp load - Load an already-registered MCP server into a running sandbox
+    - sbx mcp load - Load an already-registered MCP server into a sandbox
     - sbx mcp ls - List MCP servers
     - sbx mcp rm - Remove a registered MCP server
 @z

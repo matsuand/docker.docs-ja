@@ -310,17 +310,17 @@ $ ssh demo.sbx
 @x
 Connecting an app to a sandbox selects the remote environment, but it might not
 open the primary workspace automatically. The initial folder depends on the
-client. A remote folder picker might open at the sandbox user's home directory,
-`/home/agent`, while an interactive `ssh` shell might start in
-`/home/agent/workspace`. Select the intended folder explicitly instead of
-relying on the initial location.
+client. An interactive SSH shell starts in the sandbox workspace, matching
+`sbx exec`. An editor's remote folder picker might open at the sandbox user's
+home directory, `/home/agent`. Select the intended folder explicitly in the
+editor instead of relying on its initial location.
 @y
 Connecting an app to a sandbox selects the remote environment, but it might not
 open the primary workspace automatically. The initial folder depends on the
-client. A remote folder picker might open at the sandbox user's home directory,
-`/home/agent`, while an interactive `ssh` shell might start in
-`/home/agent/workspace`. Select the intended folder explicitly instead of
-relying on the initial location.
+client. An interactive SSH shell starts in the sandbox workspace, matching
+`sbx exec`. An editor's remote folder picker might open at the sandbox user's
+home directory, `/home/agent`. Select the intended folder explicitly in the
+editor instead of relying on its initial location.
 @z
 
 @x
@@ -349,12 +349,14 @@ a mountless sandbox that uses a Docker-provided agent template, select
 - [Claude Desktop](claude-desktop.md)
 - [ChatGPT](chatgpt.md)
 - [T3 Code](t3-code.md)
+- [Orca](orca.md)
 @y
 - [VS Code](vscode.md)
 - [Cursor](cursor.md)
 - [Claude Desktop](claude-desktop.md)
 - [ChatGPT](chatgpt.md)
 - [T3 Code](t3-code.md)
+- [Orca](orca.md)
 @z
 
 @x

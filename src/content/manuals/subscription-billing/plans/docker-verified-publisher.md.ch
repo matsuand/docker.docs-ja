@@ -15,7 +15,7 @@ keywords:
   for dvp, auto-renewal, billing portal, docker hub
 @y
 title: Docker 検証済みパブリッシャープラン
-linkTitle: Docker 検証済みパブリッシャー
+linkTitle: 検証済みパブリッシャー
 description:
   Manage DVP Starter and DVP Growth for organization accounts,
   including how to apply, add consuming domains, and handle billing.
@@ -23,6 +23,16 @@ keywords:
   docker verified publisher, dvp, dvp starter, dvp growth, consuming
   domains, publisher analytics, organization subscription, apply
   for dvp, auto-renewal, billing portal, docker hub
+@z
+
+@x
+> [!TIP]
+> DVP plans require an approved application before you can subscribe.
+> See [Apply for DVP Starter or Growth](#apply-for-dvp-starter-or-growth).
+@y
+> [!TIP]
+> DVP plans require an approved application before you can subscribe.
+> See [Apply for DVP Starter or Growth](#apply-for-dvp-starter-or-growth).
 @z
 
 @x
@@ -59,16 +69,6 @@ For a plan comparison, see the
 @y
 For a plan comparison, see the
 [DVP landing page](https://hub.docker.com/publisher-program).
-@z
-
-@x
-> [!TIP]
-> DVP plans require an approved application before you can subscribe.
-> See [Apply for DVP Starter or Growth](#apply-for-dvp-starter-or-growth).
-@y
-> [!TIP]
-> DVP plans require an approved application before you can subscribe.
-> See [Apply for DVP Starter or Growth](#apply-for-dvp-starter-or-growth).
 @z
 
 @x
@@ -206,11 +206,15 @@ portal:
 @x
 DVP Starter and DVP Growth are billed annually. You can upgrade from
 DVP Starter to DVP Growth without a new application. Upgrades take
-effect immediately.
+effect immediately. Downgrades take effect at the end of the annual
+period. For steps, see
+[Upgrade or downgrade](#upgrade-or-downgrade).
 @y
 DVP Starter and DVP Growth are billed annually. You can upgrade from
 DVP Starter to DVP Growth without a new application. Upgrades take
-effect immediately.
+effect immediately. Downgrades take effect at the end of the annual
+period. For steps, see
+[Upgrade or downgrade](#upgrade-or-downgrade).
 @z
 
 @x
@@ -233,6 +237,52 @@ any time. Removals take effect at the end of the current billing cycle.
 > [!IMPORTANT]
 > No mid-cycle refunds are issued when you reduce consuming domain
 > add-ons or end a DVP plan.
+@z
+
+@x
+## Upgrade or downgrade
+@y
+## Upgrade or downgrade
+@z
+
+@x
+You can move between DVP Starter and DVP Growth from the billing portal.
+@y
+You can move between DVP Starter and DVP Growth from the billing portal.
+@z
+
+@x
+1. Sign in to [Docker Home](https://app.docker.com/) and go to
+   **Billing**.
+1. From **Active plans**, select **Manage** next to **Docker Verified
+   Publisher**.
+1. Choose the change you want:
+   - To upgrade, select **Upgrade to Growth**, then verify your billing
+     details, continue to payment, and complete checkout. The upgrade
+     takes effect immediately.
+   - To downgrade, select **Downgrade to Starter**. The downgrade is
+     scheduled for the end of the annual period, and you keep DVP Growth
+     until then.
+@y
+1. Sign in to [Docker Home](https://app.docker.com/) and go to
+   **Billing**.
+1. From **Active plans**, select **Manage** next to **Docker Verified
+   Publisher**.
+1. Choose the change you want:
+   - To upgrade, select **Upgrade to Growth**, then verify your billing
+     details, continue to payment, and complete checkout. The upgrade
+     takes effect immediately.
+   - To downgrade, select **Downgrade to Starter**. The downgrade is
+     scheduled for the end of the annual period, and you keep DVP Growth
+     until then.
+@z
+
+@x
+If a downgrade is scheduled and you change your mind, select **Manage**,
+then **Cancel scheduled downgrade** to keep DVP Growth after renewal.
+@y
+If a downgrade is scheduled and you change your mind, select **Manage**,
+then **Cancel scheduled downgrade** to keep DVP Growth after renewal.
 @z
 
 @x
@@ -267,4 +317,12 @@ auto-renewal:
 1. Select **Disable auto-renewal**.
 1. Optional. To remove consuming domains, select **Remove consuming
    domains**, then choose the number to remove.
+@z
+
+@x
+If you disabled auto-renewal and the plan is still active, **Manage**
+includes **Enable auto-renewal**.
+@y
+If you disabled auto-renewal and the plan is still active, **Manage**
+includes **Enable auto-renewal**.
 @z

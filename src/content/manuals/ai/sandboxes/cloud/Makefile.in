@@ -238,11 +238,12 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	_index.md         \
-	credentials.md    \
-	local-vs-cloud.md \
-	move.md           \
-	network-policy.md \
+	_index.md            \
+	credentials.md       \
+	environment-files.md \
+	local-vs-cloud.md    \
+	move.md              \
+	network-policy.md    \
 	usage.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

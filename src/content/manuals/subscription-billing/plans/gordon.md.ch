@@ -7,7 +7,7 @@
 title: Gordon plans
 linkTitle: Gordon
 description:
-  Manage Gordon Plus, Max, and Ultra plans for personal accounts, including
+  Manage Gordon Plus, Max, and Ultra plans for individual accounts, including
   purchasing, upgrading, and deactivating
 keywords:
   gordon, gordon plus, gordon max, gordon ultra, gordon usage, gordon plan,
@@ -16,7 +16,7 @@ keywords:
 title: Gordon plans
 linkTitle: Gordon
 description:
-  Manage Gordon Plus, Max, and Ultra plans for personal accounts, including
+  Manage Gordon Plus, Max, and Ultra plans for individual accounts, including
   purchasing, upgrading, and deactivating
 keywords:
   gordon, gordon plus, gordon max, gordon ultra, gordon usage, gordon plan,
@@ -42,9 +42,9 @@ keywords:
 @z
 
 @x
-To upgrade to a Gordon paid plan, see [Manage plans](/manuals/subscription-billing/manage/plans.md).
+To subscribe to a Gordon paid plan, see [Manage plans](/manuals/subscription-billing/manage/plans.md). To move between paid tiers, see [Upgrade](#upgrade).
 @y
-To upgrade to a Gordon paid plan, see [Manage plans](manuals/subscription-billing/manage/plans.md).
+To subscribe to a Gordon paid plan, see [Manage plans](manuals/subscription-billing/manage/plans.md). To move between paid tiers, see [Upgrade](#upgrade).
 @z
 
 @x
@@ -61,14 +61,14 @@ Gordon usage is measured in questions. When you upgrade from Gordon Base to a pa
 
 @x
 > [!IMPORTANT]
-> Gordon plans apply to personal Docker accounts only. If you purchase a Gordon
+> Gordon plans apply to individual Docker accounts only. If you purchase a Gordon
 > plan while signed in with an organization account, the plan applies
-> to your personal account automatically.
+> to your individual account automatically.
 @y
 > [!IMPORTANT]
-> Gordon plans apply to personal Docker accounts only. If you purchase a Gordon
+> Gordon plans apply to individual Docker accounts only. If you purchase a Gordon
 > plan while signed in with an organization account, the plan applies
-> to your personal account automatically.
+> to your individual account automatically.
 @z
 
 @x
@@ -78,9 +78,37 @@ Gordon usage is measured in questions. When you upgrade from Gordon Base to a pa
 @z
 
 @x
-Gordon plans are billed monthly at the first of the month. If you purchase after the first of the month, your invoice reflects prorated charges for the remaining days in the cycle. Subscribing to a Gordon plan charges you at the time of purchase. When you upgrade your Gordon plan, usage limits are immediately effective after payment. 
+Gordon plans are billed monthly at the first of the month. If you purchase after the first of the month, your invoice reflects prorated charges for the remaining days in the cycle. Subscribing to a Gordon plan charges you at the time of purchase. When you upgrade your Gordon plan, usage limits are immediately effective after payment.
 @y
-Gordon plans are billed monthly at the first of the month. If you purchase after the first of the month, your invoice reflects prorated charges for the remaining days in the cycle. Subscribing to a Gordon plan charges you at the time of purchase. When you upgrade your Gordon plan, usage limits are immediately effective after payment. 
+Gordon plans are billed monthly at the first of the month. If you purchase after the first of the month, your invoice reflects prorated charges for the remaining days in the cycle. Subscribing to a Gordon plan charges you at the time of purchase. When you upgrade your Gordon plan, usage limits are immediately effective after payment.
+@z
+
+@x
+## Upgrade
+@y
+## Upgrade
+@z
+
+@x
+You can move to a higher Gordon tier at any time. The new usage limits
+take effect after payment.
+@y
+You can move to a higher Gordon tier at any time. The new usage limits
+take effect after payment.
+@z
+
+@x
+1. Sign in to [Docker Home](https://app.docker.com/) and go to **Billing**.
+1. From **Active plans**, select **Manage** next to your Gordon plan.
+1. Select **Upgrade subscription**.
+1. Choose the tier, verify your billing details, continue to payment, and
+   complete checkout.
+@y
+1. Sign in to [Docker Home](https://app.docker.com/) and go to **Billing**.
+1. From **Active plans**, select **Manage** next to your Gordon plan.
+1. Select **Upgrade subscription**.
+1. Choose the tier, verify your billing details, continue to payment, and
+   complete checkout.
 @z
 
 @x
@@ -117,6 +145,18 @@ To downgrade or disable auto-renewal:
 1. Sign in to [Docker Home](https://app.docker.com/) and go to **Billing**.
 1. From **Active plans**, select **Manage** next to your Gordon plan.
 1. Select **Downgrade plan** to switch to a lower tier, or **Disable auto renewal** to end your plan after the current billing cycle.
+@z
+
+@x
+If you disabled auto-renewal and the plan is still active, **Manage** includes **Enable auto-renewal**.
+@y
+If you disabled auto-renewal and the plan is still active, **Manage** includes **Enable auto-renewal**.
+@z
+
+@x
+If a downgrade is scheduled, **Manage** includes **Cancel scheduled change**. Selecting it keeps your current tier after renewal.
+@y
+If a downgrade is scheduled, **Manage** includes **Cancel scheduled change**. Selecting it keeps your current tier after renewal.
 @z
 
 @x

@@ -382,9 +382,9 @@ need an administrator to invite them.
 @z
 
 @x
-See [SSO authentication with JIT provisioning disabled](/manuals/security/provisioning/just-in-time.md#sso-authentication-with-jit-provisioning-disabled).
+See [Disable JIT provisioning](/manuals/security/provisioning/just-in-time.md#disable).
 @y
-See [SSO authentication with JIT provisioning disabled](manuals/security/provisioning/just-in-time.md#sso-authentication-with-jit-provisioning-disabled).
+See [Disable JIT provisioning](manuals/security/provisioning/just-in-time.md#disable).
 @z
 
 @x

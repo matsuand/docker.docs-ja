@@ -14,6 +14,26 @@ title: BTRFS storage driver
 @z
 
 @x
+> [!IMPORTANT]
+>
+> In most cases you should use the `overlay2` storage driver - it's not
+> required to use the `btrfs` storage driver simply because your system uses
+> Btrfs as its root filesystem.
+>
+> Btrfs driver has known issues. See [Moby issue #27653](https://github.com/moby/moby/issues/27653)
+> for more information.
+@y
+> [!IMPORTANT]
+>
+> In most cases you should use the `overlay2` storage driver - it's not
+> required to use the `btrfs` storage driver simply because your system uses
+> Btrfs as its root filesystem.
+>
+> Btrfs driver has known issues. See [Moby issue #27653](https://github.com/moby/moby/issues/27653)
+> for more information.
+@z
+
+@x
 Btrfs is a copy-on-write filesystem that supports many advanced storage
 technologies, making it a good fit for Docker. Btrfs is included in the
 mainline Linux kernel.
@@ -667,14 +687,14 @@ storage driver.
 > Many of these factors are mitigated by using Docker volumes for write-heavy
 > workloads, rather than relying on storing data in the container's writable
 > layer. However, in the case of Btrfs, Docker volumes still suffer from these
-> draw-backs unless `/var/lib/docker/volumes/` isn't backed by Btrfs.
+> drawbacks if `/var/lib/docker/volumes/` is backed by Btrfs.
 @y
 > [!NOTE]
 >
 > Many of these factors are mitigated by using Docker volumes for write-heavy
 > workloads, rather than relying on storing data in the container's writable
 > layer. However, in the case of Btrfs, Docker volumes still suffer from these
-> draw-backs unless `/var/lib/docker/volumes/` isn't backed by Btrfs.
+> drawbacks if `/var/lib/docker/volumes/` is backed by Btrfs.
 @z
 
 @x

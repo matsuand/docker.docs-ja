@@ -36,6 +36,86 @@ For more information about:
 @z
 
 @x
+## 29.9.2
+@y
+## 29.9.2
+@z
+
+@x
+{{< release-date date="2026-10-20" >}}
+@y
+{{< release-date date="2026-10-20" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.9.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.9.2)
+- [moby/moby, 29.9.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.9.2)
+@y
+- [docker/cli, 29.9.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.9.2)
+- [moby/moby, 29.9.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.9.2)
+@z
+
+@x
+### Security
+@y
+### Security
+@z
+
+@x
+The Go runtime update addresses [CVE-2026-111943](https://go.dev/issue/82345) by rejecting certificate chains that include eight revoked eMudhra intermediate certificates.
+Image pulls and pushes fail TLS certificate verification if a registry's certificate chain relies on one of the affected TLS intermediates.
+Affected registries need a replacement certificate chain that does not use these intermediates.
+@y
+The Go runtime update addresses [CVE-2026-111943](https://go.dev/issue/82345) by rejecting certificate chains that include eight revoked eMudhra intermediate certificates.
+Image pulls and pushes fail TLS certificate verification if a registry's certificate chain relies on one of the affected TLS intermediates.
+Affected registries need a replacement certificate chain that does not use these intermediates.
+@z
+
+@x
+The blocked intermediates are:
+@y
+The blocked intermediates are:
+@z
+
+@x
+- Domain-validated TLS: `EM DV TLS CA - G3B` and `EM DV TLS CA - G3C`
+- Organization-validated TLS: `EM OV TLS CA - G3B` and `EM OV TLS CA - G3C`
+- Extended-validation TLS: `EM EV TLS CA - G3B` and `EM EV TLS CA - G3C`
+- Code signing: `EM OV CS CA - G3B` and `EM OV CS CA - G3C`
+@y
+- Domain-validated TLS: `EM DV TLS CA - G3B` and `EM DV TLS CA - G3C`
+- Organization-validated TLS: `EM OV TLS CA - G3B` and `EM OV TLS CA - G3C`
+- Extended-validation TLS: `EM EV TLS CA - G3B` and `EM EV TLS CA - G3C`
+- Code signing: `EM OV CS CA - G3B` and `EM OV CS CA - G3C`
+@z
+
+@x
+The G3B intermediates belong to eMudhra BV, and the G3C intermediates belong to eMudhra Inc.
+The keys for these intermediates were compromised.
+@y
+The G3B intermediates belong to eMudhra BV, and the G3C intermediates belong to eMudhra Inc.
+The keys for these intermediates were compromised.
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update Go runtime to [1.26.10](https://go.dev/doc/devel/release#go1.26.10). [moby/moby#53989](https://github.com/moby/moby/pull/53989), [docker/cli#7418](https://github.com/docker/cli/pull/7418)
+@y
+- Update Go runtime to [1.26.10](https://go.dev/doc/devel/release#go1.26.10). [moby/moby#53989](https://github.com/moby/moby/pull/53989), [docker/cli#7418](https://github.com/docker/cli/pull/7418)
+@z
+
+@x
 ## 29.9.1
 @y
 ## 29.9.1

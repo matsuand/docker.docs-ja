@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = access-tokens authentication images provisioning \
+SUBDIRS = access-tokens authentication provisioning \
 	roles-and-permissions
 
 bases = \

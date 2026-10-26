@@ -12,7 +12,9 @@ linkTitle: Accounts
 @z
 
 @x
-description: FAQs about Docker IDs, account creation, organizations, companies, seats, and members
+description: >-
+  FAQs about Docker IDs, account creation, organizations, companies, seats,
+  members, and Insights
 keywords:
   - docker ID
   - docker account FAQ
@@ -33,11 +35,16 @@ keywords:
   - convert Docker account
   - sign in after convert
   - organization owner
+  - Insights
+  - Desktop insights
+  - analyticsEnabled
   - personal access token
   - auto-generated token
   - incorrect authentication credentials
 @y
-description: FAQs about Docker IDs, account creation, organizations, companies, seats, and members
+description: >-
+  FAQs about Docker IDs, account creation, organizations, companies, seats,
+  members, and Insights
 keywords:
   - docker ID
   - docker account FAQ
@@ -58,6 +65,9 @@ keywords:
   - convert Docker account
   - sign in after convert
   - organization owner
+  - Insights
+  - Desktop insights
+  - analyticsEnabled
   - personal access token
   - auto-generated token
   - incorrect authentication credentials
@@ -499,6 +509,96 @@ seat in each organization.
 @y
 Yes. In a scenario where a user belongs to two organizations, they take up one
 seat in each organization.
+@z
+
+@x
+### Why is Insights data missing for some users?
+@y
+### Why is Insights data missing for some users?
+@z
+
+@x
+Older versions of Docker Desktop may omit some metrics. Update those users to
+the latest Docker Desktop release.
+@y
+Older versions of Docker Desktop may omit some metrics. Update those users to
+the latest Docker Desktop release.
+@z
+
+@x
+For prerequisites and how to open Insights, see
+[Insights](/manuals/accounts/organization/insights.md).
+@y
+For prerequisites and how to open Insights, see
+[Insights](manuals/accounts/organization/insights.md).
+@z
+
+@x
+### Why are opted-out users missing from Insights?
+@y
+### Why are opted-out users missing from Insights?
+@z
+
+@x
+Insights includes a user only when **Send usage statistics**
+(`analyticsEnabled`) is on. Turn the setting on for users who opted out. At
+scale, use
+[Settings
+Management](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md)
+and set `analyticsEnabled` to `true`.
+@y
+Insights includes a user only when **Send usage statistics**
+(`analyticsEnabled`) is on. Turn the setting on for users who opted out. At
+scale, use
+[Settings
+Management](manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md)
+and set `analyticsEnabled` to `true`.
+@z
+
+@x
+### Why is Docker Engine usage missing from Insights?
+@y
+### Why is Docker Engine usage missing from Insights?
+@z
+
+@x
+Only Docker Desktop sends Insights data. A standalone Docker Engine install
+sends none.
+@y
+Only Docker Desktop sends Insights data. A standalone Docker Engine install
+sends none.
+@z
+
+@x
+### Why are some users excluded from Insights?
+@y
+### Why are some users excluded from Insights?
+@z
+
+@x
+Insights includes users who sign in with an account associated with your
+organization. To include the rest,
+[enforce sign-in](/manuals/desktop/enterprise/enforce-sign-in/_index.md).
+@y
+Insights includes users who sign in with an account associated with your
+organization. To include the rest,
+[enforce sign-in](manuals/desktop/enterprise/enforce-sign-in/_index.md).
+@z
+
+@x
+### Why does Insights show no data?
+@y
+### Why does Insights show no data?
+@z
+
+@x
+Insights may show no data until you verify your organization's domain.
+[Verify the
+domain](/manuals/security/provisioning/domain-management.md).
+@y
+Insights may show no data until you verify your organization's domain.
+[Verify the
+domain](manuals/security/provisioning/domain-management.md).
 @z
 
 @x

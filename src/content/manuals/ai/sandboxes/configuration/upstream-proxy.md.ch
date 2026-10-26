@@ -4,16 +4,28 @@
 @x
 title: Configure an upstream proxy
 linkTitle: Upstream proxy
-description: Route sandbox and daemon traffic through a corporate or upstream proxy, including PAC files, SOCKS5, and your OS system proxy.
+description: Route local sandbox, daemon, and host CLI traffic through an upstream proxy, including cloud connections, PAC files, SOCKS5, and your OS system proxy.
 keywords: docker sandboxes, sbx, upstream proxy, corporate proxy, pac, socks5, system proxy, no_proxy, egress, ntlm, kerberos
 @y
 title: Configure an upstream proxy
 linkTitle: Upstream proxy
-description: Route sandbox and daemon traffic through a corporate or upstream proxy, including PAC files, SOCKS5, and your OS system proxy.
+description: Route local sandbox, daemon, and host CLI traffic through an upstream proxy, including cloud connections, PAC files, SOCKS5, and your OS system proxy.
 keywords: docker sandboxes, sbx, upstream proxy, corporate proxy, pac, socks5, system proxy, no_proxy, egress, ntlm, kerberos
 @z
 
 @x
+This page describes proxy settings for local sandboxes, the local daemon, and
+host CLI connections to cloud sandboxes. These settings don't configure traffic
+originating inside a cloud sandbox. For cloud sandbox egress controls, see
+[Cloud network policy](../cloud/network-policy.md).
+@y
+This page describes proxy settings for local sandboxes, the local daemon, and
+host CLI connections to cloud sandboxes. These settings don't configure traffic
+originating inside a cloud sandbox. For cloud sandbox egress controls, see
+[Cloud network policy](../cloud/network-policy.md).
+@z
+
+@x
 > [!IMPORTANT]
 > Upstream proxy support is experimental. Everything described on this page —
 > proxy URLs, PAC files, SOCKS5, use of the OS system proxy, proxy
@@ -52,15 +64,15 @@ independently:
 @z
 
 @x
-- Sandbox traffic — network access from inside your sandboxes.
-- Daemon traffic — the `sbx` daemon's own access, including image pulls,
-  telemetry, and feature flags. CLI requests for `sbx login` and
-  `sbx diagnose --upload` also use this scope.
+- Sandbox traffic — network access from inside your local sandboxes.
+- Daemon and host CLI traffic — the daemon's own access, including image pulls,
+  telemetry, and feature flags, and host CLI requests, including `sbx login`,
+  `sbx diagnose --upload`, cloud commands, `sbx move`, the TUI, and cloud SSH.
 @y
-- Sandbox traffic — network access from inside your sandboxes.
-- Daemon traffic — the `sbx` daemon's own access, including image pulls,
-  telemetry, and feature flags. CLI requests for `sbx login` and
-  `sbx diagnose --upload` also use this scope.
+- Sandbox traffic — network access from inside your local sandboxes.
+- Daemon and host CLI traffic — the daemon's own access, including image pulls,
+  telemetry, and feature flags, and host CLI requests, including `sbx login`,
+  `sbx diagnose --upload`, cloud commands, `sbx move`, the TUI, and cloud SSH.
 @z
 
 @x
@@ -286,9 +298,8 @@ Proxy settings take effect at different times depending on the consumer:
 - Daemon scope (`proxy.daemon`, `no_proxy.daemon`, and the daemon side of
   `proxy` and `no_proxy`) is resolved once when the daemon starts. Changes to
   the daemon's own traffic require `sbx daemon restart`.
-- Supported CLI clients read daemon-scoped settings on each invocation,
-  including `sbx login` and `sbx diagnose --upload`. Changes apply on the next
-  invocation without a daemon restart.
+- Host CLI clients read daemon-scoped settings on each invocation. Changes
+  apply on the next invocation without a daemon restart.
 @y
 - Sandbox scope (`proxy.sandbox`, `no_proxy.sandbox`, and the sandbox side of
   `proxy` and `no_proxy`) is resolved when a sandbox network proxy is created.
@@ -298,9 +309,8 @@ Proxy settings take effect at different times depending on the consumer:
 - Daemon scope (`proxy.daemon`, `no_proxy.daemon`, and the daemon side of
   `proxy` and `no_proxy`) is resolved once when the daemon starts. Changes to
   the daemon's own traffic require `sbx daemon restart`.
-- Supported CLI clients read daemon-scoped settings on each invocation,
-  including `sbx login` and `sbx diagnose --upload`. Changes apply on the next
-  invocation without a daemon restart.
+- Host CLI clients read daemon-scoped settings on each invocation. Changes
+  apply on the next invocation without a daemon restart.
 @z
 
 @x
@@ -325,6 +335,44 @@ When a `system` or PAC proxy is in use, `sbx` still tracks OS-level proxy change
 @y
 When a `system` or PAC proxy is in use, `sbx` still tracks OS-level proxy changes
 (such as switching networks, connecting a VPN, or updated PAC contents) live.
+@z
+
+@x
+## Cloud SSH
+@y
+## Cloud SSH
+@z
+
+@x
+Cloud SSH uses the configured host proxy to connect to the SSH gateway. Some
+proxies refuse connections to the gateway's SSH port. If your network permits
+direct SSH connections, bypass the proxy for cloud SSH:
+@y
+Cloud SSH uses the configured host proxy to connect to the SSH gateway. Some
+proxies refuse connections to the gateway's SSH port. If your network permits
+direct SSH connections, bypass the proxy for cloud SSH:
+@z
+
+@x
+```console
+$ sbx settings set proxy.sshDirect true
+```
+@y
+```console
+$ sbx settings set proxy.sshDirect true
+```
+@z
+
+@x
+This setting skips the proxy entirely for cloud SSH, without trying it first.
+Other host CLI requests keep using the configured proxy. The change applies on
+the next SSH connection without a daemon restart. Set it to `false` to use the
+proxy again.
+@y
+This setting skips the proxy entirely for cloud SSH, without trying it first.
+Other host CLI requests keep using the configured proxy. The change applies on
+the next SSH connection without a daemon restart. Set it to `false` to use the
+proxy again.
 @z
 
 @x

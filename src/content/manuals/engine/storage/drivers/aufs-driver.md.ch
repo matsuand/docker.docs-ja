@@ -2,23 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn how to optimize your use of AUFS driver.
-keywords: 'container, storage, driver, AUFS '
+keywords: "container, storage, driver, AUFS "
 title: AUFS storage driver
-sitemap: false
-aliases:
-  - /storage/storagedriver/aufs-driver/
----
 @y
----
 description: Learn how to optimize your use of AUFS driver.
-keywords: 'container, storage, driver, AUFS '
+keywords: "container, storage, driver, AUFS "
 title: AUFS storage driver
-sitemap: false
-aliases:
-  - /storage/storagedriver/aufs-driver/
----
 @z
 
 @x
@@ -38,14 +28,14 @@ aliases:
 @z
 
 @x
-AUFS is a *union filesystem*. The `aufs` storage driver was previously the default
+AUFS is a _union filesystem_. The `aufs` storage driver was previously the default
 storage driver used for managing images and layers on Docker for Ubuntu, and for
 Debian versions prior to Stretch. If your Linux kernel is version 4.0 or higher,
 and you use Docker Engine - Community, consider using the newer
 [overlay2](overlayfs-driver.md), which has
 potential performance advantages over the `aufs` storage driver.
 @y
-AUFS is a *union filesystem*. The `aufs` storage driver was previously the default
+AUFS is a _union filesystem_. The `aufs` storage driver was previously the default
 storage driver used for managing images and layers on Docker for Ubuntu, and for
 Debian versions prior to Stretch. If your Linux kernel is version 4.0 or higher,
 and you use Docker Engine - Community, consider using the newer
@@ -63,7 +53,7 @@ potential performance advantages over the `aufs` storage driver.
 - For Docker Engine - Community, AUFS is supported on Ubuntu, and on Debian versions prior to
   Stretch.
 - If you use Ubuntu, you need to add the AUFS module to the kernel. If you do
-  not install these packages, you need to use  `overlay2`.
+  not install these packages, you need to use `overlay2`.
 - AUFS cannot use the following backing filesystems: `aufs`, `btrfs`, or
   `ecryptfs`. This means that the filesystem which contains
   `/var/lib/docker/aufs` cannot be one of these filesystem types.
@@ -71,7 +61,7 @@ potential performance advantages over the `aufs` storage driver.
 - For Docker Engine - Community, AUFS is supported on Ubuntu, and on Debian versions prior to
   Stretch.
 - If you use Ubuntu, you need to add the AUFS module to the kernel. If you do
-  not install these packages, you need to use  `overlay2`.
+  not install these packages, you need to use `overlay2`.
 - AUFS cannot use the following backing filesystems: `aufs`, `btrfs`, or
   `ecryptfs`. This means that the filesystem which contains
   `/var/lib/docker/aufs` cannot be one of these filesystem types.
@@ -168,11 +158,11 @@ storage driver is configured, Docker uses it by default.
 @z
 
 @x
-AUFS is a *union filesystem*, which means that it layers multiple directories on
+AUFS is a _union filesystem_, which means that it layers multiple directories on
 a single Linux host and presents them as a single directory. These directories
 are called _branches_ in AUFS terminology, and _layers_ in Docker terminology.
 @y
-AUFS is a *union filesystem*, which means that it layers multiple directories on
+AUFS is a _union filesystem_, which means that it layers multiple directories on
 a single Linux host and presents them as a single directory. These directories
 are called _branches_ in AUFS terminology, and _layers_ in Docker terminology.
 @z
@@ -190,9 +180,9 @@ The diagram below shows a Docker container based on the `ubuntu:latest` image.
 @z
 
 @x
-![Layers of an Ubuntu container](images/aufs_layers.webp) 
+![Layers of an Ubuntu container](images/aufs_layers.webp)
 @y
-![Layers of an Ubuntu container](images/aufs_layers.webp) 
+![Layers of an Ubuntu container](images/aufs_layers.webp)
 @z
 
 @x
@@ -319,13 +309,13 @@ following ways:
 
 @x
 - `diff/`: Differences introduced in the writable container layer, such as new
-   or modified files.
+  or modified files.
 - `layers/`: Metadata about the writable container layer's parent layers.
 - `mnt/`: A mount point for each running container's unified filesystem, exactly
   as it appears from within the container.
 @y
 - `diff/`: Differences introduced in the writable container layer, such as new
-   or modified files.
+  or modified files.
 - `layers/`: Metadata about the writable container layer's parent layers.
 - `mnt/`: A mount point for each running container's unified filesystem, exactly
   as it appears from within the container.
@@ -404,13 +394,13 @@ Consider some scenarios where files in a container are modified.
 @x
 - **Writing to a file for the first time**: The first time a container writes
   to an existing file, that file does not exist in the container (`upperdir`).
-  The `aufs` driver performs a *copy_up* operation to copy the file from the
+  The `aufs` driver performs a _copy_up_ operation to copy the file from the
   image layer where it exists to the writable container layer. The container
   then writes the changes to the new copy of the file in the container layer.
 @y
 - **Writing to a file for the first time**: The first time a container writes
   to an existing file, that file does not exist in the container (`upperdir`).
-  The `aufs` driver performs a *copy_up* operation to copy the file from the
+  The `aufs` driver performs a _copy_up_ operation to copy the file from the
   image layer where it exists to the writable container layer. The container
   then writes the changes to the new copy of the file in the container layer.
 @z
@@ -421,33 +411,29 @@ Consider some scenarios where files in a container are modified.
   very large and only a small part of it is being modified. This can have a
   noticeable impact on container write performance. AUFS can suffer
   noticeable latencies when searching for files in images with many layers.
-  However, it is worth noting that the copy_up operation only occurs the first
-  time a given file is written to. Subsequent writes to the same file operate
-  against the copy of the file already copied up to the container.
+  However, the copy_up operation only occurs the first time a given file is
+  written to. Subsequent writes to the same file operate against the copy of
+  the file already copied up to the container.
 @y
   However, AUFS works at the file level rather than the block level. This
   means that all copy_up operations copy the entire file, even if the file is
   very large and only a small part of it is being modified. This can have a
   noticeable impact on container write performance. AUFS can suffer
   noticeable latencies when searching for files in images with many layers.
-  However, it is worth noting that the copy_up operation only occurs the first
-  time a given file is written to. Subsequent writes to the same file operate
-  against the copy of the file already copied up to the container.
+  However, the copy_up operation only occurs the first time a given file is
+  written to. Subsequent writes to the same file operate against the copy of
+  the file already copied up to the container.
 @z
 
 @x
 - **Deleting files and directories**:
-@y
-- **Deleting files and directories**:
-@z
-
-@x
-  - When a _file_ is deleted within a container, a *whiteout* file is created
+  - When a _file_ is deleted within a container, a _whiteout_ file is created
     in the container layer. The version of the file in the image layer is not
     deleted (because the image layers are read-only). However, the whiteout
     file prevents it from being available to the container.
 @y
-  - When a _file_ is deleted within a container, a *whiteout* file is created
+- **Deleting files and directories**:
+  - When a _file_ is deleted within a container, a _whiteout_ file is created
     in the container layer. The version of the file in the image layer is not
     deleted (because the image layers are read-only). However, the whiteout
     file prevents it from being available to the container.

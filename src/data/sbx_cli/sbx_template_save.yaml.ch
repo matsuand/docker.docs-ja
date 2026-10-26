@@ -5,36 +5,22 @@
 name: sbx template save
 synopsis: Save a snapshot of the sandbox as a template
 description: |-
-    Save a snapshot of the sandbox as a template.
+    Save a sandbox snapshot as a template in the local image store.
+    Use --pull never when creating a sandbox from the saved template.
 @y
 name: sbx template save
 synopsis: Save a snapshot of the sandbox as a template
 description: |-
-    Save a snapshot of the sandbox as a template.
+    Save a sandbox snapshot as a template in the local image store.
+    Use --pull never when creating a sandbox from the saved template.
 @z
 
 @x
-    The saved image is stored in the sandbox runtime's image store and can be
-    used as a template for new sandboxes with:
-      sbx run --pull never -t TAG AGENT [WORKSPACE]
+    Use --output to export a tar file for loading on another host with
+    sbx template load.
 @y
-    The saved image is stored in the sandbox runtime's image store and can be
-    used as a template for new sandboxes with:
-      sbx run --pull never -t TAG AGENT [WORKSPACE]
-@z
-
-@x
-    Use --pull never to use the saved image without trying to pull it from a registry.
-@y
-    Use --pull never to use the saved image without trying to pull it from a registry.
-@z
-
-@x
-    Use --output to also export the image to a tar file that can be shared
-    and loaded on another host with: sbx template load FILE
-@y
-    Use --output to also export the image to a tar file that can be shared
-    and loaded on another host with: sbx template load FILE
+    Use --output to export a tar file for loading on another host with
+    sbx template load.
 @z
 
 @x
@@ -127,6 +113,14 @@ example: |4-
 example: |4-
       # Save as a template for new sandboxes on this host
       sbx template save my-sandbox myimage:v1.0
+@z
+
+@x
+      # Create a sandbox from the saved template
+      sbx run --pull never -t myimage:v1.0 claude ./project
+@y
+      # Create a sandbox from the saved template
+      sbx run --pull never -t myimage:v1.0 claude ./project
 @z
 
 @x

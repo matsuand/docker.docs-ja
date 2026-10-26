@@ -342,6 +342,42 @@ variable appears only when the setting has a direct equivalent. Use
 @z
 
 @x
+#### browser.enabled {.wrap-anywhere}
+@y
+#### browser.enabled {.wrap-anywhere}
+@z
+
+@x
+{{< setting-metadata type="boolean" default="true" >}}
+@y
+{{< setting-metadata type="boolean" default="true" >}}
+@z
+
+@x
+Set this to `false` to prevent sandboxed processes from opening URLs in your
+host browser:
+@y
+Set this to `false` to prevent sandboxed processes from opening URLs in your
+host browser:
+@z
+
+@x
+```console
+$ sbx settings set browser.enabled false
+```
+@y
+```console
+$ sbx settings set browser.enabled false
+```
+@z
+
+@x
+This also prevents in-sandbox OAuth logins that redirect to localhost.
+@y
+This also prevents in-sandbox OAuth logins that redirect to localhost.
+@z
+
+@x
 #### clipboard.imagePaste {.wrap-anywhere}
 @y
 #### clipboard.imagePaste {.wrap-anywhere}
@@ -1136,6 +1172,120 @@ Set it back to `false` and restart to return to automatic selection. See
 @z
 
 @x
+### Daemon logging
+@y
+### Daemon logging
+@z
+
+@x
+These settings control rotation of `daemon.log`, not logs written by the CLI
+or processes inside a sandbox. Changes take effect after `sbx daemon restart`.
+The backup count and age limits apply together: a rotated log is removed when
+it exceeds either limit.
+@y
+These settings control rotation of `daemon.log`, not logs written by the CLI
+or processes inside a sandbox. Changes take effect after `sbx daemon restart`.
+The backup count and age limits apply together: a rotated log is removed when
+it exceeds either limit.
+@z
+
+@x
+#### daemon.log.maxSizeMB {.wrap-anywhere}
+@y
+#### daemon.log.maxSizeMB {.wrap-anywhere}
+@z
+
+@x
+{{< setting-metadata type="integer" default="50" >}}
+@y
+{{< setting-metadata type="integer" default="50" >}}
+@z
+
+@x
+Set the size in MB at which the daemon log rotates. The minimum is `1`:
+@y
+Set the size in MB at which the daemon log rotates. The minimum is `1`:
+@z
+
+@x
+```console
+$ sbx settings set daemon.log.maxSizeMB 100
+$ sbx daemon restart
+```
+@y
+```console
+$ sbx settings set daemon.log.maxSizeMB 100
+$ sbx daemon restart
+```
+@z
+
+@x
+#### daemon.log.maxBackups {.wrap-anywhere}
+@y
+#### daemon.log.maxBackups {.wrap-anywhere}
+@z
+
+@x
+{{< setting-metadata type="integer" default="3" >}}
+@y
+{{< setting-metadata type="integer" default="3" >}}
+@z
+
+@x
+Set the maximum number of rotated daemon logs to keep. The value must be zero
+or greater. A value of `0` removes the count limit, but the age limit still
+applies:
+@y
+Set the maximum number of rotated daemon logs to keep. The value must be zero
+or greater. A value of `0` removes the count limit, but the age limit still
+applies:
+@z
+
+@x
+```console
+$ sbx settings set daemon.log.maxBackups 5
+$ sbx daemon restart
+```
+@y
+```console
+$ sbx settings set daemon.log.maxBackups 5
+$ sbx daemon restart
+```
+@z
+
+@x
+#### daemon.log.maxAgeDays {.wrap-anywhere}
+@y
+#### daemon.log.maxAgeDays {.wrap-anywhere}
+@z
+
+@x
+{{< setting-metadata type="integer" default="0" >}}
+@y
+{{< setting-metadata type="integer" default="0" >}}
+@z
+
+@x
+Set how many days to keep rotated daemon logs, from `0` to `3650`. A value of
+`0` removes the age limit, but the backup count limit still applies:
+@y
+Set how many days to keep rotated daemon logs, from `0` to `3650`. A value of
+`0` removes the age limit, but the backup count limit still applies:
+@z
+
+@x
+```console
+$ sbx settings set daemon.log.maxAgeDays 30
+$ sbx daemon restart
+```
+@y
+```console
+$ sbx settings set daemon.log.maxAgeDays 30
+$ sbx daemon restart
+```
+@z
+
+@x
 ### Diagnostics
 @y
 ### Diagnostics
@@ -1381,12 +1531,12 @@ updated value; existing sandbox proxies require a daemon restart.
 
 @x
 Use this to route the daemon's requests, such as image pulls, separately from
-sandbox traffic. Supported host CLI requests, including `sbx login` and
-`sbx diagnose --upload`, also use this scope.
+sandbox traffic. Host CLI connections, including connections to cloud sandboxes,
+also use this scope. See [traffic scopes](upstream-proxy.md).
 @y
 Use this to route the daemon's requests, such as image pulls, separately from
-sandbox traffic. Supported host CLI requests, including `sbx login` and
-`sbx diagnose --upload`, also use this scope.
+sandbox traffic. Host CLI connections, including connections to cloud sandboxes,
+also use this scope. See [traffic scopes](upstream-proxy.md).
 @z
 
 @x
@@ -1415,6 +1565,30 @@ the next invocation; the daemon's own requests require a restart.
 @y
 Unset this setting to inherit `proxy`. Supported CLI requests use changes on
 the next invocation; the daemon's own requests require a restart.
+@z
+
+@x
+#### proxy.sshDirect {.wrap-anywhere}
+@y
+#### proxy.sshDirect {.wrap-anywhere}
+@z
+
+@x
+{{< setting-metadata type="boolean" default="false" >}}
+@y
+{{< setting-metadata type="boolean" default="false" >}}
+@z
+
+@x
+Set this to `true` to bypass the upstream proxy for cloud SSH connections.
+Other host CLI requests keep using the configured proxy. Changes apply on the
+next SSH connection without a daemon restart. For setup, see
+[Cloud SSH](upstream-proxy.md#cloud-ssh).
+@y
+Set this to `true` to bypass the upstream proxy for cloud SSH connections.
+Other host CLI requests keep using the configured proxy. Changes apply on the
+next SSH connection without a daemon restart. For setup, see
+[Cloud SSH](upstream-proxy.md#cloud-ssh).
 @z
 
 @x

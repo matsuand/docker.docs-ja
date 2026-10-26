@@ -21,13 +21,13 @@ keywords: bake, quickstart, build, project, introduction, getting started
 @z
 
 @x
-Bake is an abstraction for the `docker build` command that lets you more easily
-manage your build configuration (CLI flags, environment variables, etc.) in a
-consistent way for everyone on your team.
+Bake is an abstraction for the `docker build` command that lets you manage your
+build configuration (CLI flags, environment variables, etc.) in a consistent
+way for everyone on your team.
 @y
-Bake is an abstraction for the `docker build` command that lets you more easily
-manage your build configuration (CLI flags, environment variables, etc.) in a
-consistent way for everyone on your team.
+Bake is an abstraction for the `docker build` command that lets you manage your
+build configuration (CLI flags, environment variables, etc.) in a consistent
+way for everyone on your team.
 @z
 
 @x
@@ -83,14 +83,14 @@ With this file, building the image is as simple as running:
 @x
 For simple builds, the difference between `docker build` and `docker buildx
 bake` is minimal. However, as your build configuration grows more complex, Bake
-provides a more structured way to manage that complexity, that would be
+provides a more structured way to manage that complexity, which would be
 difficult to manage with CLI flags for the `docker build`. It also provides a
 way to share build configurations across your team, so that everyone is
 building images in a consistent way, with the same configuration.
 @y
 For simple builds, the difference between `docker build` and `docker buildx
 bake` is minimal. However, as your build configuration grows more complex, Bake
-provides a more structured way to manage that complexity, that would be
+provides a more structured way to manage that complexity, which would be
 difficult to manage with CLI flags for the `docker build`. It also provides a
 way to share build configurations across your team, so that everyone is
 building images in a consistent way, with the same configuration.

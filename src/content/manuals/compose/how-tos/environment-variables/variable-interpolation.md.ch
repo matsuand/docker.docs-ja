@@ -270,11 +270,11 @@ services:
 @x
    > [!IMPORTANT]
    >
-   > Be aware of [Environment variables precedence](envvars-precedence.md) when using variables in an `.env` file that  as environment variables in your container's environment.
+   > Be aware of [Environment variables precedence](envvars-precedence.md) when using variables in an `.env` file that are also used as environment variables in your container's environment.
 @y
    > [!IMPORTANT]
    >
-   > Be aware of [Environment variables precedence](envvars-precedence.md) when using variables in an `.env` file that  as environment variables in your container's environment.
+   > Be aware of [Environment variables precedence](envvars-precedence.md) when using variables in an `.env` file that are also used as environment variables in your container's environment.
 @z
 
 @x

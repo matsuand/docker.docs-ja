@@ -133,10 +133,10 @@ Docker organizations that use SCIM while JIT is still enabled.
 
 @x
 You can turn off JIT only while SCIM is enabled. Follow
-[Disable JIT provisioning](/manuals/security/provisioning/just-in-time.md#disable-jit-provisioning).
+[Disable JIT provisioning](/manuals/security/provisioning/just-in-time.md#disable).
 @y
 You can turn off JIT only while SCIM is enabled. Follow
-[Disable JIT provisioning](manuals/security/provisioning/just-in-time.md#disable-jit-provisioning).
+[Disable JIT provisioning](manuals/security/provisioning/just-in-time.md#disable).
 @z
 
 @x

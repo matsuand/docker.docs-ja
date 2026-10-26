@@ -80,6 +80,7 @@ bases = \
 	sbx_policy_inspect.yaml              \
 	sbx_policy_log.yaml                  \
 	sbx_policy_ls.yaml                   \
+	sbx_policy_refresh.yaml              \
 	sbx_policy_reset.yaml                \
 	sbx_policy_rm.yaml                   \
 	sbx_policy_rm_network.yaml           \

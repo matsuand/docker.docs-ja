@@ -6,43 +6,33 @@ name: sbx kit pull
 synopsis: Pull a kit artifact from an OCI registry
 experimental: true
 description: |-
-    Pull a kit artifact from an OCI registry and save its layer payload to a file.
+    Pull a kit artifact from an OCI registry and save its payload to a file.
+    Use a registry/repo:tag or registry/repo@sha256:digest reference.
 @y
 name: sbx kit pull
 synopsis: Pull a kit artifact from an OCI registry
 experimental: true
 description: |-
-    Pull a kit artifact from an OCI registry and save its layer payload to a file.
+    Pull a kit artifact from an OCI registry and save its payload to a file.
+    Use a registry/repo:tag or registry/repo@sha256:digest reference.
 @z
 
 @x
-    The reference should be in the format "registry/repo:tag" or
-    "registry/repo@sha256:digest" (e.g., "ghcr.io/myorg/my-plugin:1.0").
+    The output extension follows the resolved artifact format: .zip for v1,
+    or .tar.gz for v2. Use --output to choose the file path.
 @y
-    The reference should be in the format "registry/repo:tag" or
-    "registry/repo@sha256:digest" (e.g., "ghcr.io/myorg/my-plugin:1.0").
+    The output extension follows the resolved artifact format: .zip for v1,
+    or .tar.gz for v2. Use --output to choose the file path.
 @z
 
 @x
-    The file extension is chosen automatically based on the kit's format:
-      schemaVersion: "1"  → <name>.zip      (legacy ZIP archive)
-      schemaVersion: "2"  → <name>.tar.gz   (standard OCI tar+gzip layer)
-@y
-    The file extension is chosen automatically based on the kit's format:
-      schemaVersion: "1"  → <name>.zip      (legacy ZIP archive)
-      schemaVersion: "2"  → <name>.tar.gz   (standard OCI tar+gzip layer)
-@z
-
-@x
+    For Docker Hub, the sbx login session takes priority. Other registries use
+    secrets set with sbx secret set --registry. Both fall back to Docker credentials.
     The registry must support HTTPS.
 @y
+    For Docker Hub, the sbx login session takes priority. Other registries use
+    secrets set with sbx secret set --registry. Both fall back to Docker credentials.
     The registry must support HTTPS.
-@z
-
-@x
-    Authentication: sbx registry secrets (sbx secret set --registry) take priority, falling back to the Docker credential store.
-@y
-    Authentication: sbx registry secrets (sbx secret set --registry) take priority, falling back to the Docker credential store.
 @z
 
 @x

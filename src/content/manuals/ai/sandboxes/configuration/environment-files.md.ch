@@ -50,6 +50,22 @@ setup steps.
 @z
 
 @x
+Kits package software and declare what it needs to run. An environment file
+selects those kits and configures the sandbox that uses them, including its
+workspace, resources, credentials, and lifecycle commands. You can change or
+share that configuration without repackaging the tools. See
+[Kits](/manuals/ai/sandboxes/customize/_index.md) for how kits supply agents,
+tools, and their runtime requirements.
+@y
+Kits package software and declare what it needs to run. An environment file
+selects those kits and configures the sandbox that uses them, including its
+workspace, resources, credentials, and lifecycle commands. You can change or
+share that configuration without repackaging the tools. See
+[Kits](manuals/ai/sandboxes/customize/_index.md) for how kits supply agents,
+tools, and their runtime requirements.
+@z
+
+@x
 > [!NOTE]
 > `sbx env` is experimental. The command interface and file format may change.
 @y
@@ -886,6 +902,16 @@ resolves from the directory of the file that declares it.
 @z
 
 @x
+Each source file must contain valid fields and values before merging. A later
+override can't repair an invalid value in an earlier file. This also applies
+to [user defaults](#set-user-defaults) loaded from `~/.sbxenv.yaml`.
+@y
+Each source file must contain valid fields and values before merging. A later
+override can't repair an invalid value in an earlier file. This also applies
+to [user defaults](#set-user-defaults) loaded from `~/.sbxenv.yaml`.
+@z
+
+@x
 ### Work across multiple repositories
 @y
 ### Work across multiple repositories
@@ -1016,281 +1042,29 @@ secret values remain outside the environment file.
 @z
 
 @x
-### Use a cloud environment
+## Use a cloud environment
 @y
-### Use a cloud environment
+## Use a cloud environment
 @z
 
 @x
-Use `sbx --cloud env` to manage a cloud sandbox from an environment file. For
-account and CLI requirements, see [Cloud sandboxes](../cloud/_index.md).
+Use `sbx --cloud env` to create a sandbox on Docker-managed infrastructure from
+an environment file. Cloud sandboxes don't mount or synchronize local project
+files, and local credentials aren't available to them. You copy files into the
+sandbox or clone a repository there, then retrieve your work before removing it.
 @y
-Use `sbx --cloud env` to manage a cloud sandbox from an environment file. For
-account and CLI requirements, see [Cloud sandboxes](../cloud/_index.md).
+Use `sbx --cloud env` to create a sandbox on Docker-managed infrastructure from
+an environment file. Cloud sandboxes don't mount or synchronize local project
+files, and local credentials aren't available to them. You copy files into the
+sandbox or clone a repository there, then retrieve your work before removing it.
 @z
 
 @x
-#### Create a cloud environment
+For a walkthrough, supported settings, and lifecycle differences, see
+[Use environment files in the cloud](../cloud/environment-files.md).
 @y
-#### Create a cloud environment
-@z
-
-@x
-Save this as `cloud.sbxenv.yaml`:
-@y
-Save this as `cloud.sbxenv.yaml`:
-@z
-
-@x
-```yaml
-schemaVersion: "1"
-name: cloud-project
-agent: shell
-@y
-```yaml
-schemaVersion: "1"
-name: cloud-project
-agent: shell
-@z
-
-@x
-env:
-  PROJECT_NAME: example
-@y
-env:
-  PROJECT_NAME: example
-@z
-
-@x
-sandboxOptions:
-  cpus: 2
-  memory: 4g
-```
-@y
-sandboxOptions:
-  cpus: 2
-  memory: 4g
-```
-@z
-
-@x
-Resource limits must match a [cloud size](../cloud/usage.md#choose-resources-and-platform).
-Review the plan, create the sandbox without attaching, and run a command:
-@y
-Resource limits must match a [cloud size](../cloud/usage.md#choose-resources-and-platform).
-Review the plan, create the sandbox without attaching, and run a command:
-@z
-
-@x
-```console
-$ sbx --cloud env plan ./cloud.sbxenv.yaml
-$ sbx --cloud env create ./cloud.sbxenv.yaml
-$ sbx --cloud env exec ./cloud.sbxenv.yaml -- printenv PROJECT_NAME
-```
-@y
-```console
-$ sbx --cloud env plan ./cloud.sbxenv.yaml
-$ sbx --cloud env create ./cloud.sbxenv.yaml
-$ sbx --cloud env exec ./cloud.sbxenv.yaml -- printenv PROJECT_NAME
-```
-@z
-
-@x
-To attach to the agent, use `sbx --cloud env run ./cloud.sbxenv.yaml`.
-@y
-To attach to the agent, use `sbx --cloud env run ./cloud.sbxenv.yaml`.
-@z
-
-@x
-#### Adapt a local environment file
-@y
-#### Adapt a local environment file
-@z
-
-@x
-Cloud environments support agents and kits, environment variables, CPU and
-memory limits, credentials for supported providers, and host lifecycle commands.
-Lifecycle commands still run on your machine with your privileges.
-@y
-Cloud environments support agents and kits, environment variables, CPU and
-memory limits, credentials for supported providers, and host lifecycle commands.
-Lifecycle commands still run on your machine with your privileges.
-@z
-
-@x
-Before using a local file in cloud mode, remove:
-@y
-Before using a local file in cloud mode, remove:
-@z
-
-@x
-- `workspace`, `additionalWorkspaces`, and clone options
-- `ports`, `registries`, and MCP server definitions
-- Local sandbox options: GPU, USB, display, shared skills, templates, and
-  governance profiles
-@y
-- `workspace`, `additionalWorkspaces`, and clone options
-- `ports`, `registries`, and MCP server definitions
-- Local sandbox options: GPU, USB, display, shared skills, templates, and
-  governance profiles
-@z
-
-@x
-Unsupported settings are rejected before host commands or provisioning run.
-Transfer project files with [`sbx --cloud cp`](../cloud/usage.md#transfer-files)
-or clone a repository inside the sandbox.
-@y
-Unsupported settings are rejected before host commands or provisioning run.
-Transfer project files with [`sbx --cloud cp`](../cloud/usage.md#transfer-files)
-or clone a repository inside the sandbox.
-@z
-
-@x
-#### Set expiration
-@y
-#### Set expiration
-@z
-
-@x
-Set expiration when creating a cloud environment with `--ttl` and
-`--on-timeout`. For example, restart the sandbox when it expires:
-@y
-Set expiration when creating a cloud environment with `--ttl` and
-`--on-timeout`. For example, restart the sandbox when it expires:
-@z
-
-@x
-```console
-$ sbx --cloud env create --ttl 4h --on-timeout restart ./cloud.sbxenv.yaml
-```
-@y
-```console
-$ sbx --cloud env create --ttl 4h --on-timeout restart ./cloud.sbxenv.yaml
-```
-@z
-
-@x
-The `restart` action stops and immediately starts the sandbox. With this action,
-an explicit `--ttl` must be at least one hour. You can also choose `stop` or
-`delete`; see [Configure expiration](../cloud/usage.md#configure-expiration).
-@y
-The `restart` action stops and immediately starts the sandbox. With this action,
-an explicit `--ttl` must be at least one hour. You can also choose `stop` or
-`delete`; see [Configure expiration](../cloud/usage.md#configure-expiration).
-@z
-
-@x
-These flags apply only when creating a cloud sandbox. `sbx --cloud env run`
-accepts them when creating a sandbox, but rejects them when attaching to an
-existing one. Local environment commands reject both flags.
-@y
-These flags apply only when creating a cloud sandbox. `sbx --cloud env run`
-accepts them when creating a sandbox, but rejects them when attaching to an
-existing one. Local environment commands reject both flags.
-@z
-
-@x
-#### Configure credentials
-@y
-#### Configure credentials
-@z
-
-@x
-The plan shows inherited cloud credentials. Sandbox-scoped credentials override
-account defaults, and credentials declared in `secrets` override both.
-@y
-The plan shows inherited cloud credentials. Sandbox-scoped credentials override
-account defaults, and credentials declared in `secrets` override both.
-@z
-
-@x
-Declare literal values or use [`snapshot: true`](#secrets) to resolve a host
-command or vault reference once. Dynamic secret sources and custom credential
-providers aren't supported. Credential bindings require cloud support for kit
-credentials and explicit approval of the kit's injection domains.
-@y
-Declare literal values or use [`snapshot: true`](#secrets) to resolve a host
-command or vault reference once. Dynamic secret sources and custom credential
-providers aren't supported. Credential bindings require cloud support for kit
-credentials and explicit approval of the kit's injection domains.
-@z
-
-@x
-Changes to secrets and bindings require recreating the sandbox.
-@y
-Changes to secrets and bindings require recreating the sandbox.
-@z
-
-@x
-#### Reuse the environment
-@y
-#### Reuse the environment
-@z
-
-@x
-For later commands, use the same machine, cloud endpoint, and ordered file
-paths, and sign in with the same Docker account using `sbx login`.
-@y
-For later commands, use the same machine, cloud endpoint, and ordered file
-paths, and sign in with the same Docker account using `sbx login`.
-@z
-
-@x
-Updated `env` values apply to subsequent sessions. Rejoining a running agent
-keeps that process's environment.
-@y
-Updated `env` values apply to subsequent sessions. Rejoining a running agent
-keeps that process's environment.
-@z
-
-@x
-#### Remove the environment
-@y
-#### Remove the environment
-@z
-
-@x
-Remove the environment when you're finished:
-@y
-Remove the environment when you're finished:
-@z
-
-@x
-```console
-$ sbx --cloud env rm ./cloud.sbxenv.yaml
-```
-@y
-```console
-$ sbx --cloud env rm ./cloud.sbxenv.yaml
-```
-@z
-
-@x
-Removal deletes the sandbox and only the secrets provisioned by this
-environment. Inherited secrets remain. Global bindings remain unless you pass
-`--prune-bindings`. For unattended runs, use `--force` with `create`, `run`, or
-`rm` to approve the plan.
-@y
-Removal deletes the sandbox and only the secrets provisioned by this
-environment. Inherited secrets remain. Global bindings remain unless you pass
-`--prune-bindings`. For unattended runs, use `--force` with `create`, `run`, or
-`rm` to approve the plan.
-@z
-
-@x
-#### Recover from interrupted creation
-@y
-#### Recover from interrupted creation
-@z
-
-@x
-If creation is interrupted, retry the same command and unchanged declaration
-within 23 hours. Unresolved requests prevent removal. Follow the recovery
-message and retain its journal until the original requests are resolved.
-@y
-If creation is interrupted, retry the same command and unchanged declaration
-within 23 hours. Unresolved requests prevent removal. Follow the recovery
-message and retain its journal until the original requests are resolved.
+For a walkthrough, supported settings, and lifecycle differences, see
+[Use environment files in the cloud](../cloud/environment-files.md).
 @z
 
 @x

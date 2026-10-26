@@ -30,7 +30,7 @@ and network IO metrics.
 @z
 
 @x
-The following is a sample output from the `docker stats` command
+The following is a sample output from the `docker stats` command:
 @y
 以下に `docker stats` コマンドの出力例を示します。
 @z

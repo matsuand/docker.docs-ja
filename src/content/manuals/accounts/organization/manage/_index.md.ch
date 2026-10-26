@@ -20,6 +20,18 @@ keywords: manage organization, members, teams, licenses, seats, product access, 
 @z
 
 @x
+  - title: Information
+    description: Update your organization's general information and settings.
+    icon: pencil-square
+    link: /accounts/organization/manage/general-settings/
+@y
+  - title: Information
+    description: Update your organization's general information and settings.
+    icon: pencil-square
+    link: __SUBDIR__/accounts/organization/manage/general-settings/
+@z
+
+@x
   - title: Members
     description: Invite, manage, and assign roles to your organization members.
     icon: user-plus
@@ -41,18 +53,6 @@ keywords: manage organization, members, teams, licenses, seats, product access, 
     description: Create teams and manage repository access for groups of members.
     icon: user-group
     link: __SUBDIR__/accounts/organization/manage/manage-a-team/
-@z
-
-@x
-  - title: Products
-    description: Manage access and view usage for Docker products across your organization.
-    icon: squares-2x2
-    link: /accounts/organization/manage/manage-products/
-@y
-  - title: Products
-    description: Manage access and view usage for Docker products across your organization.
-    icon: squares-2x2
-    link: __SUBDIR__/accounts/organization/manage/manage-products/
 @z
 
 @x
@@ -80,15 +80,15 @@ keywords: manage organization, members, teams, licenses, seats, product access, 
 @z
 
 @x
-  - title: Information
-    description: Update your organization's general information and settings.
-    icon: pencil-square
-    link: /accounts/organization/manage/general-settings/
+  - title: Products
+    description: Manage access and view usage for Docker products across your organization.
+    icon: squares-2x2
+    link: /accounts/organization/manage/manage-products/
 @y
-  - title: Information
-    description: Update your organization's general information and settings.
-    icon: pencil-square
-    link: __SUBDIR__/accounts/organization/manage/general-settings/
+  - title: Products
+    description: Manage access and view usage for Docker products across your organization.
+    icon: squares-2x2
+    link: __SUBDIR__/accounts/organization/manage/manage-products/
 @z
 
 @x

@@ -67,12 +67,12 @@ To activate access for the Console, cloud sandbox CLI, or API and SDKs, follow
 
 @x
 > [!NOTE]
-> Subscribe using your personal Docker account, including if you belong to
-> an organization. The subscription is attached to your personal account.
+> Subscribe using your individual Docker account, including if you belong to
+> an organization. The subscription is attached to your individual account.
 @y
 > [!NOTE]
-> Subscribe using your personal Docker account, including if you belong to
-> an organization. The subscription is attached to your personal account.
+> Subscribe using your individual Docker account, including if you belong to
+> an organization. The subscription is attached to your individual account.
 @z
 
 @x
@@ -156,6 +156,12 @@ For example:
 @z
 
 @x
+Credits are applied to your costs at the end of the billing period.
+@y
+Credits are applied to your costs at the end of the billing period.
+@z
+
+@x
 ## Cancel a plan
 @y
 ## Cancel a plan
@@ -188,18 +194,48 @@ the plan period.
 @z
 
 @x
+## Re-enable renewal
+@y
+## Re-enable renewal
+@z
+
+@x
+After you cancel, you can re-enable renewal at any time before the
+current period ends. Your subscription then continues past the renewal
+date.
+@y
+After you cancel, you can re-enable renewal at any time before the
+current period ends. Your subscription then continues past the renewal
+date.
+@z
+
+@x
+1. Sign in to [Docker Home](https://app.docker.com/) and go to
+   **Billing**.
+1. From **Active subscriptions**, select **Manage** next to
+   **Docker Agentic Platform**.
+1. Select **Re-enable renewal**.
+@y
+1. Sign in to [Docker Home](https://app.docker.com/) and go to
+   **Billing**.
+1. From **Active subscriptions**, select **Manage** next to
+   **Docker Agentic Platform**.
+1. Select **Re-enable renewal**.
+@z
+
+@x
 ## Next steps
 @y
 ## Next steps
 @z
 
 @x
-- To add or cancel a plan, see
+- To add a plan, see
   [Manage plans](/manuals/subscription-billing/manage/plans.md)
 - To track usage across plans, see
   [Usage](/manuals/subscription-billing/manage/_index.md#usage)
 @y
-- To add or cancel a plan, see
+- To add a plan, see
   [Manage plans](manuals/subscription-billing/manage/plans.md)
 - To track usage across plans, see
   [Usage](manuals/subscription-billing/manage/_index.md#usage)

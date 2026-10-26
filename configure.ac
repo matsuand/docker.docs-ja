@@ -369,7 +369,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/security/authentication/2fa/Makefile
 	src/content/manuals/security/authentication/oidc-connections/Makefile
 	src/content/manuals/security/authentication/single-sign-on/Makefile
-	src/content/manuals/security/images/Makefile
 	src/content/manuals/security/provisioning/Makefile
 	src/content/manuals/security/provisioning/scim/Makefile
 	src/content/manuals/security/roles-and-permissions/Makefile

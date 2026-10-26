@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ �Ή�
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Data privacy and Gordon
@@ -138,9 +138,9 @@ Desktop plans (Pro, Team, Business) and Gordon plans (Plus, Max, Ultra).
 @z
 
 @x
-### Personal (free) subscription
+### Base tier (free)
 @y
-### Personal (free) subscription
+### Base tier (free)
 @z
 
 @x
@@ -247,7 +247,7 @@ handling requirements before enabling Gordon.
 See [Settings Management](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md)
 for configuration details.
 @y
-See [Settings Management](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md)
+See [Settings Management](manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md)
 for configuration details.
 @z
 

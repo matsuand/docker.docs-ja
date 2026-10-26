@@ -43,6 +43,178 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.96.3
+@y
+## 4.96.3
+@z
+
+@x
+{{< release-date date="2026-10-22" >}}
+@y
+{{< release-date date="2026-10-22" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.96.3" build_path="/244472/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.96.3" build_path="/244472/" >}}
+@z
+
+@x
+### Updates
+@y
+### 機能更新 {#updates}
+@z
+
+@x
+- Docker Init `v1.4.1`
+- Docker Offload `v0.7.19`
+- Docker Model Runner `v1.2.9`
+- Docker Debug `v0.49.0`
+- Docker MCP `v0.44.2`
+- `kubectl` `v1.36.1`
+@y
+- Docker Init `v1.4.1`
+- Docker Offload `v0.7.19`
+- Docker Model Runner `v1.2.9`
+- Docker Debug `v0.49.0`
+- Docker MCP `v0.44.2`
+- `kubectl` `v1.36.1`
+@z
+
+@x
+### Security
+@y
+### セキュリティ {#security}
+@z
+
+@x
+- Removed trust for certificates issued by the compromised [eMudhra intermediate CA compromise](https://emudhra.we-have-a-problem.com/). An attacker with network access could have used these certificates to intercept TLS connections made by non-browser clients, such as the Docker CLI and daemon.
+@y
+- Removed trust for certificates issued by the compromised [eMudhra intermediate CA compromise](https://emudhra.we-have-a-problem.com/). An attacker with network access could have used these certificates to intercept TLS connections made by non-browser clients, such as the Docker CLI and daemon.
+@z
+
+@x
+## 4.96.2
+@y
+## 4.96.2
+@z
+
+@x
+{{< release-date date="2026-10-22" >}}
+@y
+{{< release-date date="2026-10-22" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.96.2" build_path="/244353/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.96.2" build_path="/244353/" >}}
+@z
+
+@x
+### Updates
+@y
+### 機能更新 {#updates}
+@z
+
+@x
+- [Docker Compose v5.6.1](https://github.com/docker/compose/releases/tag/v5.6.1)
+- Docker Offload `v0.7.6`
+- [Docker Agent v1.152.0](https://github.com/docker/docker-agent/releases/tag/v1.152.0)
+- [Docker Hardened Images CLI (`dhictl`) v0.0.9](https://github.com/docker-hardened-images/dhictl/releases/tag/v0.0.9)
+- Docker Desktop Build `v0.39.1`
+- [Docker Scout CLI v1.27.0](https://github.com/docker/scout-cli/releases/tag/v1.27.0)
+@y
+- [Docker Compose v5.6.1](https://github.com/docker/compose/releases/tag/v5.6.1)
+- Docker Offload `v0.7.6`
+- [Docker Agent v1.152.0](https://github.com/docker/docker-agent/releases/tag/v1.152.0)
+- [Docker Hardened Images CLI (`dhictl`) v0.0.9](https://github.com/docker-hardened-images/dhictl/releases/tag/v0.0.9)
+- Docker Desktop Build `v0.39.1`
+- [Docker Scout CLI v1.27.0](https://github.com/docker/scout-cli/releases/tag/v1.27.0)
+@z
+
+@x
+### Security
+@y
+### セキュリティ {#security}
+@z
+
+@x
+- Removed trust for certificates issued by the compromised [eMudhra intermediate CA compromise](https://emudhra.we-have-a-problem.com/). An attacker with network access could have used these certificates to intercept TLS connections made by non-browser clients, such as the Docker CLI and daemon.
+@y
+- Removed trust for certificates issued by the compromised [eMudhra intermediate CA compromise](https://emudhra.we-have-a-problem.com/). An attacker with network access could have used these certificates to intercept TLS connections made by non-browser clients, such as the Docker CLI and daemon.
+@z
+
+@x
+> [!IMPORTANT]
+>
+> This fix is being rolled out in batches as individual Docker Desktop components are updated. Upcoming patch releases will cover the remaining components. We recommend updating to each patch release as soon as it’s available.
+@y
+> [!IMPORTANT]
+>
+> This fix is being rolled out in batches as individual Docker Desktop components are updated. Upcoming patch releases will cover the remaining components. We recommend updating to each patch release as soon as it’s available.
+@z
+
+@x
+## 4.96.1
+@y
+## 4.96.1
+@z
+
+@x
+{{< release-date date="2026-10-21" >}}
+@y
+{{< release-date date="2026-10-21" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.96.1" build_path="/244132/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.96.1" build_path="/244132/" >}}
+@z
+
+@x
+### Updates
+@y
+### 機能更新 {#updates}
+@z
+
+@x
+- [Docker Engine 29.9.2](https://github.com/docker/docker/releases/tag/29.9.2)
+- [Docker Buildx v0.38.1](https://github.com/docker/buildx/releases/tag/v0.38.1)
+- [Credential helpers to v0.9.12](https://github.com/docker/docker-credential-helpers/releases/tag/v0.9.12)
+-  Docker Offload `v0.7.16`
+@y
+- [Docker Engine 29.9.2](https://github.com/docker/docker/releases/tag/29.9.2)
+- [Docker Buildx v0.38.1](https://github.com/docker/buildx/releases/tag/v0.38.1)
+- [Credential helpers to v0.9.12](https://github.com/docker/docker-credential-helpers/releases/tag/v0.9.12)
+-  Docker Offload `v0.7.16`
+@z
+
+@x
+### Security
+@y
+### セキュリティ {#security}
+@z
+
+@x
+- Removed trust for certificates issued by the compromised [eMudhra intermediate CA compromise](https://emudhra.we-have-a-problem.com/). An attacker with network access could have used these certificates to intercept TLS connections made by non-browser clients, such as the Docker CLI and daemon.
+@y
+- Removed trust for certificates issued by the compromised [eMudhra intermediate CA compromise](https://emudhra.we-have-a-problem.com/). An attacker with network access could have used these certificates to intercept TLS connections made by non-browser clients, such as the Docker CLI and daemon.
+@z
+
+@x
+> [!IMPORTANT]
+>
+> This fix is being rolled out in batches as individual Docker Desktop components are updated. Upcoming patch releases will cover the remaining components. We recommend updating to each patch release as soon as it’s available.
+@y
+> [!IMPORTANT]
+>
+> This fix is being rolled out in batches as individual Docker Desktop components are updated. Upcoming patch releases will cover the remaining components. We recommend updating to each patch release as soon as it’s available.
+@z
+
+@x
 ## 4.95.0
 @y
 ## 4.95.0

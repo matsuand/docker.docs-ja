@@ -6,71 +6,33 @@ name: sbx kit push
 synopsis: Push a kit artifact to an OCI registry
 experimental: true
 description: |-
-    Package and push a kit artifact directory to an OCI registry.
+    Package a kit directory containing spec.yaml and push it to an OCI registry.
+    Use a registry/repo:tag reference. The kit's schema selects the artifact format.
 @y
 name: sbx kit push
 synopsis: Push a kit artifact to an OCI registry
 experimental: true
 description: |-
-    Package and push a kit artifact directory to an OCI registry.
+    Package a kit directory containing spec.yaml and push it to an OCI registry.
+    Use a registry/repo:tag reference. The kit's schema selects the artifact format.
 @z
 
 @x
-    The directory must contain a valid spec.yaml. The reference should be
-    in the format "registry/repo:tag" (e.g., "ghcr.io/myorg/my-plugin:1.0").
+    Every push attaches provenance. Use --sign to also sign the manifest and
+    provenance; signing is keyless unless --key is supplied.
 @y
-    The directory must contain a valid spec.yaml. The reference should be
-    in the format "registry/repo:tag" (e.g., "ghcr.io/myorg/my-plugin:1.0").
+    Every push attaches provenance. Use --sign to also sign the manifest and
+    provenance; signing is keyless unless --key is supplied.
 @z
 
 @x
-    The OCI artifact format is selected from the kit's spec.yaml:
-      schemaVersion: "1"  → legacy ZIP-based artifact
-      schemaVersion: "2"  → v2 tar+gzip layer with the spec in the manifest
-                            config blob and standard OCI annotations (so
-                            distribution tooling can read kit metadata
-                            without pulling layers)
+    For Docker Hub, the sbx login session takes priority. Other registries use
+    secrets set with sbx secret set --registry. Both fall back to Docker credentials.
+    The registry must support HTTPS.
 @y
-    The OCI artifact format is selected from the kit's spec.yaml:
-      schemaVersion: "1"  → legacy ZIP-based artifact
-      schemaVersion: "2"  → v2 tar+gzip layer with the spec in the manifest
-                            config blob and standard OCI annotations (so
-                            distribution tooling can read kit metadata
-                            without pulling layers)
-@z
-
-@x
-    With --sign, the pushed manifest is signed and the Sigstore bundle is
-    attached to the kit as an OCI referrer. Signing is keyless (Fulcio +
-    Rekor) unless --key is given for key-based signing.
-@y
-    With --sign, the pushed manifest is signed and the Sigstore bundle is
-    attached to the kit as an OCI referrer. Signing is keyless (Fulcio +
-    Rekor) unless --key is given for key-based signing.
-@z
-
-@x
-    Every push also attaches a SLSA provenance attestation as an OCI
-    referrer, recording the kit's content digests, the declared sandbox
-    image, and the source git commit when the directory is a working tree.
-    The provenance is unsigned unless --sign is given, in which case it is
-    signed as a DSSE in-toto attestation with the same identity or key.
-@y
-    Every push also attaches a SLSA provenance attestation as an OCI
-    referrer, recording the kit's content digests, the declared sandbox
-    image, and the source git commit when the directory is a working tree.
-    The provenance is unsigned unless --sign is given, in which case it is
-    signed as a DSSE in-toto attestation with the same identity or key.
-@z
-
-@x
-    Authentication: the Docker Hub session from sbx login and sbx registry
-    secrets (sbx secret set --registry) take priority, falling back to the
-    Docker credential store.
-@y
-    Authentication: the Docker Hub session from sbx login and sbx registry
-    secrets (sbx secret set --registry) take priority, falling back to the
-    Docker credential store.
+    For Docker Hub, the sbx login session takes priority. Other registries use
+    secrets set with sbx secret set --registry. Both fall back to Docker credentials.
+    The registry must support HTTPS.
 @z
 
 @x

@@ -92,9 +92,37 @@ For details on setting up and managing repositories, see [Get started with DHI S
 @z
 
 @x
-DHI Select is an annual plan billed per repository from the date your plan starts. Repositories added mid-cycle are prorated for the remainder of the billing period. You can add more repositories to your DHI Select plan by going to **Active plans** in the billing portal. For steps, see [Manage plans](/manuals/subscription-billing/manage/plans.md#upgrade-plans).
+DHI Select is an annual plan billed per repository from the date your plan starts. Repositories added mid-cycle are prorated for the remainder of the billing period. For steps, see [Add repositories](#add-repositories).
 @y
-DHI Select is an annual plan billed per repository from the date your plan starts. Repositories added mid-cycle are prorated for the remainder of the billing period. You can add more repositories to your DHI Select plan by going to **Active plans** in the billing portal. For steps, see [Manage plans](manuals/subscription-billing/manage/plans.md#upgrade-plans).
+DHI Select is an annual plan billed per repository from the date your plan starts. Repositories added mid-cycle are prorated for the remainder of the billing period. For steps, see [Add repositories](#add-repositories).
+@z
+
+@x
+## Add repositories
+@y
+## Add repositories
+@z
+
+@x
+Repositories you add take effect immediately and are prorated for the rest
+of the billing period.
+@y
+Repositories you add take effect immediately and are prorated for the rest
+of the billing period.
+@z
+
+@x
+1. Sign in to [Docker Home](https://app.docker.com/) and go to **Billing**.
+1. From **Active plans**, select **Manage** next to **Hardened Images**.
+1. Select **Add repositories**.
+1. Choose the number of repositories, verify your billing details, continue
+   to payment, and complete checkout.
+@y
+1. Sign in to [Docker Home](https://app.docker.com/) and go to **Billing**.
+1. From **Active plans**, select **Manage** next to **Hardened Images**.
+1. Select **Add repositories**.
+1. Choose the number of repositories, verify your billing details, continue
+   to payment, and complete checkout.
 @z
 
 @x
@@ -117,6 +145,12 @@ If you want to revert your plan to DHI Community, you must disable auto-renewal.
 1. Sign in to [Docker Home](https://app.docker.com/) and go to **Billing**.
 1. From **Active plans**, select **Manage** next to **Hardened Images**.
 1. Select **Disable auto-renewal**.
+@z
+
+@x
+If you disabled auto-renewal and the plan is still active, **Manage** includes **Enable auto-renewal**.
+@y
+If you disabled auto-renewal and the plan is still active, **Manage** includes **Enable auto-renewal**.
 @z
 
 @x

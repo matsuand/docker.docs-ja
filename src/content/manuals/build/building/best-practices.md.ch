@@ -1655,9 +1655,9 @@ This script lets you interact with Postgres in several ways.
 @z
 
 @x
-It can simply start Postgres:
+It can start Postgres:
 @y
-It can simply start Postgres:
+It can start Postgres:
 @z
 
 @x

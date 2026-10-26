@@ -5,48 +5,30 @@
 name: sbx settings set
 synopsis: Set a setting override
 description: |-
-    Set a user override for a setting.
+    Set a user override for a setting. Values are parsed according to the
+    setting's type: bool (true or false), int, float, string, or raw JSON.
 @y
 name: sbx settings set
 synopsis: Set a setting override
 description: |-
-    Set a user override for a setting.
+    Set a user override for a setting. Values are parsed according to the
+    setting's type: bool (true or false), int, float, string, or raw JSON.
 @z
 
 @x
-    Administrator constraints apply to saved overrides. A conflicting value is rejected.
-@y
-    Administrator constraints apply to saved overrides. A conflicting value is rejected.
-@z
-
-@x
-    The value is parsed according to the setting's type:
-      bool   "true" or "false"
-      int    integer value
-      float  floating-point value
-      string plain text
-      json   raw JSON
-@y
-    The value is parsed according to the setting's type:
-      bool   "true" or "false"
-      int    integer value
-      float  floating-point value
-      string plain text
-      json   raw JSON
-@z
-
-@x
+    Administrator constraints apply; conflicting values are rejected.
     Environment variables take precedence over user overrides.
 @y
+    Administrator constraints apply; conflicting values are rejected.
     Environment variables take precedence over user overrides.
 @z
 
 @x
-    Most changes take effect within about five seconds. If a daemon restart is
-    required, this command tells you to run 'sbx daemon restart'.
+    Most changes take effect within about five seconds. This command reports
+    when a daemon restart is required.
 @y
-    Most changes take effect within about five seconds. If a daemon restart is
-    required, this command tells you to run 'sbx daemon restart'.
+    Most changes take effect within about five seconds. This command reports
+    when a daemon restart is required.
 @z
 
 @x

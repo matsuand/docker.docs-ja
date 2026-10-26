@@ -166,11 +166,13 @@ script.
 @x
 For repeatable cleanup, check which resources exist before removing them. For
 example, use `sbx mcp ls` before `sbx mcp rm`, which fails for an unregistered
-server even with `--force`.
+server even with `--force`. Likewise, `sbx secret rm` fails if no secret matches
+the selector; check for matches with `sbx secret ls` before removing secrets.
 @y
 For repeatable cleanup, check which resources exist before removing them. For
 example, use `sbx mcp ls` before `sbx mcp rm`, which fails for an unregistered
-server even with `--force`.
+server even with `--force`. Likewise, `sbx secret rm` fails if no secret matches
+the selector; check for matches with `sbx secret ls` before removing secrets.
 @z
 
 @x
@@ -213,6 +215,26 @@ are rejected. `sbx events --json` emits newline-delimited JSON, and
 `--json` and `--format json` request the same format. Unsupported format values
 are rejected. `sbx events --json` emits newline-delimited JSON, and
 `sbx mcp auth --format text|json` uses command-specific formats.
+@z
+
+@x
+For lists of identifiers without table headings, use `--quiet` or `-q`:
+@y
+For lists of identifiers without table headings, use `--quiet` or `-q`:
+@z
+
+@x
+| Command | Output |
+| --- | --- |
+| `sbx policy ls -q` | Local rule IDs. With `--cloud`, network patterns instead. |
+| `sbx settings ls -q` | Setting keys. |
+| `sbx policy approval ls -q` | Approval IDs. |
+@y
+| Command | Output |
+| --- | --- |
+| `sbx policy ls -q` | Local rule IDs. With `--cloud`, network patterns instead. |
+| `sbx settings ls -q` | Setting keys. |
+| `sbx policy approval ls -q` | Approval IDs. |
 @z
 
 @x

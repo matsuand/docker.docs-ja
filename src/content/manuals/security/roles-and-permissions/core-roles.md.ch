@@ -205,6 +205,7 @@ Use team permissions for that.
 | View billing history                                              | ❌     | ❌     | ✅    |
 | Manage subscriptions                                              | ❌     | ❌     | ✅    |
 | Manage seats                                                      | ❌     | ❌     | ✅    |
+| Manage licenses                                                   | ❌     | ❌     | ✅    |
 | Upgrade and downgrade plans                                       | ❌     | ❌     | ✅    |
 @y
 | Permission                                                        | Member | Editor | Owner |
@@ -228,6 +229,7 @@ Use team permissions for that.
 | View billing history                                              | ❌     | ❌     | ✅    |
 | Manage subscriptions                                              | ❌     | ❌     | ✅    |
 | Manage seats                                                      | ❌     | ❌     | ✅    |
+| Manage licenses                                                   | ❌     | ❌     | ✅    |
 | Upgrade and downgrade plans                                       | ❌     | ❌     | ✅    |
 @z
 

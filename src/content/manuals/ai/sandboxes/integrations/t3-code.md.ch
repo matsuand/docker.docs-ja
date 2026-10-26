@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Connect T3 Code to a sandbox
 linkTitle: T3 Code
@@ -58,31 +60,27 @@ that tunnels back to the app.
 @z
 
 @x
-The first connection installs the T3 server in the sandbox, which needs a
-build toolchain. T3 depends on `node-pty`, which ships prebuilt binaries only
-for macOS and Windows. On a Linux sandbox, `node-pty` compiles from source and
-the build fails without `make`, `python3`, and a compiler such as `g++`.
+The first connection installs the T3 server in the sandbox. `t3` ships
+prebuilt native modules for Linux, so nothing compiles, but those binaries
+link against `libatomic1`. Docker-provided templates include it.
 @y
-The first connection installs the T3 server in the sandbox, which needs a
-build toolchain. T3 depends on `node-pty`, which ships prebuilt binaries only
-for macOS and Windows. On a Linux sandbox, `node-pty` compiles from source and
-the build fails without `make`, `python3`, and a compiler such as `g++`.
+The first connection installs the T3 server in the sandbox. `t3` ships
+prebuilt native modules for Linux, so nothing compiles, but those binaries
+link against `libatomic1`. Docker-provided templates include it.
 @z
 
 @x
 The [`t3code` kit](https://github.com/docker/sbx-kits-contrib/tree/main/t3code)
-prepares a sandbox for T3 Code: it installs the build toolchain and the `t3`
-npm package when the sandbox is created, so the first connection starts a
-pre-installed server instead of building `node-pty` from source. Pair it with
-any agent whose base image ships Node.js 18 or later, which all standard
-agent templates do:
+goes further: it installs the `t3` npm package when the sandbox is created,
+along with `libatomic1` if the base image lacks it, so the first connection
+starts a server that is already there. Pair it with any agent whose base image ships
+Node.js 18 or later, which all standard agent templates do:
 @y
 The [`t3code` kit](https://github.com/docker/sbx-kits-contrib/tree/main/t3code)
-prepares a sandbox for T3 Code: it installs the build toolchain and the `t3`
-npm package when the sandbox is created, so the first connection starts a
-pre-installed server instead of building `node-pty` from source. Pair it with
-any agent whose base image ships Node.js 18 or later, which all standard
-agent templates do:
+goes further: it installs the `t3` npm package when the sandbox is created,
+along with `libatomic1` if the base image lacks it, so the first connection
+starts a server that is already there. Pair it with any agent whose base image ships
+Node.js 18 or later, which all standard agent templates do:
 @z
 
 @x
@@ -96,49 +94,43 @@ $ sbx run claude --kit docker.io/sbx/t3code-kit:latest
 @z
 
 @x
-For an existing sandbox, install the toolchain manually:
+A sandbox built from a custom
+[base image](/manuals/ai/sandboxes/customize/author/base-images.md) without
+`libatomic1` needs it installed before the first connection, unless you apply
+the kit above, which installs it for you:
 @y
-For an existing sandbox, install the toolchain manually:
+A sandbox built from a custom
+[base image](manuals/ai/sandboxes/customize/author/base-images.md) without
+`libatomic1` needs it installed before the first connection, unless you apply
+the kit above, which installs it for you:
 @z
 
 @x
 ```console
 $ sbx exec <sandbox> -- sudo apt-get update
-$ sbx exec <sandbox> -- sudo DEBIAN_FRONTEND=noninteractive apt-get install -y g++ make python3
+$ sbx exec <sandbox> -- sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libatomic1
 ```
 @y
 ```console
 $ sbx exec <sandbox> -- sudo apt-get update
-$ sbx exec <sandbox> -- sudo DEBIAN_FRONTEND=noninteractive apt-get install -y g++ make python3
+$ sbx exec <sandbox> -- sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libatomic1
 ```
 @z
 
 @x
-Verify the toolchain is in place:
+Verify it's in place:
 @y
-Verify the toolchain is in place:
+Verify it's in place:
 @z
 
 @x
 ```console
-$ sbx exec <sandbox> -- sh -lc 'command -v g++ && command -v make && command -v python3'
+$ sbx exec <sandbox> -- sh -lc 'ldconfig -p | grep libatomic.so.1'
 ```
 @y
 ```console
-$ sbx exec <sandbox> -- sh -lc 'command -v g++ && command -v make && command -v python3'
+$ sbx exec <sandbox> -- sh -lc 'ldconfig -p | grep libatomic.so.1'
 ```
-@z
-
-@x
-A manual install lasts only until the sandbox is recreated, and the first
-connection still builds `node-pty` from source. For a setup that persists,
-recreate the sandbox with the [v2 kit](../customize/kits-v2.md) or a custom
-[template](/manuals/ai/sandboxes/customize/author/base-images.md).
-@y
-A manual install lasts only until the sandbox is recreated, and the first
-connection still builds `node-pty` from source. For a setup that persists,
-recreate the sandbox with the [v2 kit](../customize/kits-v2.md) or a custom
-[template](/manuals/ai/sandboxes/customize/author/base-images.md).
 @z
 
 @x
@@ -232,63 +224,59 @@ still lets the install proceed.
 @z
 
 @x
-The most common causes are a missing C++ toolchain and a full disk, and both
-produce this identical error. Get npm's actual output to tell them apart:
+The most common causes are a missing shared library and a full disk. Install
+`t3` by hand and run it to tell them apart:
 @y
-The most common causes are a missing C++ toolchain and a full disk, and both
-produce this identical error. Get npm's actual output to tell them apart:
+The most common causes are a missing shared library and a full disk. Install
+`t3` by hand and run it to tell them apart:
 @z
 
 @x
 ```console
 $ sbx exec <sandbox> -- sh -lc \
   'rm -rf /tmp/t3probe && mkdir -p /tmp/t3probe && cd /tmp/t3probe \
-   && npm init -y >/dev/null && npm install t3@latest 2>&1 | tail -40'
+   && npm init -y >/dev/null && npm install t3@latest 2>&1 | tail -20 \
+   && ./node_modules/.bin/t3 --version'
 ```
 @y
 ```console
 $ sbx exec <sandbox> -- sh -lc \
   'rm -rf /tmp/t3probe && mkdir -p /tmp/t3probe && cd /tmp/t3probe \
-   && npm init -y >/dev/null && npm install t3@latest 2>&1 | tail -40'
+   && npm init -y >/dev/null && npm install t3@latest 2>&1 | tail -20 \
+   && ./node_modules/.bin/t3 --version'
 ```
 @z
 
 @x
-A missing compiler fails the native `node-pty` build with `Error 127` from
-`make`:
+A missing `libatomic1` lets the install finish and leaves a binary that can't
+start:
 @y
-A missing compiler fails the native `node-pty` build with `Error 127` from
-`make`:
+A missing `libatomic1` lets the install finish and leaves a binary that can't
+start:
 @z
 
 @x
 ```text
-npm ERR! make: g++: No such file or directory
-npm ERR! make: *** [pty.target.mk:115: Release/obj.target/pty/src/unix/pty.o] Error 127
-npm ERR! gyp ERR! build error
-npm ERR! gyp ERR! stack Error: `make` failed with exit code: 2
+node_modules/@t3code/t3-linux-x64/t3: error while loading shared libraries:
+libatomic.so.1: cannot open shared object file: No such file or directory
 ```
 @y
 ```text
-npm ERR! make: g++: No such file or directory
-npm ERR! make: *** [pty.target.mk:115: Release/obj.target/pty/src/unix/pty.o] Error 127
-npm ERR! gyp ERR! build error
-npm ERR! gyp ERR! stack Error: `make` failed with exit code: 2
+node_modules/@t3code/t3-linux-x64/t3: error while loading shared libraries:
+libatomic.so.1: cannot open shared object file: No such file or directory
 ```
 @z
 
 @x
-Install the build toolchain as described in [Prerequisites](#prerequisites).
+Install it as described in [Prerequisites](#prerequisites).
 @y
-Install the build toolchain as described in [Prerequisites](#prerequisites).
+Install it as described in [Prerequisites](#prerequisites).
 @z
 
 @x
-A full disk fails with `ENOSPC`, and no gyp output appears at all because npm
-fails before the native build starts:
+A full disk fails the install itself with `ENOSPC`:
 @y
-A full disk fails with `ENOSPC`, and no gyp output appears at all because npm
-fails before the native build starts:
+A full disk fails the install itself with `ENOSPC`:
 @z
 
 @x
@@ -321,14 +309,14 @@ $ sbx exec <sandbox> -- df -h /
 
 @x
 A sandbox can have both problems at once. Fixing one still leaves the same
-top-level error, so check both the toolchain and disk space before
-concluding the sandbox is ready. Free up space or install the toolchain as
-needed, then reconnect.
+top-level error, so check the library and disk space before concluding the
+sandbox is ready. Free up space or install `libatomic1` as needed, then
+reconnect.
 @y
 A sandbox can have both problems at once. Fixing one still leaves the same
-top-level error, so check both the toolchain and disk space before
-concluding the sandbox is ready. Free up space or install the toolchain as
-needed, then reconnect.
+top-level error, so check the library and disk space before concluding the
+sandbox is ready. Free up space or install `libatomic1` as needed, then
+reconnect.
 @z
 
 @x

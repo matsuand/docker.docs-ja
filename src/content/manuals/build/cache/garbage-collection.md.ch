@@ -131,7 +131,7 @@ The default GC policies are (approximately):
 @z
 
 @x
-1. Remove cache that can be easily regenerated, such as build contexts from
+1. Remove cache that can be regenerated, such as build contexts from
    local directories or remote Git repositories, and cache mounts, if hasn't
    been used for more than 48 hours.
 2. Remove cache that hasn't been used in a build for more than 60 days.
@@ -140,7 +140,7 @@ The default GC policies are (approximately):
    (typically, as image layers).
 4. Remove any build cache that exceeds the build cache size limit.
 @y
-1. Remove cache that can be easily regenerated, such as build contexts from
+1. Remove cache that can be regenerated, such as build contexts from
    local directories or remote Git repositories, and cache mounts, if hasn't
    been used for more than 48 hours.
 2. Remove cache that hasn't been used in a build for more than 60 days.
@@ -314,13 +314,13 @@ following policies:
 
 @x
 > | `daemon.json`       | `buildkitd.toml`     |
-> |---------------------|----------------------|
+> | ------------------- | -------------------- |
 > | `type=source.local` | `type==source.local` |
 > | `private=true`      | `private==true`      |
 > | `shared=true`       | `shared==true`       |
 @y
 > | `daemon.json`       | `buildkitd.toml`     |
-> |---------------------|----------------------|
+> | ------------------- | -------------------- |
 > | `type=source.local` | `type==source.local` |
 > | `private=true`      | `private==true`      |
 > | `shared=true`       | `shared==true`       |

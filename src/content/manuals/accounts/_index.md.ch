@@ -91,14 +91,12 @@ keywords: accounts, admin, Docker ID, organization, company, Docker Home,
 
 @x
 A Docker account identifies you and lets you access Docker products. You
-manage it in [Docker Home](https://app.docker.com/). Docker has two
-primary account types: individual and organization. A company groups
-multiple organizations.
+manage your Docker accounts in [Docker Home](https://app.docker.com/).
+Docker offers individual, organization, and company account types.
 @y
 A Docker account identifies you and lets you access Docker products. You
-manage it in [Docker Home](https://app.docker.com/). Docker has two
-primary account types: individual and organization. A company groups
-multiple organizations.
+manage your Docker accounts in [Docker Home](https://app.docker.com/).
+Docker offers individual, organization, and company account types.
 @z
 
 @x
@@ -117,10 +115,10 @@ multiple organizations.
 
 @x
 You always sign in with your individual account, then work in the
-organizations you own or belong to.
+organizations or companies you own or belong to.
 @y
 You always sign in with your individual account, then work in the
-organizations you own or belong to.
+organizations or companies you own or belong to.
 @z
 
 @x

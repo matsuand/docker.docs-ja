@@ -23,42 +23,40 @@ description: |-
 
 @x
     With --cloud:
-    The tar is uploaded to the cloud template registry as a new template.
-    Takes two arguments (FILE, NAME). NAME must be unique per account.
-    --cpus and --memory-mib are required, and together must name one of the
-    billable sandbox shapes:
-      micro (1 vCPU / 2048 MiB)
-      small (2 vCPU / 4096 MiB)
-      medium (4 vCPU / 8192 MiB)
-      large (8 vCPU / 16384 MiB)
-      xl (16 vCPU / 32768 MiB)
-    --capture-mode controls what gets captured for the template: "disk" (default)
-    is faster to load and cold-boots from the filesystem; "all" captures memory +
-    disk + microVM checkpoint so subsequent runs resume in sub-second time at the
-    cost of a slower load.
+    Upload a tar file as a cloud template. Takes FILE and NAME; NAME must be
+    unique per account. Uploads can take several minutes.
 @y
     With --cloud:
-    The tar is uploaded to the cloud template registry as a new template.
-    Takes two arguments (FILE, NAME). NAME must be unique per account.
-    --cpus and --memory-mib are required, and together must name one of the
-    billable sandbox shapes:
-      micro (1 vCPU / 2048 MiB)
-      small (2 vCPU / 4096 MiB)
-      medium (4 vCPU / 8192 MiB)
-      large (8 vCPU / 16384 MiB)
-      xl (16 vCPU / 32768 MiB)
-    --capture-mode controls what gets captured for the template: "disk" (default)
-    is faster to load and cold-boots from the filesystem; "all" captures memory +
-    disk + microVM checkpoint so subsequent runs resume in sub-second time at the
-    cost of a slower load.
+    Upload a tar file as a cloud template. Takes FILE and NAME; NAME must be
+    unique per account. Uploads can take several minutes.
 @z
 
 @x
-    Cloud loads upload your full tar to the registry; multi-GB uploads can
-    take several minutes. See https://docs.docker.com/ai/sandboxes/ for the snapshot/load model.
+    --cpus and --memory-mib are required and must match a billable sandbox shape:
 @y
-    Cloud loads upload your full tar to the registry; multi-GB uploads can
-    take several minutes. See https://docs.docker.com/ai/sandboxes/ for the snapshot/load model.
+    --cpus and --memory-mib are required and must match a billable sandbox shape:
+@z
+
+@x
+    - micro (1 vCPU / 2048 MiB)
+    - small (2 vCPU / 4096 MiB)
+    - medium (4 vCPU / 8192 MiB)
+    - large (8 vCPU / 16384 MiB)
+    - xl (16 vCPU / 32768 MiB)
+@y
+    - micro (1 vCPU / 2048 MiB)
+    - small (2 vCPU / 4096 MiB)
+    - medium (4 vCPU / 8192 MiB)
+    - large (8 vCPU / 16384 MiB)
+    - xl (16 vCPU / 32768 MiB)
+@z
+
+@x
+    Use --capture-mode disk for a filesystem snapshot, or all to capture memory,
+    disk, and the microVM checkpoint for faster resume.
+@y
+    Use --capture-mode disk for a filesystem snapshot, or all to capture memory,
+    disk, and the microVM checkpoint for faster resume.
 @z
 
 @x

@@ -28,12 +28,12 @@ keywords: payments, billing, subscription, payment methods, credit card, ACH,
 @z
 
 @x
-Docker supports several payment methods for paid personal accounts and
+Docker supports several payment methods for paid individual accounts and
 organizations. This page describes supported payment types, how to manage
 payments from [Docker Home](https://app.docker.com/), and how to set up pay
 by invoice.
 @y
-Docker supports several payment methods for paid personal accounts and
+Docker supports several payment methods for paid individual accounts and
 organizations. This page describes supported payment types, how to manage
 payments from [Docker Home](https://app.docker.com/), and how to set up pay
 by invoice.
@@ -96,10 +96,10 @@ example:
 @z
 
 @x
-Paid personal accounts and organizations follow the same procedures to add,
+Paid individual accounts and organizations follow the same procedures to add,
 update, or remove payment methods.
 @y
-Paid personal accounts and organizations follow the same procedures to add,
+Paid individual accounts and organizations follow the same procedures to add,
 update, or remove payment methods.
 @z
 
@@ -119,7 +119,7 @@ new payment method, you set it as the default.
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com/).
-1. Select your username for a personal account, or select your organization
+1. Select your username for an individual account, or select your organization
    name for an organization.
 1. Select **Billing** to go to the billing portal, then **Change** in the
    **Payment method** tile.
@@ -135,7 +135,7 @@ new payment method, you set it as the default.
 1. Finish adding the payment method by selecting **Save as default**.
 @y
 1. Sign in to [Docker Home](https://app.docker.com/).
-1. Select your username for a personal account, or select your organization
+1. Select your username for an individual account, or select your organization
    name for an organization.
 1. Select **Billing** to go to the billing portal, then **Change** in the
    **Payment method** tile.

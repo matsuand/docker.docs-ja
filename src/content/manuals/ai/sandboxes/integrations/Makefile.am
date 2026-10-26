@@ -7,6 +7,7 @@ bases = \
 	chatgpt.md        \
 	claude-desktop.md \
 	cursor.md         \
+	orca.md           \
 	t3-code.md        \
 	vscode.md
 

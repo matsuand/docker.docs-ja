@@ -7,90 +7,94 @@
 title: Docker individual accounts
 linkTitle: Individual
 description: >
-  Learn what a Docker account is, how Docker IDs, emails, and sign-in methods
-  relate, and how individual accounts connect to organizations
-keywords: accounts, docker ID, username, email, Google, GitHub, sign-in,
-  authentication, account management, docker account, individual account,
-  organization account, account types, Docker Hub, SSO, deactivate account
+  What a Docker account is, how a Docker ID relates to your email and
+  sign-in method, and how the account connects to an organization
+keywords: Docker ID, username, email, Google, GitHub, sign-in,
+  authentication, individual account, organization account, organization
+  namespace, convert account, Docker Hub, Docker Desktop, SSO, deactivate
+  account
 @y
 title: Docker individual accounts
 linkTitle: Individual
 description: >
-  Learn what a Docker account is, how Docker IDs, emails, and sign-in methods
-  relate, and how individual accounts connect to organizations
-keywords: accounts, docker ID, username, email, Google, GitHub, sign-in,
-  authentication, account management, docker account, individual account,
-  organization account, account types, Docker Hub, SSO, deactivate account
+  What a Docker account is, how a Docker ID relates to your email and
+  sign-in method, and how the account connects to an organization
+keywords: Docker ID, username, email, Google, GitHub, sign-in,
+  authentication, individual account, organization account, organization
+  namespace, convert account, Docker Hub, Docker Desktop, SSO, deactivate
+  account
 @z
+
+% grid:
 
 @x
   - title: Set up your account
-    description: Get started with Docker and create an account.
+    description: Create a Docker account with email, Google, or GitHub.
     icon: finger-print
     link: /accounts/individual/create-account/
 @y
   - title: Set up your account
-    description: Get started with Docker and create an account.
+    description: Create a Docker account with email, Google, or GitHub.
     icon: finger-print
     link: __SUBDIR__/accounts/individual/create-account/
 @z
 
 @x
   - title: Manage account
-    description: Learn how to manage the settings for your account.
+    description: Update your profile, email, password, and connected accounts.
     icon: cog
     link: /accounts/individual/manage-account/
 @y
   - title: Manage account
-    description: Learn how to manage the settings for your account.
+    description: Update your profile, email, password, and connected accounts.
     icon: cog
     link: __SUBDIR__/accounts/individual/manage-account/
 @z
 
 @x
   - title: Personal access tokens
-    description: Learn how to create and manage access tokens for your account.
+    description: Create and manage personal access tokens.
     icon: lock-closed
     link: /security/access-tokens/
 @y
   - title: Personal access tokens
-    description: Learn how to create and manage access tokens for your account.
+    description: Create and manage personal access tokens.
     icon: lock-closed
     link: __SUBDIR__/security/access-tokens/
 @z
 
 @x
-  - title: Set up two-factor authentication
-    description: Add an extra layer of authentication to your Docker account.
+  - title: Manage two-factor authentication
+    description: Turn two-factor authentication on or off.
+    icon: device-phone-mobile
     link: /security/authentication/2fa/manage/
-    icon: device-phone-mobile
 @y
-  - title: Set up two-factor authentication
-    description: Add an extra layer of authentication to your Docker account.
-    link: __SUBDIR__/security/authentication/2fa/manage/
+  - title: Manage two-factor authentication
+    description: Turn two-factor authentication on or off.
     icon: device-phone-mobile
+    link: __SUBDIR__/security/authentication/2fa/manage/
 @z
 
 @x
   - title: Organization accounts
-    description: Learn how to create and manage Docker organizations.
+    description: Create and manage organization accounts.
     icon: building-storefront
     link: /accounts/organization/
 @y
   - title: Organization accounts
-    description: Learn how to create and manage Docker organizations.
+    description: Create and manage organization accounts.
     icon: building-storefront
     link: __SUBDIR__/accounts/organization/
 @z
 
 @x
   - title: Account FAQs
-    description: Explore frequently asked questions about Docker accounts.
+    description: Common questions about Docker accounts.
     icon: question-mark-circle
     link: /faqs/accounts/
 @y
   - title: Account FAQs
-    description: Explore frequently asked questions about Docker accounts.
+    description: Common questions about Docker accounts.
     icon: question-mark-circle
     link: __SUBDIR__/faqs/accounts/
 @z
@@ -104,18 +108,6 @@ Docker Hub and Docker Desktop, manage settings, and join organizations.
 @z
 
 @x
-For how individual, organization, and company accounts compare, see
-[Accounts](/manuals/accounts/_index.md). For organization accounts, including
-companies, see
-[Organization accounts](/manuals/accounts/organization/_index.md).
-@y
-For how individual, organization, and company accounts compare, see
-[Accounts](manuals/accounts/_index.md). For organization accounts, including
-companies, see
-[Organization accounts](manuals/accounts/organization/_index.md).
-@z
-
-@x
 ## Docker ID, email, and sign-in
 @y
 ## Docker ID, email, and sign-in
@@ -130,23 +122,49 @@ Docker also ties a verified email to the account.
 @z
 
 @x
-- Docker account: Associates your plans, Hub repositories, and account
+- Your Docker account associates your plans, Hub repositories, and account
   settings.
-- Docker ID: A unique username that identifies you.
-- Email: How Docker contacts you for notifications and security-related
-  communications.
-- Sign-in method: Email and password,
-  [single sign-on (SSO)](/manuals/security/authentication/single-sign-on/_index.md),
-  Google, or GitHub.
+- A Docker ID is a unique username that identifies you. Your Docker ID is
+  permanent and stays the same when you change your email or sign-in
+  method.
+- Your email is how Docker contacts you for notifications and
+  security-related communications.
+- You can sign in with email and password, Google, or GitHub. An
+  organization or company you belong to can require
+  [single sign-on (SSO)](/manuals/security/authentication/single-sign-on/_index.md).
 @y
-- Docker account: Associates your plans, Hub repositories, and account
+- Your Docker account associates your plans, Hub repositories, and account
   settings.
-- Docker ID: A unique username that identifies you.
-- Email: How Docker contacts you for notifications and security-related
-  communications.
-- Sign-in method: Email and password,
-  [single sign-on (SSO)](manuals/security/authentication/single-sign-on/_index.md),
-  Google, or GitHub.
+- A Docker ID is a unique username that identifies you. Your Docker ID is
+  permanent and stays the same when you change your email or sign-in
+  method.
+- Your email is how Docker contacts you for notifications and
+  security-related communications.
+- You can sign in with email and password, Google, or GitHub. An
+  organization or company you belong to can require
+  [single sign-on (SSO)](manuals/security/authentication/single-sign-on/_index.md).
+@z
+
+@x
+## Individual and organization accounts
+@y
+## Individual and organization accounts
+@z
+
+@x
+When you join an organization, you use your individual account and its
+Docker ID. To learn more about organization accounts, see
+[Organization accounts](/manuals/accounts/organization/_index.md). To
+transfer your Docker ID to an organization namespace, see
+[Convert a Docker account to an
+organization](/manuals/accounts/organization/setup/convert-account.md).
+@y
+When you join an organization, you use your individual account and its
+Docker ID. To learn more about organization accounts, see
+[Organization accounts](manuals/accounts/organization/_index.md). To
+transfer your Docker ID to an organization namespace, see
+[Convert a Docker account to an
+organization](manuals/accounts/organization/setup/convert-account.md).
 @z
 
 @x

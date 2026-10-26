@@ -203,16 +203,24 @@ default network      org      all          network: 38 allow, 4 deny
 
 @x
 `Governance` shows which organization manages the policy, and `Sync` confirms
-the daemon has pulled the latest rules. If the sync state shows an error or a
-stale timestamp, the daemon may not have the most recent org policy. Run
-`sbx policy reset` to force a fresh pull. `Hidden` reports how many inactive
-rules are suppressed and how to reveal them.
+the daemon has pulled the latest rules. `Hidden` reports how many inactive rules
+are suppressed and how to reveal them.
 @y
 `Governance` shows which organization manages the policy, and `Sync` confirms
-the daemon has pulled the latest rules. If the sync state shows an error or a
-stale timestamp, the daemon may not have the most recent org policy. Run
-`sbx policy reset` to force a fresh pull. `Hidden` reports how many inactive
-rules are suppressed and how to reveal them.
+the daemon has pulled the latest rules. `Hidden` reports how many inactive rules
+are suppressed and how to reveal them.
+@z
+
+@x
+If the sync state shows an error or a stale timestamp, run `sbx policy refresh`
+to fetch and apply the latest policy without restarting the daemon or stopping
+sandboxes. The policy applies to new connections. To close existing connections
+that the updated policy denies, restart the sandbox.
+@y
+If the sync state shows an error or a stale timestamp, run `sbx policy refresh`
+to fetch and apply the latest policy without restarting the daemon or stopping
+sandboxes. The policy applies to new connections. To close existing connections
+that the updated policy denies, restart the sandbox.
 @z
 
 @x

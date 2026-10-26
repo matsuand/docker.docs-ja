@@ -6,67 +6,41 @@ name: sbx skills import
 synopsis: Import skills from supported agent directories
 experimental: true
 description: |-
-    Import skills already installed for supported coding agents on this
-    machine.
+    Import skills installed for supported coding agents on this machine.
+    Directories are checked in order:
 @y
 name: sbx skills import
 synopsis: Import skills from supported agent directories
 experimental: true
 description: |-
-    Import skills already installed for supported coding agents on this
-    machine.
+    Import skills installed for supported coding agents on this machine.
+    Directories are checked in order:
 @z
 
 @x
-    The following directories are checked in order:
-      ~/.agents/skills
-      ~/.claude/skills
-      ~/.config/opencode/skills
-      ~/.copilot/skills
-      ~/.cursor/skills
-      ~/.factory/skills
+    1. ~/.agents/skills
+    2. ~/.claude/skills
+    3. ~/.config/opencode/skills
+    4. ~/.copilot/skills
+    5. ~/.cursor/skills
+    6. ~/.factory/skills
 @y
-    The following directories are checked in order:
-      ~/.agents/skills
-      ~/.claude/skills
-      ~/.config/opencode/skills
-      ~/.copilot/skills
-      ~/.cursor/skills
-      ~/.factory/skills
+    1. ~/.agents/skills
+    2. ~/.claude/skills
+    3. ~/.config/opencode/skills
+    4. ~/.copilot/skills
+    5. ~/.cursor/skills
+    6. ~/.factory/skills
 @z
 
 @x
-    When the same skill appears in more than one directory, the first copy is used
-    and the others are skipped with a warning.
+    The first copy of each skill is used. Importing replaces an existing skill
+    completely, including removing obsolete files; --force skips confirmation.
+    Top-level directory symlinks are followed; symlinks within skills are skipped.
 @y
-    When the same skill appears in more than one directory, the first copy is used
-    and the others are skipped with a warning.
-@z
-
-@x
-    Importing a skill that is already installed replaces it completely, including
-    removing files that are no longer present. You will be prompted before a skill
-    is replaced; use --force to skip all prompts.
-@y
-    Importing a skill that is already installed replaces it completely, including
-    removing files that are no longer present. You will be prompted before a skill
-    is replaced; use --force to skip all prompts.
-@z
-
-@x
-    Symlinks at the top level are followed if they point to a directory. Symlinks
-    within skill folders and loose files at the top level are skipped.
-@y
-    Symlinks at the top level are followed if they point to a directory. Symlinks
-    within skill folders and loose files at the top level are skipped.
-@z
-
-@x
-    Imported skills are available to Claude, Codex, Copilot, Cursor, Droid, and
-    OpenCode.
-@y
-    Imported skills are available to Claude, Codex, Copilot, Cursor, Droid, and
-    OpenCode.
+    The first copy of each skill is used. Importing replaces an existing skill
+    completely, including removing obsolete files; --force skips confirmation.
+    Top-level directory symlinks are followed; symlinks within skills are skipped.
 @z
 
 @x

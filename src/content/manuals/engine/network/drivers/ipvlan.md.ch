@@ -32,13 +32,13 @@ see the [multi-host overlay](overlay.md) driver.
 @z
 
 @x
-IPvlan is a new twist on the tried and true network virtualization technique.
+IPvlan is a network virtualization technique that provides lightweight container networking.
 The Linux implementations are extremely lightweight because rather than using
 the traditional Linux bridge for isolation, they are associated to a Linux
 Ethernet interface or sub-interface to enforce separation between networks and
 connectivity to the physical network.
 @y
-IPvlan is a new twist on the tried and true network virtualization technique.
+IPvlan is a network virtualization technique that provides lightweight container networking.
 The Linux implementations are extremely lightweight because rather than using
 the traditional Linux bridge for isolation, they are associated to a Linux
 Ethernet interface or sub-interface to enforce separation between networks and

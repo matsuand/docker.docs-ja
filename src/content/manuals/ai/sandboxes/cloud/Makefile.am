@@ -3,11 +3,12 @@
 ##
 
 bases = \
-	_index.md         \
-	credentials.md    \
-	local-vs-cloud.md \
-	move.md           \
-	network-policy.md \
+	_index.md            \
+	credentials.md       \
+	environment-files.md \
+	local-vs-cloud.md    \
+	move.md              \
+	network-policy.md    \
 	usage.md
 
 include $(top_srcdir)/build-aux/common.mk

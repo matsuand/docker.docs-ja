@@ -3,18 +3,20 @@
 
 @x
 name: sbx mcp load
-synopsis: Load an already-registered MCP server into a running sandbox
+synopsis: Load an already-registered MCP server into a sandbox
 description: |-
-    Attach a previously-registered MCP server to a running sandbox's gateway.
-    Connected agents see the new server's tools immediately via the standard MCP
-    tools/list_changed notification — no agent restart required.
+    Attach a previously-registered MCP server to a sandbox's gateway.
+    In a running sandbox, connected agents see the new server's tools immediately
+    via the standard MCP tools/list_changed notification — no agent restart
+    required. A stopped sandbox gets the server the next time it starts.
 @y
 name: sbx mcp load
-synopsis: Load an already-registered MCP server into a running sandbox
+synopsis: Load an already-registered MCP server into a sandbox
 description: |-
-    Attach a previously-registered MCP server to a running sandbox's gateway.
-    Connected agents see the new server's tools immediately via the standard MCP
-    tools/list_changed notification — no agent restart required.
+    Attach a previously-registered MCP server to a sandbox's gateway.
+    In a running sandbox, connected agents see the new server's tools immediately
+    via the standard MCP tools/list_changed notification — no agent restart
+    required. A stopped sandbox gets the server the next time it starts.
 @z
 
 @x
