@@ -291,12 +291,20 @@ The supported top-level labeled blocks are:
 - `provider`
 - `mcp`
 - `rag`
+- `command`
+- `toolsets`
+- `budgets`
+- `flavors`
 @y
 - `agent`
 - `model`
 - `provider`
 - `mcp`
 - `rag`
+- `command`
+- `toolsets`
+- `budgets`
+- `flavors`
 @z
 
 @x
@@ -308,9 +316,13 @@ The supported top-level singleton blocks are:
 @x
 - `metadata`
 - `permissions`
+- `runtime`
+- `budget`
 @y
 - `metadata`
 - `permissions`
+- `runtime`
+- `budget`
 @z
 
 @x

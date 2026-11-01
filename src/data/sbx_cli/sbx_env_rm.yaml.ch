@@ -102,9 +102,11 @@ usage: sbx env rm [PATH...] [flags]
 @z
 
 @x skip-host-commands
-      usage: Skip the host lifecycle commands the environment declares
+      usage: |
+        Skip host preRemove commands and disable owned host MCP commands; successful environment removal deletes their registrations
 @y
-      usage: Skip the host lifecycle commands the environment declares
+      usage: |
+        Skip host preRemove commands and disable owned host MCP commands; successful environment removal deletes their registrations
 @z
 
 % inherited_options:

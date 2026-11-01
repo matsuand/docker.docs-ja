@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 title: "Set Up a Model"
 description: "Make a model available to Docker Agent: connect a cloud provider, run a local model with Docker Model Runner, or register a custom OpenAI-compatible endpoint."
@@ -9,6 +11,12 @@ keywords: docker agent, ai agents, getting started, set up a model, api key, loc
 title: "Set Up a Model"
 description: "Make a model available to Docker Agent: connect a cloud provider, run a local model with Docker Model Runner, or register a custom OpenAI-compatible endpoint."
 keywords: docker agent, ai agents, getting started, set up a model, api key, local model, docker model runner, custom endpoint
+@z
+
+@x
+canonical: https://docs.docker.com/ai/docker-agent/getting-started/set-up-a-model/
+@y
+canonical: __SUBDIR__/ai/docker-agent/getting-started/set-up-a-model/
 @z
 
 @x
@@ -231,10 +239,10 @@ Docker Model Runner
 
 @x
 Model auto-selection
-  auto -> anthropic/claude-sonnet-4-6
+  auto -> anthropic/claude-sonnet-5
 @y
 Model auto-selection
-  auto -> anthropic/claude-sonnet-4-6
+  auto -> anthropic/claude-sonnet-5
 @z
 
 @x
@@ -703,10 +711,10 @@ It exits non-zero when something would block a run, which makes it usable as a C
 - [**Quick Start**](../quickstart/index.md) — run your first agent now that a model is available.
 - [**Models**](../../concepts/models/index.md) — inline vs. named models, fallbacks, and `auto` selection.
 - [**Managing Secrets**](../../guides/secrets/index.md) — every way to store credentials, compared.
-- [**Troubleshooting**](../../community/troubleshooting/index.md#missing-credentials-or-model-errors) — decode "no model available" and credential errors.
+- [**Troubleshooting**](../../guides/troubleshooting/index.md#missing-credentials-or-model-errors) — decode "no model available" and credential errors.
 @y
 - [**Quick Start**](../quickstart/index.md) — run your first agent now that a model is available.
 - [**Models**](../../concepts/models/index.md) — inline vs. named models, fallbacks, and `auto` selection.
 - [**Managing Secrets**](../../guides/secrets/index.md) — every way to store credentials, compared.
-- [**Troubleshooting**](../../community/troubleshooting/index.md#missing-credentials-or-model-errors) — decode "no model available" and credential errors.
+- [**Troubleshooting**](../../guides/troubleshooting/index.md#missing-credentials-or-model-errors) — decode "no model available" and credential errors.
 @z

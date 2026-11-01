@@ -1,8 +1,8 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = ai-governance dvp engine extensions-sdk hub registry \
-	sandboxes
+SUBDIRS = ai-governance ai-governance-audit-logs dvp engine \
+	extensions-sdk hub registry sandboxes
 
 bases = \
 	_content.gotmpl

@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -95,6 +96,156 @@ Docker のアクションでは簡単なインターフェースを提供しま�
 @z
 
 @x
+> [!NOTE]
+> For an alternative to configuring individual actions, see
+> [Docker GitHub Builder](/manuals/build/ci/github-actions/github-builder/_index.md).
+> It provides Docker-maintained reusable workflows for building images and artifacts
+> with BuildKit.
+@y
+> [!NOTE]
+> For an alternative to configuring individual actions, see
+> [Docker GitHub Builder](manuals/build/ci/github-actions/github-builder/_index.md).
+> It provides Docker-maintained reusable workflows for building images and artifacts
+> with BuildKit.
+@z
+
+@x
+## Get started
+@y
+## Get started
+@z
+
+@x
+Build an image from your GitHub repository and push it to Docker Hub with the
+following workflow.
+@y
+Build an image from your GitHub repository and push it to Docker Hub with the
+following workflow.
+@z
+
+@x
+### Prerequisites
+@y
+### Prerequisites
+@z
+
+@x
+- A GitHub repository with your application and a `Dockerfile` at its root.
+- A Docker Hub account and a
+  [personal access token](/manuals/security/access-tokens/personal-access-tokens.md)
+  with permission to push images.
+@y
+- A GitHub repository with your application and a `Dockerfile` at its root.
+- A Docker Hub account and a
+  [personal access token](manuals/security/access-tokens/personal-access-tokens.md)
+  with permission to push images.
+@z
+
+@x
+### Configure your GitHub repository
+@y
+### Configure your GitHub repository
+@z
+
+@x
+Add your Docker Hub credentials to your GitHub repository:
+@y
+Add your Docker Hub credentials to your GitHub repository:
+@z
+
+@x
+1. Open your repository's **Settings**.
+2. Under **Security**, go to **Secrets and variables > Actions**.
+3. Under **Secrets**, create a repository secret named `DOCKERHUB_TOKEN`
+   containing your Docker access token.
+4. Under **Variables**, create a repository variable named `DOCKERHUB_USERNAME`
+   containing your Docker Hub username.
+@y
+1. Open your repository's **Settings**.
+2. Under **Security**, go to **Secrets and variables > Actions**.
+3. Under **Secrets**, create a repository secret named `DOCKERHUB_TOKEN`
+   containing your Docker access token.
+4. Under **Variables**, create a repository variable named `DOCKERHUB_USERNAME`
+   containing your Docker Hub username.
+@z
+
+@x
+### Set up your GitHub Actions workflow
+@y
+### Set up your GitHub Actions workflow
+@z
+
+@x
+Create `.github/workflows/docker-ci.yml` in your repository with the following
+contents. Replace `my-image` with the name of your Docker Hub repository, and
+change `main` if your default branch has a different name.
+@y
+Create `.github/workflows/docker-ci.yml` in your repository with the following
+contents. Replace `my-image` with the name of your Docker Hub repository, and
+change `main` if your default branch has a different name.
+@z
+
+% snip code...
+
+@x
+Commit the workflow file and push it to your default branch to run it. The
+workflow also runs on pull requests. Pull-request builds skip signing in to
+Docker Hub and pushing the image, so they don't require registry secrets,
+including for pull requests from forks.
+@y
+Commit the workflow file and push it to your default branch to run it. The
+workflow also runs on pull requests. Pull-request builds skip signing in to
+Docker Hub and pushing the image, so they don't require registry secrets,
+including for pull requests from forks.
+@z
+
+@x
+The build action uses Git context by default: BuildKit fetches your repository
+directly at the Git reference for the event that triggered the workflow, so no
+checkout step is needed. Changes to files made by earlier workflow steps are
+ignored because the build uses files from Git.
+@y
+The build action uses Git context by default: BuildKit fetches your repository
+directly at the Git reference for the event that triggered the workflow, so no
+checkout step is needed. Changes to files made by earlier workflow steps are
+ignored because the build uses files from Git.
+@z
+
+@x
+The metadata action generates tags, labels, and
+annotations from the GitHub event and passes them to the build step. For
+example, a push to `main` publishes `DOCKERHUB_USERNAME/my-image:main`.
+See [Manage tags and labels](/manuals/build/ci/github-actions/manage-tags-labels.md)
+and [Annotations](/manuals/build/ci/github-actions/annotations.md) to customize
+this metadata.
+@y
+The metadata action generates tags, labels, and
+annotations from the GitHub event and passes them to the build step. For
+example, a push to `main` publishes `DOCKERHUB_USERNAME/my-image:main`.
+See [Manage tags and labels](manuals/build/ci/github-actions/manage-tags-labels.md)
+and [Annotations](manuals/build/ci/github-actions/annotations.md) to customize
+this metadata.
+@z
+
+@x
+This workflow builds images but doesn't run application tests. To add tests,
+see [Test before push](/manuals/build/ci/github-actions/test-before-push.md).
+For additional build options, see
+[Multi-platform images](/manuals/build/ci/github-actions/multi-platform.md) and
+[SBOM and provenance attestations](/manuals/build/ci/github-actions/attestations.md),
+which covers default provenance and how to add SBOM attestations when pushing
+to a registry.
+@y
+This workflow builds images but doesn't run application tests. To add tests,
+see [Test before push](manuals/build/ci/github-actions/test-before-push.md).
+For additional build options, see
+[Multi-platform images](manuals/build/ci/github-actions/multi-platform.md) and
+[SBOM and provenance attestations](manuals/build/ci/github-actions/attestations.md),
+which covers default provenance and how to add SBOM attestations when pushing
+to a registry.
+@z
+
+@x
 ## Examples
 @y
 ## 利用例 {#examples}
@@ -111,20 +262,4 @@ Docker GitHub Actions を使った利用例を確認したい場合は、以下�
 {{% sectionlinks %}}
 @y
 {{% sectionlinks %}}
-@z
-
-@x
-## Get started with GitHub Actions
-@y
-## GitHub Actions を使ってみよう {#get-started-with-gitHub-actions}
-@z
-
-@x
-The [Introduction to GitHub Actions with Docker](/guides/gha.md) guide walks
-you through the process of setting up and using Docker GitHub Actions for
-building Docker images, and pushing images to Docker Hub.
-@y
-The [Introduction to GitHub Actions with Docker](guides/gha.md) guide walks
-you through the process of setting up and using Docker GitHub Actions for
-building Docker images, and pushing images to Docker Hub.
 @z

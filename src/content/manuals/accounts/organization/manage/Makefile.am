@@ -10,7 +10,8 @@ bases = \
 	manage-licenses.md    \
 	manage-products.md    \
 	manage-seats.md       \
-	members.md
+	members.md            \
+	user-access.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

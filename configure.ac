@@ -45,11 +45,6 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/docker/compose/v5/docs/reference/Makefile
 	src/_vendor/github.com/docker/docker-agent/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/Makefile
-	src/_vendor/github.com/docker/docker-agent/docs/community/Makefile
-	src/_vendor/github.com/docker/docker-agent/docs/community/contributing/Makefile
-	src/_vendor/github.com/docker/docker-agent/docs/community/opentelemetry/Makefile
-	src/_vendor/github.com/docker/docker-agent/docs/community/telemetry/Makefile
-	src/_vendor/github.com/docker/docker-agent/docs/community/troubleshooting/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/concepts/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/concepts/agents/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/concepts/distribution/Makefile
@@ -61,15 +56,19 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/docker/docker-agent/docs/configuration/agentsignore/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/configuration/budget/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/configuration/commands/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/configuration/evaluators/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/configuration/flavors/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/configuration/hcl/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/configuration/hooks/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/configuration/models/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/configuration/opentelemetry/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/configuration/overview/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/configuration/permissions/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/configuration/routing/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/configuration/sandbox/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/configuration/sandbox/kit/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/configuration/structured-output/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/configuration/telemetry/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/configuration/tools/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/configuration/user-settings/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/features/Makefile
@@ -100,8 +99,11 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/docker/docker-agent/docs/guides/secrets/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/guides/thinking/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/guides/tips/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/guides/troubleshooting/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/providers/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/providers/anthropic/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/api-route/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/atlascloud/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/providers/baseten/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/providers/bedrock/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/providers/cerebras/Makefile
@@ -109,6 +111,7 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/docker/docker-agent/docs/providers/cloudflare-ai-gateway/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/providers/cloudflare-workers-ai/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/providers/custom/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/daoxe/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/providers/deepseek/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/providers/dmr/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/providers/fireworks/Makefile
@@ -120,6 +123,7 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/docker/docker-agent/docs/providers/minimax/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/providers/mistral/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/providers/moonshot/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/nativ/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/providers/nebius/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/providers/nvidia/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/providers/openai/Makefile
@@ -136,7 +140,11 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/docker/docker-agent/docs/tools/api/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/tools/background-agents/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/tools/background-jobs/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/calculator/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/datetime/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/environment/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/tools/fetch/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/file/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/tools/filesystem/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/tools/git/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/tools/handoff/Makefile
@@ -149,10 +157,10 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/docker/docker-agent/docs/tools/openapi/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/tools/plan/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/tools/rag/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/random/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/tools/scheduler/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/tools/script/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/tools/session_context/Makefile
-	src/_vendor/github.com/docker/docker-agent/docs/tools/session_plan/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/tools/shell/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/tools/tasks/Makefile
 	src/_vendor/github.com/docker/docker-agent/docs/tools/think/Makefile
@@ -183,6 +191,7 @@ AC_CONFIG_FILES([
 	src/assets/images/Makefile
 	src/assets/images/guides/Makefile
 	src/assets/js/Makefile
+	src/assets/js/gordon-cards/Makefile
 	src/assets/js/src/Makefile
 	src/content/Makefile
 	src/content/get-started/Makefile
@@ -380,6 +389,7 @@ AC_CONFIG_FILES([
 	src/content/reference/Makefile
 	src/content/reference/api/Makefile
 	src/content/reference/api/ai-governance/Makefile
+	src/content/reference/api/ai-governance-audit-logs/Makefile
 	src/content/reference/api/dvp/Makefile
 	src/content/reference/api/engine/Makefile
 	src/content/reference/api/engine/sdk/Makefile

@@ -9,6 +9,7 @@ bases = \
 	export.md         \
 	multi-platform.md \
 	multi-stage.md    \
+	registry-auth.md  \
 	secrets.md        \
 	variables.md
 

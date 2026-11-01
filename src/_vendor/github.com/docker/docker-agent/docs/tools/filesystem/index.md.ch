@@ -46,37 +46,29 @@ The filesystem tool gives agents the ability to explore codebases, read and edit
 @z
 
 @x
-Paths are resolved relative to the **working directory** (the directory where the agent session started, or the directory specified with `--workdir`):
+Paths are resolved relative to the **working directory** (the directory where the agent session started, or the directory specified with `--working-dir`):
 @y
-Paths are resolved relative to the **working directory** (the directory where the agent session started, or the directory specified with `--workdir`):
+Paths are resolved relative to the **working directory** (the directory where the agent session started, or the directory specified with `--working-dir`):
 @z
 
 @x
 - **Relative paths** (e.g., `src/main.go`, `../README.md`) are joined with the working directory.
-- **Absolute paths** must match the host operating system:
+- **Absolute paths** are used as-is, in the host operating system's own syntax:
   - Unix/Linux/macOS: `/home/user/project/file.txt`
   - Windows: `C:\Users\user\project\file.txt` or `C:/Users/user/project/file.txt`
 - **Home directory expansion**: paths starting with `~` or `~/` expand to the user's home directory.
 @y
 - **Relative paths** (e.g., `src/main.go`, `../README.md`) are joined with the working directory.
-- **Absolute paths** must match the host operating system:
+- **Absolute paths** are used as-is, in the host operating system's own syntax:
   - Unix/Linux/macOS: `/home/user/project/file.txt`
   - Windows: `C:\Users\user\project\file.txt` or `C:/Users/user/project/file.txt`
 - **Home directory expansion**: paths starting with `~` or `~/` expand to the user's home directory.
 @z
 
 @x
-When a file is not found, error messages include the resolved absolute path to help diagnose incorrect base directories or path formats.
+When a file is not found, the tool reports "not found" without further detail.
 @y
-When a file is not found, error messages include the resolved absolute path to help diagnose incorrect base directories or path formats.
-@z
-
-@x
-> [!IMPORTANT]
-> Agents must use paths appropriate for the host OS. A Windows absolute path like `C:\file.txt` on a Unix system (or vice versa) is rejected with a clear error message.
-@y
-> [!IMPORTANT]
-> Agents must use paths appropriate for the host OS. A Windows absolute path like `C:\file.txt` on a Unix system (or vice versa) is rejected with a clear error message.
+When a file is not found, the tool reports "not found" without further detail.
 @z
 
 @x
@@ -144,9 +136,9 @@ This helps agents distinguish between an empty directory and a tool failure, avo
 @z
 
 @x
-The `edit_file` tool applies a sequence of find-and-replace edits to a file in memory, then writes the result back atomically. Each edit must provide a non-empty `oldText` value:
+The `edit_file` tool applies a sequence of find-and-replace edits to a file in memory, then writes the result once after every edit validates. Each edit must provide a non-empty `oldText` value:
 @y
-The `edit_file` tool applies a sequence of find-and-replace edits to a file in memory, then writes the result back atomically. Each edit must provide a non-empty `oldText` value:
+The `edit_file` tool applies a sequence of find-and-replace edits to a file in memory, then writes the result once after every edit validates. Each edit must provide a non-empty `oldText` value:
 @z
 
 @x
@@ -256,13 +248,17 @@ Symlinks are resolved before the containment check, so a symlink inside an
 allowed root cannot be used to escape it. When an `allow_list` is set,
 each entry is opened as a Go [`*os.Root`](https://pkg.go.dev/os#Root) so
 that the kernel's rooted-lookup semantics also reject `..` and symlink
-escapes at I/O time, not just at resolve time.
+escapes at I/O time, not just at resolve time. With either list configured,
+dangling symlinks are rejected, including in parent directories, rather than
+treated as missing paths that a write could create.
 @y
 Symlinks are resolved before the containment check, so a symlink inside an
 allowed root cannot be used to escape it. When an `allow_list` is set,
 each entry is opened as a Go [`*os.Root`](https://pkg.go.dev/os#Root) so
 that the kernel's rooted-lookup semantics also reject `..` and symlink
-escapes at I/O time, not just at resolve time.
+escapes at I/O time, not just at resolve time. With either list configured,
+dangling symlinks are rejected, including in parent directories, rather than
+treated as missing paths that a write could create.
 @z
 
 @x
@@ -356,9 +352,9 @@ toolsets:
 @z
 
 @x
-Post-edit commands run with the same working directory as the agent. If a command exits non-zero, the error is logged and surfaced to the model as a warning, but the edit is not rolled back.
+Post-edit commands run with the same working directory as the agent. If a command exits non-zero, the tool reports that the write or edit succeeded but the post-edit command failed. The edit is not rolled back.
 @y
-Post-edit commands run with the same working directory as the agent. If a command exits non-zero, the error is logged and surfaced to the model as a warning, but the edit is not rolled back.
+Post-edit commands run with the same working directory as the agent. If a command exits non-zero, the tool reports that the write or edit succeeded but the post-edit command failed. The edit is not rolled back.
 @z
 
 @x

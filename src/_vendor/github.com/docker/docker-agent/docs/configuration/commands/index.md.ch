@@ -78,6 +78,12 @@ Commands come in three shapes:
 @z
 
 @x
+The **ACP frontend** supports literal-prompt and agent-switch commands, preserving trailing arguments and attachments. It does not execute URL-opening or dynamic JavaScript/bang-tool commands; those are excluded from discovery and rejected when invoked. Discovery never expands instructions or starts tools. ACP commands use normal session turn admission rather than the full TUI's immediate-command behavior. See [ACP slash commands](../../features/acp/index.md#slash-commands) for built-ins and limitations.
+@y
+The **ACP frontend** supports literal-prompt and agent-switch commands, preserving trailing arguments and attachments. It does not execute URL-opening or dynamic JavaScript/bang-tool commands; those are excluded from discovery and rejected when invoked. Discovery never expands instructions or starts tools. ACP commands use normal session turn admission rather than the full TUI's immediate-command behavior. See [ACP slash commands](../../features/acp/index.md#slash-commands) for built-ins and limitations.
+@z
+
+@x
 ## Prompt Commands
 @y
 ## Prompt Commands

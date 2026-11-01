@@ -4,6 +4,7 @@
 
 bases = \
 	_index.md           \
+	api.md              \
 	configure.md        \
 	local.md            \
 	record-reference.md \

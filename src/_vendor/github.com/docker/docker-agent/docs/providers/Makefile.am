@@ -2,12 +2,12 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS = anthropic baseten bedrock cerebras chatgpt                \
-	cloudflare-ai-gateway cloudflare-workers-ai custom deepseek \
-	dmr fireworks github-copilot google groq huggingface local  \
-	minimax mistral moonshot nebius nvidia openai opencode-go   \
-	opencode-zen openrouter overview ovhcloud together vercel   \
-	xai
+SUBDIRS = anthropic api-route atlascloud baseten bedrock cerebras      \
+	chatgpt cloudflare-ai-gateway cloudflare-workers-ai custom     \
+	daoxe deepseek dmr fireworks github-copilot google groq        \
+	huggingface local minimax mistral moonshot nativ nebius nvidia \
+	openai opencode-go opencode-zen openrouter overview ovhcloud   \
+	together vercel xai
 
 bases = \
 	_index.md

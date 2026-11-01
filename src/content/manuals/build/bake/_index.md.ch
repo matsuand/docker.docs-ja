@@ -3,11 +3,15 @@
 
 @x
 title: Bake
-weight: 50
-keywords: build, buildx, bake, buildkit, hcl, json, compose
+description: Define and run concurrent builds, checks, and artifact exports with Docker Buildx Bake.
 @y
 title: Bake
-weight: 50
+description: Define and run concurrent builds, checks, and artifact exports with Docker Buildx Bake.
+@z
+
+@x
+keywords: build, buildx, bake, buildkit, hcl, json, compose
+@y
 keywords: build, buildx, bake, buildkit, hcl, json, compose
 @z
 
@@ -129,4 +133,14 @@ targets concurrently.
 To learn how to get started with Bake, head over to the [Bake introduction](./introduction.md).
 @y
 To learn how to get started with Bake, head over to the [Bake introduction](./introduction.md).
+@z
+
+@x
+For practical workflows, see [Run tests and lint checks](targets.md#run-tests-and-lint-checks),
+[Export build artifacts](targets.md#export-build-artifacts), and
+[Extend Compose builds with HCL](compose-file.md#extend-compose-builds-with-hcl).
+@y
+For practical workflows, see [Run tests and lint checks](targets.md#run-tests-and-lint-checks),
+[Export build artifacts](targets.md#export-build-artifacts), and
+[Extend Compose builds with HCL](compose-file.md#extend-compose-builds-with-hcl).
 @z

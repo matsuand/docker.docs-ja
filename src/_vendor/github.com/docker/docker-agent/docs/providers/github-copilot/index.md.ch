@@ -51,10 +51,10 @@ subscription can reuse their entitlement from Docker Agent.
 
 @x
 - An active **GitHub Copilot** subscription (Individual, Business, or Enterprise).
-- A **personal access token** with the `copilot` scope, exported as `GITHUB_TOKEN`.
+- A **personal access token** with the `copilot` scope, exported as `GITHUB_TOKEN` or `GH_TOKEN`. If both are set, `GITHUB_TOKEN` takes precedence.
 @y
 - An active **GitHub Copilot** subscription (Individual, Business, or Enterprise).
-- A **personal access token** with the `copilot` scope, exported as `GITHUB_TOKEN`.
+- A **personal access token** with the `copilot` scope, exported as `GITHUB_TOKEN` or `GH_TOKEN`. If both are set, `GITHUB_TOKEN` takes precedence.
 @z
 
 @x
@@ -119,14 +119,14 @@ for details, including behavior with `--env-from-file`.
 ```yaml
 agents:
   root:
-    model: github-copilot/gpt-4o
+    model: github-copilot/gpt-5.6-sol
     instruction: You are a helpful assistant.
 ```
 @y
 ```yaml
 agents:
   root:
-    model: github-copilot/gpt-4o
+    model: github-copilot/gpt-5.6-sol
     instruction: You are a helpful assistant.
 ```
 @z
@@ -142,7 +142,7 @@ agents:
 models:
   copilot:
     provider: github-copilot
-    model: gpt-4o
+    model: gpt-5.6-sol
     temperature: 0.7
     max_tokens: 4000
 @y
@@ -150,7 +150,7 @@ models:
 models:
   copilot:
     provider: github-copilot
-    model: gpt-4o
+    model: gpt-5.6-sol
     temperature: 0.7
     max_tokens: 4000
 @z
@@ -182,21 +182,21 @@ commonly available ones today are:
 @z
 
 @x
-| Model                    | Best For                            |
-| ------------------------ | ----------------------------------- |
-| `gpt-4o`                 | Multimodal, balanced performance    |
-| `gpt-4o-mini`            | Fast and cheap                      |
-| `claude-sonnet-4`        | Strong coding and analysis          |
-| `gemini-2.5-pro`         | Google's flagship, large context    |
-| `o3-mini`                | Reasoning-focused                   |
+| Model               | Best For                              |
+| -------------------- | -------------------------------------- |
+| `gpt-5.6-sol`       | Multimodal, balanced performance    |
+| `gpt-5.6-terra`     | Fast and cheap                      |
+| `claude-sonnet-5`   | Strong coding and analysis          |
+| `gemini-3.5-flash`  | Google's model, large context       |
+| `grok-4.5`          | xAI's reasoning-focused model       |
 @y
-| Model                    | Best For                            |
-| ------------------------ | ----------------------------------- |
-| `gpt-4o`                 | Multimodal, balanced performance    |
-| `gpt-4o-mini`            | Fast and cheap                      |
-| `claude-sonnet-4`        | Strong coding and analysis          |
-| `gemini-2.5-pro`         | Google's flagship, large context    |
-| `o3-mini`                | Reasoning-focused                   |
+| Model               | Best For                              |
+| -------------------- | -------------------------------------- |
+| `gpt-5.6-sol`       | Multimodal, balanced performance    |
+| `gpt-5.6-terra`     | Fast and cheap                      |
+| `claude-sonnet-5`   | Strong coding and analysis          |
+| `gemini-3.5-flash`  | Google's model, large context       |
+| `grok-4.5`          | xAI's reasoning-focused model       |
 @z
 
 @x
@@ -256,7 +256,7 @@ organization allows-lists a specific value — you can override it via
 models:
   copilot:
     provider: github-copilot
-    model: gpt-4o
+    model: gpt-5.6-sol
     provider_opts:
       http_headers:
         Copilot-Integration-Id: my-custom-integration
@@ -266,7 +266,7 @@ models:
 models:
   copilot:
     provider: github-copilot
-    model: gpt-4o
+    model: gpt-5.6-sol
     provider_opts:
       http_headers:
         Copilot-Integration-Id: my-custom-integration
@@ -312,7 +312,7 @@ If you ever need to force one or the other, set `api_type` explicitly:
 models:
   copilot:
     provider: github-copilot
-    model: gpt-5
+    model: gpt-5.6-sol
     provider_opts:
       api_type: openai_responses # or openai_chatcompletions
 ```
@@ -321,7 +321,7 @@ models:
 models:
   copilot:
     provider: github-copilot
-    model: gpt-5
+    model: gpt-5.6-sol
     provider_opts:
       api_type: openai_responses # or openai_chatcompletions
 ```
@@ -348,7 +348,7 @@ is added to every outgoing request:
 models:
   my_model:
     provider: openai
-    model: gpt-4o
+    model: gpt-5.6-sol
     provider_opts:
       http_headers:
         X-Request-Source: docker-agent
@@ -359,7 +359,7 @@ models:
 models:
   my_model:
     provider: openai
-    model: gpt-4o
+    model: gpt-5.6-sol
     provider_opts:
       http_headers:
         X-Request-Source: docker-agent
@@ -380,14 +380,14 @@ GitHub Copilot is implemented as a built-in alias in Docker Agent:
 @z
 
 @x
-- **API type:** OpenAI-compatible (Chat Completions)
+- **API type:** OpenAI-compatible; automatically selects Chat Completions or Responses by model
 - **Base URL:** `https://api.githubcopilot.com`
-- **Token variable:** `GITHUB_TOKEN`
+- **Token variables:** `GITHUB_TOKEN`, falling back to `GH_TOKEN`
 - **Default headers:** `Copilot-Integration-Id: copilot-developer-cli`
 @y
-- **API type:** OpenAI-compatible (Chat Completions)
+- **API type:** OpenAI-compatible; automatically selects Chat Completions or Responses by model
 - **Base URL:** `https://api.githubcopilot.com`
-- **Token variable:** `GITHUB_TOKEN`
+- **Token variables:** `GITHUB_TOKEN`, falling back to `GH_TOKEN`
 - **Default headers:** `Copilot-Integration-Id: copilot-developer-cli`
 @z
 

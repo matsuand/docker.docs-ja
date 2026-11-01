@@ -395,18 +395,30 @@ Structured output support varies by provider:
 | Provider      | Support    | Notes                                   |
 | ------------- | ---------- | --------------------------------------- |
 | OpenAI        | ✓ Full     | Native JSON mode with schema validation |
-| Anthropic     | ✓ Full     | Tool-based structured output            |
+| Anthropic     | ✓ Native / tool | Beta Messages JSON schema on supported endpoints/models; tool mode is separate |
 | Google Gemini | ✓ Full     | Native JSON mode                        |
-| AWS Bedrock   | ✓ Partial  | Depends on underlying model             |
+| AWS Bedrock   | ✓ Tool mode | No native JSON-schema wiring in the current Converse client |
 | DMR           | ⚠️ Limited | Depends on model capabilities           |
 @y
 | Provider      | Support    | Notes                                   |
 | ------------- | ---------- | --------------------------------------- |
 | OpenAI        | ✓ Full     | Native JSON mode with schema validation |
-| Anthropic     | ✓ Full     | Tool-based structured output            |
+| Anthropic     | ✓ Native / tool | Beta Messages JSON schema on supported endpoints/models; tool mode is separate |
 | Google Gemini | ✓ Full     | Native JSON mode                        |
-| AWS Bedrock   | ✓ Partial  | Depends on underlying model             |
+| AWS Bedrock   | ✓ Tool mode | No native JSON-schema wiring in the current Converse client |
 | DMR           | ⚠️ Limited | Depends on model capabilities           |
+@z
+
+@x
+For Claude, enforcement depends on the path: native Beta Messages, an
+OpenAI-compatible host that may ignore `response_format`, or client-validated
+tool mode. Google organization policy and model-specific restrictions still apply.
+See [Claude access paths](../../providers/anthropic/index.md#feature-and-access-limits).
+@y
+For Claude, enforcement depends on the path: native Beta Messages, an
+OpenAI-compatible host that may ignore `response_format`, or client-validated
+tool mode. Google organization policy and model-specific restrictions still apply.
+See [Claude access paths](../../providers/anthropic/index.md#feature-and-access-limits).
 @z
 
 @x

@@ -480,6 +480,12 @@ LSP toolsets are managed by the same supervisor as MCP toolsets, so a crashed `g
 @z
 
 @x
+**Startup failure behaviour:** missing-binary and bad-config failures fail fast — each turn retries immediately with no artificial delay. A language server that crash-loops (3 crashes within 1 minute, by default) is different: the supervisor stops auto-restarting and reports the loop instead. The next attempt to use the toolset (a turn's start, a tool call, or `/toolset-restart`) surfaces that report rather than relaunching the server, and the backoff gate then paces subsequent attempts (15s, doubling up to 5 minutes) the same way it paces a rate-limited MCP server — so a server that dies right after every restart no longer relaunches at full speed. This applies regardless of `profile`: even a `strict` toolset is retried on the next turn once its window elapses, rather than staying down until an explicit `/toolset-restart`.
+@y
+**Startup failure behaviour:** missing-binary and bad-config failures fail fast — each turn retries immediately with no artificial delay. A language server that crash-loops (3 crashes within 1 minute, by default) is different: the supervisor stops auto-restarting and reports the loop instead. The next attempt to use the toolset (a turn's start, a tool call, or `/toolset-restart`) surfaces that report rather than relaunching the server, and the backoff gate then paces subsequent attempts (15s, doubling up to 5 minutes) the same way it paces a rate-limited MCP server — so a server that dies right after every restart no longer relaunches at full speed. This applies regardless of `profile`: even a `strict` toolset is retried on the next turn once its window elapses, rather than staying down until an explicit `/toolset-restart`.
+@z
+
+@x
 ```yaml
 toolsets:
   - type: lsp

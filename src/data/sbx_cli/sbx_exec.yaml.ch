@@ -28,6 +28,16 @@ description: |-
 @z
 
 @x
+    Exit status is that of the command. sbx exits 125 if it could not run the command,
+    for example because the sandbox does not exist. A missing command exits 127,
+    unless a cloud backend reports it as an error rather than a status, which exits 125.
+@y
+    Exit status is that of the command. sbx exits 125 if it could not run the command,
+    for example because the sandbox does not exist. A missing command exits 127,
+    unless a cloud backend reports it as an error rather than a status, which exits 125.
+@z
+
+@x
 usage: sbx exec [flags] SANDBOX COMMAND [ARG...]
 @y
 usage: sbx exec [flags] SANDBOX COMMAND [ARG...]

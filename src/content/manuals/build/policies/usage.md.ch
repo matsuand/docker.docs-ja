@@ -528,11 +528,33 @@ $ docker buildx bake production   # Uses strict policies
 @z
 
 @x
-Currently, bake doesn't support policy options (reset, strict, disabled) in the
-HCL file. Use command-line flags instead:
+Use objects in the `policy` list to configure policy loading and evaluation
+for a target. Each object supports `filename`, `reset`, `disabled`, `strict`,
+and `log-level`, with the same meanings as the
+[`docker buildx build --policy` options](#manual-policy-configuration).
 @y
-Currently, bake doesn't support policy options (reset, strict, disabled) in the
-HCL file. Use command-line flags instead:
+Use objects in the `policy` list to configure policy loading and evaluation
+for a target. Each object supports `filename`, `reset`, `disabled`, `strict`,
+and `log-level`, with the same meanings as the
+[`docker buildx build --policy` options](#manual-policy-configuration).
+@z
+
+@x
+For example, load only the specified policy and require policy support from
+the builder:
+@y
+For example, load only the specified policy and require policy support from
+the builder:
+@z
+
+% snip code...
+
+@x
+Use `disabled = true` to disable policy evaluation for a target. For a
+per-invocation override across the selected targets, use the `--policy` flag:
+@y
+Use `disabled = true` to disable policy evaluation for a target. For a
+per-invocation override across the selected targets, use the `--policy` flag:
 @z
 
 % snip command...
@@ -829,11 +851,11 @@ fetch specific metadata (see [above](#testing-policies-with-policy-eval)).
 @z
 
 @x
-The `--filename` flag specifies which policy file to load by providing the base
+The `--file` flag (`-f`) specifies which policy file to load by providing the base
 Dockerfile name (without the `.rego` extension). This is useful for testing
 sources against policies associated with different Dockerfiles.
 @y
-The `--filename` flag specifies which policy file to load by providing the base
+The `--file` flag (`-f`) specifies which policy file to load by providing the base
 Dockerfile name (without the `.rego` extension). This is useful for testing
 sources against policies associated with different Dockerfiles.
 @z
@@ -844,15 +866,7 @@ For example, to test a source against the policy for `app.Dockerfile`:
 For example, to test a source against the policy for `app.Dockerfile`:
 @z
 
-@x
-```console
-$ docker buildx policy eval --filename app.Dockerfile .
-```
-@y
-```console
-$ docker buildx policy eval --filename app.Dockerfile .
-```
-@z
+% snip command...
 
 @x
 This loads `app.Dockerfile.rego` and tests whether it allows the source `.`
@@ -868,17 +882,35 @@ Test different sources against your policy:
 Test different sources against your policy:
 @z
 
+% snip command...
+
 @x
-```console
-$ docker buildx policy eval --filename app.Dockerfile https://github.com/org/repo.git
-$ docker buildx policy eval --filename app.Dockerfile docker-image://alpine:3.19
-```
+To read the policy from standard input instead, use `--file -`. Buildx reads
+the policy directly, without appending `.rego` to the filename:
 @y
-```console
-$ docker buildx policy eval --filename app.Dockerfile https://github.com/org/repo.git
-$ docker buildx policy eval --filename app.Dockerfile docker-image://alpine:3.19
-```
+To read the policy from standard input instead, use `--file -`. Buildx reads
+the policy directly, without appending `.rego` to the filename:
 @z
+
+% snip command...
+
+@x
+#### Evaluate a specific platform
+@y
+#### Evaluate a specific platform
+@z
+
+@x
+Use `--platform` to choose the platform whose image metadata the policy
+evaluates. Without it, Buildx uses the first platform of the builder's first
+worker.
+@y
+Use `--platform` to choose the platform whose image metadata the policy
+evaluates. Without it, Buildx uses the first platform of the builder's first
+worker.
+@z
+
+% snip command...
 
 @x
 ### Reset automatic loading

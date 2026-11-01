@@ -74,6 +74,28 @@ network preset.
 @z
 
 @x
+On **Policies**, use the **Always applied** switch in the user-policy table
+to change this account setting, including for read-only presets. The setting
+is saved and controls which policies are required for future sandbox launches.
+Turning it off makes the policy optional in the launcher. Review your saved
+selections before launching.
+@y
+On **Policies**, use the **Always applied** switch in the user-policy table
+to change this account setting, including for read-only presets. The setting
+is saved and controls which policies are required for future sandbox launches.
+Turning it off makes the policy optional in the launcher. Review your saved
+selections before launching.
+@z
+
+@x
+To use a preset as an editable starting point, select **Duplicate** on its
+row, edit the copied name and rules, and save the custom policy.
+@y
+To use a preset as an editable starting point, select **Duplicate** on its
+row, edit the copied name and rules, and save the custom policy.
+@z
+
+@x
 ## How policies combine
 @y
 ## How policies combine
@@ -179,14 +201,22 @@ as source control services, package registries, and model providers.
 
 @x
 1. Open **Policies** and select **New policy**.
-2. Give the policy a name that describes what it's for.
-3. Add allow and deny rules for the required destinations.
-4. Review the rules and save the policy.
+2. Enter a **Name** that describes what the policy is for.
+3. For each rule, enter a **Rule name**, choose **allow** or **deny**, and
+   select **TCP**, **UDP**, or both. TCP is selected by default. To create a
+   UDP-only rule, select **UDP** and deselect **TCP**.
+4. Enter the destination patterns under **Targets**. Select **Add rule** to
+   configure another rule.
+5. Review the rules and save the policy.
 @y
 1. Open **Policies** and select **New policy**.
-2. Give the policy a name that describes what it's for.
-3. Add allow and deny rules for the required destinations.
-4. Review the rules and save the policy.
+2. Enter a **Name** that describes what the policy is for.
+3. For each rule, enter a **Rule name**, choose **allow** or **deny**, and
+   select **TCP**, **UDP**, or both. TCP is selected by default. To create a
+   UDP-only rule, select **UDP** and deselect **TCP**.
+4. Enter the destination patterns under **Targets**. Select **Add rule** to
+   configure another rule.
+5. Review the rules and save the policy.
 @z
 
 @x

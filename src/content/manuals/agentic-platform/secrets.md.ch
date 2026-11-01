@@ -160,25 +160,27 @@ separate selection step. If a required credential is missing when you select
 @z
 
 @x
-Use a custom secret for a service outside the built-in provider list.
+Use a custom secret for a service outside the built-in provider list. This
+option is available only for accounts with custom secrets enabled.
 @y
-Use a custom secret for a service outside the built-in provider list.
+Use a custom secret for a service outside the built-in provider list. This
+option is available only for accounts with custom secrets enabled.
 @z
 
 @x
-1. Open **Secrets** and select **New secret** in the **Custom** section.
+1. Open **Secrets** and, under **Add a secret**, select **Custom secret**.
 2. Enter the hosts that may receive the credential.
 3. Set the request header and value format, such as `Authorization` and
    `Bearer %s`, then enter the secret value.
 4. Optionally, set an environment variable name for the credential.
-5. Name the secret and save it.
+5. Name the secret and select **Create secret**.
 @y
-1. Open **Secrets** and select **New secret** in the **Custom** section.
+1. Open **Secrets** and, under **Add a secret**, select **Custom secret**.
 2. Enter the hosts that may receive the credential.
 3. Set the request header and value format, such as `Authorization` and
    `Bearer %s`, then enter the secret value.
 4. Optionally, set an environment variable name for the credential.
-5. Name the secret and save it.
+5. Name the secret and select **Create secret**.
 @z
 
 @x
@@ -196,11 +198,11 @@ sandbox.
 @x
 The launcher includes all your custom secrets when you create a sandbox. To
 edit a custom secret, enter its value again; saved values can't be retrieved.
-You can also remove custom secrets from the **Custom** section.
+You can also remove custom secrets from the **Saved secrets** table.
 @y
 The launcher includes all your custom secrets when you create a sandbox. To
 edit a custom secret, enter its value again; saved values can't be retrieved.
-You can also remove custom secrets from the **Custom** section.
+You can also remove custom secrets from the **Saved secrets** table.
 @z
 
 @x
@@ -210,13 +212,13 @@ You can also remove custom secrets from the **Custom** section.
 @z
 
 @x
-The **Secrets** page shows each secret ID and the sandboxes that use it. Select
-the copy icon to copy the secret ID, or select the edit icon to change the
-stored value.
+The **Saved secrets** table on the **Secrets** page lists each secret's name,
+type, compatible kits under **Works with**, and last update. Select the copy
+icon to copy the secret ID, or select the edit icon to change the stored value.
 @y
-The **Secrets** page shows each secret ID and the sandboxes that use it. Select
-the copy icon to copy the secret ID, or select the edit icon to change the
-stored value.
+The **Saved secrets** table on the **Secrets** page lists each secret's name,
+type, compatible kits under **Works with**, and last update. Select the copy
+icon to copy the secret ID, or select the edit icon to change the stored value.
 @z
 
 @x

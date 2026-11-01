@@ -31,14 +31,14 @@ use separate network policy configuration. See
 Network access policies control outbound connections from sandboxes. Each
 policy contains one or more rules that allow the domains, IP ranges, and ports a
 workflow needs, or block destinations that should stay unavailable. Rules can
-also match the HTTP method and path of a request, so a policy can allow part of
-an API without allowing all of it.
+also match the HTTP method, path, and query parameters of a request, so a policy
+can allow part of an API without allowing all of it.
 @y
 Network access policies control outbound connections from sandboxes. Each
 policy contains one or more rules that allow the domains, IP ranges, and ports a
 workflow needs, or block destinations that should stay unavailable. Rules can
-also match the HTTP method and path of a request, so a policy can allow part of
-an API without allowing all of it.
+also match the HTTP method, path, and query parameters of a request, so a policy
+can allow part of an API without allowing all of it.
 @z
 
 @x
@@ -157,13 +157,13 @@ Configure them in either place:
 - Organization policies, in the network rule composer in Docker Home. Set the
   rule **Type** to **HTTP**, then select the methods and path patterns. See
   [Add a network rule](organization.md#add-a-network-rule).
-- Local policies, with `--method` and `--path` on `sbx policy`. See
+- Local policies, with `--method`, `--path`, and `--query` on `sbx policy`. See
   [HTTP method and path rules](local.md#http-method-and-path-rules).
 @y
 - Organization policies, in the network rule composer in Docker Home. Set the
   rule **Type** to **HTTP**, then select the methods and path patterns. See
   [Add a network rule](organization.md#add-a-network-rule).
-- Local policies, with `--method` and `--path` on `sbx policy`. See
+- Local policies, with `--method`, `--path`, and `--query` on `sbx policy`. See
   [HTTP method and path rules](local.md#http-method-and-path-rules).
 @z
 

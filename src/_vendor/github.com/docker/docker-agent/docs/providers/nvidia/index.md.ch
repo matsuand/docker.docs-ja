@@ -91,7 +91,7 @@ The simplest way to use NVIDIA NIM:
 ```yaml
 agents:
   root:
-    model: nvidia/nvidia/nemotron-3-super-120b-a12b
+    model: nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b
     description: Assistant using NVIDIA NIM
     instruction: You are a helpful assistant.
 ```
@@ -99,7 +99,7 @@ agents:
 ```yaml
 agents:
   root:
-    model: nvidia/nvidia/nemotron-3-super-120b-a12b
+    model: nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b
     description: Assistant using NVIDIA NIM
     instruction: You are a helpful assistant.
 ```
@@ -122,7 +122,7 @@ For more control over parameters:
 models:
   nemotron:
     provider: nvidia
-    model: nvidia/nemotron-3-super-120b-a12b
+    model: nvidia/nemotron-3.5-super-vl-120b-a12b
     temperature: 0.7
     max_tokens: 8192
 @y
@@ -130,7 +130,7 @@ models:
 models:
   nemotron:
     provider: nvidia
-    model: nvidia/nemotron-3-super-120b-a12b
+    model: nvidia/nemotron-3.5-super-vl-120b-a12b
     temperature: 0.7
     max_tokens: 8192
 @z
@@ -170,14 +170,14 @@ for the current model list.
 @x
 | Model                                       | Description                       |
 | -------------------------------------------- | ---------------------------------- |
-| `nvidia/nemotron-3-super-120b-a12b`         | Nemotron 3 Super, reasoning + tool calling |
+| `nvidia/nemotron-3.5-super-vl-120b-a12b`    | Nemotron 3.5 Super VL, reasoning + tool calling |
 | `nvidia/nemotron-3-nano-30b-a3b`            | Nemotron 3 Nano, smaller/faster    |
 | `meta/llama-3.3-70b-instruct`               | Llama 3.3 70B instruction-tuned    |
 | `qwen/qwen3-coder-480b-a35b-instruct`       | Qwen3 Coder, code-focused          |
 @y
 | Model                                       | Description                       |
 | -------------------------------------------- | ---------------------------------- |
-| `nvidia/nemotron-3-super-120b-a12b`         | Nemotron 3 Super, reasoning + tool calling |
+| `nvidia/nemotron-3.5-super-vl-120b-a12b`    | Nemotron 3.5 Super VL, reasoning + tool calling |
 | `nvidia/nemotron-3-nano-30b-a3b`            | Nemotron 3 Nano, smaller/faster    |
 | `meta/llama-3.3-70b-instruct`               | Llama 3.3 70B instruction-tuned    |
 | `qwen/qwen3-coder-480b-a35b-instruct`       | Qwen3 Coder, code-focused          |
@@ -259,7 +259,7 @@ request.
 ```yaml
 agents:
   coder:
-    model: nvidia/nvidia/nemotron-3-super-120b-a12b
+    model: nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b
     description: Code assistant using Nemotron
     instruction: |
       You are an expert programmer using NVIDIA Nemotron.
@@ -274,7 +274,7 @@ agents:
 ```yaml
 agents:
   coder:
-    model: nvidia/nvidia/nemotron-3-super-120b-a12b
+    model: nvidia/nvidia/nemotron-3.5-super-vl-120b-a12b
     description: Code assistant using Nemotron
     instruction: |
       You are an expert programmer using NVIDIA Nemotron.

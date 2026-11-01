@@ -56,8 +56,6 @@ agents:
     model: openai/gpt-4o
     instruction: You are a helpful assistant.
     skills: true
-    toolsets:
-      - type: filesystem # required for reading skill files
 ```
 @y
 ```yaml
@@ -66,8 +64,6 @@ agents:
     model: openai/gpt-4o
     instruction: You are a helpful assistant.
     skills: true
-    toolsets:
-      - type: filesystem # required for reading skill files
 ```
 @z
 
@@ -166,6 +162,184 @@ A name that doesn't match any discovered skill is logged as a warning at startup
 @z
 
 @x
+## GitHub Skill Sources
+@y
+## GitHub Skill Sources
+@z
+
+@x
+Load skills directly from a public GitHub repository, without installing Git or
+an external skills CLI:
+@y
+Load skills directly from a public GitHub repository, without installing Git or
+an external skills CLI:
+@z
+
+@x
+```yaml
+agents:
+  root:
+    model: openai/gpt-4o-mini
+    skills:
+      - local
+      - https://github.com/docker/skills
+    toolsets:
+      - type: filesystem
+      - type: shell
+```
+@y
+```yaml
+agents:
+  root:
+    model: openai/gpt-4o-mini
+    skills:
+      - local
+      - https://github.com/docker/skills
+    toolsets:
+      - type: filesystem
+      - type: shell
+```
+@z
+
+@x
+Repository URLs use the default branch. To select a branch, tag, commit SHA, or
+subdirectory, use a GitHub tree URL or query parameters:
+@y
+Repository URLs use the default branch. To select a branch, tag, commit SHA, or
+subdirectory, use a GitHub tree URL or query parameters:
+@z
+
+@x
+```yaml
+skills:
+  - https://github.com/docker/skills/tree/main/skills
+  # Alternative examples (use one source, not all of them):
+  # - https://github.com/docker/skills?ref=v0.3.0
+  # - https://github.com/docker/skills?ref=<full-40-character-commit-sha>
+  # - https://github.com/owner/repo?ref=feature%2Fskills&path=skills
+```
+@y
+```yaml
+skills:
+  - https://github.com/docker/skills/tree/main/skills
+  # Alternative examples (use one source, not all of them):
+  # - https://github.com/docker/skills?ref=v0.3.0
+  # - https://github.com/docker/skills?ref=<full-40-character-commit-sha>
+  # - https://github.com/owner/repo?ref=feature%2Fskills&path=skills
+```
+@z
+
+@x
+A tree URL treats the first segment after `/tree/` as the revision and the rest
+as a directory. Use `?ref=...&path=...` for branch or tag names containing `/`, or
+URL-escape the slash as `%2F`. Short commit hashes are resolved through the API;
+use a full 40-character SHA for an immutable pin.
+@y
+A tree URL treats the first segment after `/tree/` as the revision and the rest
+as a directory. Use `?ref=...&path=...` for branch or tag names containing `/`, or
+URL-escape the slash as `%2F`. Short commit hashes are resolved through the API;
+use a full 40-character SHA for an immutable pin.
+@z
+
+@x
+Without a selected directory, discovery checks `skills/**/SKILL.md`, then
+`.agents/skills/**/SKILL.md`, then a root `SKILL.md`, using the first layout
+containing skills. An explicit directory is searched recursively without
+fallback. Complete skill directories, including supporting files, are cached.
+@y
+Without a selected directory, discovery checks `skills/**/SKILL.md`, then
+`.agents/skills/**/SKILL.md`, then a root `SKILL.md`, using the first layout
+containing skills. An explicit directory is searched recursively without
+fallback. Complete skill directories, including supporting files, are cached.
+@z
+
+@x
+### Authentication and caching
+@y
+### Authentication and caching
+@z
+
+@x
+Only **public repositories on github.com** are supported. The optional
+`GITHUB_TOKEN` comes from the configured environment provider, including OS
+environment variables, env files, and secrets. It raises GitHub API rate limits;
+it is not required or prompted for, and does not enable private repositories.
+The token is sent only to `api.github.com`, never to the archive host.
+@y
+Only **public repositories on github.com** are supported. The optional
+`GITHUB_TOKEN` comes from the configured environment provider, including OS
+environment variables, env files, and secrets. It raises GitHub API rate limits;
+it is not required or prompted for, and does not enable private repositories.
+The token is sent only to `api.github.com`, never to the archive host.
+@z
+
+@x
+Default branches, named branches, and tags are resolved to a commit SHA and
+cached for **five minutes**. Downloaded snapshots are immutable and cached by
+repository, SHA, and directory. A warm load makes no network requests; after
+five minutes mutable revisions are checked again. A full-SHA source needs no
+further network requests once cached. All files come from the same commit.
+@y
+Default branches, named branches, and tags are resolved to a commit SHA and
+cached for **five minutes**. Downloaded snapshots are immutable and cached by
+repository, SHA, and directory. A warm load makes no network requests; after
+five minutes mutable revisions are checked again. A full-SHA source needs no
+further network requests once cached. All files come from the same commit.
+@z
+
+@x
+Archives are fetched from `codeload.github.com`. Downloads are bounded to 32 MiB
+compressed, 128 MiB expanded, and 4,096 selected files, with a 1 MiB limit per
+skill file and 32 MiB total selected content. Failed downloads never publish a
+partial snapshot; source failures appear as load-time warnings. Expired mutable
+revisions are not silently reused on network errors.
+@y
+Archives are fetched from `codeload.github.com`. Downloads are bounded to 32 MiB
+compressed, 128 MiB expanded, and 4,096 selected files, with a 1 MiB limit per
+skill file and 32 MiB total selected content. Failed downloads never publish a
+partial snapshot; source failures appear as load-time warnings. Expired mutable
+revisions are not silently reused on network errors.
+@z
+
+@x
+### Trust and sandbox behavior
+@y
+### Trust and sandbox behavior
+@z
+
+@x
+Cached GitHub skills remain **remote**: embedded `` !`command` `` expressions are
+not expanded. Remote frontmatter `model` and `toolsets` overrides are ignored.
+Fork skills inherit the parent's model and tools, with `allowed-tools` able to
+restrict inherited tools. Symlinks and other non-regular entries inside selected
+skill directories are rejected; Git submodules are not fetched.
+@y
+Cached GitHub skills remain **remote**: embedded `` !`command` `` expressions are
+not expanded. Remote frontmatter `model` and `toolsets` overrides are ignored.
+Fork skills inherit the parent's model and tools, with `allowed-tools` able to
+restrict inherited tools. Symlinks and other non-regular entries inside selected
+skill directories are rejected; Git submodules are not fetched.
+@z
+
+@x
+In sandbox mode, GitHub sources are fetched inside the VM rather than staged as
+local skills. Permit network access to `api.github.com` and `codeload.github.com`
+and make any optional token available through the sandbox's environment provider.
+@y
+In sandbox mode, GitHub sources are fetched inside the VM rather than staged as
+local skills. Permit network access to `api.github.com` and `codeload.github.com`
+and make any optional token available through the sandbox's environment provider.
+@z
+
+@x
+See [`examples/skills_github.yaml`](https://github.com/docker/docker-agent/blob/main/examples/skills_github.yaml)
+for a complete configuration.
+@y
+See [`examples/skills_github.yaml`](https://github.com/docker/docker-agent/blob/main/examples/skills_github.yaml)
+for a complete configuration.
+@z
+
+@x
 ## Inline Skills
 @y
 ## Inline Skills
@@ -238,9 +412,9 @@ agents:
 @z
 
 @x
-Inline skills carry their body in the config itself, so they need no `SKILL.md` file and require no filesystem source. They are **always exposed** — the name filter only applies to file- and URL-based skills. Because inline skills travel inside the agent YAML, they also work in `--sandbox` mode without any kit staging, and they can be shared with the agent via `share push`.
+Inline skills carry their body in the config itself, so they need no `SKILL.md` file and require no filesystem source. They are **always exposed** — the name filter only applies to file- and URL-based skills. An inline skill also **takes precedence** over a discovered skill of the same name: the config is explicit, whereas local skills are picked up from whatever happens to sit in the [search paths](#search-paths). The shadowed skill is dropped and a warning is logged at startup. Because inline skills travel inside the agent YAML, they also work in `--sandbox` mode without any kit staging, and they can be shared with the agent via `share push`.
 @y
-Inline skills carry their body in the config itself, so they need no `SKILL.md` file and require no filesystem source. They are **always exposed** — the name filter only applies to file- and URL-based skills. Because inline skills travel inside the agent YAML, they also work in `--sandbox` mode without any kit staging, and they can be shared with the agent via `share push`.
+Inline skills carry their body in the config itself, so they need no `SKILL.md` file and require no filesystem source. They are **always exposed** — the name filter only applies to file- and URL-based skills. An inline skill also **takes precedence** over a discovered skill of the same name: the config is explicit, whereas local skills are picked up from whatever happens to sit in the [search paths](#search-paths). The shadowed skill is dropped and a warning is logged at startup. Because inline skills travel inside the agent YAML, they also work in `--sandbox` mode without any kit staging, and they can be shared with the agent via `share push`.
 @z
 
 @x
@@ -252,7 +426,7 @@ Inline skills carry their body in the config itself, so they need no `SKILL.md` 
 @x
 | Field           | Required | Description                                                                |
 | --------------- | -------- | -------------------------------------------------------------------------- |
-| `name`          | Yes      | Skill identifier used by `read_skill` / `run_skill` and the `/<name>` command |
+| `name`          | Yes      | Skill identifier used by `read_skill` / `run_skill` and the `/<name>` command. Must not contain whitespace |
 | `description`   | Yes      | Short description shown to the agent for skill matching                    |
 | `instructions`  | Yes      | The skill body (what a `SKILL.md` would contain below its frontmatter)     |
 | `context`       | No       | Set to `fork` to run the skill as an isolated sub-agent                    |
@@ -262,7 +436,7 @@ Inline skills carry their body in the config itself, so they need no `SKILL.md` 
 @y
 | Field           | Required | Description                                                                |
 | --------------- | -------- | -------------------------------------------------------------------------- |
-| `name`          | Yes      | Skill identifier used by `read_skill` / `run_skill` and the `/<name>` command |
+| `name`          | Yes      | Skill identifier used by `read_skill` / `run_skill` and the `/<name>` command. Must not contain whitespace |
 | `description`   | Yes      | Short description shown to the agent for skill matching                    |
 | `instructions`  | Yes      | The skill body (what a `SKILL.md` would contain below its frontmatter)     |
 | `context`       | No       | Set to `fork` to run the skill as an isolated sub-agent                    |
@@ -275,12 +449,12 @@ Inline skills carry their body in the config itself, so they need no `SKILL.md` 
 > [!NOTE]
 > **Inline vs. file-based skills**
 >
-> Inline skills support the subset of the SKILL.md format that fits in YAML. They cannot bundle supporting files (no `read_skill_file`) or use `` !`command` `` expansion. For skills that need bundled resources or executable helpers, use a `SKILL.md` directory instead.
+> Inline skills support the subset of the SKILL.md format that fits in YAML. They cannot bundle supporting files (no `read_skill_file`), so for skills that need bundled resources use a `SKILL.md` directory instead. They do support [embedded commands](#embedded-commands).
 @y
 > [!NOTE]
 > **Inline vs. file-based skills**
 >
-> Inline skills support the subset of the SKILL.md format that fits in YAML. They cannot bundle supporting files (no `read_skill_file`) or use `` !`command` `` expansion. For skills that need bundled resources or executable helpers, use a `SKILL.md` directory instead.
+> Inline skills support the subset of the SKILL.md format that fits in YAML. They cannot bundle supporting files (no `read_skill_file`), so for skills that need bundled resources use a `SKILL.md` directory instead. They do support [embedded commands](#embedded-commands).
 @z
 
 @x
@@ -369,6 +543,100 @@ When asked to create a Dockerfile:
 | `license`        | No       | License identifier (e.g. `Apache-2.0`)                                      |
 | `compatibility`  | No       | Free-text compatibility notes                                               |
 | `metadata`       | No       | Arbitrary key-value pairs (e.g. `author`, `version`)                        |
+@z
+
+@x
+### Embedded Commands
+@y
+### Embedded Commands
+@z
+
+@x
+A local skill — whether loaded from a `SKILL.md` file or [defined inline](#inline-skills) in the agent config — can inject the output of a command into its body with the `` !`command` `` syntax:
+@y
+A local skill — whether loaded from a `SKILL.md` file or [defined inline](#inline-skills) in the agent config — can inject the output of a command into its body with the `` !`command` `` syntax:
+@z
+
+@x
+```markdown
+Current branch: !`git branch --show-current`
+```
+@y
+```markdown
+Current branch: !`git branch --show-current`
+```
+@z
+
+@x
+These commands run on your machine, so commands loaded by the agent through
+`read_skill` or `run_skill` are emitted as `shell` tool calls and go through the
+normal approval policy — classification, permission rules and safety mode —
+before they run. In practice that means a confirmation prompt unless the policy
+already allows the command (an `allow` rule, autonomous mode, or a read-only
+command under the balanced mode). Refusing a command leaves an error note in its
+place; the rest of the skill is still loaded.
+@y
+These commands run on your machine, so commands loaded by the agent through
+`read_skill` or `run_skill` are emitted as `shell` tool calls and go through the
+normal approval policy — classification, permission rules and safety mode —
+before they run. In practice that means a confirmation prompt unless the policy
+already allows the command (an `allow` rule, autonomous mode, or a read-only
+command under the balanced mode). Refusing a command leaves an error note in its
+place; the rest of the skill is still loaded.
+@z
+
+@x
+Expansion is skipped entirely for remote skills, whose body is fetched over the
+network from a third party. It is also skipped when a skill is invoked directly
+with `/<name>`: input resolution has no parent tool call to own an approval
+prompt, so the commands are reported as skipped instead of running unannounced.
+@y
+Expansion is skipped entirely for remote skills, whose body is fetched over the
+network from a third party. It is also skipped when a skill is invoked directly
+with `/<name>`: input resolution has no parent tool call to own an approval
+prompt, so the commands are reported as skipped instead of running unannounced.
+@z
+
+@x
+> [!WARNING]
+> An inline skill's commands come from the agent config itself, so an agent YAML
+> you did not write — for example one pulled from a registry with
+> `docker-agent run myorg/agent:tag` — can carry them. That config also chooses
+> the agent's instructions, toolsets and `permissions` rules, so treat a
+> third-party agent config as you would any other untrusted code and read it
+> before running it.
+@y
+> [!WARNING]
+> An inline skill's commands come from the agent config itself, so an agent YAML
+> you did not write — for example one pulled from a registry with
+> `docker-agent run myorg/agent:tag` — can carry them. That config also chooses
+> the agent's instructions, toolsets and `permissions` rules, so treat a
+> third-party agent config as you would any other untrusted code and read it
+> before running it.
+@z
+
+@x
+## Supporting Files
+@y
+## Supporting Files
+@z
+
+@x
+Skills can bundle references, scripts, and other resources in their directory.
+The `read_skill_file` tool reads these on demand using paths relative to that
+skill's directory. Absolute paths and paths containing `..` are rejected.
+Relative symlinks to files or directories inside the skill directory are allowed;
+symlinks that escape it, and all absolute symlinks (even to internal targets),
+are rejected. This boundary applies to supporting-file reads, not arbitrary
+filesystem tools or commands.
+@y
+Skills can bundle references, scripts, and other resources in their directory.
+The `read_skill_file` tool reads these on demand using paths relative to that
+skill's directory. Absolute paths and paths containing `..` are rejected.
+Relative symlinks to files or directories inside the skill directory are allowed;
+symlinks that escape it, and all absolute symlinks (even to internal targets),
+are rejected. This boundary applies to supporting-file reads, not arbitrary
+filesystem tools or commands.
 @z
 
 @x
@@ -824,11 +1092,13 @@ When multiple skills share the same name:
 2. Project skills load next, from git root toward current directory
 3. Skills closer to the current directory override those further away
 4. At the same directory level, `.agents/skills/` overrides `.github/skills/`
+5. An [inline skill](#inline-skills) overrides any discovered skill of the same name
 @y
 1. Global skills load first
 2. Project skills load next, from git root toward current directory
 3. Skills closer to the current directory override those further away
 4. At the same directory level, `.agents/skills/` overrides `.github/skills/`
+5. An [inline skill](#inline-skills) overrides any discovered skill of the same name
 @z
 
 @x
@@ -923,4 +1193,38 @@ The skill will automatically be available to any agent with skills enabled (`ski
 > Skills are enabled in the [Agent Config](../../configuration/agents/index.md) with the `skills` property (boolean or list). For tool-based capabilities, see [Tools](../../concepts/tools/index.md).
 >
 > Example configs: [`examples/skills_inline.yaml`](https://github.com/docker/docker-agent/blob/main/examples/skills_inline.yaml) (inline skill definition), [`examples/skills_fork_toolsets.yaml`](https://github.com/docker/docker-agent/blob/main/examples/skills_fork_toolsets.yaml) (scoping a fork skill's tools), [`examples/skills_filter.yaml`](https://github.com/docker/docker-agent/blob/main/examples/skills_filter.yaml) (filtering which skills load).
+@z
+
+@x
+### Screening skill content
+@y
+### Screening skill content
+@z
+
+@x
+Configure [`skill_content_guard`](../../configuration/hooks/index.md#skill-content-guard)
+to reject unsafe skill text before command expansion or delivery, including
+forked skills, slash commands, and supporting-file reads. Model judges use the
+built-in `guard_decision` schema; failures reject the load in every safety mode.
+This checks skill-loader reads, not arbitrary filesystem access or skill
+metadata, and does not replace tool permissions or sandboxing.
+@y
+Configure [`skill_content_guard`](../../configuration/hooks/index.md#skill-content-guard)
+to reject unsafe skill text before command expansion or delivery, including
+forked skills, slash commands, and supporting-file reads. Model judges use the
+built-in `guard_decision` schema; failures reject the load in every safety mode.
+This checks skill-loader reads, not arbitrary filesystem access or skill
+metadata, and does not replace tool permissions or sandboxing.
+@z
+
+@x
+Handoffs inside a forked skill stay within that fork: explicit `handoff` and
+configured `force_handoff` can select another agent without changing the parent
+conversation's active agent. Background sessions remain hard-pinned and reject
+explicit handoffs.
+@y
+Handoffs inside a forked skill stay within that fork: explicit `handoff` and
+configured `force_handoff` can select another agent without changing the parent
+conversation's active agent. Background sessions remain hard-pinned and reject
+explicit handoffs.
 @z

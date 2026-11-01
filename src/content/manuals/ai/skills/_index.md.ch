@@ -13,16 +13,18 @@ keywords: [docker skills, agent skills, ai coding agents, dockerfile, compose]
 
 @x
 Docker Skills are Docker's official, open-source guidance for compatible AI
-coding agents. They help agents with Docker tasks, such as improving a Dockerfile
-or setting up a Compose application. The collection evolves and doesn't cover
-every Docker product. Browse the [repository catalog](https://github.com/docker/skills#readme)
-for available skills and their descriptions.
+coding agents. They help agents with Docker tasks, such as improving a Dockerfile,
+setting up a Compose application, or answering questions using official Docker
+documentation. The collection evolves and doesn't cover every Docker product.
+Browse the [repository catalog](https://github.com/docker/skills#readme) for
+available skills and their descriptions.
 @y
 Docker Skills are Docker's official, open-source guidance for compatible AI
-coding agents. They help agents with Docker tasks, such as improving a Dockerfile
-or setting up a Compose application. The collection evolves and doesn't cover
-every Docker product. Browse the [repository catalog](https://github.com/docker/skills#readme)
-for available skills and their descriptions.
+coding agents. They help agents with Docker tasks, such as improving a Dockerfile,
+setting up a Compose application, or answering questions using official Docker
+documentation. The collection evolves and doesn't cover every Docker product.
+Browse the [repository catalog](https://github.com/docker/skills#readme) for
+available skills and their descriptions.
 @z
 
 @x

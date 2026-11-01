@@ -54,11 +54,15 @@ $ docker agent run
 @z
 
 @x
-# Provider priority: Anthropic → OpenAI → Google → Mistral → Amazon Bedrock → DMR
 ```
 @y
-# Provider priority: Anthropic → OpenAI → Google → Mistral → Amazon Bedrock → DMR
 ```
+@z
+
+@x
+Use `docker agent doctor` to see which provider `auto` selects from your available credentials and local models.
+@y
+Use `docker agent doctor` to see which provider `auto` selects from your available credentials and local models.
 @z
 
 @x
@@ -1076,6 +1080,60 @@ See the [Hooks documentation](../../configuration/hooks/index.md) for the full l
 @z
 
 @x
+### Inject the Current Session ID with Hooks
+@y
+### Inject the Current Session ID with Hooks
+@z
+
+@x
+Use the `add_context` [builtin hook](../../configuration/hooks/index.md#template-context-with-add_context) on `session_start` to make the current session ID available to the model. It renders a Go template against the hook input and adds the result to the model's context, without a shell, `jq`, or other external dependencies:
+@y
+Use the `add_context` [builtin hook](../../configuration/hooks/index.md#template-context-with-add_context) on `session_start` to make the current session ID available to the model. It renders a Go template against the hook input and adds the result to the model's context, without a shell, `jq`, or other external dependencies:
+@z
+
+@x
+```yaml
+agents:
+  root:
+    model: openai/gpt-4o
+    description: Session-aware assistant
+    instruction: You are a helpful assistant.
+    hooks:
+      session_start:
+        - type: builtin
+          command: add_context
+          args:
+            - "Current session ID: {{ .SessionID }}"
+```
+@y
+```yaml
+agents:
+  root:
+    model: openai/gpt-4o
+    description: Session-aware assistant
+    instruction: You are a helpful assistant.
+    hooks:
+      session_start:
+        - type: builtin
+          command: add_context
+          args:
+            - "Current session ID: {{ .SessionID }}"
+```
+@z
+
+@x
+Templates use Go field names such as `.SessionID`, `.AgentName`, and `.Cwd`, rather than the JSON names used by command hooks.
+@y
+Templates use Go field names such as `.SessionID`, `.AgentName`, and `.Cwd`, rather than the JSON names used by command hooks.
+@z
+
+@x
+The model receives context such as `Current session ID: 550e8400-e29b-41d4-a716-446655440000`; this is not a visible chat message. Use `turn_start` instead of `session_start` to refresh the context before every model call.
+@y
+The model receives context such as `Current session ID: 550e8400-e29b-41d4-a716-446655440000`; this is not a visible chat message. Use `turn_start` instead of `session_start` to refresh the context before every model call.
+@z
+
+@x
 ### GitHub PR Reviewer Example
 @y
 ### GitHub PR Reviewer Example
@@ -1115,7 +1173,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Install docker-agent
-          curl -fsSL https://get.docker-agent.dev | sh
+          curl -fL "https://github.com/docker/docker-agent/releases/latest/download/docker-agent-linux-amd64" -o docker-agent
+          chmod +x docker-agent
+          mkdir -p ~/.docker/cli-plugins
+          mv docker-agent ~/.docker/cli-plugins/
 @y
 jobs:
   review:
@@ -1128,7 +1189,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Install docker-agent
-          curl -fsSL https://get.docker-agent.dev | sh
+          curl -fL "https://github.com/docker/docker-agent/releases/latest/download/docker-agent-linux-amd64" -o docker-agent
+          chmod +x docker-agent
+          mkdir -p ~/.docker/cli-plugins
+          mv docker-agent ~/.docker/cli-plugins/
 @z
 
 @x

@@ -295,10 +295,11 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = a2a api background-agents background-jobs fetch filesystem   \
-	git handoff lsp mcp mcp-catalog memory model-picker open-url   \
-	openapi plan rag scheduler script session_context session_plan \
-	shell tasks think todo transfer-task user-prompt webhook
+SUBDIRS = a2a api background-agents background-jobs calculator datetime   \
+	environment fetch file filesystem git handoff lsp mcp mcp-catalog \
+	memory model-picker open-url openapi plan rag random scheduler    \
+	script session_context shell tasks think todo transfer-task       \
+	user-prompt webhook
 
 bases = \
 	_index.md

@@ -76,13 +76,15 @@ To connect a server that is not predefined:
 @z
 
 @x
-1. Open **MCP**.
-2. Choose the option to add a server and enter its URL.
-3. Connect the server and authorize access if prompted.
+1. Open **MCP** and find **Add a server**.
+2. Enter a streamable HTTP MCP endpoint in **Remote MCP URL**.
+3. Select **Add**. Public servers are ready immediately. For servers that
+   require an account, authorize access after adding the server.
 @y
-1. Open **MCP**.
-2. Choose the option to add a server and enter its URL.
-3. Connect the server and authorize access if prompted.
+1. Open **MCP** and find **Add a server**.
+2. Enter a streamable HTTP MCP endpoint in **Remote MCP URL**.
+3. Select **Add**. Public servers are ready immediately. For servers that
+   require an account, authorize access after adding the server.
 @z
 
 @x
@@ -95,12 +97,24 @@ To connect a server that is not predefined:
 On the **MCP** page, use **MCP Gateway endpoint URL** to connect your external
 MCP client to the gateway. Select **Add to your client**, choose your
 client, and follow the connection and authorization instructions. Supported
-options include VS Code and Codex CLI. The VS Code instructions include an
-install link and a manual configuration example.
+options are Docker Sandboxes (SBX), Claude Code, Codex CLI, Cursor, VS Code,
+and MCP Inspector. The first connection opens browser sign-in. There is no
+token to copy.
 @y
 On the **MCP** page, use **MCP Gateway endpoint URL** to connect your external
 MCP client to the gateway. Select **Add to your client**, choose your
 client, and follow the connection and authorization instructions. Supported
-options include VS Code and Codex CLI. The VS Code instructions include an
-install link and a manual configuration example.
+options are Docker Sandboxes (SBX), Claude Code, Codex CLI, Cursor, VS Code,
+and MCP Inspector. The first connection opens browser sign-in. There is no
+token to copy.
+@z
+
+@x
+Sign-in is confirmed only for the listed clients. Follow the instructions for
+your client, including any exact flag or setting shown. Other clients may
+fail sign-in with an error page that looks like a password problem.
+@y
+Sign-in is confirmed only for the listed clients. Follow the instructions for
+your client, including any exact flag or setting shown. Other clients may
+fail sign-in with an error page that looks like a password problem.
 @z

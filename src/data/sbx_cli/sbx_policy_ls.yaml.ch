@@ -107,10 +107,10 @@ usage: sbx policy ls [SANDBOX] [flags]
 
 @x type
       usage: |
-        Filter policies by type: "all", "network", "filesystem" (default "all")
+        Filter policies by type: "all", "network", "http", "filesystem" (default "all")
 @y
       usage: |
-        Filter policies by type: "all", "network", "filesystem" (default "all")
+        Filter policies by type: "all", "network", "http", "filesystem" (default "all")
 @z
 
 @x wide

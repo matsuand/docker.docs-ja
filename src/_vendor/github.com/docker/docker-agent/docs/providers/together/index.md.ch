@@ -44,6 +44,12 @@ an alias provider.
 @z
 
 @x
+Use the provider ID `togetherai`. The legacy ID `together` is also accepted.
+@y
+Use the provider ID `togetherai`. The legacy ID `together` is also accepted.
+@z
+
+@x
 ## Setup
 @y
 ## Setup
@@ -85,23 +91,7 @@ The simplest way to use Together AI:
 The simplest way to use Together AI:
 @z
 
-@x
-```yaml
-agents:
-  root:
-    model: together/meta-llama/Llama-3.3-70B-Instruct-Turbo
-    description: Assistant using Together AI
-    instruction: You are a helpful assistant.
-```
-@y
-```yaml
-agents:
-  root:
-    model: together/meta-llama/Llama-3.3-70B-Instruct-Turbo
-    description: Assistant using Together AI
-    instruction: You are a helpful assistant.
-```
-@z
+% snip code...
 
 @x
 ### Named Model
@@ -115,39 +105,7 @@ For more control over parameters:
 For more control over parameters:
 @z
 
-@x
-```yaml
-models:
-  together_model:
-    provider: together
-    model: meta-llama/Llama-3.3-70B-Instruct-Turbo
-    temperature: 0.7
-    max_tokens: 8192
-@y
-```yaml
-models:
-  together_model:
-    provider: together
-    model: meta-llama/Llama-3.3-70B-Instruct-Turbo
-    temperature: 0.7
-    max_tokens: 8192
-@z
-
-@x
-agents:
-  root:
-    model: together_model
-    description: Assistant using Together AI
-    instruction: You are a helpful assistant.
-```
-@y
-agents:
-  root:
-    model: together_model
-    description: Assistant using Together AI
-    instruction: You are a helpful assistant.
-```
-@z
+% snip code...
 
 @x
 ## Available Models
@@ -225,32 +183,4 @@ system messages into a single one for this provider.
 ## Example: Code Assistant
 @z
 
-@x
-```yaml
-agents:
-  coder:
-    model: together/Qwen/Qwen3-235B-A22B-Instruct-2507-tput
-    description: Code assistant using Qwen3 on Together AI
-    instruction: |
-      You are an expert programmer.
-      Write clean, well-documented code and follow language best practices.
-    toolsets:
-      - type: filesystem
-      - type: shell
-      - type: think
-```
-@y
-```yaml
-agents:
-  coder:
-    model: together/Qwen/Qwen3-235B-A22B-Instruct-2507-tput
-    description: Code assistant using Qwen3 on Together AI
-    instruction: |
-      You are an expert programmer.
-      Write clean, well-documented code and follow language best practices.
-    toolsets:
-      - type: filesystem
-      - type: shell
-      - type: think
-```
-@z
+% snip code...

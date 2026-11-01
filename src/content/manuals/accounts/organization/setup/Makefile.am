@@ -6,7 +6,8 @@ bases = \
 	_index.md           \
 	convert-account.md  \
 	onboard.md          \
-	orgs.md
+	orgs.md             \
+	rollout.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

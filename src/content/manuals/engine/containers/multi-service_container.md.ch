@@ -121,25 +121,7 @@ Next, the Dockerfile:
 次は Dockerfile です。
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM ubuntu:latest
-COPY my_first_process my_first_process
-COPY my_second_process my_second_process
-COPY my_wrapper_script.sh my_wrapper_script.sh
-CMD ./my_wrapper_script.sh
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM ubuntu:latest
-COPY my_first_process my_first_process
-COPY my_second_process my_second_process
-COPY my_wrapper_script.sh my_wrapper_script.sh
-CMD ./my_wrapper_script.sh
-```
-@z
+% snip code...
 
 @x
 ## Use Bash job controls
@@ -210,25 +192,7 @@ fg %1
 ```
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM ubuntu:latest
-COPY my_main_process my_main_process
-COPY my_helper_process my_helper_process
-COPY my_wrapper_script.sh my_wrapper_script.sh
-CMD ./my_wrapper_script.sh
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM ubuntu:latest
-COPY my_main_process my_main_process
-COPY my_helper_process my_helper_process
-COPY my_wrapper_script.sh my_wrapper_script.sh
-CMD ./my_wrapper_script.sh
-```
-@z
+% snip code...
 
 @x
 ## Use a process manager

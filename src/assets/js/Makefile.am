@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = src
+SUBDIRS = gordon-cards src
 
 copyfiles = \
 	interactive-diagram.js \

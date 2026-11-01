@@ -121,10 +121,10 @@ usage: sbx env plan [PATH...] [flags]
 
 @x skip-host-commands
       usage: |
-        Plan without the host lifecycle commands the environment declares
+        Plan without the host lifecycle commands and command-backed MCP servers the environment declares
 @y
       usage: |
-        Plan without the host lifecycle commands the environment declares
+        Plan without the host lifecycle commands and command-backed MCP servers the environment declares
 @z
 
 % inherited_options:

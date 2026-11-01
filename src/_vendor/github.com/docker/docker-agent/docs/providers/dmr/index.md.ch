@@ -32,9 +32,9 @@ _Run AI models locally with Docker — no API keys, no costs, full data privacy.
 @z
 
 @x
-Docker Model Runner (DMR) lets you run open-source AI models directly on your machine. Models run in Docker, so there's no API key needed and no data leaves your computer.
+Docker Model Runner (DMR) lets you run open-source AI models directly on your machine. Models run in Docker, so there's no API key needed; with a local runner, prompts stay on your computer.
 @y
-Docker Model Runner (DMR) lets you run open-source AI models directly on your machine. Models run in Docker, so there's no API key needed and no data leaves your computer.
+Docker Model Runner (DMR) lets you run open-source AI models directly on your machine. Models run in Docker, so there's no API key needed; with a local runner, prompts stay on your computer.
 @z
 
 @x
@@ -47,12 +47,12 @@ Docker Agent automatically discovers models you have already pulled from DMR. Wh
 > [!TIP]
 > **No API key needed**
 >
-> DMR runs models locally — your data never leaves your machine. Great for development, sensitive data, or offline use.
+> With a local DMR endpoint, your data stays on your machine. Great for development, sensitive data, or offline use.
 @y
 > [!TIP]
 > **No API key needed**
 >
-> DMR runs models locally — your data never leaves your machine. Great for development, sensitive data, or offline use.
+> With a local DMR endpoint, your data stays on your machine. Great for development, sensitive data, or offline use.
 @z
 
 @x
@@ -67,6 +67,56 @@ Docker Agent automatically discovers models you have already pulled from DMR. Wh
 @y
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) with the Model Runner feature enabled
 - Verify with: `docker model status --json`
+@z
+
+@x
+## Connection selection
+@y
+## Connection selection
+@z
+
+@x
+For Docker Desktop, `docker agent doctor` and DMR-backed agents use the Docker
+connection selected by the CLI, including `--context`, `--host`,
+`DOCKER_CONTEXT`, and `DOCKER_HOST`. Requests go through that engine's socket;
+enabling the
+legacy `/var/run/docker.sock` symlink is not required.
+@y
+For Docker Desktop, `docker agent doctor` and DMR-backed agents use the Docker
+connection selected by the CLI, including `--context`, `--host`,
+`DOCKER_CONTEXT`, and `DOCKER_HOST`. Requests go through that engine's socket;
+enabling the
+legacy `/var/run/docker.sock` symlink is not required.
+@z
+
+@x
+```console
+docker --context desktop-linux agent doctor
+```
+@y
+```console
+docker --context desktop-linux agent doctor
+```
+@z
+
+@x
+The standalone `docker-agent` binary uses Docker's environment variables and
+current context. Status, model inspection, and pulls use the same selection.
+A failed selected Desktop connection is not replaced with a local runner.
+@y
+The standalone `docker-agent` binary uses Docker's environment variables and
+current context. Status, model inspection, and pulls use the same selection.
+A failed selected Desktop connection is not replaced with a local runner.
+@z
+
+@x
+An explicit model `base_url` or `MODEL_RUNNER_HOST` bypasses local discovery;
+a models gateway also bypasses it for inference. If you select a remote engine,
+URL, or gateway, prompts are sent there rather than staying on your machine.
+@y
+An explicit model `base_url` or `MODEL_RUNNER_HOST` bypasses local discovery;
+a models gateway also bypasses it for inference. If you select a remote engine,
+URL, or gateway, prompts are sent there rather than staying on your machine.
 @z
 
 @x
@@ -141,6 +191,26 @@ Any model available through Docker Model Runner can be used. Common options:
 | ------------- | ----------------------------------------------------- |
 | `ai/qwen3`    | Qwen 3 — versatile, good for coding and general tasks |
 | `ai/llama3.2` | Llama 3.2 — Meta's open-source model                  |
+@z
+
+@x
+## Extra Request Body
+@y
+## Extra Request Body
+@z
+
+@x
+Use [`provider_opts.extra_body`](../../configuration/models/index.md#extra-request-body)
+to send backend-specific fields on each Chat Completions request. For example,
+`extra_body: {chat_template_kwargs: {enable_thinking: false}}` disables thinking
+when the engine and model template support it. These fields are not sent to the
+model-wide `_configure` endpoint.
+@y
+Use [`provider_opts.extra_body`](../../configuration/models/index.md#extra-request-body)
+to send backend-specific fields on each Chat Completions request. For example,
+`extra_body: {chat_template_kwargs: {enable_thinking: false}}` disables thinking
+when the engine and model template support it. These fields are not sent to the
+model-wide `_configure` endpoint.
 @z
 
 @x
@@ -236,9 +306,39 @@ models:
 @z
 
 @x
-If `context_size` is omitted, Model Runner uses its default. `max_tokens` is **not** used as the context window.
+If `context_size` is omitted, Docker Agent queries the runner's completion
+configuration, then falls back to the packaged model's context window. This
+read-only discovery is cached briefly and drives context usage and automatic
+compaction. An explicit `context_size` always takes precedence; `max_tokens` is
+**not** used as the context window.
 @y
-If `context_size` is omitted, Model Runner uses its default. `max_tokens` is **not** used as the context window.
+If `context_size` is omitted, Docker Agent queries the runner's completion
+configuration, then falls back to the packaged model's context window. This
+read-only discovery is cached briefly and drives context usage and automatic
+compaction. An explicit `context_size` always takes precedence; `max_tokens` is
+**not** used as the context window.
+@z
+
+@x
+Discovery is best-effort. Older or unreachable runners, gateways, and runtime
+flags that override context allocation may leave the window unknown. In those
+cases, set `context_size` explicitly. Arbitrary `raw_runtime_flags` also disable
+automatic context discovery.
+@y
+Discovery is best-effort. Older or unreachable runners, gateways, and runtime
+flags that override context allocation may leave the window unknown. In those
+cases, set `context_size` explicitly. Arbitrary `raw_runtime_flags` also disable
+automatic context discovery.
+@z
+
+@x
+The model picker displays DMR's reported architecture, parameter count,
+quantization, size, and packaged context window when available. The packaged
+window can differ from a running model's configured context size.
+@y
+The model picker displays DMR's reported architecture, parameter count,
+quantization, size, and packaged context window when available. The packaged
+window can differ from a running model's configured context size.
 @z
 
 @x
@@ -634,11 +734,43 @@ models:
 @z
 
 @x
-- **Plugin not found:** Ensure Docker Model Runner is enabled in Docker Desktop. Docker Agent will fall back to the default URL.
+- **Plugin not found:** Ensure Docker Model Runner is enabled in Docker Desktop and `docker model status --json` works with the same Docker context. CLI discovery failures are reported rather than falling back to a different local runner.
 - **Endpoint empty:** Verify the Model Runner is running with `docker model status --json`.
 - **Performance:** Use `runtime_flags` to tune GPU layers (`--ngl`) and thread count (`--threads`).
 @y
-- **Plugin not found:** Ensure Docker Model Runner is enabled in Docker Desktop. Docker Agent will fall back to the default URL.
+- **Plugin not found:** Ensure Docker Model Runner is enabled in Docker Desktop and `docker model status --json` works with the same Docker context. CLI discovery failures are reported rather than falling back to a different local runner.
 - **Endpoint empty:** Verify the Model Runner is running with `docker model status --json`.
 - **Performance:** Use `runtime_flags` to tune GPU layers (`--ngl`) and thread count (`--threads`).
+@z
+
+@x
+For interrupted or corrupt downloads, retry using the same Docker connection
+and config directory as the agent, for example:
+@y
+For interrupted or corrupt downloads, retry using the same Docker connection
+and config directory as the agent, for example:
+@z
+
+@x
+```console
+docker --context desktop-linux --config /path/to/docker-config model pull ai/qwen3
+```
+@y
+```console
+docker --context desktop-linux --config /path/to/docker-config model pull ai/qwen3
+```
+@z
+
+@x
+Docker Agent does not offer to delete local partial-download files when using a
+CLI-selected connection: the runner's content store may be remote or belong to a
+different Docker configuration. If a pull repeatedly fails with HTTP 416, inspect
+the selected runner's logs and content store rather than deleting files from an
+unrelated local `~/.docker/models` directory.
+@y
+Docker Agent does not offer to delete local partial-download files when using a
+CLI-selected connection: the runner's content store may be remote or belong to a
+different Docker configuration. If a pull repeatedly fails with HTTP 416, inspect
+the selected runner's logs and content store rather than deleting files from an
+unrelated local `~/.docker/models` directory.
 @z

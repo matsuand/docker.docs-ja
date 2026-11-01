@@ -65,16 +65,54 @@ For example:
 
 @x
 - On Linux with bash: "Executes the given shell command with bash on Linux."
-- On Windows with PowerShell: "Executes the given shell command with powershell on Windows. Use Windows PowerShell 5.1 syntax: chain commands with ";" (not "&&"), and avoid POSIX commands/flags like "ls -la"."
+- On Windows with PowerShell 5.1: "Executes the given shell command with powershell on Windows. Windows PowerShell dialect. Chain commands with ";" (not "&&"; "&&" is a parse error on 5.1). POSIX utilities are not available — use Select-String (not grep), Select-Object -First N (not head), -Last N (not tail), Measure-Object -Line (not wc -l), Get-Content (not cat), Expand-Archive (not gunzip/tar). "ls -la" fails — use "ls" or "Get-ChildItem"."
+- On Windows with cmd.exe: "Executes the given shell command with cmd on Windows. cmd.exe syntax, not POSIX. No POSIX utilities (grep, head, tail, wc, cat), no POSIX flags on built-ins, and variable expansion uses %VAR% (not $VAR)."
 @y
 - On Linux with bash: "Executes the given shell command with bash on Linux."
-- On Windows with PowerShell: "Executes the given shell command with powershell on Windows. Use Windows PowerShell 5.1 syntax: chain commands with ";" (not "&&"), and avoid POSIX commands/flags like "ls -la"."
+- On Windows with PowerShell 5.1: "Executes the given shell command with powershell on Windows. Windows PowerShell dialect. Chain commands with ";" (not "&&"; "&&" is a parse error on 5.1). POSIX utilities are not available — use Select-String (not grep), Select-Object -First N (not head), -Last N (not tail), Measure-Object -Line (not wc -l), Get-Content (not cat), Expand-Archive (not gunzip/tar). "ls -la" fails — use "ls" or "Get-ChildItem"."
+- On Windows with cmd.exe: "Executes the given shell command with cmd on Windows. cmd.exe syntax, not POSIX. No POSIX utilities (grep, head, tail, wc, cat), no POSIX flags on built-ins, and variable expansion uses %VAR% (not $VAR)."
 @z
 
 @x
-This reduces wasted turns where models assume POSIX syntax on Windows or vice versa.
+Each description also points the model at `get_environment_info` for edge cases the static hint does not cover. This reduces wasted turns where models assume POSIX syntax on Windows or vice versa.
 @y
-This reduces wasted turns where models assume POSIX syntax on Windows or vice versa.
+Each description also points the model at `get_environment_info` for edge cases the static hint does not cover. This reduces wasted turns where models assume POSIX syntax on Windows or vice versa.
+@z
+
+@x
+### ACP client execution
+@y
+### ACP client execution
+@z
+
+@x
+In ACP mode, clients advertising terminal support execute the configured `shell` tool through client terminals rather than a host subprocess. The adapter uses `/bin/sh` or the absolute Windows system `cmd.exe`, requires matching client/agent platform and paths, forwards only configured environment overrides, retains a bounded output tail, and does not support `sudo_askpass`. Without terminal capability, native behavior is unchanged; client failures never trigger native fallback. See [ACP client terminals](../../features/acp/index.md#client-terminals) for cleanup, cancellation, and unknown-create limitations.
+@y
+In ACP mode, clients advertising terminal support execute the configured `shell` tool through client terminals rather than a host subprocess. The adapter uses `/bin/sh` or the absolute Windows system `cmd.exe`, requires matching client/agent platform and paths, forwards only configured environment overrides, retains a bounded output tail, and does not support `sudo_askpass`. Without terminal capability, native behavior is unchanged; client failures never trigger native fallback. See [ACP client terminals](../../features/acp/index.md#client-terminals) for cleanup, cancellation, and unknown-create limitations.
+@z
+
+@x
+### Dialect-error correction
+@y
+### Dialect-error correction
+@z
+
+@x
+If a command still fails with a known shell-dialect error (for example PowerShell's `'&&' is not a valid statement separator`, a `cmd.exe`/`pwsh` "not recognized" error, or a POSIX-style `2>/dev/null` redirection on Windows), the tool prepends a `[shell-hint]` line to the output pointing the model at the corrective syntax before it retries. Hints are gated on the resolved shell so they only fire for genuine dialect mismatches (e.g. a PowerShell `&&` hint never fires for `pwsh`, which supports `&&` natively).
+@y
+If a command still fails with a known shell-dialect error (for example PowerShell's `'&&' is not a valid statement separator`, a `cmd.exe`/`pwsh` "not recognized" error, or a POSIX-style `2>/dev/null` redirection on Windows), the tool prepends a `[shell-hint]` line to the output pointing the model at the corrective syntax before it retries. Hints are gated on the resolved shell so they only fire for genuine dialect mismatches (e.g. a PowerShell `&&` hint never fires for `pwsh`, which supports `&&` natively).
+@z
+
+@x
+### Command preview in the TUI
+@y
+### Command preview in the TUI
+@z
+
+@x
+In the TUI, multi-line shell commands are shown with syntax highlighting. When a command wraps a script for a common interpreter — `python`/`python3`, `node`/`nodejs`, `ruby`, `perl`, or `sh`/`bash`/`zsh` — through a heredoc (for example `python3 - <<'PY'`) or an inline flag (`-c` for Python and shell, `-e`/`--eval` for Node, `-e` for Ruby and Perl), the embedded script is highlighted in its own language and the surrounding command as bash. Highlighting is display-only and does not change the command that runs.
+@y
+In the TUI, multi-line shell commands are shown with syntax highlighting. When a command wraps a script for a common interpreter — `python`/`python3`, `node`/`nodejs`, `ruby`, `perl`, or `sh`/`bash`/`zsh` — through a heredoc (for example `python3 - <<'PY'`) or an inline flag (`-c` for Python and shell, `-e`/`--eval` for Node, `-e` for Ruby and Perl), the embedded script is highlighted in its own language and the surrounding command as bash. Highlighting is display-only and does not change the command that runs.
 @z
 
 @x
@@ -105,13 +143,11 @@ toolsets:
 | Property       | Type    | Description                                                                                          |
 | -------------- | ------- | --------------------------------------------------------------------------------------------------- |
 | `env`          | object  | Environment variables to set for all shell commands                                                 |
-| `safer`        | boolean | Deprecated and ignored — shell commands are always classified now (see [Command classification](#command-classification)). Kept so existing YAMLs still parse. |
 | `sudo_askpass` | boolean | Opt in to prompting for a `sudo` password (see [Sudo support](#sudo-support)). Default `false`.     |
 @y
 | Property       | Type    | Description                                                                                          |
 | -------------- | ------- | --------------------------------------------------------------------------------------------------- |
 | `env`          | object  | Environment variables to set for all shell commands                                                 |
-| `safer`        | boolean | Deprecated and ignored — shell commands are always classified now (see [Command classification](#command-classification)). Kept so existing YAMLs still parse. |
 | `sudo_askpass` | boolean | Opt in to prompting for a `sudo` password (see [Sudo support](#sudo-support)). Default `false`.     |
 @z
 
@@ -146,18 +182,18 @@ toolsets:
 @z
 
 @x
-Every shell command is classified against an embedded taxonomy before the approval decision — no opt-in required:
+Every shell command is classified against an embedded taxonomy before the approval decision — no opt-in required. The same classification applies to the `cmd` of [`run_background_job`](../background-jobs/index.md#command-classification):
 @y
-Every shell command is classified against an embedded taxonomy before the approval decision — no opt-in required:
+Every shell command is classified against an embedded taxonomy before the approval decision — no opt-in required. The same classification applies to the `cmd` of [`run_background_job`](../background-jobs/index.md#command-classification):
 @z
 
 @x
 - **Destructive matches** (`rm -rf <path>`, `docker volume rm`, `mkfs`, `dd if=… of=/dev/<disk>`, …) are labelled `destructive` with a `blast_radius` (`low` / `medium` / `high`) and a `category` tag. The TUI confirmation dialog renders the blast radius with a color badge.
-- **Known-safe reads** (`ls`, `cat`, `git status`, `git diff`, `docker ps`, `docker logs`, `kubectl get`, …) are labelled `safe`.
+- **Known-safe reads** (`ls`, `cat`, `git status`, `git diff`, `gh pr view`, `go env`, `docker ps`, `docker logs`, `kubectl get`, …) are labelled `safe`.
 - **Everything else** is labelled `unknown`.
 @y
 - **Destructive matches** (`rm -rf <path>`, `docker volume rm`, `mkfs`, `dd if=… of=/dev/<disk>`, …) are labelled `destructive` with a `blast_radius` (`low` / `medium` / `high`) and a `category` tag. The TUI confirmation dialog renders the blast radius with a color badge.
-- **Known-safe reads** (`ls`, `cat`, `git status`, `git diff`, `docker ps`, `docker logs`, `kubectl get`, …) are labelled `safe`.
+- **Known-safe reads** (`ls`, `cat`, `git status`, `git diff`, `gh pr view`, `go env`, `docker ps`, `docker logs`, `kubectl get`, …) are labelled `safe`.
 - **Everything else** is labelled `unknown`.
 @z
 
@@ -168,15 +204,27 @@ The session's [safety mode](../../configuration/permissions/index.md#safety-mode
 @z
 
 @x
-Compound shell (`a && b`, `a; b`, `a | b`) is never matched against the safe allowlist; any destructive segment falls through to ask. The full taxonomy lives in [`pkg/safety/safety_patterns.json`](https://github.com/docker/docker-agent/blob/main/pkg/safety/safety_patterns.json).
+Read patterns also cover numeric `head`/`tail` counts and numeric sed print addresses such as `sed -n '10,20p' file`. Arbitrary sed programs are not safe-listed. GitHub read commands exclude browser/watch flags; Go environment queries exclude configuration writes (`-w`/`-u`). Flags that write output or run external diff/text-conversion helpers are excluded from Git log-family reads. Expansions that could hide a denied flag remain unknown.
 @y
-Compound shell (`a && b`, `a; b`, `a | b`) is never matched against the safe allowlist; any destructive segment falls through to ask. The full taxonomy lives in [`pkg/safety/safety_patterns.json`](https://github.com/docker/docker-agent/blob/main/pkg/safety/safety_patterns.json).
+Read patterns also cover numeric `head`/`tail` counts and numeric sed print addresses such as `sed -n '10,20p' file`. Arbitrary sed programs are not safe-listed. GitHub read commands exclude browser/watch flags; Go environment queries exclude configuration writes (`-w`/`-u`). Flags that write output or run external diff/text-conversion helpers are excluded from Git log-family reads. Expansions that could hide a denied flag remain unknown.
 @z
 
 @x
-See [`examples/safety_modes.yaml`](https://github.com/docker/docker-agent/blob/main/examples/safety_modes.yaml) for a full example. The legacy `safer: true` toolset flag is deprecated and ignored.
+In-place formatters (`gofmt -w`, `goimports -w`), `tee` writes, process termination (`pkill`, `killall`), and additional Git force/delete variants receive destructive labels. Ordinary builds, tests, scripts, and task runners remain unknown unless they contain a recognized destructive operation.
 @y
-See [`examples/safety_modes.yaml`](https://github.com/docker/docker-agent/blob/main/examples/safety_modes.yaml) for a full example. The legacy `safer: true` toolset flag is deprecated and ignored.
+In-place formatters (`gofmt -w`, `goimports -w`), `tee` writes, process termination (`pkill`, `killall`), and additional Git force/delete variants receive destructive labels. Ordinary builds, tests, scripts, and task runners remain unknown unless they contain a recognized destructive operation.
+@z
+
+@x
+Compound shell (`a && b`, `a; b`, `a | b`) and command substitutions (including zsh `=(...)` and fish `(...)`) are never matched against the safe allowlist; any destructive segment falls through to ask. The full taxonomy lives in [`pkg/safety/safety_patterns.json`](https://github.com/docker/docker-agent/blob/main/pkg/safety/safety_patterns.json).
+@y
+Compound shell (`a && b`, `a; b`, `a | b`) and command substitutions (including zsh `=(...)` and fish `(...)`) are never matched against the safe allowlist; any destructive segment falls through to ask. The full taxonomy lives in [`pkg/safety/safety_patterns.json`](https://github.com/docker/docker-agent/blob/main/pkg/safety/safety_patterns.json).
+@z
+
+@x
+See [`examples/safety_modes.yaml`](https://github.com/docker/docker-agent/blob/main/examples/safety_modes.yaml) for a full example. The legacy `safer: true` toolset flag was removed in config version 15: a config declaring version 15 or later (including a version-less config, which resolves to the latest schema) now fails to load with `unknown field "safer"` if the flag is present — delete it, it has had no effect since v1.117.0. Configs pinned to `version: "14"` or lower still accept the flag and silently ignore it.
+@y
+See [`examples/safety_modes.yaml`](https://github.com/docker/docker-agent/blob/main/examples/safety_modes.yaml) for a full example. The legacy `safer: true` toolset flag was removed in config version 15: a config declaring version 15 or later (including a version-less config, which resolves to the latest schema) now fails to load with `unknown field "safer"` if the flag is present — delete it, it has had no effect since v1.117.0. Configs pinned to `version: "14"` or lower still accept the flag and silently ignore it.
 @z
 
 @x

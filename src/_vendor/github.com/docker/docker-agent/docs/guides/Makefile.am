@@ -2,7 +2,7 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS = compaction go-sdk headless secrets thinking tips
+SUBDIRS = compaction go-sdk headless secrets thinking tips troubleshooting
 
 bases = \
 	_index.md

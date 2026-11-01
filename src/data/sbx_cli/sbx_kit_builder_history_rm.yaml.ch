@@ -22,11 +22,9 @@ usage: sbx kit builder history rm [ARGS...] [flags]
 @z
 
 @x "yes"
-      usage: |
-        Skip confirmation prompt (buildx --force still controls running build records)
+      usage: Skip confirmation prompt
 @y
-      usage: |
-        Skip confirmation prompt (buildx --force still controls running build records)
+      usage: Skip confirmation prompt
 @z
 
 % inherited_options:

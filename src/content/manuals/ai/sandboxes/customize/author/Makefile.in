@@ -242,6 +242,7 @@ bases = \
 	base-images.md    \
 	build-an-agent.md \
 	capabilities.md   \
+	debug.md          \
 	distribute.md     \
 	kit-sets.md       \
 	patterns.md       \

@@ -17,11 +17,11 @@ description: |-
 
 @x
     Each subcommand runs the matching docker buildx history command inside
-    the builder sandbox, against the buildx instance kit builds use. Flags
+    the builder sandbox, against the Buildx instance kit builds use. Flags
     and arguments pass through verbatim.
 @y
     Each subcommand runs the matching docker buildx history command inside
-    the builder sandbox, against the buildx instance kit builds use. Flags
+    the builder sandbox, against the Buildx instance kit builds use. Flags
     and arguments pass through verbatim.
 @z
 

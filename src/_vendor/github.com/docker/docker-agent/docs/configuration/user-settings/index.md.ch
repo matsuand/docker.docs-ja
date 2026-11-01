@@ -74,9 +74,9 @@ settings:
 @z
 
 @x
-You rarely need to hand-edit this file. Most fields are managed from the TUI's `/settings` dialog (**Appearance**, **Behavior**, **Notifications** tabs) — press <kbd>Enter</kbd> there to apply and persist a change. A few fields (`permissions`, `hooks`, `keybindings`) have no dialog UI and are only set by editing the file directly.
+You rarely need to hand-edit this file. Most fields are managed from the TUI's `/settings` dialog (**Appearance**, **Behavior**, **Notifications** tabs) — press <kbd>Enter</kbd> there to apply and persist a change. The lean TUI has a smaller inline `/settings` panel with only relevant behavior settings: steering or queueing messages, default tool auto-approval, automatic snapshots, cache-stable prompts, cache-miss warnings, lean UI by default, completion sounds and their duration threshold, image rendering, the startup banner, split diffs, and full or last-10-line written-file previews. It has no theme, sidebar, or tab settings. Use the arrow keys or <kbd>Space</kbd> to change a value, <kbd>Enter</kbd> to save, or <kbd>Esc</kbd> to cancel. Settings marked **next launch** do not change the current session. A few fields (`permissions`, `hooks`, `keybindings`) have no dialog UI and are only set by editing the file directly.
 @y
-You rarely need to hand-edit this file. Most fields are managed from the TUI's `/settings` dialog (**Appearance**, **Behavior**, **Notifications** tabs) — press <kbd>Enter</kbd> there to apply and persist a change. A few fields (`permissions`, `hooks`, `keybindings`) have no dialog UI and are only set by editing the file directly.
+You rarely need to hand-edit this file. Most fields are managed from the TUI's `/settings` dialog (**Appearance**, **Behavior**, **Notifications** tabs) — press <kbd>Enter</kbd> there to apply and persist a change. The lean TUI has a smaller inline `/settings` panel with only relevant behavior settings: steering or queueing messages, default tool auto-approval, automatic snapshots, cache-stable prompts, cache-miss warnings, lean UI by default, completion sounds and their duration threshold, image rendering, the startup banner, split diffs, and full or last-10-line written-file previews. It has no theme, sidebar, or tab settings. Use the arrow keys or <kbd>Space</kbd> to change a value, <kbd>Enter</kbd> to save, or <kbd>Esc</kbd> to cancel. Settings marked **next launch** do not change the current session. A few fields (`permissions`, `hooks`, `keybindings`) have no dialog UI and are only set by editing the file directly.
 @z
 
 @x
@@ -100,13 +100,15 @@ You rarely need to hand-edit this file. Most fields are managed from the TUI's `
 | `expand_thinking` | boolean | `false` | Start new sessions with thinking/tool blocks expanded instead of collapsed. |
 | `split_diff_view` | boolean | `true` | Render file-edit diffs side-by-side instead of unified. |
 | `render_images` | boolean | `true` | Render images in the TUI using the Kitty graphics protocol. Applies to both tool-result images and Markdown images in agent responses. Automatically disabled when the terminal does not support Kitty. |
+| `show_banner` | boolean | `true` | Show the ASCII-art startup banner on an empty conversation. Applies to both the full TUI and the [lean TUI](../../features/tui/index.md#lean-tui). Managed from the **Appearance** tab of `/settings`. |
 | `theme` | string | `default` | Theme name, loaded from a built-in theme or `~/.cagent/themes/<name>.yaml`. The special value `auto` follows the terminal's light/dark background. See [Theming](../../features/tui/index.md#theming). |
 | `theme_dark` | string | `default` | Theme applied when `theme: auto` and the terminal background is dark. |
 | `theme_light` | string | `default-light` | Theme applied when `theme: auto` and the terminal background is light. |
-| `YOLO` | boolean | `false` | Auto-approve all tool calls globally, across every agent you run. Mirrors the `--yolo` flag and the `/yolo` command. Legacy alias for `safety: autonomous`; when both are set, `safety` wins. |
+| `YOLO` | boolean | `false` | Select the `autonomous` safety fallback globally. Unmatched calls are auto-approved, but deny rules, session-scoped ask rules, `tool_guard`, and `preempt_yolo` hooks can still block or prompt. Mirrors the `--yolo` flag and the `/yolo` command. Legacy alias for `safety: autonomous`; when both are set, `safety` wins. |
 | `safety` | string | _unset_ | Default [safety mode](../permissions/index.md#safety-modes) for new sessions: `strict`, `balanced`, `restricted`, or `autonomous` (any other value fails config loading). Wins over the legacy `YOLO` flag. Applied when no explicit `--safety`/`--yolo` flag and no alias safety option was given; wins over the agent YAML's `agents.<name>.safety` / `runtime.safety` defaults. Never changes the mode of a resumed session. |
 | `lean` | boolean | `false` | Make the [lean TUI](../../features/tui/index.md#lean-tui) (simplified, minimal-chrome interface) the default for interactive runs instead of the full TUI. |
 | `tab_title_max_length` | int | `20` | Maximum display length for tab titles; longer titles are truncated with an ellipsis. |
+| `lean_full_file_preview` | boolean | `false` | Show entire streamed file writes in the lean TUI instead of the last 10 file lines. Managed by **Written file preview** in the lean `/settings` panel. |
 | `restore_tabs` | boolean | `false` | Restore previously open tabs when launching the TUI. |
 | `sound` | boolean | `false` | Play a notification sound on task success or failure. |
 | `sound_threshold` | int | `10` | Minimum duration in seconds a task must run before a success sound plays (failures always play). |
@@ -126,13 +128,15 @@ You rarely need to hand-edit this file. Most fields are managed from the TUI's `
 | `expand_thinking` | boolean | `false` | Start new sessions with thinking/tool blocks expanded instead of collapsed. |
 | `split_diff_view` | boolean | `true` | Render file-edit diffs side-by-side instead of unified. |
 | `render_images` | boolean | `true` | Render images in the TUI using the Kitty graphics protocol. Applies to both tool-result images and Markdown images in agent responses. Automatically disabled when the terminal does not support Kitty. |
+| `show_banner` | boolean | `true` | Show the ASCII-art startup banner on an empty conversation. Applies to both the full TUI and the [lean TUI](../../features/tui/index.md#lean-tui). Managed from the **Appearance** tab of `/settings`. |
 | `theme` | string | `default` | Theme name, loaded from a built-in theme or `~/.cagent/themes/<name>.yaml`. The special value `auto` follows the terminal's light/dark background. See [Theming](../../features/tui/index.md#theming). |
 | `theme_dark` | string | `default` | Theme applied when `theme: auto` and the terminal background is dark. |
 | `theme_light` | string | `default-light` | Theme applied when `theme: auto` and the terminal background is light. |
-| `YOLO` | boolean | `false` | Auto-approve all tool calls globally, across every agent you run. Mirrors the `--yolo` flag and the `/yolo` command. Legacy alias for `safety: autonomous`; when both are set, `safety` wins. |
+| `YOLO` | boolean | `false` | Select the `autonomous` safety fallback globally. Unmatched calls are auto-approved, but deny rules, session-scoped ask rules, `tool_guard`, and `preempt_yolo` hooks can still block or prompt. Mirrors the `--yolo` flag and the `/yolo` command. Legacy alias for `safety: autonomous`; when both are set, `safety` wins. |
 | `safety` | string | _unset_ | Default [safety mode](../permissions/index.md#safety-modes) for new sessions: `strict`, `balanced`, `restricted`, or `autonomous` (any other value fails config loading). Wins over the legacy `YOLO` flag. Applied when no explicit `--safety`/`--yolo` flag and no alias safety option was given; wins over the agent YAML's `agents.<name>.safety` / `runtime.safety` defaults. Never changes the mode of a resumed session. |
 | `lean` | boolean | `false` | Make the [lean TUI](../../features/tui/index.md#lean-tui) (simplified, minimal-chrome interface) the default for interactive runs instead of the full TUI. |
 | `tab_title_max_length` | int | `20` | Maximum display length for tab titles; longer titles are truncated with an ellipsis. |
+| `lean_full_file_preview` | boolean | `false` | Show entire streamed file writes in the lean TUI instead of the last 10 file lines. Managed by **Written file preview** in the lean `/settings` panel. |
 | `restore_tabs` | boolean | `false` | Restore previously open tabs when launching the TUI. |
 | `sound` | boolean | `false` | Play a notification sound on task success or failure. |
 | `sound_threshold` | int | `10` | Minimum duration in seconds a task must run before a success sound plays (failures always play). |
@@ -154,9 +158,9 @@ You rarely need to hand-edit this file. Most fields are managed from the TUI's `
 @z
 
 @x
-`layout` customizes the TUI's sidebar. The zero value (an omitted `layout:` block, or any field left out) is the default: sidebar on the right, every section visible, normal spacing.
+`layout` customizes the TUI's sidebar. The zero value (an omitted `layout:` block, or any field left out) is the default: sidebar on the right, all sections except **Plans** visible, normal spacing.
 @y
-`layout` customizes the TUI's sidebar. The zero value (an omitted `layout:` block, or any field left out) is the default: sidebar on the right, every section visible, normal spacing.
+`layout` customizes the TUI's sidebar. The zero value (an omitted `layout:` block, or any field left out) is the default: sidebar on the right, all sections except **Plans** visible, normal spacing.
 @z
 
 @x
@@ -169,6 +173,7 @@ You rarely need to hand-edit this file. Most fields are managed from the TUI's `
 | `hide_agents` | boolean | `false` | Hide the Agents section. |
 | `active_agents_only` | boolean | `false` | Show only agents active in the current session in the Agents section (and the top/bottom band), instead of the whole configured team. Ignored while the Agents section is hidden. |
 | `hide_tools` | boolean | `false` | Hide the Tools section. |
+| `show_plans` | boolean | `false` | Show the [Plans sidebar section](../../features/tui/index.md#plans-sidebar) for shared plans. Full left/right sidebars list the five most recently updated plans; compact layouts show a count and browser shortcut. |
 | `hide_todos` | boolean | `false` | Hide the Todos section. |
 @y
 | Field | Type | Default | Description |
@@ -180,6 +185,7 @@ You rarely need to hand-edit this file. Most fields are managed from the TUI's `
 | `hide_agents` | boolean | `false` | Hide the Agents section. |
 | `active_agents_only` | boolean | `false` | Show only agents active in the current session in the Agents section (and the top/bottom band), instead of the whole configured team. Ignored while the Agents section is hidden. |
 | `hide_tools` | boolean | `false` | Hide the Tools section. |
+| `show_plans` | boolean | `false` | Show the [Plans sidebar section](../../features/tui/index.md#plans-sidebar) for shared plans. Full left/right sidebars list the five most recently updated plans; compact layouts show a count and browser shortcut. |
 | `hide_todos` | boolean | `false` | Hide the Todos section. |
 @z
 
@@ -190,6 +196,7 @@ settings:
     sidebar_position: left
     section_spacing: compact
     hide_usage: true
+    show_plans: true
 ```
 @y
 ```yaml
@@ -198,7 +205,14 @@ settings:
     sidebar_position: left
     section_spacing: compact
     hide_usage: true
+    show_plans: true
 ```
+@z
+
+@x
+Enable **Plans** under `/settings` → **Appearance** → **Sidebar sections**, or set `settings.layout.show_plans: true` as above. This is a global user preference, not an agent configuration field or a per-session plan. It displays the same shared plan store as `/plans` and `docker agent plans`, without classifying free-form statuses as active or completed. The section remains hidden in lean mode and with `--sidebar=false`.
+@y
+Enable **Plans** under `/settings` → **Appearance** → **Sidebar sections**, or set `settings.layout.show_plans: true` as above. This is a global user preference, not an agent configuration field or a per-session plan. It displays the same shared plan store as `/plans` and `docker agent plans`, without classifying free-form statuses as active or completed. The section remains hidden in lean mode and with `--sidebar=false`.
 @z
 
 @x
@@ -218,6 +232,7 @@ settings:
   expand_thinking: false
   split_diff_view: true
   render_images: true
+  show_banner: true
   hide_tool_results: false
   sound: true
   sound_threshold: 10
@@ -255,6 +270,7 @@ settings:
   expand_thinking: false
   split_diff_view: true
   render_images: true
+  show_banner: true
   hide_tool_results: false
   sound: true
   sound_threshold: 10
@@ -301,12 +317,12 @@ User settings are a **low-priority** source: they establish defaults, and anythi
 - **Aliases sit between CLI flags and user settings.** An [alias](../../features/cli/index.md#docker-agent-alias) (`docker agent alias add ...`) can bundle its own `yolo`, `safety`, `model`, `hide_tool_results`, and `sandbox` defaults; those apply when the corresponding flag was not explicitly passed, the same way user settings do, but are resolved after user settings so an alias's own choices take priority over your global defaults.
 - **Permissions are merged, not overridden.** Global `settings.permissions` and an agent's own `permissions:` are combined into a single set of `deny` → `allow` → `ask` patterns before evaluation — a global deny always blocks, regardless of what the agent config allows. See [Merging Behavior](../permissions/index.md#merging-behavior).
 - **Hooks are additive, not overridden.** For a given lifecycle event, hooks from the agent config, `settings.hooks`, `hooks.d/` drop-ins, and `--hook-*` CLI flags **all** run, in that order. Global hooks cannot be suppressed by an individual agent.
-- **Everything else is a plain default.** Fields with no CLI or agent-config equivalent (`sound`, `sound_threshold`, `restore_tabs`, `tab_title_max_length`, `split_diff_view`, `render_images`, `cache_stable_prompts`, `warn_on_cache_miss`, `busy_send_mode`, `keybindings`, `layout`) only ever come from `settings:` (or the `/settings` dialog that writes it) — there is nothing to override them per run.
+- **Everything else is a plain default.** Fields with no CLI or agent-config equivalent (`sound`, `sound_threshold`, `restore_tabs`, `tab_title_max_length`, `split_diff_view`, `render_images`, `show_banner`, `cache_stable_prompts`, `warn_on_cache_miss`, `busy_send_mode`, `keybindings`, `layout`) only ever come from `settings:` (or the `/settings` dialog that writes it) — there is nothing to override them per run.
 @y
 - **CLI flags over user settings — except plain boolean flags going from `true` to `false`.** Where a `docker agent run` flag mirrors a setting, passing the flag for a specific run takes precedence over the setting for that run only, and the flag never modifies the saved user config file. This holds cleanly for `--lean` / `lean`, `--theme` / `theme`, and the safety flags `--safety` / `--yolo` (see below), which track whether the flag was explicitly passed on the command line. `--hide-tool-results` / `hide_tool_results` doesn't: it's a plain boolean with no "was this explicitly set" tracking, so passing `--hide-tool-results=false` cannot turn a saved `hide_tool_results: true` setting off for that run — the saved `true` wins and is reapplied on top of the flag. Passing the flag to turn it *on* works as expected regardless of the saved setting.
 - **Safety has its own, fully-specified chain.** For a **new** session the first source in this order wins: explicit `--safety` flag > explicit `--yolo` flag > alias `safety`/`yolo` option > `settings.safety`/`settings.YOLO` > the agent YAML's `agents.<name>.safety` > the agent YAML's `runtime.safety` > the built-in default (read-only tools auto-approve, everything else asks). At each scope the `safety` field wins over the legacy `YOLO`/`yolo` boolean. Your settings therefore beat anything an agent author declared in YAML — an agent config loaded from a file, URL, or OCI registry can never override your `settings.safety`, alias option, or CLI flag. An explicit `--yolo=false` suppresses a saved `YOLO: true` / alias `yolo` for that run (other settings and YAML defaults still apply). **Resumed sessions keep their stored mode**: settings and alias defaults never touch them; only an explicit `--safety` or `--yolo` flag overrides a resume. See [Safety Modes](../permissions/index.md#safety-modes).
 - **Aliases sit between CLI flags and user settings.** An [alias](../../features/cli/index.md#docker-agent-alias) (`docker agent alias add ...`) can bundle its own `yolo`, `safety`, `model`, `hide_tool_results`, and `sandbox` defaults; those apply when the corresponding flag was not explicitly passed, the same way user settings do, but are resolved after user settings so an alias's own choices take priority over your global defaults.
 - **Permissions are merged, not overridden.** Global `settings.permissions` and an agent's own `permissions:` are combined into a single set of `deny` → `allow` → `ask` patterns before evaluation — a global deny always blocks, regardless of what the agent config allows. See [Merging Behavior](../permissions/index.md#merging-behavior).
 - **Hooks are additive, not overridden.** For a given lifecycle event, hooks from the agent config, `settings.hooks`, `hooks.d/` drop-ins, and `--hook-*` CLI flags **all** run, in that order. Global hooks cannot be suppressed by an individual agent.
-- **Everything else is a plain default.** Fields with no CLI or agent-config equivalent (`sound`, `sound_threshold`, `restore_tabs`, `tab_title_max_length`, `split_diff_view`, `render_images`, `cache_stable_prompts`, `warn_on_cache_miss`, `busy_send_mode`, `keybindings`, `layout`) only ever come from `settings:` (or the `/settings` dialog that writes it) — there is nothing to override them per run.
+- **Everything else is a plain default.** Fields with no CLI or agent-config equivalent (`sound`, `sound_threshold`, `restore_tabs`, `tab_title_max_length`, `split_diff_view`, `render_images`, `show_banner`, `cache_stable_prompts`, `warn_on_cache_miss`, `busy_send_mode`, `keybindings`, `layout`) only ever come from `settings:` (or the `/settings` dialog that writes it) — there is nothing to override them per run.
 @z

@@ -30,6 +30,16 @@ description: |-
 @z
 
 @x
+    When a local path is inside a sandbox workspace, sbx cp refuses symbolic
+    links that lead out of the workspace, even with --follow-link, including
+    when the workspace is reached through a symbolic link or junction to it.
+@y
+    When a local path is inside a sandbox workspace, sbx cp refuses symbolic
+    links that lead out of the workspace, even with --follow-link, including
+    when the workspace is reached through a symbolic link or junction to it.
+@z
+
+@x
 usage: sbx cp SRC DST [flags]
 @y
 usage: sbx cp SRC DST [flags]

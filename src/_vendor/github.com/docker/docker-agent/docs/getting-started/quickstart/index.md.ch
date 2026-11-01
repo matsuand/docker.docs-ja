@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 title: "Quick Start"
 description: "Get up and running with Docker Agent in under 5 minutes. Pick whichever path suits you best."
@@ -9,6 +11,12 @@ keywords: docker agent, ai agents, getting started, quick start
 title: "Quick Start"
 description: "Get up and running with Docker Agent in under 5 minutes. Pick whichever path suits you best."
 keywords: docker agent, ai agents, getting started, quick start
+@z
+
+@x
+canonical: https://docs.docker.com/ai/docker-agent/getting-started/quickstart/
+@y
+canonical: __SUBDIR__/ai/docker-agent/getting-started/quickstart/
 @z
 
 @x
@@ -118,9 +126,9 @@ $ docker agent new --model dmr/ai/gemma3-qat:12B --max-iterations 15
 @z
 
 @x
-This generates an `agent.yaml` in the current directory. Then run it:
+The builder chooses a filename based on the agent's purpose. Run the file it creates; for example, if it creates `agent.yaml`:
 @y
-This generates an `agent.yaml` in the current directory. Then run it:
+The builder chooses a filename based on the agent's purpose. Run the file it creates; for example, if it creates `agent.yaml`:
 @z
 
 @x
@@ -381,10 +389,10 @@ agents:
 - [**Understand Agents**](../../concepts/agents/index.md) — learn how agents work and what you can configure.
 - [**Multi-Agent Systems**](../../concepts/multi-agent/index.md) — build teams of collaborating agents.
 - [**Configuration Reference**](../../configuration/overview/index.md) — full reference for all YAML and HCL options.
-- [**Troubleshooting**](../../community/troubleshooting/index.md) — something not working? Debug tips and common fixes.
+- [**Troubleshooting**](../../guides/troubleshooting/index.md) — something not working? Debug tips and common fixes.
 @y
 - [**Understand Agents**](../../concepts/agents/index.md) — learn how agents work and what you can configure.
 - [**Multi-Agent Systems**](../../concepts/multi-agent/index.md) — build teams of collaborating agents.
 - [**Configuration Reference**](../../configuration/overview/index.md) — full reference for all YAML and HCL options.
-- [**Troubleshooting**](../../community/troubleshooting/index.md) — something not working? Debug tips and common fixes.
+- [**Troubleshooting**](../../guides/troubleshooting/index.md) — something not working? Debug tips and common fixes.
 @z

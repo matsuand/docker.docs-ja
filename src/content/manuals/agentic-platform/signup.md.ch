@@ -1,22 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Sign up for Docker Agentic Platform
 linkTitle: Sign up
 description: Activate Docker Agentic Platform access for the Console, cloud sandbox CLI, and API or SDKs.
 keywords: docker agentic platform, cloud sandboxes, signup, billing, subscription, account access
-weight: 5
----
 @y
----
 title: Sign up for Docker Agentic Platform
 linkTitle: Sign up
 description: Activate Docker Agentic Platform access for the Console, cloud sandbox CLI, and API or SDKs.
 keywords: docker agentic platform, cloud sandboxes, signup, billing, subscription, account access
-weight: 5
----
 @z
 
 @x
@@ -136,13 +132,25 @@ memory configuration. Your model provider bills inference separately.
 @z
 
 @x
-Open [Usage & billing](https://agentic-platform.docker.com/usage) in the Console
-to review pricing, usage, and available credits. Compute credits offset
-eligible cloud compute usage; they don't cover model-provider charges.
+From the Console user menu, open
+[Usage & billing](https://agentic-platform.docker.com/usage) to review runtime
+quantities, estimated totals, and available credits. Usage can take up to
+48 hours to update. Under **Payment & account**, select **Manage in Docker
+Billing** to manage your account and payment details.
 @y
-Open [Usage & billing](https://agentic-platform.docker.com/usage) in the Console
-to review pricing, usage, and available credits. Compute credits offset
-eligible cloud compute usage; they don't cover model-provider charges.
+From the Console user menu, open
+[Usage & billing](https://agentic-platform.docker.com/usage) to review runtime
+quantities, estimated totals, and available credits. Usage can take up to
+48 hours to update. Under **Payment & account**, select **Manage in Docker
+Billing** to manage your account and payment details.
+@z
+
+@x
+Compute credits offset eligible cloud compute usage; they don't cover
+model-provider charges.
+@y
+Compute credits offset eligible cloud compute usage; they don't cover
+model-provider charges.
 @z
 
 @x
@@ -160,5 +168,5 @@ For instructions on reviewing your plan, billing dates, and cancellation, see
 [Docker Agentic Platform plans](/manuals/subscription-billing/plans/docker-agentic-platform.md).
 @y
 For instructions on reviewing your plan, billing dates, and cancellation, see
-[Docker Agentic Platform plans](/manuals/subscription-billing/plans/docker-agentic-platform.md).
+[Docker Agentic Platform plans](manuals/subscription-billing/plans/docker-agentic-platform.md).
 @z

@@ -63,12 +63,12 @@ agents:
 models:
   claude:
     provider: anthropic
-    model: claude-sonnet-4-5
+    model: claude-sonnet-5
 @y
 models:
   claude:
     provider: anthropic
-    model: claude-sonnet-4-5
+    model: claude-sonnet-5
 @z
 
 @x
@@ -76,14 +76,14 @@ flavors:
   cheap:
     models:
       claude:
-        model: claude-3-5-haiku-latest
+        model: claude-haiku-4-5
 ```
 @y
 flavors:
   cheap:
     models:
       claude:
-        model: claude-3-5-haiku-latest
+        model: claude-haiku-4-5
 ```
 @z
 
@@ -155,7 +155,7 @@ semantics, with two extensions for arrays:
 | Object | Merged recursively into the existing object. |
 | Scalar or array | Replaces the existing value. |
 | `null` | Deletes the key. |
-| Key ending in `+` | Appends the items to the existing array. |
+| Key ending in `+` | Appends the items to the existing array (a scalar is promoted to a one-element array first). |
 | Key ending in `-` | Removes matching entries from an array or object. |
 @y
 | Patch value | Effect |
@@ -163,7 +163,7 @@ semantics, with two extensions for arrays:
 | Object | Merged recursively into the existing object. |
 | Scalar or array | Replaces the existing value. |
 | `null` | Deletes the key. |
-| Key ending in `+` | Appends the items to the existing array. |
+| Key ending in `+` | Appends the items to the existing array (a scalar is promoted to a one-element array first). |
 | Key ending in `-` | Removes matching entries from an array or object. |
 @z
 
@@ -280,6 +280,74 @@ With `--flavor with-shell` the root agent gets both `think` and `shell`.
 @z
 
 @x
+### Appending to an instruction
+@y
+### Appending to an instruction
+@z
+
+@x
+An agent `instruction` may be a list of strings, joined by blank lines. Since
+`+` promotes a scalar to a one-element array, a flavor can extend the system
+prompt without repeating it:
+@y
+An agent `instruction` may be a list of strings, joined by blank lines. Since
+`+` promotes a scalar to a one-element array, a flavor can extend the system
+prompt without repeating it:
+@z
+
+@x
+```yaml
+agents:
+  root:
+    instruction: You are a helpful assistant.
+@y
+```yaml
+agents:
+  root:
+    instruction: You are a helpful assistant.
+@z
+
+@x
+flavors:
+  terse:
+    agents:
+      root:
+        instruction+:
+          - Answer in one sentence.
+```
+@y
+flavors:
+  terse:
+    agents:
+      root:
+        instruction+:
+          - Answer in one sentence.
+```
+@z
+
+@x
+With `--flavor terse` the instruction becomes:
+@y
+With `--flavor terse` the instruction becomes:
+@z
+
+@x
+```text
+You are a helpful assistant.
+@y
+```text
+You are a helpful assistant.
+@z
+
+@x
+Answer in one sentence.
+```
+@y
+Answer in one sentence.
+```
+@z
+
+@x
 ### Removing entries
 @y
 ### Removing entries
@@ -348,21 +416,31 @@ flavors:
 @z
 
 @x
-`docker agent debug config` prints the config exactly as the runtime sees it,
-flavors applied:
+`docker agent debug config` prints the config exactly as the runtime sees it.
+Pass flavors after the config to print the resolved config, with the patches
+applied and the `flavors` section dropped:
 @y
-`docker agent debug config` prints the config exactly as the runtime sees it,
-flavors applied:
+`docker agent debug config` prints the config exactly as the runtime sees it.
+Pass flavors after the config to print the resolved config, with the patches
+applied and the `flavors` section dropped:
 @z
 
 @x
 ```bash
-$ docker agent debug config agent.yaml --flavor cheap --flavor with-shell
+$ docker agent debug config agent.yaml cheap with-shell
 ```
 @y
 ```bash
-$ docker agent debug config agent.yaml --flavor cheap --flavor with-shell
+$ docker agent debug config agent.yaml cheap with-shell
 ```
+@z
+
+@x
+The repeatable `--flavor` flag works too, and combines with positional
+flavors (flag values are applied first).
+@y
+The repeatable `--flavor` flag works too, and combines with positional
+flavors (flag values are applied first).
 @z
 
 @x
@@ -412,15 +490,17 @@ flavors "with-shell" {
 @x
 - Flavors require config schema version 13 or later; older versions reject
   the `flavors` key with a hint to bump the top-level `version` field.
+  Appending to a string with `+` (e.g. `instruction+`) requires version 15.
 - Patches apply before validation, so a flavored config is validated exactly
   like a hand-written one.
-- `docker agent push` publishes the raw document, `flavors` section included,
+- `docker agent share push` publishes the raw document, `flavors` section included,
   so consumers of a pushed agent can enable its flavors too.
 @y
 - Flavors require config schema version 13 or later; older versions reject
   the `flavors` key with a hint to bump the top-level `version` field.
+  Appending to a string with `+` (e.g. `instruction+`) requires version 15.
 - Patches apply before validation, so a flavored config is validated exactly
   like a hand-written one.
-- `docker agent push` publishes the raw document, `flavors` section included,
+- `docker agent share push` publishes the raw document, `flavors` section included,
   so consumers of a pushed agent can enable its flavors too.
 @z

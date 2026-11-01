@@ -108,6 +108,82 @@ rule format.
 @z
 
 @x
+An organization network policy can also require approval, which turns every
+allow in that policy into a request the developer must confirm before access is
+granted. Approval is set on the policy rather than on individual rules, so it
+applies to all of the policy's allow rules at once. Without organization
+governance, a request with no matching allow or deny rule also asks for
+approval. See
+[Approval-required access](access-controls/network.md#approval-required-access).
+@y
+An organization network policy can also require approval, which turns every
+allow in that policy into a request the developer must confirm before access is
+granted. Approval is set on the policy rather than on individual rules, so it
+applies to all of the policy's allow rules at once. Without organization
+governance, a request with no matching allow or deny rule also asks for
+approval. See
+[Approval-required access](access-controls/network.md#approval-required-access).
+@z
+
+@x
+Network approval is separate from the MCP `@requireApproval` annotation. An MCP
+approval confirms a single call within the session and creates no rule, while
+an approved network destination stays allowed until you remove the rule. See
+[MCP access policies](access-controls/mcp.md).
+@y
+Network approval is separate from the MCP `@requireApproval` annotation. An MCP
+approval confirms a single call within the session and creates no rule, while
+an approved network destination stays allowed until you remove the rule. See
+[MCP access policies](access-controls/mcp.md).
+@z
+
+@x
+### Limits
+@y
+### Limits
+@z
+
+@x
+Organization policies have the following limits, which help ensure fair usage
+and resource availability across organizations:
+@y
+Organization policies have the following limits, which help ensure fair usage
+and resource availability across organizations:
+@z
+
+@x
+| Limit                     | Value                                               |
+|---------------------------|-----------------------------------------------------|
+| Policies per organization | 100                                                 |
+| Rules per policy          | 250                                                 |
+| Policy size               | 400 KB total, shared across all of a policy's rules |
+@y
+| Limit                     | Value                                               |
+|---------------------------|-----------------------------------------------------|
+| Policies per organization | 100                                                 |
+| Rules per policy          | 250                                                 |
+| Policy size               | 400 KB total, shared across all of a policy's rules |
+@z
+
+@x
+Typical policies use only a small fraction of the policy size limit. Domain
+and file path values have no separate length limit beyond valid format.
+@y
+Typical policies use only a small fraction of the policy size limit. Domain
+and file path values have no separate length limit beyond valid format.
+@z
+
+@x
+If these limits don't fit your organization's needs,
+[contact Docker Sales](https://www.docker.com/products/ai-governance/#contact-sales)
+to discuss options.
+@y
+If these limits don't fit your organization's needs,
+[contact Docker Sales](https://www.docker.com/products/ai-governance/#contact-sales)
+to discuss options.
+@z
+
+@x
 ## Policy scope
 @y
 ## Policy scope
@@ -220,6 +296,206 @@ Both IPv4 and IPv6 notation are supported: `10.0.0.0/8`, `192.168.1.0/24`,
 @z
 
 @x
+#### HTTP method and path
+@y
+#### HTTP method and path
+@z
+
+@x
+A network rule matches a destination host on its own. An HTTP rule is a network
+rule that also names an HTTP method and URL path, with optional query-parameter
+restrictions, so a policy can allow selected API requests.
+@y
+A network rule matches a destination host on its own. An HTTP rule is a network
+rule that also names an HTTP method and URL path, with optional query-parameter
+restrictions, so a policy can allow selected API requests.
+@z
+
+@x
+An HTTP rule names one or more methods, a destination, and path patterns. What
+each part accepts depends on where you configure the rule:
+@y
+An HTTP rule names one or more methods, a destination, and path patterns. What
+each part accepts depends on where you configure the rule:
+@z
+
+@x
+| Part        | Organization policy                        | Local policy                      |
+| ----------- | ------------------------------------------ | --------------------------------- |
+| Method      | One or more listed methods                 | `ANY`, or one or more methods     |
+| Destination | A host or IP address                       | A host                            |
+| Path        | One or more absolute path patterns         | One absolute path pattern         |
+@y
+| Part        | Organization policy                        | Local policy                      |
+| ----------- | ------------------------------------------ | --------------------------------- |
+| Method      | One or more listed methods                 | `ANY`, or one or more methods     |
+| Destination | A host or IP address                       | A host                            |
+| Path        | One or more absolute path patterns         | One absolute path pattern         |
+@z
+
+@x
+A destination can include a port, and a path pattern looks like `/api/**`.
+@y
+A destination can include a port, and a path pattern looks like `/api/**`.
+@z
+
+@x
+A local rule doesn't accept an IP address or a CIDR range. Use a plain network
+rule for those destinations. To cover a second path in a local policy, add a
+second rule.
+@y
+A local rule doesn't accept an IP address or a CIDR range. Use a plain network
+rule for those destinations. To cover a second path in a local policy, add a
+second rule.
+@z
+
+@x
+Every rule applies to at least one method. On the CLI, `--method ANY` covers
+every HTTP method. In the composer, a rule with no methods selected covers
+every method the composer lists. For the methods you can select individually, see
+[Add a network rule](access-controls/organization.md#add-a-network-rule) for an
+organization policy and
+[HTTP method and path rules](access-controls/local.md#http-method-and-path-rules)
+for a local one.
+@y
+Every rule applies to at least one method. On the CLI, `--method ANY` covers
+every HTTP method. In the composer, a rule with no methods selected covers
+every method the composer lists. For the methods you can select individually, see
+[Add a network rule](access-controls/organization.md#add-a-network-rule) for an
+organization policy and
+[HTTP method and path rules](access-controls/local.md#http-method-and-path-rules)
+for a local one.
+@z
+
+@x
+Path patterns follow the same wildcard rules as filesystem paths, where `*`
+matches within one path segment and `**` matches any depth. A pattern without a
+wildcard matches that path exactly, so `/repos` matches `/repos` and nothing
+below it. Every pattern must start with `/` and can't contain a query string, a
+fragment, or a `..` segment. A local rule's path must also be canonical, so it
+can't contain percent-encoding, control characters, repeated or trailing
+slashes, or a `.` segment. For the full list, see
+[HTTP method and path rules](access-controls/local.md#http-method-and-path-rules).
+@y
+Path patterns follow the same wildcard rules as filesystem paths, where `*`
+matches within one path segment and `**` matches any depth. A pattern without a
+wildcard matches that path exactly, so `/repos` matches `/repos` and nothing
+below it. Every pattern must start with `/` and can't contain a query string, a
+fragment, or a `..` segment. A local rule's path must also be canonical, so it
+can't contain percent-encoding, control characters, repeated or trailing
+slashes, or a `.` segment. For the full list, see
+[HTTP method and path rules](access-controls/local.md#http-method-and-path-rules).
+@z
+
+@x
+##### Query parameters
+@y
+##### Query parameters
+@z
+
+@x
+An HTTP rule can also restrict query parameters independently of the path.
+@y
+An HTTP rule can also restrict query parameters independently of the path.
+@z
+
+@x
+Use exact parameter names and values, or a single `*` at the start or end of a
+value to match a suffix or prefix. A value of `*` matches any value, including
+an empty one. Names cannot contain wildcards. Names and values are
+case-sensitive.
+@y
+Use exact parameter names and values, or a single `*` at the start or end of a
+value to match a suffix or prefix. A value of `*` matches any value, including
+an empty one. Names cannot contain wildcards. Names and values are
+case-sensitive.
+@z
+
+@x
+For rules created with `--query`, every specified parameter must match.
+Parameter order doesn't matter, and requests may include additional parameters. Repeating a parameter
+name in the rule requires separate matching occurrences in the request. A rule
+without query restrictions matches regardless of query parameters.
+@y
+For rules created with `--query`, every specified parameter must match.
+Parameter order doesn't matter, and requests may include additional parameters. Repeating a parameter
+name in the rule requires separate matching occurrences in the request. A rule
+without query restrictions matches regardless of query parameters.
+@z
+
+@x
+Write names and value patterns using URL query encoding: `+` or `%20` for a
+space, `%2B` for a literal plus, and `%2A` for a literal asterisk. Keep query
+parameters out of `--path`. For CLI examples, see
+[Local HTTP rules](access-controls/local.md#http-method-and-path-rules).
+@y
+Write names and value patterns using URL query encoding: `+` or `%20` for a
+space, `%2B` for a literal plus, and `%2A` for a literal asterisk. Keep query
+parameters out of `--path`. For CLI examples, see
+[Local HTTP rules](access-controls/local.md#http-method-and-path-rules).
+@z
+
+@x
+##### Combine HTTP and network rules
+@y
+##### Combine HTTP and network rules
+@z
+
+@x
+HTTP requests are evaluated against both layers. A network rule sets the
+baseline for a host, and HTTP rules narrow access by method, path, and query
+parameters:
+@y
+HTTP requests are evaluated against both layers. A network rule sets the
+baseline for a host, and HTTP rules narrow access by method, path, and query
+parameters:
+@z
+
+@x
+| Rules that cover the host   | Result for an HTTP request                                              |
+| --------------------------- | ----------------------------------------------------------------------- |
+| Network allow only          | Allowed at any method and path                                          |
+| HTTP allow only             | Allowed only where a rule matches the method, path, and any query restrictions. Anything else is denied |
+| Network allow and HTTP deny | Requests matching the HTTP deny are blocked. The rest stay allowed          |
+| Network deny                | Blocked. An HTTP allow can't reopen a denied host                        |
+@y
+| Rules that cover the host   | Result for an HTTP request                                              |
+| --------------------------- | ----------------------------------------------------------------------- |
+| Network allow only          | Allowed at any method and path                                          |
+| HTTP allow only             | Allowed only where a rule matches the method, path, and any query restrictions. Anything else is denied |
+| Network allow and HTTP deny | Requests matching the HTTP deny are blocked. The rest stay allowed          |
+| Network deny                | Blocked. An HTTP allow can't reopen a denied host                        |
+@z
+
+@x
+A network deny is therefore a floor that HTTP rules can't raise, while a
+network allow is a ceiling that HTTP rules can carve into.
+@y
+A network deny is therefore a floor that HTTP rules can't raise, while a
+network allow is a ceiling that HTTP rules can carve into.
+@z
+
+@x
+When a rule requires an HTTP decision, the sandbox HTTP proxy
+evaluates each request separately instead of deciding once per connection.
+@y
+When a rule requires an HTTP decision, the sandbox HTTP proxy
+evaluates each request separately instead of deciding once per connection.
+@z
+
+@x
+Those requests have to go through the proxy. A connection it can't inspect,
+such as one it handles transparently, is blocked rather than evaluated.
+Traffic that isn't HTTP, such as SSH, carries no method or path, so HTTP rules
+never match it. Control those destinations with network rules.
+@y
+Those requests have to go through the proxy. A connection it can't inspect,
+such as one it handles transparently, is blocked rather than evaluated.
+Traffic that isn't HTTP, such as SSH, carries no method or path, so HTTP rules
+never match it. Control those destinations with network rules.
+@z
+
+@x
 For local and organization policy configuration, see
 [Network access policies](access-controls/network.md).
 @y
@@ -444,6 +720,22 @@ from those sources do still apply. See [Precedence](#precedence).
 @z
 
 @x
+A request that an approval-required policy allows produces a third outcome.
+Rather than being allowed outright, it's held back until the developer confirms
+the destination, and the confirmation governs later requests to it. This holds
+even when another policy allows the same request without requiring approval. A
+matching deny still wins, so a denied destination is blocked without asking.
+See [Approval-required access](access-controls/network.md#approval-required-access).
+@y
+A request that an approval-required policy allows produces a third outcome.
+Rather than being allowed outright, it's held back until the developer confirms
+the destination, and the confirmation governs later requests to it. This holds
+even when another policy allows the same request without requiring approval. A
+matching deny still wins, so a denied destination is blocked without asking.
+See [Approval-required access](access-controls/network.md#approval-required-access).
+@z
+
+@x
 ## Precedence
 @y
 ## Precedence
@@ -521,6 +813,22 @@ top of organization policy is always a network deny. `sbx policy ls` hides
 inactive rules by default. See
 [Monitoring](monitor-and-enforce/monitoring.md#showing-inactive-rules) for how
 to list them.
+@z
+
+@x
+A local deny takes precedence over an organization approval requirement as
+well, so the request is blocked and no approval is requested. Rules that a
+developer gains by approving a request are the one exception to local allow
+rules being inactive, because they record an answer to the organization's own
+approval requirement rather than granting new access. See
+[Approval-required access](access-controls/network.md#approval-required-access).
+@y
+A local deny takes precedence over an organization approval requirement as
+well, so the request is blocked and no approval is requested. Rules that a
+developer gains by approving a request are the one exception to local allow
+rules being inactive, because they record an answer to the organization's own
+approval requirement rather than granting new access. See
+[Approval-required access](access-controls/network.md#approval-required-access).
 @z
 
 @x

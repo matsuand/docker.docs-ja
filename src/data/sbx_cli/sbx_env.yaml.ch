@@ -30,13 +30,27 @@ description: |-
 @z
 
 @x
-    Lifecycle commands and command-based secrets execute on the host with your
-    permissions. Keep secret helpers and their dependencies outside writable
-    sandbox mounts, and use absolute helper paths.
+    Lifecycle commands, command-based secrets, and command-backed MCP servers execute
+    on the host with your permissions. Keep secret helpers and their dependencies
+    outside writable sandbox mounts, and use absolute helper paths.
 @y
-    Lifecycle commands and command-based secrets execute on the host with your
-    permissions. Keep secret helpers and their dependencies outside writable
-    sandbox mounts, and use absolute helper paths.
+    Lifecycle commands, command-based secrets, and command-backed MCP servers execute
+    on the host with your permissions. Keep secret helpers and their dependencies
+    outside writable sandbox mounts, and use absolute helper paths.
+@z
+
+@x
+    MCP command approval persists across sandbox and daemon restarts. Use
+    --skip-host-commands to skip lifecycle commands and disable owned host MCP
+    commands until a later "sbx env run" without the flag. If initialize creates
+    a missing MCP executable or changes its resolved path, a second approval is
+    required before registration or sandbox creation.
+@y
+    MCP command approval persists across sandbox and daemon restarts. Use
+    --skip-host-commands to skip lifecycle commands and disable owned host MCP
+    commands until a later "sbx env run" without the flag. If initialize creates
+    a missing MCP executable or changes its resolved path, a second approval is
+    required before registration or sandbox creation.
 @z
 
 @x

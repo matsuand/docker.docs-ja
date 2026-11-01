@@ -91,7 +91,7 @@ The simplest way to use OpenCode Go:
 ```yaml
 agents:
   root:
-    model: opencode-go/deepseek-v4-flash
+    model: opencode-go/deepseek-v4.1-flash
     description: Assistant using OpenCode Go
     instruction: You are a helpful assistant.
 ```
@@ -99,7 +99,7 @@ agents:
 ```yaml
 agents:
   root:
-    model: opencode-go/deepseek-v4-flash
+    model: opencode-go/deepseek-v4.1-flash
     description: Assistant using OpenCode Go
     instruction: You are a helpful assistant.
 ```
@@ -188,7 +188,7 @@ These models use the `/v1/chat/completions` endpoint and work directly with the 
 @x
 | Model               | Description                           |
 | ------------------- | ------------------------------------- |
-| `deepseek-v4-flash` | Fast and cost-effective DeepSeek model |
+| `deepseek-v4.1-flash` | Fast and cost-effective DeepSeek model |
 | `deepseek-v4-pro`   | Most capable DeepSeek model           |
 | `kimi-k2.7-code`    | Kimi K2.7 optimized for code          |
 | `kimi-k2.6`         | Kimi K2.6 model                       |
@@ -204,7 +204,7 @@ These models use the `/v1/chat/completions` endpoint and work directly with the 
 @y
 | Model               | Description                           |
 | ------------------- | ------------------------------------- |
-| `deepseek-v4-flash` | Fast and cost-effective DeepSeek model |
+| `deepseek-v4.1-flash` | Fast and cost-effective DeepSeek model |
 | `deepseek-v4-pro`   | Most capable DeepSeek model           |
 | `kimi-k2.7-code`    | Kimi K2.7 optimized for code          |
 | `kimi-k2.6`         | Kimi K2.6 model                       |
@@ -326,15 +326,33 @@ OpenCode Go is implemented as a built-in alias in Docker Agent:
 @z
 
 @x
-This means OpenCode Go uses the same client as OpenAI, making it fully compatible with all OpenAI features supported by Docker Agent.
+This alias uses the OpenAI Chat Completions client, not the custom Messages
+configuration above. Reusing a client does not guarantee every upstream feature;
+Messages signatures, beta support, caching and pricing do not carry over by default.
+See [Claude access paths](../anthropic/index.md#claude-access-paths).
 @y
-This means OpenCode Go uses the same client as OpenAI, making it fully compatible with all OpenAI features supported by Docker Agent.
+This alias uses the OpenAI Chat Completions client, not the custom Messages
+configuration above. Reusing a client does not guarantee every upstream feature;
+Messages signatures, beta support, caching and pricing do not carry over by default.
+See [Claude access paths](../anthropic/index.md#claude-access-paths).
 @z
 
 @x
 For Anthropic-compatible models (MiniMax, Qwen), Docker Agent uses a custom provider pointing to the Anthropic client at `https://opencode.ai/zen/go` with the same token.
 @y
 For Anthropic-compatible models (MiniMax, Qwen), Docker Agent uses a custom provider pointing to the Anthropic client at `https://opencode.ai/zen/go` with the same token.
+@z
+
+@x
+### Session Header
+@y
+### Session Header
+@z
+
+@x
+OpenCode asks clients to send an `x-opencode-session` header carrying one stable ID per conversation, which it uses to optimise routing and prompt caching. Docker Agent sends it on every direct request to `opencode.ai`, whether the model goes through the built-in alias or a custom provider on the OpenAI, Anthropic or Google client, deriving an opaque value from the agent session so each conversation keeps the same ID, including in `serve api` / `serve chat` deployments that multiplex many conversations. Requests routed through a models gateway carry the gateway's own session header instead, and the OpenAI client's opt-in `transport: websocket` setting is ignored for OpenCode models, which stay on SSE so the header is always sent. On the OpenAI client you can pin your own value through `provider_opts.http_headers.x-opencode-session`; the Anthropic and Google clients do not read `http_headers`.
+@y
+OpenCode asks clients to send an `x-opencode-session` header carrying one stable ID per conversation, which it uses to optimise routing and prompt caching. Docker Agent sends it on every direct request to `opencode.ai`, whether the model goes through the built-in alias or a custom provider on the OpenAI, Anthropic or Google client, deriving an opaque value from the agent session so each conversation keeps the same ID, including in `serve api` / `serve chat` deployments that multiplex many conversations. Requests routed through a models gateway carry the gateway's own session header instead, and the OpenAI client's opt-in `transport: websocket` setting is ignored for OpenCode models, which stay on SSE so the header is always sent. On the OpenAI client you can pin your own value through `provider_opts.http_headers.x-opencode-session`; the Anthropic and Google clients do not read `http_headers`.
 @z
 
 @x
@@ -347,10 +365,10 @@ For Anthropic-compatible models (MiniMax, Qwen), Docker Agent uses a custom prov
 ```yaml
 agents:
   coder:
-    model: opencode-go/deepseek-v4-flash
+    model: opencode-go/deepseek-v4.1-flash
     description: Expert code assistant
     instruction: |
-      You are an expert programmer using DeepSeek V4 Flash.
+      You are an expert programmer using DeepSeek V4.1 Flash.
       Write clean, efficient, well-documented code.
       Explain your reasoning when helpful.
     toolsets:
@@ -362,10 +380,10 @@ agents:
 ```yaml
 agents:
   coder:
-    model: opencode-go/deepseek-v4-flash
+    model: opencode-go/deepseek-v4.1-flash
     description: Expert code assistant
     instruction: |
-      You are an expert programmer using DeepSeek V4 Flash.
+      You are an expert programmer using DeepSeek V4.1 Flash.
       Write clean, efficient, well-documented code.
       Explain your reasoning when helpful.
     toolsets:

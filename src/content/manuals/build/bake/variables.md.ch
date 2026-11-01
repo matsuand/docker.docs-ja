@@ -12,10 +12,10 @@ linkTitle: Variables
 @z
 
 @x
-description: 
+description: Define, override, and validate variables in Docker Bake files
 keywords: build, buildx, bake, buildkit, hcl, variables
 @y
-description: 
+description: Define, override, and validate variables in Docker Bake files
 keywords: build, buildx, bake, buildkit, hcl, variables
 @z
 
@@ -23,12 +23,12 @@ keywords: build, buildx, bake, buildkit, hcl, variables
 You can define and use variables in a Bake file to set attribute values,
 interpolate them into other values, and perform arithmetic operations.
 Variables can be defined with default values, and can be overridden with
-environment variables.
+the `--var` flag or environment variables.
 @y
 You can define and use variables in a Bake file to set attribute values,
 interpolate them into other values, and perform arithmetic operations.
 Variables can be defined with default values, and can be overridden with
-environment variables.
+the `--var` flag or environment variables.
 @z
 
 @x
@@ -52,6 +52,46 @@ The following example shows how to use the `TAG` variable in a target.
 @z
 
 % snip code...
+
+@x
+## Override variable values
+@y
+## Override variable values
+@z
+
+@x
+Use `--var NAME=value` to override a declared variable for one Bake invocation
+without changing your shell's environment:
+@y
+Use `--var NAME=value` to override a declared variable for one Bake invocation
+without changing your shell's environment:
+@z
+
+% snip command...
+
+@x
+Repeat the flag to set multiple variables. If you repeat a name, the last
+value wins. Explicit `--var` values take precedence over environment variables
+with the same name and over defaults in the Bake file. Values are converted
+to the declared variable type.
+@y
+Repeat the flag to set multiple variables. If you repeat a name, the last
+value wins. Explicit `--var` values take precedence over environment variables
+with the same name and over defaults in the Bake file. Values are converted
+to the declared variable type.
+@z
+
+@x
+This flag also works when environment-based variable lookups are disabled
+with `BUILDX_BAKE_DISABLE_VARS_ENV_LOOKUP=1`. Use `--var` to set a variable
+used in expressions throughout the definition; use `--set` to override a
+specific target attribute. See [Overriding configurations](./overrides.md).
+@y
+This flag also works when environment-based variable lookups are disabled
+with `BUILDX_BAKE_DISABLE_VARS_ENV_LOOKUP=1`. Use `--var` to set a variable
+used in expressions throughout the definition; use `--set` to override a
+specific target attribute. See [Overriding configurations](./overrides.md).
+@z
 
 @x
 ## Interpolate variables into values

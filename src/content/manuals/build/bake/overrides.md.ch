@@ -27,26 +27,20 @@ specific target.
 @z
 
 @x
-The following list of attributes can be overridden:
+To override target attributes or the variables used to configure them, use:
 @y
-The following list of attributes can be overridden:
-@z
-
-% snip attributes...
-
-@x
-To override these attributes, you can use the following methods:
-@y
-To override these attributes, you can use the following methods:
+To override target attributes or the variables used to configure them, use:
 @z
 
 @x
 - [File overrides](#file-overrides)
 - [CLI overrides](#command-line)
+- [Variable overrides](#variables)
 - [Environment variable overrides](#environment-variables)
 @y
 - [File overrides](#file-overrides)
 - [CLI overrides](#command-line)
+- [Variable overrides](#variables)
 - [Environment variable overrides](#environment-variables)
 @z
 
@@ -212,37 +206,239 @@ You can also override target configurations from the command line with the
 
 % snip code...
 % snip command...
-% snip output...
+% snip code...
 
 @x
 > [!NOTE]
 >
-> `--set` is a repeatable flag. For array fields such as `tags`, repeat `--set` to provide multiple values or use the `+=` operator to append without replacing.
-> Array literal syntax like `--set target.tags=[a,b]` is not supported.
+> `--set` is a repeatable flag. For array fields such as `tag`, repeat `--set`
+> to provide multiple values or use `+=` to append without replacing.
+> An empty assignment, such as `--set app.tag=`, clears the array. Subsequent
+> assignments add values to the cleared array. Array literal syntax such as
+> `--set app.tag=[a,b]` is not supported.
 @y
 > [!NOTE]
 >
-> `--set` is a repeatable flag. For array fields such as `tags`, repeat `--set` to provide multiple values or use the `+=` operator to append without replacing.
-> Array literal syntax like `--set target.tags=[a,b]` is not supported.
+> `--set` is a repeatable flag. For array fields such as `tag`, repeat `--set`
+> to provide multiple values or use `+=` to append without replacing.
+> An empty assignment, such as `--set app.tag=`, clears the array. Subsequent
+> assignments add values to the cleared array. Array literal syntax such as
+> `--set app.tag=[a,b]` is not supported.
 @z
 
 @x
-Pattern matching syntax defined in [https://golang.org/pkg/path/#Match](https://golang.org/pkg/path/#Match)
-is also supported:
+Override keys use singular names such as `arg`, `secret`, and `tag`. These
+names apply to `--set` selectors; Bake file attributes keep their existing
+names, such as `args` and `tags`. Older plural override spellings remain
+supported as aliases.
 @y
-Pattern matching syntax defined in [https://golang.org/pkg/path/#Match](https://golang.org/pkg/path/#Match)
-is also supported:
+Override keys use singular names such as `arg`, `secret`, and `tag`. These
+names apply to `--set` selectors; Bake file attributes keep their existing
+names, such as `args` and `tags`. Older plural override spellings remain
+supported as aliases.
+@z
+
+@x
+`context` and `contexts` aren't aliases: `context` sets the main build
+context, while `contexts.<name>` sets one named context. The alias `secrets`
+applies to the secret list override only; `secrets.<id>` is invalid.
+@y
+`context` and `contexts` aren't aliases: `context` sets the main build
+context, while `contexts.<name>` sets one named context. The alias `secrets`
+applies to the secret list override only; `secrets.<id>` is invalid.
+@z
+
+@x
+You can match multiple targets with a pattern. Quote the override so your
+shell doesn't expand the pattern before Bake reads it:
+@y
+You can match multiple targets with a pattern. Quote the override so your
+shell doesn't expand the pattern before Bake reads it:
 @z
 
 % snip command...
 
 @x
-Complete list of attributes that can be overridden with `--set` are:
+The first and third commands affect targets whose names start with `foo`.
+The second sets the platform for all targets. For the full list of override
+keys, aliases, pattern syntax, and fields supporting `+=`, see the
+[`--set` reference](/reference/cli/docker/buildx/bake/#set).
 @y
-Complete list of attributes that can be overridden with `--set` are:
+The first and third commands affect targets whose names start with `foo`.
+The second sets the platform for all targets. For the full list of override
+keys, aliases, pattern syntax, and fields supporting `+=`, see the
+[`--set` reference](__SUBDIR__/reference/cli/docker/buildx/bake/#set).
 @z
 
-% snip attributes...
+@x
+### Override list attributes
+@y
+### Override list attributes
+@z
+
+@x
+Attributes such as `secret`, `ssh`, and `output` can use lists of objects in a
+Bake file. In a `--set` value, use the inline syntax of the corresponding
+build flag, rather than an HCL object or array. For example, `secret` uses the
+same `id=...,src=...` syntax as
+[`build --secret`](/reference/cli/docker/buildx/build/#secret).
+@y
+Attributes such as `secret`, `ssh`, and `output` can use lists of objects in a
+Bake file. In a `--set` value, use the inline syntax of the corresponding
+build flag, rather than an HCL object or array. For example, `secret` uses the
+same `id=...,src=...` syntax as
+[`build --secret`](__SUBDIR__/reference/cli/docker/buildx/build/#secret).
+@z
+
+@x
+Use `=` to replace the secret list, `+=` to add a secret, or an empty value
+to clear the list:
+@y
+Use `=` to replace the secret list, `+=` to add a secret, or an empty value
+to clear the list:
+@z
+
+% snip command...
+
+@x
+These operations affect the list as a whole. To change only the source of one
+declared secret while preserving the others, use `secret.<id>`.
+@y
+These operations affect the list as a whole. To change only the source of one
+declared secret while preserving the others, use `secret.<id>`.
+@z
+
+@x
+### Override a secret source
+@y
+### Override a secret source
+@z
+
+@x
+Use `--set <target>.secret.<id>=<source>` to change the source of an existing
+secret without replacing the target's secret list. The secret ID must already
+be declared by the target.
+@y
+Use `--set <target>.secret.<id>=<source>` to change the source of an existing
+secret without replacing the target's secret list. The secret ID must already
+be declared by the target.
+@z
+
+@x
+For example, declare an `aws` secret in the Bake file:
+@y
+For example, declare an `aws` secret in the Bake file:
+@z
+
+% snip code...
+
+@x
+Supply its value from an environment variable or a different file:
+@y
+Supply its value from an environment variable or a different file:
+@z
+
+% snip command...
+
+@x
+The build still receives the secret as `aws`. Other declared secrets keep
+their sources. The override fails if the target doesn't declare `aws`, or if
+an `id=` in the override value names a different secret. This form doesn't
+support `+=`.
+@y
+The build still receives the secret as `aws`. Other declared secrets keep
+their sources. The override fails if the target doesn't declare `aws`, or if
+an `id=` in the override value names a different secret. This form doesn't
+support `+=`.
+@z
+
+@x
+Named source overrides are applied after secret list overrides, so the ID
+must exist in the resulting list. The value describes the complete source
+using `env=...` or `src=...`; it doesn't address an object field such as
+`secret.aws.env`.
+@y
+Named source overrides are applied after secret list overrides, so the ID
+must exist in the resulting list. The value describes the complete source
+using `env=...` or `src=...`; it doesn't address an object field such as
+`secret.aws.env`.
+@z
+
+@x
+### Override resource limits
+@y
+### Override resource limits
+@z
+
+@x
+Use `--set <target>.resource.<name>=<value>` to change a resource limit for
+the containers that run build steps. For example, override memory and CPU
+limits for an `app` target:
+@y
+Use `--set <target>.resource.<name>=<value>` to change a resource limit for
+the containers that run build steps. For example, override memory and CPU
+limits for an `app` target:
+@z
+
+% snip command...
+
+@x
+Supported names are `memory`, `memory-swap`, `cpu-shares`, `cpu-period`,
+`cpu-quota`, `cpuset-cpus`, and `cpuset-mems`. Each override changes only the
+named limit, preserving other limits from the Bake definition. Resource
+overrides don't support `+=`.
+@y
+Supported names are `memory`, `memory-swap`, `cpu-shares`, `cpu-period`,
+`cpu-quota`, `cpuset-cpus`, and `cpuset-mems`. Each override changes only the
+named limit, preserving other limits from the Bake definition. Resource
+overrides don't support `+=`.
+@z
+
+@x
+These limits require a BuildKit daemon with per-step resource limit support
+and take effect on Linux. They control resources within a build step, rather
+than how many Bake targets run concurrently. See the
+[`--resource` reference](/reference/cli/docker/buildx/build/#resource) for
+units and supported values, and the
+[`resources` attribute](./reference.md#targetresources) for file configuration.
+@y
+These limits require a BuildKit daemon with per-step resource limit support
+and take effect on Linux. They control resources within a build step, rather
+than how many Bake targets run concurrently. See the
+[`--resource` reference](__SUBDIR__/reference/cli/docker/buildx/build/#resource) for
+units and supported values, and the
+[`resources` attribute](./reference.md#targetresources) for file configuration.
+@z
+
+@x
+## Variables
+@y
+## Variables
+@z
+
+@x
+Use `--var NAME=value` to override a declared Bake variable for a single
+invocation. For example, set `TAG` without exporting it in your shell:
+@y
+Use `--var NAME=value` to override a declared Bake variable for a single
+invocation. For example, set `TAG` without exporting it in your shell:
+@z
+
+% snip command...
+
+@x
+The value takes precedence over an environment variable with the same name.
+Unlike `--set webapp.tags=...`, this changes the variable wherever the Bake
+definition uses it. See
+[Override variable values](./variables.md#override-variable-values) for
+precedence, types, and repeated flags.
+@y
+The value takes precedence over an environment variable with the same name.
+Unlike `--set webapp.tags=...`, this changes the variable wherever the Bake
+definition uses it. See
+[Override variable values](./variables.md#override-variable-values) for
+precedence, types, and repeated flags.
+@z
 
 @x
 ## Environment variables
@@ -266,6 +462,16 @@ Bake lets you use environment variables to override the value of a `variable`
 block. Only `variable` blocks can be overridden with environment variables.
 This means you need to define the variables in the bake file and then set the
 environment variable with the same name to override it.
+@z
+
+@x
+To disable these lookups, set `BUILDX_BAKE_DISABLE_VARS_ENV_LOOKUP=1`; see the
+[variable reference](../building/variables.md#buildx_bake_disable_vars_env_lookup).
+You can still provide variable values explicitly with `--var NAME=value`.
+@y
+To disable these lookups, set `BUILDX_BAKE_DISABLE_VARS_ENV_LOOKUP=1`; see the
+[variable reference](../building/variables.md#buildx_bake_disable_vars_env_lookup).
+You can still provide variable values explicitly with `--var NAME=value`.
 @z
 
 @x
@@ -326,4 +532,4 @@ target runs.
 @z
 
 % snip command...
-% snip output...
+% snip code...

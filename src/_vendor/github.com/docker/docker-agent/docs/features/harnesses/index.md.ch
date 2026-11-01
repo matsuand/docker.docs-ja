@@ -5,11 +5,11 @@
 
 @x
 title: "Coding Harnesses"
-description: "Delegate coding tasks to external AI coding CLIs (Claude Code, Codex, opencode) as sub-agents."
+description: "Delegate coding tasks to external AI coding CLIs (Claude Code, Codex, opencode, pi, Command Code) as sub-agents."
 keywords: docker agent, ai agents, features, coding harnesses
 @y
 title: "Coding Harnesses"
-description: "Delegate coding tasks to external AI coding CLIs (Claude Code, Codex, opencode) as sub-agents."
+description: "Delegate coding tasks to external AI coding CLIs (Claude Code, Codex, opencode, pi, Command Code) as sub-agents."
 keywords: docker agent, ai agents, features, coding harnesses
 @z
 
@@ -32,9 +32,9 @@ _Delegate coding tasks to external AI coding CLIs (Claude Code, Codex, opencode)
 @z
 
 @x
-A **harness** agent delegates its work to an external coding CLI — `claude` (Claude Code), `codex` (OpenAI Codex), `opencode`, or `pi` — instead of calling a model API directly. The external CLI drives the coding loop while Docker Agent provides orchestration, hooks, permissions, and distribution.
+A **harness** agent delegates its work to an external coding CLI — `claude` (Claude Code), `codex` (OpenAI Codex), `opencode`, `pi`, or `cmd` (Command Code) — instead of calling a model API directly. The external CLI drives the coding loop while Docker Agent provides orchestration, hooks, permissions, and distribution.
 @y
-A **harness** agent delegates its work to an external coding CLI — `claude` (Claude Code), `codex` (OpenAI Codex), `opencode`, or `pi` — instead of calling a model API directly. The external CLI drives the coding loop while Docker Agent provides orchestration, hooks, permissions, and distribution.
+A **harness** agent delegates its work to an external coding CLI — `claude` (Claude Code), `codex` (OpenAI Codex), `opencode`, `pi`, or `cmd` (Command Code) — instead of calling a model API directly. The external CLI drives the coding loop while Docker Agent provides orchestration, hooks, permissions, and distribution.
 @z
 
 @x
@@ -82,6 +82,7 @@ The external CLI must be installed and available on `PATH` before starting Docke
 | `codex` | `codex` | [github.com/openai/codex](https://github.com/openai/codex) |
 | `opencode` | `opencode` | [opencode.ai](https://opencode.ai) |
 | `pi` | `pi` | Refer to the `pi` CLI documentation for installation instructions. |
+| `command-code` | `cmd` | [commandcode.ai](https://commandcode.ai) |
 @y
 | Harness type | Required binary | Install |
 | --- | --- | --- |
@@ -89,6 +90,7 @@ The external CLI must be installed and available on `PATH` before starting Docke
 | `codex` | `codex` | [github.com/openai/codex](https://github.com/openai/codex) |
 | `opencode` | `opencode` | [opencode.ai](https://opencode.ai) |
 | `pi` | `pi` | Refer to the `pi` CLI documentation for installation instructions. |
+| `command-code` | `cmd` | [commandcode.ai](https://commandcode.ai) |
 @z
 
 @x
@@ -142,17 +144,17 @@ Harness agents do **not** need a `model:` field — the external CLI manages its
 @x
 | Field | Applies to | Type | Description |
 | --- | --- | --- | --- |
-| `type` | all | string | **Required.** One of `claude-code`, `codex`, `opencode`, `pi` |
+| `type` | all | string | **Required.** One of `claude-code`, `codex`, `opencode`, `pi`, `command-code` |
 | `model` | all | string | Optional model override forwarded to the CLI. When omitted, the CLI uses its own default model. |
-| `effort` | `claude-code` | string | Reasoning effort: `low` \| `medium` \| `high` \| `xhigh` \| `max` — forwarded as `--effort`. When omitted, Claude Code uses its own default. |
+| `effort` | `claude-code`, `command-code` | string | Reasoning effort: `low` \| `medium` \| `high` \| `xhigh` \| `max` — forwarded as `--effort`. When omitted, the CLI uses its own default. |
 | `agent` | `opencode` | string | opencode agent profile name |
 | `thinking` | `opencode` | boolean | Enable extended thinking — forwarded as `--thinking` |
 @y
 | Field | Applies to | Type | Description |
 | --- | --- | --- | --- |
-| `type` | all | string | **Required.** One of `claude-code`, `codex`, `opencode`, `pi` |
+| `type` | all | string | **Required.** One of `claude-code`, `codex`, `opencode`, `pi`, `command-code` |
 | `model` | all | string | Optional model override forwarded to the CLI. When omitted, the CLI uses its own default model. |
-| `effort` | `claude-code` | string | Reasoning effort: `low` \| `medium` \| `high` \| `xhigh` \| `max` — forwarded as `--effort`. When omitted, Claude Code uses its own default. |
+| `effort` | `claude-code`, `command-code` | string | Reasoning effort: `low` \| `medium` \| `high` \| `xhigh` \| `max` — forwarded as `--effort`. When omitted, the CLI uses its own default. |
 | `agent` | `opencode` | string | opencode agent profile name |
 | `thinking` | `opencode` | boolean | Enable extended thinking — forwarded as `--thinking` |
 @z
@@ -344,6 +346,34 @@ agents:
 @z
 
 @x
+Codex runs through its documented `codex exec --json` interface. A successful
+turn must emit `turn.completed`; `turn.failed`, malformed JSON, and incomplete
+streams are reported as errors. Reconnection warnings alone do not fail a turn.
+Each JSON event may contain up to 16 MiB; larger events are rejected without
+waiting for the CLI to finish writing them. The CLI is launched directly,
+without a shell. Error messages omit stderr and raw stream contents to avoid
+exposing credentials or tool output.
+@y
+Codex runs through its documented `codex exec --json` interface. A successful
+turn must emit `turn.completed`; `turn.failed`, malformed JSON, and incomplete
+streams are reported as errors. Reconnection warnings alone do not fail a turn.
+Each JSON event may contain up to 16 MiB; larger events are rejected without
+waiting for the CLI to finish writing them. The CLI is launched directly,
+without a shell. Error messages omit stderr and raw stream contents to avoid
+exposing credentials or tool output.
+@z
+
+@x
+A thread ID reported during a failed or canceled first turn is retained for
+follow-up turns. Docker Agent does not automatically retry a failed turn:
+the CLI may already have changed files or run commands.
+@y
+A thread ID reported during a failed or canceled first turn is retained for
+follow-up turns. Docker Agent does not automatically retry a failed turn:
+the CLI may already have changed files or run commands.
+@z
+
+@x
 ### opencode
 @y
 ### opencode
@@ -369,6 +399,42 @@ agents:
       agent: my-profile  # optional agent profile
       thinking: true     # enable extended thinking
 ```
+@z
+
+@x
+### Command Code
+@y
+### Command Code
+@z
+
+@x
+```yaml
+agents:
+  coder:
+    description: Command Code coding agent
+    harness:
+      type: command-code
+      model: my-model # optional model override, forwarded as --model
+      effort: high    # low | medium | high | xhigh | max
+```
+@y
+```yaml
+agents:
+  coder:
+    description: Command Code coding agent
+    harness:
+      type: command-code
+      model: my-model # optional model override, forwarded as --model
+      effort: high    # low | medium | high | xhigh | max
+```
+@z
+
+@x
+The `command-code` harness runs the `cmd` binary non-interactively. `model`
+and `effort` are optional; when omitted, the CLI uses its own defaults.
+@y
+The `command-code` harness runs the `cmd` binary non-interactively. `model`
+and `effort` are optional; when omitted, the CLI uses its own defaults.
 @z
 
 @x
@@ -406,15 +472,69 @@ Harness agents bypass the Docker Agent model pipeline entirely. As a result:
 @z
 
 @x
+## Execution Capabilities
+@y
+## Execution Capabilities
+@z
+
+@x
+The Agent Inspector and runtime `team_info` roster distinguish native execution
+from harness execution. Harness profiles report tools as `harness-reported` and
+approval ownership as `external`: tool events describe actions performed by the
+CLI, not calls approved by Docker Agent's tool dispatcher. This does not imply
+that the external CLI's own approval prompts are enabled.
+@y
+The Agent Inspector and runtime `team_info` roster distinguish native execution
+from harness execution. Harness profiles report tools as `harness-reported` and
+approval ownership as `external`: tool events describe actions performed by the
+CLI, not calls approved by Docker Agent's tool dispatcher. This does not imply
+that the external CLI's own approval prompts are enabled.
+@z
+
+@x
+Harness execution does not support Docker Agent's native budget enforcement,
+compaction of the external CLI's conversation or mid-turn steering. A manual
+compaction hook may summarize Docker Agent's stored transcript, but cannot
+compact the harness's retained conversation. Usage reports remain available,
+but they are not native budget counters. Profiles describe each agent's own
+execution; native orchestration does not extend these controls to a delegated
+harness. A missing capability profile, such as
+from an older remote server, means unknown—not native or unsupported. See
+[Execution capabilities](../api-server/index.md#execution-capabilities) for the
+wire fields.
+@y
+Harness execution does not support Docker Agent's native budget enforcement,
+compaction of the external CLI's conversation or mid-turn steering. A manual
+compaction hook may summarize Docker Agent's stored transcript, but cannot
+compact the harness's retained conversation. Usage reports remain available,
+but they are not native budget counters. Profiles describe each agent's own
+execution; native orchestration does not extend these controls to a delegated
+harness. A missing capability profile, such as
+from an older remote server, means unknown—not native or unsupported. See
+[Execution capabilities](../api-server/index.md#execution-capabilities) for the
+wire fields.
+@z
+
+@x
 ## Hook Behavior
 @y
 ## Hook Behavior
 @z
 
 @x
-Hooks work normally on harness agents, including `before_llm_call` and `after_llm_call`. `before_llm_call` runs before the prompt is forwarded to the external CLI and can block or rewrite the run; `after_llm_call` fires after the CLI returns its final response.
+Lifecycle hooks and `before_llm_call` / `after_llm_call` still run on harness
+agents. `before_llm_call` runs before the prompt is forwarded to the external CLI
+and can block or rewrite the run; `after_llm_call` fires after the CLI returns its
+final response. Transient additional context from native session, prompt and
+turn-start hooks is not forwarded into the harness conversation. Reported
+harness tool events do not pass through native pre/post-tool approval hooks.
 @y
-Hooks work normally on harness agents, including `before_llm_call` and `after_llm_call`. `before_llm_call` runs before the prompt is forwarded to the external CLI and can block or rewrite the run; `after_llm_call` fires after the CLI returns its final response.
+Lifecycle hooks and `before_llm_call` / `after_llm_call` still run on harness
+agents. `before_llm_call` runs before the prompt is forwarded to the external CLI
+and can block or rewrite the run; `after_llm_call` fires after the CLI returns its
+final response. Transient additional context from native session, prompt and
+turn-start hooks is not forwarded into the harness conversation. Reported
+harness tool events do not pass through native pre/post-tool approval hooks.
 @z
 
 @x

@@ -72,9 +72,9 @@ There is nothing to configure. The file's presence is the opt-in, and it is pick
 @z
 
 @x
-The syntax is `.gitignore` syntax — parsed with the same library git uses, so patterns behave identically to `.gitignore` and `.dockerignore`:
+Patterns use go-git's `.gitignore` parser, not Git's own parser or Docker's `.dockerignore` parser. Supported forms include:
 @y
-The syntax is `.gitignore` syntax — parsed with the same library git uses, so patterns behave identically to `.gitignore` and `.dockerignore`:
+Patterns use go-git's `.gitignore` parser, not Git's own parser or Docker's `.dockerignore` parser. Supported forms include:
 @z
 
 @x
@@ -150,9 +150,9 @@ Paths are resolved before matching — symlinks, `./` prefixes and `..` segments
 @z
 
 @x
-The `.agentsignore` file is itself always hidden: it names the very things being kept back, so handing it to the agent would be a map of what to look for.
+When `.agentsignore` contains at least one active pattern, the filesystem toolset also hides the file itself. An empty or comment-only file creates no matcher and is not hidden.
 @y
-The `.agentsignore` file is itself always hidden: it names the very things being kept back, so handing it to the agent would be a map of what to look for.
+When `.agentsignore` contains at least one active pattern, the filesystem toolset also hides the file itself. An empty or comment-only file creates no matcher and is not hidden.
 @z
 
 @x
@@ -236,7 +236,8 @@ The derived permission rules are best-effort for the same reason: permission pat
 secrets.env
 *.pem
 *.key
-!public.key          # this one is safe to read
+# This one is safe to read
+!public.key
 @y
 # Secrets
 .env
@@ -244,7 +245,8 @@ secrets.env
 secrets.env
 *.pem
 *.key
-!public.key          # this one is safe to read
+# This one is safe to read
+!public.key
 @z
 
 @x

@@ -18,13 +18,13 @@ description: |-
 @x
     Source-form kit builds (a local directory or git reference) run inside a
     shared builder sandbox named sbx-kit-builder, created on first
-    use. Its Docker engine store doubles as the kit build cache, so removing
+    use. Its Docker Engine store doubles as the kit build cache, so removing
     the builder is how the cache is reclaimed; the next source-form build
     recreates it.
 @y
     Source-form kit builds (a local directory or git reference) run inside a
     shared builder sandbox named sbx-kit-builder, created on first
-    use. Its Docker engine store doubles as the kit build cache, so removing
+    use. Its Docker Engine store doubles as the kit build cache, so removing
     the builder is how the cache is reclaimed; the next source-form build
     recreates it.
 @z

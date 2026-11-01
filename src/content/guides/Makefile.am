@@ -1,20 +1,17 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
+
 SUBDIRS = images
 
 bases = \
 	_index.md                                    \
-	admin-set-up.md                              \
-	admin-user-management.md                     \
 	agentic-ai.md                                \
 	angular.md                                   \
 	azure-pipelines.md                           \
-	bake.md                                      \
 	bun.md                                       \
 	claude-code-model-runner.md                  \
 	claude-code-sandbox-model-runner.md          \
-	compose-bake.md                              \
 	cpp.md                                       \
 	databases.md                                 \
 	deno.md                                      \
@@ -26,7 +23,6 @@ bases = \
 	dotnet.md                                    \
 	firecrawl-sandbox-kit.md                     \
 	genai-claude-code-mcp.md                     \
-	gha.md                                       \
 	go-prometheus-monitoring.md                  \
 	golang.md                                    \
 	grafana-mcp-server-gemini.md                 \

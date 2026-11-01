@@ -70,9 +70,11 @@ description: |-
 @z
 
 @x
-    Use "sbx --cloud run --name SANDBOX" to attach to the agent after creation.
+    Use "sbx --cloud run <agent> --name SANDBOX" to attach to the agent after
+    creation: cloud needs the agent, since a name alone is not a unique handle.
 @y
-    Use "sbx --cloud run --name SANDBOX" to attach to the agent after creation.
+    Use "sbx --cloud run <agent> --name SANDBOX" to attach to the agent after
+    creation: cloud needs the agent, since a name alone is not a unique handle.
 @z
 
 @x
@@ -191,6 +193,14 @@ usage: sbx create cursor [PATH...] [flags]
 @y
       usage: |
         Memory limit in binary units (e.g., 512m, 8g). Minimum: 512 MiB. Default: 50% of host memory, clamped to 512 MiB–32 GiB. Maximum: max(75% of host memory, 512 MiB)
+@z
+
+@x mount
+      usage: |
+        Bind a host directory to a kit host-mount@1 path (can be repeated): HOST:SANDBOX_PATH. Can only be used when creating a new sandbox.
+@y
+      usage: |
+        Bind a host directory to a kit host-mount@1 path (can be repeated): HOST:SANDBOX_PATH. Can only be used when creating a new sandbox.
 @z
 
 @x name

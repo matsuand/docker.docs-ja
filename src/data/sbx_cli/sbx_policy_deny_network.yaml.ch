@@ -38,6 +38,16 @@ description: |-
 @z
 
 @x
+    Use --method to add an HTTP rule. --method accepts comma-separated HTTP
+    methods or ANY; --path defaults to /**. Repeat --query name=value to require
+    query parameters.
+@y
+    Use --method to add an HTTP rule. --method accepts comma-separated HTTP
+    methods or ANY; --path defaults to /**. Repeat --query name=value to require
+    query parameters.
+@z
+
+@x
 usage: sbx policy deny network [--sandbox SANDBOX] RESOURCES [flags]
 @y
 usage: sbx policy deny network [--sandbox SANDBOX] RESOURCES [flags]
@@ -51,10 +61,34 @@ usage: sbx policy deny network [--sandbox SANDBOX] RESOURCES [flags]
       usage: help for network
 @z
 
+@x method
+      usage: |
+        Restrict the rule to these HTTP methods (comma-separated); use ANY to match all methods
+@y
+      usage: |
+        Restrict the rule to these HTTP methods (comma-separated); use ANY to match all methods
+@z
+
+@x path
+      usage: |
+        Restrict the rule to this HTTP path glob (e.g. /repos/**); defaults to /**
+@y
+      usage: |
+        Restrict the rule to this HTTP path glob (e.g. /repos/**); defaults to /**
+@z
+
 @x protocol
         Restrict the rule to one protocol: tcp or udp (default tcp,udp)
 @y
         Restrict the rule to one protocol: tcp or udp (default tcp,udp)
+@z
+
+@x query
+      usage: |
+        Require an HTTP query parameter (name=value pattern); repeatable
+@y
+      usage: |
+        Require an HTTP query parameter (name=value pattern); repeatable
 @z
 
 @x sandbox
@@ -113,6 +147,14 @@ example: |4-
 @y
       # Block only UDP to a host
       sbx policy deny network --protocol udp media.example.com
+@z
+
+@x
+      # Block POST requests to a path
+      sbx policy deny network api.example.com --method POST --path '/admin/**'
+@y
+      # Block POST requests to a path
+      sbx policy deny network api.example.com --method POST --path '/admin/**'
 @z
 
 % see_also:

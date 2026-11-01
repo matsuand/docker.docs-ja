@@ -101,13 +101,13 @@ budget:
 | Field | Type | Description |
 | --- | --- | --- |
 | `max_cost` | number | Maximum spend, in USD. |
-| `max_tokens` | integer | Maximum cumulative input+output tokens. |
+| `max_tokens` | integer | Maximum cumulative tokens: fresh input, cache read, cache write, and output. |
 | `max_time` | string | Maximum time the agents spend working, in Go duration format (`10m`, `30s`, `1h30m`). |
 @y
 | Field | Type | Description |
 | --- | --- | --- |
 | `max_cost` | number | Maximum spend, in USD. |
-| `max_tokens` | integer | Maximum cumulative input+output tokens. |
+| `max_tokens` | integer | Maximum cumulative tokens: fresh input, cache read, cache write, and output. |
 | `max_time` | string | Maximum time the agents spend working, in Go duration format (`10m`, `30s`, `1h30m`). |
 @z
 
@@ -212,6 +212,12 @@ The same applies to the run-wide `budget`: every sub-session inside a run (trans
 @z
 
 @x
+Compaction model calls also count towards the run-wide budget and the compacted agent's named budgets, including when a dedicated compaction model is configured. An exhausted budget skips LLM-based compaction; a hook-supplied summary can still be applied without spending tokens.
+@y
+Compaction model calls also count towards the run-wide budget and the compacted agent's named budgets, including when a dedicated compaction model is configured. An exhausted budget skips LLM-based compaction; a hook-supplied summary can still be applied without spending tokens.
+@z
+
+@x
 ## Scope: a budget spans the session
 @y
 ## Scope: a budget spans the session
@@ -227,6 +233,30 @@ Spend accumulates for the life of the **session**, across every message you send
 Starting a new session starts a fresh budget. It is a per-session ceiling, not a lifetime quota across sessions.
 @y
 Starting a new session starts a fresh budget. It is a per-session ceiling, not a lifetime quota across sessions.
+@z
+
+@x
+The native runtime in `docker agent serve api` enforces both run-wide and named
+budgets across requests while that session's runtime remains loaded. Agent
+switches and delegated sub-sessions share the configured wallets; unrelated
+sessions have independent allowances.
+@y
+The native runtime in `docker agent serve api` enforces both run-wide and named
+budgets across requests while that session's runtime remains loaded. Agent
+switches and delegated sub-sessions share the configured wallets; unrelated
+sessions have independent allowances.
+@z
+
+@x
+Budget counters are in-memory, not persistent quotas. Restarting the API server
+or otherwise reconstructing a runtime starts fresh counters, even when resuming
+stored conversation history and cost totals. External `harness:` execution does
+not use the native budget-enforcement loop.
+@y
+Budget counters are in-memory, not persistent quotas. Restarting the API server
+or otherwise reconstructing a runtime starts fresh counters, even when resuming
+stored conversation history and cost totals. External `harness:` execution does
+not use the native budget-enforcement loop.
 @z
 
 @x
@@ -470,9 +500,9 @@ This is the same granularity [`max_iterations`](../agents/index.md) has, and it 
 @z
 
 @x
-The `max_tokens` in a budget is a **cumulative** count of input+output tokens across the whole run. It is unrelated to the provider- or model-level [`max_tokens`](../models/index.md), which caps the output of a single response.
+The `max_tokens` in a budget is a **cumulative** count of tokens across the whole run: fresh input, cache-read input, cache-write input, and output all count towards it. It is unrelated to the provider- or model-level [`max_tokens`](../models/index.md), which caps the output of a single response.
 @y
-The `max_tokens` in a budget is a **cumulative** count of input+output tokens across the whole run. It is unrelated to the provider- or model-level [`max_tokens`](../models/index.md), which caps the output of a single response.
+The `max_tokens` in a budget is a **cumulative** count of tokens across the whole run: fresh input, cache-read input, cache-write input, and output all count towards it. It is unrelated to the provider- or model-level [`max_tokens`](../models/index.md), which caps the output of a single response.
 @z
 
 @x

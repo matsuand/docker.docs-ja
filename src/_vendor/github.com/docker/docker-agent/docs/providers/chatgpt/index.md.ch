@@ -256,6 +256,72 @@ The effort picker exposes Low/Medium/High/XHigh/Max on the GPT-5.6 family
 @z
 
 @x
+## Image Input
+@y
+## Image Input
+@z
+
+@x
+For image-capable models such as `gpt-6.1-sol`, you can attach an image:
+@y
+For image-capable models such as `gpt-6.1-sol`, you can attach an image:
+@z
+
+@x
+```bash
+docker agent run examples/chatgpt-images.yaml --exec \
+  --attach examples/chatgpt-images.png "Describe the shapes and colors."
+```
+@y
+```bash
+docker agent run examples/chatgpt-images.yaml --exec \
+  --attach examples/chatgpt-images.png "Describe the shapes and colors."
+```
+@z
+
+@x
+The sample includes a red square centered on a blue background. Running it
+requires ChatGPT sign-in and access to the selected model. Image input for
+`gpt-6.1-sol` is inferred from the matching OpenAI catalogue entry; no
+`capabilities` override is needed.
+@y
+The sample includes a red square centered on a blue background. Running it
+requires ChatGPT sign-in and access to the selected model. Image input for
+`gpt-6.1-sol` is inferred from the matching OpenAI catalogue entry; no
+`capabilities` override is needed.
+@z
+
+@x
+When models.dev has no direct `chatgpt/<model>` entry, Docker Agent uses the
+matching `openai/<model>` entry for **image input only**. This applies both to
+`--attach` images and image content returned by MCP tools (for example,
+screenshots). Tool images are sent in a follow-up user message alongside the
+text function-call output. PDF, audio, and video support, prices, context limits,
+tool support, output capabilities, and `max_tokens` are not inherited.
+A direct ChatGPT catalogue entry takes precedence; unknown models remain
+text-only.
+@y
+When models.dev has no direct `chatgpt/<model>` entry, Docker Agent uses the
+matching `openai/<model>` entry for **image input only**. This applies both to
+`--attach` images and image content returned by MCP tools (for example,
+screenshots). Tool images are sent in a follow-up user message alongside the
+text function-call output. PDF, audio, and video support, prices, context limits,
+tool support, output capabilities, and `max_tokens` are not inherited.
+A direct ChatGPT catalogue entry takes precedence; unknown models remain
+text-only.
+@z
+
+@x
+To intentionally override catalogue capabilities or declare support for an
+unknown model, see [Attachment Capability Overrides](../../configuration/models/index.md#attachment-capability-overrides).
+Image input support does not enable image generation or editing.
+@y
+To intentionally override catalogue capabilities or declare support for an
+unknown model, see [Attachment Capability Overrides](../../configuration/models/index.md#attachment-capability-overrides).
+Image input support does not enable image generation or editing.
+@z
+
+@x
 ## Setting the Token Explicitly
 @y
 ## Setting the Token Explicitly

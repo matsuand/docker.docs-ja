@@ -422,6 +422,32 @@ See [`examples/force_handoff.yaml`](https://github.com/docker/docker-agent/blob/
 @z
 
 @x
+### Hook-Driven Routing
+@y
+### Hook-Driven Routing
+@z
+
+@x
+When the next agent depends on the request or on the previous agent's answer,
+`before_agent_run` and `after_agent_complete` [hooks](../../configuration/hooks/index.md#agent-routing-hooks)
+can choose it — with a command or a choice [evaluator](../../configuration/evaluators/index.md) — instead
+of a coordinator's LLM call. The runtime validates each choice against the agent's
+`routing.allowed_agents`, switches agents in the same conversation (earlier transcripts
+stay visible), and starts every new user request at the entry agent again. Combine it with
+`force_handoff` for fixed continuations such as `researcher -> reviewer`. See
+[`examples/hook_routing.yaml`](https://github.com/docker/docker-agent/blob/main/examples/hook_routing.yaml).
+@y
+When the next agent depends on the request or on the previous agent's answer,
+`before_agent_run` and `after_agent_complete` [hooks](../../configuration/hooks/index.md#agent-routing-hooks)
+can choose it — with a command or a choice [evaluator](../../configuration/evaluators/index.md) — instead
+of a coordinator's LLM call. The runtime validates each choice against the agent's
+`routing.allowed_agents`, switches agents in the same conversation (earlier transcripts
+stay visible), and starts every new user request at the entry agent again. Combine it with
+`force_handoff` for fixed continuations such as `researcher -> reviewer`. See
+[`examples/hook_routing.yaml`](https://github.com/docker/docker-agent/blob/main/examples/hook_routing.yaml).
+@z
+
+@x
 ## Parallel Delegation with Background Agents
 @y
 ## Parallel Delegation with Background Agents
@@ -472,12 +498,12 @@ The coordinator can then:
 @x
 1. **Dispatch** several tasks at once with `run_background_agent` — each returns a task ID immediately
 2. **Monitor** progress with `list_background_agents` or `view_background_agent`
-3. **Collect** results once tasks complete
+3. **Join** tasks and collect results with `wait_background_agents` — check each task's status before continuing
 4. **Cancel** tasks that are no longer needed with `stop_background_agent`
 @y
 1. **Dispatch** several tasks at once with `run_background_agent` — each returns a task ID immediately
 2. **Monitor** progress with `list_background_agents` or `view_background_agent`
-3. **Collect** results once tasks complete
+3. **Join** tasks and collect results with `wait_background_agents` — check each task's status before continuing
 4. **Cancel** tasks that are no longer needed with `stop_background_agent`
 @z
 
@@ -502,11 +528,19 @@ list_background_agents()
 @z
 
 @x
-# Read results when ready
+# Join both tasks using the IDs returned at dispatch
+wait_background_agents(task_ids=["agent_task_abc123", "agent_task_def456"])
+@y
+# Join both tasks using the IDs returned at dispatch
+wait_background_agents(task_ids=["agent_task_abc123", "agent_task_def456"])
+@z
+
+@x
+# Read an individual result if its join output was truncated
 view_background_agent(task_id="agent_task_abc123")
 ```
 @y
-# Read results when ready
+# Read an individual result if its join output was truncated
 view_background_agent(task_id="agent_task_abc123")
 ```
 @z
@@ -642,9 +676,9 @@ External references in `handoffs` and `force_handoff` carry the same per-run cos
 @z
 
 @x
-Sub-agents can be backed by external coding CLIs — Claude Code, Codex, opencode, or pi — instead of a model API. Add a `harness:` block in place of a `model:` field to create a harness sub-agent:
+Sub-agents can be backed by external coding CLIs — Claude Code, Codex, opencode, pi, or Command Code — instead of a model API. Add a `harness:` block in place of a `model:` field to create a harness sub-agent:
 @y
-Sub-agents can be backed by external coding CLIs — Claude Code, Codex, opencode, or pi — instead of a model API. Add a `harness:` block in place of a `model:` field to create a harness sub-agent:
+Sub-agents can be backed by external coding CLIs — Claude Code, Codex, opencode, pi, or Command Code — instead of a model API. Add a `harness:` block in place of a `model:` field to create a harness sub-agent:
 @z
 
 @x

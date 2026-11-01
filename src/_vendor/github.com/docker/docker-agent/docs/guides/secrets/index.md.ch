@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 title: "Managing Secrets"
 description: "How to securely provide API keys and credentials to Docker Agent using environment variables, env files, Docker Compose secrets, and 1Password references."
@@ -30,9 +32,9 @@ _How to securely provide API keys and credentials to Docker Agent._
 @z
 
 @x
-Docker Agent needs API keys to talk to model providers (OpenAI, Anthropic, etc.) and MCP tool servers (GitHub, Slack, etc.). These keys are **never stored in config files**. Instead, Docker Agent resolves them at runtime through a chain of secret providers, checked in order (see `pkg/environment/default.go`):
+Docker Agent needs API keys to talk to model providers (OpenAI, Anthropic, etc.) and MCP tool servers (GitHub, Slack, etc.). Avoid putting literal secrets in agent configuration fields such as `env`, headers, or URLs. Docker Agent can resolve them at runtime through a chain of secret providers, checked in order (see `pkg/environment/default.go`):
 @y
-Docker Agent needs API keys to talk to model providers (OpenAI, Anthropic, etc.) and MCP tool servers (GitHub, Slack, etc.). These keys are **never stored in config files**. Instead, Docker Agent resolves them at runtime through a chain of secret providers, checked in order (see `pkg/environment/default.go`):
+Docker Agent needs API keys to talk to model providers (OpenAI, Anthropic, etc.) and MCP tool servers (GitHub, Slack, etc.). Avoid putting literal secrets in agent configuration fields such as `env`, headers, or URLs. Docker Agent can resolve them at runtime through a chain of secret providers, checked in order (see `pkg/environment/default.go`):
 @z
 
 @x
@@ -41,16 +43,18 @@ Docker Agent needs API keys to talk to model providers (OpenAI, Anthropic, etc.)
 | 1 | [Environment variables](#environment-variables) | `export OPENAI_API_KEY=sk-...` |
 | 2 | [Docker Compose secrets](#docker-compose-secrets) | Files in `/run/secrets/` |
 | 3 | [Docker Agent env file](#docker-agent-env-file) | `~/.config/cagent/.env`, written by `docker agent setup` |
-| 4 | [Credential helper](#credential-helper) | Custom command declared in `~/.config/cagent/config.yaml` under `credential_helper:` |
-| 5 | [Docker Desktop](#docker-desktop) | Secrets stored by the Docker Desktop backend (no setup on a Desktop install) |
+| 4 | [ChatGPT login](../../providers/chatgpt/index.md) | `CHATGPT_OAUTH_TOKEN` from the account login created by `docker agent setup` |
+| 5 | [Credential helper](#credential-helper) | Custom command declared in `~/.config/cagent/config.yaml` under `credential_helper:` |
+| 6 | [Docker Desktop](#docker-desktop) | Secrets stored by the Docker Desktop backend (no setup on a Desktop install) |
 @y
 | Priority | Provider | Description |
 | --- | --- | --- |
 | 1 | [Environment variables](#environment-variables) | `export OPENAI_API_KEY=sk-...` |
 | 2 | [Docker Compose secrets](#docker-compose-secrets) | Files in `/run/secrets/` |
 | 3 | [Docker Agent env file](#docker-agent-env-file) | `~/.config/cagent/.env`, written by `docker agent setup` |
-| 4 | [Credential helper](#credential-helper) | Custom command declared in `~/.config/cagent/config.yaml` under `credential_helper:` |
-| 5 | [Docker Desktop](#docker-desktop) | Secrets stored by the Docker Desktop backend (no setup on a Desktop install) |
+| 4 | [ChatGPT login](../../providers/chatgpt/index.md) | `CHATGPT_OAUTH_TOKEN` from the account login created by `docker agent setup` |
+| 5 | [Credential helper](#credential-helper) | Custom command declared in `~/.config/cagent/config.yaml` under `credential_helper:` |
+| 6 | [Docker Desktop](#docker-desktop) | Secrets stored by the Docker Desktop backend (no setup on a Desktop install) |
 @z
 
 @x
@@ -106,31 +110,9 @@ docker agent run agent.yaml
 @z
 
 @x
-Common variables:
+See [Provider Credentials](../../providers/overview/index.md#provider-credentials) for the full list of provider-specific environment variables and authentication methods.
 @y
-Common variables:
-@z
-
-@x
-| Variable | Provider |
-| --- | --- |
-| `OPENAI_API_KEY` | OpenAI |
-| `ANTHROPIC_API_KEY` | Anthropic |
-| `GOOGLE_API_KEY` | Google Gemini |
-| `MISTRAL_API_KEY` | Mistral |
-| `OPENROUTER_API_KEY` | OpenRouter |
-| `XAI_API_KEY` | xAI |
-| `NEBIUS_API_KEY` | Nebius |
-@y
-| Variable | Provider |
-| --- | --- |
-| `OPENAI_API_KEY` | OpenAI |
-| `ANTHROPIC_API_KEY` | Anthropic |
-| `GOOGLE_API_KEY` | Google Gemini |
-| `MISTRAL_API_KEY` | Mistral |
-| `OPENROUTER_API_KEY` | OpenRouter |
-| `XAI_API_KEY` | xAI |
-| `NEBIUS_API_KEY` | Nebius |
+See [Provider Credentials](../../providers/overview/index.md#provider-credentials) for the full list of provider-specific environment variables and authentication methods.
 @z
 
 @x
@@ -588,9 +570,9 @@ Provider keys live in the secret store and are passed to Docker Agent through th
 @z
 
 @x
-For that defense-in-depth case, set `redact_secrets: true` on an agent. It scrubs detected secrets out of:
+Secret redaction is enabled by default as a defense in depth. Set `redact_secrets: false` on an agent to opt out; the explicit `true` below is equivalent to omitting the field. It scrubs detected secrets out of:
 @y
-For that defense-in-depth case, set `redact_secrets: true` on an agent. It scrubs detected secrets out of:
+Secret redaction is enabled by default as a defense in depth. Set `redact_secrets: false` on an agent to opt out; the explicit `true` below is equivalent to omitting the field. It scrubs detected secrets out of:
 @z
 
 @x

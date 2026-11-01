@@ -232,17 +232,17 @@ toolsets:
 @x
 | Property                | Type    | Description |
 | ----------------------- | ------- | ----------- |
-| `remote.url`            | string  | Base URL of the MCP server. |
+| `remote.url`            | string  | URL of the MCP server. Accepts `https://`, `http://`, and `unix://` (Unix domain socket) schemes. |
 | `remote.transport_type` | string  | `streamable` or `sse`. |
-| `remote.headers`        | object  | HTTP headers sent on every request. Values support `${env.VAR}` and `${headers.NAME}` placeholders, resolved per request. See [Remote MCP Servers](../../features/remote-mcp/index.md#per-request-header-template-expansion) for details. |
+| `remote.headers`        | object  | HTTP headers sent on every request. Values support `${env.VAR}` and `${headers.NAME}` placeholders, resolved per request. See [Remote MCP Servers](../../features/remote-mcp/index.md#configuration) for details. |
 | `remote.oauth`          | object  | Explicit OAuth client credentials for servers that don't support DCR. See [Remote MCP Servers](../../features/remote-mcp/index.md#oauth-for-servers-without-dynamic-client-registration). |
 | `allow_private_ips`     | boolean | Permit remote MCP OAuth helper requests to dial non-public IP addresses. Use only for trusted internal servers. |
 @y
 | Property                | Type    | Description |
 | ----------------------- | ------- | ----------- |
-| `remote.url`            | string  | Base URL of the MCP server. |
+| `remote.url`            | string  | URL of the MCP server. Accepts `https://`, `http://`, and `unix://` (Unix domain socket) schemes. |
 | `remote.transport_type` | string  | `streamable` or `sse`. |
-| `remote.headers`        | object  | HTTP headers sent on every request. Values support `${env.VAR}` and `${headers.NAME}` placeholders, resolved per request. See [Remote MCP Servers](../../features/remote-mcp/index.md#per-request-header-template-expansion) for details. |
+| `remote.headers`        | object  | HTTP headers sent on every request. Values support `${env.VAR}` and `${headers.NAME}` placeholders, resolved per request. See [Remote MCP Servers](../../features/remote-mcp/index.md#configuration) for details. |
 | `remote.oauth`          | object  | Explicit OAuth client credentials for servers that don't support DCR. See [Remote MCP Servers](../../features/remote-mcp/index.md#oauth-for-servers-without-dynamic-client-registration). |
 | `allow_private_ips`     | boolean | Permit remote MCP OAuth helper requests to dial non-public IP addresses. Use only for trusted internal servers. |
 @z
@@ -254,6 +254,12 @@ For a curated list of public remote MCP endpoints (Linear, GitHub, Vercel, Notio
 @z
 
 @x
+When Docker Desktop is running, eligible MCP OAuth discovery, token, and helper requests use its PAC adapter before environment proxy settings, but remote MCP Streamable HTTP/SSE transport does not. Set `DOCKER_AGENT_DISABLE_DESKTOP_PROXY=1` (or `true`, `yes`, or `on`) to restore standard `HTTP_PROXY`, `HTTPS_PROXY`, `ALL_PROXY`, and `NO_PROXY` routing; `NO_PROXY` does not bypass Docker Desktop PAC selection. Docker Agent does not evaluate PAC files or URLs directly—see [Docker Desktop proxy](../fetch/index.md#docker-desktop-proxy).
+@y
+When Docker Desktop is running, eligible MCP OAuth discovery, token, and helper requests use its PAC adapter before environment proxy settings, but remote MCP Streamable HTTP/SSE transport does not. Set `DOCKER_AGENT_DISABLE_DESKTOP_PROXY=1` (or `true`, `yes`, or `on`) to restore standard `HTTP_PROXY`, `HTTPS_PROXY`, `ALL_PROXY`, and `NO_PROXY` routing; `NO_PROXY` does not bypass Docker Desktop PAC selection. Docker Agent does not evaluate PAC files or URLs directly—see [Docker Desktop proxy](../fetch/index.md#docker-desktop-proxy).
+@z
+
+@x
 ## MCP Prompts
 @y
 ## MCP Prompts
@@ -322,10 +328,12 @@ MCP tool results can include embedded resources — images, PDFs, and text files
 @x
 - **Anthropic** — images become `image` blocks in the `tool_result`; PDFs and other documents become `document` blocks.
 - **OpenAI** — images are forwarded as `input_image` data URIs; PDFs as `input_file` data URIs in the tool result content.
+- **OpenAI Chat Completions** (`api_type: openai_chatcompletions`, the default, and OpenAI-compatible providers) — tool messages only accept text, so images (including image documents) are sent as text in the tool message as their data URI or URL. PDFs and other documents are attached in a follow-up user message labeled "Attached content from tool result:".
 - **Bedrock** and **Gemini** — receive equivalent provider-native representations.
 @y
 - **Anthropic** — images become `image` blocks in the `tool_result`; PDFs and other documents become `document` blocks.
 - **OpenAI** — images are forwarded as `input_image` data URIs; PDFs as `input_file` data URIs in the tool result content.
+- **OpenAI Chat Completions** (`api_type: openai_chatcompletions`, the default, and OpenAI-compatible providers) — tool messages only accept text, so images (including image documents) are sent as text in the tool message as their data URI or URL. PDFs and other documents are attached in a follow-up user message labeled "Attached content from tool result:".
 - **Bedrock** and **Gemini** — receive equivalent provider-native representations.
 @z
 
@@ -416,25 +424,9 @@ These properties apply to every MCP toolset regardless of flavour:
 @z
 
 @x
-```yaml
-toolsets:
-  - type: mcp
-    ref: docker:github-official
-    tools: ["list_issues", "create_issue", "get_pull_request"]
-```
+Use `tools:` to expose only the operations your agent needs. See [Tool Filtering](../../configuration/tools/index.md#tool-filtering) for syntax and examples.
 @y
-```yaml
-toolsets:
-  - type: mcp
-    ref: docker:github-official
-    tools: ["list_issues", "create_issue", "get_pull_request"]
-```
-@z
-
-@x
-Whitelisting tools improves model accuracy — fewer choices means less confusion.
-@y
-Whitelisting tools improves model accuracy — fewer choices means less confusion.
+Use `tools:` to expose only the operations your agent needs. See [Tool Filtering](../../configuration/tools/index.md#tool-filtering) for syntax and examples.
 @z
 
 @x
@@ -444,33 +436,9 @@ Whitelisting tools improves model accuracy — fewer choices means less confusio
 @z
 
 @x
-Skip the toolset's startup cost until its tools are actually called:
+Use `defer: true` or a list of tool names to load tools on demand. See [Deferred Tool Loading](../../configuration/tools/index.md#deferred-tool-loading) for startup and discovery behavior.
 @y
-Skip the toolset's startup cost until its tools are actually called:
-@z
-
-@x
-```yaml
-toolsets:
-  - type: mcp
-    ref: docker:github-official
-    defer: true
-  # Or defer specific tools within a toolset:
-  - type: mcp
-    ref: docker:slack
-    defer: ["list_channels", "search_messages"]
-```
-@y
-```yaml
-toolsets:
-  - type: mcp
-    ref: docker:github-official
-    defer: true
-  # Or defer specific tools within a toolset:
-  - type: mcp
-    ref: docker:slack
-    defer: ["list_channels", "search_messages"]
-```
+Use `defer: true` or a list of tool names to load tools on demand. See [Deferred Tool Loading](../../configuration/tools/index.md#deferred-tool-loading) for startup and discovery behavior.
 @z
 
 @x
@@ -480,25 +448,9 @@ toolsets:
 @z
 
 @x
-```yaml
-toolsets:
-  - type: mcp
-    ref: docker:github-official
-    instruction: |
-      Use these tools to manage GitHub issues.
-      Always check for existing issues before creating new ones.
-      Label new issues with 'triage' by default.
-```
+Use `instruction:` to replace or extend a toolset's guidance. See [Tool Instructions](../../configuration/tools/index.md#tool-instructions), including the `{ORIGINAL_INSTRUCTIONS}` placeholder.
 @y
-```yaml
-toolsets:
-  - type: mcp
-    ref: docker:github-official
-    instruction: |
-      Use these tools to manage GitHub issues.
-      Always check for existing issues before creating new ones.
-      Label new issues with 'triage' by default.
-```
+Use `instruction:` to replace or extend a toolset's guidance. See [Tool Instructions](../../configuration/tools/index.md#tool-instructions), including the `{ORIGINAL_INSTRUCTIONS}` placeholder.
 @z
 
 @x
@@ -508,49 +460,9 @@ toolsets:
 @z
 
 @x
-Re-encode verbose JSON outputs as the compact [TOON](https://github.com/alpkeskin/gotoon) format to save context budget. Typically yields 30–60% smaller payloads on list/search tools.
+Use `toon:` to re-encode matching tools' JSON object outputs in a compact format. See [TOON-Encoded Tool Outputs](../../configuration/tools/index.md#toon-encoded-tool-outputs) for pattern syntax and which outputs pass through unchanged, or the [GitHub TOON example](https://github.com/docker/docker-agent/blob/main/examples/github-toon.yaml).
 @y
-Re-encode verbose JSON outputs as the compact [TOON](https://github.com/alpkeskin/gotoon) format to save context budget. Typically yields 30–60% smaller payloads on list/search tools.
-@z
-
-@x
-`toon` is a regex string that is matched against tool names. Any tool whose name matches the pattern has its JSON output transparently re-encoded as TOON before it is shown to the model. The re-encoding reduces schema verbosity, which is especially useful when a model struggles with large or repetitive tool output.
-@y
-`toon` is a regex string that is matched against tool names. Any tool whose name matches the pattern has its JSON output transparently re-encoded as TOON before it is shown to the model. The re-encoding reduces schema verbosity, which is especially useful when a model struggles with large or repetitive tool output.
-@z
-
-@x
-```yaml
-toolsets:
-  - type: mcp
-    ref: docker:github-official
-    toon: ".*"            # toonify every tool from this server
-  - type: mcp
-    command: my-server
-    toon: "list_.*,get_.*" # only toonify list_/get_ tools
-```
-@y
-```yaml
-toolsets:
-  - type: mcp
-    ref: docker:github-official
-    toon: ".*"            # toonify every tool from this server
-  - type: mcp
-    command: my-server
-    toon: "list_.*,get_.*" # only toonify list_/get_ tools
-```
-@z
-
-@x
-The value is a comma-separated list of regexes (or a single regex). A tool name must match at least one pattern to be re-encoded. Setting `toon: ".*"` re-encodes all tools from that toolset.
-@y
-The value is a comma-separated list of regexes (or a single regex). A tool name must match at least one pattern to be re-encoded. Setting `toon: ".*"` re-encodes all tools from that toolset.
-@z
-
-@x
-See [`examples/github-toon.yaml`](https://github.com/docker/docker-agent/blob/main/examples/github-toon.yaml) for a practical example using the GitHub MCP server.
-@y
-See [`examples/github-toon.yaml`](https://github.com/docker/docker-agent/blob/main/examples/github-toon.yaml) for a practical example using the GitHub MCP server.
+Use `toon:` to re-encode matching tools' JSON object outputs in a compact format. See [TOON-Encoded Tool Outputs](../../configuration/tools/index.md#toon-encoded-tool-outputs) for pattern syntax and which outputs pass through unchanged, or the [GitHub TOON example](https://github.com/docker/docker-agent/blob/main/examples/github-toon.yaml).
 @z
 
 @x
@@ -560,31 +472,9 @@ See [`examples/github-toon.yaml`](https://github.com/docker/docker-agent/blob/ma
 @z
 
 @x
-Process tool results from this toolset with a different (typically cheaper / faster) model. The override is one-shot — subsequent turns return to the agent's primary model:
+Use `model:` to process tool results with a different model for one turn. See [Per-Toolset Model Routing](../../configuration/tools/index.md#per-toolset-model-routing) for examples and how competing overrides are resolved.
 @y
-Process tool results from this toolset with a different (typically cheaper / faster) model. The override is one-shot — subsequent turns return to the agent's primary model:
-@z
-
-@x
-```yaml
-toolsets:
-  - type: mcp
-    ref: docker:github-official
-    model: openai/gpt-4o-mini
-```
-@y
-```yaml
-toolsets:
-  - type: mcp
-    ref: docker:github-official
-    model: openai/gpt-4o-mini
-```
-@z
-
-@x
-See [Per-Toolset Model Routing](../../configuration/tools/index.md#per-toolset-model-routing).
-@y
-See [Per-Toolset Model Routing](../../configuration/tools/index.md#per-toolset-model-routing).
+Use `model:` to process tool results with a different model for one turn. See [Per-Toolset Model Routing](../../configuration/tools/index.md#per-toolset-model-routing) for examples and how competing overrides are resolved.
 @z
 
 @x
@@ -631,6 +521,12 @@ toolsets:
 See [Toolset Lifecycle](../../configuration/tools/index.md#toolset-lifecycle) for all profiles and tuning knobs, and [`/toolset-restart`](../../features/tui/index.md) to force a reconnect from the TUI.
 @y
 See [Toolset Lifecycle](../../configuration/tools/index.md#toolset-lifecycle) for all profiles and tuning knobs, and [`/toolset-restart`](../../features/tui/index.md) to force a reconnect from the TUI.
+@z
+
+@x
+**Startup failure behaviour:** local MCP failures (missing binary, connection refused, bad auth) fail fast — each turn retries immediately with no artificial delay. Remote MCP servers (Streamable HTTP / SSE) that respond with one of a fixed set of retryable HTTP statuses — 429 Too Many Requests, 408 Request Timeout, 500/502/503/504, or 529 (Anthropic-style "overloaded") — are paced by the same [bounded exponential backoff gate](../rag/index.md#indexing-failures-retries-and-backoff) that RAG embedding calls use, so a temporarily-overloaded remote MCP server does not trigger a new connect attempt on every agent turn. This is a fixed enumeration, not a full 5xx range: less-common codes such as 501, 505, or the Cloudflare 520–527 family do not arm the gate. MCP paces every connection attempt on this set; RAG's own trigger set differs slightly — 429 arms the gate on the very first failure, while 408/5xx only arm it once every file in an indexing run has hit one of these retryable statuses with none indexed successfully (see [RAG's retry-policy table](../rag/index.md#what-triggers-backoff)). This pacing also applies when toolsets are wrapped in [code mode](../../features/code-mode/index.md#limits--security-notes): a retryable failure in the degraded subset paces that subset's retry the same way, while the composite's healthy tools stay available.
+@y
+**Startup failure behaviour:** local MCP failures (missing binary, connection refused, bad auth) fail fast — each turn retries immediately with no artificial delay. Remote MCP servers (Streamable HTTP / SSE) that respond with one of a fixed set of retryable HTTP statuses — 429 Too Many Requests, 408 Request Timeout, 500/502/503/504, or 529 (Anthropic-style "overloaded") — are paced by the same [bounded exponential backoff gate](../rag/index.md#indexing-failures-retries-and-backoff) that RAG embedding calls use, so a temporarily-overloaded remote MCP server does not trigger a new connect attempt on every agent turn. This is a fixed enumeration, not a full 5xx range: less-common codes such as 501, 505, or the Cloudflare 520–527 family do not arm the gate. MCP paces every connection attempt on this set; RAG's own trigger set differs slightly — 429 arms the gate on the very first failure, while 408/5xx only arm it once every file in an indexing run has hit one of these retryable statuses with none indexed successfully (see [RAG's retry-policy table](../rag/index.md#what-triggers-backoff)). This pacing also applies when toolsets are wrapped in [code mode](../../features/code-mode/index.md#limits--security-notes): a retryable failure in the degraded subset paces that subset's retry the same way, while the composite's healthy tools stay available.
 @z
 
 @x

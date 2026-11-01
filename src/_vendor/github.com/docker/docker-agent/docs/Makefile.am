@@ -2,8 +2,8 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS = community concepts configuration features getting-started \
-	guides providers tools
+SUBDIRS = concepts configuration features getting-started guides \
+	providers tools
 
 copyfiles = \
 	demo.gif

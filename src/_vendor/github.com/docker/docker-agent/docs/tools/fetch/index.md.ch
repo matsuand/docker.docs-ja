@@ -79,6 +79,7 @@ toolsets:
 | Property            | Type          | Default | Description                                                                                                                                                                                                                                                                                                      |
 | ------------------- | ------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `timeout`           | int           | `30`    | Default request timeout in seconds (overridable per tool call).                                                                                                                                                                                                                                                  |
+| `escape_html`       | boolean       | `false` | Restore legacy HTML escaping of `<`, `>` and `&` in multi-URL JSON results. Decoded content is identical; single-URL results are unaffected. See [JSON output compatibility](#json-output-compatibility). |
 | `allowed_domains`   | array[string] | _none_  | Allow-list of hosts the tool may fetch. When set, every URL whose host is **not** in the list is rejected before any network call is made. Mutually exclusive with `blocked_domains`.                                                                                                                            |
 | `blocked_domains`   | array[string] | _none_  | Deny-list of hosts the tool must not fetch. URLs whose host matches one of these patterns are rejected before any network call (including `robots.txt`) is made. Mutually exclusive with `allowed_domains`.                                                                                                      |
 | `allow_private_ips` | boolean       | `false` | Opt in to dialling **non-public** IP addresses (loopback, RFC1918, link-local — including the cloud-metadata endpoint at `169.254.169.254` — multicast, and the unspecified address). Required to reach `localhost` / internal services. See [SSRF protection](#ssrf-protection-and-reaching-localhost) below. |
@@ -87,6 +88,7 @@ toolsets:
 | Property            | Type          | Default | Description                                                                                                                                                                                                                                                                                                      |
 | ------------------- | ------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `timeout`           | int           | `30`    | Default request timeout in seconds (overridable per tool call).                                                                                                                                                                                                                                                  |
+| `escape_html`       | boolean       | `false` | Restore legacy HTML escaping of `<`, `>` and `&` in multi-URL JSON results. Decoded content is identical; single-URL results are unaffected. See [JSON output compatibility](#json-output-compatibility). |
 | `allowed_domains`   | array[string] | _none_  | Allow-list of hosts the tool may fetch. When set, every URL whose host is **not** in the list is rejected before any network call is made. Mutually exclusive with `blocked_domains`.                                                                                                                            |
 | `blocked_domains`   | array[string] | _none_  | Deny-list of hosts the tool must not fetch. URLs whose host matches one of these patterns are rejected before any network call (including `robots.txt`) is made. Mutually exclusive with `allowed_domains`.                                                                                                      |
 | `allow_private_ips` | boolean       | `false` | Opt in to dialling **non-public** IP addresses (loopback, RFC1918, link-local — including the cloud-metadata endpoint at `169.254.169.254` — multicast, and the unspecified address). Required to reach `localhost` / internal services. See [SSRF protection](#ssrf-protection-and-reaching-localhost) below. |
@@ -166,6 +168,50 @@ toolsets:
 @z
 
 @x
+### JSON output compatibility
+@y
+### JSON output compatibility
+@z
+
+@x
+Multi-URL calls return a JSON array. By default, `<`, `>` and `&` are left
+unescaped to reduce token usage. Set `escape_html: true` to restore the previous
+encoding (`\u003c`, `\u003e`, `\u0026`) for consumers that need byte-for-byte
+compatibility with the tool's original JSON output:
+@y
+Multi-URL calls return a JSON array. By default, `<`, `>` and `&` are left
+unescaped to reduce token usage. Set `escape_html: true` to restore the previous
+encoding (`\u003c`, `\u003e`, `\u0026`) for consumers that need byte-for-byte
+compatibility with the tool's original JSON output:
+@z
+
+@x
+```yaml
+toolsets:
+  - type: fetch
+    escape_html: true
+```
+@y
+```yaml
+toolsets:
+  - type: fetch
+    escape_html: true
+```
+@z
+
+@x
+Both encodings are valid JSON with identical decoded content and metadata. This
+setting only changes JSON serialization, not requests, HTML-to-Markdown/text
+conversion, or single-URL output. It is a toolset setting, not a model-facing tool
+parameter. Raw HTML is still selected separately with `format: html`.
+@y
+Both encodings are valid JSON with identical decoded content and metadata. This
+setting only changes JSON serialization, not requests, HTML-to-Markdown/text
+conversion, or single-URL output. It is a toolset setting, not a model-facing tool
+parameter. Raw HTML is still selected separately with `format: html`.
+@z
+
+@x
 ### Custom headers
 @y
 ### Custom headers
@@ -271,12 +317,36 @@ toolsets:
 > [!NOTE]
 > **Already blocked by default**
 >
-> You do **not** need to add loopback, RFC1918, link-local (incl. `169.254.169.254`), multicast or the unspecified address to `blocked_domains` to be safe — the fetch tool already refuses connections to those ranges at dial time, after DNS resolution. The example above is only useful if you also want to reject those hosts _before_ any network call (and to surface a clearer error message to the agent), or if you have set `allow_private_ips: true` and want to deny a specific subset.
+> You do **not** need to add loopback, RFC1918, link-local (incl. `169.254.169.254`), multicast or the unspecified address to `blocked_domains` to protect the fetch tool's SSRF-guarded direct path: it refuses those resolved addresses at dial time. When an eligible request is routed through Docker Desktop's PAC proxy, that proxy selects and enforces its own destination policy. The example above is useful if you also want to reject those hosts _before_ any network call (and to surface a clearer error message to the agent), or if you have set `allow_private_ips: true` and want to deny a specific subset.
 @y
 > [!NOTE]
 > **Already blocked by default**
 >
-> You do **not** need to add loopback, RFC1918, link-local (incl. `169.254.169.254`), multicast or the unspecified address to `blocked_domains` to be safe — the fetch tool already refuses connections to those ranges at dial time, after DNS resolution. The example above is only useful if you also want to reject those hosts _before_ any network call (and to surface a clearer error message to the agent), or if you have set `allow_private_ips: true` and want to deny a specific subset.
+> You do **not** need to add loopback, RFC1918, link-local (incl. `169.254.169.254`), multicast or the unspecified address to `blocked_domains` to protect the fetch tool's SSRF-guarded direct path: it refuses those resolved addresses at dial time. When an eligible request is routed through Docker Desktop's PAC proxy, that proxy selects and enforces its own destination policy. The example above is useful if you also want to reject those hosts _before_ any network call (and to surface a clearer error message to the agent), or if you have set `allow_private_ips: true` and want to deny a specific subset.
+@z
+
+@x
+### Docker Desktop proxy
+@y
+### Docker Desktop proxy
+@z
+
+@x
+When Docker Desktop is running, remote HTTP(S) agent configuration sources and built-in HTTP toolsets send eligible public destinations through its PAC proxy before normal environment-proxy routing. A PAC `DIRECT` result selects Docker Desktop's direct egress. `NO_PROXY` does not bypass Desktop PAC selection; set `DOCKER_AGENT_DISABLE_DESKTOP_PROXY=1` (or `true`, `yes`, or `on`) to bypass only the Desktop adapter per request and restore standard `HTTP_PROXY`, `HTTPS_PROXY`, `ALL_PROXY`, and `NO_PROXY` routing. Loopback always stays direct.
+@y
+When Docker Desktop is running, remote HTTP(S) agent configuration sources and built-in HTTP toolsets send eligible public destinations through its PAC proxy before normal environment-proxy routing. A PAC `DIRECT` result selects Docker Desktop's direct egress. `NO_PROXY` does not bypass Desktop PAC selection; set `DOCKER_AGENT_DISABLE_DESKTOP_PROXY=1` (or `true`, `yes`, or `on`) to bypass only the Desktop adapter per request and restore standard `HTTP_PROXY`, `HTTPS_PROXY`, `ALL_PROXY`, and `NO_PROXY` routing. Loopback always stays direct.
+@z
+
+@x
+For guarded clients, Docker Desktop PAC routing is restricted to Docker-owned hostnames (docker.com and docker.io families); all other hosts use the direct SSRF-guarded path regardless of Desktop state. Within the allowed set, local DNS preflight requires one or more public addresses before Docker Desktop is selected; the lookup is bounded (2 seconds) and, if it times out while the request's own context is still live, resolution falls through to Docker Desktop routing rather than blocking indefinitely. NXDOMAIN, empty results, other resolver errors, and private or mixed answers still stay on the SSRF-protected direct path. This preflight does not validate Docker Desktop-selected egress, whether PAC selects a proxy or `DIRECT`. `allow_private_ips: true` removes the direct-path address guard for trusted internal services, but Desktop PAC still takes precedence for eligible non-loopback destinations.
+@y
+For guarded clients, Docker Desktop PAC routing is restricted to Docker-owned hostnames (docker.com and docker.io families); all other hosts use the direct SSRF-guarded path regardless of Desktop state. Within the allowed set, local DNS preflight requires one or more public addresses before Docker Desktop is selected; the lookup is bounded (2 seconds) and, if it times out while the request's own context is still live, resolution falls through to Docker Desktop routing rather than blocking indefinitely. NXDOMAIN, empty results, other resolver errors, and private or mixed answers still stay on the SSRF-protected direct path. This preflight does not validate Docker Desktop-selected egress, whether PAC selects a proxy or `DIRECT`. `allow_private_ips: true` removes the direct-path address guard for trusted internal services, but Desktop PAC still takes precedence for eligible non-loopback destinations.
+@z
+
+@x
+For Docker Desktop proxy configuration, see [Docker Desktop proxy settings](https://docs.docker.com/desktop/settings-and-maintenance/settings/#proxies). Docker's [PAC files](https://docs.docker.com/enterprise/security/hardened-desktop/air-gapped-containers/#proxy-auto-configuration-pac-files) documentation describes the `containersProxy` setting for managed container and image-pull traffic, not Docker Agent's host-proxy adapter path.
+@y
+For Docker Desktop proxy configuration, see [Docker Desktop proxy settings](https://docs.docker.com/desktop/settings-and-maintenance/settings/#proxies). Docker's [PAC files](https://docs.docker.com/enterprise/security/hardened-desktop/air-gapped-containers/#proxy-auto-configuration-pac-files) documentation describes the `containersProxy` setting for managed container and image-pull traffic, not Docker Agent's host-proxy adapter path.
 @z
 
 @x
@@ -286,9 +356,9 @@ toolsets:
 @z
 
 @x
-By default, the fetch tool refuses connections to **non-public IP addresses** — even when DNS for an otherwise-public host resolves to one of them (so DNS rebinding is also blocked). The check happens at dial time, after DNS resolution, and rejects:
+By default, the fetch tool's **direct path** refuses connections to **non-public IP addresses** — even when DNS for an otherwise-public host resolves to one of them (so DNS rebinding is also blocked). This dial-time check applies when Docker Desktop is unavailable or bypassed. Docker Agent does not evaluate PAC, so egress selected by Docker Desktop — through a proxy or with PAC `DIRECT` — is outside this local dial-time enforcement. The check rejects:
 @y
-By default, the fetch tool refuses connections to **non-public IP addresses** — even when DNS for an otherwise-public host resolves to one of them (so DNS rebinding is also blocked). The check happens at dial time, after DNS resolution, and rejects:
+By default, the fetch tool's **direct path** refuses connections to **non-public IP addresses** — even when DNS for an otherwise-public host resolves to one of them (so DNS rebinding is also blocked). This dial-time check applies when Docker Desktop is unavailable or bypassed. Docker Agent does not evaluate PAC, so egress selected by Docker Desktop — through a proxy or with PAC `DIRECT` — is outside this local dial-time enforcement. The check rejects:
 @z
 
 @x

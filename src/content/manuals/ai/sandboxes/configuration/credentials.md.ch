@@ -1524,7 +1524,7 @@ sbx secret set [--all-sandboxes | --sandbox SANDBOX] --registry HOST
 @z
 
 @x
-- **Host-only** (no scope flag): the `sbx` CLI uses it to pull templates
+- **Host-only** (no scope flag): `sbx` uses it to pull templates
   and kits when creating a sandbox. The credential stays on the host and is
   never available inside the sandbox.
 - **All sandboxes** (`--all-sandboxes`): same as host-only, plus the proxy
@@ -1535,7 +1535,7 @@ sbx secret set [--all-sandboxes | --sandbox SANDBOX] --registry HOST
   `--all-sandboxes`, but only for the named sandbox. Use it when only one
   sandbox needs registry access.
 @y
-- **Host-only** (no scope flag): the `sbx` CLI uses it to pull templates
+- **Host-only** (no scope flag): `sbx` uses it to pull templates
   and kits when creating a sandbox. The credential stays on the host and is
   never available inside the sandbox.
 - **All sandboxes** (`--all-sandboxes`): same as host-only, plus the proxy

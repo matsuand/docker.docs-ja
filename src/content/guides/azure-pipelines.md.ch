@@ -5,12 +5,14 @@
 
 @x
 title: Introduction to Azure Pipelines with Docker
+description: Automate Docker image builds and publishing with Azure Pipelines.
 linkTitle: Azure Pipelines and Docker
 summary: |
   Learn how to automate Docker image build and push using Azure Pipelines.
 keywords: azure pipelines, azure devops, ci/cd, docker hub, build and push, automation
 @y
 title: Introduction to Azure Pipelines with Docker
+description: Automate Docker image builds and publishing with Azure Pipelines.
 linkTitle: Azure Pipelines and Docker
 summary: |
   Learn how to automate Docker image build and push using Azure Pipelines.
@@ -696,11 +698,11 @@ With this Azure Pipelines CI setup, you get:
 @x
 - [Azure Pipelines Documentation](https://learn.microsoft.com/en-us/azure/devops/pipelines/?view=azure-devops): Comprehensive guide to configuring and managing CI/CD pipelines in Azure DevOps.
 - [Docker Task for Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/build/docker): Detailed reference for using the Docker task in Azure Pipelines to build and push images.
-- [Docker Buildx Bake](/manuals/build/bake/_index.md): Explore Docker's advanced build tool for complex, multi-stage, and multi-platform build setups. See also the [Mastering Buildx Bake Guide](/guides/bake/) for practical examples and best practices.
+- [Bake targets](/manuals/build/bake/targets.md): Group builds, run checks, and export artifacts.
 - [Docker Build Cloud](/manuals/build-cloud/_index.md): Learn about Docker's managed build service for faster, scalable, and multi-platform image builds in the cloud.
 @y
 - [Azure Pipelines Documentation](https://learn.microsoft.com/en-us/azure/devops/pipelines/?view=azure-devops): Comprehensive guide to configuring and managing CI/CD pipelines in Azure DevOps.
 - [Docker Task for Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/build/docker): Detailed reference for using the Docker task in Azure Pipelines to build and push images.
-- [Docker Buildx Bake](manuals/build/bake/_index.md): Explore Docker's advanced build tool for complex, multi-stage, and multi-platform build setups. See also the [Mastering Buildx Bake Guide](__SUBDIR__/guides/bake/) for practical examples and best practices.
+- [Bake targets](manuals/build/bake/targets.md): Group builds, run checks, and export artifacts.
 - [Docker Build Cloud](manuals/build-cloud/_index.md): Learn about Docker's managed build service for faster, scalable, and multi-platform image builds in the cloud.
 @z

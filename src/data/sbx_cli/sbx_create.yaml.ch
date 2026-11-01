@@ -17,12 +17,18 @@ description: |-
     The first positional argument may be a built-in agent name or a sandbox kit
     reference. Sandbox kit references may be local directories, ZIP files, git
     repositories, or OCI references. Relative local references must be explicit
-    paths such as ./my-kit or ../my-kit.zip.
+    paths such as ./my-kit or ../my-kit.zip. A kit.shortcuts.<agent> setting
+    (sbx settings set kit.shortcuts.claude sbx/claude:latest) makes that agent name
+    resolve to the configured kit reference instead for local sandboxes; cloud
+    sandboxes ignore it.
 @y
     The first positional argument may be a built-in agent name or a sandbox kit
     reference. Sandbox kit references may be local directories, ZIP files, git
     repositories, or OCI references. Relative local references must be explicit
-    paths such as ./my-kit or ../my-kit.zip.
+    paths such as ./my-kit or ../my-kit.zip. A kit.shortcuts.<agent> setting
+    (sbx settings set kit.shortcuts.claude sbx/claude:latest) makes that agent name
+    resolve to the configured kit reference instead for local sandboxes; cloud
+    sandboxes ignore it.
 @z
 
 @x
@@ -76,9 +82,11 @@ description: |-
 @z
 
 @x
-    Use "sbx --cloud run --name SANDBOX" to attach to the agent after creation.
+    Use "sbx --cloud run <agent> --name SANDBOX" to attach to the agent after
+    creation: cloud needs the agent, since a name alone is not a unique handle.
 @y
-    Use "sbx --cloud run --name SANDBOX" to attach to the agent after creation.
+    Use "sbx --cloud run <agent> --name SANDBOX" to attach to the agent after
+    creation: cloud needs the agent, since a name alone is not a unique handle.
 @z
 
 @x
@@ -181,6 +189,14 @@ usage: sbx create AGENT|SANDBOX_KIT [PATH...] [flags]
 @y
       usage: |
         Memory limit in binary units (e.g., 512m, 8g). Minimum: 512 MiB. Default: 50% of host memory, clamped to 512 MiB–32 GiB. Maximum: max(75% of host memory, 512 MiB)
+@z
+
+@x mount
+      usage: |
+        Bind a host directory to a kit host-mount@1 path (can be repeated): HOST:SANDBOX_PATH. Can only be used when creating a new sandbox.
+@y
+      usage: |
+        Bind a host directory to a kit host-mount@1 path (can be repeated): HOST:SANDBOX_PATH. Can only be used when creating a new sandbox.
 @z
 
 @x name

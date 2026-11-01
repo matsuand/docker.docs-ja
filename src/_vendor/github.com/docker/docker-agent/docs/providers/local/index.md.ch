@@ -4,14 +4,14 @@
 % __SUBDIR__ 対応
 
 @x
-title: "Local Models (Ollama, vLLM, LocalAI)"
+title: "Local Models (Ollama, vLLM, LocalAI, Nativ)"
 description: "Run Docker Agent with locally hosted models for privacy, offline use, or cost savings."
-keywords: docker agent, ai agents, model providers, llm, local models, ollama, vllm, localai, offline models
+keywords: docker agent, ai agents, model providers, llm, local models, ollama, vllm, localai, nativ, offline models
 linkTitle: "Local Models"
 @y
-title: "Local Models (Ollama, vLLM, LocalAI)"
+title: "Local Models (Ollama, vLLM, LocalAI, Nativ)"
 description: "Run Docker Agent with locally hosted models for privacy, offline use, or cost savings."
-keywords: docker agent, ai agents, model providers, llm, local models, ollama, vllm, localai, offline models
+keywords: docker agent, ai agents, model providers, llm, local models, ollama, vllm, localai, nativ, offline models
 linkTitle: "Local Models"
 @z
 
@@ -43,10 +43,12 @@ Docker Agent can connect to any OpenAI-compatible local model server. This guide
 - **Ollama** — Easy-to-use local model runner
 - **vLLM** — High-performance inference server
 - **LocalAI** — OpenAI-compatible API for various backends
+- [**Nativ**](../nativ/index.md) — Local MLX models on Apple Silicon
 @y
 - **Ollama** — Easy-to-use local model runner
 - **vLLM** — High-performance inference server
 - **LocalAI** — OpenAI-compatible API for various backends
+- [**Nativ**](../nativ/index.md) — Local MLX models on Apple Silicon
 @z
 
 @x

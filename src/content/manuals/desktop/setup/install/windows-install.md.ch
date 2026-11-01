@@ -359,9 +359,15 @@ Docker Desktop を VMware ESXi あるいは Azure VM において動作させる
 @z
 
 @x
-1. When prompted, select your backend on the Configuration page: **Use WSL 2 instead of Hyper-V** for WSL 2, or leave it unselected for Hyper-V. You can switch to Docker VMM after installation from **Settings** > **General**.
+1. When prompted, select your backend on the **Configuration page**: **Use WSL 2 instead of Hyper-V** for WSL 2, or leave it unselected for Hyper-V. You can switch to Docker VMM after installation from **Settings** > **General**.
 @y
-1. プロンプト画面が表示されたら、Configuration ページから目的とするバックエンドを選んでください。WSL 2 を選ぶ場合は **Use WSL 2 instead of Hyper-V** (Hyper-V の代わりに WSL 2 を利用) を選んでください。Hyper-V を選ぶ場合は、何も選択せずそのままにしておいてください。インストール後であっても Docker VMM を切り替えたい場合は、**Settings** > **General** から行うことができます。
+1. プロンプト画面が表示されたら、**Configuration** ページから目的とするバックエンドを選んでください。WSL 2 を選ぶ場合は **Use WSL 2 instead of Hyper-V** (Hyper-V の代わりに WSL 2 を利用) を選んでください。Hyper-V を選ぶ場合は、何も選択せずそのままにしておいてください。インストール後であっても Docker VMM を切り替えたい場合は、**Settings** > **General** から行うことができます。
+@z
+
+@x
+    With version 4.97 and later, the **Configuration** page lists the backends as options. Per-user installation offers WSL 2 and Docker VMM (Beta). All-users installation offers WSL 2 and Hyper-V.
+@y
+    With version 4.97 and later, the **Configuration** page lists the backends as options. Per-user installation offers WSL 2 and Docker VMM (Beta). All-users installation offers WSL 2 and Hyper-V.
 @z
 
 @x
@@ -637,7 +643,7 @@ If Microsoft Store access is blocked due to security policies:
 - `--quiet`: Suppresses information output when running the installer 
 - `--accept-license`: Accepts the [Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement) now, rather than requiring it to be accepted when the application is first run
 - `--installation-dir=<path>`: Changes the default installation location (`C:\Program Files\Docker\Docker`)
-- `--backend=<backend name>`: Selects the default backend to use for Docker Desktop: `wsl-2` (default), `hyper-v`, `windows`, or `docker-vmm`.
+- `--backend=<backend name>`: Selects the default backend to use for Docker Desktop: `wsl-2` (default), `hyper-v`, `windows`, or `docker-vmm`. With version 4.97 and later, `docker-vmm` can be combined with the `--user` flag. `hyper-v` and `windows` can't be combined with `--user`.
 - `--always-run-service`: After installation completes, starts `com.docker.service` and sets the service startup type to Automatic. This circumvents the need for administrator privileges, which are otherwise necessary to start `com.docker.service`. `com.docker.service` is required by Windows containers and Hyper-V backend.
 @y
 - `--user`: Docker Desktop を個別ユーザーモードで `%LOCALAPPDATA%\Programs\DockerDesktop` にインストールします。この場合は管理者権限を必要としません。たいていはこのモードが推奨されます。詳しくは [インストールモード](#installation-modes) を参照してください。
@@ -646,6 +652,8 @@ If Microsoft Store access is blocked due to security policies:
 - `--installation-dir=<パス>`: デフォルトのインストール先 (`C:\Program Files\Docker\Docker`) を変更します。
 - `--backend=<バックエンド名>`: Docker Desktop が利用するデフォルトのバックエンドを指定します。
   `wsl-2` (デフォルト)、`hyper-v`、`windows`、`docker-vmm` のいずれか。
+  バージョン 4.97 またはそれ以降の場合、`docker-vmm` は `--user` フラグと併用できます。
+  また `hyper-v` と `windows` は `--user` フラグと併用できます。
 - `--always-run-service`: インストール完了後に `com.docker.service` を起動し、このサービスの起動タイプを Automatic (自動) に設定します。
   これによって管理者権限がなくても稼働できるようになります。
   これがなかった場合 `com.docker.service` の起動には管理者権限が必要です。

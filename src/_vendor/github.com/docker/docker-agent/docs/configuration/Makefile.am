@@ -2,9 +2,9 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS = agents agentsignore budget commands flavors hcl hooks models \
-	overview permissions routing sandbox structured-output tools   \
-	user-settings
+SUBDIRS = agents agentsignore budget commands evaluators flavors hcl    \
+	hooks models opentelemetry overview permissions routing sandbox \
+	structured-output telemetry tools user-settings
 
 bases = \
 	_index.md

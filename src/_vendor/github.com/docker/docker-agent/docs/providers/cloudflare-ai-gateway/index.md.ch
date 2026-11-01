@@ -103,11 +103,11 @@ and an API token with the appropriate permissions.
 
 @x
 AI Gateway model IDs use the gateway's `provider/model` form (for example
-`workers-ai/@cf/meta/llama-3.1-8b-instruct` or `openai/gpt-4o`); the gateway
+`workers-ai/@cf/meta/llama-3.1-8b-instruct` or `openai/gpt-5.6-sol`); the gateway
 routes each request to the underlying provider.
 @y
 AI Gateway model IDs use the gateway's `provider/model` form (for example
-`workers-ai/@cf/meta/llama-3.1-8b-instruct` or `openai/gpt-4o`); the gateway
+`workers-ai/@cf/meta/llama-3.1-8b-instruct` or `openai/gpt-5.6-sol`); the gateway
 routes each request to the underlying provider.
 @z
 

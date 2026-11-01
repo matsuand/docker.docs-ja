@@ -245,7 +245,8 @@ bases = \
 	manage-licenses.md    \
 	manage-products.md    \
 	manage-seats.md       \
-	members.md
+	members.md            \
+	user-access.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

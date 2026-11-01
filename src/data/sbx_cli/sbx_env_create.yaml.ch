@@ -126,9 +126,11 @@ usage: sbx env create [PATH...] [flags]
 @z
 
 @x skip-host-commands
-      usage: Skip the host lifecycle commands the environment declares
+      usage: |
+        Skip host lifecycle commands and disable environment MCP commands until a later env run without this flag
 @y
-      usage: Skip the host lifecycle commands the environment declares
+      usage: |
+        Skip host lifecycle commands and disable environment MCP commands until a later env run without this flag
 @z
 
 @x
