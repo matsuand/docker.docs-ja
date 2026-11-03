@@ -177,6 +177,80 @@ The following shows a few examples of what you can expect to see:
 % snip command...
 
 @x
+### Why is Kubernetes stuck on "Starting" behind a corporate proxy?
+@y
+### Why is Kubernetes stuck on "Starting" behind a corporate proxy?
+@z
+
+@x
+If your machine sets the `HTTP_PROXY` or `HTTPS_PROXY` environment variables,
+and `NO_PROXY` doesn't include `kubernetes.docker.internal`, requests to the
+Kubernetes API server go to the proxy instead of the local cluster. The
+Docker Desktop `kubeconfig` uses `kubernetes.docker.internal` as the server
+address. The proxy can't reach it and returns an error such as `502 Bad Gateway`
+or `Forbidden`. The IP address `127.0.0.1` is never proxied, which is why
+connecting to the cluster directly works.
+@y
+If your machine sets the `HTTP_PROXY` or `HTTPS_PROXY` environment variables,
+and `NO_PROXY` doesn't include `kubernetes.docker.internal`, requests to the
+Kubernetes API server go to the proxy instead of the local cluster. The
+Docker Desktop `kubeconfig` uses `kubernetes.docker.internal` as the server
+address. The proxy can't reach it and returns an error such as `502 Bad Gateway`
+or `Forbidden`. The IP address `127.0.0.1` is never proxied, which is why
+connecting to the cluster directly works.
+@z
+
+@x
+You might see the following symptoms:
+@y
+You might see the following symptoms:
+@z
+
+@x
+- Docker Desktop shows **Starting - waiting for node to be ready** and never
+  finishes.
+- `kubectl get nodes` fails with an error such as
+  `Get "https://kubernetes.docker.internal:6443/...": Bad Gateway` or
+  `Forbidden`.
+- The cluster is running. `docker ps` shows the control plane containers as up.
+@y
+- Docker Desktop shows **Starting - waiting for node to be ready** and never
+  finishes.
+- `kubectl get nodes` fails with an error such as
+  `Get "https://kubernetes.docker.internal:6443/...": Bad Gateway` or
+  `Forbidden`.
+- The cluster is running. `docker ps` shows the control plane containers as up.
+@z
+
+@x
+To confirm the proxy is the cause, run the following commands in PowerShell:
+@y
+To confirm the proxy is the cause, run the following commands in PowerShell:
+@z
+
+% snip code...
+
+@x
+If the proxy is the cause, the second command returns a `502` status, and the
+third returns `200` and the Kubernetes version as JSON.
+@y
+If the proxy is the cause, the second command returns a `502` status, and the
+third returns `200` and the Kubernetes version as JSON.
+@z
+
+@x
+To fix the issue, add `kubernetes.docker.internal` to `NO_PROXY`. The following
+command sets `NO_PROXY` for the current user. It replaces the existing value, so
+include your existing entries in the list:
+@y
+To fix the issue, add `kubernetes.docker.internal` to `NO_PROXY`. The following
+command sets `NO_PROXY` for the current user. It replaces the existing value, so
+include your existing entries in the list:
+@z
+
+% snip code...
+
+@x
 ### How do I run Docker Desktop without administrator privileges?
 @y
 ### How do I run Docker Desktop without administrator privileges?

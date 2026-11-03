@@ -236,10 +236,10 @@ The syntax is the same as `.dockerignore` file:
 @z
 
 @x
-If the build context includes a `.dockerignore` file, the patterns in this file is loaded as implicit content
+If the build context includes a `.dockerignore` file, the patterns in this file are loaded as implicit content
 for the `ignores` file, and values set in the Compose model are appended.
 @y
-If the build context includes a `.dockerignore` file, the patterns in this file is loaded as implicit content
+If the build context includes a `.dockerignore` file, the patterns in this file are loaded as implicit content
 for the `ignores` file, and values set in the Compose model are appended.
 @z
 
