@@ -7,7 +7,7 @@ synopsis: Create (if needed) and attach to a sandbox environment
 experimental: true
 description: |-
     Read the environment file from PATH (default: current directory)
-    and drop into the sandbox shell. If the sandbox already exists it is started
+    and launch its agent. If the sandbox already exists it is started
     and re-attached without re-provisioning; otherwise it is created first
     (provisioning secrets and bindings) and then attached.
 @y
@@ -16,7 +16,7 @@ synopsis: Create (if needed) and attach to a sandbox environment
 experimental: true
 description: |-
     Read the environment file from PATH (default: current directory)
-    and drop into the sandbox shell. If the sandbox already exists it is started
+    and launch its agent. If the sandbox already exists it is started
     and re-attached without re-provisioning; otherwise it is created first
     (provisioning secrets and bindings) and then attached.
 @z
@@ -38,6 +38,28 @@ description: |-
 @z
 
 @x
+    Optional entrypoint and cmd arrays override the agent launch for this environment
+    only. Omitted or null fields inherit defaults; empty arrays clear
+    them. Later files replace these arrays rather than concatenate them. Arguments
+    after -- replace cmd when an override is configured; otherwise they are forwarded
+    to the agent's saved launcher. No shell expansion is performed on array elements.
+    Overrides bypass the saved launcher, apply on each env run, and leave env exec,
+    plain sbx run, the published kit, and the sandbox's PID 1 unchanged. A detached
+    run starts only the sandbox, not the configured command. Inheriting launch
+    defaults may require resolving the environment's workload kit again.
+@y
+    Optional entrypoint and cmd arrays override the agent launch for this environment
+    only. Omitted or null fields inherit defaults; empty arrays clear
+    them. Later files replace these arrays rather than concatenate them. Arguments
+    after -- replace cmd when an override is configured; otherwise they are forwarded
+    to the agent's saved launcher. No shell expansion is performed on array elements.
+    Overrides bypass the saved launcher, apply on each env run, and leave env exec,
+    plain sbx run, the published kit, and the sandbox's PID 1 unchanged. A detached
+    run starts only the sandbox, not the configured command. Inheriting launch
+    defaults may require resolving the environment's workload kit again.
+@z
+
+@x
     A directory PATH selects sbxenv.yaml; a file PATH selects that file.
     With no PATH, ~/.sbxenv.yaml supplies shared defaults when present.
     Explicit PATHs skip those defaults. Later files override earlier values;
@@ -50,9 +72,9 @@ description: |-
 @z
 
 @x
-usage: sbx env run [PATH...] [flags]
+usage: sbx env run [PATH...] [-- ARG...] [flags]
 @y
-usage: sbx env run [PATH...] [flags]
+usage: sbx env run [PATH...] [-- ARG...] [flags]
 @z
 
 % options:
@@ -167,6 +189,14 @@ usage: sbx env run [PATH...] [flags]
       usage: Enable debug logging
 @z
 
+@x no-input
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
+@y
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
+@z
+
 @x
 example: |4-
       sbx env run
@@ -181,6 +211,14 @@ example: |4-
 @y
       # Start without attaching
       sbx env run --detach ./project
+@z
+
+@x
+      # Replace cmd while keeping the configured entrypoint
+      sbx env run . -- --base HEAD
+@y
+      # Replace cmd while keeping the configured entrypoint
+      sbx env run . -- --base HEAD
 @z
 
 % see_also:

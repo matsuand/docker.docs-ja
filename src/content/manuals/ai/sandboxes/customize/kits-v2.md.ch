@@ -734,10 +734,10 @@ The agent's container image must provide:
 @z
 
 @x
-Build on top of `docker/sandbox-templates:shell-docker` to get these base
+Build on top of `docker.io/sbx/shell-docker-image:latest` to get these base
 requirements.
 @y
-Build on top of `docker/sandbox-templates:shell-docker` to get these base
+Build on top of `docker.io/sbx/shell-docker-image:latest` to get these base
 requirements.
 @z
 

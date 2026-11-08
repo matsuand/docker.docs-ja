@@ -3,11 +3,25 @@
 
 @x
 command: docker offload start
-short: Start a Docker Offload session
+short: Start a Docker Offload v1 session
+long: |-
+  Start a Docker Offload v1 session.
+
+  This command belongs to Docker Offload v1, and works when **Enable Docker
+  Offload** is turned on in Docker Desktop settings. If the setting is off, or
+  doesn't appear, your Docker commands use the current version of Docker
+  Offload, which uses `docker offload create` instead.
 usage: docker offload start
 @y
 command: docker offload start
-short: Start a Docker Offload session
+short: Start a Docker Offload v1 session
+long: |-
+  Start a Docker Offload v1 session.
+
+  This command belongs to Docker Offload v1, and works when **Enable Docker
+  Offload** is turned on in Docker Desktop settings. If the setting is off, or
+  doesn't appear, your Docker commands use the current version of Docker
+  Offload, which uses `docker offload create` instead.
 usage: docker offload start
 @z
 
@@ -17,12 +31,6 @@ usage: docker offload start
     description: The Docker account to use
 @y
     description: 利用する Docker アカウント。
-@z
-
-@x gpu
-    description: Request an engine with a gpu
-@y
-    description: Request an engine with a gpu
 @z
 
 @x timeout

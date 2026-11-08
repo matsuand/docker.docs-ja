@@ -218,6 +218,12 @@ AC_CONFIG_FILES([
 	src/content/manuals/agentic-platform/Makefile
 	src/content/manuals/ai/Makefile
 	src/content/manuals/ai/docker-agent/Makefile
+	src/content/manuals/ai/governance/Makefile
+	src/content/manuals/ai/governance/local/Makefile
+	src/content/manuals/ai/governance/organization/Makefile
+	src/content/manuals/ai/governance/organization/audit/Makefile
+	src/content/manuals/ai/governance/organization/policies/Makefile
+	src/content/manuals/ai/governance/reference/Makefile
 	src/content/manuals/ai/gordon/Makefile
 	src/content/manuals/ai/gordon/concepts/Makefile
 	src/content/manuals/ai/gordon/images/Makefile
@@ -231,11 +237,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/ai/sandboxes/customize/Makefile
 	src/content/manuals/ai/sandboxes/customize/author/Makefile
 	src/content/manuals/ai/sandboxes/diagrams/Makefile
-	src/content/manuals/ai/sandboxes/governance/Makefile
-	src/content/manuals/ai/sandboxes/governance/access-controls/Makefile
-	src/content/manuals/ai/sandboxes/governance/audit/Makefile
-	src/content/manuals/ai/sandboxes/governance/monitor-and-enforce/Makefile
-	src/content/manuals/ai/sandboxes/governance/reference/Makefile
 	src/content/manuals/ai/sandboxes/images/Makefile
 	src/content/manuals/ai/sandboxes/integrations/Makefile
 	src/content/manuals/ai/sandboxes/security/Makefile
@@ -361,7 +362,8 @@ AC_CONFIG_FILES([
 	src/content/manuals/extensions/extensions-sdk/guides/images/Makefile
 	src/content/manuals/faqs/Makefile
 	src/content/manuals/offload/Makefile
-	src/content/manuals/offload/images/Makefile
+	src/content/manuals/offload/v1/Makefile
+	src/content/manuals/offload/v1/images/Makefile
 	src/content/manuals/scout/Makefile
 	src/content/manuals/scout/deep-dive/Makefile
 	src/content/manuals/scout/explore/Makefile

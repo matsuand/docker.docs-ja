@@ -187,10 +187,10 @@ usage: sbx move SANDBOX [flags]
 
 @x ttl
       usage: |
-        Time-to-live for the destination cloud sandbox (15s to 24h, e.g. 30m, 2h; only with --to cloud; default: server-side)
+        Time-to-live for the destination cloud sandbox (15s to 24h, e.g. 30m, 2h; units are case-insensitive; only with --to cloud; default: server-side)
 @y
       usage: |
-        Time-to-live for the destination cloud sandbox (15s to 24h, e.g. 30m, 2h; only with --to cloud; default: server-side)
+        Time-to-live for the destination cloud sandbox (15s to 24h, e.g. 30m, 2h; units are case-insensitive; only with --to cloud; default: server-side)
 @z
 
 % inherited_options:
@@ -207,6 +207,14 @@ usage: sbx move SANDBOX [flags]
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x no-input
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
+@y
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
 @z
 
 @x

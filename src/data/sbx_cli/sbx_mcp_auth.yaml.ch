@@ -5,42 +5,46 @@
 name: sbx mcp auth
 synopsis: Authorize MCP servers
 description: |-
-    Authorize registered remote MCP servers through the hosted MCP control plane.
+    Authorize registered MCP servers with OAuth.
 @y
 name: sbx mcp auth
 synopsis: Authorize MCP servers
 description: |-
-    Authorize registered remote MCP servers through the hosted MCP control plane.
+    Authorize registered MCP servers with OAuth.
 @z
 
 @x
-    Commands use the Docker Hub account from 'sbx login' as the request principal.
-    User and tenant identity are derived by the control plane; they are not sent in
-    the request body.
+    With a local gateway or an OAuth override in the server registration, credentials
+    are stored locally. Otherwise, the hosted MCP control plane manages them.
 @y
-    Commands use the Docker Hub account from 'sbx login' as the request principal.
-    User and tenant identity are derived by the control plane; they are not sent in
-    the request body.
+    With a local gateway or an OAuth override in the server registration, credentials
+    are stored locally. Otherwise, the hosted MCP control plane manages them.
 @z
 
 @x
-    Running 'sbx mcp auth <server>' authorizes or reauthorizes one server. If the
-    stored credential is expired, sbx asks the control plane to refresh it first and
-    only falls back to interactive OAuth when refresh needs user consent.
+    Hosted operations use the Docker Hub account from 'sbx login'. The control plane
+    derives user and tenant identity; they are not sent in the request body.
 @y
-    Running 'sbx mcp auth <server>' authorizes or reauthorizes one server. If the
-    stored credential is expired, sbx asks the control plane to refresh it first and
-    only falls back to interactive OAuth when refresh needs user consent.
+    Hosted operations use the Docker Hub account from 'sbx login'. The control plane
+    derives user and tenant identity; they are not sent in the request body.
 @z
 
 @x
-    Use 'sbx mcp auth status' to inspect hosted credential status without starting
-    OAuth, and 'sbx mcp auth rm' to remove hosted credentials without removing
-    local MCP server registrations.
+    Running 'sbx mcp auth <server>' authorizes or reauthorizes one server, even if it
+    already has stored credentials.
 @y
-    Use 'sbx mcp auth status' to inspect hosted credential status without starting
-    OAuth, and 'sbx mcp auth rm' to remove hosted credentials without removing
-    local MCP server registrations.
+    Running 'sbx mcp auth <server>' authorizes or reauthorizes one server, even if it
+    already has stored credentials.
+@z
+
+@x
+    Use 'sbx mcp auth status' to inspect credential status without starting OAuth,
+    and 'sbx mcp auth rm' to remove credentials without removing local MCP server
+    registrations.
+@y
+    Use 'sbx mcp auth status' to inspect credential status without starting OAuth,
+    and 'sbx mcp auth rm' to remove credentials without removing local MCP server
+    registrations.
 @z
 
 @x
@@ -191,6 +195,14 @@ usage: sbx mcp auth [SERVER] [flags]
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x no-input
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
+@y
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
 @z
 
 @x

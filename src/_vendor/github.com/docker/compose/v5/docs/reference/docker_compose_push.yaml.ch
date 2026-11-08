@@ -48,113 +48,51 @@ long: |-
         build: .
         image: your-dockerid/yourimage  ## goes to your repository on Docker Hub
     ```
-usage: docker compose push [OPTIONS] [SERVICE...]
-pname: docker compose
-plink: docker_compose.yaml
-options:
-    - option: ignore-push-failures
-      value_type: bool
-      default_value: "false"
-      description: Push what it can and ignores images with push failures
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: include-deps
-      value_type: bool
-      default_value: "false"
-      description: Also push images of services declared as dependencies
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Push without printing progress information
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
       service2:
         build: .
         image: your-dockerid/yourimage  ## goes to your repository on Docker Hub
     ```
+@z
+
+@x
 usage: docker compose push [OPTIONS] [SERVICE...]
-pname: docker compose
-plink: docker_compose.yaml
-options:
-    - option: ignore-push-failures
-      value_type: bool
-      default_value: "false"
+@y
+usage: docker compose push [OPTIONS] [SERVICE...]
+@z
+
+% options:
+
+@x ignore-missing
+      description: |
+        Skip images that are not available locally instead of failing to push them
+@y
+      description: |
+        Skip images that are not available locally instead of failing to push them
+@z
+
+@x ignore-push-failures
       description: Push what it can and ignores images with push failures
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: include-deps
-      value_type: bool
-      default_value: "false"
+@y
+      description: Push what it can and ignores images with push failures
+@z
+
+@x include-deps
       description: Also push images of services declared as dependencies
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
+@y
+      description: Also push images of services declared as dependencies
+@z
+
+@x quiet
       description: Push without printing progress information
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
+@y
+      description: Push without printing progress information
+@z
+
+% inherited_options:
+
+@x dry-run
       description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: Execute command in dry run mode
 @z

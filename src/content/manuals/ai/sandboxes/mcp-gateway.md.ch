@@ -181,8 +181,12 @@ sandbox that's already running.
 
 @x
 Server names can contain letters, numbers, dots, hyphens, and underscores.
+The name `none` is reserved for
+[starting a sandbox without MCP servers](#start-without-mcp-servers).
 @y
 Server names can contain letters, numbers, dots, hyphens, and underscores.
+The name `none` is reserved for
+[starting a sandbox without MCP servers](#start-without-mcp-servers).
 @z
 
 @x
@@ -1098,23 +1102,25 @@ mode:
 @z
 
 @x
-- Static mode pre-loads the specified servers and doesn't expose dynamic
-  discovery tools to the agent.
+- Static mode loads only the servers you specify, or starts without servers
+  if you specify `none`. It doesn't expose dynamic discovery tools to the agent.
 - Dynamic mode pre-loads no servers and lets the agent find and attach
   registered servers.
 @y
-- Static mode pre-loads the specified servers and doesn't expose dynamic
-  discovery tools to the agent.
+- Static mode loads only the servers you specify, or starts without servers
+  if you specify `none`. It doesn't expose dynamic discovery tools to the agent.
 - Dynamic mode pre-loads no servers and lets the agent find and attach
   registered servers.
 @z
 
 @x
 This choice persists across sandbox restarts unless you
-[unload every server in the static set](#remove-a-server-from-a-running-sandbox).
+[unload every server in a named static set](#remove-a-server-from-a-running-sandbox).
+Sandboxes created with `--static-mcp none` remain static.
 @y
 This choice persists across sandbox restarts unless you
-[unload every server in the static set](#remove-a-server-from-a-running-sandbox).
+[unload every server in a named static set](#remove-a-server-from-a-running-sandbox).
+Sandboxes created with `--static-mcp none` remain static.
 @z
 
 @x
@@ -1177,6 +1183,42 @@ an existing sandbox. To attach another server from the host, use
 You can't replace the initial set by passing `--static-mcp` when reconnecting to
 an existing sandbox. To attach another server from the host, use
 [`sbx mcp load`](#add-a-server-to-a-running-sandbox).
+@z
+
+@x
+### Start without MCP servers
+@y
+### Start without MCP servers
+@z
+
+@x
+Pass `--static-mcp none` to `sbx create` or `sbx run` to start a local sandbox
+with no MCP servers and no dynamic discovery tools:
+@y
+Pass `--static-mcp none` to `sbx create` or `sbx run` to start a local sandbox
+with no MCP servers and no dynamic discovery tools:
+@z
+
+@x
+```console
+$ sbx run claude --name mcp-empty --static-mcp none
+```
+@y
+```console
+$ sbx run claude --name mcp-empty --static-mcp none
+```
+@z
+
+@x
+`none` is case-insensitive and can't be combined with server names. Cloud
+sandboxes don't support this value. You can load registered servers later with
+[`sbx mcp load`](#add-a-server-to-a-running-sandbox). The sandbox remains in
+static mode after loading or unloading servers and across restarts.
+@y
+`none` is case-insensitive and can't be combined with server names. Cloud
+sandboxes don't support this value. You can load registered servers later with
+[`sbx mcp load`](#add-a-server-to-a-running-sandbox). The sandbox remains in
+static mode after loading or unloading servers and across restarts.
 @z
 
 @x
@@ -1310,13 +1352,17 @@ again. Unloading a server doesn't prevent the agent from reloading it.
 @z
 
 @x
-If you unload all servers from a static sandbox, it stays in static mode for
-the current session. After restarting the Docker Sandboxes daemon and
-reconnecting, the agent can find and attach registered servers.
+If you unload all servers from a sandbox created with a named static set, it
+stays in static mode for the current session. After restarting the Docker
+Sandboxes daemon and reconnecting, the agent can find and attach registered servers. A sandbox
+created with `--static-mcp none` keeps dynamic discovery disabled after unloading
+its last server and restarting.
 @y
-If you unload all servers from a static sandbox, it stays in static mode for
-the current session. After restarting the Docker Sandboxes daemon and
-reconnecting, the agent can find and attach registered servers.
+If you unload all servers from a sandbox created with a named static set, it
+stays in static mode for the current session. After restarting the Docker
+Sandboxes daemon and reconnecting, the agent can find and attach registered servers. A sandbox
+created with `--static-mcp none` keeps dynamic discovery disabled after unloading
+its last server and restarting.
 @z
 
 @x
@@ -1387,12 +1433,12 @@ to the sandbox's gateway and disappears when the gateway is replaced or stops.
 In MCP access policies, built-in gateway tools are `MCP::Primordial` resources
 and use the `invokePrimordial` action. Tools from registered MCP servers are
 `MCP::Tool` resources and use the `invokeTool` action. For details, see the
-[MCP policy reference](governance/reference/mcp-policy.md).
+[MCP policy reference](../governance/reference/mcp-policy.md).
 @y
 In MCP access policies, built-in gateway tools are `MCP::Primordial` resources
 and use the `invokePrimordial` action. Tools from registered MCP servers are
 `MCP::Tool` resources and use the `invokeTool` action. For details, see the
-[MCP policy reference](governance/reference/mcp-policy.md).
+[MCP policy reference](../governance/reference/mcp-policy.md).
 @z
 
 @x
@@ -1485,12 +1531,14 @@ token, use `sbx mcp auth rm`.
 
 @x
 Organizations with AI Governance can use
-[MCP access policies](governance/access-controls/mcp.md) to control MCP server
-registration, tool calls, gateway meta-tools, resources, prompts, and approval
-requirements. MCP access policies are organization policies written in Cedar.
+[Organization MCP access policies](../governance/organization/policies/mcp.md) to
+control MCP server registration, tool calls, gateway meta-tools, resources,
+prompts, and approval requirements. MCP access policies are organization
+policies written in Cedar.
 @y
 Organizations with AI Governance can use
-[MCP access policies](governance/access-controls/mcp.md) to control MCP server
-registration, tool calls, gateway meta-tools, resources, prompts, and approval
-requirements. MCP access policies are organization policies written in Cedar.
+[Organization MCP access policies](../governance/organization/policies/mcp.md) to
+control MCP server registration, tool calls, gateway meta-tools, resources,
+prompts, and approval requirements. MCP access policies are organization
+policies written in Cedar.
 @z

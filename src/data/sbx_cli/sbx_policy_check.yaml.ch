@@ -51,12 +51,22 @@ usage: sbx policy check COMMAND
       usage: Enable debug logging
 @z
 
+@x no-input
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
+@y
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
+@z
+
 % see_also:
 
 @x
     - sbx policy - Manage sandbox policies
+    - sbx policy check http - Check HTTP access to a URL
     - sbx policy check network - Check network access to a host
 @y
     - sbx policy - Manage sandbox policies
+    - sbx policy check http - Check HTTP access to a URL
     - sbx policy check network - Check network access to a host
 @z

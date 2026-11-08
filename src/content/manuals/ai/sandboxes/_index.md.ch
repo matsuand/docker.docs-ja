@@ -37,12 +37,12 @@ Model-provider charges are separate.
 
 @x
 Organization admins can
-[centrally manage sandbox network, filesystem, and MCP policies](governance/access-controls/organization.md),
+[centrally manage sandbox network, filesystem, and MCP policies](../governance/organization/_index.md),
 for local sandboxes across developer machines.
 Available on a separate paid subscription.
 @y
 Organization admins can
-[centrally manage sandbox network, filesystem, and MCP policies](governance/access-controls/organization.md),
+[centrally manage sandbox network, filesystem, and MCP policies](../governance/organization/_index.md),
 for local sandboxes across developer machines.
 Available on a separate paid subscription.
 @z

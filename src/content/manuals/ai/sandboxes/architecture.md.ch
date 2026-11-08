@@ -16,6 +16,12 @@ keywords: docker sandboxes, architecture, microVM, workspace mounting, sandbox l
 @z
 
 @x
+{{% include "sandboxes-local-scope.md" %}}
+@y
+{{% include "sandboxes-local-scope.md" %}}
+@z
+
+@x
 This page explains how Docker Sandboxes work under the hood. For the security
 properties of the architecture, see [Sandbox isolation](security/isolation.md).
 @y
@@ -64,17 +70,19 @@ involved.
 @z
 
 @x
-A directly mounted workspace appears at the same absolute path as on your
-host. Preserving absolute paths means error messages, configuration files, and
-build outputs all reference paths you can find on your host. The agent sees the
-same directory structure, which reduces confusion when debugging or reviewing
-changes.
+By default, a directly mounted workspace appears at the same absolute path as
+on your host. Preserving absolute paths means error messages, configuration
+files, and build outputs all reference paths you can find on your host. The
+agent sees the same directory structure, which reduces confusion when debugging
+or reviewing changes. You can choose a different sandbox path for
+[additional workspaces](usage.md#multiple-workspaces).
 @y
-A directly mounted workspace appears at the same absolute path as on your
-host. Preserving absolute paths means error messages, configuration files, and
-build outputs all reference paths you can find on your host. The agent sees the
-same directory structure, which reduces confusion when debugging or reviewing
-changes.
+By default, a directly mounted workspace appears at the same absolute path as
+on your host. Preserving absolute paths means error messages, configuration
+files, and build outputs all reference paths you can find on your host. The
+agent sees the same directory structure, which reduces confusion when debugging
+or reviewing changes. You can choose a different sandbox path for
+[additional workspaces](usage.md#multiple-workspaces).
 @z
 
 @x
@@ -182,8 +190,9 @@ $ DOCKER_SANDBOXES_ENABLE_VIRTIOFS_CACHE=0 sbx run <agent>
 @x
 All outbound TCP traffic from the sandbox routes through a proxy on your host.
 Agents use a forward proxy for HTTP and HTTPS; other TCP traffic is forwarded
-transparently. Both paths enforce
-[network access policies](governance/access-controls/network.md). The forward
+transparently. Both paths enforce network policy, the rules that decide which
+destinations a sandbox can reach. For how those rules are set, see
+[Sandbox governance](../governance/_index.md). The forward
 proxy also handles [credential injection](configuration/credentials.md). See
 [Network isolation](security/isolation.md#network-isolation) for how this
 works and [Default security posture](security/defaults.md) for what is
@@ -191,12 +200,35 @@ allowed out of the box.
 @y
 All outbound TCP traffic from the sandbox routes through a proxy on your host.
 Agents use a forward proxy for HTTP and HTTPS; other TCP traffic is forwarded
-transparently. Both paths enforce
-[network access policies](governance/access-controls/network.md). The forward
+transparently. Both paths enforce network policy, the rules that decide which
+destinations a sandbox can reach. For how those rules are set, see
+[Sandbox governance](../governance/_index.md). The forward
 proxy also handles [credential injection](configuration/credentials.md). See
 [Network isolation](security/isolation.md#network-isolation) for how this
 works and [Default security posture](security/defaults.md) for what is
 allowed out of the box.
+@z
+
+@x
+### Follow an authenticated request
+@y
+### Follow an authenticated request
+@z
+
+@x
+Step through the following diagram to see where Docker Sandboxes checks network
+policy and replaces a sentinel credential with the real value. The real credential stays
+outside the sandbox throughout the request.
+@y
+Step through the following diagram to see where Docker Sandboxes checks network
+policy and replaces a sentinel credential with the real value. The real credential stays
+outside the sandbox throughout the request.
+@z
+
+@x
+{{< interactive-diagram src="diagrams/credential-injection.yaml" >}}
+@y
+{{< interactive-diagram src="diagrams/credential-injection.yaml" >}}
 @z
 
 @x

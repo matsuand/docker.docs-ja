@@ -48,13 +48,23 @@ for built-in agent references such as `claude` and `codex`.
 @z
 
 @x
-The built-in agent names are shortcuts for kit references. To run another kit,
-replace the agent name with that kit's reference. For example, run Docker's
-published v3 Codex workload:
+Built-in names such as `claude` and `codex` resolve to kits published on
+Docker Hub under `docker.io/sbx/<NAME>:latest`. For example, `codex` resolves
+to `docker.io/sbx/codex:latest`. These references differ from the versioned
+v3 workloads listed below.
 @y
-The built-in agent names are shortcuts for kit references. To run another kit,
-replace the agent name with that kit's reference. For example, run Docker's
-published v3 Codex workload:
+Built-in names such as `claude` and `codex` resolve to kits published on
+Docker Hub under `docker.io/sbx/<NAME>:latest`. For example, `codex` resolves
+to `docker.io/sbx/codex:latest`. These references differ from the versioned
+v3 workloads listed below.
+@z
+
+@x
+To run another kit, replace the agent name with that kit's reference. For
+example, run Docker's published v3 Codex workload:
+@y
+To run another kit, replace the agent name with that kit's reference. For
+example, run Docker's published v3 Codex workload:
 @z
 
 @x
@@ -689,6 +699,128 @@ rebuilding the image.
 @y
 Settings chosen during the image build, such as a tool's version, require
 rebuilding the image.
+@z
+
+@x
+## Kit data and host directories
+@y
+## Kit data and host directories
+@z
+
+@x
+Kits can provide storage for tool settings, history, and other data. The kit
+chooses which directories to use and whether their contents are persistent,
+temporary, or shared with other sandboxes. Check the kit's documentation before
+relying on it to preserve your work.
+@y
+Kits can provide storage for tool settings, history, and other data. The kit
+chooses which directories to use and whether their contents are persistent,
+temporary, or shared with other sandboxes. Check the kit's documentation before
+relying on it to preserve your work.
+@z
+
+@x
+### Choose directories for kit host mounts
+@y
+### Choose directories for kit host mounts
+@z
+
+@x
+Some kits share a directory with your host. In local sandboxes, Docker
+Sandboxes manages this directory by default. Its contents survive sandbox
+removal and are shared across sandboxes using the same kit source and mount
+path.
+@y
+Some kits share a directory with your host. In local sandboxes, Docker
+Sandboxes manages this directory by default. Its contents survive sandbox
+removal and are shared across sandboxes using the same kit source and mount
+path.
+@z
+
+@x
+You can choose your own host directory instead. Check the kit's documentation
+for the sandbox path, then pass `--mount HOST:SANDBOX_PATH` when creating the
+sandbox with `sbx create` or `sbx run`. For example, if a published kit uses
+`/home/agent/history`:
+@y
+You can choose your own host directory instead. Check the kit's documentation
+for the sandbox path, then pass `--mount HOST:SANDBOX_PATH` when creating the
+sandbox with `sbx create` or `sbx run`. For example, if a published kit uses
+`/home/agent/history`:
+@z
+
+@x
+```console
+$ mkdir -p ./history
+$ sbx run docker.io/<NAMESPACE>/my-agent:1.0.0 --name my-agent \
+    --mount ./history:/home/agent/history
+```
+@y
+```console
+$ mkdir -p ./history
+$ sbx run docker.io/<NAMESPACE>/my-agent:1.0.0 --name my-agent \
+    --mount ./history:/home/agent/history
+```
+@z
+
+@x
+The host directory must exist, and the sandbox path must exactly match a host
+mount declared by the kit. You can't add other mount paths this way. Repeat
+`--mount` for additional declared paths. These choices are fixed when the
+sandbox is created. Use `sbx inspect <SANDBOX>` to see the host directories.
+@y
+The host directory must exist, and the sandbox path must exactly match a host
+mount declared by the kit. You can't add other mount paths this way. Repeat
+`--mount` for additional declared paths. These choices are fixed when the
+sandbox is created. Use `sbx inspect <SANDBOX>` to see the host directories.
+@z
+
+@x
+For an environment file, use
+[`mounts`](../configuration/environment-files.md#mounts).
+Host-directory bindings are available only for local sandboxes.
+@y
+For an environment file, use
+[`mounts`](../configuration/environment-files.md#mounts).
+Host-directory bindings are available only for local sandboxes.
+@z
+
+@x
+### Keep kit data when recreating a sandbox
+@y
+### Keep kit data when recreating a sandbox
+@z
+
+@x
+Persistent kit volumes in local sandboxes survive kit updates and sandbox
+removal. To reuse their data, recreate the sandbox with the same name and kit
+source. You can change a published kit's tag or digest, provided the kit still
+uses the same storage paths. A different sandbox name or kit source gets
+separate storage.
+@y
+Persistent kit volumes in local sandboxes survive kit updates and sandbox
+removal. To reuse their data, recreate the sandbox with the same name and kit
+source. You can change a published kit's tag or digest, provided the kit still
+uses the same storage paths. A different sandbox name or kit source gets
+separate storage.
+@z
+
+@x
+This applies only to persistent kit volumes. Save any work you need from the
+container filesystem before removing the sandbox. Temporary kit storage is
+discarded when the sandbox stops.
+@y
+This applies only to persistent kit volumes. Save any work you need from the
+container filesystem before removing the sandbox. Temporary kit storage is
+discarded when the sandbox stops.
+@z
+
+@x
+For how to preserve storage when changing a kit, see
+[Configure the volume](author/patterns.md#configure-the-volume).
+@y
+For how to preserve storage when changing a kit, see
+[Configure the volume](author/patterns.md#configure-the-volume).
 @z
 
 @x

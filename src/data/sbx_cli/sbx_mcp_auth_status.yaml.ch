@@ -5,12 +5,20 @@
 name: sbx mcp auth status
 synopsis: Show MCP server OAuth status
 description: |-
-    Show hosted OAuth credential status for registered MCP servers.
+    Show OAuth credential status for registered MCP servers.
 @y
 name: sbx mcp auth status
 synopsis: Show MCP server OAuth status
 description: |-
-    Show hosted OAuth credential status for registered MCP servers.
+    Show OAuth credential status for registered MCP servers.
+@z
+
+@x
+    With a local gateway or an OAuth override in the server registration, credentials
+    are stored locally. Otherwise, the hosted MCP control plane manages them.
+@y
+    With a local gateway or an OAuth override in the server registration, credentials
+    are stored locally. Otherwise, the hosted MCP control plane manages them.
 @z
 
 @x
@@ -65,6 +73,14 @@ usage: sbx mcp auth status [SERVER] [flags]
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x no-input
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
+@y
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
 @z
 
 @x

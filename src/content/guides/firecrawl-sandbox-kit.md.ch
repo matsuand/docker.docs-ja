@@ -422,17 +422,17 @@ API, including structured extraction with a schema, see the
 @x
 Without organization governance, your default network policy and kit-defined
 rules determine which domains the sandbox can access. Under organization
-governance, organization policy controls which domains can be allowed; local
-and kit-defined allow rules are inactive, while deny rules can still restrict
+governance, organization policy controls which domains can be allowed; local and
+kit-defined allow rules are inactive, while deny rules can still restrict
 access. See
-[Network policy precedence](/manuals/ai/sandboxes/governance/concepts.md#precedence).
+[How organization policy relates to local and kit rules](/manuals/ai/governance/organization/policies/_index.md#how-organization-policy-relates-to-local-and-kit-rules).
 @y
 Without organization governance, your default network policy and kit-defined
 rules determine which domains the sandbox can access. Under organization
-governance, organization policy controls which domains can be allowed; local
-and kit-defined allow rules are inactive, while deny rules can still restrict
+governance, organization policy controls which domains can be allowed; local and
+kit-defined allow rules are inactive, while deny rules can still restrict
 access. See
-[Network policy precedence](manuals/ai/sandboxes/governance/concepts.md#precedence).
+[How organization policy relates to local and kit rules](manuals/ai/governance/organization/policies/_index.md#how-organization-policy-relates-to-local-and-kit-rules).
 @z
 
 @x

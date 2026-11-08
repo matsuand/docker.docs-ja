@@ -60,9 +60,9 @@ description: |-
 @z
 
 @x
-usage: sbx template load FILE [NAME] [flags]
+usage: sbx template load FILE [flags]
 @y
-usage: sbx template load FILE [NAME] [flags]
+usage: sbx template load FILE [flags]
 @z
 
 % options:
@@ -117,6 +117,14 @@ usage: sbx template load FILE [NAME] [flags]
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x no-input
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
+@y
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
 @z
 
 @x

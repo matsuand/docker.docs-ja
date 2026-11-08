@@ -64,11 +64,11 @@ custom endpoints. You don't need to install it separately.
 @z
 
 @x
-The Docker Sandboxes daemon starts `llmman` on your host and stops it when
+By default, the Docker Sandboxes daemon starts `llmman` on your host and stops it when
 the daemon stops. At startup, `llmman` downloads its llama.cpp runtime if
 needed, so the first startup requires network access for that download. The service starts even if you haven't used `--model`.
 @y
-The Docker Sandboxes daemon starts `llmman` on your host and stops it when
+By default, the Docker Sandboxes daemon starts `llmman` on your host and stops it when
 the daemon stops. At startup, `llmman` downloads its llama.cpp runtime if
 needed, so the first startup requires network access for that download. The service starts even if you haven't used `--model`.
 @z
@@ -89,6 +89,70 @@ in a container. If neither is usable, it tries a downloaded binary, then
 On Linux, `llmman` first tries Docker or Podman to run the inference server
 in a container. If neither is usable, it tries a downloaded binary, then
 `llama-server` on the host's `PATH`.
+@z
+
+@x
+### Disable the bundled service
+@y
+### Disable the bundled service
+@z
+
+@x
+If you don't use the bundled model service, you can turn it off to skip its
+runtime download:
+@y
+If you don't use the bundled model service, you can turn it off to skip its
+runtime download:
+@z
+
+@x
+```console
+$ sbx settings set model.server.enabled false
+$ sbx daemon restart
+```
+@y
+```console
+$ sbx settings set model.server.enabled false
+$ sbx daemon restart
+```
+@z
+
+@x
+Restart the daemon to apply the change. If the daemon wasn't running, the
+settings command starts it first, so the service might start and begin its
+download before you restart.
+@y
+Restart the daemon to apply the change. If the daemon wasn't running, the
+settings command starts it first, so the service might start and begin its
+download before you restart.
+@z
+
+@x
+You can still [use Ollama](#use-ollama) with the bundled service turned off.
+For local models managed by `llmman`, hosted providers, and custom endpoints,
+turn the service back on.
+@y
+You can still [use Ollama](#use-ollama) with the bundled service turned off.
+For local models managed by `llmman`, hosted providers, and custom endpoints,
+turn the service back on.
+@z
+
+@x
+To re-enable the bundled service:
+@y
+To re-enable the bundled service:
+@z
+
+@x
+```console
+$ sbx settings set model.server.enabled true
+$ sbx daemon restart
+```
+@y
+```console
+$ sbx settings set model.server.enabled true
+$ sbx daemon restart
+```
 @z
 
 @x

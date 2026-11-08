@@ -510,6 +510,52 @@ invocation. See [environment lifecycle commands](environment-files.md#lifecycle)
 @z
 
 @x
+#### sandbox.fuse {.wrap-anywhere}
+@y
+#### sandbox.fuse {.wrap-anywhere}
+@z
+
+@x
+{{< setting-metadata type="boolean" default="true" >}}
+@y
+{{< setting-metadata type="boolean" default="true" >}}
+@z
+
+@x
+Expose `/dev/fuse` and grant the `SYS_ADMIN` capability so processes can mount
+FUSE filesystems in local sandboxes. Set this to `false` to disable FUSE access
+for sandboxes you create:
+@y
+Expose `/dev/fuse` and grant the `SYS_ADMIN` capability so processes can mount
+FUSE filesystems in local sandboxes. Set this to `false` to disable FUSE access
+for sandboxes you create:
+@z
+
+@x
+```console
+$ sbx settings set sandbox.fuse false
+```
+@y
+```console
+$ sbx settings set sandbox.fuse false
+```
+@z
+
+@x
+Changes apply only to newly created sandboxes. Existing sandboxes retain their
+FUSE configuration, including after restarts. To disable access for one sandbox,
+set [`sandboxOptions.fuse`](environment-files.md#sandboxoptions) to `false`
+in its environment file. When this setting is `false`, environment files cannot
+enable FUSE access. Cloud sandboxes do not support FUSE.
+@y
+Changes apply only to newly created sandboxes. Existing sandboxes retain their
+FUSE configuration, including after restarts. To disable access for one sandbox,
+set [`sandboxOptions.fuse`](environment-files.md#sandboxoptions) to `false`
+in its environment file. When this setting is `false`, environment files cannot
+enable FUSE access. Cloud sandboxes do not support FUSE.
+@z
+
+@x
 #### ssh.agentForwardingEnabled {.wrap-anywhere}
 @y
 #### ssh.agentForwardingEnabled {.wrap-anywhere}
@@ -831,14 +877,12 @@ $ sbx settings set kit.allowedSources '["docker.io/","github.com/myorg/"]'
 Prefixes match on a path-segment boundary: `github.com/myorg/` permits that
 organization's repositories, but not `github.com/myorg-other/`. The value
 `["*"]` permits any remote source. Local directories and ZIP files are controlled
-by [kit.allowLocalKits](#kitallowlocalkits), and pinned agent kits have the
-[kit.allowExtractedAgents](#kitallowextractedagents) exception.
+by [kit.allowLocalKits](#kitallowlocalkits).
 @y
 Prefixes match on a path-segment boundary: `github.com/myorg/` permits that
 organization's repositories, but not `github.com/myorg-other/`. The value
 `["*"]` permits any remote source. Local directories and ZIP files are controlled
-by [kit.allowLocalKits](#kitallowlocalkits), and pinned agent kits have the
-[kit.allowExtractedAgents](#kitallowextractedagents) exception.
+by [kit.allowLocalKits](#kitallowlocalkits).
 @z
 
 @x
@@ -894,60 +938,6 @@ exempt them from signature requirements when
 @z
 
 @x
-#### kit.allowExtractedAgents {.wrap-anywhere}
-@y
-#### kit.allowExtractedAgents {.wrap-anywhere}
-@z
-
-@x
-{{< setting-metadata type="boolean" default="true"
-  env="DOCKER_SANDBOXES_KIT_ALLOW_EXTRACTED_AGENTS" >}}
-@y
-{{< setting-metadata type="boolean" default="true"
-  env="DOCKER_SANDBOXES_KIT_ALLOW_EXTRACTED_AGENTS" >}}
-@z
-
-@x
-Some agents that previously shipped inside Docker Sandboxes are distributed
-as kits. By default, Docker Sandboxes permits the exact pinned references it
-uses for those agents even if their sources aren't in `kit.allowedSources`,
-and exempts them from `kit.requireSignature`.
-@y
-Some agents that previously shipped inside Docker Sandboxes are distributed
-as kits. By default, Docker Sandboxes permits the exact pinned references it
-uses for those agents even if their sources aren't in `kit.allowedSources`,
-and exempts them from `kit.requireSignature`.
-@z
-
-@x
-To apply your source and signature requirements to those kits too:
-@y
-To apply your source and signature requirements to those kits too:
-@z
-
-@x
-```console
-$ sbx settings set kit.allowExtractedAgents false
-```
-@y
-```console
-$ sbx settings set kit.allowExtractedAgents false
-```
-@z
-
-@x
-After this change, launching one of those agents can fail unless you allow its
-source and, when signatures are required, it has a signature from a trusted
-signer. The default exception applies only to the pinned references, not to
-other kits from the same publisher.
-@y
-After this change, launching one of those agents can fail unless you allow its
-source and, when signatures are required, it has a signature from a trusted
-signer. The default exception applies only to the pinned references, not to
-other kits from the same publisher.
-@z
-
-@x
 #### kit.requireSignature {.wrap-anywhere}
 @y
 #### kit.requireSignature {.wrap-anywhere}
@@ -984,13 +974,9 @@ $ sbx settings set kit.requireSignature true
 @x
 The check applies when installing kits from local directories, Git, or OCI
 registries. ZIP kits can't carry verifiable signatures and are rejected.
-Pinned agent kits remain exempt while
-[kit.allowExtractedAgents](#kitallowextractedagents) is `true`.
 @y
 The check applies when installing kits from local directories, Git, or OCI
 registries. ZIP kits can't carry verifiable signatures and are rejected.
-Pinned agent kits remain exempt while
-[kit.allowExtractedAgents](#kitallowextractedagents) is `true`.
 @z
 
 @x
@@ -1119,6 +1105,42 @@ Signature and signer verification still apply. These signatures must provide a
 timestamp from a timestamp authority instead of a transparency log timestamp.
 Leave this at `false` when your signing workflow uses the public transparency
 log. It has no effect on signatures verified with a public key.
+@z
+
+@x
+### Model server
+@y
+### Model server
+@z
+
+@x
+#### model.server.enabled {.wrap-anywhere}
+@y
+#### model.server.enabled {.wrap-anywhere}
+@z
+
+@x
+{{< setting-metadata type="boolean" default="true" >}}
+@y
+{{< setting-metadata type="boolean" default="true" >}}
+@z
+
+@x
+Set this to `false` to turn off the bundled model service and skip its runtime
+download. Changes require a daemon restart. This setting has no environment
+variable override.
+@y
+Set this to `false` to turn off the bundled model service and skip its runtime
+download. Changes require a daemon restart. This setting has no environment
+variable override.
+@z
+
+@x
+See [Disable the bundled service](models.md#disable-the-bundled-service) for
+commands and how this affects your model choices.
+@y
+See [Disable the bundled service](models.md#disable-the-bundled-service) for
+commands and how this affects your model choices.
 @z
 
 @x
@@ -1283,6 +1305,66 @@ $ sbx daemon restart
 $ sbx settings set daemon.log.maxAgeDays 30
 $ sbx daemon restart
 ```
+@z
+
+@x
+### Telemetry
+@y
+### Telemetry
+@z
+
+@x
+#### telemetry.disabled {.wrap-anywhere}
+@y
+#### telemetry.disabled {.wrap-anywhere}
+@z
+
+@x
+{{< setting-metadata type="boolean" default="false" >}}
+@y
+{{< setting-metadata type="boolean" default="false" >}}
+@z
+
+@x
+Set this to `true` to persistently disable telemetry for the local CLI and
+daemon:
+@y
+Set this to `true` to persistently disable telemetry for the local CLI and
+daemon:
+@z
+
+@x
+```console
+$ sbx settings set telemetry.disabled true
+$ sbx daemon restart
+```
+@y
+```console
+$ sbx settings set telemetry.disabled true
+$ sbx daemon restart
+```
+@z
+
+@x
+The next CLI invocation uses the saved preference. A running daemon keeps its
+previous telemetry setting until you restart it.
+@y
+The next CLI invocation uses the saved preference. A running daemon keeps its
+previous telemetry setting until you restart it.
+@z
+
+@x
+`SBX_NO_TELEMETRY` is a separate opt-out, rather than an environment variable
+equivalent for this setting. A value of `1` disables telemetry regardless of
+the saved preference. Other values, including `0`, don't override a saved
+opt-out. See [telemetry collection](../faq.md#does-the-cli-collect-telemetry)
+for what the CLI collects.
+@y
+`SBX_NO_TELEMETRY` is a separate opt-out, rather than an environment variable
+equivalent for this setting. A value of `1` disables telemetry regardless of
+the saved preference. Other values, including `0`, don't override a saved
+opt-out. See [telemetry collection](../faq.md#does-the-cli-collect-telemetry)
+for what the CLI collects.
 @z
 
 @x
@@ -1627,12 +1709,14 @@ $ sbx daemon restart
 This shared list applies to sandbox and daemon traffic unless a scope-specific
 list replaces it. A value of `*` bypasses the upstream proxy for all destinations.
 Proxy exclusions don't grant network access: sandbox requests must still pass
-[network policy](../governance/access-controls/network.md).
+network policy. For how network policy is set, see
+[Sandbox governance](../../governance/_index.md).
 @y
 This shared list applies to sandbox and daemon traffic unless a scope-specific
 list replaces it. A value of `*` bypasses the upstream proxy for all destinations.
 Proxy exclusions don't grant network access: sandbox requests must still pass
-[network policy](../governance/access-controls/network.md).
+network policy. For how network policy is set, see
+[Sandbox governance](../../governance/_index.md).
 @z
 
 @x

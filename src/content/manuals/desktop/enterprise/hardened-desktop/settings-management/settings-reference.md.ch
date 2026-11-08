@@ -1694,9 +1694,9 @@ Specify how port bindings are handled for new containers.
 @z
 
 @x
-Controls Docker Offload availability. When enabled, users see the Docker Offload toggle in the Docker Desktop header.
+Controls [Docker Offload v1](/manuals/offload/v1/_index.md) availability. When enabled, users see the Docker Offload toggle in the Docker Desktop header.
 @y
-Controls Docker Offload availability. When enabled, users see the Docker Offload toggle in the Docker Desktop header.
+Controls [Docker Offload v1](manuals/offload/v1/_index.md) availability. When enabled, users see the Docker Offload toggle in the Docker Desktop header.
 @z
 
 @x

@@ -60,6 +60,28 @@ description: |-
 @z
 
 @x
+    Command secrets run from a fresh temporary directory on the host during
+    verification and refresh. The host temporary directory must be absolute and must
+    remain outside writable sandbox mounts. Relative references such as ./helper or
+    cat token no longer resolve against the project or daemon working directory. Use an absolute
+    helper path outside shared workspaces. sbx does not copy helpers, inspect their
+    dependencies, or confine their execution. Helpers and any code or configuration
+    they load must remain outside writable sandbox mounts. Explicit paths into shared
+    workspaces and broad mounts exposing host configuration or the host temporary
+    directory remain unsafe, including mounts added to a running sandbox later.
+@y
+    Command secrets run from a fresh temporary directory on the host during
+    verification and refresh. The host temporary directory must be absolute and must
+    remain outside writable sandbox mounts. Relative references such as ./helper or
+    cat token no longer resolve against the project or daemon working directory. Use an absolute
+    helper path outside shared workspaces. sbx does not copy helpers, inspect their
+    dependencies, or confine their execution. Helpers and any code or configuration
+    they load must remain outside writable sandbox mounts. Explicit paths into shared
+    workspaces and broad mounts exposing host configuration or the host temporary
+    directory remain unsafe, including mounts added to a running sandbox later.
+@z
+
+@x
     ### Registry credentials
 @y
     ### Registry credentials
@@ -120,9 +142,11 @@ usage: sbx secret set [SERVICE] [flags]
 @z
 
 @x force
-      usage: Overwrite an existing secret when --token is used
+      usage: |
+        Overwrite existing API-key, OAuth, or registry credentials without confirmation
 @y
-      usage: Overwrite an existing secret when --token is used
+      usage: |
+        Overwrite existing API-key, OAuth, or registry credentials without confirmation
 @z
 
 @x help
@@ -193,6 +217,14 @@ usage: sbx secret set [SERVICE] [flags]
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x no-input
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
+@y
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
 @z
 
 @x

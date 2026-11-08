@@ -32,9 +32,9 @@ keywords:
 @z
 
 @x
-[AI Governance](/manuals/ai/sandboxes/governance/_index.md) lets organization owners enforce policies for members across supported Docker AI products, like [Docker Sandbox](/manuals/ai/sandboxes/_index.md). When you add an AI Governance plan, you work with your Docker sales representative to determine the number of licenses needed, which are applied to your account.
+[AI Governance](/manuals/ai/governance/organization/_index.md) lets organization owners enforce policies for members across supported Docker AI products, like [Docker Sandbox](/manuals/ai/sandboxes/_index.md). When you add an AI Governance plan, you work with your Docker sales representative to determine the number of licenses needed, which are applied to your account.
 @y
-[AI Governance](manuals/ai/sandboxes/governance/_index.md) lets organization owners enforce policies for members across supported Docker AI products, like [Docker Sandbox](manuals/ai/sandboxes/_index.md). When you add an AI Governance plan, you work with your Docker sales representative to determine the number of licenses needed, which are applied to your account.
+[AI Governance](manuals/ai/governance/organization/_index.md) lets organization owners enforce policies for members across supported Docker AI products, like [Docker Sandbox](manuals/ai/sandboxes/_index.md). When you add an AI Governance plan, you work with your Docker sales representative to determine the number of licenses needed, which are applied to your account.
 @z
 
 @x
@@ -44,9 +44,9 @@ keywords:
 @z
 
 @x
-AI Governance lets organization owners enforce [organization policies](/manuals/ai/sandboxes/governance/access-controls/organization.md) for license-holding members. Organization policies override a license-holding member's local policies.
+AI Governance lets organization owners enforce [organization policies](/manuals/ai/governance/organization/policies/_index.md) for license-holding members. Organization policies override a license-holding member's local policies.
 @y
-AI Governance lets organization owners enforce [organization policies](manuals/ai/sandboxes/governance/access-controls/organization.md) for license-holding members. Organization policies override a license-holding member's local policies.
+AI Governance lets organization owners enforce [organization policies](manuals/ai/governance/organization/policies/_index.md) for license-holding members. Organization policies override a license-holding member's local policies.
 @z
 
 @x

@@ -4,7 +4,9 @@
 
 bases = \
 	docker_offload.yaml          \
+	docker_offload_create.yaml   \
 	docker_offload_diagnose.yaml \
+	docker_offload_rm.yaml       \
 	docker_offload_start.yaml    \
 	docker_offload_status.yaml   \
 	docker_offload_stop.yaml     \

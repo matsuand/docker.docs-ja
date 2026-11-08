@@ -140,6 +140,18 @@ CI provider's secret store, use `-t`. For example, in a GitHub Actions step:
 @z
 
 @x
+`sbx exec` returns the exit status of the command it runs. A failure to run
+the command, such as a missing sandbox, returns
+125. A missing executable inside a local sandbox returns 127. Check stderr
+for the cause before deciding whether to retry.
+@y
+`sbx exec` returns the exit status of the command it runs. A failure to run
+the command, such as a missing sandbox, returns
+125. A missing executable inside a local sandbox returns 127. Check stderr
+for the cause before deciding whether to retry.
+@z
+
+@x
 Confirmations require terminal input. Piping an answer, such as `echo y`, does
 not confirm an operation. Use `--force` on commands that provide it to skip
 confirmation in scripts. `sbx kit builder history rm` uses `--yes` or `-y`
@@ -235,6 +247,14 @@ For lists of identifiers without table headings, use `--quiet` or `-q`:
 | `sbx policy ls -q` | Local rule IDs. With `--cloud`, network patterns instead. |
 | `sbx settings ls -q` | Setting keys. |
 | `sbx policy approval ls -q` | Approval IDs. |
+@z
+
+@x
+To suppress sandbox creation progress, use `sbx run --no-progress`. Command
+results are still printed, including the sandbox ID when you use `--detach`.
+@y
+To suppress sandbox creation progress, use `sbx run --no-progress`. Command
+results are still printed, including the sandbox ID when you use `--detach`.
 @z
 
 @x
@@ -305,7 +325,7 @@ parsers for these commands:
 | `sbx ls` | A sandbox array, replacing `{sandboxes: [...]}`. `created_at` and `last_used_at` use RFC 3339 timestamps. Rows include `detached`. |
 | `sbx template ls` | An image array, replacing `{images: [...]}`. |
 | Local `sbx mcp ls` | A server array, replacing `{gateway: {...}, servers: [...]}`. Each row includes `gateway`. Cloud rows describe server usage across sandboxes and differ from local registration rows. |
-| `sbx policy log` | `{updated_at, allowed: [...], blocked: [...]}` for local and cloud output. See [Monitoring traffic](/manuals/ai/sandboxes/governance/monitor-and-enforce/monitoring.md#monitoring-traffic). |
+| `sbx policy log` | `{updated_at, allowed: [...], blocked: [...]}` for local and cloud output. See [Get the log as JSON or YAML](/manuals/ai/governance/local/test-monitor.md#get-the-log-as-json-or-yaml). |
 | `sbx --cloud policy ls` | Field names use `snake_case` instead of camelCase. |
 | `sbx ports` | Local rows contain `host_ip`, `host_port`, `sandbox_port`, and `protocol`. Cloud rows contain `sandbox_port` and `url`, replacing `port`. Local publish and unpublish results include `action: published` or `action: unpublished`. |
 | Cloud `sbx volume create`, `sbx volume ls`, `sbx volume inspect` | Fields such as `ID`, `Name`, and `CreatedAt` become `id`, `name`, and `created_at`. `volume inspect` defaults to human-readable details, so request a structured format explicitly. |
@@ -316,7 +336,7 @@ parsers for these commands:
 | `sbx ls` | A sandbox array, replacing `{sandboxes: [...]}`. `created_at` and `last_used_at` use RFC 3339 timestamps. Rows include `detached`. |
 | `sbx template ls` | An image array, replacing `{images: [...]}`. |
 | Local `sbx mcp ls` | A server array, replacing `{gateway: {...}, servers: [...]}`. Each row includes `gateway`. Cloud rows describe server usage across sandboxes and differ from local registration rows. |
-| `sbx policy log` | `{updated_at, allowed: [...], blocked: [...]}` for local and cloud output. See [Monitoring traffic](manuals/ai/sandboxes/governance/monitor-and-enforce/monitoring.md#monitoring-traffic). |
+| `sbx policy log` | `{updated_at, allowed: [...], blocked: [...]}` for local and cloud output. See [Get the log as JSON or YAML](manuals/ai/governance/local/test-monitor.md#get-the-log-as-json-or-yaml). |
 | `sbx --cloud policy ls` | Field names use `snake_case` instead of camelCase. |
 | `sbx ports` | Local rows contain `host_ip`, `host_port`, `sandbox_port`, and `protocol`. Cloud rows contain `sandbox_port` and `url`, replacing `port`. Local publish and unpublish results include `action: published` or `action: unpublished`. |
 | Cloud `sbx volume create`, `sbx volume ls`, `sbx volume inspect` | Fields such as `ID`, `Name`, and `CreatedAt` become `id`, `name`, and `created_at`. `volume inspect` defaults to human-readable details, so request a structured format explicitly. |

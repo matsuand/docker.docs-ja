@@ -48,18 +48,18 @@ Model-provider charges are separate from sandbox compute.
 @x
 Organization governance for local sandboxes includes centrally managed network,
 filesystem, and MCP policies,
-[sign-in enforcement](governance/monitor-and-enforce/sign-in-enforcement.md),
-and [audit logs](governance/audit/). These
-[organization governance features](governance/) require a separate paid
+[sign-in enforcement](../governance/organization/sign-in-enforcement.md),
+and [audit logs](../governance/organization/audit/_index.md). These
+[organization governance features](../governance/organization/_index.md) require a separate paid
 subscription —
 [contact Docker Sales](https://www.docker.com/products/ai-governance/#contact-sales)
 to get started.
 @y
 Organization governance for local sandboxes includes centrally managed network,
 filesystem, and MCP policies,
-[sign-in enforcement](governance/monitor-and-enforce/sign-in-enforcement.md),
-and [audit logs](governance/audit/). These
-[organization governance features](governance/) require a separate paid
+[sign-in enforcement](../governance/organization/sign-in-enforcement.md),
+and [audit logs](../governance/organization/audit/_index.md). These
+[organization governance features](../governance/organization/_index.md) require a separate paid
 subscription —
 [contact Docker Sales](https://www.docker.com/products/ai-governance/#contact-sales)
 to get started.
@@ -84,7 +84,7 @@ Signing in gives each sandbox a verified identity, which lets Docker:
   containers, install packages, and push code. Your Docker identity is the
   anchor.
 - **Enable team features.** Team-scale features like
-  [organization governance](governance/), shared environments, and audit logs
+  [organization governance](../governance/organization/_index.md), shared environments, and audit logs
   need a concept of "who," and adding that later would be worse for everyone.
 - **Authenticate against Docker infrastructure.** Sandboxes pull images, run
   daemons, and talk to Docker services. A Docker account authenticates those
@@ -94,7 +94,7 @@ Signing in gives each sandbox a verified identity, which lets Docker:
   containers, install packages, and push code. Your Docker identity is the
   anchor.
 - **Enable team features.** Team-scale features like
-  [organization governance](governance/), shared environments, and audit logs
+  [organization governance](../governance/organization/_index.md), shared environments, and audit logs
   need a concept of "who," and adding that later would be worse for everyone.
 - **Authenticate against Docker infrastructure.** Sandboxes pull images, run
   daemons, and talk to Docker services. A Docker account authenticates those
@@ -128,13 +128,15 @@ still apply on top.
 @z
 
 @x
-See [Organization policies](governance/access-controls/organization.md). This
-feature requires a separate paid subscription —
+See
+[How organization policy relates to local and kit rules](../governance/organization/policies/_index.md#how-organization-policy-relates-to-local-and-kit-rules).
+This feature requires a separate paid subscription —
 [contact Docker Sales](https://www.docker.com/products/ai-governance/#contact-sales)
 to get started.
 @y
-See [Organization policies](governance/access-controls/organization.md). This
-feature requires a separate paid subscription —
+See
+[How organization policy relates to local and kit rules](../governance/organization/policies/_index.md#how-organization-policy-relates-to-local-and-kit-rules).
+This feature requires a separate paid subscription —
 [contact Docker Sales](https://www.docker.com/products/ai-governance/#contact-sales)
 to get started.
 @z
@@ -226,9 +228,39 @@ stored in the cloud.
 @z
 
 @x
-To opt out of CLI usage analytics, set the `SBX_NO_TELEMETRY` environment variable:
+To persistently disable telemetry for the local CLI and daemon, set
+[`telemetry.disabled`](configuration/settings.md#telemetrydisabled) to `true`:
 @y
-To opt out of CLI usage analytics, set the `SBX_NO_TELEMETRY` environment variable:
+To persistently disable telemetry for the local CLI and daemon, set
+[`telemetry.disabled`](configuration/settings.md#telemetrydisabled) to `true`:
+@z
+
+@x
+```console
+$ sbx settings set telemetry.disabled true
+$ sbx daemon restart
+```
+@y
+```console
+$ sbx settings set telemetry.disabled true
+$ sbx daemon restart
+```
+@z
+
+@x
+The next CLI invocation uses the saved preference. A running daemon keeps its
+previous telemetry setting until you restart it. Setting `SBX_NO_TELEMETRY=0`
+doesn't override the saved opt-out.
+@y
+The next CLI invocation uses the saved preference. A running daemon keeps its
+previous telemetry setting until you restart it. Setting `SBX_NO_TELEMETRY=0`
+doesn't override the saved opt-out.
+@z
+
+@x
+You can also opt out with the `SBX_NO_TELEMETRY` environment variable:
+@y
+You can also opt out with the `SBX_NO_TELEMETRY` environment variable:
 @z
 
 @x
@@ -281,14 +313,14 @@ the sandbox, to pick up the new value.
 
 @x
 The sandbox itself is the safety boundary. Because agents run inside an
-isolated microVM with [network policies](governance/access-controls/network.md),
+isolated microVM with [network isolation](security/isolation.md#network-isolation),
 [credential isolation](security/isolation.md#credential-isolation), and no access to your host
 system outside explicitly shared paths, the usual reasons for approval prompts
 (preventing destructive commands, network access, file modifications) are
 handled by the sandbox isolation layers instead.
 @y
 The sandbox itself is the safety boundary. Because agents run inside an
-isolated microVM with [network policies](governance/access-controls/network.md),
+isolated microVM with [network isolation](security/isolation.md#network-isolation),
 [credential isolation](security/isolation.md#credential-isolation), and no access to your host
 system outside explicitly shared paths, the usual reasons for approval prompts
 (preventing destructive commands, network access, file modifications) are

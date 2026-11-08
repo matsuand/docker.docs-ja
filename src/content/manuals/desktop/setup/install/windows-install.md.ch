@@ -667,18 +667,21 @@ If Microsoft Store access is blocked due to security policies:
 @z
 
 @x
-- `--allowed-org=<org name>`: Requires the user to sign in and be part of the specified Docker Hub organization when running the application
+- `--allowed-org=<org namespace>`: Requires the user to sign in and be a member of the specified Docker Hub [organization namespace](/manuals/accounts/organization/setup/_index.md#names-versus-namespaces) when running the application. Use the namespace, not the organization display name. For configuration details, see [Configure sign-in enforcement](/manuals/desktop/enterprise/enforce-sign-in/methods.md).
 - `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by admins to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md).
-  - It must be used together with the `--allowed-org=<org name>` flag. 
-  - For example:`--allowed-org=<org name> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"`
+  - It must be used together with the `--allowed-org=<org namespace>` flag.
+  - For example: `--allowed-org=<org namespace> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"`
 - `--no-windows-containers`: Disables the Windows containers integration. This can improve security.  Can't be combined with `--backend=windows`. For more information, see [Windows containers](/manuals/desktop/setup/install/windows-permission-requirements.md#windows-containers).
 @y
-- `--allowed-org=<組織名>`: アプリケーションの実行にあたっては、ユーザーがサインインしていることを要求し、指定された Docker Hub 組織のメンバーであることを要求します。
+- `--allowed-org=<組織の名前空間>`: アプリケーションの実行にあたっては、ユーザーがサインインしていること、そして指定された Docker Hub の [組織の名前空間](manuals/accounts/organization/setup/_index.md#names-versus-namespaces) であることを要求します。
+  ここにおいては組織の表示名ではなく名前空間を用います。
+  設定の詳細については [Configure sign-in enforcement](manuals/desktop/enterprise/enforce-sign-in/methods.md) を参照してください。
 - `--admin-settings`: admin が利用する `admin-settings.json` ファイルを自動生成します。
   これは組織内にあるクライアントマシン上の Docker Desktop における特定設定項目を制御するものです。
   詳しくは [設定管理](manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md) を参照してください。
-  - これは `--allowed-org=<組織名>` フラグとともに用いなければなりません。
-  - たとえば以下のとおりです。`--allowed-org=<org name> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"`
+  - これは `--allowed-org=<組織の名前空間>` フラグとともに用いなければなりません。
+  - たとえば以下のとおりです。
+    `--allowed-org=<組織の名前空間> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"`
 - `--no-windows-containers`: Windows コンテナー統合機能を無効にします。
   これによってセキュリティを向上させます。
   これは `--backend=windows` と同時に指定することはできません。

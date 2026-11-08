@@ -295,14 +295,14 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = images
+SUBDIRS = v1
 bases = \
 	_index.md        \
-	about.md         \
-	configuration.md \
+	core-concepts.md \
 	feedback.md      \
 	optimize.md      \
 	quickstart.md    \
+	sandboxes.md     \
 	troubleshoot.md  \
 	usage.md
 

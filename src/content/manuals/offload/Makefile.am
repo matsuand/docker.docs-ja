@@ -1,15 +1,16 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = images
+
+SUBDIRS = v1
 
 bases = \
 	_index.md        \
-	about.md         \
-	configuration.md \
+	core-concepts.md \
 	feedback.md      \
 	optimize.md      \
 	quickstart.md    \
+	sandboxes.md     \
 	troubleshoot.md  \
 	usage.md
 

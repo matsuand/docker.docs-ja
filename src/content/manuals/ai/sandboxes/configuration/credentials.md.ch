@@ -1064,35 +1064,51 @@ specific sandbox.
 @z
 
 @x
+To read the value from standard input, set `API_KEY` in your host environment
+and pipe it with `--value-stdin`:
+@y
+To read the value from standard input, set `API_KEY` in your host environment
+and pipe it with `--value-stdin`:
+@z
+
+@x
 ```console
-$ sbx secret set-custom \
+$ printf '%s' "$API_KEY" | sbx secret set-custom \
     --host api.example.com \
     --env API_KEY \
-    --value <secret>
+    --value-stdin
 ```
 @y
 ```console
-$ sbx secret set-custom \
+$ printf '%s' "$API_KEY" | sbx secret set-custom \
     --host api.example.com \
     --env API_KEY \
-    --value <secret>
+    --value-stdin
 ```
 @z
 
 @x
+This keeps the value out of the `sbx` command arguments. Omit `--value-stdin`
+to enter the value at a prompt instead. `--value-stdin` can't be combined with
+`--value`, `--token`, `--ref`, or `--command`.
+@y
+This keeps the value out of the `sbx` command arguments. Omit `--value-stdin`
+to enter the value at a prompt instead. `--value-stdin` can't be combined with
+`--value`, `--token`, `--ref`, or `--command`.
+@z
+
+@x
 > [!WARNING]
-> Passing the secret as `--value <secret>` records it in your shell history
-> and exposes it to other processes running as your user. Avoid pasting
-> real credentials inline — read the value from a variable that's already
-> in your environment, and clear shell history if a real secret was passed
-> on the command line.
+> Passing a literal secret with `--value` or `--token` records it in shell
+> history and exposes it in process arguments. Expanding an environment
+> variable with `--value "$API_KEY"` still exposes the value in process
+> arguments. Use the prompt or standard input instead.
 @y
 > [!WARNING]
-> Passing the secret as `--value <secret>` records it in your shell history
-> and exposes it to other processes running as your user. Avoid pasting
-> real credentials inline — read the value from a variable that's already
-> in your environment, and clear shell history if a real secret was passed
-> on the command line.
+> Passing a literal secret with `--value` or `--token` records it in shell
+> history and exposes it in process arguments. Expanding an environment
+> variable with `--value "$API_KEY"` still exposes the value in process
+> arguments. Use the prompt or standard input instead.
 @z
 
 @x
@@ -1145,14 +1161,16 @@ $ sbx secret set-custom \
 
 @x
 A `--host` value can also use wildcards, with the same syntax as
-[network rules](../governance/concepts.md#network-rules): `*` matches a
-single label (`*.example.com` covers `api.example.com`) and `**` matches any
-number (`**.example.com` covers `api.example.com` and `v2.api.example.com`).
+[network rule hostname patterns](../../governance/reference/network-rules.md#hostname-patterns):
+`*` matches a single label (`*.example.com` covers `api.example.com`) and `**`
+matches any number (`**.example.com` covers `api.example.com` and
+`v2.api.example.com`).
 @y
 A `--host` value can also use wildcards, with the same syntax as
-[network rules](../governance/concepts.md#network-rules): `*` matches a
-single label (`*.example.com` covers `api.example.com`) and `**` matches any
-number (`**.example.com` covers `api.example.com` and `v2.api.example.com`).
+[network rule hostname patterns](../../governance/reference/network-rules.md#hostname-patterns):
+`*` matches a single label (`*.example.com` covers `api.example.com`) and `**`
+matches any number (`**.example.com` covers `api.example.com` and
+`v2.api.example.com`).
 @z
 
 @x

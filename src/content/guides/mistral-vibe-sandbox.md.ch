@@ -238,62 +238,14 @@ mistral-vibe/
 @z
 
 @x
-Create `mistral-vibe/vibe.dockerfile`. The `shell-docker` template supplies
+Create `mistral-vibe/vibe.dockerfile`. The `shell-docker-image` base image supplies
 the agent account, Python, `uv`, and the sandbox's Docker tooling:
 @y
-Create `mistral-vibe/vibe.dockerfile`. The `shell-docker` template supplies
+Create `mistral-vibe/vibe.dockerfile`. The `shell-docker-image` base image supplies
 the agent account, Python, `uv`, and the sandbox's Docker tooling:
 @z
 
-@x
-```dockerfile {title="mistral-vibe/vibe.dockerfile"}
-FROM docker/sandbox-templates:shell-docker
-@y
-```dockerfile {title="mistral-vibe/vibe.dockerfile"}
-FROM docker/sandbox-templates:shell-docker
-@z
-
-@x
-ARG VIBE_VERSION
-@y
-ARG VIBE_VERSION
-@z
-
-@x
-USER agent
-RUN uv tool install "mistral-vibe==${VIBE_VERSION}" \
-    && uv cache clean \
-    && vibe --version
-@y
-USER agent
-RUN uv tool install "mistral-vibe==${VIBE_VERSION}" \
-    && uv cache clean \
-    && vibe --version
-@z
-
-@x
-ENV PATH=/home/agent/.local/bin:${PATH} \
-    VIBE_ENABLE_TELEMETRY=false \
-    VIBE_ENABLE_AUTO_UPDATE=false \
-    GIT_TERMINAL_PROMPT=0
-@y
-ENV PATH=/home/agent/.local/bin:${PATH} \
-    VIBE_ENABLE_TELEMETRY=false \
-    VIBE_ENABLE_AUTO_UPDATE=false \
-    GIT_TERMINAL_PROMPT=0
-@z
-
-@x
-WORKDIR /home/agent/workspace
-ENTRYPOINT ["vibe", "--trust"]
-CMD []
-```
-@y
-WORKDIR /home/agent/workspace
-ENTRYPOINT ["vibe", "--trust"]
-CMD []
-```
-@z
+% snip code...
 
 @x
 The descriptor in the next step supplies `VIBE_VERSION`. Installing as

@@ -410,12 +410,42 @@ one doesn't exist. Pass `--ttl` and `--on-timeout` only when creating a sandbox:
 @z
 
 @x
-Press `Ctrl+\` to detach while leaving the agent running. You can also run a
-command without an agent session, for example to inspect the working tree of
+If you set [`entrypoint` or `cmd`](../configuration/environment-files.md#set-the-launch-command),
+or pass arguments after `--`, `run` starts a fresh session instead of rejoining
+an existing agent process. Arguments after `--` replace `cmd` and preserve
+`entrypoint`. For example:
+@y
+If you set [`entrypoint` or `cmd`](../configuration/environment-files.md#set-the-launch-command),
+or pass arguments after `--`, `run` starts a fresh session instead of rejoining
+an existing agent process. Arguments after `--` replace `cmd` and preserve
+`entrypoint`. For example:
+@z
+
+@x
+```console
+$ sbx --cloud env run ./cloud.sbxenv.yaml -- 'Explain this project'
+```
+@y
+```console
+$ sbx --cloud env run ./cloud.sbxenv.yaml -- 'Explain this project'
+```
+@z
+
+@x
+These sessions don't support detaching and reconnecting.
+@y
+These sessions don't support detaching and reconnecting.
+@z
+
+@x
+For a run without launch overrides or explicit arguments, press `Ctrl+\` to
+detach while leaving the agent running. You can also run a command without an
+agent session, for example to inspect the working tree of
 a copied Git project:
 @y
-Press `Ctrl+\` to detach while leaving the agent running. You can also run a
-command without an agent session, for example to inspect the working tree of
+For a run without launch overrides or explicit arguments, press `Ctrl+\` to
+detach while leaving the agent running. You can also run a command without an
+agent session, for example to inspect the working tree of
 a copied Git project:
 @z
 

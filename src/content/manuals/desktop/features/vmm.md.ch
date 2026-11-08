@@ -66,9 +66,13 @@ Because Docker controls the virtualization layer, it can be monitored and govern
 @z
 
 @x
-Docker VMM requires a minimum of 4 GB of memory allocated to the Docker Linux VM. Increase memory in **Settings** > **Resources** before switching.
+Docker VMM requires at least 4 GB of memory allocated to the Docker Linux VM. If you
+have less than that allocated, Docker Desktop asks you to confirm and then raises the
+allocation to 4 GB for you.
 @y
-Docker VMM requires a minimum of 4 GB of memory allocated to the Docker Linux VM. Increase memory in **Settings** > **Resources** before switching.
+Docker VMM requires at least 4 GB of memory allocated to the Docker Linux VM. If you
+have less than that allocated, Docker Desktop asks you to confirm and then raises the
+allocation to 4 GB for you.
 @z
 
 @x

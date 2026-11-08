@@ -74,6 +74,28 @@ into a GitHub issue.
 @z
 
 @x
+## Image pulls fail on eCryptfs
+@y
+## Image pulls fail on eCryptfs
+@z
+
+@x
+On Linux, image pulls can fail with an I/O error when the sandbox state
+directory is on eCryptfs.
+@y
+On Linux, image pulls can fail with an I/O error when the sandbox state
+directory is on eCryptfs.
+@z
+
+@x
+If [`sbx diagnose`](#run-diagnostics) reports `state directory is on eCryptfs`,
+use a filesystem other than eCryptfs for sandbox state.
+@y
+If [`sbx diagnose`](#run-diagnostics) reports `state directory is on eCryptfs`,
+use a filesystem other than eCryptfs for sandbox state.
+@z
+
+@x
 ## Sandbox is not responding
 @y
 ## Sandbox is not responding
@@ -278,73 +300,19 @@ $ sbx run docker.io/sbx/droid-kit:latest
 @z
 
 @x
-## Agent can't install packages or reach an API
+## Network access and policy
 @y
-## Agent can't install packages or reach an API
+## Network access and policy
 @z
 
 @x
-Sandboxes use [network access rules](governance/access-controls/network.md) to
-control outbound traffic.
-If the agent fails to install packages or call an external API, the target
-domain is likely not in the allow list. Check which requests are being blocked:
+For problems caused by network rules, approvals, or organization governance,
+such as blocked requests, inactive allow rules, or missing audit records, see
+[Troubleshoot governance](../governance/troubleshooting.md).
 @y
-Sandboxes use [network access rules](governance/access-controls/network.md) to
-control outbound traffic.
-If the agent fails to install packages or call an external API, the target
-domain is likely not in the allow list. Check which requests are being blocked:
-@z
-
-@x
-```console
-$ sbx policy log
-```
-@y
-```console
-$ sbx policy log
-```
-@z
-
-@x
-Then allow the domains your workflow needs:
-@y
-Then allow the domains your workflow needs:
-@z
-
-@x
-```console
-$ sbx policy allow network "*.npmjs.org,*.pypi.org,files.pythonhosted.org"
-```
-@y
-```console
-$ sbx policy allow network "*.npmjs.org,*.pypi.org,files.pythonhosted.org"
-```
-@z
-
-@x
-To allow all outbound traffic instead:
-@y
-To allow all outbound traffic instead:
-@z
-
-@x
-```console
-$ sbx policy allow network "**"
-```
-@y
-```console
-$ sbx policy allow network "**"
-```
-@z
-
-@x
-If `sbx policy allow` doesn't unblock the request, your organization may
-manage sandbox policies centrally and take precedence over local rules. See
-[Organization policies](governance/access-controls/organization.md).
-@y
-If `sbx policy allow` doesn't unblock the request, your organization may
-manage sandbox policies centrally and take precedence over local rules. See
-[Organization policies](governance/access-controls/organization.md).
+For problems caused by network rules, approvals, or organization governance,
+such as blocked requests, inactive allow rules, or missing audit records, see
+[Troubleshoot governance](../governance/troubleshooting.md).
 @z
 
 @x
@@ -402,6 +370,48 @@ any remote source, see [Restrict kit sources](manuals/ai/sandboxes/customize/use
 @z
 
 @x
+## Kit install or startup command fails
+@y
+## Kit install or startup command fails
+@z
+
+@x
+If `sbx create` or `sbx run` shows ✗ on a kit's install command, or warns that a
+startup command failed, the full output is inside the sandbox. Read it with
+`sbx exec`:
+@y
+If `sbx create` or `sbx run` shows ✗ on a kit's install command, or warns that a
+startup command failed, the full output is inside the sandbox. Read it with
+`sbx exec`:
+@z
+
+@x
+```console
+$ sbx exec <sandbox-name> cat /var/log/sbx-kits/<kit>/install-<n>.log
+$ sbx exec <sandbox-name> cat /var/log/sbx-kit-startup.log
+```
+@y
+```console
+$ sbx exec <sandbox-name> cat /var/log/sbx-kits/<kit>/install-<n>.log
+$ sbx exec <sandbox-name> cat /var/log/sbx-kit-startup.log
+```
+@z
+
+@x
+`<n>` is the install command's position in the kit's `install` list, starting
+at 0. To stream every install command's output and the startup log while the
+sandbox is created, run `sbx -D create` or `sbx -D run`. See
+[Debug a kit](/manuals/ai/sandboxes/customize/author/debug.md) for how to read
+the output and fix the common causes.
+@y
+`<n>` is the install command's position in the kit's `install` list, starting
+at 0. To stream every install command's output and the startup log while the
+sandbox is created, run `sbx -D create` or `sbx -D run`. See
+[Debug a kit](manuals/ai/sandboxes/customize/author/debug.md) for how to read
+the output and fix the common causes.
+@z
+
+@x
 ## SSH and other non-HTTP connections fail
 @y
 ## SSH and other non-HTTP connections fail
@@ -448,10 +458,10 @@ $ sbx policy allow network "10.1.2.3:22"
 @z
 
 @x
-UDP requires [experimental UDP egress](governance/access-controls/local.md#allow-outbound-udp)
+UDP requires [experimental UDP egress](../governance/local/network-rules.md#allow-outbound-udp)
 and UDP allow rules. ICMP is blocked and can't be unblocked with policy rules.
 @y
-UDP requires [experimental UDP egress](governance/access-controls/local.md#allow-outbound-udp)
+UDP requires [experimental UDP egress](../governance/local/network-rules.md#allow-outbound-udp)
 and UDP allow rules. ICMP is blocked and can't be unblocked with policy rules.
 @z
 
@@ -539,7 +549,7 @@ If credentials are configured correctly but API calls still fail, check
 the `transparent` proxy don't get credential injection. This can happen when a
 client inside the sandbox (such as a process in a Docker container) isn't
 configured to use the forward proxy. See
-[Monitoring network activity](governance/monitor-and-enforce/monitoring.md)
+[View network activity](../governance/local/test-monitor.md#view-network-activity)
 for details.
 @y
 If credentials are configured correctly but API calls still fail, check
@@ -547,7 +557,7 @@ If credentials are configured correctly but API calls still fail, check
 the `transparent` proxy don't get credential injection. This can happen when a
 client inside the sandbox (such as a process in a Docker container) isn't
 configured to use the forward proxy. See
-[Monitoring network activity](governance/monitor-and-enforce/monitoring.md)
+[View network activity](../governance/local/test-monitor.md#view-network-activity)
 for details.
 @z
 

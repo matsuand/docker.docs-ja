@@ -1,14 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 description: Frequently asked questions about Docker single sign-on, identity providers, user management, SSO enforcement, and domain verification
-keywords: Docker, Docker Hub, SSO FAQs, single sign-on, identity providers, IdP, SAML, Entra ID, user management, SCIM, JIT, administration, security, SSO enforcement, SSO domains, domain verification, DNS, TXT records
+keywords: Docker, Docker Hub, SSO FAQs, single sign-on, identity providers, IdP, SAML, OIDC, Entra ID, user management, SCIM, JIT, administration, security, SSO enforcement, SSO domains, domain verification, DNS, TXT records
 title: Security FAQs
 linkTitle: Security
 @y
 description: Frequently asked questions about Docker single sign-on, identity providers, user management, SSO enforcement, and domain verification
-keywords: Docker, Docker Hub, SSO FAQs, single sign-on, identity providers, IdP, SAML, Entra ID, user management, SCIM, JIT, administration, security, SSO enforcement, SSO domains, domain verification, DNS, TXT records
+keywords: Docker, Docker Hub, SSO FAQs, single sign-on, identity providers, IdP, SAML, OIDC, Entra ID, user management, SCIM, JIT, administration, security, SSO enforcement, SSO domains, domain verification, DNS, TXT records
 title: Security FAQs
 linkTitle: Security
 @z
@@ -86,9 +88,27 @@ Yes, Docker supports your IdP's session timeout using a custom `dockerSessionMin
 @z
 
 @x
-Yes, Docker supports multiple IdP configurations. A domain can be associated with multiple IdPs. Docker supports Entra ID (formerly Azure AD) and identity providers that support SAML 2.0.
+Yes. Docker supports multiple IdP configurations, and a domain can be associated with multiple IdPs.
 @y
-Yes, Docker supports multiple IdP configurations. A domain can be associated with multiple IdPs. Docker supports Entra ID (formerly Azure AD) and identity providers that support SAML 2.0.
+Yes. Docker supports multiple IdP configurations, and a domain can be associated with multiple IdPs.
+@z
+
+@x
+### Which identity providers does Docker SSO support?
+@y
+### Which identity providers does Docker SSO support?
+@z
+
+@x
+Docker supports any SAML 2.0 identity provider, and Microsoft Entra ID (formerly Azure AD) for OpenID Connect (OIDC). In Docker Home, choose the **SAML 2.0** or **Azure AD (OIDC)** connection type. OAuth 2.0 is not a separate SSO connection type.
+@y
+Docker supports any SAML 2.0 identity provider, and Microsoft Entra ID (formerly Azure AD) for OpenID Connect (OIDC). In Docker Home, choose the **SAML 2.0** or **Azure AD (OIDC)** connection type. OAuth 2.0 is not a separate SSO connection type.
+@z
+
+@x
+SCIM provisions users and is separate from sign-in. See [Provision users](/manuals/security/provisioning/_index.md).
+@y
+SCIM provisions users and is separate from sign-in. See [Provision users](manuals/security/provisioning/_index.md).
 @z
 
 @x
@@ -110,17 +130,31 @@ Yes. Delete your existing IdP configuration in your Docker SSO connection, then 
 @z
 
 @x
-To turn on SSO in Docker, you need the following from your IdP:
+Paste these values from your IdP into Docker:
 @y
-To turn on SSO in Docker, you need the following from your IdP:
+Paste these values from your IdP into Docker:
 @z
 
 @x
-- SAML: Entity ID, ACS URL, Single Logout URL, and the public X.509 certificate
-- Entra ID (formerly Azure AD): Client ID, Client Secret, AD Domain
+- SAML 2.0, including Microsoft Entra ID SAML: the SAML sign-in URL and the
+  public X.509 certificate. Entra ID calls the sign-in URL **Login URL**.
+- Microsoft Entra ID for OpenID Connect (OIDC): **Client ID**, **Client
+  Secret**, and **Azure AD Domain**.
 @y
-- SAML: Entity ID, ACS URL, Single Logout URL, and the public X.509 certificate
-- Entra ID (formerly Azure AD): Client ID, Client Secret, AD Domain
+- SAML 2.0, including Microsoft Entra ID SAML: the SAML sign-in URL and the
+  public X.509 certificate. Entra ID calls the sign-in URL **Login URL**.
+- Microsoft Entra ID for OpenID Connect (OIDC): **Client ID**, **Client
+  Secret**, and **Azure AD Domain**.
+@z
+
+@x
+Copy the SAML **Entity ID** and **ACS URL**, or the OIDC **Redirect URI**, from
+Docker and paste them into your IdP. See
+[Set up single sign-on](/manuals/security/authentication/single-sign-on/connect.md).
+@y
+Copy the SAML **Entity ID** and **ACS URL**, or the OIDC **Redirect URI**, from
+Docker and paste them into your IdP. See
+[Set up single sign-on](manuals/security/authentication/single-sign-on/connect.md).
 @z
 
 @x

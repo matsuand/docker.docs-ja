@@ -19,7 +19,7 @@ description: |-
     - Clear image cache
     - Clear all internal registries
     - Delete all sandbox state
-    - Remove all policies
+    - Remove all local policy rules
     - Remove the managed SSH configuration
     - Clear the Gordon assistant's sessions and history
     - Delete all stored secrets
@@ -32,7 +32,7 @@ description: |-
     - Clear image cache
     - Clear all internal registries
     - Delete all sandbox state
-    - Remove all policies
+    - Remove all local policy rules
     - Remove the managed SSH configuration
     - Clear the Gordon assistant's sessions and history
     - Delete all stored secrets
@@ -95,6 +95,30 @@ usage: sbx reset [flags]
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x no-input
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
+@y
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
+@z
+
+@x
+example: |4-
+      sbx reset
+@y
+example: |4-
+      sbx reset
+@z
+
+@x
+      # Skip the confirmation prompt and keep stored secrets
+      sbx reset --force --preserve-secrets
+@y
+      # Skip the confirmation prompt and keep stored secrets
+      sbx reset --force --preserve-secrets
 @z
 
 % see_also:

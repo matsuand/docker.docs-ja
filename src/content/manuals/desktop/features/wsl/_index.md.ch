@@ -87,7 +87,7 @@ that was installed directly inside a WSL Linux distribution. Running both can ca
 4. Navigate to **Settings**.
 5. From the **General** tab, select **Use WSL 2 based engine**.
 @y
-1. [Install Docker Desktop for Windows](/manuals/desktop/setup/install/windows-install.md).
+1. [Install Docker Desktop for Windows](manuals/desktop/setup/install/windows-install.md).
 2. During installation, Docker Desktop may prompt you to turn on WSL 2. Read the information displayed on the screen and turn on the WSL 2 feature to continue.
 3. Start Docker Desktop from the **Windows Start** menu.
 4. Navigate to **Settings**.
@@ -139,6 +139,16 @@ WSL 2 lets multiple Linux distributions run side-by-side on a single shared kern
 @z
 
 @x
+> [!NOTE]
+>
+> Full WSL integration is available only when Docker Desktop uses the WSL 2 engine. With Docker VMM, only the Docker CLI is available in your WSL 2 distributions. For more information, see [Use Docker from WSL distributions with Docker VMM](#use-docker-from-wsl-distributions-with-docker-vmm).
+@y
+> [!NOTE]
+>
+> Full WSL integration is available only when Docker Desktop uses the WSL 2 engine. With Docker VMM, only the Docker CLI is available in your WSL 2 distributions. For more information, see [Use Docker from WSL distributions with Docker VMM](#use-docker-from-wsl-distributions-with-docker-vmm).
+@z
+
+@x
 1. Ensure the distribution runs in WSL 2 mode. WSL can run distributions in both v1 or v2 mode.
 @y
 1. Ensure the distribution runs in WSL 2 mode. WSL can run distributions in both v1 or v2 mode.
@@ -195,6 +205,96 @@ WSL 2 lets multiple Linux distributions run side-by-side on a single shared kern
 @z
 
 @x
+## Use Docker from WSL distributions with Docker VMM
+@y
+## Use Docker from WSL distributions with Docker VMM
+@z
+
+@x
+When Docker Desktop uses [Docker VMM](/manuals/desktop/features/vmm.md), you can use the Docker CLI from your WSL 2 distributions, but not full WSL integration. `docker` and `docker compose` work without any setup, but there's no Docker socket in the distribution, and you can only bind-mount files that are stored on Windows drives.
+@y
+When Docker Desktop uses [Docker VMM](manuals/desktop/features/vmm.md), you can use the Docker CLI from your WSL 2 distributions, but not full WSL integration. `docker` and `docker compose` work without any setup, but there's no Docker socket in the distribution, and you can only bind-mount files that are stored on Windows drives.
+@z
+
+@x
+In a WSL 2 distribution, the `docker` and `docker compose` commands run the Windows `docker.exe` that comes with Docker Desktop, through WSL interop. Docker Desktop doesn't install anything into your distribution.
+@y
+In a WSL 2 distribution, the `docker` and `docker compose` commands run the Windows `docker.exe` that comes with Docker Desktop, through WSL interop. Docker Desktop doesn't install anything into your distribution.
+@z
+
+@x
+### Requirements
+@y
+### Requirements
+@z
+
+@x
+- Docker Desktop uses Docker VMM.
+- The distribution runs in WSL 2 mode. WSL 1 distributions aren't supported.
+- WSL interop is turned on, and the distribution adds the Windows `PATH` to its own `PATH`. WSL does both by default.
+@y
+- Docker Desktop uses Docker VMM.
+- The distribution runs in WSL 2 mode. WSL 1 distributions aren't supported.
+- WSL interop is turned on, and the distribution adds the Windows `PATH` to its own `PATH`. WSL does both by default.
+@z
+
+@x
+If WSL was already running when you installed Docker Desktop, run `wsl --shutdown` so that your distributions pick up the updated Windows `PATH`.
+@y
+If WSL was already running when you installed Docker Desktop, run `wsl --shutdown` so that your distributions pick up the updated Windows `PATH`.
+@z
+
+@x
+### Bind mounts
+@y
+### Bind mounts
+@z
+
+@x
+You can bind-mount files that are stored on a Windows drive, using the path from inside your distribution. For example, `/mnt/c/projects/app`. Docker Desktop translates the path to the Windows path, `C:\projects\app`. This also works if you changed the mount location of Windows drives with the `root` setting in the `[automount]` section of `/etc/wsl.conf`. The first time you bind-mount a directory, Docker Desktop asks whether you want to share it.
+@y
+You can bind-mount files that are stored on a Windows drive, using the path from inside your distribution. For example, `/mnt/c/projects/app`. Docker Desktop translates the path to the Windows path, `C:\projects\app`. This also works if you changed the mount location of Windows drives with the `root` setting in the `[automount]` section of `/etc/wsl.conf`. The first time you bind-mount a directory, Docker Desktop asks whether you want to share it.
+@z
+
+@x
+You can't bind-mount files that are stored inside your distribution, such as paths under `/home` or `/tmp`. If you try, the command fails with an error like the following:
+@y
+You can't bind-mount files that are stored inside your distribution, such as paths under `/home` or `/tmp`. If you try, the command fails with an error like the following:
+@z
+
+@x
+```text
+Mount denied: /home/user/app is inside the WSL distro "Ubuntu". With Docker VMM, only files on Windows drives (for example under /mnt/c) can be bind-mounted from WSL.
+```
+@y
+```text
+Mount denied: /home/user/app is inside the WSL distro "Ubuntu". With Docker VMM, only files on Windows drives (for example under /mnt/c) can be bind-mounted from WSL.
+```
+@z
+
+@x
+To use bind mounts, keep your projects on a Windows drive. You can still build images from a directory inside your distribution, but `docker.exe` reads the build context through WSL file sharing. This is slower, and file permissions might differ from what a Linux `docker` CLI sees.
+@y
+To use bind mounts, keep your projects on a Windows drive. You can still build images from a directory inside your distribution, but `docker.exe` reads the build context through WSL file sharing. This is slower, and file permissions might differ from what a Linux `docker` CLI sees.
+@z
+
+@x
+### Limitations
+@y
+### Limitations
+@z
+
+@x
+- There's no Docker socket inside your distribution. Tools that connect to the Docker Engine API directly can't connect, such as Docker SDKs, Testcontainers, and VS Code Dev Containers. A Linux `docker` CLI that you installed in the distribution can't connect either.
+- Stopping `docker run` with `kill` or `timeout` stops the CLI, but the container keeps running. Use `docker stop` instead. Pressing `Ctrl+C` works as usual.
+- Docker Desktop passes these environment variables from your distribution to `docker.exe`: `DOCKER_CONTEXT`, `DOCKER_BUILDKIT`, `DOCKER_DEFAULT_PLATFORM`, `BUILDKIT_PROGRESS`, `COMPOSE_PROJECT_NAME`, and `COMPOSE_PROFILES`. It doesn't pass `DOCKER_HOST`, `DOCKER_CONFIG`, or the TLS variables, so `docker.exe` uses the Docker CLI configuration and contexts from Windows.
+@y
+- There's no Docker socket inside your distribution. Tools that connect to the Docker Engine API directly can't connect, such as Docker SDKs, Testcontainers, and VS Code Dev Containers. A Linux `docker` CLI that you installed in the distribution can't connect either.
+- Stopping `docker run` with `kill` or `timeout` stops the CLI, but the container keeps running. Use `docker stop` instead. Pressing `Ctrl+C` works as usual.
+- Docker Desktop passes these environment variables from your distribution to `docker.exe`: `DOCKER_CONTEXT`, `DOCKER_BUILDKIT`, `DOCKER_DEFAULT_PLATFORM`, `BUILDKIT_PROGRESS`, `COMPOSE_PROJECT_NAME`, and `COMPOSE_PROFILES`. It doesn't pass `DOCKER_HOST`, `DOCKER_CONFIG`, or the TLS variables, so `docker.exe` uses the Docker CLI configuration and contexts from Windows.
+@z
+
+@x
 ## WSL 2 security in Docker Desktop
 @y
 ## WSL 2 security in Docker Desktop
@@ -225,10 +325,10 @@ For environments that require stricter isolation:
 @z
 
 @x
-- Run Docker Desktop in Hyper-V mode instead of WSL 2 to avoid the shared-kernel model entirely.
+- Run Docker Desktop with Hyper-V or [Docker VMM](/manuals/desktop/features/vmm.md) instead of WSL 2 to avoid the shared-kernel model entirely.
 - Enable [Enhanced Container Isolation](/manuals/desktop/enterprise/hardened-desktop/enhanced-container-isolation/_index.md) to add an additional layer of protection around container workloads regardless of backend.
 @y
-- Run Docker Desktop in Hyper-V mode instead of WSL 2 to avoid the shared-kernel model entirely.
+- Run Docker Desktop with Hyper-V or [Docker VMM](manuals/desktop/features/vmm.md) instead of WSL 2 to avoid the shared-kernel model entirely.
 - Enable [Enhanced Container Isolation](manuals/desktop/enterprise/hardened-desktop/enhanced-container-isolation/_index.md) to add an additional layer of protection around container workloads regardless of backend.
 @z
 

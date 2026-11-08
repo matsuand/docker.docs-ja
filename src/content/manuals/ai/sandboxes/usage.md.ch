@@ -882,12 +882,12 @@ use `--clone`. Extra workspaces are always mounted directly.
 @z
 
 @x
-Each workspace path appears inside the sandbox at the same absolute path as on
-the host. Append `:ro` to mount an extra workspace read-only — useful for
+By default, each directly mounted workspace appears at the same absolute path
+as on the host. Append `:ro` to mount an extra workspace read-only — useful for
 reference material or shared libraries the agent shouldn't modify:
 @y
-Each workspace path appears inside the sandbox at the same absolute path as on
-the host. Append `:ro` to mount an extra workspace read-only — useful for
+By default, each directly mounted workspace appears at the same absolute path
+as on the host. Append `:ro` to mount an extra workspace read-only — useful for
 reference material or shared libraries the agent shouldn't modify:
 @z
 
@@ -899,6 +899,46 @@ $ sbx run claude ~/project-a ~/shared-libs:ro ~/docs:ro
 ```console
 $ sbx run claude ~/project-a ~/shared-libs:ro ~/docs:ro
 ```
+@z
+
+@x
+To choose a sandbox path for an additional workspace, use
+`PATH:TARGET[:ro]` with `sbx run` or `sbx create`:
+@y
+To choose a sandbox path for an additional workspace, use
+`PATH:TARGET[:ro]` with `sbx run` or `sbx create`:
+@z
+
+@x
+```console
+$ sbx run claude ~/project-a ~/shared-libs:/workspace/libs:ro
+```
+@y
+```console
+$ sbx run claude ~/project-a ~/shared-libs:/workspace/libs:ro
+```
+@z
+
+@x
+This mounts `~/shared-libs` read-only at `/workspace/libs` inside the sandbox.
+The primary workspace doesn't accept a target.
+@y
+This mounts `~/shared-libs` read-only at `/workspace/libs` inside the sandbox.
+The primary workspace doesn't accept a target.
+@z
+
+@x
+The target must be an absolute POSIX path other than `/`, without colons or
+NUL bytes. Choose a distinct target for each additional workspace. Targets
+must not match the primary workspace path or a reserved skills path. In clone
+mode, they must also stay outside the clone directory and must not match
+`/run/sandbox/source`.
+@y
+The target must be an absolute POSIX path other than `/`, without colons or
+NUL bytes. Choose a distinct target for each additional workspace. Targets
+must not match the primary workspace path or a reserved skills path. In clone
+mode, they must also stay outside the clone directory and must not match
+`/run/sandbox/source`.
 @z
 
 @x

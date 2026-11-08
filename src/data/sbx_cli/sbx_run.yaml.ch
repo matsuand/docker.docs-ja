@@ -19,7 +19,7 @@ description: |-
     directories, ZIP files, git repositories, or OCI references. Relative local
     references must be explicit paths such as ./my-kit or ../my-kit.zip; bare values
     retain their agent or sandbox-name meaning. A kit.shortcuts.<agent> setting (sbx
-    settings set kit.shortcuts.claude sbx/claude:latest) makes that agent name
+    settings set kit.shortcuts.claude myorg/claude:latest) makes that agent name
     resolve to the configured kit reference instead for local sandboxes; cloud
     sandboxes ignore it. To re-attach to an existing sandbox
     by name, use --name; the agent positional is optional when the named sandbox
@@ -30,7 +30,7 @@ description: |-
     directories, ZIP files, git repositories, or OCI references. Relative local
     references must be explicit paths such as ./my-kit or ../my-kit.zip; bare values
     retain their agent or sandbox-name meaning. A kit.shortcuts.<agent> setting (sbx
-    settings set kit.shortcuts.claude sbx/claude:latest) makes that agent name
+    settings set kit.shortcuts.claude myorg/claude:latest) makes that agent name
     resolve to the configured kit reference instead for local sandboxes; cloud
     sandboxes ignore it. To re-attach to an existing sandbox
     by name, use --name; the agent positional is optional when the named sandbox
@@ -39,14 +39,18 @@ description: |-
 
 @x
     Pass agent arguments after the "--" separator. Additional workspaces can be
-    provided as extra arguments. Append ":ro" to mount them read-only; a read-only
-    argument may name a single file, which holds that one path out of reach inside a
-    workspace the sandbox can otherwise write.
+    provided as extra arguments of the form PATH[:TARGET][:ro]. TARGET is an
+    absolute path inside the sandbox; omit it to mount PATH at the same path as on
+    the host. Append ":ro" to mount a workspace read-only; a read-only argument may
+    name a single file, which holds that one path out of reach inside a workspace
+    the sandbox can otherwise write.
 @y
     Pass agent arguments after the "--" separator. Additional workspaces can be
-    provided as extra arguments. Append ":ro" to mount them read-only; a read-only
-    argument may name a single file, which holds that one path out of reach inside a
-    workspace the sandbox can otherwise write.
+    provided as extra arguments of the form PATH[:TARGET][:ro]. TARGET is an
+    absolute path inside the sandbox; omit it to mount PATH at the same path as on
+    the host. Append ":ro" to mount a workspace read-only; a read-only argument may
+    name a single file, which holds that one path out of reach inside a workspace
+    the sandbox can otherwise write.
 @z
 
 @x
@@ -115,6 +119,16 @@ description: |-
     exists, otherwise it creates a new one. A non-interactive run without
     --detach is refused, so scripts pass --detach (e.g.
     sbx --cloud run -d claude && sbx --cloud exec ...).
+@z
+
+@x
+    With --cloud, --env and --env-file only apply when creating a sandbox.
+    Existing sandboxes keep their original environment; drop these flags to
+    reattach, or pass --new to create a sandbox with the new values.
+@y
+    With --cloud, --env and --env-file only apply when creating a sandbox.
+    Existing sandboxes keep their original environment; drop these flags to
+    reattach, or pass --new to create a sandbox with the new values.
 @z
 
 @x
@@ -243,10 +257,10 @@ usage: sbx run [flags] [AGENT|SANDBOX_KIT] [PATH...] [-- AGENT_ARGS...]
 
 @x memory
       usage: |
-        Memory limit in binary units (e.g., 512m, 8g). Minimum: 512 MiB. Default: 50% of host memory, clamped to 512 MiB–32 GiB. Maximum: max(75% of host memory, 512 MiB)
+        Memory limit in binary units (e.g., 512m, 8g). Minimum: 512 MiB. Default: 50% of host memory, clamped to 512 MiB–32 GiB. Maximum: host memory. Warns above 75% of host memory
 @y
       usage: |
-        Memory limit in binary units (e.g., 512m, 8g). Minimum: 512 MiB. Default: 50% of host memory, clamped to 512 MiB–32 GiB. Maximum: max(75% of host memory, 512 MiB)
+        Memory limit in binary units (e.g., 512m, 8g). Minimum: 512 MiB. Default: 50% of host memory, clamped to 512 MiB–32 GiB. Maximum: host memory. Warns above 75% of host memory
 @z
 
 @x mount
@@ -269,6 +283,12 @@ usage: sbx run [flags] [AGENT|SANDBOX_KIT] [PATH...] [-- AGENT_ARGS...]
 @y
       usage: |
         Always create a new cloud sandbox instead of prompting to reuse an existing one (cloud only)
+@z
+
+@x no-progress
+      usage: Suppress progress output
+@y
+      usage: Suppress progress output
 @z
 
 @x on-timeout
@@ -319,10 +339,10 @@ usage: sbx run [flags] [AGENT|SANDBOX_KIT] [PATH...] [-- AGENT_ARGS...]
 
 @x static-mcp
       usage: |
-        MCP server names that form the sandbox's fixed (static) MCP set. Accepts a comma-separated list (--static-mcp notion,atlassian), repeated flags (--static-mcp notion --static-mcp atlassian), or a mix; all forms accumulate into the same set. The set is chosen once at creation time and cannot be changed when re-attaching to an existing sandbox. Local sandboxes take names registered with 'sbx mcp add'. Cloud sandboxes resolve names on the cloud MCP gateway.
+        MCP server names that form the sandbox's fixed (static) MCP set. Accepts a comma-separated list (--static-mcp notion,atlassian), repeated flags (--static-mcp notion --static-mcp atlassian), or a mix; all forms accumulate into the same set. Use none for a static set with no servers, local sandboxes only. The set is chosen once at creation time and cannot be changed when re-attaching to an existing sandbox. Local sandboxes take names registered with 'sbx mcp add'. Cloud sandboxes resolve names on the cloud MCP gateway.
 @y
       usage: |
-        MCP server names that form the sandbox's fixed (static) MCP set. Accepts a comma-separated list (--static-mcp notion,atlassian), repeated flags (--static-mcp notion --static-mcp atlassian), or a mix; all forms accumulate into the same set. The set is chosen once at creation time and cannot be changed when re-attaching to an existing sandbox. Local sandboxes take names registered with 'sbx mcp add'. Cloud sandboxes resolve names on the cloud MCP gateway.
+        MCP server names that form the sandbox's fixed (static) MCP set. Accepts a comma-separated list (--static-mcp notion,atlassian), repeated flags (--static-mcp notion --static-mcp atlassian), or a mix; all forms accumulate into the same set. Use none for a static set with no servers, local sandboxes only. The set is chosen once at creation time and cannot be changed when re-attaching to an existing sandbox. Local sandboxes take names registered with 'sbx mcp add'. Cloud sandboxes resolve names on the cloud MCP gateway.
 @z
 
 @x template
@@ -349,6 +369,14 @@ usage: sbx run [flags] [AGENT|SANDBOX_KIT] [PATH...] [-- AGENT_ARGS...]
         Attach an existing persistent volume, NAME:MOUNTPATH (cloud only, experimental; repeatable)
 @z
 
+@x workdir
+      usage: |
+        Directory to start the agent session in: absolute, or relative to the sandbox workspace. Applies to this session only, so it works on a re-attach too
+@y
+      usage: |
+        Directory to start the agent session in: absolute, or relative to the sandbox workspace. Applies to this session only, so it works on a re-attach too
+@z
+
 % inherited_options:
 
 @x cloud
@@ -365,6 +393,14 @@ usage: sbx run [flags] [AGENT|SANDBOX_KIT] [PATH...] [-- AGENT_ARGS...]
       usage: Enable debug logging
 @z
 
+@x no-input
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
+@y
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
+@z
+
 @x
 example: |4-
       # Create and run a sandbox with claude in the current directory
@@ -405,6 +441,14 @@ example: |4-
 @y
       # Create and run with additional workspaces (read-only)
       sbx run claude . /path/to/docs:ro
+@z
+
+@x
+      # Mount an additional workspace at a chosen path inside the sandbox
+      sbx run claude . /path/to/data:/workspace/data
+@y
+      # Mount an additional workspace at a chosen path inside the sandbox
+      sbx run claude . /path/to/data:/workspace/data
 @z
 
 @x

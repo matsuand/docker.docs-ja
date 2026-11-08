@@ -324,17 +324,23 @@ editor instead of relying on its initial location.
 @z
 
 @x
-For a sandbox with a primary workspace, each workspace path appears inside the
-sandbox at the same absolute path as on the host. For example, if you pass
-`/Users/bob/src/my-project`, select that path in the remote folder picker. For
-a mountless sandbox that uses a Docker-provided agent template, select
-`/home/agent/workspace`.
+In the remote folder picker, select the workspace's path inside the sandbox.
+A workspace mounted from `/Users/bob/src/my-project` uses that same path by
+default. A custom mount target such as `/workspace/data` is the path to open
+in the editor.
 @y
-For a sandbox with a primary workspace, each workspace path appears inside the
-sandbox at the same absolute path as on the host. For example, if you pass
-`/Users/bob/src/my-project`, select that path in the remote folder picker. For
-a mountless sandbox that uses a Docker-provided agent template, select
-`/home/agent/workspace`.
+In the remote folder picker, select the workspace's path inside the sandbox.
+A workspace mounted from `/Users/bob/src/my-project` uses that same path by
+default. A custom mount target such as `/workspace/data` is the path to open
+in the editor.
+@z
+
+@x
+Docker-provided agent templates use `/home/agent/workspace` as the workspace
+folder for mountless sandboxes.
+@y
+Docker-provided agent templates use `/home/agent/workspace` as the workspace
+folder for mountless sandboxes.
 @z
 
 @x

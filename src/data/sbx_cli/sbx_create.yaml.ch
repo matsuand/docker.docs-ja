@@ -18,7 +18,7 @@ description: |-
     reference. Sandbox kit references may be local directories, ZIP files, git
     repositories, or OCI references. Relative local references must be explicit
     paths such as ./my-kit or ../my-kit.zip. A kit.shortcuts.<agent> setting
-    (sbx settings set kit.shortcuts.claude sbx/claude:latest) makes that agent name
+    (sbx settings set kit.shortcuts.claude myorg/claude:latest) makes that agent name
     resolve to the configured kit reference instead for local sandboxes; cloud
     sandboxes ignore it.
 @y
@@ -26,7 +26,7 @@ description: |-
     reference. Sandbox kit references may be local directories, ZIP files, git
     repositories, or OCI references. Relative local references must be explicit
     paths such as ./my-kit or ../my-kit.zip. A kit.shortcuts.<agent> setting
-    (sbx settings set kit.shortcuts.claude sbx/claude:latest) makes that agent name
+    (sbx settings set kit.shortcuts.claude myorg/claude:latest) makes that agent name
     resolve to the configured kit reference instead for local sandboxes; cloud
     sandboxes ignore it.
 @z
@@ -185,10 +185,10 @@ usage: sbx create AGENT|SANDBOX_KIT [PATH...] [flags]
 
 @x memory
       usage: |
-        Memory limit in binary units (e.g., 512m, 8g). Minimum: 512 MiB. Default: 50% of host memory, clamped to 512 MiB–32 GiB. Maximum: max(75% of host memory, 512 MiB)
+        Memory limit in binary units (e.g., 512m, 8g). Minimum: 512 MiB. Default: 50% of host memory, clamped to 512 MiB–32 GiB. Maximum: host memory. Warns above 75% of host memory
 @y
       usage: |
-        Memory limit in binary units (e.g., 512m, 8g). Minimum: 512 MiB. Default: 50% of host memory, clamped to 512 MiB–32 GiB. Maximum: max(75% of host memory, 512 MiB)
+        Memory limit in binary units (e.g., 512m, 8g). Minimum: 512 MiB. Default: 50% of host memory, clamped to 512 MiB–32 GiB. Maximum: host memory. Warns above 75% of host memory
 @z
 
 @x mount
@@ -255,10 +255,10 @@ usage: sbx create AGENT|SANDBOX_KIT [PATH...] [flags]
 
 @x static-mcp
       usage: |
-        MCP server names that form the sandbox's fixed (static) MCP set. Accepts a comma-separated list (--static-mcp notion,atlassian), repeated flags (--static-mcp notion --static-mcp atlassian), or a mix; all forms accumulate into the same set. The set is chosen once at creation time. Local sandboxes take names registered with 'sbx mcp add'. Cloud sandboxes resolve names on the cloud MCP gateway.
+        MCP server names that form the sandbox's fixed (static) MCP set. Accepts a comma-separated list (--static-mcp notion,atlassian), repeated flags (--static-mcp notion --static-mcp atlassian), or a mix; all forms accumulate into the same set. Use none for a static set with no servers, local sandboxes only. The set is chosen once at creation time. Local sandboxes take names registered with 'sbx mcp add'. Cloud sandboxes resolve names on the cloud MCP gateway.
 @y
       usage: |
-        MCP server names that form the sandbox's fixed (static) MCP set. Accepts a comma-separated list (--static-mcp notion,atlassian), repeated flags (--static-mcp notion --static-mcp atlassian), or a mix; all forms accumulate into the same set. The set is chosen once at creation time. Local sandboxes take names registered with 'sbx mcp add'. Cloud sandboxes resolve names on the cloud MCP gateway.
+        MCP server names that form the sandbox's fixed (static) MCP set. Accepts a comma-separated list (--static-mcp notion,atlassian), repeated flags (--static-mcp notion --static-mcp atlassian), or a mix; all forms accumulate into the same set. Use none for a static set with no servers, local sandboxes only. The set is chosen once at creation time. Local sandboxes take names registered with 'sbx mcp add'. Cloud sandboxes resolve names on the cloud MCP gateway.
 @z
 
 @x template
@@ -301,6 +301,14 @@ usage: sbx create AGENT|SANDBOX_KIT [PATH...] [flags]
       usage: Enable debug logging
 @z
 
+@x no-input
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
+@y
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
+@z
+
 @x
 example: |4-
       # Create a sandbox for Claude in the current directory
@@ -325,6 +333,14 @@ example: |4-
 @y
       # Create with additional read-only workspaces
       sbx create claude . /path/to/docs:ro
+@z
+
+@x
+      # Mount an additional workspace at a chosen path inside the sandbox
+      sbx create claude . /path/to/data:/workspace/data
+@y
+      # Mount an additional workspace at a chosen path inside the sandbox
+      sbx create claude . /path/to/data:/workspace/data
 @z
 
 @x
@@ -387,22 +403,6 @@ example: |4-
 
 @x
     - sbx - Manage AI coding agent sandboxes.
-    - sbx create claude - Create a sandbox for claude
-    - sbx create codex - Create a sandbox for codex
-    - sbx create cursor - Create a sandbox for cursor
-    - sbx create devin - Create a sandbox for devin
-    - sbx create docker-agent - Create a sandbox for docker-agent
-    - sbx create gemini - Create a sandbox for gemini
-    - sbx create opencode - Create a sandbox for opencode
-    - sbx create shell - Create a sandbox for shell
 @y
     - sbx - Manage AI coding agent sandboxes.
-    - sbx create claude - Create a sandbox for claude
-    - sbx create codex - Create a sandbox for codex
-    - sbx create cursor - Create a sandbox for cursor
-    - sbx create devin - Create a sandbox for devin
-    - sbx create docker-agent - Create a sandbox for docker-agent
-    - sbx create gemini - Create a sandbox for gemini
-    - sbx create opencode - Create a sandbox for opencode
-    - sbx create shell - Create a sandbox for shell
 @z

@@ -20,6 +20,20 @@ description: |-
 @z
 
 @x
+    Cloud copies transfer files, not symbolic links or empty directories. A symbolic
+    link passed as SRC is always followed on upload. Links inside an uploaded
+    directory are skipped unless --follow-link is set. On download, --follow-link
+    follows SRC only when it names a symbolic link to a file. Downloads of directories
+    skip symbolic links even with --follow-link.
+@y
+    Cloud copies transfer files, not symbolic links or empty directories. A symbolic
+    link passed as SRC is always followed on upload. Links inside an uploaded
+    directory are skipped unless --follow-link is set. On download, --follow-link
+    follows SRC only when it names a symbolic link to a file. Downloads of directories
+    skip symbolic links even with --follow-link.
+@z
+
+@x
     When copying a directory, the directory itself is placed at the destination.
     If the destination path does not exist it is created; if it already exists
     as a directory, the source is placed inside it.
@@ -30,13 +44,15 @@ description: |-
 @z
 
 @x
-    When a local path is inside a sandbox workspace, sbx cp refuses symbolic
-    links that lead out of the workspace, even with --follow-link, including
-    when the workspace is reached through a symbolic link or junction to it.
+    For local paths inside workspace directories or other host directories mounted
+    into the sandbox, sbx cp refuses symbolic links that escape those directories,
+    even with --follow-link, including when a directory is reached through a
+    symbolic link, junction or substituted drive.
 @y
-    When a local path is inside a sandbox workspace, sbx cp refuses symbolic
-    links that lead out of the workspace, even with --follow-link, including
-    when the workspace is reached through a symbolic link or junction to it.
+    For local paths inside workspace directories or other host directories mounted
+    into the sandbox, sbx cp refuses symbolic links that escape those directories,
+    even with --follow-link, including when a directory is reached through a
+    symbolic link, junction or substituted drive.
 @z
 
 @x
@@ -48,9 +64,11 @@ usage: sbx cp SRC DST [flags]
 % options:
 
 @x follow-link
-      usage: Follow symbolic links in the source path
+      usage: |
+        Follow symbolic links in the source path (cloud: does not follow links inside downloaded directories)
 @y
-      usage: Follow symbolic links in the source path
+      usage: |
+        Follow symbolic links in the source path (cloud: does not follow links inside downloaded directories)
 @z
 
 @x help
@@ -73,6 +91,14 @@ usage: sbx cp SRC DST [flags]
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x no-input
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
+@y
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
 @z
 
 @x

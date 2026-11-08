@@ -7,16 +7,18 @@ synopsis: Execute a command inside a sandbox environment
 experimental: true
 description: |-
     Run COMMAND in the sandbox declared in sbxenv.yaml. The sandbox
-    must already exist (see "sbx env create" and "sbx env run"); a stopped sandbox is
-    started first.
+    is started first if stopped. If it does not exist, an interactive terminal prompts
+    to create it and approve the environment plan before running COMMAND. Without an
+    interactive terminal, or with --no-input, create it first with "sbx env create".
 @y
 name: sbx env exec
 synopsis: Execute a command inside a sandbox environment
 experimental: true
 description: |-
     Run COMMAND in the sandbox declared in sbxenv.yaml. The sandbox
-    must already exist (see "sbx env create" and "sbx env run"); a stopped sandbox is
-    started first.
+    is started first if stopped. If it does not exist, an interactive terminal prompts
+    to create it and approve the environment plan before running COMMAND. Without an
+    interactive terminal, or with --no-input, create it first with "sbx env create".
 @z
 
 @x
@@ -169,6 +171,14 @@ usage: sbx env exec [flags] [PATH...] -- COMMAND [ARG...]
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x no-input
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
+@y
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
 @z
 
 @x

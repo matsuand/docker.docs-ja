@@ -247,14 +247,6 @@ bases = \
 	sbx_completion_zsh.yaml              \
 	sbx_cp.yaml                          \
 	sbx_create.yaml                      \
-	sbx_create_claude.yaml               \
-	sbx_create_codex.yaml                \
-	sbx_create_cursor.yaml               \
-	sbx_create_devin.yaml                \
-	sbx_create_docker-agent.yaml         \
-	sbx_create_gemini.yaml               \
-	sbx_create_opencode.yaml             \
-	sbx_create_shell.yaml                \
 	sbx_daemon.yaml                      \
 	sbx_daemon_log-level.yaml            \
 	sbx_daemon_log-level_set.yaml        \
@@ -308,6 +300,7 @@ bases = \
 	sbx_policy_allow.yaml                \
 	sbx_policy_allow_network.yaml        \
 	sbx_policy_check.yaml                \
+	sbx_policy_check_http.yaml           \
 	sbx_policy_check_network.yaml        \
 	sbx_policy_deny.yaml                 \
 	sbx_policy_deny_network.yaml         \

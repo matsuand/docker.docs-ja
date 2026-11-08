@@ -390,15 +390,17 @@ A response confirms that Claude Code can reach the API and authenticate with
 your stored key. If authentication fails, check that you stored the key and
 approved the kit's request to use it. See
 [Credential bindings](/manuals/ai/sandboxes/configuration/credentials.md#credential-bindings).
-Network requests must also meet the sandbox's
-[network policy](/manuals/ai/sandboxes/governance/concepts.md#precedence).
+Network requests must also meet the sandbox's network policy, which combines
+the mixin's network rules with the developer's own. For more details, see
+[How rules combine](/manuals/ai/governance/local/_index.md#how-rules-combine).
 @y
 A response confirms that Claude Code can reach the API and authenticate with
 your stored key. If authentication fails, check that you stored the key and
 approved the kit's request to use it. See
 [Credential bindings](manuals/ai/sandboxes/configuration/credentials.md#credential-bindings).
-Network requests must also meet the sandbox's
-[network policy](manuals/ai/sandboxes/governance/concepts.md#precedence).
+Network requests must also meet the sandbox's network policy, which combines
+the mixin's network rules with the developer's own. For more details, see
+[How rules combine](manuals/ai/governance/local/_index.md#how-rules-combine).
 @z
 
 @x

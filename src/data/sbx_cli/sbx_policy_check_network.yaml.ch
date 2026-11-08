@@ -58,9 +58,9 @@ usage: sbx policy check network [--sandbox SANDBOX] TARGET [flags]
 @z
 
 @x verbose
-      usage: Show the exact policy request fields
+      usage: Show the policy action and resource
 @y
-      usage: Show the exact policy request fields
+      usage: Show the policy action and resource
 @z
 
 % inherited_options:
@@ -77,6 +77,14 @@ usage: sbx policy check network [--sandbox SANDBOX] TARGET [flags]
       usage: Enable debug logging
 @y
       usage: Enable debug logging
+@z
+
+@x no-input
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
+@y
+      usage: |
+        Never prompt; commands that need an answer fail with the command to run instead
 @z
 
 @x

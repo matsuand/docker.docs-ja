@@ -293,7 +293,9 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = docker-agent gordon model-runner sandboxes skills sandboxes-api
+SUBDIRS = docker-agent governance gordon model-runner sandboxes skills \
+	sandboxes-api
+
 all: all-recursive
 
 .SUFFIXES:

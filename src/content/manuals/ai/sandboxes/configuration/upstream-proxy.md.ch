@@ -44,15 +44,15 @@ originating inside a cloud sandbox. For cloud sandbox egress controls, see
 @x
 An upstream proxy is the corporate or network proxy that Docker Sandboxes
 forwards outbound traffic through on its way to the internet. This is separate
-from the [network policy](../governance/access-controls/network.md), which decides
-_which_ destinations are allowed. The upstream proxy decides _how_ allowed
-traffic reaches them.
+from network policy, which decides _which_ destinations are allowed. The
+upstream proxy decides _how_ allowed traffic reaches them. For how network
+policy is set, see [Sandbox governance](../../governance/_index.md).
 @y
 An upstream proxy is the corporate or network proxy that Docker Sandboxes
 forwards outbound traffic through on its way to the internet. This is separate
-from the [network policy](../governance/access-controls/network.md), which decides
-_which_ destinations are allowed. The upstream proxy decides _how_ allowed
-traffic reaches them.
+from network policy, which decides _which_ destinations are allowed. The
+upstream proxy decides _how_ allowed traffic reaches them. For how network
+policy is set, see [Sandbox governance](../../governance/_index.md).
 @z
 
 @x

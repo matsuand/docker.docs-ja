@@ -235,7 +235,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: __SUBDIR__/scout/
 @z
 
-% platform:
+% accounts-and-admin:
 
 @x
   - title: Accounts
@@ -383,7 +383,7 @@ Docker アカウント、管理、サブスクリプション、支払い、セ�
 @z
 
 @x
-{{< grid items=platform >}}
+{{< grid items=accounts-and-admin >}}
 @y
-{{< grid items=platform >}}
+{{< grid items=accounts-and-admin >}}
 @z

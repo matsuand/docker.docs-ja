@@ -1,0 +1,416 @@
+s%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+% .md リンクへの (no slash) 対応
+
+@x
+title: Get started with organization governance
+linkTitle: Get started
+@y
+title: Get started with organization governance
+linkTitle: Get started
+@z
+
+@x
+description: Set up organization governance for Docker Sandboxes, from planning policies and configuring audit logs to turning on AI governance, assigning licenses, enforcing sign-in, deploying Docker Sandboxes, and verification.
+keywords: docker sandboxes, AI Governance, organization governance, get started, organization policy, sign-in enforcement, audit logs, rollout
+@y
+description: Set up organization governance for Docker Sandboxes, from planning policies and configuring audit logs to turning on AI governance, assigning licenses, enforcing sign-in, deploying Docker Sandboxes, and verification.
+keywords: docker sandboxes, AI Governance, organization governance, get started, organization policy, sign-in enforcement, audit logs, rollout
+@z
+
+@x
+{{< summary-bar feature_name="AI Governance" >}}
+@y
+{{< summary-bar feature_name="AI Governance" >}}
+@z
+
+@x
+This page walks you through setting up organization governance, from planning
+your first policies to confirming they work on a developer machine. Each step
+explains what to do and what to decide, and links to the page with the full
+instructions.
+@y
+This page walks you through setting up organization governance, from planning
+your first policies to confirming they work on a developer machine. Each step
+explains what to do and what to decide, and links to the page with the full
+instructions.
+@z
+
+@x
+## Before you begin
+@y
+## Before you begin
+@z
+
+@x
+You need:
+@y
+You need:
+@z
+
+@x
+- A Docker
+  [AI Governance plan](/manuals/subscription-billing/plans/ai-governance.md)
+  for your organization.
+- Your developers added as
+  [members of your organization](/manuals/accounts/organization/manage/members.md).
+  To scope policies to groups of developers, such as a pilot team, also
+  [create teams](/manuals/accounts/organization/manage/manage-a-team.md) for
+  them.
+- The organization
+  [owner](/manuals/security/roles-and-permissions/core-roles.md) role, or a
+  [custom role](/manuals/security/roles-and-permissions/custom-roles/_index.md)
+  with the **Governance** permissions.
+- Access to the endpoint management tooling for your developers' machines, such
+  as an MDM solution or Group Policy, to enforce sign-in.
+@y
+- A Docker
+  [AI Governance plan](manuals/subscription-billing/plans/ai-governance.md)
+  for your organization.
+- Your developers added as
+  [members of your organization](manuals/accounts/organization/manage/members.md).
+  To scope policies to groups of developers, such as a pilot team, also
+  [create teams](manuals/accounts/organization/manage/manage-a-team.md) for
+  them.
+- The organization
+  [owner](manuals/security/roles-and-permissions/core-roles.md) role, or a
+  [custom role](manuals/security/roles-and-permissions/custom-roles/_index.md)
+  with the **Governance** permissions.
+- Access to the endpoint management tooling for your developers' machines, such
+  as an MDM solution or Group Policy, to enforce sign-in.
+@z
+
+@x
+## Step 1: Plan what to allow
+@y
+## Step 1: Plan what to allow
+@z
+
+@x
+Organization policy is default deny. Once an organization policy is enforced
+for a developer, their sandboxes can reach only the network destinations your
+policies allow, mount only the host paths your policies allow, and use MCP
+servers only as your policies permit. For more details, see
+[Organization policies](policies/_index.md).
+@y
+Organization policy is default deny. Once an organization policy is enforced
+for a developer, their sandboxes can reach only the network destinations your
+policies allow, mount only the host paths your policies allow, and use MCP
+servers only as your policies permit. For more details, see
+[Organization policies](policies/_index.md).
+@z
+
+@x
+Before you govern anyone, work out what their sandboxes need:
+@y
+Before you govern anyone, work out what their sandboxes need:
+@z
+
+@x
+- Network destinations, such as AI provider APIs, package registries, and code
+  hosts.
+- Host paths that sandboxes mount as workspaces. By default, `sbx run` mounts
+  the directory it's run from, so allow the directories where developers keep
+  their projects. A sandbox can't start if its workspace isn't allowed.
+- MCP servers that developers add with `sbx mcp add`. A server that an agent
+  connects to directly, without `sbx`, is a network destination, so plan for it
+  with your network rules instead.
+@y
+- Network destinations, such as AI provider APIs, package registries, and code
+  hosts.
+- Host paths that sandboxes mount as workspaces. By default, `sbx run` mounts
+  the directory it's run from, so allow the directories where developers keep
+  their projects. A sandbox can't start if its workspace isn't allowed.
+- MCP servers that developers add with `sbx mcp add`. A server that an agent
+  connects to directly, without `sbx`, is a network destination, so plan for it
+  with your network rules instead.
+@z
+
+@x
+Before you assign licenses, you can run `sbx policy log` on a developer's
+machine to see the network requests its sandboxes make. Once developers are
+governed, your audit logs record their network requests, mounts, and MCP
+activity in more detail. If you're not sure what sandboxes need, start the
+pilot team with the rules you're confident about, then review your audit logs
+for requests your policies deny and add allow rules where developers need them.
+Audit records are available after you configure audit delivery and assign
+licenses.
+@y
+Before you assign licenses, you can run `sbx policy log` on a developer's
+machine to see the network requests its sandboxes make. Once developers are
+governed, your audit logs record their network requests, mounts, and MCP
+activity in more detail. If you're not sure what sandboxes need, start the
+pilot team with the rules you're confident about, then review your audit logs
+for requests your policies deny and add allow rules where developers need them.
+Audit records are available after you configure audit delivery and assign
+licenses.
+@z
+
+@x
+Then decide how to scope your policies. Use org-wide policies for guardrails
+that must apply everywhere, such as deny rules that block a destination even
+when a team-scoped policy allows it, and team-scoped policies for access that
+only some teams need. For an example of how the two combine, see
+[How rules decide a request](policies/_index.md#how-rules-decide-a-request).
+Plan to start with one pilot team before you roll out to everyone.
+@y
+Then decide how to scope your policies. Use org-wide policies for guardrails
+that must apply everywhere, such as deny rules that block a destination even
+when a team-scoped policy allows it, and team-scoped policies for access that
+only some teams need. For an example of how the two combine, see
+[How rules decide a request](policies/_index.md#how-rules-decide-a-request).
+Plan to start with one pilot team before you roll out to everyone.
+@z
+
+@x
+## Step 2: Create your policies
+@y
+## Step 2: Create your policies
+@z
+
+@x
+In [Docker Home](https://app.docker.com), expand **AI Platform** and create
+your policies under **Network access**, **Filesystem access**, and **MCP
+access**. Create at least a network policy and a filesystem policy before you
+assign any licenses, so governed developers can keep working. Scope your first
+policies to the pilot team.
+@y
+In [Docker Home](https://app.docker.com), expand **AI Platform** and create
+your policies under **Network access**, **Filesystem access**, and **MCP
+access**. Create at least a network policy and a filesystem policy before you
+assign any licenses, so governed developers can keep working. Scope your first
+policies to the pilot team.
+@z
+
+@x
+For the steps, see
+[Create and manage organization policies](policies/create-manage.md).
+@y
+For the steps, see
+[Create and manage organization policies](policies/create-manage.md).
+@z
+
+@x
+## Step 3: Configure audit delivery
+@y
+## Step 3: Configure audit delivery
+@z
+
+@x
+Audit logs record the policy decisions made for your developers' sandboxes.
+Configure delivery before you assign licenses, so records are collected from
+the first governed request. In Docker Home, go to **AI Platform** >
+**Audit logs** to choose where records are delivered. For more details, see
+[Configure audit delivery](audit/configure.md).
+@y
+Audit logs record the policy decisions made for your developers' sandboxes.
+Configure delivery before you assign licenses, so records are collected from
+the first governed request. In Docker Home, go to **AI Platform** >
+**Audit logs** to choose where records are delivered. For more details, see
+[Configure audit delivery](audit/configure.md).
+@z
+
+@x
+## Step 4: Turn on AI governance
+@y
+## Step 4: Turn on AI governance
+@z
+
+@x
+Your policies take effect only when AI governance is turned on for your
+organization. In Docker Home, expand **AI Platform**, select **Manage**, and
+turn on **AI governance**. If you haven't created a filesystem policy, Docker
+Home warns you first, because governed developers can't use Docker Sandboxes
+without one.
+@y
+Your policies take effect only when AI governance is turned on for your
+organization. In Docker Home, expand **AI Platform**, select **Manage**, and
+turn on **AI governance**. If you haven't created a filesystem policy, Docker
+Home warns you first, because governed developers can't use Docker Sandboxes
+without one.
+@z
+
+@x
+Turning on AI Governance doesn't govern anyone yet. Organization policies apply
+only to members who hold an AI Governance license, which you assign in
+[Step 5](#step-5-assign-licenses).
+@y
+Turning on AI Governance doesn't govern anyone yet. Organization policies apply
+only to members who hold an AI Governance license, which you assign in
+[Step 5](#step-5-assign-licenses).
+@z
+
+@x
+After you turn it on, consider also
+[configuring a support message](policies/create-manage.md#configure-a-support-message)
+on the same page. Developers see it when your policy blocks a request, so you
+can tell them how to ask for access.
+@y
+After you turn it on, consider also
+[configuring a support message](policies/create-manage.md#configure-a-support-message)
+on the same page. Developers see it when your policy blocks a request, so you
+can tell them how to ask for access.
+@z
+
+@x
+## Step 5: Assign licenses
+@y
+## Step 5: Assign licenses
+@z
+
+@x
+Organization policies apply only to members who hold an AI Governance license.
+Assign licenses to the members of your pilot team first. For more details, see
+[Manage licenses](/manuals/accounts/organization/manage/manage-licenses.md).
+@y
+Organization policies apply only to members who hold an AI Governance license.
+Assign licenses to the members of your pilot team first. For more details, see
+[Manage licenses](manuals/accounts/organization/manage/manage-licenses.md).
+@z
+
+@x
+If automatic license assignment is on for AI Governance, every member who signs
+in to Docker Sandboxes receives a license and is governed from their first
+sign-in. Keep it off during the pilot.
+@y
+If automatic license assignment is on for AI Governance, every member who signs
+in to Docker Sandboxes receives a license and is governed from their first
+sign-in. Keep it off during the pilot.
+@z
+
+@x
+## Step 6: Enforce sign-in
+@y
+## Step 6: Enforce sign-in
+@z
+
+@x
+Without sign-in enforcement, a developer can sign in to Docker Sandboxes with a
+personal account and avoid your policies. Deploy an enforcement configuration
+to your developers' machines with your endpoint management tooling, listing
+the organizations that developers must belong to. For more details, see
+[Enforce sign-in](sign-in-enforcement.md).
+@y
+Without sign-in enforcement, a developer can sign in to Docker Sandboxes with a
+personal account and avoid your policies. Deploy an enforcement configuration
+to your developers' machines with your endpoint management tooling, listing
+the organizations that developers must belong to. For more details, see
+[Enforce sign-in](sign-in-enforcement.md).
+@z
+
+@x
+## Step 7: Deploy Docker Sandboxes
+@y
+## Step 7: Deploy Docker Sandboxes
+@z
+
+@x
+If your developers don't have Docker Sandboxes yet, deploy it after you assign
+licenses and enforce sign-in, so developers are governed from their first
+sign-in. For installation options, see
+[Install Docker Sandboxes](/manuals/ai/sandboxes/install.md).
+@y
+If your developers don't have Docker Sandboxes yet, deploy it after you assign
+licenses and enforce sign-in, so developers are governed from their first
+sign-in. For installation options, see
+[Install Docker Sandboxes](manuals/ai/sandboxes/install.md).
+@z
+
+@x
+## Step 8: Verify on a developer machine
+@y
+## Step 8: Verify on a developer machine
+@z
+
+@x
+On the machine of a developer in your pilot team, pick up the latest
+organization policy right away instead of waiting for the next sync:
+@y
+On the machine of a developer in your pilot team, pick up the latest
+organization policy right away instead of waiting for the next sync:
+@z
+
+@x
+```console
+$ sbx policy refresh
+```
+@y
+```console
+$ sbx policy refresh
+```
+@z
+
+@x
+Confirm that organization policy is enforced. The status line should show your
+organization:
+@y
+Confirm that organization policy is enforced. The status line should show your
+organization:
+@z
+
+@x
+```console
+$ sbx policy ls
+```
+@y
+```console
+$ sbx policy ls
+```
+@z
+
+@x
+Check a destination your policy allows and one it doesn't:
+@y
+Check a destination your policy allows and one it doesn't:
+@z
+
+@x
+```console
+$ sbx policy check network api.anthropic.com
+$ sbx policy check network blocked.example.com
+```
+@y
+```console
+$ sbx policy check network api.anthropic.com
+$ sbx policy check network blocked.example.com
+```
+@z
+
+@x
+The first check should report `Allowed` and the second `Denied`. Then run a
+sandbox and use `sbx policy log` to see which requests it made and which
+rules matched. For more details, see
+[Inspect policy status and rules](../local/inspect.md) and
+[Test and monitor network policy](../local/test-monitor.md).
+@y
+The first check should report `Allowed` and the second `Denied`. Then run a
+sandbox and use `sbx policy log` to see which requests it made and which
+rules matched. For more details, see
+[Inspect policy status and rules](../local/inspect.md) and
+[Test and monitor network policy](../local/test-monitor.md).
+@z
+
+@x
+## Step 9: Roll out to more teams
+@y
+## Step 9: Roll out to more teams
+@z
+
+@x
+When the pilot team works as expected, assign licenses to more members, deploy
+Docker Sandboxes to their machines, and widen the scope of your policies, or
+add team-scoped policies for teams that need different access. As more
+developers are governed, keep reviewing your audit logs for requests your
+policies block, and add allow rules where developers need them. Each change you make reaches developer machines within 5 minutes.
+For more details, see
+[When policy changes reach developers](policies/_index.md#when-policy-changes-reach-developers).
+@y
+When the pilot team works as expected, assign licenses to more members, deploy
+Docker Sandboxes to their machines, and widen the scope of your policies, or
+add team-scoped policies for teams that need different access. As more
+developers are governed, keep reviewing your audit logs for requests your
+policies block, and add allow rules where developers need them. Each change you make reaches developer machines within 5 minutes.
+For more details, see
+[When policy changes reach developers](policies/_index.md#when-policy-changes-reach-developers).
+@z

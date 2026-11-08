@@ -4,13 +4,13 @@
 % .md リンクへの (no slash) 対応
 
 @x
-AI Governance Audit Logs:
+AI Governance:
   subscription: [AI Governance]
-  requires: Docker Sandboxes [0.39.0](/manuals/ai/sandboxes/release-notes.md) or later
+  for: Administrators
 @y
-AI Governance Audit Logs:
+AI Governance:
   subscription: [AI Governance]
-  requires: Docker Sandboxes [0.39.0](manuals/ai/sandboxes/release-notes.md) またはそれ以降
+  for: 管理者
 @z
 
 @x
@@ -580,6 +580,14 @@ Compose SDK:
 @z
 
 @x
+Compose use service name alias:
+  requires: Docker Compose [5.7.0](https://github.com/docker/compose/releases/tag/v5.7.0) and later
+@y
+Compose use service name alias:
+  requires: Docker Compose [5.7.0](https://github.com/docker/compose/releases/tag/v5.7.0) and later
+@z
+
+@x
 Custom roles:
   subscription: [Business]
   for: Administrators
@@ -615,12 +623,22 @@ Docker CLI OpenTelemetry:
 
 @x
 Docker Offload:
-  subscription: [Docker Offload]
-  requires: Docker Desktop 4.68 or later
+  subscription: [Docker Agentic Platform]
+  requires: Docker Desktop 4.97 or later
 @y
 Docker Offload:
-  subscription: [Docker Offload]
-  requires: Docker Desktop 4.69 またはそれ以降
+  subscription: [Docker Agentic Platform]
+  requires: Docker Desktop 4.97 またはそれ以降
+@z
+
+@x
+Docker Offload v1:
+  subscription: [Docker Offload and Docker Teams or Business subscription]
+  requires: Docker Desktop
+@y
+Docker Offload v1:
+  subscription: [Docker Offload and Docker Teams or Business subscription]
+  requires: Docker Desktop
 @z
 
 @x

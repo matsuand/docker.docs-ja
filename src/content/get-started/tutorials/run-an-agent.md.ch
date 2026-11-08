@@ -232,13 +232,13 @@ The first time you run a sandbox, `sbx` asks you to choose a default network
 policy. This policy controls which external services your sandboxes can reach.
 Select **Balanced** to permit common development services and block other
 destinations by default. You can change these rules later with
-[`sbx policy`](/manuals/ai/sandboxes/governance/access-controls/local.md).
+[`sbx policy`](/manuals/ai/governance/local/network-rules.md).
 @y
 The first time you run a sandbox, `sbx` asks you to choose a default network
 policy. This policy controls which external services your sandboxes can reach.
 Select **Balanced** to permit common development services and block other
 destinations by default. You can change these rules later with
-[`sbx policy`](manuals/ai/sandboxes/governance/access-controls/local.md).
+[`sbx policy`](manuals/ai/governance/local/network-rules.md).
 @z
 
 @x
