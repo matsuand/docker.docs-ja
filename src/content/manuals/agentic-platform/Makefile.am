@@ -11,6 +11,7 @@ bases = \
 	policies.md      \
 	release-notes.md \
 	sandboxes.md     \
+	schedules.md     \
 	secrets.md       \
 	signup.md
 

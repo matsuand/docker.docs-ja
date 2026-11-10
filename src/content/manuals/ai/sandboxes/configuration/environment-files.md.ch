@@ -139,10 +139,10 @@ workspace: ./web-app
 
 @x
 kits:
-  - docker.io/sbx/playwright-kit:latest
+  - docker.io/sbx/playwright:1.61.1
 @y
 kits:
-  - docker.io/sbx/playwright-kit:latest
+  - docker.io/sbx/playwright:1.61.1
 @z
 
 @x
@@ -163,16 +163,6 @@ ports:
   - sandbox: 3000
     host: 3000
 ```
-@z
-
-@x
-> [!NOTE]
-> This example uses kits v2, the format used by built-in agents. For v3, see
-> [Add v3 kits](#add-v3-kits).
-@y
-> [!NOTE]
-> This example uses kits v2, the format used by built-in agents. For v3, see
-> [Add v3 kits](#add-v3-kits).
 @z
 
 @x
@@ -790,43 +780,41 @@ can adapt for a project.
 @z
 
 @x
-To add v3 mixins, include a v3 workload in `kits` and set `agent` to the
-workload's name.
+To add mixins to a built-in agent, list the mixins in `kits` and use the
+built-in name in `agent`.
 @y
-To add v3 mixins, include a v3 workload in `kits` and set `agent` to the
-workload's name.
+To add mixins to a built-in agent, list the mixins in `kits` and use the
+built-in name in `agent`.
 @z
 
 @x
-For example, save this as `web-app-env/v3.sbxenv.yaml` to use a v3 Claude Code
-workload with the v3 Playwright mixin:
+For example, save this as `web-app-env/v3.sbxenv.yaml` to use a Claude Code
+workload with the Playwright mixin:
 @y
-For example, save this as `web-app-env/v3.sbxenv.yaml` to use a v3 Claude Code
-workload with the v3 Playwright mixin:
+For example, save this as `web-app-env/v3.sbxenv.yaml` to use a Claude Code
+workload with the Playwright mixin:
 @z
 
 @x
 ```yaml
 schemaVersion: "1"
 name: web-app-v3
-agent: sbx-kit-claude
+agent: claude
 workspace: ./web-app
 @y
 ```yaml
 schemaVersion: "1"
 name: web-app-v3
-agent: sbx-kit-claude
+agent: claude
 workspace: ./web-app
 @z
 
 @x
 kits:
-  - docker.io/docker/sbx-kit-claude:2.1.267
   - docker.io/sbx/playwright:1.61.1
 ```
 @y
 kits:
-  - docker.io/docker/sbx-kit-claude:2.1.267
   - docker.io/sbx/playwright:1.61.1
 ```
 @z
@@ -848,13 +836,13 @@ $ sbx env run v3.sbxenv.yaml
 @z
 
 @x
-The `agent` value, `sbx-kit-claude`, matches the last component of the
-workload's repository name. The `web-app-v3` name creates a separate sandbox.
+The `agent` value selects the built-in Claude Code workload.
+The `web-app-v3` name creates a separate sandbox.
 For other agents, see the
 [published v3 workloads](/manuals/ai/sandboxes/customize/use-kits.md#published-v3-workloads).
 @y
-The `agent` value, `sbx-kit-claude`, matches the last component of the
-workload's repository name. The `web-app-v3` name creates a separate sandbox.
+The `agent` value selects the built-in Claude Code workload.
+The `web-app-v3` name creates a separate sandbox.
 For other agents, see the
 [published v3 workloads](manuals/ai/sandboxes/customize/use-kits.md#published-v3-workloads).
 @z
@@ -1649,13 +1637,13 @@ true`.
 `kits` accepts local directories, ZIP archives, OCI registry references, and
 Git URLs prefixed with `git+https://` or `git+ssh://`. Kits can install tools,
 configure the sandbox, and give the agent project-specific instructions.
-Built-in agents use v2 mixins. For v3 workloads and mixins, see
+To add mixins to built-in agents, see
 [Add v3 kits](#add-v3-kits).
 @y
 `kits` accepts local directories, ZIP archives, OCI registry references, and
 Git URLs prefixed with `git+https://` or `git+ssh://`. Kits can install tools,
 configure the sandbox, and give the agent project-specific instructions.
-Built-in agents use v2 mixins. For v3 workloads and mixins, see
+To add mixins to built-in agents, see
 [Add v3 kits](#add-v3-kits).
 @z
 

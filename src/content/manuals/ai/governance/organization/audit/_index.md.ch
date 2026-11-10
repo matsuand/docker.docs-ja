@@ -48,14 +48,14 @@ do with them.
 @x
 > [!NOTE]
 > Audit logs cover local sandboxes, the sandboxes that run on developers'
-> machines. Cloud delivery stores their audit records in the cloud. It
-> doesn't add cloud sandbox coverage. For cloud network decisions, see
+> machines. Audit logs don't cover cloud sandboxes. For cloud network
+> decisions, see
 > [Cloud policy logs](../../../sandboxes/cloud/network-policy.md#inspect-network-policy).
 @y
 > [!NOTE]
 > Audit logs cover local sandboxes, the sandboxes that run on developers'
-> machines. Cloud delivery stores their audit records in the cloud. It
-> doesn't add cloud sandbox coverage. For cloud network decisions, see
+> machines. Audit logs don't cover cloud sandboxes. For cloud network
+> decisions, see
 > [Cloud policy logs](../../../sandboxes/cloud/network-policy.md#inspect-network-policy).
 @z
 

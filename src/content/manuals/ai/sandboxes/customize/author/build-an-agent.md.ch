@@ -118,13 +118,11 @@ before the extension so the build can find both files.
 @z
 
 @x
-This kit uses v3 and is independent of the built-in `claude` kit, which uses
-v2. Any mixins you add must also use v3. To customize the built-in kit, see
-[Kits v2](/manuals/ai/sandboxes/customize/kits-v2.md).
+This kit uses v3 and is independent of the built-in `claude` kit.
+Any mixins you add must also use v3.
 @y
-This kit uses v3 and is independent of the built-in `claude` kit, which uses
-v2. Any mixins you add must also use v3. To customize the built-in kit, see
-[Kits v2](manuals/ai/sandboxes/customize/kits-v2.md).
+This kit uses v3 and is independent of the built-in `claude` kit.
+Any mixins you add must also use v3.
 @z
 
 @x

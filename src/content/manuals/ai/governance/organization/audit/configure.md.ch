@@ -108,11 +108,9 @@ keep **Local disk** on.
 @z
 
 @x
-Docker Cloud keeps audit records searchable in the hosted audit log view for 90
-days, and in archive storage for 90 days.
+The **Audit delivery** page shows how long Docker Cloud retains audit records.
 @y
-Docker Cloud keeps audit records searchable in the hosted audit log view for 90
-days, and in archive storage for 90 days.
+The **Audit delivery** page shows how long Docker Cloud retains audit records.
 @z
 
 @x

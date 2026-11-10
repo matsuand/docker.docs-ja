@@ -860,11 +860,11 @@ Configure [cloud credentials](credentials.md) before adapting a local kit.
 @x
 Use `--kit-arg` or `--kit-args-file` with `sbx --cloud create` to pass
 arguments to kits supplied with `--kit`.
-For example, configure a v2 mixin that declares a `version` argument:
+For example, configure a mixin that declares a `version` argument:
 @y
 Use `--kit-arg` or `--kit-args-file` with `sbx --cloud create` to pass
 arguments to kits supplied with `--kit`.
-For example, configure a v2 mixin that declares a `version` argument:
+For example, configure a mixin that declares a `version` argument:
 @z
 
 @x
@@ -884,11 +884,11 @@ $ sbx --cloud create --name cloud-tools claude \
 @x
 Replace the kit reference and argument with those from your kit's
 documentation. The `company-cli` prefix targets the kit by its repository
-name. Built-in agents such as `claude` require v2 mixins.
+name.
 @y
 Replace the kit reference and argument with those from your kit's
 documentation. The `company-cli` prefix targets the kit by its repository
-name. Built-in agents such as `claude` require v2 mixins.
+name.
 @z
 
 @x

@@ -24,6 +24,14 @@ keywords: docker sandboxes, claude desktop, claude code, remote ssh, sbx
 @z
 
 @x
+These connection instructions use a local sandbox. For cloud SSH setup, see
+[Connect with SSH](../cloud/usage.md#connect-with-ssh).
+@y
+These connection instructions use a local sandbox. For cloud SSH setup, see
+[Connect with SSH](../cloud/usage.md#connect-with-ssh).
+@z
+
+@x
 Claude Desktop can run Claude Code on a remote machine over SSH. Point it at a
 sandbox so the agent works inside the isolated environment instead of on your
 host.
@@ -52,21 +60,39 @@ host.
 @z
 
 @x
+- Claude credentials configured in Docker Sandboxes. See
+  [Claude Code authentication](../agents/claude-code.md#authentication).
 - SSH access set up. See [Editor and app integrations](_index.md#enable-ssh-access).
 - Claude Desktop installed.
 @y
+- Claude credentials configured in Docker Sandboxes. See
+  [Claude Code authentication](../agents/claude-code.md#authentication).
 - SSH access set up. See [Editor and app integrations](_index.md#enable-ssh-access).
 - Claude Desktop installed.
 @z
 
 @x
 Use a sandbox created with the Claude agent type. The Claude sandbox template
-configures Anthropic credentials and network access for the remote Claude Code
-session.
+configures credential injection and network access for the remote Claude Code
+session. You must supply the credential before connecting.
 @y
 Use a sandbox created with the Claude agent type. The Claude sandbox template
-configures Anthropic credentials and network access for the remote Claude Code
-session.
+configures credential injection and network access for the remote Claude Code
+session. You must supply the credential before connecting.
+@z
+
+@x
+> [!WARNING]
+> Claude Desktop can write Anthropic credentials directly into the sandbox
+> during OAuth refresh. When this happens, requests use those credentials
+> instead of proxy credential injection. The credentials are exposed inside
+> the sandbox, reducing isolation guarantees.
+@y
+> [!WARNING]
+> Claude Desktop can write Anthropic credentials directly into the sandbox
+> during OAuth refresh. When this happens, requests use those credentials
+> instead of proxy credential injection. The credentials are exposed inside
+> the sandbox, reducing isolation guarantees.
 @z
 
 @x
@@ -76,15 +102,13 @@ session.
 @z
 
 @x
-> [!WARNING]
-> Connecting Claude Desktop to a sandbox over SSH transmits Anthropic
-> credentials into the Claude Code process within the sandbox, reducing
-> isolation guarantees.
+For a dedicated sandbox created on first connection, see
+[Set up desktop app connections](_index.md#set-up-desktop-app-connections).
+The following steps connect to a sandbox with a mounted host workspace.
 @y
-> [!WARNING]
-> Connecting Claude Desktop to a sandbox over SSH transmits Anthropic
-> credentials into the Claude Code process within the sandbox, reducing
-> isolation guarantees.
+For a dedicated sandbox created on first connection, see
+[Set up desktop app connections](_index.md#set-up-desktop-app-connections).
+The following steps connect to a sandbox with a mounted host workspace.
 @z
 
 @x
