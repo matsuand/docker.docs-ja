@@ -4,5 +4,5 @@
 @x
 title: Building
 @y
-title: Building
+title: ビルド
 @z
