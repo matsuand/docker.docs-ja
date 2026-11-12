@@ -752,21 +752,21 @@ for the application you containerized in the previous section. This includes:
 @z
 
 @x
-You can use containers to set up local services, like a database. In this section, you'll update the `docker-compose.yaml` file to define a database service and a volume to persist data. Also, this particular application uses a system property to define the database type, so you'll need to update the `Dockerfile` to pass in the system property when starting the app.
+You can use containers to set up local services, like a database. In this section, you'll update the `compose.yaml` file to define a database service and a volume to persist data. Also, this particular application uses a system property to define the database type, so you'll need to update the `Dockerfile` to pass in the system property when starting the app.
 @y
-You can use containers to set up local services, like a database. In this section, you'll update the `docker-compose.yaml` file to define a database service and a volume to persist data. Also, this particular application uses a system property to define the database type, so you'll need to update the `Dockerfile` to pass in the system property when starting the app.
+You can use containers to set up local services, like a database. In this section, you'll update the `compose.yaml` file to define a database service and a volume to persist data. Also, this particular application uses a system property to define the database type, so you'll need to update the `Dockerfile` to pass in the system property when starting the app.
 @z
 
 @x
-In the cloned repository's directory, open the `docker-compose.yaml` file in an IDE or text editor. Your Compose file has an example database service, but it'll require a few changes for your unique app.
+In the cloned repository's directory, open the `compose.yaml` file in an IDE or text editor. Your Compose file has an example database service, but it'll require a few changes for your unique app.
 @y
-In the cloned repository's directory, open the `docker-compose.yaml` file in an IDE or text editor. Your Compose file has an example database service, but it'll require a few changes for your unique app.
+In the cloned repository's directory, open the `compose.yaml` file in an IDE or text editor. Your Compose file has an example database service, but it'll require a few changes for your unique app.
 @z
 
 @x
-In the `docker-compose.yaml` file, you need to do the following:
+In the `compose.yaml` file, you need to do the following:
 @y
-In the `docker-compose.yaml` file, you need to do the following:
+In the `compose.yaml` file, you need to do the following:
 @z
 
 @x
@@ -804,9 +804,9 @@ In the `docker-compose.yaml` file, you need to do the following:
 @z
 
 @x
-The following is the updated `docker-compose.yaml` file. All comments have been removed.
+The following is the updated `compose.yaml` file. All comments have been removed.
 @y
-The following is the updated `docker-compose.yaml` file. All comments have been removed.
+The following is the updated `compose.yaml` file. All comments have been removed.
 @z
 
 @x
@@ -1110,9 +1110,9 @@ The current Compose file doesn't start your development container. To do that, y
 @z
 
 @x
-Open the `docker-compose.yaml` and add the following instructions into the file.
+Open the `compose.yaml` and add the following instructions into the file.
 @y
-Open the `docker-compose.yaml` and add the following instructions into the file.
+Open the `compose.yaml` and add the following instructions into the file.
 @z
 
 @x
@@ -1450,12 +1450,12 @@ edit and save your code. For more details about Compose Watch, see
 @z
 
 @x
-Open your `docker-compose.yaml` file in an IDE or text editor and then add the
-Compose Watch instructions. The following is the updated `docker-compose.yaml`
+Open your `compose.yaml` file in an IDE or text editor and then add the
+Compose Watch instructions. The following is the updated `compose.yaml`
 file.
 @y
-Open your `docker-compose.yaml` file in an IDE or text editor and then add the
-Compose Watch instructions. The following is the updated `docker-compose.yaml`
+Open your `compose.yaml` file in an IDE or text editor and then add the
+Compose Watch instructions. The following is the updated `compose.yaml`
 file.
 @z
 

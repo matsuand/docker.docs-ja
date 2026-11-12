@@ -224,6 +224,92 @@ you can't combine it with `--detach` or `--detach-keys`.
 @z
 
 @x
+## Pass arguments to an agent
+@y
+## Pass arguments to an agent
+@z
+
+@x
+Put agent flags, prompts, and subcommands after `--`. Options before `--`
+configure the sandbox; arguments after it go to the agent:
+@y
+Put agent flags, prompts, and subcommands after `--`. Options before `--`
+configure the sandbox; arguments after it go to the agent:
+@z
+
+@x
+```console
+$ sbx run claude -- "explain this project"
+$ sbx run claude -- --model sonnet
+$ sbx run --name my-project -- --model sonnet
+```
+@y
+```console
+$ sbx run claude -- "explain this project"
+$ sbx run claude -- --model sonnet
+$ sbx run --name my-project -- --model sonnet
+```
+@z
+
+@x
+With no forwarded arguments, the agent uses its default startup command.
+If the first forwarded argument is a flag (begins with `-`), the launcher
+keeps the defaults and adds your arguments. To keep a default permission
+flag when passing a prompt, put the flag first:
+@y
+With no forwarded arguments, the agent uses its default startup command.
+If the first forwarded argument is a flag (begins with `-`), the launcher
+keeps the defaults and adds your arguments. To keep a default permission
+flag when passing a prompt, put the flag first:
+@z
+
+@x
+```console
+$ sbx run codex -- --dangerously-bypass-approvals-and-sandbox "fix the build"
+```
+@y
+```console
+$ sbx run codex -- --dangerously-bypass-approvals-and-sandbox "fix the build"
+```
+@z
+
+@x
+If you start with a prompt or subcommand, it replaces the default command
+arguments (`CMD`), but keeps the image's entrypoint arguments (`ENTRYPOINT`).
+If the entrypoint includes a subcommand, pass your prompt without repeating
+that subcommand.
+@y
+If you start with a prompt or subcommand, it replaces the default command
+arguments (`CMD`), but keeps the image's entrypoint arguments (`ENTRYPOINT`).
+If the entrypoint includes a subcommand, pass your prompt without repeating
+that subcommand.
+@z
+
+@x
+To run a different subcommand without the agent's startup defaults, run the
+agent directly in a running sandbox with `sbx exec`. For example:
+@y
+To run a different subcommand without the agent's startup defaults, run the
+agent directly in a running sandbox with `sbx exec`. For example:
+@z
+
+@x
+```console
+$ sbx exec -it <sandbox-name> <agent> <subcommand>
+```
+@y
+```console
+$ sbx exec -it <sandbox-name> <agent> <subcommand>
+```
+@z
+
+@x
+See the [agent pages](agents/) for startup commands and agent-specific options.
+@y
+See the [agent pages](agents/) for startup commands and agent-specific options.
+@z
+
+@x
 ## Choose a workspace
 @y
 ## Choose a workspace
@@ -671,10 +757,14 @@ a mountless sandbox, it starts in the container image's working directory.
 
 @x
 `sbx exec` runs commands in the foreground. Detached execution (`-d` or
-`--detach`) isn't supported.
+`--detach`) isn't supported. Local `sbx exec` and `sbx env exec` also reject
+`--detach-keys`. Omit this flag for local commands; it applies only to
+interactive cloud exec sessions.
 @y
 `sbx exec` runs commands in the foreground. Detached execution (`-d` or
-`--detach`) isn't supported.
+`--detach`) isn't supported. Local `sbx exec` and `sbx env exec` also reject
+`--detach-keys`. Omit this flag for local commands; it applies only to
+interactive cloud exec sessions.
 @z
 
 @x
@@ -1276,9 +1366,9 @@ $ sbx run -t my-template:v1 claude
 @z
 
 @x
-List all saved templates:
+List tagged template images in the sandbox runtime's local image store:
 @y
-List all saved templates:
+List tagged template images in the sandbox runtime's local image store:
 @z
 
 @x
@@ -1305,6 +1395,62 @@ $ sbx template rm my-template:v1
 ```console
 $ sbx template rm my-template:v1
 ```
+@z
+
+@x
+If a local image you want to remove doesn't appear in the default listing,
+it may have no tag. Include images without tags and show their digests:
+@y
+If a local image you want to remove doesn't appear in the default listing,
+it may have no tag. Include images without tags and show their digests:
+@z
+
+@x
+```console
+$ sbx template ls --all --digests
+```
+@y
+```console
+$ sbx template ls --all --digests
+```
+@z
+
+@x
+Remove the image using its image ID or repository digest from the listing:
+@y
+Remove the image using its image ID or repository digest from the listing:
+@z
+
+@x
+```console
+$ sbx template rm <IMAGE_ID>
+```
+@y
+```console
+$ sbx template rm <IMAGE_ID>
+```
+@z
+
+@x
+```console
+$ sbx template rm <REPOSITORY>@sha256:<DIGEST>
+```
+@y
+```console
+$ sbx template rm <REPOSITORY>@sha256:<DIGEST>
+```
+@z
+
+@x
+You can use a prefix of an image ID as long as it uniquely identifies a template.
+The `--all` and `--digests` flags apply only to local templates. For all listing
+options, see the
+[`sbx template ls` reference](/reference/cli/sbx/template/ls/).
+@y
+You can use a prefix of an image ID as long as it uniquely identifies a template.
+The `--all` and `--digests` flags apply only to local templates. For all listing
+options, see the
+[`sbx template ls` reference](__SUBDIR__/reference/cli/sbx/template/ls/).
 @z
 
 @x

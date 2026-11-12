@@ -20,7 +20,7 @@ description: |-
     kept, and MCP processes already running in sandbox gateways are not stopped.
     For an untrusted registration, first stop the selected daemon; this interrupts
     all of its sandbox gateways. A later approved env run can register a declared
-    server again.
+    server again. Use --sandbox to select an environment-owned registration.
 @y
     Use --registration-only to remove the local registration without starting the
     daemon or accessing credentials. This also removes the registration's saved
@@ -28,7 +28,7 @@ description: |-
     kept, and MCP processes already running in sandbox gateways are not stopped.
     For an untrusted registration, first stop the selected daemon; this interrupts
     all of its sandbox gateways. A later approved env run can register a declared
-    server again.
+    server again. Use --sandbox to select an environment-owned registration.
 @z
 
 @x
@@ -59,6 +59,12 @@ usage: sbx mcp rm NAME [flags]
         Remove only the local registration without starting the daemon; keep credentials and running MCP processes
 @z
 
+@x sandbox
+      usage: Owning sandbox (requires --registration-only)
+@y
+      usage: Owning sandbox (requires --registration-only)
+@z
+
 % inherited_options:
 
 @x cloud
@@ -79,10 +85,12 @@ usage: sbx mcp rm NAME [flags]
 example: |4-
       sbx mcp rm notion
       sbx mcp rm --registration-only notion
+      sbx mcp rm --registration-only notion --sandbox my-sbx
 @y
 example: |4-
       sbx mcp rm notion
       sbx mcp rm --registration-only notion
+      sbx mcp rm --registration-only notion --sandbox my-sbx
 @z
 
 % see_also:

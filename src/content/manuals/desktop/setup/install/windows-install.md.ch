@@ -72,7 +72,7 @@ Docker Desktop supports two installation modes. Per-user installation is recomme
 | Registry keys | Current User (HKCU) | Local Machine (HKLM) |
 | Admin rights to install | Not required | Required |
 | Admin rights to update | Not required | Required |
-| Linux containers backend | WSL 2 or Docker VMM | WSL 2, Hyper-V, or Docker VMM |
+| Linux containers backend | WSL 2 or Docker VMM (Beta) | WSL 2, Hyper-V, or Docker VMM (Beta) |
 | Windows containers | Not supported | Supported |
 | Security | Smaller attack surface; no privileged system service installed | Requires privileged system service; broader access to host resources |
 @y
@@ -82,7 +82,7 @@ Docker Desktop supports two installation modes. Per-user installation is recomme
 | Registry keys | Current User (HKCU) | Local Machine (HKLM) |
 | Admin rights to install | Not required | Required |
 | Admin rights to update | Not required | Required |
-| Linux containers backend | WSL 2 or Docker VMM | WSL 2, Hyper-V, or Docker VMM |
+| Linux containers backend | WSL 2 or Docker VMM (Beta) | WSL 2, Hyper-V, or Docker VMM (Beta) |
 | Windows containers | Not supported | Supported |
 | Security | Smaller attack surface; no privileged system service installed | Requires privileged system service; broader access to host resources |
 @z
@@ -246,6 +246,42 @@ Docker Desktop を用いる際の WSL 2 の設定に関する詳細は [WSL](man
 
 @x
 {{< /tab >}}
+{{< tab name="Docker VMM backend, x86_64 (Beta)" >}}
+@y
+{{< /tab >}}
+{{< tab name="Docker VMM backend, x86_64 (Beta)" >}}
+@z
+
+@x
+- The same Windows versions as the WSL 2 backend.
+- The **Windows Hypervisor Platform** and **Virtual Machine Platform** Windows
+  features turned on. The all-users installer turns them on for you, and might
+  ask you to restart Windows. A per-user installation can't turn on Windows
+  Hypervisor Platform, so an administrator must turn it on first.
+- Hardware virtualization enabled in BIOS/UEFI. Inside a virtual machine, the
+  host must expose nested virtualization.
+- Docker VMM doesn't require the Hyper-V feature, and isn't supported on Arm. On
+  Arm, the installer uses WSL 2 instead.
+@y
+- The same Windows versions as the WSL 2 backend.
+- The **Windows Hypervisor Platform** and **Virtual Machine Platform** Windows
+  features turned on. The all-users installer turns them on for you, and might
+  ask you to restart Windows. A per-user installation can't turn on Windows
+  Hypervisor Platform, so an administrator must turn it on first.
+- Hardware virtualization enabled in BIOS/UEFI. Inside a virtual machine, the
+  host must expose nested virtualization.
+- Docker VMM doesn't require the Hyper-V feature, and isn't supported on Arm. On
+  Arm, the installer uses WSL 2 instead.
+@z
+
+@x
+For more information, see [Virtual Machine Manager](/manuals/desktop/features/vmm.md).
+@y
+For more information, see [Virtual Machine Manager](/manuals/desktop/features/vmm.md).
+@z
+
+@x
+{{< /tab >}}
 {{< tab name="WSL 2 backend, Arm (Early Access)" >}}
 @y
 {{< /tab >}}
@@ -365,9 +401,9 @@ Docker Desktop を VMware ESXi あるいは Azure VM において動作させる
 @z
 
 @x
-    With version 4.97 and later, the **Configuration** page lists the backends as options. Per-user installation offers WSL 2 and Docker VMM (Beta). All-users installation offers WSL 2 and Hyper-V.
+    With version 4.97 and later, the **Configuration** page lists the backends as options. Per-user installation offers WSL 2 and Docker VMM (Beta). All-users installation offers WSL 2, Hyper-V, and Docker VMM (Beta).
 @y
-    With version 4.97 and later, the **Configuration** page lists the backends as options. Per-user installation offers WSL 2 and Docker VMM (Beta). All-users installation offers WSL 2 and Hyper-V.
+    With version 4.97 and later, the **Configuration** page lists the backends as options. Per-user installation offers WSL 2 and Docker VMM (Beta). All-users installation offers WSL 2, Hyper-V, and Docker VMM (Beta).
 @z
 
 @x
@@ -643,7 +679,7 @@ If Microsoft Store access is blocked due to security policies:
 - `--quiet`: Suppresses information output when running the installer 
 - `--accept-license`: Accepts the [Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement) now, rather than requiring it to be accepted when the application is first run
 - `--installation-dir=<path>`: Changes the default installation location (`C:\Program Files\Docker\Docker`)
-- `--backend=<backend name>`: Selects the default backend to use for Docker Desktop: `wsl-2` (default), `hyper-v`, `windows`, or `docker-vmm`. With version 4.97 and later, `docker-vmm` can be combined with the `--user` flag. `hyper-v` and `windows` can't be combined with `--user`.
+- `--backend=<backend name>`: Selects the default backend to use for Docker Desktop: `wsl-2` (default), `hyper-v`, `windows`, or `docker-vmm` (Beta, x86_64 only). With version 4.97 and later, `docker-vmm` can be combined with the `--user` flag. `hyper-v` and `windows` can't be combined with `--user`.
 - `--always-run-service`: After installation completes, starts `com.docker.service` and sets the service startup type to Automatic. This circumvents the need for administrator privileges, which are otherwise necessary to start `com.docker.service`. `com.docker.service` is required by Windows containers and Hyper-V backend.
 @y
 - `--user`: Docker Desktop を個別ユーザーモードで `%LOCALAPPDATA%\Programs\DockerDesktop` にインストールします。この場合は管理者権限を必要としません。たいていはこのモードが推奨されます。詳しくは [インストールモード](#installation-modes) を参照してください。
@@ -651,7 +687,7 @@ If Microsoft Store access is blocked due to security policies:
 - `--accept-license`: [Docker サブスクリプションサービス契約](https://www.docker.com/legal/docker-subscription-service-agreement) をここで受け入れます。これを行わない場合は、アプリケーションの初回起動時に行うことになります。
 - `--installation-dir=<パス>`: デフォルトのインストール先 (`C:\Program Files\Docker\Docker`) を変更します。
 - `--backend=<バックエンド名>`: Docker Desktop が利用するデフォルトのバックエンドを指定します。
-  `wsl-2` (デフォルト)、`hyper-v`、`windows`、`docker-vmm` のいずれか。
+  `wsl-2` (デフォルト)、`hyper-v`、`windows`、`docker-vmm` (ベータ、x86_64 のみ) のいずれか。
   バージョン 4.97 またはそれ以降の場合、`docker-vmm` は `--user` フラグと併用できます。
   また `hyper-v` と `windows` は `--user` フラグと併用できます。
 - `--always-run-service`: インストール完了後に `com.docker.service` を起動し、このサービスの起動タイプを Automatic (自動) に設定します。

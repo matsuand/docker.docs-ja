@@ -176,11 +176,11 @@ The store backing `sbx secret set` depends on your operating system:
 @z
 
 @x
-The Ubuntu package depends on GNOME Keyring, so a standard desktop install
-needs no extra setup.
+The Ubuntu package recommends GNOME Keyring and installs it by default. You can
+omit GNOME Keyring when installing the package on hosts without a desktop keyring.
 @y
-The Ubuntu package depends on GNOME Keyring, so a standard desktop install
-needs no extra setup.
+The Ubuntu package recommends GNOME Keyring and installs it by default. You can
+omit GNOME Keyring when installing the package on hosts without a desktop keyring.
 @z
 
 @x
@@ -353,10 +353,28 @@ $ sbx secret set openai \
 
 @x
 The corresponding `op` or `aws` CLI must be installed and authenticated on the
-host.
+host, with its installation directory listed as an absolute path in the host's
+`PATH`. Built-in reference providers ignore empty and relative `PATH` entries.
 @y
 The corresponding `op` or `aws` CLI must be installed and authenticated on the
-host.
+host, with its installation directory listed as an absolute path in the host's
+`PATH`. Built-in reference providers ignore empty and relative `PATH` entries.
+@z
+
+@x
+Each reference resolution runs the provider CLI in a fresh temporary directory
+on the host, outside the project directory. Use absolute paths for any provider
+configuration files you specify. If you use a version manager such as asdf or
+mise, configure the provider version globally rather than relying on a
+project-only selection. Keep provider tools, their dependencies, and the host's
+temporary directory outside writable sandbox mounts.
+@y
+Each reference resolution runs the provider CLI in a fresh temporary directory
+on the host, outside the project directory. Use absolute paths for any provider
+configuration files you specify. If you use a version manager such as asdf or
+mise, configure the provider version globally rather than relying on a
+project-only selection. Keep provider tools, their dependencies, and the host's
+temporary directory outside writable sandbox mounts.
 @z
 
 @x
@@ -568,7 +586,7 @@ reads and the API domains the proxy injects credentials into:
 | `cursor`     | `CURSOR_API_KEY`                   | `api2.cursor.sh`, `api3.cursor.sh`, `repo42.cursor.sh`, `cursor.com`                                                          |
 | `droid`      | `FACTORY_API_KEY`                  | `api.factory.ai`, `app.factory.ai`, `relay.factory.ai`                                                                        |
 | `github`     | `GH_TOKEN`, `GITHUB_TOKEN`         | `api.github.com`, `github.com`, `raw.githubusercontent.com`, `gist.github.com`, `copilot.github.com`, `api.githubcopilot.com` |
-| `google`     | `GEMINI_API_KEY`, `GOOGLE_API_KEY` | `generativelanguage.googleapis.com`, `oauth2.googleapis.com`, `aiplatform.googleapis.com`, `vertexai.googleapis.com`          |
+| `google`     | `GOOGLE_API_KEY`                   | `generativelanguage.googleapis.com`, `oauth2.googleapis.com`, `aiplatform.googleapis.com`, `vertexai.googleapis.com`          |
 | `groq`       | `GROQ_API_KEY`                     | `api.groq.com`                                                                                                                |
 | `mistral`    | `MISTRAL_API_KEY`                  | `api.mistral.ai`                                                                                                              |
 | `nebius`     | `NEBIUS_API_KEY`                   | `api.studio.nebius.com`, `api.tokenfactory.nebius.com`                                                                        |
@@ -582,7 +600,7 @@ reads and the API domains the proxy injects credentials into:
 | `cursor`     | `CURSOR_API_KEY`                   | `api2.cursor.sh`, `api3.cursor.sh`, `repo42.cursor.sh`, `cursor.com`                                                          |
 | `droid`      | `FACTORY_API_KEY`                  | `api.factory.ai`, `app.factory.ai`, `relay.factory.ai`                                                                        |
 | `github`     | `GH_TOKEN`, `GITHUB_TOKEN`         | `api.github.com`, `github.com`, `raw.githubusercontent.com`, `gist.github.com`, `copilot.github.com`, `api.githubcopilot.com` |
-| `google`     | `GEMINI_API_KEY`, `GOOGLE_API_KEY` | `generativelanguage.googleapis.com`, `oauth2.googleapis.com`, `aiplatform.googleapis.com`, `vertexai.googleapis.com`          |
+| `google`     | `GOOGLE_API_KEY`                   | `generativelanguage.googleapis.com`, `oauth2.googleapis.com`, `aiplatform.googleapis.com`, `vertexai.googleapis.com`          |
 | `groq`       | `GROQ_API_KEY`                     | `api.groq.com`                                                                                                                |
 | `mistral`    | `MISTRAL_API_KEY`                  | `api.mistral.ai`                                                                                                              |
 | `nebius`     | `NEBIUS_API_KEY`                   | `api.studio.nebius.com`, `api.tokenfactory.nebius.com`                                                                        |
@@ -1123,6 +1141,60 @@ Inside the sandbox, `API_KEY` is set to a generated placeholder (for example,
 configured hosts and the placeholder appears in an HTTP request header, the
 proxy replaces it with the real value. Replacement applies only to HTTP request
 headers, not request bodies. The agent never sees the real secret.
+@z
+
+@x
+### List custom secrets
+@y
+### List custom secrets
+@z
+
+@x
+To find stored custom secrets by host, use `--host`:
+@y
+To find stored custom secrets by host, use `--host`:
+@z
+
+@x
+```console
+$ sbx secret ls --host api.example.com
+```
+@y
+```console
+$ sbx secret ls --host api.example.com
+```
+@z
+
+@x
+To filter by environment variable name, use `--env-name`:
+@y
+To filter by environment variable name, use `--env-name`:
+@z
+
+@x
+```console
+$ sbx secret ls --env-name API_KEY
+```
+@y
+```console
+$ sbx secret ls --env-name API_KEY
+```
+@z
+
+@x
+Add `--sandbox` to list only matching secrets stored for a specific sandbox:
+@y
+Add `--sandbox` to list only matching secrets stored for a specific sandbox:
+@z
+
+@x
+```console
+$ sbx secret ls --host api.example.com --sandbox my-sandbox
+```
+@y
+```console
+$ sbx secret ls --host api.example.com --sandbox my-sandbox
+```
 @z
 
 @x

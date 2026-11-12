@@ -220,11 +220,23 @@ $ sbx run "git+https://github.com/<ORG>/<REPOSITORY>.git#ref=<COMMIT>&dir=my-age
 @x
 `sbx` pulls published images and builds local or Git sources when creating
 the sandbox. Builds with unchanged source content and supplied kit arguments
-reuse cached results.
+reuse cached results while they remain available.
 @y
 `sbx` pulls published images and builds local or Git sources when creating
 the sandbox. Builds with unchanged source content and supplied kit arguments
-reuse cached results.
+reuse cached results while they remain available.
+@z
+
+@x
+Unused source-kit build images are eligible for automatic cleanup after seven
+days without references. Images referenced by existing sandboxes or saved
+templates are kept. On later use, a collected build may need to be restored
+or rebuilt, even if its sources and arguments are unchanged.
+@y
+Unused source-kit build images are eligible for automatic cleanup after seven
+days without references. Images referenced by existing sandboxes or saved
+templates are kept. On later use, a collected build may need to be restored
+or rebuilt, even if its sources and arguments are unchanged.
 @z
 
 @x
@@ -365,7 +377,17 @@ For example, an internal CLI mixin can package your company's executable
 along with network rules and a credential request for its API:
 @z
 
-% snip command...
+@x
+```console
+$ sbx run codex --name codex-tools \
+    --kit docker.io/<NAMESPACE>/company-cli:1.0.0
+```
+@y
+```console
+$ sbx run codex --name codex-tools \
+    --kit docker.io/<NAMESPACE>/company-cli:1.0.0
+```
+@z
 
 @x
 Replace the mixin reference with one your organization has published.

@@ -7,8 +7,8 @@
 title: Company accounts
 linkTitle: Company
 @y
-title: Company accounts
-linkTitle: Company
+title: 企業アカウント
+linkTitle: 企業
 @z
 
 @x
@@ -26,25 +26,25 @@ keywords: company, multiple organizations, Docker Home, Docker Business,
 % grid:
 
 @x
-  - title: Create a company
-    description: Get started by learning how to create a company.
+  - title: Set up a company
+    description: Create a company, invite members, add organizations, and manage owners.
     icon: building-office-2
     link: /accounts/company/new-company/
 @y
-  - title: Create a company
-    description: Get started by learning how to create a company.
+  - title: Set up a company
+    description: Create a company, invite members, add organizations, and manage owners.
     icon: building-office-2
-    link: /accounts/company/new-company/
+    link: __SUBDIR__/accounts/company/new-company/
 @z
 
 @x
   - title: Manage your company
-    description: Add organizations, manage company owners, and invite members.
+    description: Change roles, remove users, and export a member list.
     icon: building-storefront
     link: /accounts/company/manage/
 @y
   - title: Manage your company
-    description: Add organizations, manage company owners, and invite members.
+    description: Change roles, remove users, and export a member list.
     icon: building-storefront
     link: __SUBDIR__/accounts/company/manage/
 @z
@@ -79,7 +79,7 @@ keywords: company, multiple organizations, Docker Home, Docker Business,
     link: /faqs/accounts/
     icon: question-mark-circle
 @y
-  - title: FAQs
+  - title: FAQ
     description: Explore frequently asked questions about companies.
     link: __SUBDIR__/faqs/accounts/
     icon: question-mark-circle
@@ -133,47 +133,7 @@ The following diagram shows that hierarchy:
 The following diagram shows that hierarchy:
 @z
 
-@x
-```mermaid {title="Company structure" caption="Company owners manage a company that contains one or more organizations."}
-flowchart TB
-  co(("Company owners")) -.->|"manage"| C
-  subgraph C["Company"]
-    direction TB
-    subgraph O1["Organization A"]
-      direction TB
-      m1(("Members"))
-      r1[("Repositories")]
-    end
-    subgraph O2["Organization B"]
-      direction TB
-      m2(("Members"))
-      r2[("Repositories")]
-    end
-    O1 ~~~ O2
-  end
-  style C fill:#3b82f622,stroke:#3b82f6
-```
-@y
-```mermaid {title="Company structure" caption="Company owners manage a company that contains one or more organizations."}
-flowchart TB
-  co(("Company owners")) -.->|"manage"| C
-  subgraph C["Company"]
-    direction TB
-    subgraph O1["Organization A"]
-      direction TB
-      m1(("Members"))
-      r1[("Repositories")]
-    end
-    subgraph O2["Organization B"]
-      direction TB
-      m2(("Members"))
-      r2[("Repositories")]
-    end
-    O1 ~~~ O2
-  end
-  style C fill:#3b82f622,stroke:#3b82f6
-```
-@z
+% snip code...
 
 @x
 ## What a company lets you do
@@ -224,9 +184,9 @@ who is not an organization member does not occupy a seat.
 @z
 
 @x
-Learn how to create and manage a company in the following sections.
+Set up the company, then manage members and access from the pages below.
 @y
-Learn how to create and manage a company in the following sections.
+Set up the company, then manage members and access from the pages below.
 @z
 
 @x

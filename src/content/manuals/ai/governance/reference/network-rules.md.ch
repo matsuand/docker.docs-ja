@@ -108,7 +108,17 @@ for a local one.
 @z
 
 @x
-Path patterns follow the same wildcard rules as filesystem paths, where `*`
+HTTP path matching ignores ASCII letter case: `/API/**` matches `/api/items`.
+Non-ASCII characters remain case-sensitive. This applies to both allow and deny
+rules.
+@y
+HTTP path matching ignores ASCII letter case: `/API/**` matches `/api/items`.
+Non-ASCII characters remain case-sensitive. This applies to both allow and deny
+rules.
+@z
+
+@x
+Path patterns use the same wildcards as filesystem paths, where `*`
 matches within one path segment and `**` matches any depth. A pattern without a
 wildcard matches that path exactly, so `/repos` matches `/repos` and nothing
 below it. Every pattern must start with `/` and can't contain a query string, a
@@ -116,7 +126,7 @@ fragment, or a `..` segment. A local rule's path must also be canonical, so it
 can't contain percent-encoding, control characters, surrounding whitespace,
 repeated or trailing slashes, or a `.` segment.
 @y
-Path patterns follow the same wildcard rules as filesystem paths, where `*`
+Path patterns use the same wildcards as filesystem paths, where `*`
 matches within one path segment and `**` matches any depth. A pattern without a
 wildcard matches that path exactly, so `/repos` matches `/repos` and nothing
 below it. Every pattern must start with `/` and can't contain a query string, a
@@ -140,12 +150,14 @@ An HTTP rule can also restrict query parameters independently of the path.
 @x
 Use exact parameter names and values, or a single `*` at the start or end of a
 value to match a suffix or prefix. A value of `*` matches any value, including
-an empty one. Names cannot contain wildcards. Names and values are
+an empty one. Names cannot contain wildcards. Names and values ignore ASCII
+letter case, so `Tag=PROD` matches `tag=prod`. Non-ASCII characters remain
 case-sensitive.
 @y
 Use exact parameter names and values, or a single `*` at the start or end of a
 value to match a suffix or prefix. A value of `*` matches any value, including
-an empty one. Names cannot contain wildcards. Names and values are
+an empty one. Names cannot contain wildcards. Names and values ignore ASCII
+letter case, so `Tag=PROD` matches `tag=prod`. Non-ASCII characters remain
 case-sensitive.
 @z
 
@@ -261,6 +273,12 @@ ICMP is blocked.
 ### Hostname patterns
 @y
 ### Hostname patterns
+@z
+
+@x
+Hostname matching is case-insensitive: `EXAMPLE.com` matches `example.com`.
+@y
+Hostname matching is case-insensitive: `EXAMPLE.com` matches `example.com`.
 @z
 
 @x

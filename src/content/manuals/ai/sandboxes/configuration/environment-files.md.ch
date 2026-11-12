@@ -431,14 +431,18 @@ separate `sbxenv.yaml` in either project.
 
 @x
 If the project has a `sbxenv.yaml`, `sbx` combines it with your user defaults.
-Project settings override individual default values. Lists such as `ports`
-and `mcp.servers` combine entries from both files. If you pass a file or
-directory path to the command, `sbx` skips `~/.sbxenv.yaml`.
+Project settings override individual default values. Lists combine entries
+from both files, with matching ports, MCP server names, and additional workspace
+targets using the project entry. See the
+[merge rules](#combine-team-defaults-and-personal-settings) for details. If you
+pass a file or directory path to the command, `sbx` skips `~/.sbxenv.yaml`.
 @y
 If the project has a `sbxenv.yaml`, `sbx` combines it with your user defaults.
-Project settings override individual default values. Lists such as `ports`
-and `mcp.servers` combine entries from both files. If you pass a file or
-directory path to the command, `sbx` skips `~/.sbxenv.yaml`.
+Project settings override individual default values. Lists combine entries
+from both files, with matching ports, MCP server names, and additional workspace
+targets using the project entry. See the
+[merge rules](#combine-team-defaults-and-personal-settings) for details. If you
+pass a file or directory path to the command, `sbx` skips `~/.sbxenv.yaml`.
 @z
 
 @x
@@ -1040,17 +1044,159 @@ $ sbx env run base.sbxenv.yaml local.sbxenv.yaml
 @z
 
 @x
-Nested mappings merge by key, lists concatenate except for `entrypoint` and
-`cmd`, and values from later files replace earlier scalar values. In this
-example, the sandbox has four CPUs,
-12 GB of memory, and both environment variables. Each relative workspace path
-resolves from the directory of the file that declares it.
+In this example, the sandbox has four CPUs, 12 GB of memory, and both
+environment variables. Each relative workspace path resolves from the directory
+of the file that declares it.
 @y
-Nested mappings merge by key, lists concatenate except for `entrypoint` and
-`cmd`, and values from later files replace earlier scalar values. In this
-example, the sandbox has four CPUs,
-12 GB of memory, and both environment variables. Each relative workspace path
-resolves from the directory of the file that declares it.
+In this example, the sandbox has four CPUs, 12 GB of memory, and both
+environment variables. Each relative workspace path resolves from the directory
+of the file that declares it.
+@z
+
+@x
+#### Merge rules
+@y
+#### Merge rules
+@z
+
+@x
+Files merge in the order you pass them. Later scalar values override earlier
+values, while nested mappings combine by key. Most lists append entries from each file.
+The exceptions are:
+@y
+Files merge in the order you pass them. Later scalar values override earlier
+values, while nested mappings combine by key. Most lists append entries from each file.
+The exceptions are:
+@z
+
+@x
+- `ports`, `mcp.servers`, and `additionalWorkspaces`: matching entries use the
+  last entry, as described in [Override a list entry](#override-a-list-entry).
+- `kits`: entries with the same source merge their arguments by key. Later
+  argument values take precedence; other arguments are preserved.
+- `entrypoint` and `cmd`: later lists replace earlier lists. See
+  [Set the launch command](#set-the-launch-command) for inheritance and clearing.
+@y
+- `ports`, `mcp.servers`, and `additionalWorkspaces`: matching entries use the
+  last entry, as described in [Override a list entry](#override-a-list-entry).
+- `kits`: entries with the same source merge their arguments by key. Later
+  argument values take precedence; other arguments are preserved.
+- `entrypoint` and `cmd`: later lists replace earlier lists. See
+  [Set the launch command](#set-the-launch-command) for inheritance and clearing.
+@z
+
+@x
+#### Override a list entry
+@y
+#### Override a list entry
+@z
+
+@x
+To override a port, MCP server, or additional workspace, declare a matching
+entry later in the file or in a later file. The last entry replaces the whole
+earlier entry and keeps its first position in the list. Entries that don't
+match are kept as separate entries.
+@y
+To override a port, MCP server, or additional workspace, declare a matching
+entry later in the file or in a later file. The last entry replaces the whole
+earlier entry and keeps its first position in the list. Entries that don't
+match are kept as separate entries.
+@z
+
+@x
+For example, change the host port for sandbox port `8080` in your personal
+settings:
+@y
+For example, change the host port for sandbox port `8080` in your personal
+settings:
+@z
+
+@x
+```yaml
+# base.sbxenv.yaml
+ports:
+  - sandbox: 8080
+    host: 3000
+```
+@y
+```yaml
+# base.sbxenv.yaml
+ports:
+  - sandbox: 8080
+    host: 3000
+```
+@z
+
+@x
+```yaml
+# local.sbxenv.yaml
+ports:
+  - sandbox: 8080
+    host: 4000
+```
+@y
+```yaml
+# local.sbxenv.yaml
+ports:
+  - sandbox: 8080
+    host: 4000
+```
+@z
+
+@x
+With `base.sbxenv.yaml` loaded first, the result is one port entry that publishes
+sandbox port `8080` on host port `4000`.
+@y
+With `base.sbxenv.yaml` loaded first, the result is one port entry that publishes
+sandbox port `8080` on host port `4000`.
+@z
+
+@x
+Include every field you want to keep in the replacement. Omitted fields use
+their defaults: omitting `host` in this example selects an ephemeral host port.
+Similarly, omitting `readOnly` from a replacement workspace makes it writable.
+@y
+Include every field you want to keep in the replacement. Omitted fields use
+their defaults: omitting `host` in this example selects an ephemeral host port.
+Similarly, omitting `readOnly` from a replacement workspace makes it writable.
+@z
+
+@x
+`sbx` uses these fields to decide whether entries match:
+@y
+`sbx` uses these fields to decide whether entries match:
+@z
+
+@x
+| List | Matching fields |
+| --- | --- |
+| `ports` | Sandbox port and effective protocol |
+| `mcp.servers` | Exact server name |
+| `additionalWorkspaces` | Container target: the explicit `target`, or the resolved host path when `target` is omitted |
+@y
+| List | Matching fields |
+| --- | --- |
+| `ports` | Sandbox port and effective protocol |
+| `mcp.servers` | Exact server name |
+| `additionalWorkspaces` | Container target: the explicit `target`, or the resolved host path when `target` is omitted |
+@z
+
+@x
+Port protocol names are case-insensitive. An omitted protocol uses `tcp4`, or
+`tcp6` for an IPv6 `hostIP`. Different protocols, such as `tcp` and `tcp4`,
+remain separate.
+@y
+Port protocol names are case-insensitive. An omitted protocol uses `tcp4`, or
+`tcp6` for an IPv6 `hostIP`. Different protocols, such as `tcp` and `tcp4`,
+remain separate.
+@z
+
+@x
+On macOS, an implicit workspace target uses the stored host-path casing when
+available. Explicit targets remain case-sensitive.
+@y
+On macOS, an implicit workspace target uses the stored host-path casing when
+available. Explicit targets remain case-sensitive.
 @z
 
 @x
@@ -2188,6 +2334,18 @@ outside writable sandbox mounts. Use an absolute path, an absolute host
 @z
 
 @x
+Built-in 1Password and AWS Secrets Manager references also run from a temporary
+directory and require provider tools in absolute host `PATH` directories. See
+[dynamic secret sources](credentials.md#use-a-dynamic-secret-source) for provider
+configuration requirements.
+@y
+Built-in 1Password and AWS Secrets Manager references also run from a temporary
+directory and require provider tools in absolute host `PATH` directories. See
+[dynamic secret sources](credentials.md#use-a-dynamic-secret-source) for provider
+configuration requirements.
+@z
+
+@x
 For a cloud environment, set `snapshot: true` on a `ref` or `command` source:
 @y
 For a cloud environment, set `snapshot: true` on a `ref` or `command` source:
@@ -2440,13 +2598,47 @@ $ sbx mcp rm --registration-only -- <SERVER_NAME>
 @z
 
 @x
+When the name is shared by multiple sandbox-owned registrations, select the
+owning sandbox with `--sandbox`:
+@y
+When the name is shared by multiple sandbox-owned registrations, select the
+owning sandbox with `--sandbox`:
+@z
+
+@x
+```console
+$ sbx daemon stop
+$ sbx mcp rm --registration-only --sandbox <SANDBOX_NAME> -- <SERVER_NAME>
+```
+@y
+```console
+$ sbx daemon stop
+$ sbx mcp rm --registration-only --sandbox <SANDBOX_NAME> -- <SERVER_NAME>
+```
+@z
+
+@x
+This removes only the selected sandbox's registration, including a damaged
+sandbox-scoped record, and preserves other owners' registrations. Sandbox
+selection requires valid, readable ownership metadata for an unscoped record;
+`--sandbox` cannot recover a damaged unscoped record.
+@y
+This removes only the selected sandbox's registration, including a damaged
+sandbox-scoped record, and preserves other owners' registrations. Sandbox
+selection requires valid, readable ownership metadata for an unscoped record;
+`--sandbox` cannot recover a damaged unscoped record.
+@z
+
+@x
 Stopping the daemon interrupts its sandbox gateways. Registration-only removal
-does not delete saved credentials. Apply the environment again to register and
-approve the command for its sandbox.
+does not delete saved credentials or stop MCP processes that are already
+running. Apply the environment again to register and approve the command for
+its sandbox.
 @y
 Stopping the daemon interrupts its sandbox gateways. Registration-only removal
-does not delete saved credentials. Apply the environment again to register and
-approve the command for its sandbox.
+does not delete saved credentials or stop MCP processes that are already
+running. Apply the environment again to register and approve the command for
+its sandbox.
 @z
 
 @x

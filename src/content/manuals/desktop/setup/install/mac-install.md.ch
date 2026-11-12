@@ -85,9 +85,11 @@ This page provides download links, system requirements, and step-by-step install
 
 @x
 - At least 4 GB of RAM.
+- Optional: Docker VMM (Beta) is available on Apple silicon. For more information, see [Virtual Machine Manager](/manuals/desktop/features/vmm.md).
 - For the best experience, it's recommended that you install Rosetta 2. Rosetta 2 is no longer strictly required, however there are a few optional command line tools that still require Rosetta 2 when using Darwin/AMD64. To install Rosetta 2 manually from the command line, run the following command:
 @y
 - At least 4 GB of RAM.
+- Optional: Docker VMM (Beta) is available on Apple silicon. For more information, see [Virtual Machine Manager](manuals/desktop/features/vmm.md).
 - For the best experience, it's recommended that you install Rosetta 2. Rosetta 2 is no longer strictly required, however there are a few optional command line tools that still require Rosetta 2 when using Darwin/AMD64. To install Rosetta 2 manually from the command line, run the following command:
 @z
 
@@ -315,11 +317,11 @@ The `install` command accepts the following flags:
 @x
 - `--accept-license`: Accepts the [Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement) now, rather than requiring it to be accepted when the application is first run.
 - `--user=<username>`: Performs the privileged configurations once during installation. This removes the need for the user to grant root privileges on first run. For more information, see [Privileged helper permission requirements](/manuals/desktop/setup/install/mac-permission-requirements.md#permission-requirements). To find the username, enter `ls /Users` in the CLI.
-- `--backend=docker-vmm`: Selects the Docker VMM engine at install time. `docker-vmm` is the only supported value on Mac; any other value fails the installation. For more information, see [Virtual Machine Manager](/manuals/desktop/features/vmm.md).
+- `--backend=docker-vmm`: Selects the Docker VMM (Beta) engine at install time. Requires Apple silicon. `docker-vmm` is the only supported value on Mac; any other value fails the installation. For more information, see [Virtual Machine Manager](/manuals/desktop/features/vmm.md).
 @y
 - `--accept-license`: Accepts the [Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement) now, rather than requiring it to be accepted when the application is first run.
-- `--user=<username>`: Performs the privileged configurations once during installation. This removes the need for the user to grant root privileges on first run. For more information, see [Privileged helper permission requirements](/manuals/desktop/setup/install/mac-permission-requirements.md#permission-requirements). To find the username, enter `ls /Users` in the CLI.
-- `--backend=docker-vmm`: Selects the Docker VMM engine at install time. `docker-vmm` is the only supported value on Mac; any other value fails the installation. For more information, see [Virtual Machine Manager](manuals/desktop/features/vmm.md).
+- `--user=<username>`: Performs the privileged configurations once during installation. This removes the need for the user to grant root privileges on first run. For more information, see [Privileged helper permission requirements](manuals/desktop/setup/install/mac-permission-requirements.md#permission-requirements). To find the username, enter `ls /Users` in the CLI.
+- `--backend=docker-vmm`: Selects the Docker VMM (Beta) engine at install time. Requires Apple silicon. `docker-vmm` is the only supported value on Mac; any other value fails the installation. For more information, see [Virtual Machine Manager](manuals/desktop/features/vmm.md).
 @z
 
 @x
@@ -334,7 +336,7 @@ The `install` command accepts the following flags:
   - It must be used together with the `--allowed-org=<org namespace>` flag.
   - For example: `--allowed-org=<org namespace> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"`
 @y
-- `--allowed-org=<org namespace>`: Requires the user to sign in and be a member of the specified Docker Hub [organization namespace](/manuals/accounts/organization/setup/_index.md#names-versus-namespaces) when running the application. Use the namespace, not the organization display name. For configuration details, see [Configure sign-in enforcement](/manuals/desktop/enterprise/enforce-sign-in/methods.md).
+- `--allowed-org=<org namespace>`: Requires the user to sign in and be a member of the specified Docker Hub [organization namespace](manuals/accounts/organization/setup/_index.md#names-versus-namespaces) when running the application. Use the namespace, not the organization display name. For configuration details, see [Configure sign-in enforcement](manuals/desktop/enterprise/enforce-sign-in/methods.md).
 - `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by administrators to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md).
   - It must be used together with the `--allowed-org=<org namespace>` flag.
   - For example: `--allowed-org=<org namespace> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"`

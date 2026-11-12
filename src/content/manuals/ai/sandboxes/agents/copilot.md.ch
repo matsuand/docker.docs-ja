@@ -166,11 +166,11 @@ $ sbx run copilot -- -p "review this PR"   # runs copilot --yolo -p "review this
 @z
 
 @x
-When the first argument is a bare word — a subcommand or prompt — it replaces
-the defaults instead.
+For prompts and subcommands, see
+[Pass arguments to an agent](../usage.md#pass-arguments-to-an-agent).
 @y
-When the first argument is a bare word — a subcommand or prompt — it replaces
-the defaults instead.
+For prompts and subcommands, see
+[Pass arguments to an agent](../usage.md#pass-arguments-to-an-agent).
 @z
 
 @x

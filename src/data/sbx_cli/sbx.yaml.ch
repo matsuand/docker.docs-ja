@@ -55,57 +55,83 @@ usage: sbx COMMAND
     - sbx cp - Copy files or directories between a sandbox and the host
     - sbx create - Create a sandbox for an agent
     - sbx daemon - Manage sandboxd daemon
-    - sbx diagnose - Diagnose common issues with your sbx installation
-    - sbx env - (Experimental) Manage sandboxes declaratively from an sbxenv.yaml file
-    - sbx exec - Execute a command inside a sandbox
-    - sbx kit - (Experimental) Manage kit artifacts
-    - sbx login - Sign in to Docker
-    - sbx logout - Stop running local sandboxes and sign out of Docker
-    - sbx ls - List sandboxes
-    - sbx mcp - Manage MCP servers
-    - sbx move - Move a sandbox between local and cloud
-    - sbx policy - Manage sandbox policies
-    - sbx ports - Manage sandbox port publishing
-    - sbx prune - Remove all stopped sandboxes
-    - sbx reset - Reset all sandboxes and clean up state
-    - sbx rm - Remove one or more sandboxes
-    - sbx run - Run an agent in a sandbox
-    - sbx secret - Manage stored secrets
-    - sbx settings - Manage Docker Sandboxes settings
-    - sbx setup - (Experimental) Detect host configuration and prepare Docker Sandboxes
-    - sbx skills - (Experimental) Manage skills available in sandboxes
-    - sbx stop - Stop one or more sandboxes without removing them
-    - sbx template - Manage sandbox templates
-    - sbx ttl - Show or extend a cloud sandbox's TTL
-    - sbx tui - Open the interactive TUI dashboard
-    - sbx version - Show Docker Sandboxes version information
-    - sbx volume - Manage persistent volumes (cloud-only)
+    - sbx df - Show runtime disk usage
 @y
     - sbx attach - Attach to a cloud sandbox, starting it first if it is stopped
     - sbx completion - Generate the autocompletion script for the specified shell
     - sbx cp - Copy files or directories between a sandbox and the host
     - sbx create - Create a sandbox for an agent
     - sbx daemon - Manage sandboxd daemon
+    - sbx df - Show runtime disk usage
+@z
+
+@x
     - sbx diagnose - Diagnose common issues with your sbx installation
     - sbx env - (Experimental) Manage sandboxes declaratively from an sbxenv.yaml file
     - sbx exec - Execute a command inside a sandbox
+    - sbx inspect - Show details for a sandbox
     - sbx kit - (Experimental) Manage kit artifacts
     - sbx login - Sign in to Docker
+@y
+    - sbx diagnose - Diagnose common issues with your sbx installation
+    - sbx env - (Experimental) Manage sandboxes declaratively from an sbxenv.yaml file
+    - sbx exec - Execute a command inside a sandbox
+    - sbx inspect - Show details for a sandbox
+    - sbx kit - (Experimental) Manage kit artifacts
+    - sbx login - Sign in to Docker
+@z
+
+@x
     - sbx logout - Stop running local sandboxes and sign out of Docker
     - sbx ls - List sandboxes
     - sbx mcp - Manage MCP servers
     - sbx move - Move a sandbox between local and cloud
     - sbx policy - Manage sandbox policies
+@y
+    - sbx logout - Stop running local sandboxes and sign out of Docker
+    - sbx ls - List sandboxes
+    - sbx mcp - Manage MCP servers
+    - sbx move - Move a sandbox between local and cloud
+    - sbx policy - Manage sandbox policies
+@z
+
+@x
     - sbx ports - Manage sandbox port publishing
     - sbx prune - Remove all stopped sandboxes
     - sbx reset - Reset all sandboxes and clean up state
     - sbx rm - Remove one or more sandboxes
     - sbx run - Run an agent in a sandbox
+    - sbx schedule - Manage scheduled cloud sandbox runs (cloud-only)
+@y
+    - sbx ports - Manage sandbox port publishing
+    - sbx prune - Remove all stopped sandboxes
+    - sbx reset - Reset all sandboxes and clean up state
+    - sbx rm - Remove one or more sandboxes
+    - sbx run - Run an agent in a sandbox
+    - sbx schedule - Manage scheduled cloud sandbox runs (cloud-only)
+@z
+
+@x
     - sbx secret - Manage stored secrets
     - sbx settings - Manage Docker Sandboxes settings
     - sbx setup - (Experimental) Detect host configuration and prepare Docker Sandboxes
     - sbx skills - (Experimental) Manage skills available in sandboxes
     - sbx stop - Stop one or more sandboxes without removing them
+@y
+    - sbx secret - Manage stored secrets
+    - sbx settings - Manage Docker Sandboxes settings
+    - sbx setup - (Experimental) Detect host configuration and prepare Docker Sandboxes
+    - sbx skills - (Experimental) Manage skills available in sandboxes
+    - sbx stop - Stop one or more sandboxes without removing them
+@z
+
+@x
+    - sbx template - Manage sandbox templates
+    - sbx ttl - Show or extend a cloud sandbox's TTL
+    - sbx tui - Open the interactive TUI dashboard
+    - sbx version - Show Docker Sandboxes version information
+    - sbx volume - Manage persistent volumes (cloud-only)
+@y
     - sbx template - Manage sandbox templates
     - sbx ttl - Show or extend a cloud sandbox's TTL
     - sbx tui - Open the interactive TUI dashboard

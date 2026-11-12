@@ -14,29 +14,29 @@ description: |-
 @z
 
 @x
-    The image can be identified by tag (e.g. "myimage:v1.0") or by image ID
-    (full or prefix, e.g. "abc123"). Use "sbx template ls" to see available
-    images and their IDs.
+    Identify the image by tag, repository digest (REPOSITORY@sha256:DIGEST),
+    or image ID (full or prefix). Use "sbx template ls --all --digests" to see
+    available images and their digests.
 @y
-    The image can be identified by tag (e.g. "myimage:v1.0") or by image ID
-    (full or prefix, e.g. "abc123"). Use "sbx template ls" to see available
-    images and their IDs.
+    Identify the image by tag, repository digest (REPOSITORY@sha256:DIGEST),
+    or image ID (full or prefix). Use "sbx template ls --all --digests" to see
+    available images and their digests.
 @z
 
 @x
     With --cloud:
-    The template can be identified by its tmpl_* ID or by its human name
-    (resolved via the server-side ?name= filter). Use "sbx --cloud template ls".
+    Remove a cloud sandbox template by name or tmpl_* ID.
+    Use "sbx --cloud template ls" to list templates.
 @y
     With --cloud:
-    The template can be identified by its tmpl_* ID or by its human name
-    (resolved via the server-side ?name= filter). Use "sbx --cloud template ls".
+    Remove a cloud sandbox template by name or tmpl_* ID.
+    Use "sbx --cloud template ls" to list templates.
 @z
 
 @x
-usage: sbx template rm TAG|ID|NAME [flags]
+usage: sbx template rm TAG|DIGEST|ID|NAME [flags]
 @y
-usage: sbx template rm TAG|ID|NAME [flags]
+usage: sbx template rm TAG|DIGEST|ID|NAME [flags]
 @z
 
 %options:
@@ -85,6 +85,14 @@ example: |4-
 @y
       # Remove by image ID (prefix)
       sbx template rm abc123
+@z
+
+@x
+      # Remove by repository digest
+      sbx template rm myimage@sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+@y
+      # Remove by repository digest
+      sbx template rm myimage@sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
 @z
 
 @x

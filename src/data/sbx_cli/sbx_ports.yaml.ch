@@ -25,7 +25,7 @@ description: |-
 
 @x
     Port spec format: [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL]
-    If HOST_PORT is omitted, an ephemeral port is allocated automatically.
+    When publishing without a HOST_PORT, an ephemeral port is allocated automatically.
     If HOST_IP is omitted, the port is bound on loopback, expanded based on
     PROTOCOL and the sandbox's address families: tcp/udp binds both 127.0.0.1
     and ::1 (or only 127.0.0.1 if the sandbox is IPv4-only); tcp4/udp4 binds
@@ -33,7 +33,7 @@ description: |-
     Supported protocols: tcp, tcp4, tcp6, udp, udp4, udp6.
 @y
     Port spec format: [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL]
-    If HOST_PORT is omitted, an ephemeral port is allocated automatically.
+    When publishing without a HOST_PORT, an ephemeral port is allocated automatically.
     If HOST_IP is omitted, the port is bound on loopback, expanded based on
     PROTOCOL and the sandbox's address families: tcp/udp binds both 127.0.0.1
     and ::1 (or only 127.0.0.1 if the sandbox is IPv4-only); tcp4/udp4 binds
@@ -51,6 +51,14 @@ description: |-
     listening only on IPv4 is reachable without a host client having to avoid
     ::1 — or tcp6 when HOST_IP is an IPv6 address. Publish tcp explicitly to
     bind both families.
+@z
+
+@x
+    When unpublishing without a HOST_PORT, mappings matching HOST_IP and PROTOCOL
+    are removed from every host port.
+@y
+    When unpublishing without a HOST_PORT, mappings matching HOST_IP and PROTOCOL
+    are removed from every host port.
 @z
 
 @x
@@ -125,10 +133,10 @@ usage: sbx ports SANDBOX [flags]
 
 @x unpublish
       usage: |
-        Unpublish a port (can be repeated): [HOST_IP:]HOST_PORT:SANDBOX_PORT[/PROTOCOL] (local) or SANDBOX_PORT[/tcp] (cloud)
+        Unpublish a port (can be repeated): [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL] (local) or SANDBOX_PORT[/tcp] (cloud)
 @y
       usage: |
-        Unpublish a port (can be repeated): [HOST_IP:]HOST_PORT:SANDBOX_PORT[/PROTOCOL] (local) or SANDBOX_PORT[/tcp] (cloud)
+        Unpublish a port (can be repeated): [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL] (local) or SANDBOX_PORT[/tcp] (cloud)
 @z
 
 % inherited_options:

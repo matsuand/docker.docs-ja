@@ -19,6 +19,7 @@ bases = \
 	sbx_daemon_start.yaml                \
 	sbx_daemon_status.yaml               \
 	sbx_daemon_stop.yaml                 \
+	sbx_df.yaml                          \
 	sbx_diagnose.yaml                    \
 	sbx_env.yaml                         \
 	sbx_env_create.yaml                  \
@@ -27,6 +28,7 @@ bases = \
 	sbx_env_rm.yaml                      \
 	sbx_env_run.yaml                     \
 	sbx_exec.yaml                        \
+	sbx_inspect.yaml                     \
 	sbx_kit.yaml                         \
 	sbx_kit_add.yaml                     \
 	sbx_kit_builder.yaml                 \
@@ -64,6 +66,10 @@ bases = \
 	sbx_policy.yaml                      \
 	sbx_policy_allow.yaml                \
 	sbx_policy_allow_network.yaml        \
+	sbx_policy_approval.yaml             \
+	sbx_policy_approval_inspect.yaml     \
+	sbx_policy_approval_ls.yaml          \
+	sbx_policy_approval_respond.yaml     \
 	sbx_policy_check.yaml                \
 	sbx_policy_check_http.yaml           \
 	sbx_policy_check_network.yaml        \
@@ -82,6 +88,15 @@ bases = \
 	sbx_reset.yaml                       \
 	sbx_rm.yaml                          \
 	sbx_run.yaml                         \
+	sbx_schedule.yaml                    \
+	sbx_schedule_create.yaml             \
+	sbx_schedule_inspect.yaml            \
+	sbx_schedule_ls.yaml                 \
+	sbx_schedule_rm.yaml                 \
+	sbx_schedule_run.yaml                \
+	sbx_schedule_runs.yaml               \
+	sbx_schedule_runs_inspect.yaml       \
+	sbx_schedule_update.yaml             \
 	sbx_secret.yaml                      \
 	sbx_secret_import.yaml               \
 	sbx_secret_ls.yaml                   \

@@ -6,13 +6,13 @@
 @x
 title: Virtual Machine Manager
 linkTitle: Virtual Machine Manager
-keywords: virtualization software, resource allocation, mac, windows, docker desktop, vm performance, apple silicon, wsl, hyper-v
-description: Learn about Docker Desktop's Virtual Machine Manager options, including Docker VMM for Mac and Windows
+keywords: virtualization software, resource allocation, mac, windows, linux, docker desktop, vm performance, apple silicon, wsl, hyper-v, qemu
+description: Learn about Docker Desktop's Virtual Machine Manager options, including Docker VMM for Mac, Windows, and Linux
 @y
 title: Virtual Machine Manager
 linkTitle: Virtual Machine Manager
-keywords: virtualization software, resource allocation, mac, windows, docker desktop, vm performance, apple silicon, wsl, hyper-v
-description: Learn about Docker Desktop's Virtual Machine Manager options, including Docker VMM for Mac and Windows
+keywords: virtualization software, resource allocation, mac, windows, linux, docker desktop, vm performance, apple silicon, wsl, hyper-v, qemu
+description: Learn about Docker Desktop's Virtual Machine Manager options, including Docker VMM for Mac, Windows, and Linux
 @z
 
 @x
@@ -60,6 +60,30 @@ Because Docker controls the virtualization layer, it can be monitored and govern
 @z
 
 @x
+### Requirements
+@y
+### Requirements
+@z
+
+@x
+- Mac: Apple silicon. For more information, see
+  [Install Docker Desktop on Mac](/manuals/desktop/setup/install/mac-install.md).
+- Windows: x86_64 (Arm isn't supported), with the Windows Hypervisor Platform
+  feature turned on. For more information, see
+  [Install Docker Desktop on Windows](/manuals/desktop/setup/install/windows-install.md).
+- Linux: Docker Desktop 4.98 or later, and KVM access. For more information, see
+  [Install Docker Desktop on Linux](/manuals/desktop/setup/install/linux/_index.md).
+@y
+- Mac: Apple silicon. For more information, see
+  [Install Docker Desktop on Mac](manuals/desktop/setup/install/mac-install.md).
+- Windows: x86_64 (Arm isn't supported), with the Windows Hypervisor Platform
+  feature turned on. For more information, see
+  [Install Docker Desktop on Windows](manuals/desktop/setup/install/windows-install.md).
+- Linux: Docker Desktop 4.98 or later, and KVM access. For more information, see
+  [Install Docker Desktop on Linux](manuals/desktop/setup/install/linux/_index.md).
+@z
+
+@x
 ### Switch to Docker VMM
 @y
 ### Switch to Docker VMM
@@ -100,10 +124,10 @@ If you previously had Docker VMM selected, which engine runs depends on your ver
 @z
 
 @x
-- Docker Desktop 4.35 and earlier is backed by `libkrun`
+- Docker Desktop 4.35 through 4.85 is backed by `libkrun`
 - Docker Desktop 4.86 and later uses Docker's own VMM implementation
 @y
-- Docker Desktop 4.35 and earlier is backed by `libkrun`
+- Docker Desktop 4.35 through 4.85 is backed by `libkrun`
 - Docker Desktop 4.86 and later uses Docker's own VMM implementation
 @z
 
@@ -132,6 +156,46 @@ If you're upgrading from version 4.35 onwards, your setting is preserved and Doc
 @z
 
 @x
+With Docker VMM, only the Docker CLI is available in your WSL 2 distributions.
+For more information, see
+[Use Docker from WSL distributions with Docker VMM](/manuals/desktop/features/wsl/_index.md#use-docker-from-wsl-distributions-with-docker-vmm).
+@y
+With Docker VMM, only the Docker CLI is available in your WSL 2 distributions.
+For more information, see
+[Use Docker from WSL distributions with Docker VMM](manuals/desktop/features/wsl/_index.md#use-docker-from-wsl-distributions-with-docker-vmm).
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Linux" >}}
+@y
+{{< /tab >}}
+{{< tab name="Linux" >}}
+@z
+
+@x
+Docker VMM is available on Linux with Docker Desktop 4.98 and later.
+@y
+Docker VMM is available on Linux with Docker Desktop 4.98 and later.
+@z
+
+@x
+1. Go to **Settings** > **General** > **Virtual Machine Manager**.
+2. Select **Docker VMM**.
+3. Select **Apply & restart**.
+@y
+1. Go to **Settings** > **General** > **Virtual Machine Manager**.
+2. Select **Docker VMM**.
+3. Select **Apply & restart**.
+@z
+
+@x
+If the option is unavailable, turn on **Beta features** in **Settings**.
+@y
+If the option is unavailable, turn on **Beta features** in **Settings**.
+@z
+
+@x
 {{< /tab >}}
 {{< /tabs >}}
 @y
@@ -147,10 +211,20 @@ If you're upgrading from version 4.35 onwards, your setting is preserved and Doc
 
 @x
 - A restart of Docker Desktop may be required after switching to Docker VMM.
-- Docker VMM does not support bind mount auto-shares. If you see a `file is not shared from the host` error, go to **Settings** > **Resources** > **File sharing** and add the directory you want to share.
+- On Windows, when a container bind mounts a directory that isn't shared, Docker
+  Desktop asks you to share it. If you decline, you see a `not shared from the
+  host` error. To share the directory, go to **Settings** > **Resources** >
+  **File sharing** and add it.
+- On Mac and Linux, to use a directory outside the default shared directories in
+  a container, add it under **Settings** > **Resources** > **File sharing**.
 @y
 - A restart of Docker Desktop may be required after switching to Docker VMM.
-- Docker VMM does not support bind mount auto-shares. If you see a `file is not shared from the host` error, go to **Settings** > **Resources** > **File sharing** and add the directory you want to share.
+- On Windows, when a container bind mounts a directory that isn't shared, Docker
+  Desktop asks you to share it. If you decline, you see a `not shared from the
+  host` error. To share the directory, go to **Settings** > **Resources** >
+  **File sharing** and add it.
+- On Mac and Linux, to use a directory outside the default shared directories in
+  a container, add it under **Settings** > **Resources** > **File sharing**.
 @z
 
 @x
@@ -165,6 +239,24 @@ If you're upgrading from version 4.35 onwards, your setting is preserved and Doc
 @y
 - Docker VMM does not currently support Rosetta, so emulation of amd64 architectures is slow. Docker is exploring potential solutions.
 - Certain databases, such as MongoDB and Cassandra, may fail when using virtiofs with Docker VMM. This issue is expected to be resolved in a future release.
+@z
+
+@x
+## Alternative VMM for Linux
+@y
+## Alternative VMM for Linux
+@z
+
+@x
+### QEMU
+@y
+### QEMU
+@z
+
+@x
+QEMU is the default VMM on Linux. It runs the Docker Desktop VM using KVM.
+@y
+QEMU is the default VMM on Linux. It runs the Docker Desktop VM using KVM.
 @z
 
 @x

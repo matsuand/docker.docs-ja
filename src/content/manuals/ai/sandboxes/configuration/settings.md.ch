@@ -422,17 +422,59 @@ for supported behavior.
 @z
 
 @x
+#### claude.chrome {.wrap-anywhere}
+@y
+#### claude.chrome {.wrap-anywhere}
+@z
+
+@x
+{{< setting-metadata type="boolean" default="false" >}}
+@y
+{{< setting-metadata type="boolean" default="false" >}}
+@z
+
+@x
+Turn this on to let sandboxed Claude Code access host browser tabs through
+Claude in Chrome:
+@y
+Turn this on to let sandboxed Claude Code access host browser tabs through
+Claude in Chrome:
+@z
+
+@x
+```console
+$ sbx settings set claude.chrome true
+```
+@y
+```console
+$ sbx settings set claude.chrome true
+```
+@z
+
+@x
+Changes apply to new browser connections from running sandboxes. Set it to
+`false` to block further connections; established connections stay active until
+you end the Claude browser sessions. See
+[Claude in Chrome](../agents/claude-code.md#claude-in-chrome) for authentication
+requirements and setup.
+@y
+Changes apply to new browser connections from running sandboxes. Set it to
+`false` to block further connections; established connections stay active until
+you end the Claude browser sessions. See
+[Claude in Chrome](../agents/claude-code.md#claude-in-chrome) for authentication
+requirements and setup.
+@z
+
+@x
 #### claude.remoteControl {.wrap-anywhere}
 @y
 #### claude.remoteControl {.wrap-anywhere}
 @z
 
 @x
-{{< setting-metadata type="boolean" default="false"
-  env="DOCKER_SANDBOXES_CLAUDE_REMOTE_CONTROL" >}}
+{{< setting-metadata type="boolean" default="false" >}}
 @y
-{{< setting-metadata type="boolean" default="false"
-  env="DOCKER_SANDBOXES_CLAUDE_REMOTE_CONTROL" >}}
+{{< setting-metadata type="boolean" default="false" >}}
 @z
 
 @x
@@ -454,17 +496,27 @@ $ sbx settings set claude.remoteControl true
 @z
 
 @x
-The remote-control connection must authenticate with its own session token.
-This setting lets it do so instead of having the sandbox proxy replace that
-token with the host credential. Set it to `false` to restore credential
-replacement on that connection. Changes apply to requests from running
-sandboxes. See [Claude Code remote control](../agents/claude-code.md#remote-control).
+Docker Sandboxes keeps Remote Control environment and session credentials on
+the host. The sandbox receives placeholders, and the proxy supplies the real
+credentials only for the environment or session they belong to while this
+setting is enabled. Remotely supplied environment variables and MCP
+configuration aren't passed into the sandbox.
 @y
-The remote-control connection must authenticate with its own session token.
-This setting lets it do so instead of having the sandbox proxy replace that
-token with the host credential. Set it to `false` to restore credential
-replacement on that connection. Changes apply to requests from running
-sandboxes. See [Claude Code remote control](../agents/claude-code.md#remote-control).
+Docker Sandboxes keeps Remote Control environment and session credentials on
+the host. The sandbox receives placeholders, and the proxy supplies the real
+credentials only for the environment or session they belong to while this
+setting is enabled. Remotely supplied environment variables and MCP
+configuration aren't passed into the sandbox.
+@z
+
+@x
+Set this to `false` to stop the proxy from supplying Remote Control credentials.
+Changes apply to requests from running sandboxes. See
+[Claude Code remote control](../agents/claude-code.md#remote-control).
+@y
+Set this to `false` to stop the proxy from supplying Remote Control credentials.
+Changes apply to requests from running sandboxes. See
+[Claude Code remote control](../agents/claude-code.md#remote-control).
 @z
 
 @x
@@ -728,11 +780,9 @@ requirements, and how to apply changes to existing sandboxes.
 @z
 
 @x
-{{< setting-metadata type="boolean" default="false"
-  env="DOCKER_SANDBOXES_USE_DHI" >}}
+{{< setting-metadata type="boolean" default="false" >}}
 @y
-{{< setting-metadata type="boolean" default="false"
-  env="DOCKER_SANDBOXES_USE_DHI" >}}
+{{< setting-metadata type="boolean" default="false" >}}
 @z
 
 @x
@@ -1471,6 +1521,78 @@ upload consent: [diagnostics.autoUpload](#diagnosticsautoupload) must be `yes`.
 The cooldown applies across all eligible errors, not separately to each error
 type. Values below one are treated as one day. This setting doesn't grant
 upload consent: [diagnostics.autoUpload](#diagnosticsautoupload) must be `yes`.
+@z
+
+@x
+### Outbound connections
+@y
+### Outbound connections
+@z
+
+@x
+#### egress.stalledConnectionTimeoutSeconds {.wrap-anywhere}
+@y
+#### egress.stalledConnectionTimeoutSeconds {.wrap-anywhere}
+@z
+
+@x
+{{< setting-metadata type="integer" default="30" >}}
+@y
+{{< setting-metadata type="integer" default="30" >}}
+@z
+
+@x
+Set how many seconds an outbound TCP connection from a local sandbox can go
+without the remote end acknowledging data before the connection closes. This
+bounds how long a connection stranded by a host network change, such as a VPN
+connecting, can hang.
+@y
+Set how many seconds an outbound TCP connection from a local sandbox can go
+without the remote end acknowledging data before the connection closes. This
+bounds how long a connection stranded by a host network change, such as a VPN
+connecting, can hang.
+@z
+
+@x
+Use a value from `0` to `3600`. Set `0` to disable the timeout. For example,
+increase the timeout to tolerate longer network interruptions:
+@y
+Use a value from `0` to `3600`. Set `0` to disable the timeout. For example,
+increase the timeout to tolerate longer network interruptions:
+@z
+
+@x
+```console
+$ sbx settings set egress.stalledConnectionTimeoutSeconds 90
+$ sbx daemon restart
+```
+@y
+```console
+$ sbx settings set egress.stalledConnectionTimeoutSeconds 90
+$ sbx daemon restart
+```
+@z
+
+@x
+Changes apply to sandboxes created after the change. For existing sandboxes,
+restart the daemon to rebuild their network proxies with the updated value.
+The experimental Runtime backend doesn't support this setting.
+@y
+Changes apply to sandboxes created after the change. For existing sandboxes,
+restart the daemon to rebuild their network proxies with the updated value.
+The experimental Runtime backend doesn't support this setting.
+@z
+
+@x
+A network outage longer than the timeout can close long-lived connections,
+including streams and uploads. On Linux, the timeout also closes a connection
+if the remote end stops reading data for longer than the timeout. Increase the
+value or disable the timeout if you need connections to survive these pauses.
+@y
+A network outage longer than the timeout can close long-lived connections,
+including streams and uploads. On Linux, the timeout also closes a connection
+if the remote end stops reading data for longer than the timeout. Increase the
+value or disable the timeout if you need connections to survive these pauses.
 @z
 
 @x

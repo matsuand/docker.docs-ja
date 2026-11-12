@@ -210,13 +210,9 @@ codex --dangerously-bypass-approvals-and-sandbox
 @z
 
 @x
-Arguments after `--` are added after the default flags when the first one is
-itself a flag (begins with `-`). A bare word — such as a prompt — replaces the
-defaults instead, so lead with the flag to keep bypass mode:
+To keep bypass mode when passing a prompt, lead with the flag:
 @y
-Arguments after `--` are added after the default flags when the first one is
-itself a flag (begins with `-`). A bare word — such as a prompt — replaces the
-defaults instead, so lead with the flag to keep bypass mode:
+To keep bypass mode when passing a prompt, lead with the flag:
 @z
 
 @x
@@ -227,6 +223,14 @@ $ sbx run --name <sandbox-name> -- --dangerously-bypass-approvals-and-sandbox "f
 ```console
 $ sbx run --name <sandbox-name> -- --dangerously-bypass-approvals-and-sandbox "fix the build"
 ```
+@z
+
+@x
+For argument forwarding rules, see
+[Pass arguments to an agent](../usage.md#pass-arguments-to-an-agent).
+@y
+For argument forwarding rules, see
+[Pass arguments to an agent](../usage.md#pass-arguments-to-an-agent).
 @z
 
 @x

@@ -120,13 +120,15 @@ $ sbx --cloud attach cloud-project
 @z
 
 @x
-Cloud sandbox names must have at least two characters, start with a letter or
-number, and contain only letters, numbers, and hyphens. The name `default` is
-reserved. Periods accepted in local sandbox names aren't accepted in the cloud.
+Cloud sandbox names must be 2–63 characters long, contain only ASCII letters,
+numbers, and hyphens, and start and end with a letter or number. The name
+`default` is reserved. Periods accepted in local sandbox names aren't accepted
+in the cloud.
 @y
-Cloud sandbox names must have at least two characters, start with a letter or
-number, and contain only letters, numbers, and hyphens. The name `default` is
-reserved. Periods accepted in local sandbox names aren't accepted in the cloud.
+Cloud sandbox names must be 2–63 characters long, contain only ASCII letters,
+numbers, and hyphens, and start and end with a letter or number. The name
+`default` is reserved. Periods accepted in local sandbox names aren't accepted
+in the cloud.
 @z
 
 @x
@@ -286,6 +288,42 @@ shown in the output.
 @z
 
 @x
+Inspect a sandbox's state, template, resources, timeout settings, and
+published port URLs:
+@y
+Inspect a sandbox's state, template, resources, timeout settings, and
+published port URLs:
+@z
+
+@x
+```console
+$ sbx --cloud inspect cloud-project
+```
+@y
+```console
+$ sbx --cloud inspect cloud-project
+```
+@z
+
+@x
+Use `--format json` or `--format yaml` for structured output. For example,
+retrieve the published port URLs in a script:
+@y
+Use `--format json` or `--format yaml` for structured output. For example,
+retrieve the published port URLs in a script:
+@z
+
+@x
+```console
+$ sbx --cloud inspect cloud-project --format json | jq -r '.ports[]? | .url // empty'
+```
+@y
+```console
+$ sbx --cloud inspect cloud-project --format json | jq -r '.ports[]? | .url // empty'
+```
+@z
+
+@x
 ## Run commands
 @y
 ## Run commands
@@ -371,6 +409,36 @@ $ sbx --cloud cp cloud-project:/home/agent/workspace/result.json ./result.json
 $ sbx --cloud cp ./src cloud-project:/home/agent/workspace/src
 $ sbx --cloud cp cloud-project:/home/agent/workspace/result.json ./result.json
 ```
+@z
+
+@x
+Cloud copies don't preserve permissions or timestamps. Set executable
+permissions after downloading a program.
+@y
+Cloud copies don't preserve permissions or timestamps. Set executable
+permissions after downloading a program.
+@z
+
+@x
+Cloud copies don't preserve empty directories or symbolic links themselves.
+Symbolic links are handled differently depending on the transfer:
+@y
+Cloud copies don't preserve empty directories or symbolic links themselves.
+Symbolic links are handled differently depending on the transfer:
+@z
+
+@x
+- Uploading a symbolic link as the source copies its target automatically.
+- Uploading a directory skips symbolic links inside it unless you pass
+  `-L` (`--follow-link`) to copy their targets.
+- Downloading a symbolic link to a file requires `-L` to copy its target.
+- Downloading a directory skips symbolic links, even with `-L`.
+@y
+- Uploading a symbolic link as the source copies its target automatically.
+- Uploading a directory skips symbolic links inside it unless you pass
+  `-L` (`--follow-link`) to copy their targets.
+- Downloading a symbolic link to a file requires `-L` to copy its target.
+- Downloading a directory skips symbolic links, even with `-L`.
 @z
 
 @x

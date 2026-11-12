@@ -34,6 +34,216 @@ and subscriptions.
 @z
 
 @x
+## 2026-11-03
+@y
+## 2026-11-03
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- [Docker Offload](/manuals/offload/_index.md) is now included with a
+  [Docker Agentic Platform](/manuals/subscription-billing/plans/docker-agentic-platform.md)
+  subscription for individual accounts. You pay for the time the cloud
+  sandbox runs. Organizations can still subscribe to
+  [Docker Offload v1](/manuals/offload/v1/_index.md).
+@y
+- [Docker Offload](manuals/offload/_index.md) is now included with a
+  [Docker Agentic Platform](manuals/subscription-billing/plans/docker-agentic-platform.md)
+  subscription for individual accounts. You pay for the time the cloud
+  sandbox runs. Organizations can still subscribe to
+  [Docker Offload v1](manuals/offload/v1/_index.md).
+@z
+
+@x
+## 2026-11-02
+@y
+## 2026-11-02
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- [Converting a user account into an organization](/manuals/accounts/organization/setup/convert-account.md)
+  emails the new owner.
+@y
+- [Converting a user account into an organization](manuals/accounts/organization/setup/convert-account.md)
+  emails the new owner.
+@z
+
+@x
+## 2026-10-29
+@y
+## 2026-10-29
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Severity choices on the
+  [support request form](https://app.docker.com/support/contact) use longer
+  labels that describe the impact of each level.
+- The support request form **Legal** topic includes **DMCA takedown
+  requests**.
+@y
+- Severity choices on the
+  [support request form](https://app.docker.com/support/contact) use longer
+  labels that describe the impact of each level.
+- The support request form **Legal** topic includes **DMCA takedown
+  requests**.
+@z
+
+@x
+## 2026-10-28
+@y
+## 2026-10-28
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- You can
+  [assign a license to a team](/manuals/accounts/organization/manage/manage-licenses.md#teams)
+ as long as you have sufficient licenses remaining for all team members who do not already hold a license. Docker only assigns a license to
+  members who don't already have one.
+- If you add seats without a street address on file, Docker opens the
+  address form and asks you to add it, instead of failing with a generic
+  error.
+- [Billing details](/manuals/subscription-billing/manage/details.md)
+  show addresses that have no city.
+@y
+- You can
+  [assign a license to a team](manuals/accounts/organization/manage/manage-licenses.md#teams)
+ as long as you have sufficient licenses remaining for all team members who do not already hold a license. Docker only assigns a license to
+  members who don't already have one.
+- If you add seats without a street address on file, Docker opens the
+  address form and asks you to add it, instead of failing with a generic
+  error.
+- [Billing details](manuals/subscription-billing/manage/details.md)
+  show addresses that have no city.
+@z
+
+@x
+## 2026-10-26
+@y
+## 2026-10-26
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Support cases show **PENDING SUPPORT** and **PENDING CUSTOMER** instead
+  of **OPEN** and **ACTION REQUIRED**.
+@y
+- Support cases show **PENDING SUPPORT** and **PENDING CUSTOMER** instead
+  of **OPEN** and **ACTION REQUIRED**.
+@z
+
+@x
+## 2026-10-22
+@y
+## 2026-10-22
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Access token revocation emails include the revocation date.
+  Organization access token emails also include the organization name.
+@y
+- Access token revocation emails include the revocation date.
+  Organization access token emails also include the organization name.
+@z
+
+@x
+## 2026-10-16
+@y
+## 2026-10-16
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Users with a custom role that includes the **Manage repositories** and
+  **Manage organization access tokens** permissions can
+  [create an organization access token](/manuals/security/access-tokens/organization-access-tokens.md#create-an-organization-access-token)
+  scoped to all repositories in the organization. A role with only **View
+  repositories** can't.
+@y
+- Users with a custom role that includes the **Manage repositories** and
+  **Manage organization access tokens** permissions can
+  [create an organization access token](manuals/security/access-tokens/organization-access-tokens.md#create-an-organization-access-token)
+  scoped to all repositories in the organization. A role with only **View
+  repositories** can't.
+@z
+
+@x
+## 2026-10-15
+@y
+## 2026-10-15
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Custom roles now include the
+  [Manage licenses](/manuals/security/roles-and-permissions/custom-roles/permissions-reference.md#licensing)
+  permission, so owners can delegate assigning and revoking member
+  licenses and managing automatic assignment. The permission doesn't
+  include changing the organization's license count by buying more,
+  dropping some, or otherwise resizing the pool.
+- You can now create a
+  [personal access token](/manuals/security/access-tokens/personal-access-tokens.md#create)
+  with **Allow Cloud Sandboxes access** (`sandbox:use`) on its own, or
+  with one repository permission. Select **No repository access** when
+  the token should not access repositories.
+@y
+- Custom roles now include the
+  [Manage licenses](manuals/security/roles-and-permissions/custom-roles/permissions-reference.md#licensing)
+  permission, so owners can delegate assigning and revoking member
+  licenses and managing automatic assignment. The permission doesn't
+  include changing the organization's license count by buying more,
+  dropping some, or otherwise resizing the pool.
+- You can now create a
+  [personal access token](manuals/security/access-tokens/personal-access-tokens.md#create)
+  with **Allow Cloud Sandboxes access** (`sandbox:use`) on its own, or
+  with one repository permission. Select **No repository access** when
+  the token should not access repositories.
+@z
+
+@x
 ## 2026-09-30
 @y
 ## 2026-09-30
@@ -749,7 +959,7 @@ and subscriptions.
 - [Organization access tokens](/manuals/security/access-tokens/organization-access-tokens.md)
   are now generally available.
 - Single sign-on now supports the
-  [`dockerSessionMinutes` attribute](/manuals/security/provisioning/_index.md#sso-attributes),
+  [`dockerSessionMinutes` attribute](/manuals/security/authentication/single-sign-on/connect.md#sso-attributes),
   so a session can follow the identity provider timeout.
 - Administrators can now
   [track whether users comply with Docker Desktop settings policies](/manuals/desktop/enterprise/hardened-desktop/settings-management/compliance-reporting.md)
@@ -759,7 +969,7 @@ and subscriptions.
 - [Organization access tokens](manuals/security/access-tokens/organization-access-tokens.md)
   are now generally available.
 - Single sign-on now supports the
-  [`dockerSessionMinutes` attribute](manuals/security/provisioning/_index.md#sso-attributes),
+  [`dockerSessionMinutes` attribute](manuals/security/authentication/single-sign-on/connect.md#sso-attributes),
   so a session can follow the identity provider timeout.
 - Administrators can now
   [track whether users comply with Docker Desktop settings policies](manuals/desktop/enterprise/hardened-desktop/settings-management/compliance-reporting.md)

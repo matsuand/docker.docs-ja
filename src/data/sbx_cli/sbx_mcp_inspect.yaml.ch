@@ -4,10 +4,14 @@
 @x
 name: sbx mcp inspect
 synopsis: Show MCP server details
+description: |
+    Show a unique MCP registration. Shared names require selecting the owning sandbox.
 usage: sbx mcp inspect NAME [flags]
 @y
 name: sbx mcp inspect
 synopsis: Show MCP server details
+description: |
+    Show a unique MCP registration. Shared names require selecting the owning sandbox.
 usage: sbx mcp inspect NAME [flags]
 @z
 
@@ -33,6 +37,12 @@ usage: sbx mcp inspect NAME [flags]
       usage: Output in JSON format
 @z
 
+@x sandbox
+      usage: Owning sandbox
+@y
+      usage: Owning sandbox
+@z
+
 % inherited_options:
 
 @x cloud
@@ -52,9 +62,11 @@ usage: sbx mcp inspect NAME [flags]
 @x
 example: |4-
       sbx mcp inspect notion
+      sbx mcp inspect notion --sandbox my-sbx
 @y
 example: |4-
       sbx mcp inspect notion
+      sbx mcp inspect notion --sandbox my-sbx
 @z
 
 @x

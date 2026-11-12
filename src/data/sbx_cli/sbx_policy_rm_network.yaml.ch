@@ -44,6 +44,16 @@ description: |-
 @z
 
 @x
+    HTTP paths, query parameter names, and query values match without regard to
+    ASCII letter case. For example, /API/** matches /api/items, and Tag=PROD
+    matches tag=prod.
+@y
+    HTTP paths, query parameter names, and query values match without regard to
+    ASCII letter case. For example, /API/** matches /api/items, and Tag=PROD
+    matches tag=prod.
+@z
+
+@x
     With --cloud:
     Remove a cloud network rule by pattern.
 @y

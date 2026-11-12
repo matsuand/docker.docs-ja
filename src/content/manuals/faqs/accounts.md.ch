@@ -233,10 +233,10 @@ Check the following:
 1. The username is the Docker ID of the account that owns the token.
    Use an organization name only with an
    [organization access token](/manuals/security/access-tokens/organization-access-tokens.md).
-2. You pasted the full token, with no spaces or line breaks. Docker
+1. You pasted the full token, with no spaces or line breaks. Docker
    shows a token only once. If you no longer have it,
    [create a new personal access token](/manuals/security/access-tokens/personal-access-tokens.md#create).
-3. On the **Personal access tokens** page, find the token and use its
+1. On the **Personal access tokens** page, find the token and use its
    status:
    - **Expired:** Create a new token. You can't change the expiration
      date.
@@ -247,10 +247,10 @@ Check the following:
 1. The username is the Docker ID of the account that owns the token.
    Use an organization name only with an
    [organization access token](manuals/security/access-tokens/organization-access-tokens.md).
-2. You pasted the full token, with no spaces or line breaks. Docker
+1. You pasted the full token, with no spaces or line breaks. Docker
    shows a token only once. If you no longer have it,
    [create a new personal access token](manuals/security/access-tokens/personal-access-tokens.md#create).
-3. On the **Personal access tokens** page, find the token and use its
+1. On the **Personal access tokens** page, find the token and use its
    status:
    - **Expired:** Create a new token. You can't change the expiration
      date.
@@ -352,9 +352,17 @@ assign them to a team during the invite process.
 @x
 Yes. You can
 [enforce sign-in](/manuals/desktop/enterprise/enforce-sign-in/_index.md).
+When you configure enforcement, use your
+[organization namespace](/manuals/accounts/organization/setup/_index.md#names-versus-namespaces),
+not the organization display name. See
+[Configure sign-in enforcement](/manuals/desktop/enterprise/enforce-sign-in/methods.md).
 @y
 Yes. You can
 [enforce sign-in](manuals/desktop/enterprise/enforce-sign-in/_index.md).
+When you configure enforcement, use your
+[organization namespace](manuals/accounts/organization/setup/_index.md#names-versus-namespaces),
+not the organization display name. See
+[Configure sign-in enforcement](manuals/desktop/enterprise/enforce-sign-in/methods.md).
 @z
 
 @x
@@ -449,10 +457,10 @@ for the full explanation.
 
 @x
 Yes. A user invited to an organization will take up one of the provisioned
-seats, even if that user hasn’t accepted their invitation yet.
+seats, even if that user hasn't accepted their invitation yet.
 @y
 Yes. A user invited to an organization will take up one of the provisioned
-seats, even if that user hasn’t accepted their invitation yet.
+seats, even if that user hasn't accepted their invitation yet.
 @z
 
 @x
@@ -608,17 +616,17 @@ domain](manuals/security/provisioning/domain-management.md).
 @z
 
 @x
-#### Can I use a parent company if some of my organizations don’t have a Docker Business subscription?
+#### Can I use a parent company if some of my organizations don't have a Docker Business subscription?
 @y
-#### Can I use a parent company if some of my organizations don’t have a Docker Business subscription?
+#### Can I use a parent company if some of my organizations don't have a Docker Business subscription?
 @z
 
 @x
 Yes, but you can only add organizations with a Docker Business subscription
-to a company. For more details, see [Add more organizations](/manuals/accounts/company/manage.md#add-more-organizations).
+to a company. For more details, see [Add more organizations](/manuals/accounts/company/new-company.md#add-more-organizations).
 @y
 Yes, but you can only add organizations with a Docker Business subscription
-to a company. For more details, see [Add more organizations](manuals/accounts/company/manage.md#add-more-organizations).
+to a company. For more details, see [Add more organizations](manuals/accounts/company/new-company.md#add-more-organizations).
 @z
 
 @x
@@ -631,12 +639,12 @@ to a company. For more details, see [Add more organizations](manuals/accounts/co
 To access and manage a nested organization, it must have a Docker Business
 subscription. If an organization downgrades from Docker Business, its owner must
 manage it outside of the company. For more details, see
-[Add more organizations](/manuals/accounts/company/manage.md#add-more-organizations).
+[Add more organizations](/manuals/accounts/company/new-company.md#add-more-organizations).
 @y
 To access and manage a nested organization, it must have a Docker Business
 subscription. If an organization downgrades from Docker Business, its owner must
 manage it outside of the company. For more details, see
-[Add more organizations](manuals/accounts/company/manage.md#add-more-organizations).
+[Add more organizations](manuals/accounts/company/new-company.md#add-more-organizations).
 @z
 
 @x

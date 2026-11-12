@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Manage your organization
@@ -12,181 +12,61 @@ linkTitle: Manage
 @z
 
 @x
-description: Learn how to manage your Docker organization, including members, teams, licenses, seats, product access, and settings.
-keywords: manage organization, members, teams, licenses, seats, product access, organization management, docker home, organization settings, deactivate organization
+description: Manage membership, teams, seats, licenses, and product access for your Docker organization from Docker Home.
+keywords: manage organization, members, teams, roles, seats, licenses, product access, custom roles, docker home
 @y
-description: Learn how to manage your Docker organization, including members, teams, licenses, seats, product access, and settings.
-keywords: manage organization, members, teams, licenses, seats, product access, organization management, docker home, organization settings, deactivate organization
+description: Manage membership, teams, seats, licenses, and product access for your Docker organization from Docker Home.
+keywords: manage organization, members, teams, roles, seats, licenses, product access, custom roles, docker home
 @z
 
 @x
-  - title: Information
-    description: Update your organization's general information and settings.
-    icon: pencil-square
-    link: /accounts/organization/manage/general-settings/
+Managing an organization is how you control who belongs to it and what each
+member can use. Organization owners handle administration from
+[Docker Home](https://app.docker.com).
 @y
-  - title: Information
-    description: Update your organization's general information and settings.
-    icon: pencil-square
-    link: __SUBDIR__/accounts/organization/manage/general-settings/
+Managing an organization is how you control who belongs to it and what each
+member can use. Organization owners handle administration from
+[Docker Home](https://app.docker.com).
 @z
 
 @x
-  - title: Members
-    description: Invite, manage, and assign roles to your organization members.
-    icon: user-plus
-    link: /accounts/organization/manage/members/
+## What organization management covers
 @y
-  - title: Members
-    description: Invite, manage, and assign roles to your organization members.
-    icon: user-plus
-    link: __SUBDIR__/accounts/organization/manage/members/
+## What organization management covers
 @z
 
 @x
-  - title: Teams
-    description: Create teams and manage repository access for groups of members.
-    icon: user-group
-    link: /accounts/organization/manage/manage-a-team/
+Organization management covers two things: membership and the products your
+members can use. Running both from one place keeps access aligned with your
+team as it changes, so you can grow, reorganize, or offboard without
+rebuilding access each time.
 @y
-  - title: Teams
-    description: Create teams and manage repository access for groups of members.
-    icon: user-group
-    link: __SUBDIR__/accounts/organization/manage/manage-a-team/
+Organization management covers two things: membership and the products your
+members can use. Running both from one place keeps access aligned with your
+team as it changes, so you can grow, reorganize, or offboard without
+rebuilding access each time.
 @z
 
 @x
-  - title: Licenses
-    description: View your license inventory and assign licenses to teams or individual members.
-    icon: key
-    link: /accounts/organization/manage/manage-licenses/
+| To do this | Go here |
+| --- | --- |
+| Invite members, assign roles, and remove people who leave | [Members](/manuals/accounts/organization/manage/members.md) |
+| Group members and grant shared repository access | [Teams](/manuals/accounts/organization/manage/manage-a-team.md) |
+| Add or remove seats on your Team or Business subscription | [Seats](/manuals/accounts/organization/manage/manage-seats.md) |
+| Assign add-on licenses for AI Governance, Docker Offload, and other products | [Licenses](/manuals/accounts/organization/manage/manage-licenses.md) |
+| Control what members can use in each Docker product, and check usage | [Products](/manuals/accounts/organization/manage/manage-products.md) |
+| Update the organization name, company, website, and avatar | [Information](/manuals/accounts/organization/manage/general-settings.md) |
+| Deactivate the organization | [Deactivation](/manuals/accounts/organization/manage/deactivate-account.md) |
 @y
-  - title: Licenses
-    description: View your license inventory and assign licenses to teams or individual members.
-    icon: key
-    link: __SUBDIR__/accounts/organization/manage/manage-licenses/
-@z
-
-@x
-  - title: Seats
-    description: Add or remove seats for Docker Team and Business subscriptions.
-    icon: user-circle
-    link: /accounts/organization/manage/manage-seats/
-@y
-  - title: Seats
-    description: Add or remove seats for Docker Team and Business subscriptions.
-    icon: user-circle
-    link: __SUBDIR__/accounts/organization/manage/manage-seats/
-@z
-
-@x
-  - title: Products
-    description: Manage access and view usage for Docker products across your organization.
-    icon: squares-2x2
-    link: /accounts/organization/manage/manage-products/
-@y
-  - title: Products
-    description: Manage access and view usage for Docker products across your organization.
-    icon: squares-2x2
-    link: __SUBDIR__/accounts/organization/manage/manage-products/
-@z
-
-@x
-  - title: Deactivation
-    description: Deactivate an organization after completing the required steps.
-    icon: minus-circle
-    link: /accounts/organization/manage/deactivate-account/
-@y
-  - title: Deactivation
-    description: Deactivate an organization after completing the required steps.
-    icon: minus-circle
-    link: __SUBDIR__/accounts/organization/manage/deactivate-account/
-@z
-
-@x
-  - title: Security
-    description: Configure single sign-on, provisioning, and access management.
-    icon: shield-check
-    link: /security/
-@y
-  - title: Security
-    description: Configure single sign-on, provisioning, and access management.
-    icon: shield-check
-    link: __SUBDIR__/security/
-@z
-
-@x
-  - title: Billing
-    description: Manage payment methods and view billing history.
-    icon: credit-card
-    link: /subscription-billing/
-@y
-  - title: Billing
-    description: Manage payment methods and view billing history.
-    icon: credit-card
-    link: __SUBDIR__/subscription-billing/
-@z
-
-@x
-As an organization owner, you manage your organization's membership, access,
-product usage, and settings. You can invite members, group them into teams,
-assign or revoke licenses and seats, change access to Docker products, update
-organization information, and deactivate the organization.
-@y
-As an organization owner, you manage your organization's membership, access,
-product usage, and settings. You can invite members, group them into teams,
-assign or revoke licenses and seats, change access to Docker products, update
-organization information, and deactivate the organization.
-@z
-
-@x
-## Managing your organization
-@y
-## Managing your organization
-@z
-
-@x
-You manage your organization from [Docker Home](https://app.docker.com) and
-must be assigned the
-[organization owner role](/manuals/security/roles-and-permissions/_index.md).
-@y
-You manage your organization from [Docker Home](https://app.docker.com) and
-must be assigned the
-[organization owner role](manuals/security/roles-and-permissions/_index.md).
-@z
-
-@x
-## Seats and licenses
-@y
-## Seats and licenses
-@z
-
-@x
-Seats and licenses both control access, but they apply to different kinds of
-plans. The following table summarizes the difference.
-@y
-Seats and licenses both control access, but they apply to different kinds of
-plans. The following table summarizes the difference.
-@z
-
-@x
-| Entitlement | What it grants                                          | Applies to                                       | Managed from                 |
-| ----------- | ------------------------------------------------------- | ------------------------------------------------ | ---------------------------- |
-| Seat        | Membership in your Docker Team or Business subscription | Docker Team or Business subscription             | Billing                      |
-| License     | Access to a specific product or add-on                  | AI Governance, Docker Offload, and other add-ons | Licenses, Teams, and Members |
-@y
-| Entitlement | What it grants                                          | Applies to                                       | Managed from                 |
-| ----------- | ------------------------------------------------------- | ------------------------------------------------ | ---------------------------- |
-| Seat        | Membership in your Docker Team or Business subscription | Docker Team or Business subscription             | Billing                      |
-| License     | Access to a specific product or add-on                  | AI Governance, Docker Offload, and other add-ons | Licenses, Teams, and Members |
-@z
-
-@x
-For details, see [Seats](/manuals/accounts/organization/manage/manage-seats.md)
-and [Manage licenses](/manuals/accounts/organization/manage/manage-licenses.md).
-@y
-For details, see [Seats](manuals/accounts/organization/manage/manage-seats.md)
-and [Manage licenses](manuals/accounts/organization/manage/manage-licenses.md).
+| To do this | Go here |
+| --- | --- |
+| Invite members, assign roles, and remove people who leave | [Members](manuals/accounts/organization/manage/members.md) |
+| Group members and grant shared repository access | [Teams](manuals/accounts/organization/manage/manage-a-team.md) |
+| Add or remove seats on your Team or Business subscription | [Seats](manuals/accounts/organization/manage/manage-seats.md) |
+| Assign add-on licenses for AI Governance, Docker Offload, and other products | [Licenses](manuals/accounts/organization/manage/manage-licenses.md) |
+| Control what members can use in each Docker product, and check usage | [Products](manuals/accounts/organization/manage/manage-products.md) |
+| Update the organization name, company, website, and avatar | [Information](manuals/accounts/organization/manage/general-settings.md) |
+| Deactivate the organization | [Deactivation](manuals/accounts/organization/manage/deactivate-account.md) |
 @z
 
 @x
@@ -196,13 +76,25 @@ and [Manage licenses](manuals/accounts/organization/manage/manage-licenses.md).
 @z
 
 @x
-Explore the following sections to manage your organization.
+- On a Docker Business subscription,
+you can delegate specific actions by assigning
+[custom roles](/manuals/security/roles-and-permissions/custom-roles/_index.md)
+to members or teams.
+- To configure single sign-on, SCIM provisioning, or domain verification
+first, see
+[Set up your organization](/manuals/accounts/organization/setup/_index.md).
+- For a planning approach to roles, provisioning, and ongoing access reviews,
+follow the
+[User access workflow](/manuals/accounts/organization/manage/user-access.md).
 @y
-Explore the following sections to manage your organization.
-@z
-
-@x
-{{< grid >}}
-@y
-{{< grid >}}
+- On a Docker Business subscription,
+you can delegate specific actions by assigning
+[custom roles](manuals/security/roles-and-permissions/custom-roles/_index.md)
+to members or teams.
+- To configure single sign-on, SCIM provisioning, or domain verification
+first, see
+[Set up your organization](manuals/accounts/organization/setup/_index.md).
+- For a planning approach to roles, provisioning, and ongoing access reviews,
+follow the
+[User access workflow](manuals/accounts/organization/manage/user-access.md).
 @z

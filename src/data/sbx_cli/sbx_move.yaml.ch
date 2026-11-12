@@ -163,10 +163,10 @@ usage: sbx move SANDBOX [flags]
 
 @x name
       usage: |
-        Name for the destination sandbox (default: 'moved-' + the source name; a cloud destination always adds a short unique suffix, a local one only when that name is already taken)
+        Name for the destination sandbox (default: 'moved-' + the source name, with a short unique suffix for cloud destinations or when the local name is taken; an explicit name is used unchanged)
 @y
       usage: |
-        Name for the destination sandbox (default: 'moved-' + the source name; a cloud destination always adds a short unique suffix, a local one only when that name is already taken)
+        Name for the destination sandbox (default: 'moved-' + the source name, with a short unique suffix for cloud destinations or when the local name is taken; an explicit name is used unchanged)
 @z
 
 @x on-timeout

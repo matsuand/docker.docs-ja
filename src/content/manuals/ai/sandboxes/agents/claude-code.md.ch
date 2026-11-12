@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Claude Code
 @y
@@ -176,6 +178,110 @@ $ sbx settings set claude.remoteControl true
 @z
 
 @x
+Remote Control environment and session credentials stay on the host. Docker
+Sandboxes doesn't pass remotely supplied environment variables or MCP
+configuration into the sandbox. Set `claude.remoteControl` to `false` to stop
+the proxy from supplying Remote Control credentials to running sandboxes.
+@y
+Remote Control environment and session credentials stay on the host. Docker
+Sandboxes doesn't pass remotely supplied environment variables or MCP
+configuration into the sandbox. Set `claude.remoteControl` to `false` to stop
+the proxy from supplying Remote Control credentials to running sandboxes.
+@z
+
+@x
+### Claude in Chrome
+@y
+### Claude in Chrome
+@z
+
+@x
+Claude in Chrome lets sandboxed Claude Code work with tabs in your host browser.
+Access is off by default. To use it:
+@y
+Claude in Chrome lets sandboxed Claude Code work with tabs in your host browser.
+Access is off by default. To use it:
+@z
+
+@x
+1. Install the Claude in Chrome extension in your host browser and sign in.
+   Use the same account for the extension and Claude Code's subscription OAuth
+   login. Your organization must permit the extension. An API key alone isn't
+   sufficient.
+2. On your host, enable
+   [`claude.chrome`](../configuration/settings.md#claudechrome):
+@y
+1. Install the Claude in Chrome extension in your host browser and sign in.
+   Use the same account for the extension and Claude Code's subscription OAuth
+   login. Your organization must permit the extension. An API key alone isn't
+   sufficient.
+2. On your host, enable
+   [`claude.chrome`](../configuration/settings.md#claudechrome):
+@z
+
+@x
+   ```console
+   $ sbx settings set claude.chrome true
+   ```
+@y
+   ```console
+   $ sbx settings set claude.chrome true
+   ```
+@z
+
+@x
+3. Start Claude Code with `--chrome` in a Claude sandbox:
+@y
+3. Start Claude Code with `--chrome` in a Claude sandbox:
+@z
+
+@x
+   ```console
+   $ sbx run --name <sandbox-name> -- --chrome
+   ```
+@y
+   ```console
+   $ sbx run --name <sandbox-name> -- --chrome
+   ```
+@z
+
+@x
+Ask Claude to open a tab, navigate to a page, or read its contents. Docker
+Sandboxes authenticates the browser connection with your stored Claude OAuth
+login without exposing the token inside the sandbox.
+@y
+Ask Claude to open a tab, navigate to a page, or read its contents. Docker
+Sandboxes authenticates the browser connection with your stored Claude OAuth
+login without exposing the token inside the sandbox.
+@z
+
+@x
+To block further browser connections, run on your host:
+@y
+To block further browser connections, run on your host:
+@z
+
+@x
+```console
+$ sbx settings set claude.chrome false
+```
+@y
+```console
+$ sbx settings set claude.chrome false
+```
+@z
+
+@x
+This blocks new connections from running sandboxes without recreating them.
+It doesn't end an established browser connection. End existing Claude browser
+sessions to revoke active access.
+@y
+This blocks new connections from running sandboxes without recreating them.
+It doesn't end an established browser connection. End existing Claude browser
+sessions to revoke active access.
+@z
+
+@x
 ### Default startup command
 @y
 ### Default startup command
@@ -218,11 +324,11 @@ $ sbx run --name <sandbox-name> -- -c   # runs claude --dangerously-skip-permiss
 @z
 
 @x
-When the first argument is a bare word, such as the `agents` subcommand, it
-replaces the defaults instead.
+For prompts and subcommands, see
+[Pass arguments to an agent](../usage.md#pass-arguments-to-an-agent).
 @y
-When the first argument is a bare word, such as the `agents` subcommand, it
-replaces the defaults instead.
+For prompts and subcommands, see
+[Pass arguments to an agent](../usage.md#pass-arguments-to-an-agent).
 @z
 
 @x
@@ -262,17 +368,11 @@ $ sbx run --clone claude . -- agents
 @z
 
 @x
-This invocation replaces the
-[default startup command](#default-startup-command), so it doesn't
-include `--dangerously-skip-permissions` and you can't switch to
-bypass-permissions mode inside the sandbox. To work around this, either
-use Claude Code's auto mode or pass the flag explicitly:
+To use bypass-permissions mode with the `agents` subcommand, pass the flag
+explicitly:
 @y
-This invocation replaces the
-[default startup command](#default-startup-command), so it doesn't
-include `--dangerously-skip-permissions` and you can't switch to
-bypass-permissions mode inside the sandbox. To work around this, either
-use Claude Code's auto mode or pass the flag explicitly:
+To use bypass-permissions mode with the `agents` subcommand, pass the flag
+explicitly:
 @z
 
 @x

@@ -34,9 +34,9 @@ usage: sbx diagnose [flags]
 @z
 
 @x upload
-      usage: Upload diagnostics to Docker support
+      usage: Upload diagnostics to Docker support (table format only)
 @y
-      usage: Upload diagnostics to Docker support
+      usage: Upload diagnostics to Docker support (table format only)
 @z
 
 % inherited_options:

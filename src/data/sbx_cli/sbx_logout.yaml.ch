@@ -13,16 +13,16 @@ usage: sbx logout [flags]
 
 % options:
 
-@x force
-      usage: Skip confirmation prompt
-@y
-      usage: Skip confirmation prompt
-@z
-
 @x help
       usage: help for logout
 @y
       usage: help for logout
+@z
+
+@x "yes"
+      usage: Skip confirmation prompt
+@y
+      usage: Skip confirmation prompt
 @z
 
 % inherited_options:
@@ -43,10 +43,10 @@ example: |4-
 
 @x
       # Skip the confirmation prompt
-      sbx logout --force
+      sbx logout --yes
 @y
       # Skip the confirmation prompt
-      sbx logout --force
+      sbx logout --yes
 @z
 
 % see_also:

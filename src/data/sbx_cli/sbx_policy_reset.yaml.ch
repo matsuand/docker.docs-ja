@@ -14,13 +14,13 @@ description: |-
 @z
 
 @x
-    This deletes the local policy store and stops the daemon. The daemon restarts
-    automatically on the next command, then prompts you to initialize the global
-    network policy again.
+    This deletes the local policy store and restarts the daemon immediately. You
+    are then prompted to choose the global network policy; without an interactive
+    terminal, initialize it after the reset by choosing a preset as shown below.
 @y
-    This deletes the local policy store and stops the daemon. The daemon restarts
-    automatically on the next command, then prompts you to initialize the global
-    network policy again.
+    This deletes the local policy store and restarts the daemon immediately. You
+    are then prompted to choose the global network policy; without an interactive
+    terminal, initialize it after the reset by choosing a preset as shown below.
 @z
 
 @x
@@ -85,6 +85,14 @@ example: |4-
 @y
       # Reset policies without confirmation
       sbx policy reset --force
+@z
+
+@x
+      # Reset and initialize in a script; use balanced, allow-all, or deny-all
+      sbx --no-input policy reset --force && sbx policy init balanced
+@y
+      # Reset and initialize in a script; use balanced, allow-all, or deny-all
+      sbx --no-input policy reset --force && sbx policy init balanced
 @z
 
 % see_also:

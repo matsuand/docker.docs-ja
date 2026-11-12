@@ -50,9 +50,11 @@ usage: sbx policy log [SANDBOX] [flags]
 @z
 
 @x limit
-      usage: Maximum number of log entries to show
+      usage: |
+        Maximum number of entries to show in each category (allowed and blocked); 0 shows all
 @y
-      usage: Maximum number of log entries to show
+      usage: |
+        Maximum number of entries to show in each category (allowed and blocked); 0 shows all
 @z
 
 @x type
@@ -98,10 +100,10 @@ example: |4-
 @z
 
 @x
-      # Show the last 20 entries
+      # Show up to 20 allowed and 20 blocked entries
       sbx policy log --limit 20
 @y
-      # Show the last 20 entries
+      # Show up to 20 allowed and 20 blocked entries
       sbx policy log --limit 20
 @z
 

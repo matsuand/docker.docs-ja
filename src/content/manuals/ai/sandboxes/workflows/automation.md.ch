@@ -154,13 +154,15 @@ for the cause before deciding whether to retry.
 @x
 Confirmations require terminal input. Piping an answer, such as `echo y`, does
 not confirm an operation. Use `--force` on commands that provide it to skip
-confirmation in scripts. `sbx kit builder history rm` uses `--yes` or `-y`
-instead, because its `--force` flag is passed to Buildx.
+confirmation in scripts. For `sbx logout`, use `--yes` or `-y`, even when
+no local daemon is running. `sbx kit builder history rm` also uses `--yes`
+or `-y`, because its `--force` flag is passed to Buildx.
 @y
 Confirmations require terminal input. Piping an answer, such as `echo y`, does
 not confirm an operation. Use `--force` on commands that provide it to skip
-confirmation in scripts. `sbx kit builder history rm` uses `--yes` or `-y`
-instead, because its `--force` flag is passed to Buildx.
+confirmation in scripts. For `sbx logout`, use `--yes` or `-y`, even when
+no local daemon is running. `sbx kit builder history rm` also uses `--yes`
+or `-y`, because its `--force` flag is passed to Buildx.
 @z
 
 @x
@@ -281,7 +283,6 @@ that use the following flags:
 | Command | Previous flag | Replacement |
 | --- | --- | --- |
 | `sbx run`, `sbx env run` | `--detached` | `--detach` or `-d` |
-| `sbx logout` | `--yes`, `-y` | `--force` or `-f` |
 | `sbx env create`, `sbx env run` | `--auto-approve`, `-y` | `--force` or `-f` |
 | `sbx create` | `--quiet`, `-q` | `--no-progress` suppresses progress but still prints the creation summary |
 | `sbx template save` | `-d` for a description | `--description` |
@@ -291,7 +292,6 @@ that use the following flags:
 | Command | Previous flag | Replacement |
 | --- | --- | --- |
 | `sbx run`, `sbx env run` | `--detached` | `--detach` or `-d` |
-| `sbx logout` | `--yes`, `-y` | `--force` or `-f` |
 | `sbx env create`, `sbx env run` | `--auto-approve`, `-y` | `--force` or `-f` |
 | `sbx create` | `--quiet`, `-q` | `--no-progress` suppresses progress but still prints the creation summary |
 | `sbx template save` | `-d` for a description | `--description` |

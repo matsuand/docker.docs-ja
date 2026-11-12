@@ -204,6 +204,16 @@ paths. Filesystem mount decisions aren't in the log.
 @z
 
 @x
+With UDP egress disabled, some blocked destinations share the
+`<further blocked attempts>` log entry. For details, see
+[Allow outbound UDP](network-rules.md#allow-outbound-udp).
+@y
+With UDP egress disabled, some blocked destinations share the
+`<further blocked attempts>` log entry. For details, see
+[Allow outbound UDP](network-rules.md#allow-outbound-udp).
+@z
+
+@x
 ## Filter the log
 @y
 ## Filter the log
@@ -226,9 +236,9 @@ $ sbx policy log my-sandbox
 @z
 
 @x
-To show only the most recent entries, pass `--limit`:
+Use `--limit N` to show up to N allowed and N blocked entries:
 @y
-To show only the most recent entries, pass `--limit`:
+Use `--limit N` to show up to N allowed and N blocked entries:
 @z
 
 @x
@@ -239,6 +249,12 @@ $ sbx policy log --limit 20
 ```console
 $ sbx policy log --limit 20
 ```
+@z
+
+@x
+Use `--limit 0` to show all entries.
+@y
+Use `--limit 0` to show all entries.
 @z
 
 @x

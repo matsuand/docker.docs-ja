@@ -147,12 +147,12 @@ $ sbx move local-project --to cloud
 
 @x
 The `move` command spans both backends, so don't add the global `--cloud` flag.
-Use `--name` to set the destination name prefix. The cloud destination appends
-a short unique suffix:
+Without `--name`, the cloud destination gets an automatically generated name
+with a short unique suffix. Use `--name` to set the exact destination name:
 @y
 The `move` command spans both backends, so don't add the global `--cloud` flag.
-Use `--name` to set the destination name prefix. The cloud destination appends
-a short unique suffix:
+Without `--name`, the cloud destination gets an automatically generated name
+with a short unique suffix. Use `--name` to set the exact destination name:
 @z
 
 @x
@@ -163,6 +163,18 @@ $ sbx move local-project --to cloud --name cloud-project
 ```console
 $ sbx move local-project --to cloud --name cloud-project
 ```
+@z
+
+@x
+For either move direction, an explicit name must be available at the destination.
+If the name is already taken, the command reports an error before confirmation,
+source capture, or transfer. Local names are compared case-insensitively. Cloud
+names must be available within the source agent's namespace.
+@y
+For either move direction, an explicit name must be available at the destination.
+If the name is already taken, the command reports an error before confirmation,
+source capture, or transfer. Local names are compared case-insensitively. Cloud
+names must be available within the source agent's namespace.
 @z
 
 @x

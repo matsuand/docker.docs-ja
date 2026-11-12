@@ -82,7 +82,6 @@ templates also include a C/C++ compiler toolchain for building native code.
 | `devin`               | [Devin CLI](https://docs.devin.ai/work-with-devin/devin-cli)         |
 | `docker-agent`        | [Docker Agent](https://github.com/docker/docker-agent)               |
 | `droid`               | [Droid](https://www.factory.ai)                                      |
-| `gemini`              | [Gemini CLI](https://github.com/google-gemini/gemini-cli)            |
 | `kiro`                | [Kiro](https://kiro.dev)                                             |
 | `opencode`            | [OpenCode](https://opencode.ai)                                      |
 @y
@@ -96,7 +95,6 @@ templates also include a C/C++ compiler toolchain for building native code.
 | `devin`               | [Devin CLI](https://docs.devin.ai/work-with-devin/devin-cli)         |
 | `docker-agent`        | [Docker Agent](https://github.com/docker/docker-agent)               |
 | `droid`               | [Droid](https://www.factory.ai)                                      |
-| `gemini`              | [Gemini CLI](https://github.com/google-gemini/gemini-cli)            |
 | `kiro`                | [Kiro](https://kiro.dev)                                             |
 | `opencode`            | [OpenCode](https://opencode.ai)                                      |
 @z

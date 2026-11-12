@@ -236,6 +236,14 @@ $ sbx secret set anthropic \
 @z
 
 @x
+For provider installation and configuration requirements, see
+[Use a dynamic secret source](../configuration/credentials.md#use-a-dynamic-secret-source).
+@y
+For provider installation and configuration requirements, see
+[Use a dynamic secret source](../configuration/credentials.md#use-a-dynamic-secret-source).
+@z
+
+@x
 ## Source credentials from AWS Secrets Manager
 @y
 ## Source credentials from AWS Secrets Manager
@@ -263,10 +271,10 @@ $ sbx secret set anthropic \
 
 @x
 See [Use a dynamic secret source](../configuration/credentials.md#use-a-dynamic-secret-source)
-for refresh policies, verification options, custom secrets, and provider
-account or profile selection.
+for provider installation and configuration requirements, refresh policies,
+verification options, custom secrets, and account or profile selection.
 @y
 See [Use a dynamic secret source](../configuration/credentials.md#use-a-dynamic-secret-source)
-for refresh policies, verification options, custom secrets, and provider
-account or profile selection.
+for provider installation and configuration requirements, refresh policies,
+verification options, custom secrets, and account or profile selection.
 @z

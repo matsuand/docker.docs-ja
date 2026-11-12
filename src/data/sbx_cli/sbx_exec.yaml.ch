@@ -6,24 +6,14 @@ name: sbx exec
 synopsis: Execute a command inside a sandbox
 description: |-
     Execute a command in a sandbox. If the sandbox is stopped, it is started first. Or — with --cloud — the cloud sandbox
-    ID (sbx_*) or name from "sbx --cloud ls".
+    ID (sbx_*) or name from "sbx --cloud ls". --user is not supported with --cloud.
+    --detach-keys applies only to an interactive (-i/-t) cloud exec.
 @y
 name: sbx exec
 synopsis: Execute a command inside a sandbox
 description: |-
     Execute a command in a sandbox. If the sandbox is stopped, it is started first. Or — with --cloud — the cloud sandbox
-    ID (sbx_*) or name from "sbx --cloud ls".
-@z
-
-@x
-    Flags match the behavior of "docker exec", except detached exec (-d/--detach)
-    is not supported. Some flags (-d, --user, --privileged)
-    are not supported with --cloud and are rejected rather than silently ignored.
-    --detach-keys applies only to an interactive (-i/-t) cloud exec.
-@y
-    Flags match the behavior of "docker exec", except detached exec (-d/--detach)
-    is not supported. Some flags (-d, --user, --privileged)
-    are not supported with --cloud and are rejected rather than silently ignored.
+    ID (sbx_*) or name from "sbx --cloud ls". --user is not supported with --cloud.
     --detach-keys applies only to an interactive (-i/-t) cloud exec.
 @z
 
@@ -45,16 +35,12 @@ usage: sbx exec [flags] SANDBOX COMMAND [ARG...]
 
 % options:
 
-@x detach
-      usage: Detached mode (not supported)
-@y
-      usage: Detached mode (not supported)
-@z
-
 @x detach-keys
-      usage: Override the key sequence for detaching a container
+      usage: |
+        Override the key sequence for detaching an interactive cloud exec session (not supported for local exec)
 @y
-      usage: Override the key sequence for detaching a container
+      usage: |
+        Override the key sequence for detaching an interactive cloud exec session (not supported for local exec)
 @z
 
 @x env
@@ -79,12 +65,6 @@ usage: sbx exec [flags] SANDBOX COMMAND [ARG...]
       usage: Keep STDIN open even if not attached
 @y
       usage: Keep STDIN open even if not attached
-@z
-
-@x privileged
-      usage: Give extended privileges to the command
-@y
-      usage: Give extended privileges to the command
 @z
 
 @x tty

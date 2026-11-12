@@ -80,6 +80,16 @@ description: |-
 @z
 
 @x
+    HTTP paths, query parameter names, and query values match without regard to
+    ASCII letter case. For example, /API/** matches /api/items, and Tag=PROD
+    matches tag=prod.
+@y
+    HTTP paths, query parameter names, and query values match without regard to
+    ASCII letter case. For example, /API/** matches /api/items, and Tag=PROD
+    matches tag=prod.
+@z
+
+@x
     With --cloud:
     Block cloud sandbox network access to the specified hosts.
 @y
@@ -142,9 +152,9 @@ usage: sbx policy deny network [--sandbox SANDBOX] RESOURCES [flags]
 @z
 
 @x protocol
-        Restrict the rule to one protocol: tcp or udp (default tcp,udp)
+        Network protocol: tcp or udp; repeat or comma-separate for both (default tcp,udp)
 @y
-        Restrict the rule to one protocol: tcp or udp (default tcp,udp)
+        Network protocol: tcp or udp; repeat or comma-separate for both (default tcp,udp)
 @z
 
 @x query

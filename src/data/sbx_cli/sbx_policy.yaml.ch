@@ -50,6 +50,7 @@ usage: sbx policy COMMAND
 @x
     - sbx - Manage AI coding agent sandboxes.
     - sbx policy allow - Add an allow rule for sandboxes
+    - sbx policy approval - Review and respond to pending approvals
     - sbx policy check - Check whether policy allows an access request
     - sbx policy deny - Add a deny rule for sandboxes
     - sbx policy init - Initialize the global network policy
@@ -62,6 +63,7 @@ usage: sbx policy COMMAND
 @y
     - sbx - Manage AI coding agent sandboxes.
     - sbx policy allow - Add an allow rule for sandboxes
+    - sbx policy approval - Review and respond to pending approvals
     - sbx policy check - Check whether policy allows an access request
     - sbx policy deny - Add a deny rule for sandboxes
     - sbx policy init - Initialize the global network policy

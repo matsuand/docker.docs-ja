@@ -159,18 +159,12 @@ docker-agent run --yolo
 @z
 
 @x
-Arguments after `--` are added after the default flags when the first one is
-itself a flag (begins with `-`). When the first argument is a bare word — such
-as the `run` subcommand or a config file — it replaces the defaults, so include
-`run --yolo` yourself:
+To pass flags, prompts, or configuration files, see
+[Pass arguments to an agent](../usage.md#pass-arguments-to-an-agent).
 @y
-Arguments after `--` are added after the default flags when the first one is
-itself a flag (begins with `-`). When the first argument is a bare word — such
-as the `run` subcommand or a config file — it replaces the defaults, so include
-`run --yolo` yourself:
+To pass flags, prompts, or configuration files, see
+[Pass arguments to an agent](../usage.md#pass-arguments-to-an-agent).
 @z
-
-% snip command...
 
 @x
 ## Base image

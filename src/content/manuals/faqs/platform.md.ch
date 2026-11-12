@@ -78,9 +78,9 @@ Docker uses tokens to manage user sessions with different expiration periods:
 @z
 
 @x
-Docker also supports your IdP's default session timeout through SAML attributes. For more information, see [SSO attributes](/manuals/security/provisioning/_index.md#sso-attributes).
+Docker also supports your IdP's default session timeout through SAML attributes. For more information, see [SSO attributes](/manuals/security/authentication/single-sign-on/connect.md#sso-attributes).
 @y
-Docker also supports your IdP's default session timeout through SAML attributes. For more information, see [SSO attributes](manuals/security/provisioning/_index.md#sso-attributes).
+Docker also supports your IdP's default session timeout through SAML attributes. For more information, see [SSO attributes](/manuals/security/authentication/single-sign-on/connect.md#sso-attributes).
 @z
 
 @x

@@ -46,9 +46,9 @@ description: |-
 @z
 
 @x
-    Available agents: claude, codex, copilot, cursor, devin, docker-agent, droid, gemini, kiro, opencode, shell
+    Available agents: claude, codex, copilot, cursor, devin, docker-agent, droid, kiro, opencode, shell
 @y
-    Available agents: claude, codex, copilot, cursor, devin, docker-agent, droid, gemini, kiro, opencode, shell
+    Available agents: claude, codex, copilot, cursor, devin, docker-agent, droid, kiro, opencode, shell
 @z
 
 @x
@@ -201,10 +201,10 @@ usage: sbx create AGENT|SANDBOX_KIT [PATH...] [flags]
 
 @x name
       usage: |
-        Name for the sandbox (defaults to <agent>-<workdir>; at least two characters, starting with a letter or number, containing only letters, numbers, hyphens and periods (periods are rejected with --cloud); 'default' is reserved)
+        Name for the sandbox (default: <agent>-<workdir>; 2–63 ASCII letters, numbers, hyphens or periods; each dot-separated part must start and end with a letter or number; periods are rejected with --cloud; 'default' is reserved)
 @y
       usage: |
-        Name for the sandbox (defaults to <agent>-<workdir>; at least two characters, starting with a letter or number, containing only letters, numbers, hyphens and periods (periods are rejected with --cloud); 'default' is reserved)
+        Name for the sandbox (default: <agent>-<workdir>; 2–63 ASCII letters, numbers, hyphens or periods; each dot-separated part must start and end with a letter or number; periods are rejected with --cloud; 'default' is reserved)
 @z
 
 @x no-progress
@@ -360,11 +360,37 @@ example: |4-
 @z
 
 @x
-      # Add a mixin to a built-in agent
+      # Add a mixin from a local directory or ZIP file
       sbx create claude --kit ./my-mixin/
+      sbx create claude --kit ./my-mixin.zip
 @y
-      # Add a mixin to a built-in agent
+      # Add a mixin from a local directory or ZIP file
       sbx create claude --kit ./my-mixin/
+      sbx create claude --kit ./my-mixin.zip
+@z
+
+@x
+      # Add a mixin from Docker Hub
+      sbx create claude --kit org/my-mixin:latest
+@y
+      # Add a mixin from Docker Hub
+      sbx create claude --kit org/my-mixin:latest
+@z
+
+@x
+      # Add a mixin from an OCI reference
+      sbx create claude --kit ghcr.io/org/my-mixin:latest
+@y
+      # Add a mixin from an OCI reference
+      sbx create claude --kit ghcr.io/org/my-mixin:latest
+@z
+
+@x
+      # Add a mixin from a git repository (git+https:// or git+ssh://, optionally pinned to a ref and/or subdirectory)
+      sbx create claude --kit "git+https://github.com/org/repo.git#ref=v1.0&dir=mixins/foo"
+@y
+      # Add a mixin from a git repository (git+https:// or git+ssh://, optionally pinned to a ref and/or subdirectory)
+      sbx create claude --kit "git+https://github.com/org/repo.git#ref=v1.0&dir=mixins/foo"
 @z
 
 @x

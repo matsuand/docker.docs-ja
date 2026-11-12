@@ -4,37 +4,35 @@
 % .md リンクへの (no slash) 対応
 
 @x
-title: Change general organization information
+title: Update organization information
 linkTitle: Information
 @y
-title: Change general organization information
+title: Update organization information
 linkTitle: Information
 @z
 
 @x
-description: Learn how to manage settings for organizations.
+description: >-
+  Update your organization's name, company, location, website, and
+  avatar in Docker Home.
 keywords: organization, settings, Docker Home, manage, Docker organization, Gravatar, SCIM, SSO setup, domain management, organization settings
 @y
-description: Learn how to manage settings for organizations.
+description: >-
+  Update your organization's name, company, location, website, and
+  avatar in Docker Home.
 keywords: organization, settings, Docker Home, manage, Docker organization, Gravatar, SCIM, SSO setup, domain management, organization settings
 @z
 
 @x
-Learn how to update your organization information.
+Update the details that appear on your organization landing page.
 @y
-Learn how to update your organization information.
+Update the details that appear on your organization landing page.
 @z
 
 @x
 ## Update organization information
 @y
 ## Update organization information
-@z
-
-@x
-General organization information appears on your organization landing page.
-@y
-General organization information appears on your organization landing page.
 @z
 
 @x
@@ -67,12 +65,12 @@ To edit this information:
 1. Sign in to [Docker Home](https://app.docker.com) and select your
    organization from the top-left account drop-down.
 1. Select **Organization settings**.
-1. Enter or update your organization’s details, then select **Save**.
+1. Enter or update your organization's details, then select **Save**.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select your
    organization from the top-left account drop-down.
 1. Select **Organization settings**.
-1. Enter or update your organization’s details, then select **Save**.
+1. Enter or update your organization's details, then select **Save**.
 @z
 
 @x
@@ -91,10 +89,10 @@ After configuring your organization information, you can:
 - [Configure single sign-on (SSO)](/manuals/security/authentication/single-sign-on/connect.md)
 - [Set up SCIM provisioning](/manuals/security/provisioning/scim/_index.md)
 - [Manage domains](/manuals/security/provisioning/domain-management.md)
-- [Create a company](/manuals/accounts/company/new-company.md)
+- [Set up a company](/manuals/accounts/company/new-company.md)
 @y
 - [Configure single sign-on (SSO)](manuals/security/authentication/single-sign-on/connect.md)
 - [Set up SCIM provisioning](manuals/security/provisioning/scim/_index.md)
 - [Manage domains](manuals/security/provisioning/domain-management.md)
-- [Create a company](manuals/accounts/company/new-company.md)
+- [Set up a company](manuals/accounts/company/new-company.md)
 @z

@@ -40,13 +40,21 @@ description: |-
 @x
     A directory PATH selects sbxenv.yaml; a file PATH selects that file.
     With no PATH, ~/.sbxenv.yaml supplies shared defaults when present.
-    Explicit PATHs skip those defaults. Later files override earlier values;
-    lists such as ports and mcp.servers are concatenated.
+    Explicit PATHs skip those defaults. Later files override earlier values.
+    Ports with the same sandbox port and effective protocol, MCP servers with the
+    same name, and additional workspaces with the same container target use the
+    later entry, including repeated entries in one file.
+    Kit arguments merge by source. The entrypoint and cmd arrays replace earlier
+    values; other lists concatenate.
 @y
     A directory PATH selects sbxenv.yaml; a file PATH selects that file.
     With no PATH, ~/.sbxenv.yaml supplies shared defaults when present.
-    Explicit PATHs skip those defaults. Later files override earlier values;
-    lists such as ports and mcp.servers are concatenated.
+    Explicit PATHs skip those defaults. Later files override earlier values.
+    Ports with the same sandbox port and effective protocol, MCP servers with the
+    same name, and additional workspaces with the same container target use the
+    later entry, including repeated entries in one file.
+    Kit arguments merge by source. The entrypoint and cmd arrays replace earlier
+    values; other lists concatenate.
 @z
 
 @x
@@ -73,16 +81,12 @@ usage: sbx env exec [flags] [PATH...] -- COMMAND [ARG...]
 
 % options:
 
-@x detach
-      usage: Detached mode (not supported)
-@y
-      usage: Detached mode (not supported)
-@z
-
 @x detach-keys
-      usage: Override the key sequence for detaching a container
+      usage: |
+        Override the key sequence for detaching an interactive cloud exec session (not supported for local exec)
 @y
-      usage: Override the key sequence for detaching a container
+      usage: |
+        Override the key sequence for detaching an interactive cloud exec session (not supported for local exec)
 @z
 
 @x env
@@ -131,12 +135,6 @@ usage: sbx env exec [flags] [PATH...] -- COMMAND [ARG...]
 @y
       usage: |
         Name for the sandbox, overriding 'name:' in sbxenv.yaml and the derived <agent>-<directory> (every 'sbx env' command addressing this environment needs the same value)
-@z
-
-@x privileged
-      usage: Give extended privileges to the command
-@y
-      usage: Give extended privileges to the command
 @z
 
 @x tty

@@ -4,13 +4,21 @@
 @x
 name: sbx template ls
 synopsis: List template images
-description: |
-    List all template images stored in the sandbox runtime's image store.
+description: |-
+    List tagged template images stored in the sandbox runtime's image store.
 @y
 name: sbx template ls
 synopsis: List template images
-description: |
-    List all template images stored in the sandbox runtime's image store.
+description: |-
+    List tagged template images stored in the sandbox runtime's image store.
+@z
+
+@x
+    With --cloud:
+    List cloud sandbox templates.
+@y
+    With --cloud:
+    List cloud sandbox templates.
 @z
 
 @x
@@ -20,6 +28,24 @@ usage: sbx template ls [flags]
 @z
 
 % options:
+
+@x all
+      usage: Include digest-only and untagged images
+@y
+      usage: Include digest-only and untagged images
+@z
+
+@x digests
+      usage: Show image digests
+@y
+      usage: Show image digests
+@z
+
+@x format
+      usage: 'Output format: table, json or yaml'
+@y
+      usage: 'Output format: table, json or yaml'
+@z
 
 @x help
       usage: help for ls
@@ -31,6 +57,12 @@ usage: sbx template ls [flags]
       usage: Output in JSON format
 @y
       usage: Output in JSON format
+@z
+
+@x no-trunc
+      usage: Show full image IDs
+@y
+      usage: Show full image IDs
 @z
 
 @x quiet
@@ -57,12 +89,20 @@ usage: sbx template ls [flags]
 
 @x
 example: |4-
-      # List all template images
+      # List tagged template images
       sbx template ls
 @y
 example: |4-
-      # List all template images
+      # List tagged template images
       sbx template ls
+@z
+
+@x
+      # Include digest-only and untagged images with their digests and full IDs
+      sbx template ls --all --digests --no-trunc
+@y
+      # Include digest-only and untagged images with their digests and full IDs
+      sbx template ls --all --digests --no-trunc
 @z
 
 @x
@@ -71,6 +111,22 @@ example: |4-
 @y
       # Output in JSON format
       sbx template ls --json
+@z
+
+@x
+      # Cloud: list templates
+      sbx --cloud template ls
+@y
+      # Cloud: list templates
+      sbx --cloud template ls
+@z
+
+@x
+      # Cloud: output in JSON format
+      sbx --cloud template ls --json
+@y
+      # Cloud: output in JSON format
+      sbx --cloud template ls --json
 @z
 
 % see_also:
