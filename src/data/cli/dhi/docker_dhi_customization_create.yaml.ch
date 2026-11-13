@@ -14,6 +14,8 @@ long: |-
     Create a new Docker Hardened Images customization using a YAML file as input.
     The file should contain the complete customization structure without an 'id' field.
 
+    Image customizations require at least one platform under 'platforms'.
+
     Flags can override values from the YAML file (see --help for details).
     Shell completions are available for --destination and --tag-definition-id flags.
     Run 'docker dhi completion --help' to set up shell completions.
@@ -21,6 +23,8 @@ long: |-
 long: |-
     Create a new Docker Hardened Images customization using a YAML file as input.
     The file should contain the complete customization structure without an 'id' field.
+
+    Image customizations require at least one platform under 'platforms'.
 
     Flags can override values from the YAML file (see --help for details).
     Shell completions are available for --destination and --tag-definition-id flags.

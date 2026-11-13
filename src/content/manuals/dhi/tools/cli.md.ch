@@ -268,6 +268,19 @@ options and flags, see the
 @z
 
 @x
+For a complete reference of all YAML fields, see
+[Image customization YAML file](/dhi/how-to/customize/#image-customization-yaml-file).
+For Helm charts, see
+[Helm chart customization YAML file](/dhi/how-to/customize/#helm-chart-customization-yaml-file).
+@y
+For a complete reference of all YAML fields, see
+[Image customization YAML file](/dhi/how-to/customize/#image-customization-yaml-file).
+@y
+For Helm charts, see
+[Helm chart customization YAML file](__SUBDIR__/dhi/how-to/customize/#helm-chart-customization-yaml-file).
+@z
+
+@x
 ### Enterprise package authentication
 @y
 ### Enterprise package authentication

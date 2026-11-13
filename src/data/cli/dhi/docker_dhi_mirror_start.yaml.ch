@@ -40,6 +40,16 @@ long: |-
 @z
 
 @x
+    Note: mirroring a repository does not automatically grant every organization member
+    access to it. Members without access to the destination repository need appropriate
+    team repository permissions, which can be set in Docker Hub.
+@y
+    Note: mirroring a repository does not automatically grant every organization member
+    access to it. Members without access to the destination repository need appropriate
+    team repository permissions, which can be set in Docker Hub.
+@z
+
+@x
     Examples:
       docker dhi mirror start --org myorg dhi/golang,myorg/dhi-golang dhi/node,myorg/dhi-node
       docker dhi mirror start --org myorg golang,dhi-golang node,dhi-node

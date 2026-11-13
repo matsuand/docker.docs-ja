@@ -117,20 +117,20 @@ Buildx supports the following cache storage backends:
 
 @x
 - `s3`: uploads the build cache to an
-  [AWS S3 bucket](https://aws.amazon.com/s3/) (unreleased).
+  [AWS S3 bucket](https://aws.amazon.com/s3/) (experimental).
 @y
 - `s3`: uploads the build cache to an
-  [AWS S3 bucket](https://aws.amazon.com/s3/) (unreleased).
+  [AWS S3 bucket](https://aws.amazon.com/s3/) (experimental).
 @z
 
 @x
 - `azblob`: uploads the build cache to
   [Azure Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/)
-  (unreleased).
+  (experimental).
 @y
 - `azblob`: uploads the build cache to
   [Azure Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/)
-  (unreleased).
+  (experimental).
 @z
 
 @x

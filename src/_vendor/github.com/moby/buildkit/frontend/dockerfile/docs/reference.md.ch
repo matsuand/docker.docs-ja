@@ -1030,6 +1030,74 @@ and use it to cross-compile to the target platform inside the stage.
 @z
 
 @x
+### FROM --reset
+@y
+### FROM --reset
+@z
+
+@x
+> [!NOTE]
+> Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax)
+> version.
+@y
+> [!NOTE]
+> Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax)
+> version.
+@z
+
+% snip code...
+
+@x
+The `--reset` flag clears configuration inherited from the base image, so
+that changes in the base image don't affect these parts of your build. The
+base image can be an image or another build stage. The flag can be repeated,
+and its values aren't expanded with build arguments. The following fields can
+be reset:
+@y
+The `--reset` flag clears configuration inherited from the base image, so
+that changes in the base image don't affect these parts of your build. The
+base image can be an image or another build stage. The flag can be repeated,
+and its values aren't expanded with build arguments. The following fields can
+be reset:
+@z
+
+@x
+| Field         | Effect                                                                    |
+|---------------|---------------------------------------------------------------------------|
+| `cmd`         | Removes the default command                                               |
+| `entrypoint`  | Removes the entrypoint                                                    |
+| `env`         | Removes environment variables like [`ENV --unset`](#env---unset), the default `PATH` is set again on Linux |
+| `expose`      | Removes exposed ports                                                     |
+| `healthcheck` | Removes the health check                                                  |
+| `label`       | Removes labels                                                            |
+| `onbuild`     | Skips the [`ONBUILD`](#onbuild) triggers of the base image                |
+| `shell`       | Restores the default shell                                                |
+| `stopsignal`  | Removes the stop signal                                                   |
+| `user`        | Restores the default user                                                 |
+| `volume`      | Removes volumes                                                           |
+| `workdir`     | Restores the default working directory (`/`)                              |
+| `all`         | Resets all of the above, and any fields added in future versions          |
+@y
+| Field         | Effect                                                                    |
+|---------------|---------------------------------------------------------------------------|
+| `cmd`         | Removes the default command                                               |
+| `entrypoint`  | Removes the entrypoint                                                    |
+| `env`         | Removes environment variables like [`ENV --unset`](#env---unset), the default `PATH` is set again on Linux |
+| `expose`      | Removes exposed ports                                                     |
+| `healthcheck` | Removes the health check                                                  |
+| `label`       | Removes labels                                                            |
+| `onbuild`     | Skips the [`ONBUILD`](#onbuild) triggers of the base image                |
+| `shell`       | Restores the default shell                                                |
+| `stopsignal`  | Removes the stop signal                                                   |
+| `user`        | Restores the default user                                                 |
+| `volume`      | Removes volumes                                                           |
+| `workdir`     | Restores the default working directory (`/`)                              |
+| `all`         | Resets all of the above, and any fields added in future versions          |
+@z
+
+% snip code...
+
+@x
 ### Understand how ARG and FROM interact
 @y
 ### Understand how ARG and FROM interact {#understand-how-arg-and-from-interac}
@@ -1964,6 +2032,34 @@ $ docker image inspect --format='{{json .Config.Labels}}' myimage
 @z
 
 @x
+### LABEL --unset
+@y
+### LABEL --unset
+@z
+
+@x
+> [!NOTE]
+> Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax)
+> version.
+@y
+> [!NOTE]
+> Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax)
+> version.
+@z
+
+% snip code...
+
+@x
+The `--unset` flag removes labels from the image, including labels inherited
+from the base image. Removing a label that isn't set is not an error.
+@y
+The `--unset` flag removes labels from the image, including labels inherited
+from the base image. Removing a label that isn't set is not an error.
+@z
+
+% snip code...
+
+@x
 ## MAINTAINER (deprecated)
 @y
 ## MAINTAINER (deprecated)
@@ -2312,6 +2408,52 @@ RUN apt-get update && apt-get install -y ...
 > The alternative syntax is supported for backward compatibility, but discouraged
 > for the reasons outlined above, and may be removed in a future release.
 @z
+
+@x
+### ENV --unset
+@y
+### ENV --unset
+@z
+
+@x
+> [!NOTE]
+> Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax)
+> version.
+@y
+> [!NOTE]
+> Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax)
+> version.
+@z
+
+% snip code...
+
+@x
+The `--unset` flag removes environment variables, including variables inherited
+from the base image. The variables are removed from the image configuration and
+from the environment of subsequent build steps. A build argument with the same
+name is removed as well. Declare the build argument again with [`ARG`](#arg) to
+make it available to later build steps. Removing a variable that isn't set is
+not an error. Values set by earlier instructions remain in the image history.
+@y
+The `--unset` flag removes environment variables, including variables inherited
+from the base image. The variables are removed from the image configuration and
+from the environment of subsequent build steps. A build argument with the same
+name is removed as well. Declare the build argument again with [`ARG`](#arg) to
+make it available to later build steps. Removing a variable that isn't set is
+not an error. Values set by earlier instructions remain in the image history.
+@z
+
+@x
+When `PATH` is removed, `RUN` instructions on Linux use the default `PATH`, and
+stages based on this stage add the default `PATH` back to their image
+configuration.
+@y
+When `PATH` is removed, `RUN` instructions on Linux use the default `PATH`, and
+stages based on this stage add the default `PATH` back to their image
+configuration.
+@z
+
+% snip code...
 
 @x
 ## ADD
@@ -4974,6 +5116,38 @@ Keep the following things in mind about volumes in the Dockerfile.
   within the Dockerfile. The `VOLUME` instruction does not support specifying a `host-dir`
   parameter. You must specify the mountpoint when you create or run the container.
 @z
+
+@x
+### VOLUME --unset
+@y
+### VOLUME --unset
+@z
+
+@x
+> [!NOTE]
+> Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax)
+> version.
+@y
+> [!NOTE]
+> Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax)
+> version.
+@z
+
+% snip code...
+
+@x
+The `--unset` flag removes volumes from the image configuration, including
+volumes inherited from the base image. Trailing and duplicate slashes are
+ignored when comparing paths, so `/data/` matches a volume defined as `/data`.
+Removing a volume that isn't defined is not an error.
+@y
+The `--unset` flag removes volumes from the image configuration, including
+volumes inherited from the base image. Trailing and duplicate slashes are
+ignored when comparing paths, so `/data/` matches a volume defined as `/data`.
+Removing a volume that isn't defined is not an error.
+@z
+
+% snip code...
 
 @x
 ## USER
@@ -5723,7 +5897,9 @@ RUN echo "I'm building for $TARGETPLATFORM"
 | `BUILDKIT_BUILD_NAME`           | String | Override the build name shown in [`buildx history` command](https://docs.docker.com/reference/cli/docker/buildx/history/) and [Docker Desktop Builds view](https://docs.docker.com/desktop/use-desktop/builds/). |
 | `BUILDKIT_CACHE_MOUNT_NS`       | String | Set optional cache ID namespace.                                                                                                                                                                                 |
 | `BUILDKIT_CONTEXT_KEEP_GIT_DIR` | Bool   | Trigger Git context to keep the `.git` directory.                                                                                                                                                                |
+| `BUILDKIT_DISABLE_ONBUILD`      | Bool   | Skip the [`ONBUILD`](#onbuild) triggers of all base images and stages. This is not a security boundary: a custom frontend selected with `# syntax=` can ignore it.                                               |
 | `BUILDKIT_GIT_ADVICE`           | Bool   | Show Git advice messages from BuildKit-managed Git operations. Defaults to `false`.                                                                                                                              |
+| `BUILDKIT_GIT_DEBUG_COMMANDS`   | Bool   | Print executed Git commands for Git contexts and `ADD` sources in the build log. Defaults to `false`.                                                                                                             |
 | `BUILDKIT_INLINE_CACHE`[^2]     | Bool   | Inline cache metadata to image config or not.                                                                                                                                                                    |
 | `BUILDKIT_MULTI_PLATFORM`       | Bool   | Opt into deterministic output regardless of multi-platform output or not.                                                                                                                                        |
 | `BUILDKIT_SANDBOX_HOSTNAME`     | String | Set the hostname (default `buildkitsandbox`)                                                                                                                                                                     |
@@ -5735,7 +5911,9 @@ RUN echo "I'm building for $TARGETPLATFORM"
 | `BUILDKIT_BUILD_NAME`           | String | Override the build name shown in [`buildx history` command](https://docs.docker.com/reference/cli/docker/buildx/history/) and [Docker Desktop Builds view](https://docs.docker.com/desktop/use-desktop/builds/). |
 | `BUILDKIT_CACHE_MOUNT_NS`       | String | Set optional cache ID namespace.                                                                                                                                                                                 |
 | `BUILDKIT_CONTEXT_KEEP_GIT_DIR` | Bool   | Trigger Git context to keep the `.git` directory.                                                                                                                                                                |
+| `BUILDKIT_DISABLE_ONBUILD`      | Bool   | Skip the [`ONBUILD`](#onbuild) triggers of all base images and stages. This is not a security boundary: a custom frontend selected with `# syntax=` can ignore it.                                               |
 | `BUILDKIT_GIT_ADVICE`           | Bool   | Show Git advice messages from BuildKit-managed Git operations. Defaults to `false`.                                                                                                                              |
+| `BUILDKIT_GIT_DEBUG_COMMANDS`   | Bool   | Print executed Git commands for Git contexts and `ADD` sources in the build log. Defaults to `false`.                                                                                                             |
 | `BUILDKIT_INLINE_CACHE`[^2]     | Bool   | Inline cache metadata to image config or not.                                                                                                                                                                    |
 | `BUILDKIT_MULTI_PLATFORM`       | Bool   | Opt into deterministic output regardless of multi-platform output or not.                                                                                                                                        |
 | `BUILDKIT_SANDBOX_HOSTNAME`     | String | Set the hostname (default `buildkitsandbox`)                                                                                                                                                                     |

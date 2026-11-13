@@ -184,6 +184,7 @@ The `containersProxy` setting controls network policies applied to `docker image
 | `https` | HTTPS proxy server | URL (e.g., `"https://proxy.company.com:8080"`) |
 | `exclude` | Bypass proxy for these addresses | Array of hostnames/IPs |
 | `pac` | Proxy Auto-Configuration file URL | URL to PAC file |
+| `embeddedPac` | Proxy Auto-Configuration script written inline, with precedence over `pac` | PAC script content |
 | `transparentPorts` | Ports subject to proxy rules | Comma-separated ports or wildcard (`"*"`) |
 @y
 | Parameter | Description | Value |
@@ -194,6 +195,7 @@ The `containersProxy` setting controls network policies applied to `docker image
 | `https` | HTTPS proxy server | URL (e.g., `"https://proxy.company.com:8080"`) |
 | `exclude` | Bypass proxy for these addresses | Array of hostnames/IPs |
 | `pac` | Proxy Auto-Configuration file URL | URL to PAC file |
+| `embeddedPac` | Proxy Auto-Configuration script written inline, with precedence over `pac` | PAC script content |
 | `transparentPorts` | Ports subject to proxy rules | Comma-separated ports or wildcard (`"*"`) |
 @z
 
@@ -204,9 +206,9 @@ The `containersProxy` setting controls network policies applied to `docker image
 @z
 
 @x
-Block all external access:
+Block all external access, including image pulls:
 @y
-Block all external access:
+Block all external access, including image pulls:
 @z
 
 @x
@@ -217,6 +219,7 @@ Block all external access:
   "http": "",
   "https": "",
   "exclude": [],
+  "embeddedPac": "function FindProxyForURL(url, host) { return \"PROXY reject.docker.internal:1234\"; }",
   "transparentPorts": "*"
 }
 ```
@@ -228,9 +231,16 @@ Block all external access:
   "http": "",
   "https": "",
   "exclude": [],
+  "embeddedPac": "function FindProxyForURL(url, host) { return \"PROXY reject.docker.internal:1234\"; }",
   "transparentPorts": "*"
 }
 ```
+@z
+
+@x
+With no PAC script and no proxy set, connections go straight out, so empty `http` and `https` values don't block anything. The PAC script in this example rejects every request.
+@y
+With no PAC script and no proxy set, connections go straight out, so empty `http` and `https` values don't block anything. The PAC script in this example rejects every request.
 @z
 
 @x
@@ -246,7 +256,8 @@ Allow specific internal services:
   "mode": "manual",
   "http": "",
   "https": "",
-  "exclude": ["internal.company.com", "10.0.0.0/8"],
+  "exclude": [],
+  "embeddedPac": "function FindProxyForURL(url, host) { if (dnsDomainIs(host, 'internal.company.com') || isInNet(host, '10.0.0.0', '255.0.0.0')) { return 'DIRECT'; } return 'PROXY reject.docker.internal:1234'; }",
   "transparentPorts": "80,443"
 }
 ```
@@ -257,10 +268,17 @@ Allow specific internal services:
   "mode": "manual",
   "http": "",
   "https": "",
-  "exclude": ["internal.company.com", "10.0.0.0/8"],
+  "exclude": [],
+  "embeddedPac": "function FindProxyForURL(url, host) { if (dnsDomainIs(host, 'internal.company.com') || isInNet(host, '10.0.0.0', '255.0.0.0')) { return 'DIRECT'; } return 'PROXY reject.docker.internal:1234'; }",
   "transparentPorts": "80,443"
 }
 ```
+@z
+
+@x
+The PAC script allows the internal domain and the `10.0.0.0/8` addresses, and rejects everything else. Use `dnsDomainIs` to match host names and `isInNet` to match IP addresses. The `exclude` setting can't allow a request that the PAC script rejects, so leave it empty.
+@y
+The PAC script allows the internal domain and the `10.0.0.0/8` addresses, and rejects everything else. Use `dnsDomainIs` to match host names and `isInNet` to match IP addresses. The `exclude` setting can't allow a request that the PAC script rejects, so leave it empty.
 @z
 
 @x

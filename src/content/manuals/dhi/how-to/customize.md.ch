@@ -2,7 +2,6 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
-% snip 対応
 
 @x
 title: Customize a Docker Hardened Image or chart
@@ -31,13 +30,13 @@ When you have a DHI Select or DHI Enterprise subscription, you can customize Doc
 Hardened Images (DHI) and charts to suit your specific needs using the Docker
 Hub web interface. For images, this lets you select a base image, add packages,
 add OCI artifacts (such as custom certificates or additional tools), and
-configure settings. For charts, this lets you customize the image references.
+configure settings. For charts, this lets you customize the image and chart references.
 @y
 When you have a DHI Select or DHI Enterprise subscription, you can customize Docker
 Hardened Images (DHI) and charts to suit your specific needs using the Docker
 Hub web interface. For images, this lets you select a base image, add packages,
 add OCI artifacts (such as custom certificates or additional tools), and
-configure settings. For charts, this lets you customize the image references.
+configure settings. For charts, this lets you customize the image and chart references.
 @z
 
 @x
@@ -121,9 +120,9 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
 @z
 
 @x
-1. Select one or more images or Helm charts and versions you want to customize.
+1. Select one or more images and versions you want to customize.
 @y
-1. Select one or more images or Helm charts and versions you want to customize.
+1. Select one or more images and versions you want to customize.
 @z
 
 @x
@@ -138,16 +137,6 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
    `dhi-node:22_alpine3.23` and `dhi-python:3.13_alpine3.23` together (both
    Alpine 3.23), but you cannot mix `dhi-node:22_debian` with Alpine images, or
    mix different Alpine versions like `alpine3.23` and `alpine3.22`.
-@z
-
-@x
-   Alternatively, you can select multiple Helm chart versions to apply the same
-   customization to all of them. You cannot mix images and Helm charts in the
-   same customization.
-@y
-   Alternatively, you can select multiple Helm chart versions to apply the same
-   customization to all of them. You cannot mix images and Helm charts in the
-   same customization.
 @z
 
 @x
@@ -469,55 +458,115 @@ available operations depend on the token's permission scope:
 @z
 
 @x
+OIDC credentials follow the same destination-repository permissions for
+customization queries and mutations: pull access for reads and build logs, and
+push access for changes. Pulling a built customized image and reading its
+attestations also require pull access. See
+[Read DHI images and attestations with OIDC](./use.md#authenticate-with-oidc-in-github-actions).
+@y
+OIDC credentials follow the same destination-repository permissions for
+customization queries and mutations: pull access for reads and build logs, and
+push access for changes. Pulling a built customized image and reading its
+attestations also require pull access. See
+[Read DHI images and attestations with OIDC](./use.md#authenticate-with-oidc-in-github-actions).
+@z
+
+@x
 Use the [`docker dhi customization`](/reference/cli/docker/dhi/customization/) command:
 @y
 Use the [`docker dhi customization`](__SUBDIR__/reference/cli/docker/dhi/customization/) command:
 @z
 
-@x within code
+@x
+```console
 # Prepare a single customization scaffold
+$ docker dhi customization prepare golang 1.25 \
+  --org my-org \
+  --destination my-org/dhi-golang \
+  --name "golang with git" \
+  > my-customization.yaml
 @y
+```console
 # Prepare a single customization scaffold
+$ docker dhi customization prepare golang 1.25 \
+  --org my-org \
+  --destination my-org/dhi-golang \
+  --name "golang with git" \
+  > my-customization.yaml
 @z
+
 @x
 # Prepare a bulk customization scaffold (pipe JSON array via stdin)
+$ echo '[{"destination":"my-org/dhi-golang","tag-definition-id":"golang/alpine-3.23/1.24-dev"}]' \
+  | docker dhi customization prepare --name "golang with git" --org my-org \
+  > my-customization.yaml
 @y
 # Prepare a bulk customization scaffold (pipe JSON array via stdin)
+$ echo '[{"destination":"my-org/dhi-golang","tag-definition-id":"golang/alpine-3.23/1.24-dev"}]' \
+  | docker dhi customization prepare --name "golang with git" --org my-org \
+  > my-customization.yaml
 @z
+
 @x
 # Create a customization
+$ docker dhi customization create my-customization.yaml --org my-org
 @y
 # Create a customization
+$ docker dhi customization create my-customization.yaml --org my-org
 @z
+
 @x
 # List customizations
+$ docker dhi customization list --org my-org
 @y
 # List customizations
+$ docker dhi customization list --org my-org
 @z
+
 @x
 # Filter customizations by name, repository, or source
+$ docker dhi customization list --org my-org --filter git
+$ docker dhi customization list --org my-org --repo dhi-golang
+$ docker dhi customization list --org my-org --source golang
 @y
 # Filter customizations by name, repository, or source
+$ docker dhi customization list --org my-org --filter git
+$ docker dhi customization list --org my-org --repo dhi-golang
+$ docker dhi customization list --org my-org --source golang
 @z
+
 @x
 # Get a customization by ID
+$ docker dhi customization get <id> --org my-org
 @y
 # Get a customization by ID
+$ docker dhi customization get <id> --org my-org
 @z
+
 @x
 # Update a customization
+$ docker dhi customization edit my-customization.yaml --org my-org
 @y
 # Update a customization
+$ docker dhi customization edit my-customization.yaml --org my-org
 @z
+
 @x
 # Delete a customization by ID
+$ docker dhi customization delete <id> --org my-org
 @y
 # Delete a customization by ID
+$ docker dhi customization delete <id> --org my-org
 @z
+
 @x
 # Delete without confirmation prompt
+$ docker dhi customization delete <id> --org my-org --force
+```
 @y
 # Delete without confirmation prompt
+$ docker dhi customization delete <id> --org my-org --force
+```
 @z
 
 @x
@@ -554,7 +603,43 @@ Define a `dhi_customization` resource for each customization:
 Define a `dhi_customization` resource for each customization:
 @z
 
-% snip code...
+@x
+```hcl
+resource "dhi_customization" "golang_with_git" {
+  repository = "dhi-golang"
+  name       = "golang with git"
+@y
+```hcl
+resource "dhi_customization" "golang_with_git" {
+  repository = "dhi-golang"
+  name       = "golang with git"
+@z
+
+@x
+  contents {
+    packages = ["git", "curl"]
+  }
+@y
+  contents {
+    packages = ["git", "curl"]
+  }
+@z
+
+@x
+  platform {
+    os           = "linux"
+    architecture = "amd64"
+  }
+}
+```
+@y
+  platform {
+    os           = "linux"
+    architecture = "amd64"
+  }
+}
+```
+@z
 
 @x
 The `dhi_customization` resource also supports optional configuration blocks
@@ -656,7 +741,15 @@ To find the ID of an existing customization, run:
 To find the ID of an existing customization, run:
 @z
 
-% snip command...
+@x
+```console
+$ docker dhi customization list --org my-org
+```
+@y
+```console
+$ docker dhi customization list --org my-org
+```
+@z
 
 @x
 The `id` appears in the output and in files retrieved with
@@ -692,7 +785,25 @@ bulk customization that applies the same configuration to several images at
 once.
 @z
 
-% snip code...
+@x
+```yaml
+name: golang with git
+@y
+```yaml
+name: golang with git
+@z
+
+@x
+targets:
+  - destination: my-org/dhi-golang
+    tag_definition_id: golang/alpine-3.23/1.25
+```
+@y
+targets:
+  - destination: my-org/dhi-golang
+    tag_definition_id: golang/alpine-3.23/1.25
+```
+@z
 
 @x
 | Field | Description |
@@ -736,7 +847,21 @@ To install additional OS packages in your customized image, list them under
 `contents.packages`. Available packages depend on the base image variant.
 @z
 
-% snip code...
+@x
+```yaml
+contents:
+  packages:
+    - git
+    - curl
+```
+@y
+```yaml
+contents:
+  packages:
+    - git
+    - curl
+```
+@z
 
 @x
 #### Add OCI artifacts
@@ -754,7 +879,27 @@ certificates, internal tools, or configuration files, list OCI artifact
 images under `contents.artifacts`.
 @z
 
-% snip code...
+@x
+```yaml
+contents:
+  artifacts:
+    - name: my-org/my-certs:latest
+      includes:
+        - etc/ssl/certs
+      excludes:
+        - etc/ssl/certs/old
+```
+@y
+```yaml
+contents:
+  artifacts:
+    - name: my-org/my-certs:latest
+      includes:
+        - etc/ssl/certs
+      excludes:
+        - etc/ssl/certs/old
+```
+@z
 
 @x
 | Field | Description |
@@ -796,7 +941,27 @@ scripts, use the `paths` field. Files are added as static content and are not
 executed during the build.
 @z
 
-% snip code...
+@x
+```yaml
+paths:
+  - path: /etc/myconfig
+    contents: |
+      key=value
+    mode: "0644"
+    uid: 0
+    gid: 0
+```
+@y
+```yaml
+paths:
+  - path: /etc/myconfig
+    contents: |
+      key=value
+    mode: "0644"
+    uid: 0
+    gid: 0
+```
+@z
 
 @x
 | Field | Description |
@@ -856,7 +1021,37 @@ runs as, use the `accounts` field.
 > Not supported for bulk customizations (multiple `targets`).
 @z
 
-% snip code...
+@x
+```yaml
+accounts:
+  root: true
+  runs-as: nonroot
+  users:
+    - name: nonroot
+      uid: 65532
+      gid: 65532
+  groups:
+    - name: nonroot
+      gid: 65532
+      members:
+        - nonroot
+```
+@y
+```yaml
+accounts:
+  root: true
+  runs-as: nonroot
+  users:
+    - name: nonroot
+      uid: 65532
+      gid: 65532
+  groups:
+    - name: nonroot
+      gid: 65532
+      members:
+        - nonroot
+```
+@z
 
 @x
 | Field | Description |
@@ -898,7 +1093,19 @@ field. These are merged with the base image's existing environment and do not
 replace it.
 @z
 
-% snip code...
+@x
+```yaml
+environment:
+  MY_VAR: my_value
+  DEBUG: "false"
+```
+@y
+```yaml
+environment:
+  MY_VAR: my_value
+  DEBUG: "false"
+```
+@z
 
 @x
 Quote values that a YAML parser would interpret as non-string types, for
@@ -926,7 +1133,29 @@ stored in the image config; annotations are stored in the image manifest. Use
 where applicable.
 @z
 
-% snip code...
+@x
+```yaml
+labels:
+  org.opencontainers.image.authors: your-email@example.com
+  org.opencontainers.image.version: "1.0.0"
+@y
+```yaml
+labels:
+  org.opencontainers.image.authors: your-email@example.com
+  org.opencontainers.image.version: "1.0.0"
+@z
+
+@x
+annotations:
+  org.opencontainers.image.title: Custom hardened image
+  org.opencontainers.image.description: Customized Docker Hardened Image
+```
+@y
+annotations:
+  org.opencontainers.image.title: Custom hardened image
+  org.opencontainers.image.description: Customized Docker Hardened Image
+```
+@z
 
 @x
 #### Override entrypoint and command
@@ -952,7 +1181,25 @@ are appended to the base image's existing entrypoint and command.
 > Not supported for bulk customizations (multiple `targets`).
 @z
 
-% snip code...
+@x
+```yaml
+entrypoint:
+  - /docker-entrypoint.sh
+@y
+```yaml
+entrypoint:
+  - /docker-entrypoint.sh
+@z
+
+@x
+cmd:
+  - /bin/bash
+```
+@y
+cmd:
+  - /bin/bash
+```
+@z
 
 @x
 #### Set platforms and compression
@@ -968,7 +1215,19 @@ To build for multiple architectures, list them under `platforms`. At least one
 platform is required.
 @z
 
-% snip code...
+@x
+```yaml
+platforms:
+  - linux/amd64
+  - linux/arm64
+```
+@y
+```yaml
+platforms:
+  - linux/amd64
+  - linux/arm64
+```
+@z
 
 @x
 To control layer compression, set `compression`. `ZSTD` (the default) offers
@@ -980,7 +1239,15 @@ better compression and faster pulls. Use `GZIP` for compatibility with older
 tooling.
 @z
 
-% snip code...
+@x
+```yaml
+compression: ZSTD
+```
+@y
+```yaml
+compression: ZSTD
+```
+@z
 
 @x
 ## OCI artifacts
@@ -1024,7 +1291,49 @@ certificate with the system and outputs an updated CA bundle, which can be
 extracted into a minimal final image:
 @z
 
-% snip code...
+@x
+```dockerfile
+# syntax=docker/dockerfile:1
+@y
+```dockerfile
+# syntax=docker/dockerfile:1
+@z
+
+@x
+FROM dhi.io/bash:5-dev AS certs
+@y
+FROM dhi.io/bash:5-dev AS certs
+@z
+
+@x
+ENV DEBIAN_FRONTEND=noninteractive
+@y
+ENV DEBIAN_FRONTEND=noninteractive
+@z
+
+@x
+RUN mkdir -p /usr/local/share/ca-certificates/my-rootca
+COPY certs/rootCA.crt /usr/local/share/ca-certificates/my-rootca
+@y
+RUN mkdir -p /usr/local/share/ca-certificates/my-rootca
+COPY certs/rootCA.crt /usr/local/share/ca-certificates/my-rootca
+@z
+
+@x
+RUN update-ca-certificates
+@y
+RUN update-ca-certificates
+@z
+
+@x
+FROM scratch
+COPY --from=certs /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
+```
+@y
+FROM scratch
+COPY --from=certs /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
+```
+@z
 
 @x
 You can follow this pattern to create other OCI artifacts, such as images
@@ -1058,7 +1367,19 @@ If you're customizing a DHI for multiple platforms (such as `linux/amd64` and
 `--platform` flag:
 @z
 
-% snip command...
+@x
+```console
+$ docker buildx build --platform linux/amd64,linux/arm64 \
+  -t <your-namespace>/my-oci-artifact:latest \
+  --push .
+```
+@y
+```console
+$ docker buildx build --platform linux/amd64,linux/arm64 \
+  -t <your-namespace>/my-oci-artifact:latest \
+  --push .
+```
+@z
 
 @x
 This creates a single image manifest that you can use for each platform. The
@@ -1216,26 +1537,34 @@ Follow these best practices when creating OCI artifacts for DHI customizations:
 
 @x
 You can customize DHI Helm charts to meet your organization's specific needs.
-Via the Docker Hub web interface, you can modify the image references to
-reference mirrored images or customized images you've created. This lets you
-create a custom, securely-built chart with references to images stored in Docker
-Hub or other private registries. DHI securely packages customized Helm charts
-that reference your repositories, wherever they are stored, by default.
+Using the Docker Hub web interface or the DHI CLI, you can modify the image and
+chart references to point to the default images and charts on `dhi.io`, mirrored
+images, or customized images and charts you've created. This lets you create a
+custom, securely-built chart with references to images and charts stored in
+Docker Hub. DHI securely packages customized Helm charts that reference your
+repositories by default.
 @y
 You can customize DHI Helm charts to meet your organization's specific needs.
-Via the Docker Hub web interface, you can modify the image references to
-reference mirrored images or customized images you've created. This lets you
-create a custom, securely-built chart with references to images stored in Docker
-Hub or other private registries. DHI securely packages customized Helm charts
-that reference your repositories, wherever they are stored, by default.
+Using the Docker Hub web interface or the DHI CLI, you can modify the image and
+chart references to point to the default images and charts on `dhi.io`, mirrored
+images, or customized images and charts you've created. This lets you create a
+custom, securely-built chart with references to images and charts stored in
+Docker Hub. DHI securely packages customized Helm charts that reference your
+repositories by default.
 @z
 
 @x
-To customize image references, an organization owner must [mirror](./mirror.md)
-the DHI chart repository to your organization on Docker Hub.
+To customize references, an organization owner must [mirror](./mirror.md) the
+DHI chart repository to your organization on Docker Hub. References that point
+to `dhi.io` don't need a mirror. To point a reference to a mirrored image, a
+customized image, or a customized chart, your organization also needs a mirror
+of that repository.
 @y
-To customize image references, an organization owner must [mirror](./mirror.md)
-the DHI chart repository to your organization on Docker Hub.
+To customize references, an organization owner must [mirror](./mirror.md) the
+DHI chart repository to your organization on Docker Hub. References that point
+to `dhi.io` don't need a mirror. To point a reference to a mirrored image, a
+customized image, or a customized chart, your organization also needs a mirror
+of that repository.
 @z
 
 @x
@@ -1257,15 +1586,15 @@ repository again and add a new customization to the new mirror.
 >
 > You can customize Docker Hardened Image charts like any other Helm chart using
 > standard Helm tools and practices, such as a `values.yaml` file, outside of
-> Docker Hub. The following instructions describe how to customize image
-> references for the chart using the Docker Hub web interface.
+> Docker Hub. The following instructions describe how to customize the
+> references for the chart using Docker Hub or the DHI CLI.
 @y
 > [!NOTE]
 >
 > You can customize Docker Hardened Image charts like any other Helm chart using
 > standard Helm tools and practices, such as a `values.yaml` file, outside of
-> Docker Hub. The following instructions describe how to customize image
-> references for the chart using the Docker Hub web interface.
+> Docker Hub. The following instructions describe how to customize the
+> references for the chart using Docker Hub or the DHI CLI.
 @z
 
 @x
@@ -1296,10 +1625,80 @@ To customize a Docker Hardened Image Helm chart after it has been mirrored:
 
 @x
    At this point, the on-screen instructions will guide you through the
-   customization process.
+   customization process. You can continue with the following steps for more
+   details.
 @y
    At this point, the on-screen instructions will guide you through the
-   customization process.
+   customization process. You can continue with the following steps for more
+   details.
+@z
+
+@x
+1. Select the Helm chart version you want to customize, then select **Next**.
+@y
+1. Select the Helm chart version you want to customize, then select **Next**.
+@z
+
+@x
+   You can customize one Helm chart version at a time.
+@y
+   You can customize one Helm chart version at a time.
+@z
+
+@x
+1. In the **Helm chart references** step, set the **Source** for each
+   dependency of the chart:
+@y
+1. In the **Helm chart references** step, set the **Source** for each
+   dependency of the chart:
+@z
+
+@x
+   - **DHI registry (dhi.io)**: The chart pulls the default version of the
+     dependency from `dhi.io`.
+   - **Mirrored / customized**: The chart pulls the dependency from a
+     repository in your organization. Select the **Repository**, then select a
+     **Version** from **Customized versions** or **Mirrored versions**. This
+     option is available when your organization has a mirror of the
+     dependency's repository. Subcharts can only use customized versions.
+@y
+   - **DHI registry (dhi.io)**: The chart pulls the default version of the
+     dependency from `dhi.io`.
+   - **Mirrored / customized**: The chart pulls the dependency from a
+     repository in your organization. Select the **Repository**, then select a
+     **Version** from **Customized versions** or **Mirrored versions**. This
+     option is available when your organization has a mirror of the
+     dependency's repository. Subcharts can only use customized versions.
+@z
+
+@x
+   If you select a version with a different distribution than the dependency's
+   default, Docker Hub shows a warning because the mismatch might cause issues
+   when you use the chart.
+@y
+   If you select a version with a different distribution than the dependency's
+   default, Docker Hub shows a warning because the mismatch might cause issues
+   when you use the chart.
+@z
+
+@x
+1. Enter a customization name.
+@y
+1. Enter a customization name.
+@z
+
+@x
+   Docker Hub uses the name as a suffix for the customized tags. For example,
+   the name `Testing` adds the suffix `-testing`.
+@y
+   Docker Hub uses the name as a suffix for the customized tags. For example,
+   the name `Testing` adds the suffix `-testing`.
+@z
+
+@x
+1. Select **Next**, review the customization, and create it.
+@y
+1. Select **Next**, review the customization, and create it.
 @z
 
 @x
@@ -1311,33 +1710,137 @@ To customize a Docker Hardened Image Helm chart after it has been mirrored:
 @x
 When using the CLI, Helm chart customizations use the same `prepare` / `create`
 workflow as image customizations, but the configuration section uses
-`reference_mappings` instead of image fields.
+`variable_mappings` instead of image fields.
 @y
 When using the CLI, Helm chart customizations use the same `prepare` / `create`
 workflow as image customizations, but the configuration section uses
-`reference_mappings` instead of image fields.
+`variable_mappings` instead of image fields.
 @z
 
 @x
-Use `reference_mappings` to substitute image references within the chart, for
-example to point a chart's image references at your mirrored DHIs.
+Run `prepare` with the chart repository and tag definition to generate a
+scaffold. The scaffold lists every variable of the chart pointing at `dhi.io`,
+with the other options commented out.
 @y
-Use `reference_mappings` to substitute image references within the chart, for
-example to point a chart's image references at your mirrored DHIs.
+Run `prepare` with the chart repository and tag definition to generate a
+scaffold. The scaffold lists every variable of the chart pointing at `dhi.io`,
+with the other options commented out.
 @z
 
-% snip code...
+@x
+```console
+$ docker dhi customization prepare redis-chart redis/helm/23 \
+    --destination my-org/dhi-redis-chart \
+    --name "my redis" \
+    --org my-org \
+    > customization.yaml
+```
+@y
+```console
+$ docker dhi customization prepare redis-chart redis/helm/23 \
+    --destination my-org/dhi-redis-chart \
+    --name "my redis" \
+    --org my-org \
+    > customization.yaml
+```
+@z
+
+@x
+Use `variable_mappings` to set where each reference in the chart points.
+The following example for the Redis chart keeps two references on `dhi.io`,
+points one at a customized image, and points one at a mirrored image:
+@y
+Use `variable_mappings` to set where each reference in the chart points.
+The following example for the Redis chart keeps two references on `dhi.io`,
+points one at a customized image, and points one at a mirrored image:
+@z
+
+@x
+```yaml
+name: my redis
+@y
+```yaml
+name: my redis
+@z
+
+@x
+targets:
+  - destination: my-org/dhi-redis-chart
+    tag_definition_id: redis/helm/23
+@y
+targets:
+  - destination: my-org/dhi-redis-chart
+    tag_definition_id: redis/helm/23
+@z
+
+@x
+variable_mappings:
+  # Keep the chart's default image from dhi.io.
+  - variable_name: BASH_REFERENCE
+  - variable_name: KUBECTL_REFERENCE
+@y
+variable_mappings:
+  # Keep the chart's default image from dhi.io.
+  - variable_name: BASH_REFERENCE
+  - variable_name: KUBECTL_REFERENCE
+@z
+
+@x
+  # Point at a customized image.
+  - variable_name: REDIS_EXPORTER_REFERENCE
+    repository: my-org/dhi-redis-exporter
+    customization_id: "<redis-exporter-customization-id>"
+@y
+  # Point at a customized image.
+  - variable_name: REDIS_EXPORTER_REFERENCE
+    repository: my-org/dhi-redis-exporter
+    customization_id: "<redis-exporter-customization-id>"
+@z
+
+@x
+  # Point at a mirrored image.
+  - variable_name: REDIS_REFERENCE
+    repository: my-org/dhi-redis
+    tag_definition_id: redis/debian-13/8.10-compat
+```
+@y
+  # Point at a mirrored image.
+  - variable_name: REDIS_REFERENCE
+    repository: my-org/dhi-redis
+    tag_definition_id: redis/debian-13/8.10-compat
+```
+@z
 
 @x
 | Field | Description |
 |:---|:---|
-| `reference_mappings[].from` | The image reference in the chart to replace. |
-| `reference_mappings[].to` | The replacement image reference, typically a mirrored DHI in your organization. |
+| `variable_mappings[].variable_name` | The chart variable to set. List every variable of the chart once, and don't change the names. A variable with only a name points at `dhi.io`. |
+| `variable_mappings[].repository` | The repository in your organization to pull from. The namespace defaults to your organization if you leave it out. Required with `tag_definition_id` or `customization_id`. |
+| `variable_mappings[].tag_definition_id` | The tag definition of the mirrored image to use. Set either this or `customization_id`, not both. Subcharts can't use a tag definition. |
+| `variable_mappings[].customization_id` | The ID of the customization to use. Set either this or `tag_definition_id`, not both. |
 @y
 | Field | Description |
 |:---|:---|
-| `reference_mappings[].from` | The image reference in the chart to replace. |
-| `reference_mappings[].to` | The replacement image reference, typically a mirrored DHI in your organization. |
+| `variable_mappings[].variable_name` | The chart variable to set. List every variable of the chart once, and don't change the names. A variable with only a name points at `dhi.io`. |
+| `variable_mappings[].repository` | The repository in your organization to pull from. The namespace defaults to your organization if you leave it out. Required with `tag_definition_id` or `customization_id`. |
+| `variable_mappings[].tag_definition_id` | The tag definition of the mirrored image to use. Set either this or `customization_id`, not both. Subcharts can't use a tag definition. |
+| `variable_mappings[].customization_id` | The ID of the customization to use. Set either this or `tag_definition_id`, not both. |
+@z
+
+@x
+Helm chart customizations support a single target.
+@y
+Helm chart customizations support a single target.
+@z
+
+@x
+Customizations created with `reference_mappings` can still be edited using
+`reference_mappings`, but you can't convert them to `variable_mappings`. To use
+`variable_mappings`, create a customization.
+@y
+Customizations created with `reference_mappings` can still be edited using
+`reference_mappings`, but you can't convert them to `variable_mappings`. To use
+`variable_mappings`, create a customization.
 @z
 
 @x
@@ -1390,7 +1893,15 @@ List builds for a customization:
 List builds for a customization:
 @z
 
-% snip command...
+@x
+```console
+$ docker dhi customization build list <customization-id> --org my-org
+```
+@y
+```console
+$ docker dhi customization build list <customization-id> --org my-org
+```
+@z
 
 @x
 Get details of a specific build:
@@ -1398,7 +1909,15 @@ Get details of a specific build:
 Get details of a specific build:
 @z
 
-% snip command...
+@x
+```console
+$ docker dhi customization build get <customization-id> <build-id> --org my-org
+```
+@y
+```console
+$ docker dhi customization build get <customization-id> <build-id> --org my-org
+```
+@z
 
 @x
 View build logs:
@@ -1406,7 +1925,15 @@ View build logs:
 View build logs:
 @z
 
-% snip command...
+@x
+```console
+$ docker dhi customization build logs <customization-id> <build-id> --org my-org
+```
+@y
+```console
+$ docker dhi customization build logs <customization-id> <build-id> --org my-org
+```
+@z
 
 @x
 {{< /tab >}}
@@ -1482,7 +2009,15 @@ To edit a customization, update your YAML file and run:
 To edit a customization, update your YAML file and run:
 @z
 
-% snip command...
+@x
+```console
+$ docker dhi customization edit my-customization.yaml --org my-org
+```
+@y
+```console
+$ docker dhi customization edit my-customization.yaml --org my-org
+```
+@z
 
 @x
 The YAML file must include the `id` field to identify which customization to
@@ -1498,7 +2033,17 @@ To delete a customization by ID:
 To delete a customization by ID:
 @z
 
-% snip command...
+@x
+```console
+$ docker dhi customization delete <id> --org my-org
+$ docker dhi customization delete <id> --org my-org --force
+```
+@y
+```console
+$ docker dhi customization delete <id> --org my-org
+$ docker dhi customization delete <id> --org my-org --force
+```
+@z
 
 @x
 The `--force` flag skips the confirmation prompt.

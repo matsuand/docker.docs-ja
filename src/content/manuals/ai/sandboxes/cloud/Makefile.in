@@ -244,6 +244,7 @@ bases = \
 	local-vs-cloud.md    \
 	move.md              \
 	network-policy.md    \
+	schedules.md         \
 	usage.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

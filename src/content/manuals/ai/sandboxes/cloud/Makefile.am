@@ -9,6 +9,7 @@ bases = \
 	local-vs-cloud.md    \
 	move.md              \
 	network-policy.md    \
+	schedules.md         \
 	usage.md
 
 include $(top_srcdir)/build-aux/common.mk

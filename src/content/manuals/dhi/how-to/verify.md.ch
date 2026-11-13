@@ -64,18 +64,18 @@ attestation infrastructure.
 > [!IMPORTANT]
 >
 > You must authenticate to the Docker Hardened Images registry (`dhi.io`) to
-> pull images. Use your Docker ID credentials (the same username and password
-> you use for Docker Hub) when signing in. If you don't have a Docker account,
-> [create one](../../accounts/individual/create-account.md) for free.
+> pull images. Use your Docker ID credentials, a personal access token, an
+> organization access token, or a Docker-issued OIDC access token. See
+> [DHI authentication options](./use.md).
 >
 > Run `docker login dhi.io` to authenticate.
 @y
 > [!IMPORTANT]
 >
 > You must authenticate to the Docker Hardened Images registry (`dhi.io`) to
-> pull images. Use your Docker ID credentials (the same username and password
-> you use for Docker Hub) when signing in. If you don't have a Docker account,
-> [create one](../../accounts/individual/create-account.md) for free.
+> pull images. Use your Docker ID credentials, a personal access token, an
+> organization access token, or a Docker-issued OIDC access token. See
+> [DHI authentication options](./use.md).
 >
 > Run `docker login dhi.io` to authenticate.
 @z
@@ -156,6 +156,9 @@ pull access to the DHI repositories you want to verify. Only repositories in
 the token's scope are accessible. Alternatively, you can authenticate as a
 Docker Hub user with a [personal access token
 (PAT)](../../security/access-tokens/personal-access-tokens.md) that has `read only` access.
+For organization-owned workflows in GitHub Actions, use the
+[OIDC workflow](./use.md#authenticate-with-oidc-in-github-actions) to authenticate
+with a short-lived Docker access token instead of storing an OAT.
 @y
 First, authenticate to both registries. This example authenticates as your
 Docker organization using an [organization access token
@@ -164,6 +167,9 @@ pull access to the DHI repositories you want to verify. Only repositories in
 the token's scope are accessible. Alternatively, you can authenticate as a
 Docker Hub user with a [personal access token
 (PAT)](../../security/access-tokens/personal-access-tokens.md) that has `read only` access.
+For organization-owned workflows in GitHub Actions, use the
+[OIDC workflow](./use.md#authenticate-with-oidc-in-github-actions) to authenticate
+with a short-lived Docker access token instead of storing an OAT.
 @z
 
 @x

@@ -90,12 +90,12 @@ the GitHub OIDC token and signs in to Docker Hub in a single step.
 @z
 
 @x
-1. Add the following to your workflow YAML. Replace `<YOUR_ORG_NAME>`
-   with your Docker organization name and `<YOUR_CONNECTION_ID>` with
+1. Add the following to your workflow YAML. Replace `<YOUR_ORG_NAMESPACE>`
+   with your Docker organization namespace and `<YOUR_CONNECTION_ID>` with
    the ID you copied from Docker Home:
 @y
-1. Add the following to your workflow YAML. Replace `<YOUR_ORG_NAME>`
-   with your Docker organization name and `<YOUR_CONNECTION_ID>` with
+1. Add the following to your workflow YAML. Replace `<YOUR_ORG_NAMESPACE>`
+   with your Docker organization namespace and `<YOUR_CONNECTION_ID>` with
    the ID you copied from Docker Home:
 @z
 
@@ -119,7 +119,7 @@ the GitHub OIDC token and signs in to Docker Hub in a single step.
          - name: Docker login
            uses: docker/login-action@v4 # v4.5.0+
            with:
-             username: <YOUR_ORG_NAME>
+             username: <YOUR_ORG_NAMESPACE>
            env:
              DOCKERHUB_OIDC_CONNECTIONID: <YOUR_CONNECTION_ID>
    ```
@@ -131,17 +131,17 @@ the GitHub OIDC token and signs in to Docker Hub in a single step.
          - name: Docker login
            uses: docker/login-action@v4 # v4.5.0+
            with:
-             username: <YOUR_ORG_NAME>
+             username: <YOUR_ORG_NAMESPACE>
            env:
              DOCKERHUB_OIDC_CONNECTIONID: <YOUR_CONNECTION_ID>
    ```
 @z
 
 @x
-   The `username` value must be a Docker organization name. Only
+   The `username` value must be a Docker organization namespace. Only
    organization accounts can sign in using OIDC.
 @y
-   The `username` value must be a Docker organization name. Only
+   The `username` value must be a Docker organization namespace. Only
    organization accounts can sign in using OIDC.
 @z
 
@@ -149,6 +149,30 @@ the GitHub OIDC token and signs in to Docker Hub in a single step.
 1. Run the workflow and confirm it can sign in to Docker.
 @y
 1. Run the workflow and confirm it can sign in to Docker.
+@z
+
+@x
+### Read Docker Hardened Images and attestations
+@y
+### Read Docker Hardened Images and attestations
+@z
+
+@x
+A Docker-issued OIDC access token can also authenticate reads from `dhi.io`
+and `registry.scout.docker.com`. Access requirements differ between these registries.
+The automatic OIDC exchange in `docker/login-action` applies to Docker Hub.
+Setting `registry: dhi.io` or `registry: registry.scout.docker.com` doesn't
+perform that exchange. Exchange the GitHub identity token first, then use the
+Docker-issued access token as the registry password with your organization namespace
+as the username. See the [DHI attestation workflow](/manuals/dhi/how-to/use.md#authenticate-with-oidc-in-github-actions).
+@y
+A Docker-issued OIDC access token can also authenticate reads from `dhi.io`
+and `registry.scout.docker.com`. Access requirements differ between these registries.
+The automatic OIDC exchange in `docker/login-action` applies to Docker Hub.
+Setting `registry: dhi.io` or `registry: registry.scout.docker.com` doesn't
+perform that exchange. Exchange the GitHub identity token first, then use the
+Docker-issued access token as the registry password with your organization namespace
+as the username. See the [DHI attestation workflow](manuals/dhi/how-to/use.md#authenticate-with-oidc-in-github-actions).
 @z
 
 @x

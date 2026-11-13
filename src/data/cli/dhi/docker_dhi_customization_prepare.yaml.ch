@@ -34,6 +34,36 @@ long: |-
 @z
 
 @x
+    Values the customization inherits from the tag definition (environment variables, entrypoint, cmd,
+    accounts and working directory) are listed commented out. Fields left out or commented out are inherited;
+    uncommenting a field overrides the inherited value:
+      - environment, labels and annotations override per key; keys you leave out are still inherited.
+      - entrypoint and cmd are replaced entirely by the list you provide.
+      - accounts override per sub-key; a users or groups list replaces the whole inherited list.
+    A bulk customization inherits the same way, with each target merged with its own tag definition.
+@y
+    Values the customization inherits from the tag definition (environment variables, entrypoint, cmd,
+    accounts and working directory) are listed commented out. Fields left out or commented out are inherited;
+    uncommenting a field overrides the inherited value:
+      - environment, labels and annotations override per key; keys you leave out are still inherited.
+      - entrypoint and cmd are replaced entirely by the list you provide.
+      - accounts override per sub-key; a users or groups list replaces the whole inherited list.
+    A bulk customization inherits the same way, with each target merged with its own tag definition.
+@z
+
+@x
+    For a Helm chart, every reference of the chart is listed under variable_mappings, pointing at dhi.io.
+    To point a reference elsewhere, uncomment its repository and either tag_definition_id (another tag
+    definition of a mirrored image) or customization_id (a customization). Sub-charts can only point at a
+    customization or dhi.io. Do not change the variable names.
+@y
+    For a Helm chart, every reference of the chart is listed under variable_mappings, pointing at dhi.io.
+    To point a reference elsewhere, uncomment its repository and either tag_definition_id (another tag
+    definition of a mirrored image) or customization_id (a customization). Sub-charts can only point at a
+    customization or dhi.io. Do not change the variable names.
+@z
+
+@x
     The scaffold is written to stdout; redirect to a file if needed:
       docker dhi customization prepare golang 1.24-dev > customization.yaml
 @y

@@ -84,7 +84,7 @@ You can add one to five rulesets on a connection. If more than one
 ruleset matches a token, Docker grants the union of their resources and
 scopes. Your subscription also limits how many connections your
 organization can have. See
-[Connection limits](/manuals/security/authentication/oidc-connections/_index.md#connection-limits).
+[Connection limits](manuals/security/authentication/oidc-connections/_index.md#connection-limits).
 @z
 
 @x
@@ -191,6 +191,82 @@ Scopes on the matching ruleset decide what the workflow can do with a defined re
   public repositories** applies to public repositories.
 - A Docker Build Cloud resource uses the **Cloud Connect** scope, so the
   workflow can connect and build in Docker Build Cloud.
+@z
+
+@x
+Repository grants combine across all matching rulesets. **Image Push** includes
+pull access. An exact-repository **Image Pull** grant doesn't restrict a broader
+**Image Push** grant that also matches that repository. Remove every matching
+push grant to make access pull-only.
+@y
+Repository grants combine across all matching rulesets. **Image Push** includes
+pull access. An exact-repository **Image Pull** grant doesn't restrict a broader
+**Image Push** grant that also matches that repository. Remove every matching
+push grant to make access pull-only.
+@z
+
+@x
+**Read public repositories** grants pull access across Docker Hub namespaces.
+It doesn't grant access to private repositories, customization management, or
+organization settings. Product-specific requirements, such as DHI subscription
+and variant eligibility, still apply.
+@y
+**Read public repositories** grants pull access across Docker Hub namespaces.
+It doesn't grant access to private repositories, customization management, or
+organization settings. Product-specific requirements, such as DHI subscription
+and variant eligibility, still apply.
+@z
+
+@x
+### DHI and Scout compatibility exceptions
+@y
+### DHI and Scout compatibility exceptions
+@z
+
+@x
+To preserve existing integrations, DHI and Docker Scout retain access that isn't
+fully restricted by the connection's resource scopes:
+@y
+To preserve existing integrations, DHI and Docker Scout retain access that isn't
+fully restricted by the connection's resource scopes:
+@z
+
+@x
+- Omitting image grants or leaving **Read public repositories** unchecked doesn't
+  block an authenticated connection from pulling free DHI images and attestations
+  through `dhi.io`. This is a compatibility exception to the resource-scope model.
+- Within the connection's organization, Docker Scout accepts the
+  `listEnabledRepos` and `listBlockedRepos` GraphQL queries and the
+  `ingestImagePackages` mutation even when the connection has no image grants.
+  The queries list repositories enabled or blocked for Scout, including names
+  outside the connection's repository grants. The mutation writes an image's
+  package inventory to Scout. These operations also remain available with only
+  **Image Pull** or **Cloud Connect**, so those scopes don't make the Scout
+  GraphQL API read-only. Repository-filtered image and vulnerability queries
+  still enforce repository access, and DHI customization changes still require
+  **Image Push** on the applicable repositories.
+@y
+- Omitting image grants or leaving **Read public repositories** unchecked doesn't
+  block an authenticated connection from pulling free DHI images and attestations
+  through `dhi.io`. This is a compatibility exception to the resource-scope model.
+- Within the connection's organization, Docker Scout accepts the
+  `listEnabledRepos` and `listBlockedRepos` GraphQL queries and the
+  `ingestImagePackages` mutation even when the connection has no image grants.
+  The queries list repositories enabled or blocked for Scout, including names
+  outside the connection's repository grants. The mutation writes an image's
+  package inventory to Scout. These operations also remain available with only
+  **Image Pull** or **Cloud Connect**, so those scopes don't make the Scout
+  GraphQL API read-only. Repository-filtered image and vulnerability queries
+  still enforce repository access, and DHI customization changes still require
+  **Image Push** on the applicable repositories.
+@z
+
+@x
+**Image Push** still controls registry push access; the Scout behavior doesn't
+grant registry push permission.
+@y
+**Image Push** still controls registry push access; the Scout behavior doesn't
+grant registry push permission.
 @z
 
 @x

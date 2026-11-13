@@ -112,11 +112,13 @@ examples: |-
 @z
 
 @x
-    The `--annotation` flag lets you add annotations the image index, manifest,
-    and descriptors when creating a new image.
+    The `--annotation` flag lets you add annotations to the image index and
+    manifest descriptors when creating a new image. An annotation without a type
+    prefix is added to the image index.
 @y
-    The `--annotation` flag lets you add annotations the image index, manifest,
-    and descriptors when creating a new image.
+    The `--annotation` flag lets you add annotations to the image index and
+    manifest descriptors when creating a new image. An annotation without a type
+    prefix is added to the image index.
 @z
 
 @x
@@ -137,7 +139,12 @@ examples: |-
     > - `index:`
     > - `manifest-descriptor:`
     >
-    > It doesn't support annotating manifests or OCI layouts.
+    > It doesn't support annotating manifests or OCI layouts. Annotations also
+    > require the output to use the OCI image index media type; they aren't
+    > supported when the sources produce a Docker manifest list. BuildKit v0.31
+    > and later use OCI media types by default. Earlier versions use OCI media
+    > types when exporting attestations and Docker media types otherwise. Use the
+    > `oci-mediatypes=true` output option to produce OCI media types explicitly.
 @y
     > [!NOTE]
     > The `imagetools create` command supports adding annotations to the image
@@ -146,7 +153,12 @@ examples: |-
     > - `index:`
     > - `manifest-descriptor:`
     >
-    > It doesn't support annotating manifests or OCI layouts.
+    > It doesn't support annotating manifests or OCI layouts. Annotations also
+    > require the output to use the OCI image index media type; they aren't
+    > supported when the sources produce a Docker manifest list. BuildKit v0.31
+    > and later use OCI media types by default. Earlier versions use OCI media
+    > types when exporting attestations and Docker media types otherwise. Use the
+    > `oci-mediatypes=true` output option to produce OCI media types explicitly.
 @z
 
 @x
