@@ -525,12 +525,12 @@ flowchart LR
     direction TB
     mount["/run/sandbox/source<br/>(read-only bind mount)"]
     clone["private clone (RW)<br/>agent edits here"]
-    daemon["git-daemon"]
+    upload["git upload-pack"]
   end
   repo -->|"read-only bind mount"| mount
   mount -->|"git clone"| clone
-  clone --> daemon
-  daemon -->|"git fetch"| remote
+  clone --> upload
+  upload -->|"git fetch via daemon socket"| remote
 ```
 @y
 ```mermaid
@@ -544,12 +544,12 @@ flowchart LR
     direction TB
     mount["/run/sandbox/source<br/>(read-only bind mount)"]
     clone["private clone (RW)<br/>agent edits here"]
-    daemon["git-daemon"]
+    upload["git upload-pack"]
   end
   repo -->|"read-only bind mount"| mount
   mount -->|"git clone"| clone
-  clone --> daemon
-  daemon -->|"git fetch"| remote
+  clone --> upload
+  upload -->|"git fetch via daemon socket"| remote
 ```
 @z
 
@@ -569,11 +569,13 @@ How the boundary is enforced:
 - The agent works on a private clone that lives inside the sandbox. The
   clone has its own index, its own refs, and its own working tree. Writes
   to the clone never reach your host.
-- The sandbox publishes the clone over a Git daemon bound to localhost on
-  the host. The CLI wires it up as a `sandbox-<sandbox-name>` Git remote on
-  your host repository. Fetching from that remote uses the same trust
-  model as fetching from any third-party remote — nothing is integrated
-  until you explicitly merge or check out the fetched refs.
+- Your host repository gets a `sandbox-<sandbox-name>` Git remote for
+  fetching commits from the sandbox. By default, fetching uses the daemon
+  socket, restricted to your host user. Fetching downloads commits into your
+  host repository; you choose which changes to bring into your working tree
+  by checking out or merging a fetched branch. For compatibility mode and
+  remote lifecycle details, see
+  [Sandbox remote behavior](../workflows/git.md#sandbox-remote-behavior).
 @y
 - Your repository's Git root is mounted at `/run/sandbox/source` as
   read-only. The mount covers your entire working directory, including
@@ -584,11 +586,13 @@ How the boundary is enforced:
 - The agent works on a private clone that lives inside the sandbox. The
   clone has its own index, its own refs, and its own working tree. Writes
   to the clone never reach your host.
-- The sandbox publishes the clone over a Git daemon bound to localhost on
-  the host. The CLI wires it up as a `sandbox-<sandbox-name>` Git remote on
-  your host repository. Fetching from that remote uses the same trust
-  model as fetching from any third-party remote — nothing is integrated
-  until you explicitly merge or check out the fetched refs.
+- Your host repository gets a `sandbox-<sandbox-name>` Git remote for
+  fetching commits from the sandbox. By default, fetching uses the daemon
+  socket, restricted to your host user. Fetching downloads commits into your
+  host repository; you choose which changes to bring into your working tree
+  by checking out or merging a fetched branch. For compatibility mode and
+  remote lifecycle details, see
+  [Sandbox remote behavior](../workflows/git.md#sandbox-remote-behavior).
 @z
 
 @x

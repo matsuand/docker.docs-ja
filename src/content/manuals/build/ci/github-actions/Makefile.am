@@ -2,13 +2,15 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS = github-builder images
+SUBDIRS = github-builder-architecture images
 
 bases = \
 	_index.md                \
 	annotations.md           \
 	attestations.md          \
+	bake-workflow.md         \
 	build-summary.md         \
+	build-workflow.md        \
 	cache.md                 \
 	checks.md                \
 	configure-builder.md     \

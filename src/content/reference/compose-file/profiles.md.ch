@@ -40,11 +40,13 @@ explicitly targeted by a command. In that case its profile is added to the set o
 @x
 > [!NOTE]
 >
-> All other top-level elements are not affected by `profiles` and are always active.
+> All other top-level elements, except [jobs](jobs.md), are not affected by
+> `profiles` and are always active.
 @y
 > [!NOTE]
 >
-> All other top-level elements are not affected by `profiles` and are always active.
+> All other top-level elements, except [jobs](jobs.md), are not affected by
+> `profiles` and are always active.
 @z
 
 @x

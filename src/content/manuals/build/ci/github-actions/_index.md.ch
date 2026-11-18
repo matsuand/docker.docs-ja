@@ -2,111 +2,33 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
-% snip 対応
 
 @x
 title: Docker Build GitHub Actions
 linkTitle: GitHub Actions
+description: Build and publish images with Docker GitHub Builder or individual Docker GitHub Actions.
+keywords: ci, github actions, gha,  build, introduction, tutorial
 @y
 title: Docker Build GitHub Actions
 linkTitle: GitHub Actions
-@z
-
-@x
-description: Docker maintains a set of official GitHub Actions for building Docker images.
-keywords: ci, github actions, gha,  build, introduction, tutorial
-@y
-description: Docker では Docker イメージをビルドする公式の GitHub Actions を提供しています。
+description: Build and publish images with Docker GitHub Builder or individual Docker GitHub Actions.
 keywords: ci, github actions, gha,  build, introduction, tutorial
 @z
 
 @x
-GitHub Actions is a popular CI/CD platform for automating your build, test, and
-deployment pipeline. Docker provides a set of official GitHub Actions for you to
-use in your workflows. These official actions are reusable, easy-to-use
-components for building, annotating, and pushing images.
+GitHub Actions automates your build, test, and deployment pipeline. Use
+Docker GitHub Builder to build and publish images
+with Docker-maintained reusable workflows. GitHub Builder manages Buildx setup,
+platform distribution, metadata, and signing. Start with GitHub Builder for supported
+build tasks, and compose individual actions when you need custom job steps or
+controls outside the reusable workflow interface.
 @y
-GitHub Actions はビルド、テスト、デプロイの連携作業を自動化する、一般的な CI/CD プラットフォームです。
-Docker では、開発ワークフロー内で利用可能な GitHub Actions を公式に提供しています。
-この Actions は、イメージのビルド、アノテーション、プッシュを行うための、再利用可能で使い方も簡単なコンポーネントです。
-@z
-
-@x
-The following GitHub Actions are available:
-@y
-以下のような GitHub Actions が利用できます。
-@z
-
-@x
-- [Build and push Docker images](https://github.com/marketplace/actions/build-and-push-docker-images):
-  build and push Docker images with BuildKit.
-- [Docker Buildx Bake](https://github.com/marketplace/actions/docker-buildx-bake):
-  enables using high-level builds with [Bake](../../bake/_index.md).
-- [Docker Login](https://github.com/marketplace/actions/docker-login):
-  sign in to a Docker registry.
-- [Docker Setup Buildx](https://github.com/marketplace/actions/docker-setup-buildx):
-  creates and boots a BuildKit builder.
-- [Docker Metadata action](https://github.com/marketplace/actions/docker-metadata-action):
-  extracts metadata from Git reference and GitHub events to generate tags,
-  labels, and annotations.
-@y
-- [Build and push Docker images](https://github.com/marketplace/actions/build-and-push-docker-images):
-  BuildKit を利用して Docker イメージのビルドとプッシュを行います。
-- [Docker Buildx Bake](https://github.com/marketplace/actions/docker-buildx-bake):
-  [Bake](../../bake/_index.md) を使った高度なビルドを可能にします。
-- [Docker Login](https://github.com/marketplace/actions/docker-login):
-  Docker レジストリへのサインインを行います。
-- [Docker Setup Buildx](https://github.com/marketplace/actions/docker-setup-buildx):
-  BuildKit ビルダーの生成と起動を行います。
-- [Docker Metadata action](https://github.com/marketplace/actions/docker-metadata-action):
-  Git リファレンスや GitHub イベントからメタデータを抽出し、タグ、ラベル、アノテーションを生成します。
-@z
-
-@x
-- [Docker Setup Compose](https://github.com/marketplace/actions/docker-setup-compose):
-  installs and sets up [Compose](../../../compose).
-- [Docker Setup Docker](https://github.com/marketplace/actions/docker-setup-docker):
-  installs Docker Engine.
-@y
-- [Docker Setup Compose](https://github.com/marketplace/actions/docker-setup-compose):
-  installs and sets up [Compose](../../../compose).
-- [Docker Setup Docker](https://github.com/marketplace/actions/docker-setup-docker):
-  installs Docker Engine.
-@z
-
-@x
-- [Docker Setup QEMU](https://github.com/marketplace/actions/docker-setup-qemu):
-  installs [QEMU](https://github.com/qemu/qemu) static binaries for
-  multi-platform builds.
-- [Docker Scout](https://github.com/docker/scout-action):
-  analyze Docker images for security vulnerabilities.
-@y
-- [Docker Setup QEMU](https://github.com/marketplace/actions/docker-setup-qemu):
-  マルチプラットフォームビルド向けに [QEMU](https://github.com/qemu/qemu) のスタティックバイナリをインストールします。
-- [Docker Scout](https://github.com/docker/scout-action):
-  Docker イメージのセキュリティぜい弱性を分析します。
-@z
-
-@x
-Using Docker's actions provides an easy-to-use interface, while still allowing
-flexibility for customizing build parameters.
-@y
-Docker のアクションでは簡単なインターフェースを提供します。
-それでもビルドパラメーターをカスタマイズできる機能は十分に維持しています。
-@z
-
-@x
-> [!NOTE]
-> For an alternative to configuring individual actions, see
-> [Docker GitHub Builder](/manuals/build/ci/github-actions/github-builder/_index.md).
-> It provides Docker-maintained reusable workflows for building images and artifacts
-> with BuildKit.
-@y
-> [!NOTE]
-> For an alternative to configuring individual actions, see
-> [Docker GitHub Builder](manuals/build/ci/github-actions/github-builder/_index.md).
-> It provides Docker-maintained reusable workflows for building images and artifacts
-> with BuildKit.
+GitHub Actions automates your build, test, and deployment pipeline. Use
+Docker GitHub Builder to build and publish images
+with Docker-maintained reusable workflows. GitHub Builder manages Buildx setup,
+platform distribution, metadata, and signing. Start with GitHub Builder for supported
+build tasks, and compose individual actions when you need custom job steps or
+controls outside the reusable workflow interface.
 @z
 
 @x
@@ -170,9 +92,9 @@ Add your Docker Hub credentials to your GitHub repository:
 @z
 
 @x
-### Set up your GitHub Actions workflow
+### Set up your GitHub Actions workflow {#call-a-reusable-workflow}
 @y
-### Set up your GitHub Actions workflow
+### Set up your GitHub Actions workflow {#call-a-reusable-workflow}
 @z
 
 @x
@@ -188,78 +110,171 @@ change `main` if your default branch has a different name.
 % snip code...
 
 @x
-Commit the workflow file and push it to your default branch to run it. The
-workflow also runs on pull requests. Pull-request builds skip signing in to
-Docker Hub and pushing the image, so they don't require registry secrets,
-including for pull requests from forks.
+Call the reusable workflow with `uses` at the job level, rather than inside
+`steps`. Grant `contents: read` to fetch the repository and `id-token: write`
+for signing with GitHub's OpenID Connect token. With the default `sign: auto`,
+GitHub Builder signs attestation manifests when pushing an image. See the
+[Build workflow](build-workflow.md) for inputs and outputs.
 @y
-Commit the workflow file and push it to your default branch to run it. The
-workflow also runs on pull requests. Pull-request builds skip signing in to
-Docker Hub and pushing the image, so they don't require registry secrets,
-including for pull requests from forks.
+Call the reusable workflow with `uses` at the job level, rather than inside
+`steps`. Grant `contents: read` to fetch the repository and `id-token: write`
+for signing with GitHub's OpenID Connect token. With the default `sign: auto`,
+GitHub Builder signs attestation manifests when pushing an image. See the
+[Build workflow](build-workflow.md) for inputs and outputs.
 @z
 
 @x
-The build action uses Git context by default: BuildKit fetches your repository
-directly at the Git reference for the event that triggered the workflow, so no
-checkout step is needed. Changes to files made by earlier workflow steps are
-ignored because the build uses files from Git.
+Commit the workflow file and push it to your default branch to run it. The
+workflow also runs on pull requests. With `push: false`, the default
+`registry-login: auto` skips registry login and `sign: auto` skips signing.
+Pull requests from forks can build without Docker Hub secrets or a writable
+OpenID Connect token. Builds that need private dependencies still need access
+to those dependencies.
 @y
-The build action uses Git context by default: BuildKit fetches your repository
-directly at the Git reference for the event that triggered the workflow, so no
-checkout step is needed. Changes to files made by earlier workflow steps are
-ignored because the build uses files from Git.
+Commit the workflow file and push it to your default branch to run it. The
+workflow also runs on pull requests. With `push: false`, the default
+`registry-login: auto` skips registry login and `sign: auto` skips signing.
+Pull requests from forks can build without Docker Hub secrets or a writable
+OpenID Connect token. Builds that need private dependencies still need access
+to those dependencies.
 @z
 
 @x
-The metadata action generates tags, labels, and
-annotations from the GitHub event and passes them to the build step. For
-example, a push to `main` publishes `DOCKERHUB_USERNAME/my-image:main`.
-See [Manage tags and labels](/manuals/build/ci/github-actions/manage-tags-labels.md)
-and [Annotations](/manuals/build/ci/github-actions/annotations.md) to customize
-this metadata.
+GitHub Builder builds from the repository at the triggering Git reference.
+Files changed in a caller job aren't included in the build.
 @y
-The metadata action generates tags, labels, and
-annotations from the GitHub event and passes them to the build step. For
-example, a push to `main` publishes `DOCKERHUB_USERNAME/my-image:main`.
-See [Manage tags and labels](manuals/build/ci/github-actions/manage-tags-labels.md)
-and [Annotations](manuals/build/ci/github-actions/annotations.md) to customize
-this metadata.
+GitHub Builder builds from the repository at the triggering Git reference.
+Files changed in a caller job aren't included in the build.
+@z
+
+@x
+GitHub Builder uses the metadata action to generate tags from the GitHub event.
+For example, a push to `main` publishes `DOCKERHUB_USERNAME/my-image:main`.
+The `set-meta-labels` and `set-meta-annotations` switches also apply generated
+labels and annotations; both are disabled by default. See
+[Manage tags and labels](manage-tags-labels.md) and [Annotations](annotations.md)
+to customize this metadata.
+@y
+GitHub Builder uses the metadata action to generate tags from the GitHub event.
+For example, a push to `main` publishes `DOCKERHUB_USERNAME/my-image:main`.
+The `set-meta-labels` and `set-meta-annotations` switches also apply generated
+labels and annotations; both are disabled by default. See
+[Manage tags and labels](manage-tags-labels.md) and [Annotations](annotations.md)
+to customize this metadata.
 @z
 
 @x
 This workflow builds images but doesn't run application tests. To add tests,
-see [Test before push](/manuals/build/ci/github-actions/test-before-push.md).
-For additional build options, see
-[Multi-platform images](/manuals/build/ci/github-actions/multi-platform.md) and
-[SBOM and provenance attestations](/manuals/build/ci/github-actions/attestations.md),
-which covers default provenance and how to add SBOM attestations when pushing
-to a registry.
+see [Test before push](test-before-push.md). For additional build options, see
+[Multi-platform images](multi-platform.md) and
+[SBOM and provenance attestations](attestations.md).
 @y
 This workflow builds images but doesn't run application tests. To add tests,
-see [Test before push](manuals/build/ci/github-actions/test-before-push.md).
-For additional build options, see
-[Multi-platform images](manuals/build/ci/github-actions/multi-platform.md) and
-[SBOM and provenance attestations](manuals/build/ci/github-actions/attestations.md),
-which covers default provenance and how to add SBOM attestations when pushing
-to a registry.
+see [Test before push](test-before-push.md). For additional build options, see
+[Multi-platform images](multi-platform.md) and
+[SBOM and provenance attestations](attestations.md).
 @z
 
 @x
-## Examples
+Use the [Build workflow](build-workflow.md) for Dockerfile inputs, or the
+[Bake workflow](bake-workflow.md) for a build defined in Bake. Both support
+image and local file output. For details on platform distribution and outputs,
+see [GitHub Builder architecture](github-builder-architecture/index.md).
 @y
-## 利用例 {#examples}
+Use the [Build workflow](build-workflow.md) for Dockerfile inputs, or the
+[Bake workflow](bake-workflow.md) for a build defined in Bake. Both support
+image and local file output. For details on platform distribution and outputs,
+see [GitHub Builder architecture](github-builder-architecture/index.md).
 @z
 
 @x
-If you're looking for examples on how to use the Docker GitHub Actions,
-refer to the following sections:
+## Build with individual actions {#compose-individual-actions}
 @y
-Docker GitHub Actions を使った利用例を確認したい場合は、以下の節を参照してください。
+## Build with individual actions {#compose-individual-actions}
 @z
 
 @x
-{{% sectionlinks %}}
+Use individual actions to load images into a job's Docker image store, run
+steps before or after a build on the same runner, or configure the builder
+directly. GitHub Builder's `image` output publishes to a registry; its `local` output
+exports files. Neither loads an image into the caller's Docker image store or
+exports a Docker image archive. The following alternative uses the same
+credentials, triggers, and metadata as the GitHub Builder example:
 @y
-{{% sectionlinks %}}
+Use individual actions to load images into a job's Docker image store, run
+steps before or after a build on the same runner, or configure the builder
+directly. GitHub Builder's `image` output publishes to a registry; its `local` output
+exports files. Neither loads an image into the caller's Docker image store or
+exports a Docker image archive. The following alternative uses the same
+credentials, triggers, and metadata as the GitHub Builder example:
+@z
+
+% snip code...
+
+@x
+The build action uses Git context by default: BuildKit fetches the repository
+at the triggering Git reference. No checkout step is needed, and changes made
+by earlier steps aren't included. Use a checkout and a path context when the
+build needs files changed by earlier steps.
+@y
+The build action uses Git context by default: BuildKit fetches the repository
+at the triggering Git reference. No checkout step is needed, and changes made
+by earlier steps aren't included. Use a checkout and a path context when the
+build needs files changed by earlier steps.
+@z
+
+@x
+### Available actions
+@y
+### Available actions
+@z
+
+@x
+The following GitHub Actions are available:
+@y
+The following GitHub Actions are available:
+@z
+
+@x
+- [Build and push Docker images](https://github.com/marketplace/actions/build-and-push-docker-images):
+  build and push Docker images with BuildKit.
+- [Docker Buildx Bake](https://github.com/marketplace/actions/docker-buildx-bake):
+  enables using high-level builds with [Bake](../../bake/_index.md).
+- [Docker Login](https://github.com/marketplace/actions/docker-login):
+  sign in to a Docker registry.
+- [Docker Setup Buildx](https://github.com/marketplace/actions/docker-setup-buildx):
+  creates and boots a BuildKit builder.
+- [Docker Metadata action](https://github.com/marketplace/actions/docker-metadata-action):
+  extracts metadata from Git reference and GitHub events to generate tags,
+  labels, and annotations.
+- [Docker Setup Compose](https://github.com/marketplace/actions/docker-setup-compose):
+  installs and sets up [Compose](../../../compose).
+- [Docker Setup Docker](https://github.com/marketplace/actions/docker-setup-docker):
+  installs Docker Engine.
+- [Docker Setup QEMU](https://github.com/marketplace/actions/docker-setup-qemu):
+  installs [QEMU](https://github.com/qemu/qemu) static binaries for
+  multi-platform builds.
+- [Docker Scout](https://github.com/docker/scout-action):
+  analyze Docker images for security vulnerabilities.
+@y
+- [Build and push Docker images](https://github.com/marketplace/actions/build-and-push-docker-images):
+  build and push Docker images with BuildKit.
+- [Docker Buildx Bake](https://github.com/marketplace/actions/docker-buildx-bake):
+  enables using high-level builds with [Bake](../../bake/_index.md).
+- [Docker Login](https://github.com/marketplace/actions/docker-login):
+  sign in to a Docker registry.
+- [Docker Setup Buildx](https://github.com/marketplace/actions/docker-setup-buildx):
+  creates and boots a BuildKit builder.
+- [Docker Metadata action](https://github.com/marketplace/actions/docker-metadata-action):
+  extracts metadata from Git reference and GitHub events to generate tags,
+  labels, and annotations.
+- [Docker Setup Compose](https://github.com/marketplace/actions/docker-setup-compose):
+  installs and sets up [Compose](../../../compose).
+- [Docker Setup Docker](https://github.com/marketplace/actions/docker-setup-docker):
+  installs Docker Engine.
+- [Docker Setup QEMU](https://github.com/marketplace/actions/docker-setup-qemu):
+  installs [QEMU](https://github.com/qemu/qemu) static binaries for
+  multi-platform builds.
+- [Docker Scout](https://github.com/docker/scout-action):
+  analyze Docker images for security vulnerabilities.
 @z

@@ -16,11 +16,13 @@ keywords: ci, github actions, gha, buildkit, buildx, cache
 @z
 
 @x
-This page contains examples on using the cache storage backends with GitHub
-Actions.
+Use Docker GitHub Builder with the GitHub Actions cache backend for reusable
+build workflows. The individual-action examples cover other cache backends
+and cache mounts.
 @y
-This page contains examples on using the cache storage backends with GitHub
-Actions.
+Use Docker GitHub Builder with the GitHub Actions cache backend for reusable
+build workflows. The individual-action examples cover other cache backends
+and cache mounts.
 @z
 
 @x
@@ -36,51 +38,55 @@ Actions.
 @z
 
 @x
-## Inline cache
-@y
-## Inline cache
-@z
-
-@x
-In most cases you want to use the [inline cache exporter](../../cache/backends/inline.md).
-However, note that the `inline` cache exporter only supports `min` cache mode.
-To use `max` cache mode, push the image and the cache separately using the
-registry cache exporter with the `cache-to` option, as shown in the [registry cache example](#registry-cache).
-@y
-In most cases you want to use the [inline cache exporter](../../cache/backends/inline.md).
-However, note that the `inline` cache exporter only supports `min` cache mode.
-To use `max` cache mode, push the image and the cache separately using the
-registry cache exporter with the `cache-to` option, as shown in the [registry cache example](#registry-cache).
-@z
-
-% snip code...
-
-@x
-## Registry cache
-@y
-## Registry cache
-@z
-
-@x
-You can import/export cache from a cache manifest or (special) image
-configuration on the registry with the [registry cache exporter](../../cache/backends/registry.md).
-@y
-You can import/export cache from a cache manifest or (special) image
-configuration on the registry with the [registry cache exporter](../../cache/backends/registry.md).
-@z
-
-% snip code...
-
-@x
 ## GitHub cache
 @y
 ## GitHub cache
 @z
 
 @x
+### Enable cache with GitHub Builder {#enable-cache-with-builder}
+@y
+### Enable cache with GitHub Builder {#enable-cache-with-builder}
+@z
+
+@x
+[Docker GitHub Builder](build-workflow.md) disables caching by default.
+Set `cache: true` to import and export GitHub Actions cache. Set
+`cache-mode: max` to export intermediate layers, and use `cache-scope` to
+separate builds for different images. GitHub Builder adds the platform to the scope
+for distributed builds and makes cache export failures non-fatal.
+@y
+[Docker GitHub Builder](build-workflow.md) disables caching by default.
+Set `cache: true` to import and export GitHub Actions cache. Set
+`cache-mode: max` to export intermediate layers, and use `cache-scope` to
+separate builds for different images. GitHub Builder adds the platform to the scope
+for distributed builds and makes cache export failures non-fatal.
+@z
+
+% snip code...
+
+@x
+The same cache inputs are available with the [Bake workflow](bake-workflow.md).
+See [cache write restrictions](#cache-write-restrictions) for event restrictions.
+GitHub Builder's `cache-mode` input selects the layers to export (`min` or `max`);
+it doesn't grant cache write access.
+@y
+The same cache inputs are available with the [Bake workflow](bake-workflow.md).
+See [cache write restrictions](#cache-write-restrictions) for event restrictions.
+GitHub Builder's `cache-mode` input selects the layers to export (`min` or `max`);
+it doesn't grant cache write access.
+@z
+
+@x
 ### Cache backend API
 @y
 ### Cache backend API
+@z
+
+@x
+The following examples configure the backend with individual actions.
+@y
+The following examples configure the backend with individual actions.
 @z
 
 @x
@@ -253,7 +259,6 @@ It doesn't grant write access or save the cache when writes are denied.
 It doesn't grant write access or save the cache when writes are denied.
 @z
 
-
 @x
 ### Cache mounts
 @y
@@ -340,6 +345,42 @@ with this action:
 You can also leverage [GitHub cache](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows)
 using the [actions/cache](https://github.com/actions/cache) and [local cache exporter](../../cache/backends/local.md)
 with this action:
+@z
+
+% snip code...
+
+@x
+## Inline cache
+@y
+## Inline cache
+@z
+
+@x
+Use individual actions for the [inline cache exporter](../../cache/backends/inline.md).
+However, note that the `inline` cache exporter only supports `min` cache mode.
+To use `max` cache mode, push the image and the cache separately using the
+registry cache exporter with the `cache-to` option, as shown in the [registry cache example](#registry-cache).
+@y
+Use individual actions for the [inline cache exporter](../../cache/backends/inline.md).
+However, note that the `inline` cache exporter only supports `min` cache mode.
+To use `max` cache mode, push the image and the cache separately using the
+registry cache exporter with the `cache-to` option, as shown in the [registry cache example](#registry-cache).
+@z
+
+% snip code...
+
+@x
+## Registry cache
+@y
+## Registry cache
+@z
+
+@x
+You can import/export cache from a cache manifest or (special) image
+configuration on the registry with the [registry cache exporter](../../cache/backends/registry.md).
+@y
+You can import/export cache from a cache manifest or (special) image
+configuration on the registry with the [registry cache exporter](../../cache/backends/registry.md).
 @z
 
 % snip code...

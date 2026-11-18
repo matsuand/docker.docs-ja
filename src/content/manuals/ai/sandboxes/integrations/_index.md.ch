@@ -76,15 +76,37 @@ that supports remote development over SSH can connect to it.
 @z
 
 @x
+## Configure agent credentials
+@y
+## Configure agent credentials
+@z
+
+@x
+Before setting up an integration that runs an AI agent, configure a model
+provider credential for that agent in Docker Sandboxes. Connecting an editor
+or desktop app over SSH doesn't supply the sandbox with the credential.
+Store an API key with [stored secrets](../configuration/credentials.md#stored-secrets)
+or complete the agent's supported OAuth sign-in flow. See the
+[agent pages](../agents/_index.md) for authentication instructions.
+@y
+Before setting up an integration that runs an AI agent, configure a model
+provider credential for that agent in Docker Sandboxes. Connecting an editor
+or desktop app over SSH doesn't supply the sandbox with the credential.
+Store an API key with [stored secrets](../configuration/credentials.md#stored-secrets)
+or complete the agent's supported OAuth sign-in flow. See the
+[agent pages](../agents/_index.md) for authentication instructions.
+@z
+
+@x
 ## Enable SSH access
 @y
 ## Enable SSH access
 @z
 
 @x
-Run the SSH setup command once:
+Run the SSH setup command:
 @y
-Run the SSH setup command once:
+Run the SSH setup command:
 @z
 
 @x
@@ -99,10 +121,12 @@ $ sbx setup ssh
 
 @x
 The command starts the Docker Sandboxes daemon if needed and configures your
-SSH client. You can re-run it at any time.
+SSH client. After upgrading the CLI, rerun this command to refresh the generated
+SSH configuration.
 @y
 The command starts the Docker Sandboxes daemon if needed and configures your
-SSH client. You can re-run it at any time.
+SSH client. After upgrading the CLI, rerun this command to refresh the generated
+SSH configuration.
 @z
 
 @x
@@ -378,21 +402,23 @@ folder for mountless sandboxes.
 @z
 
 @x
-`sbx setup ssh` writes a managed block to your SSH config: `~/.ssh/config` on
-macOS and Linux, or `%USERPROFILE%\.ssh\config` on Windows. The block is similar
-to the following:
+`sbx setup ssh` writes managed SSH configuration and adds an `Include` to
+your SSH config: `~/.ssh/config` on macOS and Linux, or
+`%USERPROFILE%\.ssh\config` on Windows. On macOS and Linux, the generated block
+is similar to the following (paths depend on your installation):
 @y
-`sbx setup ssh` writes a managed block to your SSH config: `~/.ssh/config` on
-macOS and Linux, or `%USERPROFILE%\.ssh\config` on Windows. The block is similar
-to the following:
+`sbx setup ssh` writes managed SSH configuration and adds an `Include` to
+your SSH config: `~/.ssh/config` on macOS and Linux, or
+`%USERPROFILE%\.ssh\config` on Windows. On macOS and Linux, the generated block
+is similar to the following (paths depend on your installation):
 @z
 
 @x
 ```text
 # >>> docker sandboxes (managed) >>>
-Host *.sbx
+Match originalhost "*.sbx,!*'*"
     User _default_user_
-    ProxyCommand "sbx" ssh proxy %n
+    ProxyCommand "sbx" ssh proxy '%n'
     IdentityAgent none
     IdentityFile /dev/null
     IdentitiesOnly yes
@@ -406,9 +432,9 @@ Host *.sbx
 @y
 ```text
 # >>> docker sandboxes (managed) >>>
-Host *.sbx
+Match originalhost "*.sbx,!*'*"
     User _default_user_
-    ProxyCommand "sbx" ssh proxy %n
+    ProxyCommand "sbx" ssh proxy '%n'
     IdentityAgent none
     IdentityFile /dev/null
     IdentitiesOnly yes
@@ -428,15 +454,19 @@ You don't edit this block by hand. Its key entries work as follows:
 @z
 
 @x
-- `Host *.sbx` maps sandbox hostnames to the sandbox daemon. Application host
-  pickers don't discover individual sandbox names from this wildcard, so enter
-  the hostname, such as `demo.sbx`, manually when you configure an integration.
+- `Match originalhost "*.sbx,!*'*"` selects sandbox hostnames as entered on
+  the SSH command line and excludes names containing a single quote.
+- Enter the hostname, such as `demo.sbx`, manually when you configure an
+  integration. Host pickers that list `Host` entries don't list these `Match`
+  blocks.
 - `User _default_user_` tells the daemon to use the sandbox image's default
   user, so your host username is never sent.
 @y
-- `Host *.sbx` maps sandbox hostnames to the sandbox daemon. Application host
-  pickers don't discover individual sandbox names from this wildcard, so enter
-  the hostname, such as `demo.sbx`, manually when you configure an integration.
+- `Match originalhost "*.sbx,!*'*"` selects sandbox hostnames as entered on
+  the SSH command line and excludes names containing a single quote.
+- Enter the hostname, such as `demo.sbx`, manually when you configure an
+  integration. Host pickers that list `Host` entries don't list these `Match`
+  blocks.
 - `User _default_user_` tells the daemon to use the sandbox image's default
   user, so your host username is never sent.
 @z

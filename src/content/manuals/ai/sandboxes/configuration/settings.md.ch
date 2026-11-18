@@ -714,6 +714,64 @@ the daemon to update existing forwarders.
 @z
 
 @x
+### Clone-mode Git remote
+@y
+### Clone-mode Git remote
+@z
+
+@x
+#### clone.legacyTcpRemote {.wrap-anywhere}
+@y
+#### clone.legacyTcpRemote {.wrap-anywhere}
+@z
+
+@x
+{{< setting-metadata type="boolean" default="false" >}}
+@y
+{{< setting-metadata type="boolean" default="false" >}}
+@z
+
+@x
+Set this to `true` only for Git clients that ignore the remote's `uploadpack`
+setting and cannot use the default daemon socket transport:
+@y
+Set this to `true` only for Git clients that ignore the remote's `uploadpack`
+setting and cannot use the default daemon socket transport:
+@z
+
+@x
+```console
+$ sbx settings set clone.legacyTcpRemote true
+```
+@y
+```console
+$ sbx settings set clone.legacyTcpRemote true
+```
+@z
+
+@x
+Changes take effect the next time the sandbox starts. This setting has no
+environment variable override and is excluded from `sbx settings ls`. Use
+`sbx settings get clone.legacyTcpRemote` to inspect its value.
+@y
+Changes take effect the next time the sandbox starts. This setting has no
+environment variable override and is excluded from `sbx settings ls`. Use
+`sbx settings get clone.legacyTcpRemote` to inspect its value.
+@z
+
+@x
+The TCP compatibility mode exposes the repository and its history through an
+unauthenticated localhost Git port that other local accounts on the host can
+access. Leave this at `false` to use the daemon socket. See
+[Sandbox remote behavior](../workflows/git.md#sandbox-remote-behavior).
+@y
+The TCP compatibility mode exposes the repository and its history through an
+unauthenticated localhost Git port that other local accounts on the host can
+access. Leave this at `false` to use the daemon socket. See
+[Sandbox remote behavior](../workflows/git.md#sandbox-remote-behavior).
+@z
+
+@x
 ### Images and storage
 @y
 ### Images and storage
@@ -1576,11 +1634,9 @@ $ sbx daemon restart
 @x
 Changes apply to sandboxes created after the change. For existing sandboxes,
 restart the daemon to rebuild their network proxies with the updated value.
-The experimental Runtime backend doesn't support this setting.
 @y
 Changes apply to sandboxes created after the change. For existing sandboxes,
 restart the daemon to rebuild their network proxies with the updated value.
-The experimental Runtime backend doesn't support this setting.
 @z
 
 @x
@@ -2021,6 +2077,50 @@ It relaxes certificate validation to accept those serial numbers. It doesn't
 make an untrusted certificate authority trusted or resolve other certificate
 errors. For an untrusted internal CA, see
 [certificate troubleshooting](../troubleshooting.md#api-calls-fail-with-a-certificate-error).
+@z
+
+@x
+#### tls.postQuantumKeyExchange {.wrap-anywhere}
+@y
+#### tls.postQuantumKeyExchange {.wrap-anywhere}
+@z
+
+@x
+{{< setting-metadata type="boolean" default="true" >}}
+@y
+{{< setting-metadata type="boolean" default="true" >}}
+@z
+
+@x
+Set this to `false` if a firewall or TLS-inspecting proxy drops or stalls
+Docker Sandboxes HTTPS connections because it can't handle post-quantum key
+exchange:
+@y
+Set this to `false` if a firewall or TLS-inspecting proxy drops or stalls
+Docker Sandboxes HTTPS connections because it can't handle post-quantum key
+exchange:
+@z
+
+@x
+```console
+$ sbx settings set tls.postQuantumKeyExchange false
+$ sbx daemon restart
+```
+@y
+```console
+$ sbx settings set tls.postQuantumKeyExchange false
+$ sbx daemon restart
+```
+@z
+
+@x
+This disables post-quantum key exchange for TLS connections made by the host
+CLI and daemon. Changes apply on the next CLI invocation and require a daemon
+restart. Set it back to `true` and restart the daemon to restore the default.
+@y
+This disables post-quantum key exchange for TLS connections made by the host
+CLI and daemon. Changes apply on the next CLI invocation and require a daemon
+restart. Set it back to `true` and restart the daemon to restore the default.
 @z
 
 @x

@@ -9,6 +9,7 @@ bases = \
 	daemon-cfg-desktop.md      \
 	desktop-license-update.md  \
 	desktop-linux-launch.md    \
+	engine-install-rhel.md     \
 	engine-license.md          \
 	extensions-form.md         \
 	hub-categories.md          \

@@ -13,12 +13,12 @@ keywords: docker sandboxes, sbx move, cloud sandbox, local sandbox, migrate sand
 
 @x
 The `sbx move` command transfers a filesystem snapshot between a local sandbox
-and a cloud sandbox. Use it to continue from the captured filesystem in the
-other environment, not as a live migration of the running sandbox.
+and a cloud sandbox. Use it to continue working in the other environment
+from a snapshot of your files. Running processes and memory don't transfer.
 @y
 The `sbx move` command transfers a filesystem snapshot between a local sandbox
-and a cloud sandbox. Use it to continue from the captured filesystem in the
-other environment, not as a live migration of the running sandbox.
+and a cloud sandbox. Use it to continue working in the other environment
+from a snapshot of your files. Running processes and memory don't transfer.
 @z
 
 @x
@@ -44,23 +44,19 @@ A move performs the following operations:
 @z
 
 @x
-The destination gets a different sandbox ID. The source isn't deleted, so the
-two sandboxes have independent state after the transfer. A local-to-cloud move
-stops the local source while capturing it. A cloud-to-local move attempts to
-stop the cloud source after creating the destination. This is a best-effort
-operation, so the cloud source can remain running if it can't be stopped.
-The move can return before the stop finishes. Check `sbx --cloud ls` for its
-state. A cloud source with no agent is left running.
-Remove the source separately after you verify the destination.
+The destination gets a different sandbox ID. The source isn't deleted, and
+changes made to either sandbox after the move aren't synchronized. Verify the
+destination before removing the source.
 @y
-The destination gets a different sandbox ID. The source isn't deleted, so the
-two sandboxes have independent state after the transfer. A local-to-cloud move
-stops the local source while capturing it. A cloud-to-local move attempts to
-stop the cloud source after creating the destination. This is a best-effort
-operation, so the cloud source can remain running if it can't be stopped.
-The move can return before the stop finishes. Check `sbx --cloud ls` for its
-state. A cloud source with no agent is left running.
-Remove the source separately after you verify the destination.
+The destination gets a different sandbox ID. The source isn't deleted, and
+changes made to either sandbox after the move aren't synchronized. Verify the
+destination before removing the source.
+@z
+
+@x
+### Files and credentials
+@y
+### Files and credentials
 @z
 
 @x
@@ -100,9 +96,15 @@ transfer:
 @z
 
 @x
-Changes made to either sandbox after the move aren't synchronized.
+## Before you move
 @y
-Changes made to either sandbox after the move aren't synchronized.
+## Before you move
+@z
+
+@x
+### Check platform compatibility
+@y
+### Check platform compatibility
 @z
 
 @x
@@ -121,6 +123,50 @@ must support the local sandbox's platform. For a cloud-to-local move, create
 the cloud sandbox with `--platform linux/amd64` or `--platform linux/arm64`
 to match your local sandbox runtime. The CLI checks compatibility before
 transferring the snapshot.
+@z
+
+@x
+### Choose a destination name
+@y
+### Choose a destination name
+@z
+
+@x
+Use `--name` to set the exact destination name in either direction.
+The name must be available at the destination.
+If the name is already taken, the command reports an error before confirmation,
+source capture, or transfer. Local names are compared case-insensitively. Cloud
+names must be available within the source agent's namespace.
+@y
+Use `--name` to set the exact destination name in either direction.
+The name must be available at the destination.
+If the name is already taken, the command reports an error before confirmation,
+source capture, or transfer. Local names are compared case-insensitively. Cloud
+names must be available within the source agent's namespace.
+@z
+
+@x
+### Confirm or cancel the move
+@y
+### Confirm or cancel the move
+@z
+
+@x
+Review the CLI warnings before confirming a move. Use `--force` to skip
+confirmation prompts. This skips the prompts without changing what transfers.
+@y
+Review the CLI warnings before confirming a move. Use `--force` to skip
+confirmation prompts. This skips the prompts without changing what transfers.
+@z
+
+@x
+If you decline a move confirmation, the move is canceled and the command returns
+a nonzero exit status. In a shell command chain using `&&`, commands after
+`sbx move` won't run when you decline.
+@y
+If you decline a move confirmation, the move is canceled and the command returns
+a nonzero exit status. In a shell command chain using `&&`, commands after
+`sbx move` won't run when you decline.
 @z
 
 @x
@@ -166,27 +212,25 @@ $ sbx move local-project --to cloud --name cloud-project
 @z
 
 @x
-For either move direction, an explicit name must be available at the destination.
-If the name is already taken, the command reports an error before confirmation,
-source capture, or transfer. Local names are compared case-insensitively. Cloud
-names must be available within the source agent's namespace.
+### Workspace files
 @y
-For either move direction, an explicit name must be available at the destination.
-If the name is already taken, the command reports an error before confirmation,
-source capture, or transfer. Local names are compared case-insensitively. Cloud
-names must be available within the source agent's namespace.
+### Workspace files
 @z
 
 @x
 Local workspace files are mounted outside the sandbox filesystem and don't
 appear in the cloud destination. When the source has a workspace, the CLI
-warns and asks for confirmation. The `--force` flag skips the prompt but
-doesn't include those files.
+warns and asks for confirmation. Using `--force` doesn't include those files.
 @y
 Local workspace files are mounted outside the sandbox filesystem and don't
 appear in the cloud destination. When the source has a workspace, the CLI
-warns and asks for confirmation. The `--force` flag skips the prompt but
-doesn't include those files.
+warns and asks for confirmation. Using `--force` doesn't include those files.
+@z
+
+@x
+### Network rules and ports
+@y
+### Network rules and ports
 @z
 
 @x
@@ -213,6 +257,12 @@ numbers and non-TCP mappings don't transfer.
 Published TCP sandbox ports are published on the cloud destination with cloud
 URLs. Ports that the cloud refuses are skipped with a warning. Host port
 numbers and non-TCP mappings don't transfer.
+@z
+
+@x
+### Credentials and resources
+@y
+### Credentials and resources
 @z
 
 @x
@@ -289,7 +339,15 @@ To restart the destination automatically when it expires, use `restart`:
 To restart the destination automatically when it expires, use `restart`:
 @z
 
-% snip command...
+@x
+```console
+$ sbx move local-project --to cloud --ttl 4h --on-timeout restart
+```
+@y
+```console
+$ sbx move local-project --to cloud --ttl 4h --on-timeout restart
+```
+@z
 
 @x
 The `restart` action stops and immediately starts the destination. If you
@@ -305,6 +363,22 @@ the expiration with [`sbx --cloud ttl`](usage.md#configure-expiration).
 @y
 These flags apply only to moves to the cloud. After the move, inspect or extend
 the expiration with [`sbx --cloud ttl`](usage.md#configure-expiration).
+@z
+
+@x
+### Source sandbox state
+@y
+### Source sandbox state
+@z
+
+@x
+A local-to-cloud move stops the local source while capturing its filesystem.
+The source isn't deleted. Remove it separately after verifying the cloud
+destination.
+@y
+A local-to-cloud move stops the local source while capturing its filesystem.
+The source isn't deleted. Remove it separately after verifying the cloud
+destination.
 @z
 
 @x
@@ -330,6 +404,24 @@ $ sbx move cloud-project --to local --name local-copy
 @z
 
 @x
+This direction requires a machine that meets the local sandbox requirements
+because the command imports the snapshot and creates a local sandbox.
+Layer reuse during download can require up to 32 GiB of temporary host disk
+space in addition to the local runtime's image storage.
+@y
+This direction requires a machine that meets the local sandbox requirements
+because the command imports the snapshot and creates a local sandbox.
+Layer reuse during download can require up to 32 GiB of temporary host disk
+space in addition to the local runtime's image storage.
+@z
+
+@x
+### Network rules and ports
+@y
+### Network rules and ports
+@z
+
+@x
 The local destination starts with the host's default network policy. Cloud
 network rules aren't copied back to the local runtime.
 @y
@@ -340,11 +432,17 @@ network rules aren't copied back to the local runtime.
 @x
 Published TCP ports are saved on the local sandbox and bound to loopback while
 it runs. Host port numbers can change after a restart. Run
-`sbx ports local-copy` to see the bindings.
+`sbx port ls local-copy` to see the bindings.
 @y
 Published TCP ports are saved on the local sandbox and bound to loopback while
 it runs. Host port numbers can change after a restart. Run
-`sbx ports local-copy` to see the bindings.
+`sbx port ls local-copy` to see the bindings.
+@z
+
+@x
+### Files and resources
+@y
+### Files and resources
 @z
 
 @x
@@ -358,21 +456,23 @@ don't transfer. The local destination uses local CPU and memory defaults.
 @z
 
 @x
-This direction requires a machine that meets the local sandbox requirements
-because the command imports the snapshot and creates a local sandbox. The
-cloud source remains available unless you remove it with `sbx --cloud rm`.
+### Source sandbox state
 @y
-This direction requires a machine that meets the local sandbox requirements
-because the command imports the snapshot and creates a local sandbox. The
-cloud source remains available unless you remove it with `sbx --cloud rm`.
+### Source sandbox state
 @z
 
 @x
-Layer reuse during download can require up to 32 GiB of temporary host disk
-space in addition to the local runtime's image storage.
+After creating the local destination, the move attempts to stop the cloud
+source. This is a best-effort operation: the source can remain running if it
+can't be stopped, and the move can return before the stop finishes. Check
+`sbx --cloud ls` for its state. A cloud source with no agent is left running.
+The source remains available until you remove it with `sbx --cloud rm`.
 @y
-Layer reuse during download can require up to 32 GiB of temporary host disk
-space in addition to the local runtime's image storage.
+After creating the local destination, the move attempts to stop the cloud
+source. This is a best-effort operation: the source can remain running if it
+can't be stopped, and the move can return before the stop finishes. Check
+`sbx --cloud ls` for its state. A cloud source with no agent is left running.
+The source remains available until you remove it with `sbx --cloud rm`.
 @z
 
 @x

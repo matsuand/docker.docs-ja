@@ -9,13 +9,11 @@ title: Using secrets with GitHub Actions
 linkTitle: Build secrets
 description: Example using secret mounts with GitHub Actions
 keywords: ci, github actions, gha, buildkit, buildx, secret
-tags: [Secrets]
 @y
 title: Using secrets with GitHub Actions
 linkTitle: Build secrets
 description: Example using secret mounts with GitHub Actions
 keywords: ci, github actions, gha, buildkit, buildx, secret
-tags: [Secrets]
 @z
 
 @x
@@ -67,6 +65,44 @@ First, create a `Dockerfile` that uses the secret:
 % snip code...
 
 @x
+### Pass secret values with GitHub Builder {#pass-secret-values-with-builder}
+@y
+### Pass secret values with GitHub Builder {#pass-secret-values-with-builder}
+@z
+
+@x
+Pass secret values to [Docker GitHub Builder](build-workflow.md) using
+the `build-secrets` workflow secret. Its value is a YAML mapping from secret
+IDs to values, rather than the action's `id=value` list:
+@y
+Pass secret values to [Docker GitHub Builder](build-workflow.md) using
+the `build-secrets` workflow secret. Its value is a YAML mapping from secret
+IDs to values, rather than the action's `id=value` list:
+@z
+
+% snip code...
+
+@x
+The Dockerfile consumes the `github_token` secret in the same way with either
+workflow. `toJSON` quotes the value for the YAML mapping.
+For files, environment variables, or SSH agents prepared by earlier steps,
+use the individual-action examples below. The reusable build runs in separate
+jobs and doesn't share the caller's filesystem or SSH agent.
+@y
+The Dockerfile consumes the `github_token` secret in the same way with either
+workflow. `toJSON` quotes the value for the YAML mapping.
+For files, environment variables, or SSH agents prepared by earlier steps,
+use the individual-action examples below. The reusable build runs in separate
+jobs and doesn't share the caller's filesystem or SSH agent.
+@z
+
+@x
+### Pass secret values with individual actions
+@y
+### Pass secret values with individual actions
+@z
+
+@x
 In this example, the secret name is `github_token`. The following workflow
 exposes this secret using the `secrets` input:
 @y
@@ -89,19 +125,181 @@ exposes this secret using the `secrets` input:
 > By default, they're available at `/run/secrets/<id>`.
 > You can also use the `env` option to load a secret into an environment variable,
 > or the `target` option to customize the mount path.
-> For details on secret mounts, see [Build secrets](/manuals/build/building/secrets.md).
+> For details on secret mounts, see [Build secrets](manuals/build/building/secrets.md).
+@z
+
+@x
+### Secret sources
+@y
+### Secret sources
+@z
+
+@x
+The `docker/build-push-action` inputs for secret mounts define where the secret
+value comes from. The Dockerfile `RUN --mount=type=secret` options define how
+the build step consumes the secret.
+@y
+The `docker/build-push-action` inputs for secret mounts define where the secret
+value comes from. The Dockerfile `RUN --mount=type=secret` options define how
+the build step consumes the secret.
+@z
+
+@x
+| Action input                           | Source                             | Equivalent Buildx option                 |
+| -------------------------------------- | ---------------------------------- | ---------------------------------------- |
+| `secrets: MY_SECRET=value`             | Inline value from the workflow     | `--secret id=MY_SECRET,src=<temp-file>`  |
+| `secret-envs: MY_SECRET=MY_ENV_VAR`    | Environment variable on the runner | `--secret id=MY_SECRET,env=MY_ENV_VAR`   |
+| `secret-files: MY_SECRET=./secret.txt` | File on the runner                 | `--secret id=MY_SECRET,src=./secret.txt` |
+@y
+| Action input                           | Source                             | Equivalent Buildx option                 |
+| -------------------------------------- | ---------------------------------- | ---------------------------------------- |
+| `secrets: MY_SECRET=value`             | Inline value from the workflow     | `--secret id=MY_SECRET,src=<temp-file>`  |
+| `secret-envs: MY_SECRET=MY_ENV_VAR`    | Environment variable on the runner | `--secret id=MY_SECRET,env=MY_ENV_VAR`   |
+| `secret-files: MY_SECRET=./secret.txt` | File on the runner                 | `--secret id=MY_SECRET,src=./secret.txt` |
+@z
+
+@x
+For example, `RUN --mount=type=secret,id=MY_SECRET` mounts the secret as a file
+at `/run/secrets/MY_SECRET`. To expose the same secret as an environment
+variable for a `RUN` instruction, use the `env` option in the Dockerfile:
+`RUN --mount=type=secret,id=MY_SECRET,env=MY_SECRET`.
+@y
+For example, `RUN --mount=type=secret,id=MY_SECRET` mounts the secret as a file
+at `/run/secrets/MY_SECRET`. To expose the same secret as an environment
+variable for a `RUN` instruction, use the `env` option in the Dockerfile:
+`RUN --mount=type=secret,id=MY_SECRET,env=MY_SECRET`.
+@z
+
+@x
+### Using environment variables as secret sources
+@y
+### Using environment variables as secret sources
+@z
+
+@x
+The `secret-envs` input reads secrets from environment variables on the GitHub
+Actions runner. Use it when a previous workflow step sets an environment
+variable, or when you want to map a runner environment variable to a different
+secret ID for the build.
+@y
+The `secret-envs` input reads secrets from environment variables on the GitHub
+Actions runner. Use it when a previous workflow step sets an environment
+variable, or when you want to map a runner environment variable to a different
+secret ID for the build.
 @z
 
 % snip code...
 
 @x
+In your Dockerfile, mount the secret and expose it as an environment variable
+for the command that needs it:
+@y
+In your Dockerfile, mount the secret and expose it as an environment variable
+for the command that needs it:
+@z
+
+% snip code...
+
+@x
+### Using secret files
+@y
+### Using secret files
+@z
+
+@x
+The `secret-files` input lets you mount existing files as secrets in your build.
+This is useful when you need to use credential files that are generated during your workflow,
+or when you need to mount configuration files like `.npmrc` or `.pypirc` that are already in the expected format.
+@y
+The `secret-files` input lets you mount existing files as secrets in your build.
+This is useful when you need to use credential files that are generated during your workflow,
+or when you need to mount configuration files like `.npmrc` or `.pypirc` that are already in the expected format.
+@z
+
+@x
+The key difference between `secrets`, `secret-envs`, and `secret-files`:
+@y
+The key difference between `secrets`, `secret-envs`, and `secret-files`:
+@z
+
+@x
+- `secrets`: Pass secret values as strings from the workflow.
+- `secret-envs`: Read secret values from environment variables on the runner.
+- `secret-files`: Mount existing files from the runner's filesystem.
+@y
+- `secrets`: Pass secret values as strings from the workflow.
+- `secret-envs`: Read secret values from environment variables on the runner.
+- `secret-files`: Mount existing files from the runner's filesystem.
+@z
+
+@x
+#### Example: Using .npmrc for private npm packages
+@y
+#### Example: Using .npmrc for private npm packages
+@z
+
+@x
+If your build needs to install packages from a private npm registry,
+you can create an `.npmrc` file and mount it as a secret:
+@y
+If your build needs to install packages from a private npm registry,
+you can create an `.npmrc` file and mount it as a secret:
+@z
+
+% snip code...
+
+@x
+In your Dockerfile, mount the secret file to the expected location:
+@y
+In your Dockerfile, mount the secret file to the expected location:
+@z
+
+% snip code...
+
+@x
+If a `RUN` instruction uses a non-root user, set `uid`, `gid`, or `mode` on the
+secret mount so the user can read the mounted file:
+@y
+If a `RUN` instruction uses a non-root user, set `uid`, `gid`, or `mode` on the
+secret mount so the user can read the mounted file:
+@z
+
+% snip code...
+
+@x
+#### Example: Using dynamically generated credentials
+@y
+#### Example: Using dynamically generated credentials
+@z
+
+@x
+You can generate credential files from multiple secrets and mount them:
+@y
+You can generate credential files from multiple secrets and mount them:
+@z
+
+% snip code...
+
+@x
+In your Dockerfile:
+@y
+In your Dockerfile:
+@z
+
+% snip code...
+
+@x
+### Multi-line secrets
+@y
+### Multi-line secrets
+@z
+
+@x
 If you're using [GitHub secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets)
-and need to handle multi-line value, you will need to place the key-value pair
-between quotes:
+with individual actions, place multi-line key-value pairs between quotes:
 @y
 If you're using [GitHub secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets)
-and need to handle multi-line value, you will need to place the key-value pair
-between quotes:
+with individual actions, place multi-line key-value pairs between quotes:
 @z
 
 % snip code...
@@ -160,16 +358,7 @@ The following Dockerfile example uses an SSH mount
 to fetch Go modules from a private GitHub repository.
 @z
 
-@x within code...
-# this step configure git and checks the ssh key is loaded
-@y
-# this step configure git and checks the ssh key is loaded
-@z
-@x
-# this one download go modules
-@y
-# this one download go modules
-@z
+% snip code...
 
 @x
 To build this Dockerfile, you must specify an SSH mount that the builder can

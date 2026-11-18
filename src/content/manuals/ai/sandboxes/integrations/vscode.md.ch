@@ -24,6 +24,14 @@ keywords: docker sandboxes, vs code, remote ssh, remote development, sbx
 @z
 
 @x
+These connection instructions use a local sandbox. For cloud SSH setup, see
+[Connect with SSH](../cloud/usage.md#connect-with-ssh).
+@y
+These connection instructions use a local sandbox. For cloud SSH setup, see
+[Connect with SSH](../cloud/usage.md#connect-with-ssh).
+@z
+
+@x
 Use the Remote - SSH extension to open a VS Code window that runs inside a
 sandbox. Your editor stays on your host while files, terminals, and extensions
 run in the isolated sandbox.
@@ -40,10 +48,14 @@ run in the isolated sandbox.
 @z
 
 @x
+- Model provider credentials configured in Docker Sandboxes for any AI agent
+  you plan to run. See [Configure agent credentials](_index.md#configure-agent-credentials).
 - SSH access set up. See [Editor and app integrations](_index.md#enable-ssh-access).
 - The [Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
   extension (`ms-vscode-remote.remote-ssh`) installed in VS Code.
 @y
+- Model provider credentials configured in Docker Sandboxes for any AI agent
+  you plan to run. See [Configure agent credentials](_index.md#configure-agent-credentials).
 - SSH access set up. See [Editor and app integrations](_index.md#enable-ssh-access).
 - The [Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
   extension (`ms-vscode-remote.remote-ssh`) installed in VS Code.
@@ -150,43 +162,17 @@ For details, see
 @z
 
 @x
-VS Code can leave duplicate or malformed `Host *.sbx` blocks in your SSH
-config after you add an SSH host. If a VS Code connection reports a
+VS Code can leave duplicate or malformed managed blocks in your SSH config
+after you add an SSH host. If a VS Code connection reports a
 `KnownHostsCommand` error or `Host key verification failed`, remove every SSH
-config block marked `docker sandboxes (managed)`, including the marker
-comments:
+config block between `# >>> docker sandboxes (managed) >>>` and
+`# <<< docker sandboxes (managed) <<<`, including both separator comments.
 @y
-VS Code can leave duplicate or malformed `Host *.sbx` blocks in your SSH
-config after you add an SSH host. If a VS Code connection reports a
+VS Code can leave duplicate or malformed managed blocks in your SSH config
+after you add an SSH host. If a VS Code connection reports a
 `KnownHostsCommand` error or `Host key verification failed`, remove every SSH
-config block marked `docker sandboxes (managed)`, including the marker
-comments:
-@z
-
-@x
-```diff
--# >>> docker sandboxes (managed) >>>
--Host *.sbx
--    User _default_user_
--    ProxyCommand "sbx" ssh proxy %n
--    ...
--    UserKnownHostsFile "~/.ssh/sbx_known_hosts"
--    KnownHostsCommand "sbx" ssh known-hosts %H
--    StrictHostKeyChecking yes
--# <<< docker sandboxes (managed) <<<
-```
-@y
-```diff
--# >>> docker sandboxes (managed) >>>
--Host *.sbx
--    User _default_user_
--    ProxyCommand "sbx" ssh proxy %n
--    ...
--    UserKnownHostsFile "~/.ssh/sbx_known_hosts"
--    KnownHostsCommand "sbx" ssh known-hosts %H
--    StrictHostKeyChecking yes
--# <<< docker sandboxes (managed) <<<
-```
+config block between `# >>> docker sandboxes (managed) >>>` and
+`# <<< docker sandboxes (managed) <<<`, including both separator comments.
 @z
 
 @x

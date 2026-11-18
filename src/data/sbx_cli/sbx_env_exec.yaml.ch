@@ -81,14 +81,6 @@ usage: sbx env exec [flags] [PATH...] -- COMMAND [ARG...]
 
 % options:
 
-@x detach-keys
-      usage: |
-        Override the key sequence for detaching an interactive cloud exec session (not supported for local exec)
-@y
-      usage: |
-        Override the key sequence for detaching an interactive cloud exec session (not supported for local exec)
-@z
-
 @x env
       usage: Set environment variables
 @y

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Develop and test locally
@@ -71,12 +71,12 @@ volumes inside it are deleted with it.
 This pattern works well for tasks where the agent needs to run the project's
 test suite or inspect a service it started. If you need to reach that service
 from your host, publish the port when you create the sandbox, or publish it
-later with `sbx ports`.
+later with `sbx port publish`.
 @y
 This pattern works well for tasks where the agent needs to run the project's
 test suite or inspect a service it started. If you need to reach that service
 from your host, publish the port when you create the sandbox, or publish it
-later with `sbx ports`.
+later with `sbx port publish`.
 @z
 
 @x
@@ -126,11 +126,11 @@ $ sbx run --publish 8080:3000 --name my-sandbox claude
 @z
 
 @x
-For an existing sandbox, use [`sbx ports`](/reference/cli/sbx/ports/) to
+For an existing sandbox, use `sbx port publish` to
 forward traffic from your host. Publishing a port on a stopped local sandbox
 starts it first.
 @y
-For an existing sandbox, use [`sbx ports`](__SUBDIR__/reference/cli/sbx/ports/) to
+For an existing sandbox, use `sbx port publish` to
 forward traffic from your host. Publishing a port on a stopped local sandbox
 starts it first.
 @z
@@ -145,43 +145,43 @@ it in your browser or run tests against it.
 
 @x
 ```console
-$ sbx ports my-sandbox --publish 8080:3000
+$ sbx port publish my-sandbox 8080:3000
 $ open http://localhost:8080
 ```
 @y
 ```console
-$ sbx ports my-sandbox --publish 8080:3000
+$ sbx port publish my-sandbox 8080:3000
 $ open http://localhost:8080
 ```
 @z
 
 @x
 To let the OS pick a free host port instead of choosing one yourself, specify
-only the sandbox port. Then use `sbx ports` to check which host port was
+only the sandbox port. Then use `sbx port ls` to check which host port was
 assigned:
 @y
 To let the OS pick a free host port instead of choosing one yourself, specify
-only the sandbox port. Then use `sbx ports` to check which host port was
+only the sandbox port. Then use `sbx port ls` to check which host port was
 assigned:
 @z
 
 @x
 ```console
-$ sbx ports my-sandbox --publish 3000
-$ sbx ports my-sandbox
+$ sbx port publish my-sandbox 3000
+$ sbx port ls my-sandbox
 ```
 @y
 ```console
-$ sbx ports my-sandbox --publish 3000
-$ sbx ports my-sandbox
+$ sbx port publish my-sandbox 3000
+$ sbx port ls my-sandbox
 ```
 @z
 
 @x
-`sbx ls` shows active port mappings alongside each sandbox, and `sbx ports`
+`sbx ls` shows active port mappings alongside each sandbox, and `sbx port ls`
 lists them in detail:
 @y
-`sbx ls` shows active port mappings alongside each sandbox, and `sbx ports`
+`sbx ls` shows active port mappings alongside each sandbox, and `sbx port ls`
 lists them in detail:
 @z
 
@@ -207,11 +207,11 @@ To stop forwarding a port:
 
 @x
 ```console
-$ sbx ports my-sandbox --unpublish 8080:3000
+$ sbx port unpublish my-sandbox 8080:3000
 ```
 @y
 ```console
-$ sbx ports my-sandbox --unpublish 8080:3000
+$ sbx port unpublish my-sandbox 8080:3000
 ```
 @z
 
@@ -251,27 +251,29 @@ reset.
 Published ports survive restarts: `sbx` re-publishes them when the sandbox or
 the daemon restarts. Explicit host ports are reused, while a port published with
 an OS-assigned host port, such as `--publish 3000`, gets a different host port
-on each start. Check `sbx ports my-sandbox` to find it. If an explicit host port
+on each start. Check `sbx port ls my-sandbox` to find it. If an explicit host port
 is already in use at restart, the CLI or the dashboard prompts you to choose
 another. Removing the sandbox releases its ports.
 @y
 Published ports survive restarts: `sbx` re-publishes them when the sandbox or
 the daemon restarts. Explicit host ports are reused, while a port published with
 an OS-assigned host port, such as `--publish 3000`, gets a different host port
-on each start. Check `sbx ports my-sandbox` to find it. If an explicit host port
+on each start. Check `sbx port ls my-sandbox` to find it. If an explicit host port
 is already in use at restart, the CLI or the dashboard prompts you to choose
 another. Removing the sandbox releases its ports.
 @z
 
 @x
 When `sbx run` re-attaches to an existing sandbox, it ignores `--publish`. Use
-`sbx ports` to publish ports on that sandbox. To stop forwarding,
-`--unpublish 8080:3000` removes a single mapping, and `--unpublish 3000`
+`sbx port publish` to publish ports on that sandbox. To stop forwarding,
+`sbx port unpublish my-sandbox 8080:3000` removes a single mapping, and
+`sbx port unpublish my-sandbox 3000`
 removes every host port mapped to sandbox port 3000.
 @y
 When `sbx run` re-attaches to an existing sandbox, it ignores `--publish`. Use
-`sbx ports` to publish ports on that sandbox. To stop forwarding,
-`--unpublish 8080:3000` removes a single mapping, and `--unpublish 3000`
+`sbx port publish` to publish ports on that sandbox. To stop forwarding,
+`sbx port unpublish my-sandbox 8080:3000` removes a single mapping, and
+`sbx port unpublish my-sandbox 3000`
 removes every host port mapped to sandbox port 3000.
 @z
 

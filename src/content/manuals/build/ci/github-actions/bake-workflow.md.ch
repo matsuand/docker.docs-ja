@@ -15,13 +15,13 @@ keywords: ci, github actions, gha, buildkit, buildx, bake, reusable workflow
 
 @x
 The [`bake.yml` reusable workflow](https://github.com/docker/github-builder?tab=readme-ov-file#bake-reusable-workflow)
-builds from a [Bake definition](../../../bake/_index.md) instead of a Dockerfile
+builds from a [Bake definition](../../bake/_index.md) instead of a Dockerfile
 input set. This page shows how to call the workflow for a target, how to pass
 Bake overrides and variables, and how to export local output when a Bake file
 is already the source of truth for your build.
 @y
 The [`bake.yml` reusable workflow](https://github.com/docker/github-builder?tab=readme-ov-file#bake-reusable-workflow)
-builds from a [Bake definition](../../../bake/_index.md) instead of a Dockerfile
+builds from a [Bake definition](../../bake/_index.md) instead of a Dockerfile
 input set. This page shows how to call the workflow for a target, how to pass
 Bake overrides and variables, and how to export local output when a Bake file
 is already the source of truth for your build.
@@ -35,10 +35,10 @@ is already the source of truth for your build.
 
 @x
 The following workflow builds the `image` target from `docker-bake.hcl` and
-publishes the result with tags generated from [metadata inputs](../manage-tags-labels.md):
+publishes the result with tags generated from [metadata inputs](manage-tags-labels.md):
 @y
 The following workflow builds the `image` target from `docker-bake.hcl` and
-publishes the result with tags generated from [metadata inputs](../manage-tags-labels.md):
+publishes the result with tags generated from [metadata inputs](manage-tags-labels.md):
 @z
 
 @x
@@ -123,11 +123,11 @@ jobs:
 
 @x
 Bake workflows build one target per workflow call. Groups and multi-target
-builds aren't supported because [SLSA provenance](../attestations.md), digest
+builds aren't supported because [SLSA provenance](attestations.md), digest
 handling, and manifest creation are scoped to a single target.
 @y
 Bake workflows build one target per workflow call. Groups and multi-target
-builds aren't supported because [SLSA provenance](../attestations.md), digest
+builds aren't supported because [SLSA provenance](attestations.md), digest
 handling, and manifest creation are scoped to a single target.
 @z
 
@@ -136,13 +136,13 @@ The workflow validates the definition before the build starts and resolves
 the target from the files you pass in `files`. Runner selection uses the same
 `runner` input as the Build workflow. Set a single GitHub-hosted Linux runner
 label or a platform mapping when the default mapping is not enough. For details,
-see [runner selection](architecture.md#runner-selection).
+see [runner selection](github-builder-architecture/index.md#runner-selection).
 @y
 The workflow validates the definition before the build starts and resolves
 the target from the files you pass in `files`. Runner selection uses the same
 `runner` input as the Build workflow. Set a single GitHub-hosted Linux runner
 label or a platform mapping when the default mapping is not enough. For details,
-see [runner selection](architecture.md#runner-selection).
+see [runner selection](github-builder-architecture/index.md#runner-selection).
 @z
 
 @x
@@ -248,16 +248,16 @@ jobs:
 @x
 This form fits repositories that already use Bake groups, target inheritance,
 and variable expansion. The reusable workflow takes care of Buildx setup,
-[GitHub Actions cache export](../../../cache/backends/gha.md),
-[Provenance defaults](../../../metadata/attestations/slsa-provenance.md),
+[GitHub Actions cache export](../../cache/backends/gha.md),
+[Provenance defaults](../../metadata/attestations/slsa-provenance.md),
 signing behavior, and the final multi-platform manifest. Metadata labels and
 annotations can be merged into the Bake definition without adding a separate
 metadata step to your workflow.
 @y
 This form fits repositories that already use Bake groups, target inheritance,
 and variable expansion. The reusable workflow takes care of Buildx setup,
-[GitHub Actions cache export](../../../cache/backends/gha.md),
-[Provenance defaults](../../../metadata/attestations/slsa-provenance.md),
+[GitHub Actions cache export](../../cache/backends/gha.md),
+[Provenance defaults](../../metadata/attestations/slsa-provenance.md),
 signing behavior, and the final multi-platform manifest. Metadata labels and
 annotations can be merged into the Bake definition without adding a separate
 metadata step to your workflow.
@@ -332,13 +332,13 @@ jobs:
 @x
 With `output: local`, the workflow injects the matching local output override
 into the Bake run and merges the uploaded artifacts after the per-platform
-builds finish. If you need a manual Bake pattern that stays in a normal job,
-see [Multi-platform image](../multi-platform.md). If your build does not need a
-Bake definition, use [build.yml](build.md) instead.
+builds finish. For a Bake pattern that stays in a normal job,
+see [Annotations with individual actions](annotations.md#add-annotations-with-individual-actions). If your build does not need a
+Bake definition, use [build.yml](build-workflow.md) instead.
 @y
 With `output: local`, the workflow injects the matching local output override
 into the Bake run and merges the uploaded artifacts after the per-platform
-builds finish. If you need a manual Bake pattern that stays in a normal job,
-see [Multi-platform image](../multi-platform.md). If your build does not need a
-Bake definition, use [build.yml](build.md) instead.
+builds finish. For a Bake pattern that stays in a normal job,
+see [Annotations with individual actions](annotations.md#add-annotations-with-individual-actions). If your build does not need a
+Bake definition, use [build.yml](build-workflow.md) instead.
 @z

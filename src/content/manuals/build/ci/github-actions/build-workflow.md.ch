@@ -17,13 +17,13 @@ keywords: ci, github actions, gha, buildkit, buildx, reusable workflow, dockerfi
 The [`build.yml` reusable workflow](https://github.com/docker/github-builder?tab=readme-ov-file#build-reusable-workflow)
 builds from a Dockerfile and packages the same core tasks that many repositories
 wire together by hand. This page shows how to call the workflow, publish
-[multi-platform images](../../../building/multi-platform.md), and export local
+[multi-platform images](../../building/multi-platform.md), and export local
 build artifacts without rebuilding the job structure in every repository.
 @y
 The [`build.yml` reusable workflow](https://github.com/docker/github-builder?tab=readme-ov-file#build-reusable-workflow)
 builds from a Dockerfile and packages the same core tasks that many repositories
 wire together by hand. This page shows how to call the workflow, publish
-[multi-platform images](../../../building/multi-platform.md), and export local
+[multi-platform images](../../building/multi-platform.md), and export local
 build artifacts without rebuilding the job structure in every repository.
 @z
 
@@ -123,24 +123,24 @@ jobs:
 
 @x
 When you set `output: image`, `meta-images` is required because the workflow
-creates image names and [manifest tags](../manage-tags-labels.md) from that
+creates image names and [manifest tags](manage-tags-labels.md) from that
 input. `distribute: true` is the default, so a multi-platform build can fan out
 across native GitHub-hosted runners instead of forcing the whole build onto one
-machine. The default `runner` mapping sends Linux Arm platforms to
-`ubuntu-24.04-arm` and uses `ubuntu-24.04` for other platforms. To change that
-mapping, see [runner selection](architecture.md#runner-selection). `sign: auto`
+machine. For the default `runner` mapping, see
+[Runner mapping](https://github.com/docker/github-builder#runner-mapping). To change
+that mapping, see [runner selection](github-builder-architecture/index.md#runner-selection). `sign: auto`
 is also the default, which means the workflow signs
-[attestation manifests](../attestations.md) when the image is pushed.
+[attestation manifests](attestations.md) when the image is pushed.
 @y
 When you set `output: image`, `meta-images` is required because the workflow
-creates image names and [manifest tags](../manage-tags-labels.md) from that
+creates image names and [manifest tags](manage-tags-labels.md) from that
 input. `distribute: true` is the default, so a multi-platform build can fan out
 across native GitHub-hosted runners instead of forcing the whole build onto one
-machine. The default `runner` mapping sends Linux Arm platforms to
-`ubuntu-24.04-arm` and uses `ubuntu-24.04` for other platforms. To change that
-mapping, see [runner selection](architecture.md#runner-selection). `sign: auto`
+machine. For the default `runner` mapping, see
+[Runner mapping](https://github.com/docker/github-builder#runner-mapping). To change
+that mapping, see [runner selection](github-builder-architecture/index.md#runner-selection). `sign: auto`
 is also the default, which means the workflow signs
-[attestation manifests](../attestations.md) when the image is pushed.
+[attestation manifests](attestations.md) when the image is pushed.
 @z
 
 @x
@@ -330,19 +330,19 @@ jobs:
 @x
 This is a Dockerfile build, so the inputs map closely to
 `docker/build-push-action`. The difference is that the reusable workflow owns
-Buildx setup, [BuildKit](../../../buildkit/_index.md) configuration,
-[SLSA provenance](../../../metadata/attestations/slsa-provenance.md) mode,
-[GitHub Actions cache backend](../../../cache/backends/gha.md) wiring, signing,
+Buildx setup, [BuildKit](../../buildkit/_index.md) configuration,
+[SLSA provenance](../../metadata/attestations/slsa-provenance.md) mode,
+[GitHub Actions cache backend](../../cache/backends/gha.md) wiring, signing,
 and manifest creation. If you need more background on metadata or platform
-distribution, see [Manage tags and labels](../manage-tags-labels.md) and
-[Multi-platform image](../multi-platform.md).
+distribution, see [Manage tags and labels](manage-tags-labels.md) and
+[Multi-platform image](multi-platform.md).
 @y
 This is a Dockerfile build, so the inputs map closely to
 `docker/build-push-action`. The difference is that the reusable workflow owns
-Buildx setup, [BuildKit](../../../buildkit/_index.md) configuration,
-[SLSA provenance](../../../metadata/attestations/slsa-provenance.md) mode,
-[GitHub Actions cache backend](../../../cache/backends/gha.md) wiring, signing,
+Buildx setup, [BuildKit](../../buildkit/_index.md) configuration,
+[SLSA provenance](../../metadata/attestations/slsa-provenance.md) mode,
+[GitHub Actions cache backend](../../cache/backends/gha.md) wiring, signing,
 and manifest creation. If you need more background on metadata or platform
-distribution, see [Manage tags and labels](../manage-tags-labels.md) and
-[Multi-platform image](../multi-platform.md).
+distribution, see [Manage tags and labels](manage-tags-labels.md) and
+[Multi-platform image](multi-platform.md).
 @z

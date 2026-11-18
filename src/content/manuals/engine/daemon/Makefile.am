@@ -8,6 +8,7 @@ bases = \
 	alternative-runtimes.md \
 	embedded-containerd.md  \
 	ipv6.md                 \
+	jobs.md                 \
 	live-restore.md         \
 	logs.md                 \
 	prometheus.md           \

@@ -1,59 +1,40 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% snip 対応
-
 @x
-description: Learn how to install Docker Engine on RHEL. These instructions cover
-  the different installation methods, how to uninstall, and next steps.
-keywords: requirements, dnf, installation, rhel, rpm, install, install docker engine, uninstall, upgrade,
-  update
-title: Install Docker Engine on RHEL
-linkTitle: RHEL
-@y
-description: Learn how to install Docker Engine on RHEL. These instructions cover
-  the different installation methods, how to uninstall, and next steps.
-keywords: requirements, dnf, installation, rhel, rpm, install, install docker engine, uninstall, upgrade,
-  update
-title: RHEL への Docker Engine インストール
-linkTitle: RHEL
-@z
-
-@x
-To get started with Docker Engine on RHEL, make sure you
+To get started with Docker Engine on {{% param "distro" %}}, make sure you
 [meet the prerequisites](#prerequisites), and then follow the
 [installation steps](#installation-methods).
 @y
-RHEL 上での Docker Engine を使い始めるにあたっては、[前提条件](#prerequisites) を満たしていることを確認した上で、以下の [インストール手順](#installation-methods) に従ってください。
+To get started with Docker Engine on {{% param "distro" %}}, make sure you
+[meet the prerequisites](#prerequisites), and then follow the
+[installation steps](#installation-methods).
 @z
 
 @x
 ## Prerequisites
 @y
-## 前提条件 {#prerequisites}
+## Prerequisites
 @z
 
 @x
 ### OS requirements
 @y
-### OS 要件 {#os-requirements}
+### OS requirements
 @z
 
 @x
 To install Docker Engine, you need a maintained version of one of the following
-RHEL versions:
+{{% param "distro" %}} versions:
 @y
-Docker Engine をインストールするには、以下に示すような、メンテナンスされている RHEL のバージョンのいずれかであることが必要です。
+To install Docker Engine, you need a maintained version of one of the following
+{{% param "distro" %}} versions:
 @z
 
 @x
-- RHEL 8
-- RHEL 9
-- RHEL 10
+{{% param "distro-versions" %}}
 @y
-- RHEL 8
-- RHEL 9
-- RHEL 10
+{{% param "distro-versions" %}}
 @z
 
 @x
@@ -132,6 +113,12 @@ Docker Engine のインストール方法はいくつかあるので、必要に
   [convenience scripts](#install-using-the-convenience-script) to install Docker.
 @y
 - テスト環境や開発環境向けであれば、Docker インストールを自動化している [便利スクリプト](#install-using-the-convenience-script) を利用することができます。
+@z
+
+@x
+{{% include "engine-license.md" %}}
+@y
+{{% include "engine-license.md" %}}
 @z
 
 @x
@@ -227,10 +214,10 @@ your DNF repositories) and set up the repository.
 
 @x
    The list returned depends on which repositories are enabled, and is specific
-   to your version of RHEL (indicated by the `.el9` suffix in this example).
+   to your version of {{% param "distro" %}} (indicated by the `.el9` suffix in this example).
 @y
    表示される一覧は、どのリポジトリを有効にしているかによって変わります。
-   そして RHEL の対象バージョンを示しています (この例では `.el9` というサフィックスにより示されます)。
+   そして {{% param "distro" %}} の対象バージョンを示しています (この例では `.el9` というサフィックスにより示されます)。
 @z
 
 @x
@@ -350,16 +337,16 @@ Docker Engine のアップグレード時には、その都度、新しいファ
 @z
 
 @x
-2. Select your RHEL version in the list.
+2. Select your {{% param "distro" %}} version in the list.
 @y
-2. 一覧の中から目的の RHEL バージョンを選択します。
+2. 一覧の中から目的の {{% param "distro" %}} バージョンを選択します。
 @z
 
 @x
-3. Select the applicable architecture (`x86_64`, `aarch64`, or `s390x`), and
+3. Select the applicable architecture ({{% param "distro-arches" %}}), and
    then go to `stable/Packages/`.
 @y
-3. 採用したいアーキテクチャー (`x86_64`、`aarch64`、`s390x`) を選択して、`stable/Packages/` にアクセスします。
+3. 採用したいアーキテクチャー ({{% param "distro-arches" %}}) を選択して、`stable/Packages/` にアクセスします。
 @z
 
 @x

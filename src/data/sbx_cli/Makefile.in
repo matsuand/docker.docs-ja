@@ -318,7 +318,10 @@ bases = \
 	sbx_policy_reset.yaml                \
 	sbx_policy_rm.yaml                   \
 	sbx_policy_rm_network.yaml           \
-	sbx_ports.yaml                       \
+	sbx_port.yaml                        \
+	sbx_port_ls.yaml                     \
+	sbx_port_publish.yaml                \
+	sbx_port_unpublish.yaml              \
 	sbx_prune.yaml                       \
 	sbx_reset.yaml                       \
 	sbx_rm.yaml                          \

@@ -76,7 +76,7 @@ description: |-
         ports under new cloud URLs; a port the cloud refuses is skipped with a
         warning. Moving to local saves the published TCP ports and binds them
         on loopback while the sandbox runs. Host ports can change on restart;
-        'sbx ports SANDBOX' shows them. A cloud port published with an
+        'sbx port ls SANDBOX' shows them. A cloud port published with an
         explicit host binding stops a move to local.
 @y
     What does not travel:
@@ -99,7 +99,7 @@ description: |-
         ports under new cloud URLs; a port the cloud refuses is skipped with a
         warning. Moving to local saves the published TCP ports and binds them
         on loopback while the sandbox runs. Host ports can change on restart;
-        'sbx ports SANDBOX' shows them. A cloud port published with an
+        'sbx port ls SANDBOX' shows them. A cloud port published with an
         explicit host binding stops a move to local.
 @z
 

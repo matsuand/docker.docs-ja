@@ -28,10 +28,11 @@ image index, config, and file metadata reflect the specified Unix time.
 % snip link...
 
 @x
-To set the environment variable in GitHub Actions,
-use the built-in `env` property on the build step.
+With Docker GitHub Builder, pass `SOURCE_DATE_EPOCH` as a build argument.
+With individual actions, use the built-in `env` property on the build step.
 @y
-GitHub Actions 内にて環境変数を設定するには、ビルドステップにおいてビルトインの `env` プロパティを利用します。
+With Docker GitHub Builder, pass `SOURCE_DATE_EPOCH` as a build argument.
+With individual actions, use the built-in `env` property on the build step.
 @z
 
 @x
@@ -44,6 +45,34 @@ GitHub Actions 内にて環境変数を設定するには、ビルドステッ�
 The following example sets the `SOURCE_DATE_EPOCH` variable to 0, Unix epoch.
 @y
 以下の例では `SOURCE_DATE_EPOCH` を Unix エポック時間の値 0 に設定します。
+@z
+
+@x
+### Set the epoch with GitHub Builder {#set-the-epoch-with-builder}
+@y
+### Set the epoch with GitHub Builder {#set-the-epoch-with-builder}
+@z
+
+@x
+Pass the fixed epoch through the [Build workflow](build-workflow.md):
+@y
+Pass the fixed epoch through the [Build workflow](build-workflow.md):
+@z
+
+% snip code...
+
+@x
+For the [Bake workflow](bake-workflow.md), set
+`*.args.SOURCE_DATE_EPOCH=0` using the `set` input.
+@y
+For the [Bake workflow](bake-workflow.md), set
+`*.args.SOURCE_DATE_EPOCH=0` using the `set` input.
+@z
+
+@x
+### Set the epoch with individual actions
+@y
+### Set the epoch with individual actions
 @z
 
 @x
@@ -81,9 +110,15 @@ The following example sets the `SOURCE_DATE_EPOCH` variable to 0, Unix epoch.
 @z
 
 @x
-The following example sets `SOURCE_DATE_EPOCH` to the Git commit timestamp.
+The following individual-action examples set `SOURCE_DATE_EPOCH` to the Git
+commit timestamp. Keep timestamp generation in the caller when it depends on
+a workflow step. A reusable workflow call cannot reference earlier steps in
+the same job.
 @y
-以下の例では `SOURCE_DATE_EPOCH` を Git コミットのタイムスタンプに設定します。
+The following individual-action examples set `SOURCE_DATE_EPOCH` to the Git
+commit timestamp. Keep timestamp generation in the caller when it depends on
+a workflow step. A reusable workflow call cannot reference earlier steps in
+the same job.
 @z
 
 @x

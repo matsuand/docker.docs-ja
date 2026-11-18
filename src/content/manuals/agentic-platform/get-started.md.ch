@@ -24,11 +24,15 @@ an application from a shell, without setting up the project on your computer.
 @z
 
 @x
-You can complete either workflow in the browser. An optional step shows how
-to open the same project in VS Code or Cursor over SSH.
+Both paths introduce the same cloud sandbox lifecycle: launch an environment,
+run a task, save work, and pause or delete it. Complete either path in your
+browser, then use the [guides](guides/_index.md) for sharing, remote development,
+or moving local work to the cloud.
 @y
-You can complete either workflow in the browser. An optional step shows how
-to open the same project in VS Code or Cursor over SSH.
+Both paths introduce the same cloud sandbox lifecycle: launch an environment,
+run a task, save work, and pause or delete it. Complete either path in your
+browser, then use the [guides](guides/_index.md) for sharing, remote development,
+or moving local work to the cloud.
 @z
 
 @x
@@ -47,8 +51,14 @@ You need a personal Docker account with an active
 
 @x
 Both workflows use a public sample project, so you don't need a GitHub token.
+Review the compute price and timer before launching. Choose **Stop** as the
+timeout action to keep files. Compute is billed while the sandbox runs;
+closing the browser doesn't stop it.
 @y
 Both workflows use a public sample project, so you don't need a GitHub token.
+Review the compute price and timer before launching. Choose **Stop** as the
+timeout action to keep files. Compute is billed while the sandbox runs;
+closing the browser doesn't stop it.
 @z
 
 @x
@@ -180,11 +190,9 @@ it another task in the same session.
 @z
 
 @x
-Continue to [keep your work](#keep-your-work), or
-[open the project in your editor](#open-the-project-in-your-editor-optional).
+Continue to [keep your work](#keep-your-work).
 @y
-Continue to [keep your work](#keep-your-work), or
-[open the project in your editor](#open-the-project-in-your-editor-optional).
+Continue to [keep your work](#keep-your-work).
 @z
 
 @x
@@ -212,8 +220,9 @@ The Shell kit starts a Bash shell without an agent.
 3. If saved secrets or a GitHub token are selected, deselect them for this
    walkthrough. You don't need MCP tools either.
 4. In the network policy picker, select **Balanced** to permit access to
-   GitHub, Docker Hub, and npm. Keep the compute and timer defaults and select
-   **Run**.
+   GitHub, Docker Hub, and npm. Deselect **Open** if selected: combining it
+   with Balanced doesn't restrict Open's access. Review the compute price and
+   timer, choose **Stop** as the timeout action, and select **Run**.
 @y
 1. Open [Docker Agentic Platform](https://agentic-platform.docker.com/) and
    select **+ New sandbox**.
@@ -221,8 +230,9 @@ The Shell kit starts a Bash shell without an agent.
 3. If saved secrets or a GitHub token are selected, deselect them for this
    walkthrough. You don't need MCP tools either.
 4. In the network policy picker, select **Balanced** to permit access to
-   GitHub, Docker Hub, and npm. Keep the compute and timer defaults and select
-   **Run**.
+   GitHub, Docker Hub, and npm. Deselect **Open** if selected: combining it
+   with Balanced doesn't restrict Open's access. Review the compute price and
+   timer, choose **Stop** as the timeout action, and select **Run**.
 @z
 
 @x
@@ -326,19 +336,23 @@ computer.
 @z
 
 @x
-The generated URL is public. Close the port in **Connect** when you've finished
-previewing the application.
+The generated URL is public, and Docker account authentication doesn't protect
+it. Use only non-sensitive data. Close the port in **Connect** when you've
+finished previewing, then reload the URL to confirm access is withdrawn.
+For a complete sharing workflow, including checking access from a separate
+browser session, follow [Share an application](guides/share-app.md).
 @y
-The generated URL is public. Close the port in **Connect** when you've finished
-previewing the application.
+The generated URL is public, and Docker account authentication doesn't protect
+it. Use only non-sensitive data. Close the port in **Connect** when you've
+finished previewing, then reload the URL to confirm access is withdrawn.
+For a complete sharing workflow, including checking access from a separate
+browser session, follow [Share an application](guides/share-app.md).
 @z
 
 @x
-Continue to [keep your work](#keep-your-work), or
-[open the project in your editor](#open-the-project-in-your-editor-optional).
+Continue to [keep your work](#keep-your-work).
 @y
-Continue to [keep your work](#keep-your-work), or
-[open the project in your editor](#open-the-project-in-your-editor-optional).
+Continue to [keep your work](#keep-your-work).
 @z
 
 @x
@@ -372,124 +386,18 @@ needs to push changes.
 @z
 
 @x
-## Open the project in your editor (optional)
-@y
-## Open the project in your editor (optional)
-@z
-
-@x
-Open the project in VS Code or Cursor over SSH to edit the application. Your
-editor runs on your computer, while the files and terminal commands stay in
-the cloud sandbox.
-@y
-Open the project in VS Code or Cursor over SSH to edit the application. Your
-editor runs on your computer, while the files and terminal commands stay in
-the cloud sandbox.
-@z
-
-@x
-1. Install the [Docker Sandboxes CLI](/manuals/ai/sandboxes/install.md),
-   version 0.45.0 or later.
-2. In a terminal on your computer, sign in with the same Docker account you
-   used in the Console and configure cloud SSH access:
-@y
-1. Install the [Docker Sandboxes CLI](manuals/ai/sandboxes/install.md),
-   version 0.45.0 or later.
-2. In a terminal on your computer, sign in with the same Docker account you
-   used in the Console and configure cloud SSH access:
-@z
-
-@x
-   ```console
-   $ sbx login
-   $ sbx --cloud setup ssh
-   $ sbx --cloud ls
-   ```
-@y
-   ```console
-   $ sbx login
-   $ sbx --cloud setup ssh
-   $ sbx --cloud ls
-   ```
-@z
-
-@x
-3. Find your sandbox in the list and copy its `sbx_`-prefixed ID. Test the
-   connection, replacing `<SANDBOX_ID>` with that ID:
-@y
-3. Find your sandbox in the list and copy its `sbx_`-prefixed ID. Test the
-   connection, replacing `<SANDBOX_ID>` with that ID:
-@z
-
-@x
-   ```console
-   $ ssh <SANDBOX_ID>@sbx_cloud
-   ```
-@y
-   ```console
-   $ ssh <SANDBOX_ID>@sbx_cloud
-   ```
-@z
-
-@x
-   A successful connection opens a shell inside the cloud sandbox. Run `exit`
-   to return to your computer's terminal.
-4. In VS Code, install the
-   [Remote - SSH extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh).
-   In Cursor, install its Remote - SSH support.
-5. Open your editor's Command Palette and run **Remote-SSH: Connect to Host**.
-   Enter `<SANDBOX_ID>@sbx_cloud`, using the same ID as in the SSH command.
-6. Open `/home/agent/workspace` in the remote window. Both workflows clone
-   the application into `project`. The coding agent also saves `review.md`
-   in the workspace.
-@y
-   A successful connection opens a shell inside the cloud sandbox. Run `exit`
-   to return to your computer's terminal.
-4. In VS Code, install the
-   [Remote - SSH extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh).
-   In Cursor, install its Remote - SSH support.
-5. Open your editor's Command Palette and run **Remote-SSH: Connect to Host**.
-   Enter `<SANDBOX_ID>@sbx_cloud`, using the same ID as in the SSH command.
-6. Open `/home/agent/workspace` in the remote window. Both workflows clone
-   the application into `project`. The coding agent also saves `review.md`
-   in the workspace.
-@z
-
-@x
-The first connection installs the editor's server inside the sandbox.
-@y
-The first connection installs the editor's server inside the sandbox.
-@z
-
-@x
-If you followed the coding agent workflow, download the review run this command in a terminal on your computer:
-@y
-If you followed the coding agent workflow, download the review run this command in a terminal on your computer:
-@z
-
-@x
-```console
-$ sbx --cloud cp <SANDBOX_ID>:/home/agent/workspace/review.md ./review.md
-```
-@y
-```console
-$ sbx --cloud cp <SANDBOX_ID>:/home/agent/workspace/review.md ./review.md
-```
-@z
-
-@x
 ## Pause, keep running, or delete the sandbox
 @y
 ## Pause, keep running, or delete the sandbox
 @z
 
 @x
-Closing the browser or disconnecting your editor leaves the sandbox running.
+Closing the browser leaves the sandbox running.
 Commands and background processes can continue until you pause or delete the
 sandbox, or its timer expires. Compute is billed while the sandbox runs, even
 when no commands are running.
 @y
-Closing the browser or disconnecting your editor leaves the sandbox running.
+Closing the browser leaves the sandbox running.
 Commands and background processes can continue until you pause or delete the
 sandbox, or its timer expires. Compute is billed while the sandbox runs, even
 when no commands are running.
@@ -523,12 +431,42 @@ Return to **Sandboxes** in the Console and choose what to do next:
 
 @x
 For more detail, see [Lifecycle actions](sandboxes.md#manage-the-lifecycle).
+@y
+For more detail, see [Lifecycle actions](sandboxes.md#manage-the-lifecycle).
+@z
+
+@x
+## Sandbox options
+@y
+## Sandbox options
+@z
+
+@x
+For launch settings, see [Kits](kits.md), [Secrets](secrets.md),
+[Network policies](policies.md), and [MCP tools](mcp.md). For compute platforms
+and timer actions, see [Sandboxes](sandboxes.md). Choose these settings before
+launching: credentials, tools, network policies, and compute size can't be
+changed afterward.
+@y
+For launch settings, see [Kits](kits.md), [Secrets](secrets.md),
+[Network policies](policies.md), and [MCP tools](mcp.md). For compute platforms
+and timer actions, see [Sandboxes](sandboxes.md). Choose these settings before
+launching: credentials, tools, network policies, and compute size can't be
+changed afterward.
+@z
+
+@x
+## Next steps
+@y
+## Next steps
+@z
+
+@x
 To run a task from your own terminal, follow the
 [cloud CLI walkthrough](/manuals/ai/sandboxes/cloud/_index.md#get-started).
 For programmatic workflows, see the
 [Sandboxes API quickstart](/manuals/ai/sandboxes-api/get-started.md).
 @y
-For more detail, see [Lifecycle actions](sandboxes.md#manage-the-lifecycle).
 To run a task from your own terminal, follow the
 [cloud CLI walkthrough](manuals/ai/sandboxes/cloud/_index.md#get-started).
 For programmatic workflows, see the
@@ -536,49 +474,17 @@ For programmatic workflows, see the
 @z
 
 @x
-## Sandbox options
+Continue with a targeted workflow:
 @y
-## Sandbox options
+Continue with a targeted workflow:
 @z
 
 @x
-After launch, you can't change the selected credentials, tools, network policies,
-or compute size. Configure these options before selecting **Run**:
+- [Share an application](guides/share-app.md) through a public URL.
+- [Develop remotely](guides/remote-development.md) with VS Code or Cursor.
+- [Continue local work in the cloud](guides/local-handoff.md) and retrieve the results.
 @y
-After launch, you can't change the selected credentials, tools, network policies,
-or compute size. Configure these options before selecting **Run**:
-@z
-
-@x
-| Option | What to choose |
-| --- | --- |
-| Sandbox name | Select **randomly** to enter a name, or keep the generated name. |
-| Agent credentials | Add the API keys or tokens your kit needs. Saved credentials are reused by default; deselect optional credentials you don't want to include. See [Secrets](secrets.md). |
-| GitHub token | Provide a token for Copilot or for cloning private repositories and pushing changes. Copilot uses the same token for both. Repository access is optional for other agents. See [GitHub credential](secrets.md#github-credential). |
-| Network policies | Review the hosts and services the sandbox can reach. See [Network policies](policies.md). |
-| MCP tools | Choose the servers your agent can use and authorize them if prompted. See [MCP](mcp.md). |
-| Compute and platform | Choose a size based on the CPU and memory your task needs, from Micro for light tasks to XL for larger workloads. The picker shows each size's resources and hourly price. Under **Platform**, use **auto** or a platform supported by the kit's image. See [Sandbox platforms](sandboxes.md#choose-a-platform). |
-| Timer | Under **Run for**, choose 1 to 24 hours. Under **When the time is up**, choose **Stop**, **Delete**, or **Restart** if offered. See [Lifecycle actions](sandboxes.md#manage-the-lifecycle). |
-@y
-| Option | What to choose |
-| --- | --- |
-| Sandbox name | Select **randomly** to enter a name, or keep the generated name. |
-| Agent credentials | Add the API keys or tokens your kit needs. Saved credentials are reused by default; deselect optional credentials you don't want to include. See [Secrets](secrets.md). |
-| GitHub token | Provide a token for Copilot or for cloning private repositories and pushing changes. Copilot uses the same token for both. Repository access is optional for other agents. See [GitHub credential](secrets.md#github-credential). |
-| Network policies | Review the hosts and services the sandbox can reach. See [Network policies](policies.md). |
-| MCP tools | Choose the servers your agent can use and authorize them if prompted. See [MCP](mcp.md). |
-| Compute and platform | Choose a size based on the CPU and memory your task needs, from Micro for light tasks to XL for larger workloads. The picker shows each size's resources and hourly price. Under **Platform**, use **auto** or a platform supported by the kit's image. See [Sandbox platforms](sandboxes.md#choose-a-platform). |
-| Timer | Under **Run for**, choose 1 to 24 hours. Under **When the time is up**, choose **Stop**, **Delete**, or **Restart** if offered. See [Lifecycle actions](sandboxes.md#manage-the-lifecycle). |
-@z
-
-@x
-The launcher remembers your policy selections from the previous launch in the
-same browser. Policies marked **Always applied** are selected automatically.
-Review the selected policies before launching. Selecting **Balanced** alongside
-**Open** doesn't restrict Open's access; see [How policies combine](policies.md#how-policies-combine).
-@y
-The launcher remembers your policy selections from the previous launch in the
-same browser. Policies marked **Always applied** are selected automatically.
-Review the selected policies before launching. Selecting **Balanced** alongside
-**Open** doesn't restrict Open's access; see [How policies combine](policies.md#how-policies-combine).
+- [Share an application](guides/share-app.md) through a public URL.
+- [Develop remotely](guides/remote-development.md) with VS Code or Cursor.
+- [Continue local work in the cloud](guides/local-handoff.md) and retrieve the results.
 @z

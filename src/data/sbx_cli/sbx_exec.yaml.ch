@@ -7,14 +7,14 @@ synopsis: Execute a command inside a sandbox
 description: |-
     Execute a command in a sandbox. If the sandbox is stopped, it is started first. Or — with --cloud — the cloud sandbox
     ID (sbx_*) or name from "sbx --cloud ls". --user is not supported with --cloud.
-    --detach-keys applies only to an interactive (-i/-t) cloud exec.
+    Exec sessions cannot detach; --detach-keys is not supported.
 @y
 name: sbx exec
 synopsis: Execute a command inside a sandbox
 description: |-
     Execute a command in a sandbox. If the sandbox is stopped, it is started first. Or — with --cloud — the cloud sandbox
     ID (sbx_*) or name from "sbx --cloud ls". --user is not supported with --cloud.
-    --detach-keys applies only to an interactive (-i/-t) cloud exec.
+    Exec sessions cannot detach; --detach-keys is not supported.
 @z
 
 @x
@@ -34,14 +34,6 @@ usage: sbx exec [flags] SANDBOX COMMAND [ARG...]
 @z
 
 % options:
-
-@x detach-keys
-      usage: |
-        Override the key sequence for detaching an interactive cloud exec session (not supported for local exec)
-@y
-      usage: |
-        Override the key sequence for detaching an interactive cloud exec session (not supported for local exec)
-@z
 
 @x env
       usage: Set environment variables

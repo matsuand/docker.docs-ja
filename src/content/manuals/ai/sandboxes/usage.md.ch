@@ -757,14 +757,12 @@ a mountless sandbox, it starts in the container image's working directory.
 
 @x
 `sbx exec` runs commands in the foreground. Detached execution (`-d` or
-`--detach`) isn't supported. Local `sbx exec` and `sbx env exec` also reject
-`--detach-keys`. Omit this flag for local commands; it applies only to
-interactive cloud exec sessions.
+`--detach`) isn't supported. Both local and cloud `sbx exec` and
+`sbx env exec` reject `--detach-keys`. Omit this flag for exec sessions.
 @y
 `sbx exec` runs commands in the foreground. Detached execution (`-d` or
-`--detach`) isn't supported. Local `sbx exec` and `sbx env exec` also reject
-`--detach-keys`. Omit this flag for local commands; it applies only to
-interactive cloud exec sessions.
+`--detach`) isn't supported. Both local and cloud `sbx exec` and
+`sbx env exec` reject `--detach-keys`. Omit this flag for exec sessions.
 @z
 
 @x
@@ -1136,55 +1134,55 @@ $ sbx run --publish 8080:3000 --name my-sandbox claude
 @z
 
 @x
-For an existing sandbox, use [`sbx ports`](/reference/cli/sbx/ports/) to
+For an existing sandbox, use `sbx port publish` to
 forward traffic from your host. Publishing a port on a stopped local sandbox
 starts it first:
 @y
-For an existing sandbox, use [`sbx ports`](__SUBDIR__/reference/cli/sbx/ports/) to
+For an existing sandbox, use `sbx port publish` to
 forward traffic from your host. Publishing a port on a stopped local sandbox
 starts it first:
 @z
 
 @x
 ```console
-$ sbx ports my-sandbox --publish 8080:3000
+$ sbx port publish my-sandbox 8080:3000
 $ open http://localhost:8080
 ```
 @y
 ```console
-$ sbx ports my-sandbox --publish 8080:3000
+$ sbx port publish my-sandbox 8080:3000
 $ open http://localhost:8080
 ```
 @z
 
 @x
 To let the OS pick a free host port instead of choosing one yourself, specify
-only the sandbox port. Then use `sbx ports` to check which host port was
+only the sandbox port. Then use `sbx port ls` to check which host port was
 assigned:
 @y
 To let the OS pick a free host port instead of choosing one yourself, specify
-only the sandbox port. Then use `sbx ports` to check which host port was
+only the sandbox port. Then use `sbx port ls` to check which host port was
 assigned:
 @z
 
 @x
 ```console
-$ sbx ports my-sandbox --publish 3000
-$ sbx ports my-sandbox
+$ sbx port publish my-sandbox 3000
+$ sbx port ls my-sandbox
 ```
 @y
 ```console
-$ sbx ports my-sandbox --publish 3000
-$ sbx ports my-sandbox
+$ sbx port publish my-sandbox 3000
+$ sbx port ls my-sandbox
 ```
 @z
 
 @x
-`sbx ls` shows active port mappings alongside each sandbox. `sbx ports` lists
+`sbx ls` shows active port mappings alongside each sandbox. `sbx port ls` lists
 them in detail. The `CREATED` column shows the sandbox age, and the `STATUS`
 column identifies sandboxes kept running in detached mode with `(detached)`.
 @y
-`sbx ls` shows active port mappings alongside each sandbox. `sbx ports` lists
+`sbx ls` shows active port mappings alongside each sandbox. `sbx port ls` lists
 them in detail. The `CREATED` column shows the sandbox age, and the `STATUS`
 column identifies sandboxes kept running in detached mode with `(detached)`.
 @z
@@ -1211,22 +1209,22 @@ To stop forwarding a port:
 
 @x
 ```console
-$ sbx ports my-sandbox --unpublish 8080:3000
+$ sbx port unpublish my-sandbox 8080:3000
 ```
 @y
 ```console
-$ sbx ports my-sandbox --unpublish 8080:3000
+$ sbx port unpublish my-sandbox 8080:3000
 ```
 @z
 
 @x
 When `sbx run` re-attaches to an existing sandbox, it ignores `--publish`. Use
-`sbx ports` to publish ports on that sandbox. For dev server and host-service
+`sbx port publish` to publish ports on that sandbox. For dev server and host-service
 recipes, see
 [Local services](workflows/development.md#local-services).
 @y
 When `sbx run` re-attaches to an existing sandbox, it ignores `--publish`. Use
-`sbx ports` to publish ports on that sandbox. For dev server and host-service
+`sbx port publish` to publish ports on that sandbox. For dev server and host-service
 recipes, see
 [Local services](workflows/development.md#local-services).
 @z

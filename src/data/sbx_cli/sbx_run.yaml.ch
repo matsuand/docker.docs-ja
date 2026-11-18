@@ -130,11 +130,13 @@ description: |-
 @x
     With --cloud, --env and --env-file only apply when creating a sandbox.
     Existing sandboxes keep their original environment; drop these flags to
-    reattach, or pass --new to create a sandbox with the new values.
+    reattach, or pass --new (with an unused --name, if you set one) to create a
+    sandbox with the new values.
 @y
     With --cloud, --env and --env-file only apply when creating a sandbox.
     Existing sandboxes keep their original environment; drop these flags to
-    reattach, or pass --new to create a sandbox with the new values.
+    reattach, or pass --new (with an unused --name, if you set one) to create a
+    sandbox with the new values.
 @z
 
 @x
@@ -317,18 +319,18 @@ usage: sbx run [flags] [AGENT|SANDBOX_KIT] [PATH...] [-- AGENT_ARGS...]
 
 @x publish
       usage: |
-        Publish a sandbox port to the host (can be repeated): [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL]. Applied when the sandbox is created; ignored when re-attaching (use "sbx ports")
+        Publish a sandbox port to the host (can be repeated): [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL]. Applied when the sandbox is created; ignored when re-attaching (use "sbx port publish")
 @y
       usage: |
-        Publish a sandbox port to the host (can be repeated): [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL]. Applied when the sandbox is created; ignored when re-attaching (use "sbx ports")
+        Publish a sandbox port to the host (can be repeated): [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL]. Applied when the sandbox is created; ignored when re-attaching (use "sbx port publish")
 @z
 
 @x pull
       usage: |
-        Image pull policy (always|missing|never; default: never for saved local snapshots, missing for v3 kit compositions, otherwise always)
+        Image pull policy when creating a sandbox; ignored when reattaching (always|missing|never; default: never for saved local snapshots, missing for v3 kit compositions, otherwise always)
 @y
       usage: |
-        Image pull policy (always|missing|never; default: never for saved local snapshots, missing for v3 kit compositions, otherwise always)
+        Image pull policy when creating a sandbox; ignored when reattaching (always|missing|never; default: never for saved local snapshots, missing for v3 kit compositions, otherwise always)
 @z
 
 @x rm

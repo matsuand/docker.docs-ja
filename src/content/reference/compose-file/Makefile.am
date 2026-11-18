@@ -12,6 +12,7 @@ bases = \
 	fragments.md        \
 	include.md          \
 	interpolation.md    \
+	jobs.md             \
 	legacy-versions.md  \
 	merge.md            \
 	models.md           \

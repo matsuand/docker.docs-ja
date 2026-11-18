@@ -82,11 +82,11 @@ description: |-
 @z
 
 @x
-    Use "sbx --cloud run <agent> --name SANDBOX" to attach to the agent after
-    creation: cloud needs the agent, since a name alone is not a unique handle.
+    After creation, use "sbx --cloud attach SANDBOX" with the sandbox ID printed
+    by create to attach to the agent.
 @y
-    Use "sbx --cloud run <agent> --name SANDBOX" to attach to the agent after
-    creation: cloud needs the agent, since a name alone is not a unique handle.
+    After creation, use "sbx --cloud attach SANDBOX" with the sandbox ID printed
+    by create to attach to the agent.
 @z
 
 @x
@@ -394,10 +394,10 @@ example: |4-
 @z
 
 @x
-      # Run the agent on an in-container clone of the host repo, wired back via a git-daemon
+      # Run the agent on an in-container clone of the host repo; fetch its commits with git fetch sandbox-<name>
       sbx create --clone claude .
 @y
-      # Run the agent on an in-container clone of the host repo, wired back via a git-daemon
+      # Run the agent on an in-container clone of the host repo; fetch its commits with git fetch sandbox-<name>
       sbx create --clone claude .
 @z
 

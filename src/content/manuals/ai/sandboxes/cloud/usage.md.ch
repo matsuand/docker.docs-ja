@@ -50,41 +50,25 @@ Credentials saved for local sandboxes aren't available in cloud sandboxes.
 @z
 
 @x
-Create a sandbox and attach to its agent, or reuse the named sandbox if it
-already exists:
+Create a sandbox and attach to its agent:
 @y
-Create a sandbox and attach to its agent, or reuse the named sandbox if it
-already exists:
+Create a sandbox and attach to its agent:
 @z
 
 @x
 ```console
-$ sbx --cloud run claude --name cloud-project
+$ sbx --cloud run --new claude --name cloud-project
 ```
 @y
 ```console
-$ sbx --cloud run claude --name cloud-project
+$ sbx --cloud run --new claude --name cloud-project
 ```
 @z
 
 @x
-Without `--name`, an interactive run offers existing sandboxes for that agent
-and an option to create another. Pass `--new` to create a fresh sandbox.
 Launches that bake a kit template also create a fresh sandbox.
 @y
-Without `--name`, an interactive run offers existing sandboxes for that agent
-and an option to create another. Pass `--new` to create a fresh sandbox.
 Launches that bake a kit template also create a fresh sandbox.
-@z
-
-@x
-Reusing a sandbox keeps its creation settings. Flags such as `--cpus`,
-`--memory`, `--platform`, `--ttl`, `--env`, and `--allow-network` are rejected
-when resuming. Use `--new` to create a sandbox with different settings.
-@y
-Reusing a sandbox keeps its creation settings. Flags such as `--cpus`,
-`--memory`, `--platform`, `--ttl`, `--env`, and `--allow-network` are rejected
-when resuming. Use `--new` to create a sandbox with different settings.
 @z
 
 @x
@@ -104,19 +88,9 @@ $ sbx --cloud create --name cloud-project claude
 @z
 
 @x
-The command prints the cloud sandbox ID. Attach by ID or name:
+The command prints the cloud sandbox ID.
 @y
-The command prints the cloud sandbox ID. Attach by ID or name:
-@z
-
-@x
-```console
-$ sbx --cloud attach cloud-project
-```
-@y
-```console
-$ sbx --cloud attach cloud-project
-```
+The command prints the cloud sandbox ID.
 @z
 
 @x
@@ -205,6 +179,66 @@ architecture supported by your account. This matters when you plan to
 Use `--platform linux/amd64` or `--platform linux/arm64` to select an
 architecture supported by your account. This matters when you plan to
 [move the sandbox to your machine](move.md): the architectures must match.
+@z
+
+@x
+## Reuse a sandbox
+@y
+## Reuse a sandbox
+@z
+
+@x
+Attach to an existing sandbox by ID or name:
+@y
+Attach to an existing sandbox by ID or name:
+@z
+
+@x
+```console
+$ sbx --cloud attach cloud-project
+```
+@y
+```console
+$ sbx --cloud attach cloud-project
+```
+@z
+
+@x
+Run the agent with `--name` to reuse an existing sandbox. If the sandbox
+doesn't exist, the command creates it:
+@y
+Run the agent with `--name` to reuse an existing sandbox. If the sandbox
+doesn't exist, the command creates it:
+@z
+
+@x
+```console
+$ sbx --cloud run claude --name cloud-project
+```
+@y
+```console
+$ sbx --cloud run claude --name cloud-project
+```
+@z
+
+@x
+Without `--name`, an interactive run offers existing sandboxes for that agent
+and an option to create another.
+@y
+Without `--name`, an interactive run offers existing sandboxes for that agent
+and an option to create another.
+@z
+
+@x
+Reusing a sandbox keeps its creation settings. Flags such as `--cpus`,
+`--memory`, `--platform`, `--ttl`, `--env`, and `--allow-network` are rejected
+when resuming. Use `--new` to create a sandbox with different settings. If you
+also pass `--name`, choose an unused name to avoid a name conflict.
+@y
+Reusing a sandbox keeps its creation settings. Flags such as `--cpus`,
+`--memory`, `--platform`, `--ttl`, `--env`, and `--allow-network` are rejected
+when resuming. Use `--new` to create a sandbox with different settings. If you
+also pass `--name`, choose an unused name to avoid a name conflict.
 @z
 
 @x
@@ -378,6 +412,14 @@ Replace the example with `ssh <sandbox-id>@sbx_cloud`, using the
 @z
 
 @x
+After upgrading the CLI, rerun `sbx --cloud setup ssh` to refresh the
+generated cloud SSH configuration.
+@y
+After upgrading the CLI, rerun `sbx --cloud setup ssh` to refresh the
+generated cloud SSH configuration.
+@z
+
+@x
 Cloud SSH honors your host's configured upstream proxy. If the proxy refuses
 SSH connections, see [Cloud SSH proxy configuration](../configuration/upstream-proxy.md#cloud-ssh).
 @y
@@ -471,11 +513,11 @@ Expose a TCP service by specifying its sandbox port:
 
 @x
 ```console
-$ sbx --cloud ports cloud-project --publish 8080
+$ sbx --cloud port publish cloud-project 8080
 ```
 @y
 ```console
-$ sbx --cloud ports cloud-project --publish 8080
+$ sbx --cloud port publish cloud-project 8080
 ```
 @z
 
@@ -499,13 +541,13 @@ List or remove exposed ports:
 
 @x
 ```console
-$ sbx --cloud ports cloud-project
-$ sbx --cloud ports cloud-project --unpublish 8080
+$ sbx --cloud port ls cloud-project
+$ sbx --cloud port unpublish cloud-project 8080
 ```
 @y
 ```console
-$ sbx --cloud ports cloud-project
-$ sbx --cloud ports cloud-project --unpublish 8080
+$ sbx --cloud port ls cloud-project
+$ sbx --cloud port unpublish cloud-project 8080
 ```
 @z
 

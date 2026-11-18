@@ -65,14 +65,20 @@ Linux 上において Docker Compose プラグインをインストールする�
     [Debian](/manuals/engine/install/debian.md#install-using-the-repository) |
     [Raspberry Pi OS](/manuals/engine/install/raspberry-pi-os.md#install-using-the-repository) |
     [Fedora](/manuals/engine/install/fedora.md#set-up-the-repository) |
-    [RHEL](/manuals/engine/install/rhel.md#set-up-the-repository).
+    [RHEL](/manuals/engine/install/rhel.md#set-up-the-repository) |
+    [AlmaLinux](/manuals/engine/install/almalinux.md#set-up-the-repository) |
+    [Oracle Linux](/manuals/engine/install/oraclelinux.md#set-up-the-repository) |
+    [Rocky Linux](/manuals/engine/install/rockylinux.md#set-up-the-repository).
 @y
     [Ubuntu](manuals/engine/install/ubuntu.md#install-using-the-repository) |
     [CentOS](manuals/engine/install/centos.md#set-up-the-repository) |
     [Debian](manuals/engine/install/debian.md#install-using-the-repository) |
     [Raspberry Pi OS](manuals/engine/install/raspberry-pi-os.md#install-using-the-repository) |
     [Fedora](manuals/engine/install/fedora.md#set-up-the-repository) |
-    [RHEL](manuals/engine/install/rhel.md#set-up-the-repository).
+    [RHEL](manuals/engine/install/rhel.md#set-up-the-repository) |
+    [AlmaLinux](manuals/engine/install/almalinux.md#set-up-the-repository) |
+    [Oracle Linux](manuals/engine/install/oraclelinux.md#set-up-the-repository) |
+    [Rocky Linux](manuals/engine/install/rockylinux.md#set-up-the-repository).
 @z
 
 @x

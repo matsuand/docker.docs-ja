@@ -291,10 +291,14 @@ The final output reports the shared store path. The default locations are:
 
 @x
 On Linux, `sbx` uses `$XDG_STATE_HOME/sandboxes/sandboxes/agent-skills` when
-`XDG_STATE_HOME` is set.
+`XDG_STATE_HOME` is set and you run it as an ordinary user. When running as
+root on Unix, `sbx` uses the default path under root's registered home directory.
+See [Storage paths when running as root](../faq.md#which-storage-paths-are-used-when-running-as-root).
 @y
 On Linux, `sbx` uses `$XDG_STATE_HOME/sandboxes/sandboxes/agent-skills` when
-`XDG_STATE_HOME` is set.
+`XDG_STATE_HOME` is set and you run it as an ordinary user. When running as
+root on Unix, `sbx` uses the default path under root's registered home directory.
+See [Storage paths when running as root](../faq.md#which-storage-paths-are-used-when-running-as-root).
 @z
 
 @x

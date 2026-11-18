@@ -6,16 +6,106 @@
 @x
 title: Multi-platform image with GitHub Actions
 linkTitle: Multi-platform image
-description: Build for multiple architectures with GitHub Actions using QEMU emulation or multiple native builders
+description: Build multi-platform images with Docker GitHub Builder or individual actions using QEMU.
 keywords: ci, github actions, gha, buildkit, buildx, multi-platform
 @y
 title: Multi-platform image with GitHub Actions
 linkTitle: Multi-platform image
-description: Build for multiple architectures with GitHub Actions using QEMU emulation or multiple native builders
+description: Build multi-platform images with Docker GitHub Builder or individual actions using QEMU.
 keywords: ci, github actions, gha, buildkit, buildx, multi-platform
 @z
 
 @x
+Use [Docker GitHub Builder](_index.md) to build multi-platform
+images across native runners and publish a combined image manifest.
+@y
+Use [Docker GitHub Builder](_index.md) to build multi-platform
+images across native runners and publish a combined image manifest.
+@z
+
+@x
+## Distribute build across multiple runners
+@y
+## Distribute build across multiple runners
+@z
+
+@x
+Building multiple platforms on the same runner can significantly extend build
+times, particularly when dealing with complex Dockerfiles or a high number of
+target platforms. If you want to split platform builds across multiple runners
+without maintaining a custom matrix and merge job, use the
+[Docker GitHub Builder](_index.md). The reusable workflows
+compute the per-platform matrix, run each platform on its own runner, and
+create the final manifest for you.
+@y
+Building multiple platforms on the same runner can significantly extend build
+times, particularly when dealing with complex Dockerfiles or a high number of
+target platforms. If you want to split platform builds across multiple runners
+without maintaining a custom matrix and merge job, use the
+[Docker GitHub Builder](_index.md). The reusable workflows
+compute the per-platform matrix, run each platform on its own runner, and
+create the final manifest for you.
+@z
+
+@x
+The following workflow uses the [`build.yml` reusable workflow](build-workflow.md)
+to distribute a multi-platform Dockerfile build:
+@y
+The following workflow uses the [`build.yml` reusable workflow](build-workflow.md)
+to distribute a multi-platform Dockerfile build:
+@z
+
+% snip code...
+
+@x
+With `distribute: true`, which is the default, the workflow splits the build
+into one platform per runner and assembles the final multi-platform image in
+its finalize phase. The default `runner` mapping selects native GitHub-hosted
+Linux runners for Arm and other platforms. To customize the mapping, see [runner selection](github-builder-architecture/index.md#runner-selection).
+If you need to control the Docker build inputs directly, see
+[Build with Docker GitHub Builder build.yml](build-workflow.md).
+@y
+With `distribute: true`, which is the default, the workflow splits the build
+into one platform per runner and assembles the final multi-platform image in
+its finalize phase. The default `runner` mapping selects native GitHub-hosted
+Linux runners for Arm and other platforms. To customize the mapping, see [runner selection](github-builder-architecture/index.md#runner-selection).
+If you need to control the Docker build inputs directly, see
+[Build with Docker GitHub Builder build.yml](build-workflow.md).
+@z
+
+@x
+### With Bake
+@y
+### With Bake
+@z
+
+@x
+For builds defined in a Bake file, use the
+[Bake reusable workflow](bake-workflow.md#build-and-push-a-bake-target).
+It distributes the target's platforms and publishes the combined manifest.
+@y
+For builds defined in a Bake file, use the
+[Bake reusable workflow](bake-workflow.md#build-and-push-a-bake-target).
+It distributes the target's platforms and publishes the combined manifest.
+@z
+
+@x
+## Build with individual actions and QEMU
+@y
+## Build with individual actions and QEMU
+@z
+
+@x
+Use individual actions when you need to configure the job's Docker Engine or
+run other steps alongside the build. The following example uses QEMU to build
+both platforms on one runner.
+@y
+Use individual actions when you need to configure the job's Docker Engine or
+run other steps alongside the build. The following example uses QEMU to build
+both platforms on one runner.
+@z
+
+@x
 You can build [multi-platform images](../../building/multi-platform.md) using
 the `platforms` option, as shown in the following example:
 @y
@@ -71,89 +161,6 @@ image store.
 The following example workflow enables the containerd image store, builds a
 multi-platform image, and loads the results into the GitHub runner's local
 image store.
-@z
-
-% snip code...
-
-@x
-## Distribute build across multiple runners
-@y
-## Distribute build across multiple runners
-@z
-
-@x
-Building multiple platforms on the same runner can significantly extend build
-times, particularly when dealing with complex Dockerfiles or a high number of
-target platforms. If you want to split platform builds across multiple runners
-without maintaining a custom matrix and merge job, use the
-[Docker GitHub Builder](github-builder/_index.md). The reusable workflows
-compute the per-platform matrix, run each platform on its own runner, and
-create the final manifest for you.
-@y
-Building multiple platforms on the same runner can significantly extend build
-times, particularly when dealing with complex Dockerfiles or a high number of
-target platforms. If you want to split platform builds across multiple runners
-without maintaining a custom matrix and merge job, use the
-[Docker GitHub Builder](github-builder/_index.md). The reusable workflows
-compute the per-platform matrix, run each platform on its own runner, and
-create the final manifest for you.
-@z
-
-@x
-The following workflow uses the [`build.yml` reusable workflow](github-builder/build.md)
-to distribute a multi-platform Dockerfile build:
-@y
-The following workflow uses the [`build.yml` reusable workflow](github-builder/build.md)
-to distribute a multi-platform Dockerfile build:
-@z
-
-% snip code...
-
-@x
-With `distribute: true`, which is the default, the workflow splits the build
-into one platform per runner and assembles the final multi-platform image in
-its finalize phase. The default `runner` mapping sends Linux Arm platforms to
-`ubuntu-24.04-arm` and uses `ubuntu-24.04` for other platforms. To customize
-the mapping, see [runner selection](github-builder/architecture.md#runner-selection).
-If you need to control the Docker build inputs directly, see
-[Build with Docker GitHub Builder build.yml](github-builder/build.md).
-@y
-With `distribute: true`, which is the default, the workflow splits the build
-into one platform per runner and assembles the final multi-platform image in
-its finalize phase. The default `runner` mapping sends Linux Arm platforms to
-`ubuntu-24.04-arm` and uses `ubuntu-24.04` for other platforms. To customize
-the mapping, see [runner selection](github-builder/architecture.md#runner-selection).
-If you need to control the Docker build inputs directly, see
-[Build with Docker GitHub Builder build.yml](github-builder/build.md).
-@z
-
-@x
-### With Bake
-@y
-### With Bake
-@z
-
-@x
-You can use the [`bake.yml` reusable workflow](github-builder/bake.md) for the
-same pattern when your build is defined in a Bake file. The workflow reads the
-target platforms from the Bake definition, distributes the per-platform builds,
-and publishes the final manifest without a separate prepare or merge job.
-@y
-You can use the [`bake.yml` reusable workflow](github-builder/bake.md) for the
-same pattern when your build is defined in a Bake file. The workflow reads the
-target platforms from the Bake definition, distributes the per-platform builds,
-and publishes the final manifest without a separate prepare or merge job.
-@z
-
-@x within code
-// Special target: https://github.com/docker/metadata-action#bake-definition
-@y
-// Special target: https://github.com/docker/metadata-action#bake-definition
-@z
-@x
-// Default target if none specified
-@y
-// Default target if none specified
 @z
 
 % snip code...

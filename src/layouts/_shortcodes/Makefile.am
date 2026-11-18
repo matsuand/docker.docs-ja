@@ -42,7 +42,6 @@ copyfiles = \
 	recipe-list.html                \
 	recipe-list.markdown.md         \
 	release-date.html               \
-	sectionlinks.html               \
 	setting-metadata.markdown.md    \
 	summary-bar.markdown.md         \
 	tab.html                        \

@@ -2,6 +2,8 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
+SUBDIRS = guides
+
 bases = \
 	_index.md        \
 	faq.md           \

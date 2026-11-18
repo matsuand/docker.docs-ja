@@ -109,10 +109,10 @@ usage: sbx schedule update SCHEDULE_ID [KIT] [flags]
 
 @x max-run-duration
       usage: |
-        Longest a run may take, at least 1h, e.g. 2h30m (default: 1h)
+        Longest a run may take, at least 1h, e.g. 2h30m; units are case-insensitive (default: 1h)
 @y
       usage: |
-        Longest a run may take, at least 1h, e.g. 2h30m (default: 1h)
+        Longest a run may take, at least 1h, e.g. 2h30m; units are case-insensitive (default: 1h)
 @z
 
 @x memory
@@ -155,10 +155,16 @@ usage: sbx schedule update SCHEDULE_ID [KIT] [flags]
         IANA time zone the cron expression is evaluated in, e.g. Europe/Berlin
 @z
 
-@x working-dir
+@x workdir
       usage: Directory the prompt or command runs in
 @y
       usage: Directory the prompt or command runs in
+@z
+
+@x working-dir
+      usage: Alias for --workdir
+@y
+      usage: Alias for --workdir
 @z
 
 % inherited_options:

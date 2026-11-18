@@ -348,7 +348,7 @@ or in your workload's Dockerfile. See
 To make approval prompts the default for every session, set the launch command
 in an [environment file](configuration/environment-files.md#set-the-launch-command)
 or in your workload's Dockerfile. See
-[Build an agent kit](/manuals/ai/sandboxes/customize/author/build-an-agent.md).
+[Build an agent kit](manuals/ai/sandboxes/customize/author/build-an-agent.md).
 @z
 
 @x
@@ -466,6 +466,14 @@ running sandboxes.
 @z
 
 @x
+Clipboard images larger than 64 MiB are ignored. The agent receives an empty
+clipboard instead.
+@y
+Clipboard images larger than 64 MiB are ignored. The agent receives an empty
+clipboard instead.
+@z
+
+@x
 This is opt-in because it relaxes the sandbox's isolation: when enabled, a process
 inside the sandbox can read your host clipboard through the host-side proxy. The
 exposure is narrow — reads happen only on a paste, return image data only
@@ -496,63 +504,61 @@ $ sbx settings set clipboard.imagePaste false
 @z
 
 @x
+## Which storage paths are used when running as root?
+@y
+## Which storage paths are used when running as root?
+@z
+
+@x
+On Unix, running `sbx` as root uses the home directory registered for root in
+the operating system and the default storage, credential, and daemon endpoint
+locations under that home. Inherited overrides for these locations, including
+`HOME`, `XDG_CONFIG_HOME`, `XDG_STATE_HOME`, `XDG_CACHE_HOME`,
+`SANDBOXES_STORAGE_ROOT`, and `DOCKER_SANDBOXES_API`, are ignored. Commands run
+as an ordinary user keep their existing paths and environment overrides.
+@y
+On Unix, running `sbx` as root uses the home directory registered for root in
+the operating system and the default storage, credential, and daemon endpoint
+locations under that home. Inherited overrides for these locations, including
+`HOME`, `XDG_CONFIG_HOME`, `XDG_STATE_HOME`, `XDG_CACHE_HOME`,
+`SANDBOXES_STORAGE_ROOT`, and `DOCKER_SANDBOXES_API`, are ignored. Commands run
+as an ordinary user keep their existing paths and environment overrides.
+@z
+
+@x
+Before upgrading, stop any older root daemon that uses custom storage. The
+custom storage data is left untouched.
+@y
+Before upgrading, stop any older root daemon that uses custom storage. The
+custom storage data is left untouched.
+@z
+
+@x
 ## Can I use Docker Sandboxes on headless Linux?
 @y
 ## Can I use Docker Sandboxes on headless Linux?
 @z
 
 @x
-Yes. For local sandboxes on Linux, `sbx` stores secrets in the Secret Service
-exposed by your desktop keyring, such as GNOME Keyring or KDE Wallet. Headless servers and some
-WSL setups have no running Secret Service, so `sbx` falls back to a file under
-`$XDG_CONFIG_HOME/com.docker.sandboxes`, which defaults to
-`~/.config/com.docker.sandboxes` when `$XDG_CONFIG_HOME` is unset. No setup is
-required. When you store a secret on such a host, `sbx` prints a notice:
+Yes. On headless Linux hosts and WSL setups without a running Secret Service,
+`sbx` stores secrets in a file protected by file permissions. No setup is
+required. For storage paths, root-user behavior, and security considerations,
+see [Where secrets are stored](configuration/credentials.md#where-secrets-are-stored).
 @y
-Yes. For local sandboxes on Linux, `sbx` stores secrets in the Secret Service
-exposed by your desktop keyring, such as GNOME Keyring or KDE Wallet. Headless servers and some
-WSL setups have no running Secret Service, so `sbx` falls back to a file under
-`$XDG_CONFIG_HOME/com.docker.sandboxes`, which defaults to
-`~/.config/com.docker.sandboxes` when `$XDG_CONFIG_HOME` is unset. No setup is
-required. When you store a secret on such a host, `sbx` prints a notice:
-@z
-
-@x
-```text
-No keychain detected - this secret will be stored on disk, protected by file permissions rather than a password
-```
-@y
-```text
-No keychain detected - this secret will be stored on disk, protected by file permissions rather than a password
-```
-@z
-
-@x
-`sbx` stores the file in a directory with `0700` permissions, the same
-file-permission model used for `~/.docker/config.json`. Any user or process that
-can read the file can retrieve the stored credentials, so treat the directory as
-sensitive. Where available, prefer a keychain, which mediates access per
-application.
-@y
-`sbx` stores the file in a directory with `0700` permissions, the same
-file-permission model used for `~/.docker/config.json`. Any user or process that
-can read the file can retrieve the stored credentials, so treat the directory as
-sensitive. Where available, prefer a keychain, which mediates access per
-application.
+Yes. On headless Linux hosts and WSL setups without a running Secret Service,
+`sbx` stores secrets in a file protected by file permissions. No setup is
+required. For storage paths, root-user behavior, and security considerations,
+see [Where secrets are stored](configuration/credentials.md#where-secrets-are-stored).
 @z
 
 @x
 To keep secrets in a keyring instead, run a Secret Service on the host before
 storing them: install `gnome-keyring` and start `dbus-run-session`, or run the
 keyring daemon under a login session that unlocks it. Once a working Secret
-Service is available, `sbx` stores new
-secrets in the keychain again. For where each platform keeps secrets, see
-[Where secrets are stored](configuration/credentials.md#where-secrets-are-stored).
+Service is available, `sbx` stores new secrets in the keychain again.
 @y
 To keep secrets in a keyring instead, run a Secret Service on the host before
 storing them: install `gnome-keyring` and start `dbus-run-session`, or run the
 keyring daemon under a login session that unlocks it. Once a working Secret
-Service is available, `sbx` stores new
-secrets in the keychain again. For where each platform keeps secrets, see
-[Where secrets are stored](configuration/credentials.md#where-secrets-are-stored).
+Service is available, `sbx` stores new secrets in the keychain again.
 @z

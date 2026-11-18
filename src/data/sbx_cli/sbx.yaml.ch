@@ -96,14 +96,14 @@ usage: sbx COMMAND
 @z
 
 @x
-    - sbx ports - Manage sandbox port publishing
+    - sbx port - Manage sandbox port publishing
     - sbx prune - Remove all stopped sandboxes
     - sbx reset - Reset all sandboxes and clean up state
     - sbx rm - Remove one or more sandboxes
     - sbx run - Run an agent in a sandbox
     - sbx schedule - Manage scheduled cloud sandbox runs (cloud-only)
 @y
-    - sbx ports - Manage sandbox port publishing
+    - sbx port - Manage sandbox port publishing
     - sbx prune - Remove all stopped sandboxes
     - sbx reset - Reset all sandboxes and clean up state
     - sbx rm - Remove one or more sandboxes

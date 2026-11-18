@@ -295,12 +295,14 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = github-builder images
+SUBDIRS = github-builder-architecture images
 bases = \
 	_index.md                \
 	annotations.md           \
 	attestations.md          \
+	bake-workflow.md         \
 	build-summary.md         \
+	build-workflow.md        \
 	cache.md                 \
 	checks.md                \
 	configure-builder.md     \

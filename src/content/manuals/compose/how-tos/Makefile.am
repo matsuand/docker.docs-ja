@@ -10,6 +10,7 @@ bases = \
 	file-watch.md         \
 	gpu-support.md        \
 	init-containers.md    \
+	jobs.md               \
 	lifecycle.md          \
 	models-and-compose.md \
 	networking.md         \

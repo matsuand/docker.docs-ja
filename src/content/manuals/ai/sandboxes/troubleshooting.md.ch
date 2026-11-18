@@ -74,6 +74,74 @@ into a GitHub issue.
 @z
 
 @x
+## Check sandbox disk usage
+@y
+## Check sandbox disk usage
+@z
+
+@x
+If you're running low on disk space, check how much storage your local
+sandbox images, containers, and managed volumes use:
+@y
+If you're running low on disk space, check how much storage your local
+sandbox images, containers, and managed volumes use:
+@z
+
+@x
+```console
+$ sbx df
+```
+@y
+```console
+$ sbx df
+```
+@z
+
+@x
+The summary shows the size and estimated reclaimable space for each resource
+type. To identify individual images, containers, or volumes taking up space,
+run:
+@y
+The summary shows the size and estimated reclaimable space for each resource
+type. To identify individual images, containers, or volumes taking up space,
+run:
+@z
+
+@x
+```console
+$ sbx df --verbose
+```
+@y
+```console
+$ sbx df --verbose
+```
+@z
+
+@x
+Image totals count shared layers once and include image data retained by
+containers after you remove the image's tags. Host bind mounts, logs, and caches
+are excluded, so the report doesn't account for all disk space used on your host.
+A measurement shown as `unknown` couldn't be determined.
+@y
+Image totals count shared layers once and include image data retained by
+containers after you remove the image's tags. Host bind mounts, logs, and caches
+are excluded, so the report doesn't account for all disk space used on your host.
+A measurement shown as `unknown` couldn't be determined.
+@z
+
+@x
+Before cleaning up, [preview which stopped sandboxes would be removed](usage.md#start-stop-and-remove)
+with `sbx prune --dry-run`. The reclaimable estimate covers unused resources of
+each type, so it isn't the amount that `sbx prune` alone removes. Shared storage
+and resources still in use can reduce or delay the space recovered.
+@y
+Before cleaning up, [preview which stopped sandboxes would be removed](usage.md#start-stop-and-remove)
+with `sbx prune --dry-run`. The reclaimable estimate covers unused resources of
+each type, so it isn't the amount that `sbx prune` alone removes. Shared storage
+and resources still in use can reduce or delay the space recovered.
+@z
+
+@x
 ## Image pulls fail on eCryptfs
 @y
 ## Image pulls fail on eCryptfs
@@ -257,6 +325,46 @@ and clone-mode behavior.
 @y
 See [Choose a workspace](usage.md#choose-a-workspace) for mountless, direct,
 and clone-mode behavior.
+@z
+
+@x
+## Sandbox reports a mount state error
+@y
+## Sandbox reports a mount state error
+@z
+
+@x
+If a sandbox reports `saved mount metadata does not match the container`,
+remove and recreate the affected sandbox. Before removing it,
+[copy out any files you want to keep](usage.md#copy-files-between-host-and-sandbox)
+if the sandbox is still accessible. Removing a sandbox deletes its sandbox data.
+@y
+If a sandbox reports `saved mount metadata does not match the container`,
+remove and recreate the affected sandbox. Before removing it,
+[copy out any files you want to keep](usage.md#copy-files-between-host-and-sandbox)
+if the sandbox is still accessible. Removing a sandbox deletes its sandbox data.
+@z
+
+@x
+If the error says `a recorded mount source now resolves to a different path`,
+restore the original host source path, or remove and recreate the sandbox.
+This can happen if you replace the source directory or one of its parent
+directories with a symlink to a different location.
+@y
+If the error says `a recorded mount source now resolves to a different path`,
+restore the original host source path, or remove and recreate the sandbox.
+This can happen if you replace the source directory or one of its parent
+directories with a symlink to a different location.
+@z
+
+@x
+Changing a host symlink to point elsewhere doesn't move an existing static
+mount. The sandbox retains the original source, and filesystem policy checks
+when you reuse the sandbox include that source.
+@y
+Changing a host symlink to point elsewhere doesn't move an existing static
+mount. The sandbox retains the original source, and filesystem policy checks
+when you reuse the sandbox include that source.
 @z
 
 @x
@@ -1272,6 +1380,18 @@ cached images. Stop all running sandboxes first with `sbx reset`.
 @z
 
 @x
+For root cleanup on macOS or Linux, replace `~` in these commands with root's
+registered home directory. Using `sudo` does not change how your shell expands
+`~`. See [Storage paths when running as root](faq.md#which-storage-paths-are-used-when-running-as-root)
+for the environment overrides that `sbx` ignores.
+@y
+For root cleanup on macOS or Linux, replace `~` in these commands with root's
+registered home directory. Using `sudo` does not change how your shell expands
+`~`. See [Storage paths when running as root](faq.md#which-storage-paths-are-used-when-running-as-root)
+for the environment overrides that `sbx` ignores.
+@z
+
+@x
 {{< tabs >}}
 {{< tab name="macOS" >}}
 @y
@@ -1338,13 +1458,13 @@ $ rm -rf ~/.config/sandboxes/
 @z
 
 @x
-If you have set custom `XDG_STATE_HOME`, `XDG_CACHE_HOME`, or
-`XDG_CONFIG_HOME` environment variables, replace `~/.local/state`,
-`~/.cache`, and `~/.config` with the corresponding values.
+If you run `sbx` as an ordinary user and have set custom `XDG_STATE_HOME`,
+`XDG_CACHE_HOME`, or `XDG_CONFIG_HOME` environment variables, replace
+`~/.local/state`, `~/.cache`, and `~/.config` with the corresponding values.
 @y
-If you have set custom `XDG_STATE_HOME`, `XDG_CACHE_HOME`, or
-`XDG_CONFIG_HOME` environment variables, replace `~/.local/state`,
-`~/.cache`, and `~/.config` with the corresponding values.
+If you run `sbx` as an ordinary user and have set custom `XDG_STATE_HOME`,
+`XDG_CACHE_HOME`, or `XDG_CONFIG_HOME` environment variables, replace
+`~/.local/state`, `~/.cache`, and `~/.config` with the corresponding values.
 @z
 
 @x

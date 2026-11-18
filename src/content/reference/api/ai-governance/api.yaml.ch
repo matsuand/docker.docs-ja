@@ -1384,7 +1384,10 @@ components:
       type: object
       description: >
         Full policy representation. Exactly one of `allowlist_v0` or `cedar_v1`
-        is present, depending on the policy type.
+        is present, depending on the policy type. The normalized policy definition
+        must not exceed 350 KiB (358,400 UTF-8 bytes), including service-generated
+        rule identifiers. Oversized definitions return HTTP 400 with
+        `limit_exceeded`.
       required: [id, name, org, scope, created_at, updated_at]
       properties:
         id:
@@ -1421,7 +1424,10 @@ components:
       type: object
       description: >
         Full policy representation. Exactly one of `allowlist_v0` or `cedar_v1`
-        is present, depending on the policy type.
+        is present, depending on the policy type. The normalized policy definition
+        must not exceed 350 KiB (358,400 UTF-8 bytes), including service-generated
+        rule identifiers. Oversized definitions return HTTP 400 with
+        `limit_exceeded`.
       required: [id, name, org, scope, created_at, updated_at]
       properties:
         id:
@@ -2076,6 +2082,8 @@ components:
             any depth, including the bare path.
           examples:
             - /repos/docker/**
+        query:
+          $ref: "#/components/schemas/HTTPQuery"
 @y
     HTTPResource:
       type: object
@@ -2105,6 +2113,72 @@ components:
             any depth, including the bare path.
           examples:
             - /repos/docker/**
+        query:
+          $ref: "#/components/schemas/HTTPQuery"
+@z
+
+@x
+    HTTPQuery:
+      type: object
+      description: >
+        Query parameters the request must contain. Each listed parameter must
+        match a different parameter in the request; the request may also
+        contain other parameters.
+      required: [parameters]
+      properties:
+        parameters:
+          type: array
+          minItems: 1
+          items:
+            $ref: "#/components/schemas/HTTPQueryParameter"
+@y
+    HTTPQuery:
+      type: object
+      description: >
+        Query parameters the request must contain. Each listed parameter must
+        match a different parameter in the request; the request may also
+        contain other parameters.
+      required: [parameters]
+      properties:
+        parameters:
+          type: array
+          minItems: 1
+          items:
+            $ref: "#/components/schemas/HTTPQueryParameter"
+@z
+
+@x
+    HTTPQueryParameter:
+      type: object
+      required: [name, value_pattern]
+      properties:
+        name:
+          type: string
+          minLength: 1
+          description: Decoded query-parameter name, matched exactly. Must not contain `=`.
+          examples: [tag]
+        value_pattern:
+          type: string
+          description: >
+            URL-query-encoded value pattern. A raw leading or trailing `*` is
+            a wildcard. Encode a literal `*` as `%2A` and a literal `\` as `%5C`.
+          examples: [prod*]
+@y
+    HTTPQueryParameter:
+      type: object
+      required: [name, value_pattern]
+      properties:
+        name:
+          type: string
+          minLength: 1
+          description: Decoded query-parameter name, matched exactly. Must not contain `=`.
+          examples: [tag]
+        value_pattern:
+          type: string
+          description: >
+            URL-query-encoded value pattern. A raw leading or trailing `*` is
+            a wildcard. Encode a literal `*` as `%2A` and a literal `\` as `%5C`.
+          examples: [prod*]
 @z
 
 @x
@@ -2154,8 +2228,9 @@ components:
                 or fails validation. `unauthenticated`: missing or invalid
                 credentials. `permission_denied`: the org is not entitled to use
                 governance. `limit_exceeded`: the org has reached its maximum
-                number of policies, or the policy has reached its maximum number
-                of rules. `unimplemented`: the endpoint or feature is not yet
+                number of policies, the policy has reached its maximum number
+                of rules, or the policy exceeds the maximum allowed size.
+                `unimplemented`: the endpoint or feature is not yet
                 available. `internal`: unexpected server error.
               enum:
                 - not_found
@@ -2193,8 +2268,9 @@ components:
                 or fails validation. `unauthenticated`: missing or invalid
                 credentials. `permission_denied`: the org is not entitled to use
                 governance. `limit_exceeded`: the org has reached its maximum
-                number of policies, or the policy has reached its maximum number
-                of rules. `unimplemented`: the endpoint or feature is not yet
+                number of policies, the policy has reached its maximum number
+                of rules, or the policy exceeds the maximum allowed size.
+                `unimplemented`: the endpoint or feature is not yet
                 available. `internal`: unexpected server error.
               enum:
                 - not_found
@@ -2269,7 +2345,7 @@ components:
 
 @x
     InvalidArgument:
-      description: Bad request
+      description: Bad request, including a policy that exceeds the maximum allowed size.
       content:
         application/json:
           schema:
@@ -2280,9 +2356,14 @@ components:
                 error:
                   code: invalid_argument
                   message: "name is required"
+            policy_too_large:
+              value:
+                error:
+                  code: limit_exceeded
+                  message: policy definition is 358401 bytes; maximum allowed size is 358400 bytes
 @y
     InvalidArgument:
-      description: Bad request
+      description: Bad request, including a policy that exceeds the maximum allowed size.
       content:
         application/json:
           schema:
@@ -2293,6 +2374,11 @@ components:
                 error:
                   code: invalid_argument
                   message: "name is required"
+            policy_too_large:
+              value:
+                error:
+                  code: limit_exceeded
+                  message: policy definition is 358401 bytes; maximum allowed size is 358400 bytes
 @z
 
 @x
@@ -2359,8 +2445,8 @@ components:
     Forbidden:
       description: >
         Caller lacks the required permission for this org, the org is not
-        entitled to use governance (`permission_denied`), or a creation limit
-        has been reached (`limit_exceeded`): the org already has the maximum
+        entitled to use governance (`permission_denied`), or a policy limit
+        has been exceeded (`limit_exceeded`): the org already has the maximum
         number of policies, or the policy already has the maximum number of
         rules.
       content:
@@ -2382,8 +2468,8 @@ components:
     Forbidden:
       description: >
         Caller lacks the required permission for this org, the org is not
-        entitled to use governance (`permission_denied`), or a creation limit
-        has been reached (`limit_exceeded`): the org already has the maximum
+        entitled to use governance (`permission_denied`), or a policy limit
+        has been exceeded (`limit_exceeded`): the org already has the maximum
         number of policies, or the policy already has the maximum number of
         rules.
       content:

@@ -30,6 +30,238 @@ the full release history, including pre-releases and downloads, see the
 @z
 
 @x
+## 0.54.0
+@y
+## 0.54.0
+@z
+
+@x
+{{< release-date date="2026-11-16" >}}
+@y
+{{< release-date date="2026-11-16" >}}
+@z
+
+@x
+[GitHub release](https://github.com/docker/sbx-releases/releases/tag/v0.54.0)
+@y
+[GitHub release](https://github.com/docker/sbx-releases/releases/tag/v0.54.0)
+@z
+
+@x
+### Highlights
+@y
+### Highlights
+@z
+
+@x
+Docker Sandboxes v0.54.0 adds dedicated port management commands and a TLS compatibility setting for networks that block post-quantum key exchange. It also strengthens generated SSH configuration and clone-mode Git access, improves cloud sandbox creation, and makes CLI errors and output more consistent.
+@y
+Docker Sandboxes v0.54.0 adds dedicated port management commands and a TLS compatibility setting for networks that block post-quantum key exchange. It also strengthens generated SSH configuration and clone-mode Git access, improves cloud sandbox creation, and makes CLI errors and output more consistent.
+@z
+
+@x
+### Breaking changes and upgrade actions
+@y
+### Breaking changes and upgrade actions
+@z
+
+@x
+#### Refresh generated SSH configuration
+@y
+#### Refresh generated SSH configuration
+@z
+
+@x
+Generated SSH configuration prevents crafted host or user names from executing shell commands with older OpenSSH clients. After upgrading, rerun `sbx setup ssh` for local connections and `sbx --cloud setup ssh` for cloud connections to update existing configuration.
+@y
+Generated SSH configuration prevents crafted host or user names from executing shell commands with older OpenSSH clients. After upgrading, rerun `sbx setup ssh` for local connections and `sbx --cloud setup ssh` for cloud connections to update existing configuration.
+@z
+
+@x
+#### Storage paths when running as root
+@y
+#### Storage paths when running as root
+@z
+
+@x
+On Unix, running `sbx` as root uses root's registered home directory and the default storage, credential, and daemon endpoint locations. Inherited overrides, including `HOME`, `XDG_CONFIG_HOME`, `XDG_STATE_HOME`, `XDG_CACHE_HOME`, `SANDBOXES_STORAGE_ROOT`, and `DOCKER_SANDBOXES_API`, are ignored. Ordinary users retain their existing paths and environment overrides.
+@y
+On Unix, running `sbx` as root uses root's registered home directory and the default storage, credential, and daemon endpoint locations. Inherited overrides, including `HOME`, `XDG_CONFIG_HOME`, `XDG_STATE_HOME`, `XDG_CACHE_HOME`, `SANDBOXES_STORAGE_ROOT`, and `DOCKER_SANDBOXES_API`, are ignored. Ordinary users retain their existing paths and environment overrides.
+@z
+
+@x
+Before upgrading, stop any older root daemon that uses custom storage. The custom storage data is left untouched.
+@y
+Before upgrading, stop any older root daemon that uses custom storage. The custom storage data is left untouched.
+@z
+
+@x
+#### Clone-mode Git remote transport
+@y
+#### Clone-mode Git remote transport
+@z
+
+@x
+Fetching from a clone-mode sandbox's `sandbox-<name>` Git remote now uses the daemon socket, restricted to your host user, instead of an unauthenticated localhost TCP port. Starting the sandbox refreshes its remote configuration. Fetching requires the sandbox to be running.
+@y
+Fetching from a clone-mode sandbox's `sandbox-<name>` Git remote now uses the daemon socket, restricted to your host user, instead of an unauthenticated localhost TCP port. Starting the sandbox refreshes its remote configuration. Fetching requires the sandbox to be running.
+@z
+
+@x
+For Git clients that ignore the remote's `uploadpack` setting, enable TCP compatibility with `sbx settings set clone.legacyTcpRemote true`. This takes effect the next time the sandbox starts and exposes the repository and its history to other local accounts on the host. Leave the setting disabled to use the daemon socket. Clone-mode sandboxes using the default transport reject publishing sandbox TCP port 9418.
+@y
+For Git clients that ignore the remote's `uploadpack` setting, enable TCP compatibility with `sbx settings set clone.legacyTcpRemote true`. This takes effect the next time the sandbox starts and exposes the repository and its history to other local accounts on the host. Leave the setting disabled to use the daemon socket. Clone-mode sandboxes using the default transport reject publishing sandbox TCP port 9418.
+@z
+
+@x
+### What's new
+@y
+### What's new
+@z
+
+@x
+#### Port management
+@y
+#### Port management
+@z
+
+@x
+Use dedicated subcommands to manage ports on local and cloud sandboxes:
+@y
+Use dedicated subcommands to manage ports on local and cloud sandboxes:
+@z
+
+@x
+- `sbx port ls <SANDBOX>` lists published ports.
+- `sbx port publish <SANDBOX> <HOST_PORT>:<SANDBOX_PORT>` publishes a port. Omit the host port to assign one automatically.
+- `sbx port unpublish <SANDBOX> <SANDBOX_PORT>` removes all host mappings for that sandbox port. Specify `<HOST_PORT>:<SANDBOX_PORT>` to remove a single mapping.
+@y
+- `sbx port ls <SANDBOX>` lists published ports.
+- `sbx port publish <SANDBOX> <HOST_PORT>:<SANDBOX_PORT>` publishes a port. Omit the host port to assign one automatically.
+- `sbx port unpublish <SANDBOX> <SANDBOX_PORT>` removes all host mappings for that sandbox port. Specify `<HOST_PORT>:<SANDBOX_PORT>` to remove a single mapping.
+@z
+
+@x
+The legacy `sbx ports` command still works but is deprecated.
+@y
+The legacy `sbx ports` command still works but is deprecated.
+@z
+
+@x
+#### Networking and policy
+@y
+#### Networking and policy
+@z
+
+@x
+- Set `tls.postQuantumKeyExchange` to `false` if a firewall or TLS-inspecting proxy drops or stalls Sandboxes HTTPS connections because it cannot handle post-quantum key exchange. Run `sbx settings set tls.postQuantumKeyExchange false`, then `sbx daemon restart`. The setting defaults to `true`; restore it and restart the daemon to re-enable post-quantum key exchange.
+- `sbx policy check network` names the rule that allowed a target. Policy checks explain when further evaluation is needed and how to check a specific HTTP request.
+- `sbx policy --help` explains hostname-blocking limitations when an allowed and denied host share an IP address.
+- SSH reverse port forwarding no longer consumes a CPU core after its input socket is half-closed.
+@y
+- Set `tls.postQuantumKeyExchange` to `false` if a firewall or TLS-inspecting proxy drops or stalls Sandboxes HTTPS connections because it cannot handle post-quantum key exchange. Run `sbx settings set tls.postQuantumKeyExchange false`, then `sbx daemon restart`. The setting defaults to `true`; restore it and restart the daemon to re-enable post-quantum key exchange.
+- `sbx policy check network` names the rule that allowed a target. Policy checks explain when further evaluation is needed and how to check a specific HTTP request.
+- `sbx policy --help` explains hostname-blocking limitations when an allowed and denied host share an IP address.
+- SSH reverse port forwarding no longer consumes a CPU core after its input socket is half-closed.
+@z
+
+@x
+#### Sandbox lifecycle, kits, and agents
+@y
+#### Sandbox lifecycle, kits, and agents
+@z
+
+@x
+- `sbx run` no longer fails with “network already exists” after an earlier start failed partway.
+- When a saved mount's source resolves to a different directory, startup refuses the mount. Remove it with `sbx umount`, then mount the intended directory again.
+- Kit installation failures preserve command diagnostics and report network denials observed during installation.
+- Image cleanup preserves assembled images referenced by saved kit locks or containers.
+- Kit validation checks inherited configuration and reports inherited warnings.
+- Existing kit permissions may require confirmation again after upgrading because permission checks use stronger service digests.
+- Reattaching to a Kiro or Cursor sandbox relaunches the agent with the command used by its published kit.
+@y
+- `sbx run` no longer fails with “network already exists” after an earlier start failed partway.
+- When a saved mount's source resolves to a different directory, startup refuses the mount. Remove it with `sbx umount`, then mount the intended directory again.
+- Kit installation failures preserve command diagnostics and report network denials observed during installation.
+- Image cleanup preserves assembled images referenced by saved kit locks or containers.
+- Kit validation checks inherited configuration and reports inherited warnings.
+- Existing kit permissions may require confirmation again after upgrading because permission checks use stronger service digests.
+- Reattaching to a Kiro or Cursor sandbox relaunches the agent with the command used by its published kit.
+@z
+
+@x
+#### Authentication and MCP
+@y
+#### Authentication and MCP
+@z
+
+@x
+- `sbx login` reports failure with diagnostic steps when it cannot reach Docker's sign-in service after browser sign-in. Settings errors suggest signing in when administrator settings are unavailable.
+- OAuth secret sign-in respects `--no-input` instead of opening browser authorization.
+- Declining secret replacement or environment removal cancels the command with a nonzero exit status.
+- `sbx inspect` shows a local sandbox's static or dynamic MCP mode and connected servers. These describe the sandbox gateway; use `sbx mcp ls` to list host registrations.
+- Loading an MCP server into a cloud sandbox prints a success acknowledgment.
+@y
+- `sbx login` reports failure with diagnostic steps when it cannot reach Docker's sign-in service after browser sign-in. Settings errors suggest signing in when administrator settings are unavailable.
+- OAuth secret sign-in respects `--no-input` instead of opening browser authorization.
+- Declining secret replacement or environment removal cancels the command with a nonzero exit status.
+- `sbx inspect` shows a local sandbox's static or dynamic MCP mode and connected servers. These describe the sandbox gateway; use `sbx mcp ls` to list host registrations.
+- Loading an MCP server into a cloud sandbox prints a success acknowledgment.
+@z
+
+@x
+#### Cloud sandboxes
+@y
+#### Cloud sandboxes
+@z
+
+@x
+- Creating a sandbox honors the requested architecture when combining published kits with locally built mixins.
+- A kit's network allow list no longer replaces the account's network policy when neither `--allow-network` nor `--deny-network` is supplied.
+- Cloud creation rejects TTL values outside 15 seconds to 24 hours, explicitly empty timeout actions, and explicitly empty sandbox names before provisioning.
+- Declining a sandbox move cancels it with a nonzero exit status. An explicitly empty destination name is rejected before work starts.
+- Cloud API connection failures behind HTTP proxies report that the API is unreachable and suggest `sbx --cloud diagnose`, instead of returning a generic 500 error.
+- File copies distinguish failed path checks from missing source paths.
+- Cloud exec rejects `--detach-keys`, matching local exec. Omit this flag for both `sbx exec` and `sbx env exec`.
+- Scheduled runs accept `--workdir` and `-w`. Schedule durations accept case-insensitive units.
+- Help clarifies cloud template selection, inherited sizing, incompatible launch options, and the supported cloud SSH setup workflow.
+@y
+- Creating a sandbox honors the requested architecture when combining published kits with locally built mixins.
+- A kit's network allow list no longer replaces the account's network policy when neither `--allow-network` nor `--deny-network` is supplied.
+- Cloud creation rejects TTL values outside 15 seconds to 24 hours, explicitly empty timeout actions, and explicitly empty sandbox names before provisioning.
+- Declining a sandbox move cancels it with a nonzero exit status. An explicitly empty destination name is rejected before work starts.
+- Cloud API connection failures behind HTTP proxies report that the API is unreachable and suggest `sbx --cloud diagnose`, instead of returning a generic 500 error.
+- File copies distinguish failed path checks from missing source paths.
+- Cloud exec rejects `--detach-keys`, matching local exec. Omit this flag for both `sbx exec` and `sbx env exec`.
+- Scheduled runs accept `--workdir` and `-w`. Schedule durations accept case-insensitive units.
+- Help clarifies cloud template selection, inherited sizing, incompatible launch options, and the supported cloud SSH setup workflow.
+@z
+
+@x
+#### CLI and diagnostics
+@y
+#### CLI and diagnostics
+@z
+
+@x
+- `sbx diagnose --format json` and `--format yaml` include a stable `id` for each check. Match checks by `id` in scripts; `name` is display text that can change.
+- Diagnostic bundles use unique output files so existing workspace links cannot cause other host files to be overwritten.
+- MCP progress, warnings, client-secret guidance, and secret-list diagnostics go to stderr, preserving stdout for command results.
+- Sandbox and kit inspection report output write failures instead of succeeding silently.
+- Cloud-only commands report the required mode without starting a local daemon.
+- Installed skills can be removed with the `sbx skills delete` alias.
+- Argument validation, shell completion, and secret-removal help more consistently reflect supported options. Kit signing rejects conflicting credential sources, and kit push rejects signing options unless signing is enabled.
+@y
+- `sbx diagnose --format json` and `--format yaml` include a stable `id` for each check. Match checks by `id` in scripts; `name` is display text that can change.
+- Diagnostic bundles use unique output files so existing workspace links cannot cause other host files to be overwritten.
+- MCP progress, warnings, client-secret guidance, and secret-list diagnostics go to stderr, preserving stdout for command results.
+- Sandbox and kit inspection report output write failures instead of succeeding silently.
+- Cloud-only commands report the required mode without starting a local daemon.
+- Installed skills can be removed with the `sbx skills delete` alias.
+- Argument validation, shell completion, and secret-removal help more consistently reflect supported options. Kit signing rejects conflicting credential sources, and kit push rejects signing options unless signing is enabled.
+@z
+
+@x
 ## 0.53.0
 @y
 ## 0.53.0
@@ -217,7 +449,8 @@ HTTP policy matching treats ASCII letters in URL paths and query parameter names
 - Stalled outbound connections close after about 30 seconds by default, allowing clients to reconnect after host network changes such as connecting a VPN. Tune the timeout with `egress.stalledConnectionTimeoutSeconds`, or set it to `0` to disable it. Restart the daemon to apply a changed value to existing sandboxes.
 - Fixed `EOF` errors during sign-in and other requests through TLS-inspecting proxies that reject handshakes offering ML-DSA certificate signatures, including some Zscaler, Palo Alto, and F5 configurations.
 - Published loopback ports work with WSL2 mirrored networking, restoring access to the clone-mode Git remote.
-- Unpublishing an automatically assigned port keeps it unpublished after a sandbox restart. Published-port endpoints bracket IPv6 host addresses in list and inspect output, including JSON and YAML.
+- Unpublishing an automatically assigned port keeps it unpublished after a sandbox restart. (CVE-2026-126330)
+- Published-port endpoints bracket IPv6 host addresses in list and inspect output, including JSON and YAML.
 - Kit pulls work with registries such as Artifactory and self-hosted GitLab whose token service uses a separate host with a private IP address. GitHub release-asset HEAD requests no longer fail with 401 when a GitHub secret is configured.
 - DNS answers include CNAME records for aliased hostnames, supporting tools such as Kerberos. HTTPS proxy connections preserve trailing dots in destination names.
 - With UDP egress disabled, the first 20 distinct refused external destinations per sandbox network get individual log entries. Further destinations share a `<further blocked attempts>` entry and remain blocked. Denied host UDP traffic is labeled `host.docker.internal`.
@@ -226,7 +459,8 @@ HTTP policy matching treats ASCII letters in URL paths and query parameter names
 - Stalled outbound connections close after about 30 seconds by default, allowing clients to reconnect after host network changes such as connecting a VPN. Tune the timeout with `egress.stalledConnectionTimeoutSeconds`, or set it to `0` to disable it. Restart the daemon to apply a changed value to existing sandboxes.
 - Fixed `EOF` errors during sign-in and other requests through TLS-inspecting proxies that reject handshakes offering ML-DSA certificate signatures, including some Zscaler, Palo Alto, and F5 configurations.
 - Published loopback ports work with WSL2 mirrored networking, restoring access to the clone-mode Git remote.
-- Unpublishing an automatically assigned port keeps it unpublished after a sandbox restart. Published-port endpoints bracket IPv6 host addresses in list and inspect output, including JSON and YAML.
+- Unpublishing an automatically assigned port keeps it unpublished after a sandbox restart. (CVE-2026-126330)
+- Published-port endpoints bracket IPv6 host addresses in list and inspect output, including JSON and YAML.
 - Kit pulls work with registries such as Artifactory and self-hosted GitLab whose token service uses a separate host with a private IP address. GitHub release-asset HEAD requests no longer fail with 401 when a GitHub secret is configured.
 - DNS answers include CNAME records for aliased hostnames, supporting tools such as Kerberos. HTTPS proxy connections preserve trailing dots in destination names.
 - With UDP egress disabled, the first 20 distinct refused external destinations per sandbox network get individual log entries. Further destinations share a `<further blocked attempts>` entry and remain blocked. Denied host UDP traffic is labeled `host.docker.internal`.
@@ -262,12 +496,14 @@ HTTP policy matching treats ASCII letters in URL paths and query parameter names
 @z
 
 @x
+- Create and manage recurring cloud sandbox tasks with `sbx --cloud schedule`. Test tasks with manual runs, inspect run history, and pause or resume recurring runs.
 - Sandbox moves reject occupied explicit destination names before capturing or transferring the source. `--name` sets the exact destination name. Cloud-to-local moves derive the default destination name from the source sandbox name even when selected by ID.
 - Moving an already-cloud sandbox with `--to cloud` exits cleanly with an explanatory message. Resume recognizes running lifecycle states consistently, and sandboxes whose container creation fails can be deleted instead of remaining stuck.
 - Cloud sign-in failures produce warnings and suggest signing in again when appropriate. Invalid SSH certificate lifetimes are rejected even when a cached certificate is available.
 - Failed volume and template removals include failure records in JSON and YAML. Port publishing includes the reported protocol in structured output.
 - Cloud secret and policy commands reject unsupported local-only flags and filters instead of silently ignoring them. In particular, cloud secret writes reject `--ref` and `--command` instead of storing a literal value.
 @y
+- Create and manage recurring cloud sandbox tasks with `sbx --cloud schedule`. Test tasks with manual runs, inspect run history, and pause or resume recurring runs.
 - Sandbox moves reject occupied explicit destination names before capturing or transferring the source. `--name` sets the exact destination name. Cloud-to-local moves derive the default destination name from the source sandbox name even when selected by ID.
 - Moving an already-cloud sandbox with `--to cloud` exits cleanly with an explanatory message. Resume recognizes running lifecycle states consistently, and sandboxes whose container creation fails can be deleted instead of remaining stuck.
 - Cloud sign-in failures produce warnings and suggest signing in again when appropriate. Invalid SSH certificate lifetimes are rejected even when a cached certificate is available.
@@ -559,196 +795,6 @@ Built-in agent names now resolve to published kits at `docker.io/sbx/<name>:late
 - Compatibility errors and stale engine tasks identify `sbx daemon restart` as the recovery command. Daemon startup failures show only the current attempt's error output, preserving line breaks.
 - Windows SSH configuration works with both native OpenSSH and Git Bash OpenSSH. `sbx diagnose` detects missing Windows shell support for Claude Desktop SSH connections and warns when the state directory uses eCryptfs, which can cause image-pull I/O errors.
 - Command help and empty-list hints provide clearer next steps for secrets, MCP servers, skills, cloud sandboxes, and template recovery.
-@z
-
-@x
-## 0.50.1
-@y
-## 0.50.1
-@z
-
-@x
-{{< release-date date="2026-10-28" >}}
-@y
-{{< release-date date="2026-10-28" >}}
-@z
-
-@x
-[GitHub release](https://github.com/docker/sbx-releases/releases/tag/v0.50.1)
-@y
-[GitHub release](https://github.com/docker/sbx-releases/releases/tag/v0.50.1)
-@z
-
-@x
-- fixes an issue that prevented sandboxes from starting
-@y
-- fixes an issue that prevented sandboxes from starting
-@z
-
-@x
-## 0.50.0
-@y
-## 0.50.0
-@z
-
-@x
-{{< release-date date="2026-10-26" >}}
-@y
-{{< release-date date="2026-10-26" >}}
-@z
-
-@x
-[GitHub release](https://github.com/docker/sbx-releases/releases/tag/v0.50.0)
-@y
-[GitHub release](https://github.com/docker/sbx-releases/releases/tag/v0.50.0)
-@z
-
-@x
-### Highlights
-@y
-### Highlights
-@z
-
-@x
-Docker Sandboxes v0.50.0 adds configurable kit host mounts, preserves persistent kit volumes across updates and sandbox recreation, and adds cloud sandbox inspection. It also strengthens host-execution, credential, and workspace-copy protections.
-@y
-Docker Sandboxes v0.50.0 adds configurable kit host mounts, preserves persistent kit volumes across updates and sandbox recreation, and adds cloud sandbox inspection. It also strengthens host-execution, credential, and workspace-copy protections.
-@z
-
-@x
-### What's new
-@y
-### What's new
-@z
-
-@x
-#### Security
-@y
-#### Security
-@z
-
-@x
-- `sbx cp` rejects symbolic links that escape a sandbox workspace when the workspace is reached through an alternate host path, including a symlink or junction, macOS `/private/tmp`, or a Linux bind mount of a workspace subdirectory.
-- Host Git commands no longer run programs configured by a sandbox through the workspace repository's `.git` directory.
-- Browser, clipboard, and self-update helpers run only from trusted system locations, preventing sandbox-writable directories on `PATH` from supplying those programs.
-- Local source kits are reused and composed only when their digests match recorded local builds. Each local source kit rebuilds once after upgrading.
-- Git kit references reject ambiguous paths, non-ASCII hostnames, and SSH transport syntax. Use IDNA ASCII labels for internationalized hostnames. HTTPS source restrictions are checked against the parsed URL host.
-- MCP OAuth requests block cross-origin credential redirects. Rejected silent refreshes preserve saved credentials without opening a browser.
-- Browser-open logs omit URL query strings and fragments, keeping OAuth parameters and tokens in those components out of daemon logs and diagnostic bundles.
-- Windows clients verify that the daemon's named pipes belong to the same Windows user. Before using the updated CLI, older elevated daemons may need to be stopped with the previous CLI or Task Manager.
-- Environment MCP commands require approval to execute on the host, remain scoped to their sandbox, and are disabled by `--skip-host-commands`. Approval notices explain that executable paths are pinned, but file contents are not. Keep executables and scripts outside writable sandbox mounts.
-- Gordon clears **Approve all** and **Always allow** grants when a conversation resumes, requiring approval before running tools again.
-@y
-- `sbx cp` rejects symbolic links that escape a sandbox workspace when the workspace is reached through an alternate host path, including a symlink or junction, macOS `/private/tmp`, or a Linux bind mount of a workspace subdirectory.
-- Host Git commands no longer run programs configured by a sandbox through the workspace repository's `.git` directory.
-- Browser, clipboard, and self-update helpers run only from trusted system locations, preventing sandbox-writable directories on `PATH` from supplying those programs.
-- Local source kits are reused and composed only when their digests match recorded local builds. Each local source kit rebuilds once after upgrading.
-- Git kit references reject ambiguous paths, non-ASCII hostnames, and SSH transport syntax. Use IDNA ASCII labels for internationalized hostnames. HTTPS source restrictions are checked against the parsed URL host.
-- MCP OAuth requests block cross-origin credential redirects. Rejected silent refreshes preserve saved credentials without opening a browser.
-- Browser-open logs omit URL query strings and fragments, keeping OAuth parameters and tokens in those components out of daemon logs and diagnostic bundles.
-- Windows clients verify that the daemon's named pipes belong to the same Windows user. Before using the updated CLI, older elevated daemons may need to be stopped with the previous CLI or Task Manager.
-- Environment MCP commands require approval to execute on the host, remain scoped to their sandbox, and are disabled by `--skip-host-commands`. Approval notices explain that executable paths are pinned, but file contents are not. Keep executables and scripts outside writable sandbox mounts.
-- Gordon clears **Approve all** and **Always allow** grants when a conversation resumes, requiring approval before running tools again.
-@z
-
-@x
-#### Kits
-@y
-#### Kits
-@z
-
-@x
-- When creating a sandbox, use `--mount HOST:SANDBOX_PATH` with `sbx create` or `sbx run` to select a host directory for a kit-declared host mount. The sandbox target must exactly match the `path` of a `host-mount@1` capability declared by a kit in the resolved kit set. Environment files support the same bindings through `mounts`, mapping sandbox target paths to host directories. These options cannot add undeclared mount targets.
-- Persistent kit volumes retain data across kit updates and sandbox removal and recreation with the same name. This applies to sandboxes created with this version; existing sandbox records retain their previous storage behavior.
-- Creating a sandbox from a v3 kit set without a workload kit reports a clear explanation instead of "the kit set is not coherent."
-@y
-- When creating a sandbox, use `--mount HOST:SANDBOX_PATH` with `sbx create` or `sbx run` to select a host directory for a kit-declared host mount. The sandbox target must exactly match the `path` of a `host-mount@1` capability declared by a kit in the resolved kit set. Environment files support the same bindings through `mounts`, mapping sandbox target paths to host directories. These options cannot add undeclared mount targets.
-- Persistent kit volumes retain data across kit updates and sandbox removal and recreation with the same name. This applies to sandboxes created with this version; existing sandbox records retain their previous storage behavior.
-- Creating a sandbox from a v3 kit set without a workload kit reports a clear explanation instead of "the kit set is not coherent."
-@z
-
-@x
-#### Sandbox lifecycle and workspaces
-@y
-#### Sandbox lifecycle and workspaces
-@z
-
-@x
-- Host Git identity is copied into sandboxes for repositories that use the reftable ref format.
-- Sandboxes created with `--clone` preserve kit-provided workspace files and report clone initialization failures.
-- Canceling clone remote configuration preserves the cancellation error even if stopping Git also fails.
-@y
-- Host Git identity is copied into sandboxes for repositories that use the reftable ref format.
-- Sandboxes created with `--clone` preserve kit-provided workspace files and report clone initialization failures.
-- Canceling clone remote configuration preserves the cancellation error even if stopping Git also fails.
-@z
-
-@x
-#### Authentication and agents
-@y
-#### Authentication and agents
-@z
-
-@x
-- Kiro IDE AWS IAM Identity Center sign-in callbacks reach the sandbox even when the callback port hasn't been published.
-- Claude sandboxes using subscription OAuth are provisioned without the API-key helper.
-@y
-- Kiro IDE AWS IAM Identity Center sign-in callbacks reach the sandbox even when the callback port hasn't been published.
-- Claude sandboxes using subscription OAuth are provisioned without the API-key helper.
-@z
-
-@x
-#### Networking and policy
-@y
-#### Networking and policy
-@z
-
-@x
-- HTTP network rules support query-parameter restrictions. Repeat `--query name=value` to require multiple parameters.
-@y
-- HTTP network rules support query-parameter restrictions. Repeat `--query name=value` to require multiple parameters.
-@z
-
-@x
-#### Cloud sandboxes
-@y
-#### Cloud sandboxes
-@z
-
-@x
-- `sbx --cloud inspect <id|name>` shows details for a single cloud sandbox, including published port URLs. Use `--format json` or `--format yaml` for scripting.
-- Running `sbx --cloud run --name <name>` without an agent suggests the correct form: `sbx --cloud run <agent> --name <name>`.
-@y
-- `sbx --cloud inspect <id|name>` shows details for a single cloud sandbox, including published port URLs. Use `--format json` or `--format yaml` for scripting.
-- Running `sbx --cloud run --name <name>` without an agent suggests the correct form: `sbx --cloud run <agent> --name <name>`.
-@z
-
-@x
-#### CLI and diagnostics
-@y
-#### CLI and diagnostics
-@z
-
-@x
-- `sbx exec` returns exit status 125 when it cannot run the command, such as when the sandbox doesn't exist.
-- On macOS and Windows, `sbx diagnose` and daemon logs warn when `SSL_CERT_FILE` or `SSL_CERT_DIR` replaces the system trust store and can cause HTTPS certificate verification failures.
-@y
-- `sbx exec` returns exit status 125 when it cannot run the command, such as when the sandbox doesn't exist.
-- On macOS and Windows, `sbx diagnose` and daemon logs warn when `SSL_CERT_FILE` or `SSL_CERT_DIR` replaces the system trust store and can cause HTTPS certificate verification failures.
-@z
-
-@x
-#### Experimental Runtime backend
-@y
-#### Experimental Runtime backend
-@z
-
-@x
-- Workloads have network access.
-- Startup stops waiting and cleans up when a workload exits or fails before becoming ready.
-@y
-- Workloads have network access.
-- Startup stops waiting and cleans up when a workload exits or fails before becoming ready.
 @z
 
 @x

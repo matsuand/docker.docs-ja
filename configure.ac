@@ -216,6 +216,7 @@ AC_CONFIG_FILES([
 	src/content/manuals/accounts/organization/manage/Makefile
 	src/content/manuals/accounts/organization/setup/Makefile
 	src/content/manuals/agentic-platform/Makefile
+	src/content/manuals/agentic-platform/guides/Makefile
 	src/content/manuals/ai/Makefile
 	src/content/manuals/ai/docker-agent/Makefile
 	src/content/manuals/ai/governance/Makefile
@@ -254,8 +255,8 @@ AC_CONFIG_FILES([
 	src/content/manuals/build/cache/backends/Makefile
 	src/content/manuals/build/ci/Makefile
 	src/content/manuals/build/ci/github-actions/Makefile
-	src/content/manuals/build/ci/github-actions/github-builder/Makefile
-	src/content/manuals/build/ci/github-actions/github-builder/images/Makefile
+	src/content/manuals/build/ci/github-actions/github-builder-architecture/Makefile
+	src/content/manuals/build/ci/github-actions/github-builder-architecture/images/Makefile
 	src/content/manuals/build/ci/github-actions/images/Makefile
 	src/content/manuals/build/ci/images/Makefile
 	src/content/manuals/build/concepts/Makefile

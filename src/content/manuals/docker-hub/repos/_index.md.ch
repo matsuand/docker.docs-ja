@@ -79,12 +79,12 @@ In this section, learn how to:
 
 @x
    - [Image security insights](./manage/vulnerability-scanning.md): Utilize
-     continuous Docker Scout analysis and static vulnerability scanning to
-     detect, understand, and address security issues within container images.
+     continuous Docker Scout analysis to detect, understand, and address
+     security issues within container images.
 @y
    - [Image security insights](./manage/vulnerability-scanning.md): Utilize
-     continuous Docker Scout analysis and static vulnerability scanning to
-     detect, understand, and address security issues within container images.
+     continuous Docker Scout analysis to detect, understand, and address
+     security issues within container images.
 @z
 
 @x

@@ -51,7 +51,15 @@ configuration to it. Pass a sandbox kit in place of the agent name and add
 mixins with `--kit`:
 @z
 
-% snip command...
+@x
+```console
+$ sbx run ./my-agent --name my-project --kit ./team-config
+```
+@y
+```console
+$ sbx run ./my-agent --name my-project --kit ./team-config
+```
+@z
 
 @x
 `sbx run` uses your current directory as the workspace. Append a project path
@@ -1017,14 +1025,14 @@ listens on IPv6: an empty value publishes IPv4 only (`127.0.0.1`), which is what
 a service bound to `0.0.0.0` needs, while `tcp` publishes both `127.0.0.1` and
 `::1` — and a client arriving over `::1` is accepted and then reset if nothing
 in the sandbox is listening there. Users can pin host ports with
-`sbx ports --publish <host>:<container>`.
+`sbx port publish <SANDBOX> <HOST_PORT>:<SANDBOX_PORT>`.
 @y
 Host ports are allocated ephemerally. Leave `protocol` empty unless the service
 listens on IPv6: an empty value publishes IPv4 only (`127.0.0.1`), which is what
 a service bound to `0.0.0.0` needs, while `tcp` publishes both `127.0.0.1` and
 `::1` — and a client arriving over `::1` is accepted and then reset if nothing
 in the sandbox is listening there. Users can pin host ports with
-`sbx ports --publish <host>:<container>`.
+`sbx port publish <SANDBOX> <HOST_PORT>:<SANDBOX_PORT>`.
 @z
 
 @x

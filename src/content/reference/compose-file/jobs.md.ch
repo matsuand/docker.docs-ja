@@ -1,0 +1,446 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+title: Jobs
+description: Explore all the attributes the jobs top-level element can have, including triggers and schedules.
+keywords: compose, compose specification, jobs, triggers, schedule, cron, compose file reference
+@y
+title: Jobs
+description: Explore all the attributes the jobs top-level element can have, including triggers and schedules.
+keywords: compose, compose specification, jobs, triggers, schedule, cron, compose file reference
+@z
+
+@x
+      text: Experimental
+@y
+      text: 試験的
+@z
+
+@x
+{{< summary-bar feature_name="Compose jobs" >}}
+@y
+{{< summary-bar feature_name="Compose jobs" >}}
+@z
+
+@x
+The top-level `jobs` element declares containers that run to completion, such
+as database migrations and backups. A job runs when you start it with
+`docker compose run`, on a cron schedule, or both. Docker Engine records every
+execution of a job with its state and exit code.
+@y
+The top-level `jobs` element declares containers that run to completion, such
+as database migrations and backups. A job runs when you start it with
+`docker compose run`, on a cron schedule, or both. Docker Engine records every
+execution of a job with its state and exit code.
+@z
+
+@x
+`jobs` is a map whose keys are job names and whose values are job definitions.
+Job names can contain letters, digits, `.`, `_`, and `-`. A job name can't
+match the name of a service, because both are targets of `docker compose run`.
+@y
+`jobs` is a map whose keys are job names and whose values are job definitions.
+Job names can contain letters, digits, `.`, `_`, and `-`. A job name can't
+match the name of a service, because both are targets of `docker compose run`.
+@z
+
+@x
+> [!IMPORTANT]
+>
+> Jobs are experimental and need the
+> [jobs extension](/manuals/engine/daemon/jobs.md#turn-on-the-jobs-extension)
+> turned on in Docker Engine.
+@y
+> [!IMPORTANT]
+>
+> Jobs are experimental and need the
+> [jobs extension](manuals/engine/daemon/jobs.md#turn-on-the-jobs-extension)
+> turned on in Docker Engine.
+@z
+
+@x
+## Example
+@y
+## Example
+@z
+
+@x
+The following example declares a manual job and a scheduled job. Docker Engine
+runs `sync` every 5 minutes, waits for a run in progress to finish before it
+starts the next one, and skips the runs it missed while it was stopped:
+@y
+The following example declares a manual job and a scheduled job. Docker Engine
+runs `sync` every 5 minutes, waits for a run in progress to finish before it
+starts the next one, and skips the runs it missed while it was stopped:
+@z
+
+@x
+```yaml
+jobs:
+  migrate:
+    image: example/migrations
+    triggers:
+      manual: true
+@y
+```yaml
+jobs:
+  migrate:
+    image: example/migrations
+    triggers:
+      manual: true
+@z
+
+@x
+  sync:
+    image: example/sync
+    triggers:
+      schedule:
+        - cron: "*/5 * * * *"
+          concurrency: queue
+          missed_fires: skip
+```
+@y
+  sync:
+    image: example/sync
+    triggers:
+      schedule:
+        - cron: "*/5 * * * *"
+          concurrency: queue
+          missed_fires: skip
+```
+@z
+
+@x
+## Attributes
+@y
+## Attributes
+@z
+
+@x
+A job definition accepts the following attributes.
+@y
+A job definition accepts the following attributes.
+@z
+
+@x
+### Service attributes
+@y
+### Service attributes
+@z
+
+@x
+A job accepts every attribute of a [service](services.md) except the ones that
+manage the lifecycle of a long-running service:
+@y
+A job accepts every attribute of a [service](services.md) except the ones that
+manage the lifecycle of a long-running service:
+@z
+
+@x
+| Attribute                              | Why it doesn't apply                                    |
+| -------------------------------------- | ------------------------------------------------------- |
+| `deploy`, `scale`                      | A run is a single container; jobs have no replicas      |
+| `restart`                              | A job runs to completion; see `concurrency` instead     |
+| `post_start`, `pre_start`, `pre_stop`  | Lifecycle hooks of a long-running service               |
+| `container_name`                       | Each run creates its own container                      |
+| `attach`                               | `docker compose run` streams the output                 |
+| `develop`, `extends`, `provider`, `links`, `external_links` | Not supported for jobs           |
+@y
+| Attribute                              | Why it doesn't apply                                    |
+| -------------------------------------- | ------------------------------------------------------- |
+| `deploy`, `scale`                      | A run is a single container; jobs have no replicas      |
+| `restart`                              | A job runs to completion; see `concurrency` instead     |
+| `post_start`, `pre_start`, `pre_stop`  | Lifecycle hooks of a long-running service               |
+| `container_name`                       | Each run creates its own container                      |
+| `attach`                               | `docker compose run` streams the output                 |
+| `develop`, `extends`, `provider`, `links`, `external_links` | Not supported for jobs           |
+@z
+
+@x
+A job can set [`depends_on`](services.md#depends_on) to services and to other
+jobs. `docker compose run` starts the services and runs the jobs that a job
+depends on first. A job that another job depends on runs as a regular
+container and has no run record. Docker Engine doesn't evaluate `depends_on`
+when it starts a scheduled job. A service can't set `depends_on` to a job.
+@y
+A job can set [`depends_on`](services.md#depends_on) to services and to other
+jobs. `docker compose run` starts the services and runs the jobs that a job
+depends on first. A job that another job depends on runs as a regular
+container and has no run record. Docker Engine doesn't evaluate `depends_on`
+when it starts a scheduled job. A service can't set `depends_on` to a job.
+@z
+
+@x
+### `profiles`
+@y
+### `profiles`
+@z
+
+@x
+`profiles` defines a list of named profiles for the job. A job with
+`profiles` is only active when one of its profiles is active, unless you target
+it with `docker compose run`. In that case, Compose activates its profiles. See
+[Profiles](profiles.md).
+@y
+`profiles` defines a list of named profiles for the job. A job with
+`profiles` is only active when one of its profiles is active, unless you target
+it with `docker compose run`. In that case, Compose activates its profiles. See
+[Profiles](profiles.md).
+@z
+
+@x
+### `triggers`
+@y
+### `triggers`
+@z
+
+@x
+`triggers` defines when the job runs. It's required, and it must set `manual` or `schedule`.
+@y
+`triggers` defines when the job runs. It's required, and it must set `manual` or `schedule`.
+@z
+
+@x
+#### `manual`
+@y
+#### `manual`
+@z
+
+@x
+`triggers.manual` sets whether you can start the job with
+`docker compose run`. It's a boolean:
+@y
+`triggers.manual` sets whether you can start the job with
+`docker compose run`. It's a boolean:
+@z
+
+@x
+- Not set: you can start the job manually. This is the default.
+- `true`: manual invocation is the job's trigger. Use it for a job that has no schedule. Compose rejects `manual: true` together with `schedule`, because the job would then declare two triggers.
+- `false`: you can't start the job manually. `docker compose run` fails,
+  including when another job depends on this one. Pair it with a `schedule`, otherwise the job never runs.
+@y
+- Not set: you can start the job manually. This is the default.
+- `true`: manual invocation is the job's trigger. Use it for a job that has no schedule. Compose rejects `manual: true` together with `schedule`, because the job would then declare two triggers.
+- `false`: you can't start the job manually. `docker compose run` fails,
+  including when another job depends on this one. Pair it with a `schedule`, otherwise the job never runs.
+@z
+
+@x
+```yaml
+jobs:
+  rotate-logs:
+    image: example/rotate
+    triggers:
+      manual: false
+      schedule:
+        - cron: "0 0 1 * *"
+```
+@y
+```yaml
+jobs:
+  rotate-logs:
+    image: example/rotate
+    triggers:
+      manual: false
+      schedule:
+        - cron: "0 0 1 * *"
+```
+@z
+
+@x
+#### `schedule`
+@y
+#### `schedule`
+@z
+
+@x
+`triggers.schedule` is a list of schedules on which Docker Engine runs the job.
+Compose supports one entry for each job. An entry is either a cron expression
+written as a string, or a mapping with the attributes that follow.
+@y
+`triggers.schedule` is a list of schedules on which Docker Engine runs the job.
+Compose supports one entry for each job. An entry is either a cron expression
+written as a string, or a mapping with the attributes that follow.
+@z
+
+@x
+The following two jobs have the same schedule:
+@y
+The following two jobs have the same schedule:
+@z
+
+@x
+```yaml
+jobs:
+  short-syntax:
+    image: example/job
+    triggers:
+      schedule:
+        - "*/10 * * * *"
+@y
+```yaml
+jobs:
+  short-syntax:
+    image: example/job
+    triggers:
+      schedule:
+        - "*/10 * * * *"
+@z
+
+@x
+  long-syntax:
+    image: example/job
+    triggers:
+      schedule:
+        - cron: "*/10 * * * *"
+```
+@y
+  long-syntax:
+    image: example/job
+    triggers:
+      schedule:
+        - cron: "*/10 * * * *"
+```
+@z
+
+@x
+A manual run of a scheduled job is an extra run. It doesn't change the time of
+the next scheduled run.
+@y
+A manual run of a scheduled job is an extra run. It doesn't change the time of
+the next scheduled run.
+@z
+
+@x
+Docker Engine parses the cron expression when `docker compose up` registers the
+job, so an invalid expression fails then and not when Compose loads the file. A
+second entry fails at the same moment.
+@y
+Docker Engine parses the cron expression when `docker compose up` registers the
+job, so an invalid expression fails then and not when Compose loads the file. A
+second entry fails at the same moment.
+@z
+
+@x
+##### `cron`
+@y
+##### `cron`
+@z
+
+@x
+`cron` is required. It's a crontab expression with five fields separated by
+spaces: minute, hour, day of the month, month, and day of the week.
+@y
+`cron` is required. It's a crontab expression with five fields separated by
+spaces: minute, hour, day of the month, month, and day of the week.
+@z
+
+@x
+| Field        | Accepted values               |
+| ------------ | ----------------------------- |
+| Minute       | 0-59                          |
+| Hour         | 0-23                          |
+| Day of month | 1-31                          |
+| Month        | 1-12                          |
+| Day of week  | 0-7, where 0 and 7 are Sunday |
+@y
+| Field        | Accepted values               |
+| ------------ | ----------------------------- |
+| Minute       | 0-59                          |
+| Hour         | 0-23                          |
+| Day of month | 1-31                          |
+| Month        | 1-12                          |
+| Day of week  | 0-7, where 0 and 7 are Sunday |
+@z
+
+@x
+Each field accepts numbers, lists such as `1,15`, ranges such as `1-5`, and
+steps such as `*/10` or `0-30/10`. Names such as `mon` or `jan` and shortcuts
+such as `@daily` aren't supported. When both the day of the month and the day
+of the week are restricted, the job runs on days that match either field.
+@y
+Each field accepts numbers, lists such as `1,15`, ranges such as `1-5`, and
+steps such as `*/10` or `0-30/10`. Names such as `mon` or `jan` and shortcuts
+such as `@daily` aren't supported. When both the day of the month and the day
+of the week are restricted, the job runs on days that match either field.
+@z
+
+@x
+##### `timezone`
+@y
+##### `timezone`
+@z
+
+@x
+`timezone` is the IANA time zone name that Docker Engine uses to evaluate
+`cron`, for example `Europe/Paris`. When it's not set, Docker Engine uses UTC.
+@y
+`timezone` is the IANA time zone name that Docker Engine uses to evaluate
+`cron`, for example `Europe/Paris`. When it's not set, Docker Engine uses UTC.
+@z
+
+@x
+##### `concurrency`
+@y
+##### `concurrency`
+@z
+
+@x
+`concurrency` sets what happens when the schedule fires while the previous run
+of the job is still in progress. The value is one of:
+@y
+`concurrency` sets what happens when the schedule fires while the previous run
+of the job is still in progress. The value is one of:
+@z
+
+@x
+- `forbid` skips the new run. This is the default.
+- `queue` waits for the current run to finish and then starts a single new
+  run.
+@y
+- `forbid` skips the new run. This is the default.
+- `queue` waits for the current run to finish and then starts a single new
+  run.
+@z
+
+@x
+##### `missed_fires`
+@y
+##### `missed_fires`
+@z
+
+@x
+`missed_fires` sets what happens to runs that were due while Docker Engine was
+stopped. The value is one of:
+@y
+`missed_fires` sets what happens to runs that were due while Docker Engine was
+stopped. The value is one of:
+@z
+
+@x
+- `one` starts a single catch-up run when Docker Engine starts again. This is
+  the default.
+- `skip` drops the missed runs.
+@y
+- `one` starts a single catch-up run when Docker Engine starts again. This is
+  the default.
+- `skip` drops the missed runs.
+@z
+
+@x
+## Additional resources
+@y
+## Additional resources
+@z
+
+@x
+- For a walkthrough, see [Run jobs in Compose](/manuals/compose/how-tos/jobs.md).
+- To turn on jobs in Docker Engine, see [Manage jobs in Docker Engine](/manuals/engine/daemon/jobs.md).
+- For how jobs interact with profiles, see [Profiles](profiles.md).
+@y
+- For a walkthrough, see [Run jobs in Compose](manuals/compose/how-tos/jobs.md).
+- To turn on jobs in Docker Engine, see [Manage jobs in Docker Engine](manuals/engine/daemon/jobs.md).
+- For how jobs interact with profiles, see [Profiles](profiles.md).
+@z
