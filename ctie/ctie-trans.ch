@@ -39,6 +39,12 @@ extern char *strerror();
 @y
 @z
 
+@x [28] l.585
+void err_print();
+@y
+void err_print (file_index, char *);
+@z
+
 @x [35] l.697
 void pfatal_error();
 @y
@@ -56,4 +62,18 @@ void pfatal_error (const char *s, const char *t)
     if (ccode=='y' || ccode=='z' || ccode=='i') {
 @y
     if (ccode=='y' || ccode=='z') {
+@z
+
+@x [67] l.1233
+void usage_help();
+void print_version_and_exit();
+@y
+void usage_help (void);
+void print_version_and_exit (string, string);
+@z
+
+@x [68] l.1238
+void usage_help()
+@y
+void usage_help (void)
 @z

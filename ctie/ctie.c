@@ -127,7 +127,9 @@ int dont_match;
 /*28:*/
 #line 584 "ctie.w"
 
-void err_print();
+#line 45 "ctie-trans.ch"
+void err_print(file_index,char*);
+#line 586 "ctie.w"
 
 /*:28*//*33:*/
 #line 673 "ctie.w"
@@ -137,15 +139,17 @@ int wrap_up();
 /*:33*//*35:*/
 #line 696 "ctie.w"
 
-#line 45 "ctie-trans.ch"
+#line 51 "ctie-trans.ch"
 void pfatal_error(const char*,const char*);
 #line 698 "ctie.w"
 
 /*:35*//*67:*/
 #line 1232 "ctie.w"
 
-void usage_help();
-void print_version_and_exit();
+#line 71 "ctie-trans.ch"
+void usage_help(void);
+void print_version_and_exit(string,string);
+#line 1235 "ctie.w"
 
 
 /*:67*/
@@ -261,7 +265,7 @@ history= troublesome;
 /*:29*//*36:*/
 #line 699 "ctie.w"
 
-#line 52 "ctie-trans.ch"
+#line 58 "ctie-trans.ch"
 void pfatal_error(const char*s,const char*t)
 #line 702 "ctie.w"
 {
@@ -493,7 +497,7 @@ if(inp_desc->buffer[0]!='@')continue;
 ccode= inp_desc->buffer[1];
 if(xisupper(ccode))ccode= tolower(ccode);
 if(ccode=='x')break;
-#line 58 "ctie-trans.ch"
+#line 64 "ctie-trans.ch"
 if(ccode=='y'||ccode=='z'){
 #line 836 "ctie.w"
 inp_desc->loc= inp_desc->buffer+2;
@@ -967,7 +971,9 @@ exit(wrap_up());
 /*:2*//*68:*/
 #line 1237 "ctie.w"
 
-void usage_help()
+#line 78 "ctie-trans.ch"
+void usage_help(void)
+#line 1239 "ctie.w"
 {
 string*message= CTIEHELP;
 
