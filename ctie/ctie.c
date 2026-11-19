@@ -28,7 +28,11 @@ exit(wrap_up()); \
 /*8:*/
 #line 172 "ctie.w"
 
+#line 30 "ctie-trans.ch"
 #include <stdio.h> 
+#include <ctype.h> 
+#include <string.h> 
+#line 174 "ctie.w"
 
 
 /*:8*//*9:*/
@@ -120,17 +124,7 @@ int dont_match;
 /*:14*/
 #line 91 "ctie.w"
 
-/*5:*/
-#line 134 "ctie.w"
-
-extern int strlen();
-extern char*strcpy();
-extern int strncmp();
-extern char*strncpy();
-extern char*strerror();
-
-
-/*:5*//*28:*/
+/*28:*/
 #line 584 "ctie.w"
 
 void err_print();
@@ -143,7 +137,9 @@ int wrap_up();
 /*:33*//*35:*/
 #line 696 "ctie.w"
 
-void pfatal_error();
+#line 45 "ctie-trans.ch"
+void pfatal_error(const char*,const char*);
+#line 698 "ctie.w"
 
 /*:35*//*67:*/
 #line 1232 "ctie.w"
@@ -265,8 +261,9 @@ history= troublesome;
 /*:29*//*36:*/
 #line 699 "ctie.w"
 
-void pfatal_error(s,t)
-char*s,*t;
+#line 52 "ctie-trans.ch"
+void pfatal_error(const char*s,const char*t)
+#line 702 "ctie.w"
 {
 char*strerr= strerror(errno);
 
@@ -496,7 +493,7 @@ if(inp_desc->buffer[0]!='@')continue;
 ccode= inp_desc->buffer[1];
 if(xisupper(ccode))ccode= tolower(ccode);
 if(ccode=='x')break;
-#line 17 "ctie-slim.ch"
+#line 58 "ctie-trans.ch"
 if(ccode=='y'||ccode=='z'){
 #line 836 "ctie.w"
 inp_desc->loc= inp_desc->buffer+2;
@@ -610,7 +607,9 @@ exit(1);
 /*3:*/
 #line 101 "ctie.w"
 
-main(argc,argv)
+#line 8 "ctie-trans.ch"
+int main(argc,argv)
+#line 103 "ctie.w"
 int argc;string*argv;
 {
 /*17:*/
