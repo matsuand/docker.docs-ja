@@ -5,7 +5,8 @@
 copyfiles = \
 	accordion.html \
 	badge.html     \
-	card.html
+	card.html      \
+	image.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk

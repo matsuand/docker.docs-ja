@@ -9,7 +9,6 @@ bases = \
 	desktop_release.yaml         \
 	frontmatter.yaml             \
 	redirects.yml                \
-	samples.yaml                 \
 	summary.yaml                 \
 	tags.yaml                    \
 	whats-new.json
@@ -21,3 +20,13 @@ copyfiles = \
 	api-reference.json
 
 include $(top_srcdir)/build-aux/copy.mk
+
+copydirs = \
+	navigation
+
+_copydirs:
+	@for d in $(copydirs); do \
+	  if test ! -d $$d; then \
+	    cp -pR $(absORIGDIR)/$$d .; \
+	  fi \
+	done

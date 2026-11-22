@@ -107,9 +107,9 @@ To import the build record archive into Docker Desktop:
 @z
 
 @x
-1. Download and install [Docker Desktop](/get-started/get-docker.md).
+1. Download and install [Docker Desktop](/get-docker/_index.md).
 @y
-1. Download and install [Docker Desktop](get-started/get-docker.md).
+1. Download and install [Docker Desktop](get-docker/_index.md).
 @z
 
 @x

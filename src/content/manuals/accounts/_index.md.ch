@@ -20,48 +20,48 @@ keywords: accounts, admin, Docker ID, organization, company, Docker Home,
 @x
   - title: Docker individual accounts
     description: Create and manage your Docker ID, email, and sign-in methods.
-    icon: user-circle
+    icon: circle-user
     link: /accounts/individual/
 @y
   - title: Docker individual accounts
     description: Create and manage your Docker ID, email, and sign-in methods.
-    icon: user-circle
+    icon: circle-user
     link: __SUBDIR__/accounts/individual/
 @z
 
 @x
   - title: Organization accounts
     description: Manage members, teams, and organization settings.
-    icon: building-storefront
+    icon: store
     link: /accounts/organization/
 @y
   - title: Organization accounts
     description: Manage members, teams, and organization settings.
-    icon: building-storefront
+    icon: store
     link: __SUBDIR__/accounts/organization/
 @z
 
 @x
   - title: Company accounts
     description: Group multiple organizations for centralized administration.
-    icon: building-office-2
+    icon: building-2
     link: /accounts/company/
 @y
   - title: Company accounts
     description: Group multiple organizations for centralized administration.
-    icon: building-office-2
+    icon: building-2
     link: __SUBDIR__/accounts/company/
 @z
 
 @x
   - title: Security
     description: Authentication, tokens, and roles for accounts and organizations.
-    icon: lock-closed
+    icon: lock
     link: /security/
 @y
   - title: Security
     description: Authentication, tokens, and roles for accounts and organizations.
-    icon: lock-closed
+    icon: lock
     link: __SUBDIR__/security/
 @z
 
@@ -80,12 +80,12 @@ keywords: accounts, admin, Docker ID, organization, company, Docker Home,
 @x
   - title: FAQs
     description: Common questions about accounts, billing, and security.
-    icon: question-mark-circle
+    icon: circle-help
     link: /faqs/
 @y
   - title: FAQs
     description: Common questions about accounts, billing, and security.
-    icon: question-mark-circle
+    icon: circle-help
     link: __SUBDIR__/faqs/
 @z
 

@@ -69,11 +69,11 @@ example, run Docker's published v3 Codex workload:
 
 @x
 ```console
-$ sbx run docker.io/docker/sbx-kit-codex:0.155.1 --name codex-v3-kit
+$ sbx run docker.io/sbx/codex:0.155.1 --name codex-v3-kit
 ```
 @y
 ```console
-$ sbx run docker.io/docker/sbx-kit-codex:0.155.1 --name codex-v3-kit
+$ sbx run docker.io/sbx/codex:0.155.1 --name codex-v3-kit
 ```
 @z
 
@@ -93,50 +93,50 @@ also select one of these versioned workloads to pin an agent version.
 
 @x
 A workload's agent name comes from the last component of its repository name.
-For example, `docker/sbx-kit-claude` registers `sbx-kit-claude`.
+For example, `sbx/claude` registers `claude`.
 Changing the sandbox's `--name` doesn't change the agent name.
 @y
 A workload's agent name comes from the last component of its repository name.
-For example, `docker/sbx-kit-claude` registers `sbx-kit-claude`.
+For example, `sbx/claude` registers `claude`.
 Changing the sandbox's `--name` doesn't change the agent name.
 @z
 
 @x
 | Built-in agent | V3 workload OCI reference |
 | --- | --- |
-| `claude` | `docker.io/docker/sbx-kit-claude:2.1.267` |
-| `codex` | `docker.io/docker/sbx-kit-codex:0.155.1` |
-| `copilot` | `docker.io/docker/sbx-kit-copilot:1.0.86` |
-| `cursor` | `docker.io/docker/sbx-kit-cursor:2026.09.18-9a7762b` |
-| `devin` | `docker.io/docker/sbx-kit-devin:3000.10.31` |
-| `docker-agent` | `docker.io/docker/sbx-kit-docker-agent:1.141.0` |
-| `droid` | `docker.io/docker/sbx-kit-droid:0.223.0` |
-| `kiro` | `docker.io/docker/sbx-kit-kiro:1.0.0` |
-| `opencode` | `docker.io/docker/sbx-kit-opencode:1.18.31` |
-| `shell` | `docker.io/docker/sbx-kit-shell:1.0.0` |
+| `claude` | `docker.io/sbx/claude:2.1.267` |
+| `codex` | `docker.io/sbx/codex:0.155.1` |
+| `copilot` | `docker.io/sbx/copilot:1.0.86` |
+| `cursor` | `docker.io/sbx/cursor:2026.09.18-9a7762b` |
+| `devin` | `docker.io/sbx/devin:3000.10.31` |
+| `docker-agent` | `docker.io/sbx/docker-agent:1.141.0` |
+| `droid` | `docker.io/sbx/droid:0.223.0` |
+| `kiro` | `docker.io/sbx/kiro:1.0.0` |
+| `opencode` | `docker.io/sbx/opencode:1.18.31` |
+| `shell` | `docker.io/sbx/shell:1.0.0` |
 @y
 | Built-in agent | V3 workload OCI reference |
 | --- | --- |
-| `claude` | `docker.io/docker/sbx-kit-claude:2.1.267` |
-| `codex` | `docker.io/docker/sbx-kit-codex:0.155.1` |
-| `copilot` | `docker.io/docker/sbx-kit-copilot:1.0.86` |
-| `cursor` | `docker.io/docker/sbx-kit-cursor:2026.09.18-9a7762b` |
-| `devin` | `docker.io/docker/sbx-kit-devin:3000.10.31` |
-| `docker-agent` | `docker.io/docker/sbx-kit-docker-agent:1.141.0` |
-| `droid` | `docker.io/docker/sbx-kit-droid:0.223.0` |
-| `kiro` | `docker.io/docker/sbx-kit-kiro:1.0.0` |
-| `opencode` | `docker.io/docker/sbx-kit-opencode:1.18.31` |
-| `shell` | `docker.io/docker/sbx-kit-shell:1.0.0` |
+| `claude` | `docker.io/sbx/claude:2.1.267` |
+| `codex` | `docker.io/sbx/codex:0.155.1` |
+| `copilot` | `docker.io/sbx/copilot:1.0.86` |
+| `cursor` | `docker.io/sbx/cursor:2026.09.18-9a7762b` |
+| `devin` | `docker.io/sbx/devin:3000.10.31` |
+| `docker-agent` | `docker.io/sbx/docker-agent:1.141.0` |
+| `droid` | `docker.io/sbx/droid:0.223.0` |
+| `kiro` | `docker.io/sbx/kiro:1.0.0` |
+| `opencode` | `docker.io/sbx/opencode:1.18.31` |
+| `shell` | `docker.io/sbx/shell:1.0.0` |
 @z
 
 @x
 For a [sandbox environment file](/manuals/ai/sandboxes/configuration/environment-files.md),
 list the workload reference under `kits` and set `agent` to its repository
-name, such as `sbx-kit-claude`.
+name, such as `claude`.
 @y
 For a [sandbox environment file](manuals/ai/sandboxes/configuration/environment-files.md),
 list the workload reference under `kits` and set `agent` to its repository
-name, such as `sbx-kit-claude`.
+name, such as `claude`.
 @z
 
 @x
@@ -831,6 +831,96 @@ For how to preserve storage when changing a kit, see
 @y
 For how to preserve storage when changing a kit, see
 [Configure the volume](author/patterns.md#configure-the-volume).
+@z
+
+@x
+### Preserve Claude Code and Codex conversations
+@y
+### Preserve Claude Code and Codex conversations
+@z
+
+@x
+For local sandboxes, add a session mixin to keep conversations after removing
+and recreating the sandbox, including when you use `--rm`. Choose the mixin
+that matches your agent:
+@y
+For local sandboxes, add a session mixin to keep conversations after removing
+and recreating the sandbox, including when you use `--rm`. Choose the mixin
+that matches your agent:
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Claude Code" >}}
+@y
+{{< tabs >}}
+{{< tab name="Claude Code" >}}
+@z
+
+@x
+```console
+$ sbx run --rm claude --kit sbx/claude-sessions:1.0.0
+```
+@y
+```console
+$ sbx run --rm claude --kit sbx/claude-sessions:1.0.0
+```
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Codex" >}}
+@y
+{{< /tab >}}
+{{< tab name="Codex" >}}
+@z
+
+@x
+```console
+$ sbx run --rm codex --kit sbx/codex-sessions:1.0.0
+```
+@y
+```console
+$ sbx run --rm codex --kit sbx/codex-sessions:1.0.0
+```
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
+Start a conversation, then enter `/exit`. Run the same command again from the
+same project directory and enter `/resume` inside the agent to select the saved
+conversation.
+@y
+Start a conversation, then enter `/exit`. Run the same command again from the
+same project directory and enter `/resume` inside the agent to select the saved
+conversation.
+@z
+
+@x
+The mixins use host directories managed by Docker Sandboxes to store session
+state. They don't share conversations with Claude Code or Codex running directly
+on your host. Include the session mixin each time you recreate the sandbox.
+@y
+The mixins use host directories managed by Docker Sandboxes to store session
+state. They don't share conversations with Claude Code or Codex running directly
+on your host. Include the session mixin each time you recreate the sandbox.
+@z
+
+@x
+To choose a host directory, see [Choose directories for kit host mounts](#choose-directories-for-kit-host-mounts).
+The sandbox mount paths are `/home/agent/claude-history` for Claude Code and
+`/home/agent/codex-history` for Codex.
+@y
+To choose a host directory, see [Choose directories for kit host mounts](#choose-directories-for-kit-host-mounts).
+The sandbox mount paths are `/home/agent/claude-history` for Claude Code and
+`/home/agent/codex-history` for Codex.
 @z
 
 @x

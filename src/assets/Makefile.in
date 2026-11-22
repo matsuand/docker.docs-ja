@@ -293,7 +293,13 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = api-reference css icons images js
+SUBDIRS = css js
+THISDIR = assets
+copydirs = \
+	api-reference \
+	icons         \
+	images
+
 all: all-recursive
 
 .SUFFIXES:
@@ -600,6 +606,16 @@ uninstall-am:
 
 .PRECIOUS: Makefile
 
+
+.PHONY: all _copydirs
+all: _copydirs
+
+_copydirs:
+	@for d in $(copydirs); do \
+	  if test ! -d $$d; then \
+	    cp -pR $(absORIGDIR)/$(THISDIR)/$$d .; \
+	  fi \
+	done
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

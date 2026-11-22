@@ -28,24 +28,24 @@ keywords: company, multiple organizations, Docker Home, Docker Business,
 @x
   - title: Set up a company
     description: Create a company, invite members, add organizations, and manage owners.
-    icon: building-office-2
+    icon: building-2
     link: /accounts/company/new-company/
 @y
   - title: Set up a company
     description: Create a company, invite members, add organizations, and manage owners.
-    icon: building-office-2
+    icon: building-2
     link: __SUBDIR__/accounts/company/new-company/
 @z
 
 @x
   - title: Manage your company
     description: Change roles, remove users, and export a member list.
-    icon: building-storefront
+    icon: store
     link: /accounts/company/manage/
 @y
   - title: Manage your company
     description: Change roles, remove users, and export a member list.
-    icon: building-storefront
+    icon: store
     link: __SUBDIR__/accounts/company/manage/
 @z
 
@@ -64,12 +64,12 @@ keywords: company, multiple organizations, Docker Home, Docker Business,
 @x
   - title: Domain management
     description: Add and verify your company's domains.
-    icon: check-badge
+    icon: check-verified
     link: /security/provisioning/domain-management/
 @y
   - title: Domain management
     description: Add and verify your company's domains.
-    icon: check-badge
+    icon: check-verified
     link: __SUBDIR__/security/provisioning/domain-management/
 @z
 
@@ -77,12 +77,12 @@ keywords: company, multiple organizations, Docker Home, Docker Business,
   - title: FAQs
     description: Explore frequently asked questions about companies.
     link: /faqs/accounts/
-    icon: question-mark-circle
+    icon: circle-help
 @y
   - title: FAQ
     description: Explore frequently asked questions about companies.
     link: __SUBDIR__/faqs/accounts/
-    icon: question-mark-circle
+    icon: circle-help
 @z
 
 @x

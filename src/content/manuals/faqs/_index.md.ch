@@ -18,24 +18,24 @@ keywords: FAQ, FAQs, accounts, Docker ID, Docker Home, subscription FAQs, billin
 @x
   - title: Account FAQs
     description: FAQs about Docker IDs, account creation, organizations, and companies.
-    icon: question-mark-circle
+    icon: circle-help
     link: /faqs/accounts/
 @y
   - title: Account FAQs
     description: FAQs about Docker IDs, account creation, organizations, and companies.
-    icon: question-mark-circle
+    icon: circle-help
     link: __SUBDIR__/faqs/accounts/
 @z
 
 @x
   - title: Security FAQs
     description: FAQs about single sign-on, identity providers, enforcement, and domains.
-    icon: lock-closed
+    icon: lock
     link: /faqs/security/
 @y
   - title: Security FAQs
     description: FAQs about single sign-on, identity providers, enforcement, and domains.
-    icon: lock-closed
+    icon: lock
     link: __SUBDIR__/faqs/security/
 @z
 
@@ -54,12 +54,12 @@ keywords: FAQ, FAQs, accounts, Docker ID, Docker Home, subscription FAQs, billin
 @x
   - title: Platform FAQs
     description: FAQs about Docker Desktop containers, networking, VMs, and general platform security.
-    icon: cpu-chip
+    icon: cpu
     link: /faqs/platform/
 @y
   - title: Platform FAQs
     description: FAQs about Docker Desktop containers, networking, VMs, and general platform security.
-    icon: cpu-chip
+    icon: cpu
     link: __SUBDIR__/faqs/platform/
 @z
 

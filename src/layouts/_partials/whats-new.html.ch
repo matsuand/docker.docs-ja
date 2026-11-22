@@ -2,31 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-          What's new
+    <h2 id="whats-new-title">What's new</h2>
 @y
-          更新情報
+    <h2 id="whats-new-title">最新情報</h2>
 @z
 
 @x
-              >{{ .published | time.Format "Jan 2" }}</time
+            <h3><a href="{{ .url }}">{{ .title }}</a></h3>
 @y
-              >{{ .published | time.Format "01/02" }}</time
+            <h3><a href="__SUBDIR__{{ .url }}">{{ .title }}</a></h3>
 @z
 
 @x
-              href="{{ .url }}"
+        <span x-text="expanded ? 'Show less' : 'Show more'">Show more</span>
 @y
-              href="{{ add "__SUBDIR__" .url }} "
-@z
-
-@x
-                  >{{ .published | time.Format "Jan 2" }}</time
-@y
-                  >{{ .published | time.Format "01/02" }}</time
-@z
-
-@x
-          <span x-text="expanded ? 'Show less' : 'Show more'">Show more</span>
-@y
-          <span x-text="expanded ? '一部を表示' : 'すべてを表示'">すべてを表示</span>
+        <span x-text="expanded ? '元に戻す' : 'さらに表示'">さらに表示</span>
 @z

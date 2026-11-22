@@ -103,15 +103,15 @@ be UPPERCASE to distinguish them from arguments more easily.
 Docker runs instructions in a Dockerfile in order. A Dockerfile **must
 begin with a `FROM` instruction**. This may be after [parser
 directives](#parser-directives), [comments](#format), and globally scoped
-[ARGs](#arg). The `FROM` instruction specifies the [base
-image](https://docs.docker.com/glossary/#base-image) from which you are
+[ARGs](#arg). The `FROM` instruction specifies the base
+image from which you are
 building. `FROM` may only be preceded by one or more `ARG` instructions, which
 declare arguments that are used in `FROM` lines in the Dockerfile.
 @y
 Docker は Dockerfile 内の命令を記述順に実行します。
 Dockerfile は **必ず `FROM` 命令で始めなければなりません** 。
 この命令より前に記述できるのは、[パーサーディレクティブ](#parser-directives)、[コメント](#format)、グローバル定義された [ARG](#arg) です。
-`FROM` 命令は、ビルドするイメージに対しての [ベースイメージ]({{ site.BaseURL }}/reference/glossary.md#base-image) を指定するものです。
+`FROM` 命令は、ビルドするイメージに対してのベースイメージを指定するものです。
 `FROM` よりも先に記述できる命令として `ARG` があります。
 これは `FROM` において用いられる引数を宣言するものです。
 @z
@@ -953,12 +953,12 @@ Or
 
 @x
 The `FROM` instruction initializes a new build stage and sets the
-[base image](https://docs.docker.com/glossary/#base-image) for subsequent
+base image for subsequent
 instructions. As such, a valid Dockerfile must start with a `FROM` instruction.
 The image can be any valid image.
 @y
 The `FROM` instruction initializes a new build stage and sets the
-[base image](https://docs.docker.com/glossary/#base-image) for subsequent
+base image for subsequent
 instructions. As such, a valid Dockerfile must start with a `FROM` instruction.
 The image can be any valid image.
 @z

@@ -916,7 +916,7 @@ again when you switch back.
 
 @x
 - Explore [Docker's subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopWindowsInstall) to see what Docker can offer you.
-- [Build and share a containerized application](/get-started/tutorials/run-an-app.md).
+- [Build and share a containerized application](https://docs.docker.com/learn/paths/get-started-with-docker-containers/).
 - [Explore Docker Desktop](/manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, and
   how to get support.
@@ -925,7 +925,7 @@ again when you switch back.
 - [Back up and restore data](/manuals/desktop/settings-and-maintenance/backup-and-restore.md) provides instructions on backing up and restoring data related to Docker.
 @y
 - Explore [Docker's subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopWindowsInstall) to see what Docker can offer you.
-- [Build and share a containerized application](/get-started/tutorials/run-an-app.md).
+- [Build and share a containerized application](https://docs.docker.com/learn/paths/get-started-with-docker-containers/).
 - [Explore Docker Desktop](manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, and
   how to get support.

@@ -54,11 +54,11 @@ differs:
 @z
 
 @x
-US customers submit a support ticket with a valid tax exemption certificate
+US customers submit a support case with a valid tax exemption certificate
 to receive tax-exempt status. Docker reviews the certificate and applies the
 exemption to your billing profile. You can apply for tax-exempt status:
 @y
-US customers submit a support ticket with a valid tax exemption certificate
+US customers submit a support case with a valid tax exemption certificate
 to receive tax-exempt status. Docker reviews the certificate and applies the
 exemption to your billing profile. You can apply for tax-exempt status:
 @z
@@ -66,12 +66,12 @@ exemption to your billing profile. You can apply for tax-exempt status:
 @x
 - Before you purchase, submit your certificate and wait for Docker to approve
   it. After approval, you can purchase without sales tax.
-- If you were charged sales tax, open a support ticket to coordinate with
+- If you were charged sales tax, open a support case to coordinate with
   Docker Support on exempt status.
 @y
 - Before you purchase, submit your certificate and wait for Docker to approve
   it. After approval, you can purchase without sales tax.
-- If you were charged sales tax, open a support ticket to coordinate with
+- If you were charged sales tax, open a support case to coordinate with
   Docker Support on exempt status.
 @z
 
@@ -148,9 +148,9 @@ Palo Alto, CA 94306
 @z
 
 @x
-1. [Submit a Docker Support ticket](https://hub.docker.com/support/contact?topic=Billing&subtopic=Tax%20information)
+1. [Submit a Docker Support case](https://hub.docker.com/support/contact?topic=Billing&subtopic=Tax%20information)
    to start the tax certificate registration process.
-1. Enter **Tax certificate** as the support ticket **Subject**.
+1. Enter **Tax certificate** as the support case **Subject**.
 1. In the **Details** field, enter **Submitting a tax certificate**.
 1. Follow the instructions that appear for submitting a tax certificate.
 1. Complete all required fields on the support form.
@@ -158,9 +158,9 @@ Palo Alto, CA 94306
    the file, or selecting **Browse files**.
 1. Select **Submit**.
 @y
-1. [Submit a Docker Support ticket](https://hub.docker.com/support/contact?topic=Billing&subtopic=Tax%20information)
+1. [Submit a Docker Support case](https://hub.docker.com/support/contact?topic=Billing&subtopic=Tax%20information)
    to start the tax certificate registration process.
-1. Enter **Tax certificate** as the support ticket **Subject**.
+1. Enter **Tax certificate** as the support case **Subject**.
 1. In the **Details** field, enter **Submitting a tax certificate**.
 1. Follow the instructions that appear for submitting a tax certificate.
 1. Complete all required fields on the support form.
@@ -186,11 +186,11 @@ an email confirmation after applying the tax exemption status to your account.
 @x
 When you select a VAT-applicable country during checkout, a tax ID field
 appears. Customers in VAT countries enter their tax ID or VAT number
-during checkout without opening a support ticket.
+during checkout without opening a support case.
 @y
 When you select a VAT-applicable country during checkout, a tax ID field
 appears. Customers in VAT countries enter their tax ID or VAT number
-during checkout without opening a support ticket.
+during checkout without opening a support case.
 @z
 
 @x

@@ -30,72 +30,72 @@ keywords: Docker ID, username, email, Google, GitHub, sign-in,
 @x
   - title: Set up your account
     description: Create a Docker account with email, Google, or GitHub.
-    icon: finger-print
+    icon: fingerprint
     link: /accounts/individual/create-account/
 @y
   - title: Set up your account
     description: Create a Docker account with email, Google, or GitHub.
-    icon: finger-print
+    icon: fingerprint
     link: __SUBDIR__/accounts/individual/create-account/
 @z
 
 @x
   - title: Manage account
     description: Update your profile, email, password, and connected accounts.
-    icon: cog
+    icon: settings
     link: /accounts/individual/manage-account/
 @y
   - title: Manage account
     description: Update your profile, email, password, and connected accounts.
-    icon: cog
+    icon: settings
     link: __SUBDIR__/accounts/individual/manage-account/
 @z
 
 @x
   - title: Personal access tokens
     description: Create and manage personal access tokens.
-    icon: lock-closed
+    icon: lock
     link: /security/access-tokens/
 @y
   - title: Personal access tokens
     description: Create and manage personal access tokens.
-    icon: lock-closed
+    icon: lock
     link: __SUBDIR__/security/access-tokens/
 @z
 
 @x
   - title: Manage two-factor authentication
     description: Turn two-factor authentication on or off.
-    icon: device-phone-mobile
+    icon: smartphone
     link: /security/authentication/2fa/manage/
 @y
   - title: Manage two-factor authentication
     description: Turn two-factor authentication on or off.
-    icon: device-phone-mobile
+    icon: smartphone
     link: __SUBDIR__/security/authentication/2fa/manage/
 @z
 
 @x
   - title: Organization accounts
     description: Create and manage organization accounts.
-    icon: building-storefront
+    icon: store
     link: /accounts/organization/
 @y
   - title: Organization accounts
     description: Create and manage organization accounts.
-    icon: building-storefront
+    icon: store
     link: __SUBDIR__/accounts/organization/
 @z
 
 @x
   - title: Account FAQs
     description: Common questions about Docker accounts.
-    icon: question-mark-circle
+    icon: circle-help
     link: /faqs/accounts/
 @y
   - title: Account FAQs
     description: Common questions about Docker accounts.
-    icon: question-mark-circle
+    icon: circle-help
     link: __SUBDIR__/faqs/accounts/
 @z
 

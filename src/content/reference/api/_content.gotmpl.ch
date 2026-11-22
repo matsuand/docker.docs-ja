@@ -32,7 +32,7 @@
 @z
 
 @x
-  {{- $.AddPage (dict "linkTitle" "Latest" "path" $path "url" $api.url "aliases" $aliases "kind" "section" "title" (printf "%s API %v" $api.title $api.version) "description" (printf "%s HTTP API reference, version %v." $api.title $api.version) "layout" "api-docs" "weight" 1 "params" (dict "view" "overview" "apiID" $api.id "keywords" (slice "API" $api.product))) -}}
+    {{- $.AddPage (dict "linkTitle" "Latest" "path" $path "url" $api.url "aliases" $aliases "kind" "section" "title" (printf "%s API %v" $api.title $api.version) "description" (printf "%s HTTP API reference, version %v." $api.title $api.version) "layout" "api-docs" "weight" 1 "params" (dict "view" "overview" "apiID" $api.id "keywords" (slice "API" $api.product))) -}}
 @y
-  {{- $.AddPage (dict "linkTitle" "Latest" "path" $path "url" $api.url "aliases" $aliases "kind" "section" "title" (printf "%s API %v" $api.title $api.version) "description" (printf "%s HTTP API reference, version %v." $api.title $api.version) "layout" "api-docs" "weight" 1 "params" (dict "view" "overview" "apiID" $api.id "keywords" (slice "API" $api.product))) -}}
+    {{- $.AddPage (dict "linkTitle" "Latest" "path" $path "url" $api.url "aliases" $aliases "kind" "section" "title" (printf "%s API %v" $api.title $api.version) "description" (printf "%s HTTP API reference, version %v." $api.title $api.version) "layout" "api-docs" "weight" 1 "params" (dict "view" "overview" "apiID" $api.id "keywords" (slice "API" $api.product))) -}}
 @z

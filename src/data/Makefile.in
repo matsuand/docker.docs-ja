@@ -302,7 +302,6 @@ bases = \
 	desktop_release.yaml         \
 	frontmatter.yaml             \
 	redirects.yml                \
-	samples.yaml                 \
 	summary.yaml                 \
 	tags.yaml                    \
 	whats-new.json
@@ -314,6 +313,9 @@ transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 copyfiles = \
 	api-reference.json
+
+copydirs = \
+	navigation
 
 all: all-recursive
 
@@ -654,6 +656,13 @@ all: $(copyfiles)
 -include copyfiles.sub
 copyfiles.sub: $(top_srcdir)/bin/makecp.sh $(srcdir)/Makefile.am $(top_builddir)/config.log
 	@$(top_srcdir)/bin/makecp.sh copyfiles . $(copyfiles)
+
+_copydirs:
+	@for d in $(copydirs); do \
+	  if test ! -d $$d; then \
+	    cp -pR $(absORIGDIR)/$$d .; \
+	  fi \
+	done
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

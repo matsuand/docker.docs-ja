@@ -19,12 +19,12 @@ title: Docker Hub
 @x
 - title: Quickstart
   description: Step-by-step instructions on getting started on Docker Hub.
-  icon: magnifying-glass-plus
+  icon: zoom-in
   link: /docker-hub/quickstart
 @y
 - title: クィックスタート
   description: Docker Hub をつかった手順を一つひとつ説明します。
-  icon: magnifying-glass-plus
+  icon: zoom-in
   link: __SUBDIR__/docker-hub/quickstart
 @z
 
@@ -56,60 +56,60 @@ title: Docker Hub
 @x
 - title: Settings
   description: Learn about settings in Docker Hub.
-  icon: cog-6-tooth
+  icon: settings
   link: /docker-hub/settings
 @y
 - title: Settings
   description: Learn about settings in Docker Hub.
-  icon: cog-6-tooth
+  icon: settings
   link: __SUBDIR__/docker-hub/settings
 @z
 
 @x
 - title: Organizations
   description: Learn about organization administration.
-  icon: building-storefront
+  icon: store
   link: /accounts/organization/
 @y
 - title: 組織
   description: 組織管理について学びます。
-  icon: building-storefront
+  icon: store
   link: __SUBDIR__/accounts/organization/
 @z
 
 @x
 - title: Usage and limits
   description: Explore usage limits and how to better utilize Docker Hub.
-  icon: chart-bar
+  icon: chart-column
   link: /docker-hub/usage/
 @y
 - title: 利用方法と制限
   description: Docker Hub の利用制約とより良い利用方法について見ていきます。
-  icon: chart-bar
+  icon: chart-column
   link: __SUBDIR__/docker-hub/usage/
 @z
 
 @x
 - title: MCP server
   description: Use the Docker Hub MCP server to access image metadata and manage repositories with AI agents.
-  icon: server-stack
+  icon: server
   link: /docker-hub/mcp-server/
 @y
 - title: MCP server
   description: Use the Docker Hub MCP server to access image metadata and manage repositories with AI agents.
-  icon: server-stack
+  icon: server
   link: __SUBDIR__/docker-hub/mcp-server/
 @z
 
 @x
 - title: Release notes
   description: Find out about new features, improvements, and bug fixes.
-  icon: document-plus
+  icon: file-plus
   link: /docker-hub/release-notes
 @y
 - title: リリースノート
   description: 新機能、改善、バグフィックスを確認します。
-  icon: document-plus
+  icon: file-plus
   link: __SUBDIR__/docker-hub/release-notes
 @z
 
@@ -159,10 +159,4 @@ In addition to the graphical interface, you can interact with Docker Hub using
 the [Docker Hub API](__SUBDIR__/reference/api/hub/latest/), the experimental [Docker
 Hub CLI tool](https://github.com/docker/hub-tool#readme), or the [Docker Hub
 MCP server](__SUBDIR__/docker-hub/mcp-server/) for AI agent integrations.
-@z
-
-@x
-{{< grid >}}
-@y
-{{< grid >}}
 @z

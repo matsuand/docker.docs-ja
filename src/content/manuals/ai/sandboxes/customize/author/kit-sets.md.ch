@@ -121,12 +121,12 @@ version: "1.0.0"
 
 @x
 kits:
-  - ref: docker.io/docker/sbx-kit-codex:0.155.1
+  - ref: docker.io/sbx/codex:0.155.1
   - ref: <MIXIN_REFERENCE>
 ```
 @y
 kits:
-  - ref: docker.io/docker/sbx-kit-codex:0.155.1
+  - ref: docker.io/sbx/codex:0.155.1
   - ref: <MIXIN_REFERENCE>
 ```
 @z

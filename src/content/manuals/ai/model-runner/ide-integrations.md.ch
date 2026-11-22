@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 title: IDE and tool integrations
 description: Configure popular AI coding assistants and tools to use Docker Model Runner as their backend.
@@ -65,7 +67,7 @@ Before configuring any tool:
 
 @x
 > [!TIP]
->
+> 
 > The default context size for many models (such as `gpt-oss`) is 4,096 tokens, which is limiting for coding tasks.
 > You can repackage it with a larger context window:
 >
@@ -77,7 +79,7 @@ Before configuring any tool:
 > come with 128K context by default and work without repackaging.
 @y
 > [!TIP]
->
+> 
 > The default context size for many models (such as `gpt-oss`) is 4,096 tokens, which is limiting for coding tasks.
 > You can repackage it with a larger context window:
 >
@@ -610,13 +612,81 @@ print(response.text)
 @z
 
 @x
-See [Use OpenCode with Docker Model Runner](../../../guides/opencode-model-runner.md)
-for a task-focused guide that walks through model setup, configuration, and
-troubleshooting.
+### Configuration
 @y
-See [Use OpenCode with Docker Model Runner](../../../guides/opencode-model-runner.md)
-for a task-focused guide that walks through model setup, configuration, and
-troubleshooting.
+### Configuration
+@z
+
+@x
+1. Install OpenCode (see [docs](https://opencode.ai/docs/#install))
+2. Reference DMR in your OpenCode configuration, either globally at `~/.config/opencode/opencode.json` or project specific with a `opencode.json` file in the root of your project
+   ```json
+   {
+     "$schema": "https://opencode.ai/config.json",
+     "provider": {
+       "dmr": {
+         "npm": "@ai-sdk/openai-compatible",
+         "name": "Docker Model Runner",
+         "options": {
+           "baseURL": "http://localhost:12434/v1"
+         },
+         "models": {
+           "ai/qwen2.5-coder": {
+             "name": "ai/qwen2.5-coder"
+           },
+           "ai/llama3.2": {
+             "name": "ai/llama3.2"
+           }
+         }
+       }
+     }
+   }
+   ```
+3. Select the model you want in OpenCode
+@y
+1. Install OpenCode (see [docs](https://opencode.ai/docs/#install))
+2. Reference DMR in your OpenCode configuration, either globally at `~/.config/opencode/opencode.json` or project specific with a `opencode.json` file in the root of your project
+   ```json
+   {
+     "$schema": "https://opencode.ai/config.json",
+     "provider": {
+       "dmr": {
+         "npm": "@ai-sdk/openai-compatible",
+         "name": "Docker Model Runner",
+         "options": {
+           "baseURL": "http://localhost:12434/v1"
+         },
+         "models": {
+           "ai/qwen2.5-coder": {
+             "name": "ai/qwen2.5-coder"
+           },
+           "ai/llama3.2": {
+             "name": "ai/llama3.2"
+           }
+         }
+       }
+     }
+   }
+   ```
+3. Select the model you want in OpenCode
+@z
+
+@x
+You can find more details in [this Docker Blog post](https://www.docker.com/blog/opencode-docker-model-runner-private-ai-coding/)
+@y
+You can find more details in [this Docker Blog post](https://www.docker.com/blog/opencode-docker-model-runner-private-ai-coding/)
+@z
+
+@x
+## Claude Code
+@y
+## Claude Code
+@z
+
+@x
+[Claude Code](https://claude.com/product/claude-code) is [Anthropic's](https://www.anthropic.com/) command-line tool for agentic coding. It lives in your terminal, understands your codebase, and executes routine tasks, explains complex code, and handles Git workflows through natural language commands.
+@y
+[Claude Code](https://claude.com/product/claude-code) is [Anthropic's](https://www.anthropic.com/) command-line tool for agentic coding. It lives in your terminal, understands your codebase, and executes routine tasks, explains complex code, and handles Git workflows through natural language commands.
 @z
 
 @x
@@ -626,25 +696,61 @@ troubleshooting.
 @z
 
 @x
-1. Install OpenCode (see [docs](https://opencode.ai/docs/#install))
-2. Reference DMR in your OpenCode configuration, either globally at `~/.config/opencode/opencode.json` or project specific with a `opencode.json` file in the root of your project
+1. Install Claude Code (see [docs](https://code.claude.com/docs/en/quickstart#step-1-install-claude-code))
+2. Use the `ANTHROPIC_BASE_URL` environment variable to point Claude Code at DMR. On Mac or Linux, you can do this, for example if you want to use the `gpt-oss:32k` model:
+    ```bash
+    ANTHROPIC_BASE_URL=http://localhost:12434 claude --model qwen2.5-coder
+    ```
+    On Windows (PowerShell) you can do it like this:
+    ```powershell
+    $env:ANTHROPIC_BASE_URL="http://localhost:12434"
+    claude --model gpt-oss:32k
+    ```
 @y
-1. Install OpenCode (see [docs](https://opencode.ai/docs/#install))
-2. Reference DMR in your OpenCode configuration, either globally at `~/.config/opencode/opencode.json` or project specific with a `opencode.json` file in the root of your project
+1. Install Claude Code (see [docs](https://code.claude.com/docs/en/quickstart#step-1-install-claude-code))
+2. Use the `ANTHROPIC_BASE_URL` environment variable to point Claude Code at DMR. On Mac or Linux, you can do this, for example if you want to use the `gpt-oss:32k` model:
+    ```bash
+    ANTHROPIC_BASE_URL=http://localhost:12434 claude --model qwen2.5-coder
+    ```
+    On Windows (PowerShell) you can do it like this:
+    ```powershell
+    $env:ANTHROPIC_BASE_URL="http://localhost:12434"
+    claude --model gpt-oss:32k
+    ```
 @z
 
-% snip code...
-
 @x
-3. Select the model you want in OpenCode
+> [!TIP]
+>
+> To avoid setting the variable each time, add it to your shell profile (`~/.bashrc`, `~/.zshrc`, or equivalent):
+>
+> ```shell
+> export ANTHROPIC_BASE_URL=http://localhost:12434
+> ```
 @y
-3. Select the model you want in OpenCode
+> [!TIP]
+>
+> To avoid setting the variable each time, add it to your shell profile (`~/.bashrc`, `~/.zshrc`, or equivalent):
+>
+> ```shell
+> export ANTHROPIC_BASE_URL=http://localhost:12434
+> ```
 @z
 
 @x
-You can find more details in [this Docker Blog post](https://www.docker.com/blog/opencode-docker-model-runner-private-ai-coding/)
+You can find more details in [this Docker Blog post](https://www.docker.com/blog/run-claude-code-locally-docker-model-runner/)
 @y
-You can find more details in [this Docker Blog post](https://www.docker.com/blog/opencode-docker-model-runner-private-ai-coding/)
+You can find more details in [this Docker Blog post](https://www.docker.com/blog/run-claude-code-locally-docker-model-runner/)
+@z
+
+@x
+> [!NOTE]
+>
+> While the other integrations on this page use the [OpenAI-compatible API](/ai/model-runner/api-reference/#openai-compatible-api), DMR also exposes a [Anthropic-compatible API](/ai/model-runner/api-reference/#anthropic-compatible-api) used here.
+@y
+> [!NOTE]
+>
+> While the other integrations on this page use the [OpenAI-compatible API](__SUBDIR__/ai/model-runner/api-reference/#openai-compatible-api), DMR also exposes a [Anthropic-compatible API](__SUBDIR__/ai/model-runner/api-reference/#anthropic-compatible-api) used here.
 @z
 
 @x
@@ -687,6 +793,12 @@ You can find more details in [this Docker Blog post](https://www.docker.com/blog
 3. Check if another service is using port 12434.
 @y
 3. Check if another service is using port 12434.
+@z
+
+@x
+4. If you run your tool in WSL and want to connect to DMR on the host via `localhost`, this might not directly work. Configuring WSL to use [mirrored networking](https://learn.microsoft.com/en-us/windows/wsl/networking#mirrored-mode-networking) can solve this.
+@y
+4. If you run your tool in WSL and want to connect to DMR on the host via `localhost`, this might not directly work. Configuring WSL to use [mirrored networking](https://learn.microsoft.com/en-us/windows/wsl/networking#mirrored-mode-networking) can solve this.
 @z
 
 @x
@@ -782,6 +894,7 @@ If using browser-based tools, add the origin to CORS allowed origins:
 |----------|-------------------|-------|
 | Code completion | `ai/qwen3-coder` | Optimized for coding tasks with a large context window |
 | Agentic coding | `ai/devstral-small-2` | Good fit for tools such as Claude Code and OpenCode |
+| General assistant | `ai/llama3.2` | Good balance of capabilities |
 | Small/fast | `ai/smollm2` | Low resource usage |
 | Embeddings | `ai/all-minilm` | For RAG and semantic search |
 @z

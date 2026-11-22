@@ -14,60 +14,60 @@ description: Interfaces and tools for browsing, managing, and automating Docker 
 @x
     - title: Use Docker Hub
       description: Browse the DHI catalog on Docker Hub to search repositories, inspect image metadata, and view SBOMs, CVEs, and attestations.
-      icon: squares-2x2
+      icon: layout-grid
       link: /dhi/tools/hub/
 @y
     - title: Use Docker Hub
       description: Browse the DHI catalog on Docker Hub to search repositories, inspect image metadata, and view SBOMs, CVEs, and attestations.
-      icon: squares-2x2
+      icon: layout-grid
       link: __SUBDIR__/dhi/tools/hub/
 @z
 
 @x
     - title: CLI
       description: Install and use the `docker dhi` command-line interface to browse the catalog, inspect images, and manage mirrors from your terminal.
-      icon: command-line
+      icon: terminal
       link: /dhi/tools/cli/
 @y
     - title: CLI
       description: Install and use the `docker dhi` command-line interface to browse the catalog, inspect images, and manage mirrors from your terminal.
-      icon: command-line
+      icon: terminal
       link: __SUBDIR__/dhi/tools/cli/
 @z
 
 @x
     - title: MCP server
       description: Connect an AI assistant to the DHI catalog to search repositories, inspect images, retrieve SBOMs, and check CVEs using plain language.
-      icon: cpu-chip
+      icon: cpu
       link: /dhi/tools/mcp/
 @y
     - title: MCP server
       description: Connect an AI assistant to the DHI catalog to search repositories, inspect images, retrieve SBOMs, and check CVEs using plain language.
-      icon: cpu-chip
+      icon: cpu
       link: __SUBDIR__/dhi/tools/mcp/
 @z
 
 @x
     - title: Use the DHI Terraform provider
       description: Use the DHI Terraform provider to manage mirrors and automate DHI configuration as infrastructure as code.
-      icon: wrench-screwdriver
+      icon: wrench
       link: /dhi/tools/terraform/
 @y
     - title: Use the DHI Terraform provider
       description: Use the DHI Terraform provider to manage mirrors and automate DHI configuration as infrastructure as code.
-      icon: wrench-screwdriver
+      icon: wrench
       link: __SUBDIR__/dhi/tools/terraform/
 @z
 
 @x
     - title: Use the DHI API
       description: Query Docker Hardened Images data programmatically using the DHI GraphQL API.
-      icon: code-bracket
+      icon: code
       link: /dhi/tools/api/
 @y
     - title: Use the DHI API
       description: Query Docker Hardened Images data programmatically using the DHI GraphQL API.
-      icon: code-bracket
+      icon: code
       link: __SUBDIR__/dhi/tools/api/
 @z
 
@@ -77,10 +77,4 @@ Choose the tool that fits your workflow.
 @y
 Docker Hardened Images can be accessed and managed through several interfaces.
 Choose the tool that fits your workflow.
-@z
-
-@x
-{{< grid items="grid_tools" >}}
-@y
-{{< grid items="grid_tools" >}}
 @z

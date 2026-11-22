@@ -561,9 +561,9 @@ and environment variable inheritance works for multi-stage builds.
 @z
 
 @x
-{{< figure src="../../images/build-variables.svg" class="invertible" >}}
+{{< figure src="../../images/build-variables.svg" alt="Diagram of ARG and ENV scope: global build arguments must be redeclared in a build stage; child stages inherit their parent's arguments and environment variables." class="invertible" >}}
 @y
-{{< figure src="../../images/build-variables.svg" class="invertible" >}}
+{{< figure src="../../images/build-variables.svg" alt="Diagram of ARG and ENV scope: global build arguments must be redeclared in a build stage; child stages inherit their parent's arguments and environment variables." class="invertible" >}}
 @z
 
 @x

@@ -22,36 +22,36 @@ keywords: build, cloud, cloud build, remote builder, offload
 @x
 - title: Quickstart
   description: Get up and running with Docker Offload in just a few steps.
-  icon: rocket-launch
+  icon: rocket
   link: /offload/quickstart/
 @y
 - title: クィックスタート
   description: ほんの数ステップで Docker Offload を立ち上げます。
-  icon: rocket-launch
+  icon: rocket
   link: __SUBDIR__/offload/quickstart/
 @z
 
 @x
 - title: How Offload works
   description: Learn about Docker Offload and how it works.
-  icon: information-circle
+  icon: info
   link: /offload/about/
 @y
 - title: Offload はどう動くか
   description: Docker Offload とその動作について学びます。
-  icon: information-circle
+  icon: info
   link: __SUBDIR__/offload/about/
 @z
 
 @x
 - title: Manage cloud sandboxes
   description: Start, stop, inspect, and resume the cloud sandbox that runs your containers.
-  icon: command-line
+  icon: terminal
   link: /offload/sandboxes/
 @y
 - title: Manage cloud sandboxes
   description: Start, stop, inspect, and resume the cloud sandbox that runs your containers.
-  icon: command-line
+  icon: terminal
   link: __SUBDIR__/offload/sandboxes/
 @z
 
@@ -70,36 +70,36 @@ keywords: build, cloud, cloud build, remote builder, offload
 @x
 - title: Optimize
   description: Improve performance and cost efficiency in Docker Offload.
-  icon: bolt
+  icon: zap
   link: /offload/optimize/
 @y
 - title: 最適化
   description: Docker Offload のパフォーマンス、コスト効率を改善します。
-  icon: bolt
+  icon: zap
   link: __SUBDIR__/offload/optimize/
 @z
 
 @x
 - title: Troubleshoot
   description: Learn how to troubleshoot issues with Docker Offload.
-  icon: bug-ant
+  icon: bug
   link: /offload/troubleshoot/
 @y
 - title: トラブルシューティング
   description: Docker Offload でのトラブルシューティング方法について学びます。
-  icon: bug-ant
+  icon: bug
   link: __SUBDIR__/offload/troubleshoot/
 @z
 
 @x
 - title: Feedback
   description: Provide feedback on Docker Offload.
-  icon: chat-bubble-left
+  icon: message-square
   link: /offload/feedback/
 @y
 - title: フィードバック
   description: Docker Offload へのフィードバックを行います。
-  icon: chat-bubble-left
+  icon: message-square
   link: __SUBDIR__/offload/feedback/
 @z
 

@@ -23,9 +23,9 @@ keywords: compose, compose specification, configs, compose file reference
 @z
 
 @x
-Services can only access configs when explicitly granted by a [`configs`](services.md#configs) attribute within the `services` top-level element.
+Services can only access configs when explicitly granted by a [`configs`](container-spec.md#configs) attribute within the `services` top-level element.
 @y
-サービスから config にアクセスできるのは、トップレベル要素 `services` における [`configs`](services.md#configs) 属性により明示的にアクセスが許可された場合だけです。
+サービスから config にアクセスできるのは、トップレベル要素 `services` における [`configs`](container-spec.md#configs) 属性により明示的にアクセスが許可された場合だけです。
 @z
 
 @x

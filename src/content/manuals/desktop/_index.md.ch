@@ -28,7 +28,7 @@ keywords: how to use docker desktop, what is docker desktop used for, what does 
     [Mac](/desktop/setup/install/mac-install/),
     [Windows](/desktop/setup/install/windows-install/), or
     [Linux](/desktop/setup/install/linux/).
-  icon: arrow-down-tray
+  icon: download
 @y
 - title: Docker Desktop のインストール
   description: |
@@ -36,18 +36,18 @@ keywords: how to use docker desktop, what is docker desktop used for, what does 
     [Mac](__SUBDIR__/desktop/setup/install/mac-install/),
     [Windows](__SUBDIR__/desktop/setup/install/windows-install/), or
     [Linux](__SUBDIR__/desktop/setup/install/linux/).
-  icon: arrow-down-tray
+  icon: download
 @z
 
 @x
 - title: Learn about Docker Desktop
   description: Navigate Docker Desktop.
-  icon: magnifying-glass
+  icon: search
   link: /desktop/use-desktop/
 @y
 - title: Docker Desktop について学ぶ
   description: Docker Desktop を学びます。
-  icon: magnifying-glass
+  icon: search
   link: __SUBDIR__/desktop/use-desktop/
 @z
 
@@ -55,47 +55,47 @@ keywords: how to use docker desktop, what is docker desktop used for, what does 
 - title: Explore its key features
   description: |
     Find information about [Networking](/desktop/features/networking/), [Docker VMM](/desktop/features/vmm/), [WSL](/desktop/features/wsl/), and more.
-  icon: squares-2x2
+  icon: layout-grid
 @y
 - title: 主要機能を確認
   description: |
     Find information about [Networking](__SUBDIR__/desktop/features/networking/), [Docker VMM](__SUBDIR__/desktop/features/vmm/), [WSL](__SUBDIR__/desktop/features/wsl/), and more.
-  icon: squares-2x2
+  icon: layout-grid
 @z
 
 @x
 - title: View the release notes
   description: Find out about new features, improvements, and bug fixes.
-  icon: document-plus
+  icon: file-plus
   link: /desktop/release-notes/
 @y
 - title: リリースノートの確認
   description: 新機能、機能改善、バグフィックスを確認します。
-  icon: document-plus
+  icon: file-plus
   link: __SUBDIR__/desktop/release-notes/
 @z
 
 @x
 - title: Browse common FAQs
   description: Explore general FAQs or FAQs for specific platforms.
-  icon: question-mark-circle
+  icon: circle-help
   link: /desktop/troubleshoot-and-support/faqs/general/
 @y
 - title: 一般的な FAQ の確認
   description: 一般的な FAQ や特定プラットフォームの FAQ を確認します。
-  icon: question-mark-circle
+  icon: circle-help
   link: __SUBDIR__/desktop/troubleshoot-and-support/faqs/general/
 @z
 
 @x
 - title: Give feedback
   description: Provide feedback on Docker Desktop or Docker Desktop features.
-  icon: chat-bubble-left
+  icon: message-square
   link: /desktop/troubleshoot-and-support/feedback/
 @y
 - title: フィードバック
   description: Docker Desktop やその機能についてのフィードバックを行います。
-  icon: chat-bubble-left
+  icon: message-square
   link: __SUBDIR__/desktop/troubleshoot-and-support/feedback/
 @z
 

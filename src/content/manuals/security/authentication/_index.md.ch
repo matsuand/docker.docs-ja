@@ -30,24 +30,24 @@ keywords: authentication, SSO, OIDC, two-factor authentication, 2FA, Docker secu
 @x
   - title: Two-factor authentication
     description: Add a TOTP security code to an individual Docker account.
-    icon: device-phone-mobile
+    icon: smartphone
     link: /security/authentication/2fa/
 @y
   - title: Two-factor authentication
     description: Add a TOTP security code to an individual Docker account.
-    icon: device-phone-mobile
+    icon: smartphone
     link: __SUBDIR__/security/authentication/2fa/
 @z
 
 @x
   - title: OIDC connections
     description: Authenticate GitHub Actions with short-lived tokens.
-    icon: lock-closed
+    icon: lock
     link: /security/authentication/oidc-connections/
 @y
   - title: OIDC connections
     description: Authenticate GitHub Actions with short-lived tokens.
-    icon: lock-closed
+    icon: lock
     link: __SUBDIR__/security/authentication/oidc-connections/
 @z
 

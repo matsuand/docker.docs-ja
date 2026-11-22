@@ -7,14 +7,9 @@ bases = \
 	desktop-install.html     \
 	desktop-install-v2.html  \
 	experimental.html        \
-	files.markdown.md        \
 	interactive-diagram.html \
-	labspace-launch.html     \
-	sandbox-auth.html        \
-	sandbox-auth.markdown.md \
 	setting-metadata.html    \
-	summary-bar.html         \
-	whats-new.markdown.md
+	summary-bar.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
@@ -31,8 +26,6 @@ copyfiles = \
 	copy-as-prompt.markdown.md      \
 	desktop-install-v2.markdown.md  \
 	experimental.markdown.md        \
-	file.html                       \
-	files.html                      \
 	grid.html                       \
 	grid.markdown.md                \
 	include.html                    \

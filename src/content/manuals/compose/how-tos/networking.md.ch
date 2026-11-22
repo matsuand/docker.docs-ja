@@ -123,9 +123,9 @@ If any containers have connections open to the old container, they are closed. I
 @z
 
 @x
-By default, each service joins the project's bridge network. It is the most secure networking mode. If you don't specify [`network_mode`](/reference/compose-file/services.md#network_mode), this is the type of network you are creating.
+By default, each service joins the project's bridge network. It is the most secure networking mode. If you don't specify [`network_mode`](/reference/compose-file/container-spec.md#network_mode), this is the type of network you are creating.
 @y
-By default, each service joins the project's bridge network. It is the most secure networking mode. If you don't specify [`network_mode`](reference/compose-file/services.md#network_mode), this is the type of network you are creating.
+By default, each service joins the project's bridge network. It is the most secure networking mode. If you don't specify [`network_mode`](reference/compose-file/container-spec.md#network_mode), this is the type of network you are creating.
 @z
 
 @x
@@ -194,9 +194,9 @@ The following example shows a Compose file which defines two custom networks. Th
 @z
 
 @x
-Networks can be configured with static IP addresses by setting the [ipv4_address and/or ipv6_address](/reference/compose-file/services.md#ipv4_address-ipv6_address) for each attached network.
+Networks can be configured with static IP addresses by setting the [ipv4_address and/or ipv6_address](/reference/compose-file/container-spec.md#ipv4_address-ipv6_address) for each attached network.
 @y
-Networks can be configured with static IP addresses by setting the [ipv4_address and/or ipv6_address](reference/compose-file/services.md#ipv4_address-ipv6_address) for each attached network.
+Networks can be configured with static IP addresses by setting the [ipv4_address and/or ipv6_address](reference/compose-file/container-spec.md#ipv4_address-ipv6_address) for each attached network.
 @z
 
 @x
@@ -450,9 +450,9 @@ networks:
 @z
 
 @x
-You can add custom hostname-to-IP mappings to a container's `/etc/hosts` file using [`extra_hosts`](/reference/compose-file/services.md#extra_hosts). This is useful when a service needs to resolve a hostname that isn't registered in Docker's internal DNS. For example, a fixed-IP dependency or a staging endpoint:
+You can add custom hostname-to-IP mappings to a container's `/etc/hosts` file using [`extra_hosts`](/reference/compose-file/container-spec.md#extra_hosts). This is useful when a service needs to resolve a hostname that isn't registered in Docker's internal DNS. For example, a fixed-IP dependency or a staging endpoint:
 @y
-You can add custom hostname-to-IP mappings to a container's `/etc/hosts` file using [`extra_hosts`](reference/compose-file/services.md#extra_hosts). This is useful when a service needs to resolve a hostname that isn't registered in Docker's internal DNS. For example, a fixed-IP dependency or a staging endpoint:
+You can add custom hostname-to-IP mappings to a container's `/etc/hosts` file using [`extra_hosts`](reference/compose-file/container-spec.md#extra_hosts). This is useful when a service needs to resolve a hostname that isn't registered in Docker's internal DNS. For example, a fixed-IP dependency or a staging endpoint:
 @z
 
 @x
@@ -775,8 +775,8 @@ For full details of the network configuration options available, see the followi
 
 @x
 - [Top-level `networks` element](/reference/compose-file/networks.md)
-- [Service-level `networks` attribute](/reference/compose-file/services.md#networks)
+- [Service-level `networks` attribute](/reference/compose-file/container-spec.md#networks)
 @y
 - [Top-level `networks` element](reference/compose-file/networks.md)
-- [Service-level `networks` attribute](reference/compose-file/services.md#networks)
+- [Service-level `networks` attribute](reference/compose-file/container-spec.md#networks)
 @z

@@ -240,7 +240,8 @@ top_srcdir = @top_srcdir@
 copyfiles = \
 	accordion.html \
 	badge.html     \
-	card.html
+	card.html      \
+	image.html
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

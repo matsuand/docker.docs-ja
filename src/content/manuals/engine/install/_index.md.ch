@@ -260,7 +260,7 @@ Docker では公開で感謝の意を表わすものとします。
 
 @x
 After setting up Docker, you can learn the basics with
-[Build and share a containerized application](/get-started/tutorials/run-an-app.md).
+[Build and share a containerized application](https://docs.docker.com/learn/paths/get-started-with-docker-containers/).
 @y
-Docker の設定を終えたら [コンテナー化アプリケーションのビルドと共有](get-started/tutorials/run-an-app.md) を通じてその基本を学んでいきます。
+Docker の設定を終えたら [コンテナー化アプリケーションのビルドと共有](https://docs.docker.com/learn/paths/get-started-with-docker-containers/) を通じてその基本を学んでいきます。
 @z

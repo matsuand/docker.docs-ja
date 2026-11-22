@@ -426,14 +426,14 @@ When using embedding models with the `/v1/embeddings` endpoint, you must include
 
 @x
 - [`models` top-level element](/reference/compose-file/models.md)
-- [`models` attribute](/reference/compose-file/services.md#models)
+- [`models` attribute](/reference/compose-file/container-spec.md#models)
 - [Docker Model Runner documentation](/manuals/ai/model-runner/_index.md)
 - [Configuration options](/manuals/ai/model-runner/configuration.md) - Context size and runtime parameters
 - [Inference engines](/manuals/ai/model-runner/inference-engines.md) - llama.cpp and vLLM details
 - [API reference](/manuals/ai/model-runner/api-reference.md) - OpenAI and Ollama-compatible APIs
 @y
 - [`models` top-level element](reference/compose-file/models.md)
-- [`models` attribute](reference/compose-file/services.md#models)
+- [`models` attribute](reference/compose-file/container-spec.md#models)
 - [Docker Model Runner documentation](/manuals/ai/model-runner/_index.md)
 - [Configuration options](/manuals/ai/model-runner/configuration.md) - Context size and runtime parameters
 - [Inference engines](/manuals/ai/model-runner/inference-engines.md) - llama.cpp and vLLM details

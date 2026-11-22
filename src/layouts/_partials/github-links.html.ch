@@ -4,7 +4,7 @@
 % Add suffix .ch and subdir src to github edit page
 
 @x Add suffix .ch to github edit page
-    href="{{ site.Params.repo }}/edit/main/content/{{ .Path }}">{{- T "editPage" -}}</a>
+          href="{{ site.Params.repo }}/edit/main/content/{{ .Path }}"
 @y
-    href="{{ site.Params.repo }}/edit/main/src/content/{{ .Path }}.ch">{{- T "editPage" -}}</a>
+          href="{{ site.Params.repo }}/edit/main/src/content/{{ .Path }}.ch"
 @z

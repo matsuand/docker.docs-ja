@@ -16,60 +16,60 @@ description: Learn the core concepts behind Docker Hardened Images, including se
 @x
     - title: Attestations
       description: Review the full set of signed attestations included with each Docker Hardened Image, such as SBOMs, VEX, build provenance, and scan results.
-      icon: clipboard-document-list
+      icon: clipboard-list
       link: /dhi/explore/security-concepts/attestations/
 @y
     - title: Attestations
       description: Review the full set of signed attestations included with each Docker Hardened Image, such as SBOMs, VEX, build provenance, and scan results.
-      icon: clipboard-document-list
+      icon: clipboard-list
       link: __SUBDIR__/dhi/explore/security-concepts/attestations/
 @z
 
 @x
     - title: Software Bill of Materials (SBOMs)
       description: Learn what SBOMs are, why they matter, and how Docker Hardened Images include signed SBOMs to support transparency and compliance.
-      icon: list-bullet
+      icon: list
       link: /dhi/explore/security-concepts/sbom/
 @y
     - title: Software Bill of Materials (SBOMs)
       description: Learn what SBOMs are, why they matter, and how Docker Hardened Images include signed SBOMs to support transparency and compliance.
-      icon: list-bullet
+      icon: list
       link: __SUBDIR__/dhi/explore/security-concepts/sbom/
 @z
 
 @x
     - title: Supply-chain Levels for Software Artifacts (SLSA)
       description: Learn how Docker Hardened Images comply with SLSA Build Level 3 and how to verify provenance for secure, tamper-resistant builds.
-      icon: clipboard-document-check
+      icon: clipboard-check
       link: /dhi/explore/security-concepts/slsa/
 @y
     - title: Supply-chain Levels for Software Artifacts (SLSA)
       description: Learn how Docker Hardened Images comply with SLSA Build Level 3 and how to verify provenance for secure, tamper-resistant builds.
-      icon: clipboard-document-check
+      icon: clipboard-check
       link: __SUBDIR__/dhi/explore/security-concepts/slsa/
 @z
 
 @x
     - title: Image provenance
       description: Learn how build provenance metadata helps trace the origin of Docker Hardened Images and support compliance with SLSA.
-      icon: pencil-square
+      icon: square-pen
       link: /dhi/explore/security-concepts/provenance/
 @y
     - title: Image provenance
       description: Learn how build provenance metadata helps trace the origin of Docker Hardened Images and support compliance with SLSA.
-      icon: pencil-square
+      icon: square-pen
       link: __SUBDIR__/dhi/explore/security-concepts/provenance/
 @z
 
 @x
     - title: FIPS
       description: Learn how Docker Hardened Images support FIPS 140 by using validated cryptographic modules and providing signed attestations for compliance audits.
-      icon: check-badge
+      icon: check-verified
       link: /dhi/explore/security-concepts/fips/
 @y
     - title: FIPS
       description: Learn how Docker Hardened Images support FIPS 140 by using validated cryptographic modules and providing signed attestations for compliance audits.
-      icon: check-badge
+      icon: check-verified
       link: __SUBDIR__/dhi/explore/security-concepts/fips/
 @z
 
@@ -88,36 +88,36 @@ description: Learn the core concepts behind Docker Hardened Images, including se
 @x
     - title: CIS Benchmarks
       description: Learn how Docker Hardened Images help you meet Center for Internet Security (CIS) Docker Benchmark requirements for secure container configuration and deployment.
-      icon: check-circle
+      icon: check
       link: /dhi/explore/security-concepts/cis/
 @y
     - title: CIS Benchmarks
       description: Learn how Docker Hardened Images help you meet Center for Internet Security (CIS) Docker Benchmark requirements for secure container configuration and deployment.
-      icon: check-circle
+      icon: check
       link: __SUBDIR__/dhi/explore/security-concepts/cis/
 @z
 
 @x
     - title: Common Vulnerabilities and Exposures (CVEs)
       description: Understand what CVEs are, how Docker Hardened Images reduce exposure, and how to scan images for vulnerabilities using popular tools.
-      icon: exclamation-circle
+      icon: circle-alert
       link: /dhi/explore/security-concepts/cves/
 @y
     - title: Common Vulnerabilities and Exposures (CVEs)
       description: Understand what CVEs are, how Docker Hardened Images reduce exposure, and how to scan images for vulnerabilities using popular tools.
-      icon: exclamation-circle
+      icon: circle-alert
       link: __SUBDIR__/dhi/explore/security-concepts/cves/
 @z
 
 @x
     - title: Vulnerability Exploitability eXchange (VEX)
       description: Learn how VEX helps you prioritize real risks by identifying which vulnerabilities in Docker Hardened Images are actually exploitable.
-      icon: exclamation-triangle
+      icon: triangle-alert
       link: /dhi/explore/security-concepts/vex/
 @y
     - title: Vulnerability Exploitability eXchange (VEX)
       description: Learn how VEX helps you prioritize real risks by identifying which vulnerabilities in Docker Hardened Images are actually exploitable.
-      icon: exclamation-triangle
+      icon: triangle-alert
       link: __SUBDIR__/dhi/explore/security-concepts/vex/
 @z
 
@@ -136,48 +136,48 @@ description: Learn the core concepts behind Docker Hardened Images, including se
 @x
     - title: Secure Software Development Lifecycle (SSDLC)
       description: See how Docker Hardened Images support a secure SDLC by integrating with scanning, signing, and debugging tools.
-      icon: wrench-screwdriver
+      icon: wrench
       link: /dhi/explore/security-concepts/ssdlc/
 @y
     - title: Secure Software Development Lifecycle (SSDLC)
       description: See how Docker Hardened Images support a secure SDLC by integrating with scanning, signing, and debugging tools.
-      icon: wrench-screwdriver
+      icon: wrench
       link: __SUBDIR__/dhi/explore/security-concepts/ssdlc/
 @z
 
 @x
     - title: Distroless images
       description: Learn how Docker Hardened Images use distroless variants to minimize attack surface and remove unnecessary components.
-      icon: squares-2x2
+      icon: layout-grid
       link: /dhi/explore/security-concepts/distroless/
 @y
     - title: Distroless images
       description: Learn how Docker Hardened Images use distroless variants to minimize attack surface and remove unnecessary components.
-      icon: squares-2x2
+      icon: layout-grid
       link: __SUBDIR__/dhi/explore/security-concepts/distroless/
 @z
 
 @x
     - title: glibc and musl support in Docker Hardened Images
       description: Compare glibc and musl variants of DHIs to choose the right base image for your application’s compatibility, size, and performance needs.
-      icon: arrows-up-down
+      icon: arrow-up-down
       link: /dhi/explore/security-concepts/glibc-musl/
 @y
     - title: glibc and musl support in Docker Hardened Images
       description: Compare glibc and musl variants of DHIs to choose the right base image for your application’s compatibility, size, and performance needs.
-      icon: arrows-up-down
+      icon: arrow-up-down
       link: __SUBDIR__/dhi/explore/security-concepts/glibc-musl/
 @z
 
 @x
     - title: Image immutability
       description: Understand how image digests, read-only containers, and signed metadata ensure Docker Hardened Images are tamper-resistant and immutable.
-      icon: minus-circle
+      icon: circle-minus
       link: /dhi/explore/security-concepts/immutability/
 @y
     - title: Image immutability
       description: Understand how image digests, read-only containers, and signed metadata ensure Docker Hardened Images are tamper-resistant and immutable.
-      icon: minus-circle
+      icon: circle-minus
       link: __SUBDIR__/dhi/explore/security-concepts/immutability/
 @z
 
@@ -196,12 +196,12 @@ description: Learn the core concepts behind Docker Hardened Images, including se
 @x
     - title: Digests
       description: Learn how to use immutable image digests to guarantee consistency and verify the exact Docker Hardened Image you're running.
-      icon: finger-print
+      icon: fingerprint
       link: /dhi/explore/security-concepts/digests/
 @y
     - title: Digests
       description: Learn how to use immutable image digests to guarantee consistency and verify the exact Docker Hardened Image you're running.
-      icon: finger-print
+      icon: fingerprint
       link: __SUBDIR__/dhi/explore/security-concepts/digests/
 @z
 

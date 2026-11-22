@@ -1,8 +1,8 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
+
 copyfiles = \
-	ask-gordon.avif         \
 	claude-desktop.avif     \
 	copilot-mode.png        \
 	cursor.avif             \

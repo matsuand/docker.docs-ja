@@ -41,13 +41,13 @@ keywords: >-
   - title: Custom roles
     description: >-
       Build permission sets that match your organization's access control needs.
-    icon: adjustments-horizontal
+    icon: sliders-horizontal
     link: /security/roles-and-permissions/custom-roles/
 @y
   - title: Custom roles
     description: >-
       Build permission sets that match your organization's access control needs.
-    icon: adjustments-horizontal
+    icon: sliders-horizontal
     link: __SUBDIR__/security/roles-and-permissions/custom-roles/
 @z
 
@@ -55,13 +55,13 @@ keywords: >-
   - title: Custom roles permissions
     description: >-
       Review every permission you can assign to a custom role.
-    icon: list-bullet
+    icon: list
     link: /security/roles-and-permissions/custom-roles/permissions-reference/
 @y
   - title: Custom roles permissions
     description: >-
       Review every permission you can assign to a custom role.
-    icon: list-bullet
+    icon: list
     link: __SUBDIR__/security/roles-and-permissions/custom-roles/permissions-reference/
 @z
 

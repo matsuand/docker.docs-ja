@@ -503,8 +503,8 @@ options:
 @z
 
 @x
-- Take a look at [Get started with Docker](/get-started/tutorials/run-an-app.md) to learn how to build an image and run it as a containerized application.
+- Take a look at [Get started with Docker](https://docs.docker.com/learn/paths/get-started-with-docker-containers/) to learn how to build an image and run it as a containerized application.
 @y
-- [Docker を使ってはじめよう](get-started/tutorials/run-an-app.md) を確認してみてください。
+- [Docker を使ってはじめよう](https://docs.docker.com/learn/paths/get-started-with-docker-containers/) を確認してみてください。
   そこではイメージのビルド方法や、コンテナー化アプリケーションとしてそれを実行する方法について説明しています。
 @z

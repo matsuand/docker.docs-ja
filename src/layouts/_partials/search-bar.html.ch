@@ -2,25 +2,27 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-  await import('/pagefind/pagefind-component-ui.js');
+    <h2 id="search-heading">Search or ask Docker</h2>
+    <button type="button" data-close-search aria-label="Close search">
 @y
-  await import('__SUBDIR__/pagefind/pagefind-component-ui.js');
+    <h2 id="search-heading">Docker の検索・質問</h2>
+    <button type="button" data-close-search aria-label="Close search">
 @z
 
 @x
-    bundlePath: '/pagefind/',
+  <label class="sr-only" for="search-query">Search documentation</label>
 @y
-    bundlePath: '__SUBDIR__/pagefind/',
+  <label class="sr-only" for="search-query">ドキュメント検索</label>
 @z
 
 @x
-        <pagefind-input placeholder="Search documentation…"></pagefind-input>
+      <span class="search-ask-title">Ask Docker</span>
 @y
-        <pagefind-input placeholder="ドキュメントの検索…"></pagefind-input>
+      <span class="search-ask-title">Docker に質問</span>
 @z
 
 @x
-          Start typing to search the documentation
+        x-text="query.trim() || 'Get an answer from the documentation'"
 @y
-          キーワード入力してドキュメント検索してください
+        x-text="query.trim() || 'Get an answer from the documentation'"
 @z

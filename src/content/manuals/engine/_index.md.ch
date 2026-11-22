@@ -22,48 +22,48 @@ keywords: Engine
 @x
 - title: Install Docker Engine
   description: Learn how to install the open source Docker Engine for your distribution.
-  icon: arrow-down-tray
+  icon: download
   link: /engine/install
 @y
 - title: Docker Engine のインストール
   description: 手元のディストリビューションにオープンソースの Docker Engine をインストールする方法について学びます。
-  icon: arrow-down-tray
+  icon: download
   link: __SUBDIR__/engine/install
 @z
 
 @x
 - title: Storage
   description: Use persistent data with Docker containers.
-  icon: circle-stack
+  icon: database
   link: /storage
 @y
 - title: ストレージ
   description: Docker コンテナーにおけるデータを保存します。
-  icon: circle-stack
+  icon: database
   link: __SUBDIR__/storage
 @z
 
 @x
 - title: Networking
   description: Manage network connections between containers.
-  icon: server-stack
+  icon: server
   link: /network
 @y
 - title: ネットワーク
   description: コンテナー間でのネットワーク接続を管理します。
-  icon: server-stack
+  icon: server
   link: __SUBDIR__/network
 @z
 
 @x
 - title: Container logs
   description: Learn how to view and read container logs.
-  icon: document-text
+  icon: file-text
   link: /config/containers/logging/
 @y
 - title: コンテナーのログ
   description: コンテナーのログを参照し読む方法について学びます。
-  icon: document-text
+  icon: file-text
   link: __SUBDIR__/config/containers/logging/
 @z
 
@@ -82,12 +82,12 @@ keywords: Engine
 @x
 - title: Configure the daemon
   description: Delve into the configuration options of the Docker daemon.
-  icon: adjustments-horizontal
+  icon: sliders-horizontal
   link: /config/daemon
 @y
 - title: デーモンを設定します。
   description: Docker デーモンの設定オプションについて学びます。
-  icon: adjustments-horizontal
+  icon: sliders-horizontal
   link: __SUBDIR__/config/daemon
 @z
 
@@ -118,12 +118,12 @@ keywords: Engine
 @x
 - title: Release notes
   description: Read the release notes for the latest version.
-  icon: document-plus
+  icon: file-plus
   link: /engine/release-notes
 @y
 - title: リリースノート
   description: 最新版に対するリリースノートを確認します。
-  icon: document-plus
+  icon: file-plus
   link: __SUBDIR__/engine/release-notes
 @z
 
@@ -160,15 +160,6 @@ CLI は [Docker API](reference/api/engine/_index.md) を利用して、Docker �
 これ以外の Docker アプリケーションの多くが API や CLI を利用しています。
 デーモンからは、イメージ、コンテナー、ネットワーク、ボリュームといった Docker オブジェクトが生成され管理されます。
 @z
-
-@x
-For more details, see
-[Docker Architecture](/get-started/docker-overview.md#docker-architecture).
-@y
-詳細は [Docker アーキテクチャー](get-started/docker-overview.md#docker-architecture) を参照してください。
-@z
-
-% {{< grid >}}
 
 @x
 ## Licensing

@@ -56,24 +56,24 @@ keywords: security, hardened desktop, enhanced container isolation, registry acc
 @x
   - title: "Image Access Management"
     description: Control the images developers can pull from Docker Hub.
-    icon: photo
+    icon: image
     link: /desktop/enterprise/hardened-desktop/image-access-management/
 @y
   - title: "Image Access Management"
     description: Control the images developers can pull from Docker Hub.
-    icon: photo
+    icon: image
     link: __SUBDIR__/desktop/enterprise/hardened-desktop/image-access-management/
 @z
 
 @x
   - title: "Air-Gapped Containers"
     description: Restrict containers from accessing unwanted network resources.
-    icon: lock-closed
+    icon: lock
     link: /desktop/enterprise/hardened-desktop/air-gapped-containers/
 @y
   - title: "Air-Gapped Containers"
     description: Restrict containers from accessing unwanted network resources.
-    icon: lock-closed
+    icon: lock
     link: __SUBDIR__/desktop/enterprise/hardened-desktop/air-gapped-containers/
 @z
 

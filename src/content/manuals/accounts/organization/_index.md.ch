@@ -26,12 +26,12 @@ keywords: admin, organization, Docker Home, user accounts, account management,
 @x
   - title: Set up your organization
     description: Create, onboard, and configure your organization.
-    icon: magnifying-glass-plus
+    icon: zoom-in
     link: /accounts/organization/setup/
 @y
   - title: Set up your organization
     description: Create, onboard, and configure your organization.
-    icon: magnifying-glass-plus
+    icon: zoom-in
     link: __SUBDIR__/accounts/organization/setup/
 @z
 
@@ -51,25 +51,25 @@ keywords: admin, organization, Docker Home, user accounts, account management,
   - title: Activity logs
     description: Review member activity across your organization and
       repositories.
-    icon: clipboard-document-list
+    icon: clipboard-list
     link: /accounts/organization/activity-logs/
 @y
   - title: Activity logs
     description: Review member activity across your organization and
       repositories.
-    icon: clipboard-document-list
+    icon: clipboard-list
     link: __SUBDIR__/accounts/organization/activity-logs/
 @z
 
 @x
   - title: Insights
     description: See how people in your organization use Docker.
-    icon: chart-bar
+    icon: chart-column
     link: /accounts/organization/insights/
 @y
   - title: Insights
     description: See how people in your organization use Docker.
-    icon: chart-bar
+    icon: chart-column
     link: __SUBDIR__/accounts/organization/insights/
 @z
 

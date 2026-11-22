@@ -119,17 +119,17 @@ Tests pass if the `sut` service returns `0`, and fail otherwise.
 > [!NOTE]
 > 
 > Only the `sut` service and all other services listed in
-> [`depends_on`](/reference/compose-file/services.md#depends_on) are
+> [`depends_on`](/reference/compose-file/workload-spec.md#depends_on) are
 > started. If you have services that poll for changes in other services, be sure
-> to include the polling services in the [`depends_on`](/reference/compose-file/services.md#depends_on)
+> to include the polling services in the [`depends_on`](/reference/compose-file/workload-spec.md#depends_on)
 > list to make sure all of your services start.
 @y
 > [!NOTE]
 > 
 > Only the `sut` service and all other services listed in
-> [`depends_on`](reference/compose-file/services.md#depends_on) are
+> [`depends_on`](reference/compose-file/workload-spec.md#depends_on) are
 > started. If you have services that poll for changes in other services, be sure
-> to include the polling services in the [`depends_on`](reference/compose-file/services.md#depends_on)
+> to include the polling services in the [`depends_on`](reference/compose-file/workload-spec.md#depends_on)
 > list to make sure all of your services start.
 @z
 

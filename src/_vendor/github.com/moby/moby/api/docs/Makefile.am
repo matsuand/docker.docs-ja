@@ -61,7 +61,9 @@ bases = \
 	v1.53.yaml   \
 	v1.54.yaml   \
 	v1.55.yaml   \
-	v1.56.yaml
+	v1.56.yaml   \
+	v1.57-swagger.yaml \
+	v1.57.yaml
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

@@ -67,12 +67,12 @@ Before you begin, make sure you meet the following requirements to get started w
 @z
 
 @x
-1. Download and install the latest version of [Docker Desktop](/get-started/get-docker/).
+1. Download and install the latest version of [Docker Desktop](/get-docker/).
 2. Open the Docker Desktop settings and select **Beta features**.
 3. Select **Enable Docker MCP Toolkit**.
 4. Select **Apply**.
 @y
-1. Download and install the latest version of [Docker Desktop](__SUBDIR__/get-started/get-docker/).
+1. Download and install the latest version of [Docker Desktop](get-docker/).
 2. Open the Docker Desktop settings and select **Beta features**.
 3. Select **Enable Docker MCP Toolkit**.
 4. Select **Apply**.

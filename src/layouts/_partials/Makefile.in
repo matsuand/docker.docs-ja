@@ -296,15 +296,21 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = admonitions api-reference components sidebar utils
+SUBDIRS = admonitions api-reference components navigation utils
 bases = \
-	footer.html       \
-	github-links.html \
-	head.html         \
-	header.html       \
-	heading.html      \
-	md-dropdown.html  \
-	search-bar.html   \
+	ask-dock.html        \
+	code-copy.html       \
+	discovery-entry.html \
+	footer.html          \
+	github-links.html    \
+	head.html            \
+	header.html          \
+	heading.html         \
+	meta.html            \
+	page-actions.html    \
+	search-bar.html      \
+	search-composer.html \
+	search-results.html  \
 	whats-new.html
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
@@ -320,11 +326,12 @@ copyfiles = \
 	icon.html                       \
 	interactive-diagram-script.html \
 	mermaid-script.html             \
-	meta.html                       \
 	pagemeta.html                   \
 	pagefind-meta.html              \
+	reading-header.html             \
 	schema.html                     \
 	tooltip.html                    \
+	ui-icon.html                    \
 	youtube-script.html
 
 all: all-recursive

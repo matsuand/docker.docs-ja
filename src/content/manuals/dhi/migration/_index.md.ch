@@ -34,36 +34,36 @@ keywords: migrate, docker hardened images, dhi, migration guide
 @x
     - title: Migrate from Alpine or Debian images
       description: Manual migration guide for moving from Docker Official Images (Alpine or Debian-based) to Docker Hardened Images.
-      icon: code-bracket
+      icon: code
       link: /dhi/migration/migrate-from-doi/
 @y
     - title: Alpine や Debian イメージからの移行
       description: Manual migration guide for moving from Docker Official Images (Alpine or Debian-based) to Docker Hardened Images.
-      icon: code-bracket
+      icon: code
       link: __SUBDIR__/dhi/migration/migrate-from-doi/
 @z
 
 @x
     - title: Migrate from Ubuntu
       description: Manual migration guide for transitioning from Ubuntu-based images to Docker Hardened Images.
-      icon: arrow-up-circle
+      icon: circle-arrow-up
       link: /dhi/migration/migrate-from-ubuntu/
 @y
     - title: Ubuntu からの移行
       description: Manual migration guide for transitioning from Ubuntu-based images to Docker Hardened Images.
-      icon: arrow-up-circle
+      icon: circle-arrow-up
       link: __SUBDIR__/dhi/migration/migrate-from-ubuntu/
 @z
 
 @x
     - title: Migrate from Wolfi
       description: Manual migration guide for transitioning from Wolfi-based images to Docker Hardened Images.
-      icon: arrow-path
+      icon: refresh-cw
       link: /dhi/migration/migrate-from-wolfi/
 @y
     - title: Wolfi からの移行
       description: Manual migration guide for transitioning from Wolfi-based images to Docker Hardened Images.
-      icon: arrow-path
+      icon: refresh-cw
       link: __SUBDIR__/dhi/migration/migrate-from-wolfi/
 @z
 
@@ -72,12 +72,12 @@ keywords: migrate, docker hardened images, dhi, migration guide
 @x
     - title: Migration checklist
       description: A comprehensive checklist of migration considerations to ensure successful transition to Docker Hardened Images.
-      icon: clipboard-document-check
+      icon: clipboard-check
       link: /dhi/migration/checklist/
 @y
     - title: 移行チェックリスト
       description: A comprehensive checklist of migration considerations to ensure successful transition to Docker Hardened Images.
-      icon: clipboard-document-check
+      icon: clipboard-check
       link: __SUBDIR__/dhi/migration/checklist/
 @z
 

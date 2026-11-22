@@ -1,20 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 (icon svg ファイルについては no slash 対応)
+% (icon svg ファイルについては no slash 対応)
 
 @x
 title: Testcontainers
-@y
-title: Testcontainers
-@z
-
-@x
+weight: 40
 description: Learn how to use Testcontainers to run containers programmatically in your preferred programming language.
 keywords:
   docker APIs, docker, testcontainers documentation, testcontainers, testcontainers oss, testcontainers oss documentation,
   docker compose, docker-compose, java, golang, go
 @y
+title: Testcontainers
+weight: 40
 description: Learn how to use Testcontainers to run containers programmatically in your preferred programming language.
 keywords:
   docker APIs, docker, testcontainers documentation, testcontainers, testcontainers oss, testcontainers oss documentation,
@@ -26,24 +24,24 @@ keywords:
 @x
   - title: What is Testcontainers?
     description: Learn about what Testcontainers does and its key benefits
-    icon: magnifying-glass
+    icon: search
     link: https://testcontainers.com/getting-started/#what-is-testcontainers
 @y
   - title: What is Testcontainers?
     description: Learn about what Testcontainers does and its key benefits
-    icon: magnifying-glass
+    icon: search
     link: https://testcontainers.com/getting-started/#what-is-testcontainers
 @z
 
 @x
   - title: The Testcontainers workflow
     description: Understand the Testcontainers workflow
-    icon: magnifying-glass-plus
+    icon: zoom-in
     link: https://testcontainers.com/getting-started/#testcontainers-workflow
 @y
   - title: The Testcontainers workflow
     description: Understand the Testcontainers workflow
-    icon: magnifying-glass-plus
+    icon: zoom-in
     link: https://testcontainers.com/getting-started/#testcontainers-workflow
 @z
 
@@ -82,9 +80,9 @@ Using Testcontainers, you can write tests that depend on the same services you u
 @z
 
 @x
-{{< grid items=intro >}}
+{{< grid level="2" items=intro >}}
 @y
-{{< grid items=intro >}}
+{{< grid level="2" items=intro >}}
 @z
 
 @x
@@ -157,42 +155,4 @@ contact the Testcontainers team and other users from the Testcontainers communit
 {{< grid items=quickstart >}}
 @y
 {{< grid items=quickstart >}}
-@z
-
-@x
-## Guides
-@y
-## Guides
-@z
-
-@x
-Explore hands-on Testcontainers guides to learn how to use Testcontainers
-with different languages and popular frameworks:
-@y
-Explore hands-on Testcontainers guides to learn how to use Testcontainers
-with different languages and popular frameworks:
-@z
-
-@x
-- [Getting started with Testcontainers for .NET](/guides/testcontainers-dotnet-getting-started/)
-- [Getting started with Testcontainers for Go](/guides/testcontainers-go-getting-started/)
-- [Getting started with Testcontainers for Java](/guides/testcontainers-java-getting-started/)
-- [Getting started with Testcontainers for Node.js](/guides/testcontainers-nodejs-getting-started/)
-- [Getting started with Testcontainers for Python](/guides/testcontainers-python-getting-started/)
-- [Testing a Spring Boot REST API with Testcontainers](/guides/testcontainers-java-spring-boot-rest-api/)
-- [Testcontainers container lifecycle management](/guides/testcontainers-java-lifecycle/)
-- [Replace H2 with a real database for testing](/guides/testcontainers-java-replace-h2/)
-- [Configuration of services running in a container](/guides/testcontainers-java-service-configuration/)
-- [Testing an ASP.NET Core web app](/guides/testcontainers-dotnet-aspnet-core/)
-@y
-- [Getting started with Testcontainers for .NET](__SUBDIR__/guides/testcontainers-dotnet-getting-started/)
-- [Getting started with Testcontainers for Go](__SUBDIR__/guides/testcontainers-go-getting-started/)
-- [Getting started with Testcontainers for Java](__SUBDIR__/guides/testcontainers-java-getting-started/)
-- [Getting started with Testcontainers for Node.js](__SUBDIR__/guides/testcontainers-nodejs-getting-started/)
-- [Getting started with Testcontainers for Python](__SUBDIR__/guides/testcontainers-python-getting-started/)
-- [Testing a Spring Boot REST API with Testcontainers](__SUBDIR__/guides/testcontainers-java-spring-boot-rest-api/)
-- [Testcontainers container lifecycle management](__SUBDIR__/guides/testcontainers-java-lifecycle/)
-- [Replace H2 with a real database for testing](__SUBDIR__/guides/testcontainers-java-replace-h2/)
-- [Configuration of services running in a container](__SUBDIR__/guides/testcontainers-java-service-configuration/)
-- [Testing an ASP.NET Core web app](__SUBDIR__/guides/testcontainers-dotnet-aspnet-core/)
 @z

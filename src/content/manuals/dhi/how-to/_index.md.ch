@@ -14,60 +14,60 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
 @x
     - title: Search and evaluate Docker Hardened Images
       description: Learn how to find and compare image repositories, variants, and metadata in the DHI catalog.
-      icon: globe-alt
+      icon: globe
       link: /dhi/how-to/search-evaluate/
 @y
     - title: Search and evaluate Docker Hardened Images
       description: Learn how to find and compare image repositories, variants, and metadata in the DHI catalog.
-      icon: globe-alt
+      icon: globe
       link: __SUBDIR__/dhi/how-to/search-evaluate/
 @z
 
 @x
     - title: Get started with DHI Select and Enterprise
       description: Learn how to mirror repositories, customize images, and access compliance variants with DHI Select and Enterprise subscriptions.
-      icon: rocket-launch
+      icon: rocket
       link: /dhi/how-to/select-enterprise/
 @y
     - title: Get started with DHI Select and Enterprise
       description: Learn how to mirror repositories, customize images, and access compliance variants with DHI Select and Enterprise subscriptions.
-      icon: rocket-launch
+      icon: rocket
       link: __SUBDIR__/dhi/how-to/select-enterprise/
 @z
 
 @x
     - title: Mirror a Docker Hardened Image repository
       description: Learn how to mirror an image into your organization's namespace and optionally push it to another private registry.
-      icon: arrows-right-left
+      icon: arrow-right-left
       link: /dhi/how-to/mirror/
 @y
     - title: Mirror a Docker Hardened Image repository
       description: Learn how to mirror an image into your organization's namespace and optionally push it to another private registry.
-      icon: arrows-right-left
+      icon: arrow-right-left
       link: __SUBDIR__/dhi/how-to/mirror/
 @z
 
 @x
     - title: Customize a Docker Hardened Image or chart
       description: Learn how to customize Docker Hardened Images and charts.
-      icon: cog-6-tooth
+      icon: settings
       link: /dhi/how-to/customize/
 @y
     - title: Customize a Docker Hardened Image or chart
       description: Learn how to customize Docker Hardened Images and charts.
-      icon: cog-6-tooth
+      icon: settings
       link: __SUBDIR__/dhi/how-to/customize/
 @z
 
 @x
     - title: Use hardened system packages
       description: Learn how to use Docker's hardened system packages in your images.
-      icon: archive-box
+      icon: archive
       link: /dhi/how-to/hardened-packages/
 @y
     - title: Use hardened system packages
       description: Learn how to use Docker's hardened system packages in your images.
-      icon: archive-box
+      icon: archive
       link: __SUBDIR__/dhi/how-to/hardened-packages/
 @z
 
@@ -86,48 +86,48 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
 @x
     - title: Use a Docker Hardened Image chart
       description: Learn how to use a Docker Hardened Image chart.
-      icon: chart-bar
+      icon: chart-column
       link: /dhi/how-to/helm/
 @y
     - title: Use a Docker Hardened Image chart
       description: Learn how to use a Docker Hardened Image chart.
-      icon: chart-bar
+      icon: chart-column
       link: __SUBDIR__/dhi/how-to/helm/
 @z
 
 @x
     - title: Verify a Docker Hardened Image or chart
       description: Use Docker Scout or cosign to verify signed attestations like SBOMs, provenance, and vulnerability data for Docker Hardened Images and charts.
-      icon: check-circle
+      icon: check
       link: /dhi/how-to/verify/
 @y
     - title: Verify a Docker Hardened Image or chart
       description: Use Docker Scout or cosign to verify signed attestations like SBOMs, provenance, and vulnerability data for Docker Hardened Images and charts.
-      icon: check-circle
+      icon: check
       link: __SUBDIR__/dhi/how-to/verify/
 @z
 
 @x
     - title: Scan Docker Hardened Images
       description: Learn how to scan Docker Hardened Images for known vulnerabilities using Docker Scout, Grype, or Trivy.
-      icon: bug-ant
+      icon: bug
       link: /dhi/how-to/scan/
 @y
     - title: Scan Docker Hardened Images
       description: Learn how to scan Docker Hardened Images for known vulnerabilities using Docker Scout, Grype, or Trivy.
-      icon: bug-ant
+      icon: bug
       link: __SUBDIR__/dhi/how-to/scan/
 @z
 
 @x
     - title: Query VEX for a Docker Hardened Image
       description: Use the DHI GraphQL API to fetch VEX statements and suppressed CVEs for a Docker Hardened Image by digest, at scale.
-      icon: bug-ant
+      icon: bug
       link: /dhi/how-to/vex-api/
 @y
     - title: Query VEX for a Docker Hardened Image
       description: Use the DHI GraphQL API to fetch VEX statements and suppressed CVEs for a Docker Hardened Image by digest, at scale.
-      icon: bug-ant
+      icon: bug
       link: __SUBDIR__/dhi/how-to/vex-api/
 @z
 
@@ -146,12 +146,12 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
 @x
     - title: Troubleshoot
       description: Resolve common issues when building, running, or debugging Docker Hardened Images, such as non-root behavior, missing shells, and port access.
-      icon: question-mark-circle
+      icon: circle-help
       link: /dhi/how-to/troubleshoot/
 @y
     - title: Troubleshoot
       description: Resolve common issues when building, running, or debugging Docker Hardened Images, such as non-root behavior, missing shells, and port access.
-      icon: question-mark-circle
+      icon: circle-help
       link: __SUBDIR__/dhi/how-to/troubleshoot/
 @z
 

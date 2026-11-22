@@ -91,12 +91,12 @@ kit as a container image containing its files and descriptor.
 
 @x
 You identify a published kit by its container image reference, such as
-`docker.io/docker/sbx-kit-claude:2.1.267`. When you use the kit, `sbx`
+`docker.io/sbx/claude:2.1.267`. When you use the kit, `sbx`
 prepares its files and applies its settings. You can use one kit for a
 complete environment or combine kits that contribute different parts.
 @y
 You identify a published kit by its container image reference, such as
-`docker.io/docker/sbx-kit-claude:2.1.267`. When you use the kit, `sbx`
+`docker.io/sbx/claude:2.1.267`. When you use the kit, `sbx`
 prepares its files and applies its settings. You can use one kit for a
 complete environment or combine kits that contribute different parts.
 @z
@@ -169,15 +169,7 @@ For example, this command runs a workload with a mixin:
 For example, this command runs a workload with a mixin:
 @z
 
-@x
-```console
-$ sbx run docker.io/docker/sbx-kit-claude:2.1.267 --kit docker.io/sbx/playwright:1.61.1
-```
-@y
-```console
-$ sbx run docker.io/docker/sbx-kit-claude:2.1.267 --kit docker.io/sbx/playwright:1.61.1
-```
-@z
+% snip command...
 
 @x
 The Claude Code workload starts the agent, and the Playwright mixin adds

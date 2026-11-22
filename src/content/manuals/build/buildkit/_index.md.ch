@@ -96,9 +96,9 @@ data mounting and nested invocation.
 @z
 
 @x
-{{< figure src="../images/buildkit-dag.svg" class="invertible" >}}
+{{< figure src="../images/buildkit-dag.svg" alt="Build dependency graph with independent branches that merge into a single output." class="invertible" >}}
 @y
-{{< figure src="../images/buildkit-dag.svg" class="invertible" >}}
+{{< figure src="../images/buildkit-dag.svg" alt="Build dependency graph with independent branches that merge into a single output." class="invertible" >}}
 @z
 
 @x

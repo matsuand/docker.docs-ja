@@ -294,7 +294,7 @@ Hovering over an image tag reveals two options:
 @z
 
 @x
-- [What is an image?](/get-started/docker-concepts/the-basics/what-is-an-image.md)
+- [What is a container image?](https://docs.docker.com/learn/content/what-is-a-container/)
 @y
-- [What is an image?](get-started/docker-concepts/the-basics/what-is-an-image.md)
+- [What is a container image?](https://docs.docker.com/learn/content/what-is-a-container/)
 @z

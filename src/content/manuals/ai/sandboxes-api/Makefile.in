@@ -303,8 +303,7 @@ bases = \
 	errors.md         \
 	get-started.md    \
 	install.md        \
-	limits.md         \
-	reference.md
+	limits.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

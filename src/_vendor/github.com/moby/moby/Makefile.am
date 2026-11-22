@@ -1,4 +1,4 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = api
+SUBDIRS = api v2

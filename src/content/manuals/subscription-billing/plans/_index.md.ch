@@ -94,13 +94,13 @@ keywords:
     description: >-
       Publisher analytics and reporting plans for organization accounts.
     link: /subscription-billing/plans/docker-verified-publisher/
-    icon: check-badge
+    icon: check-verified
 @y
   - title: Docker Verified Publisher (DVP)
     description: >-
       Publisher analytics and reporting plans for organization accounts.
     link: __SUBDIR__/subscription-billing/plans/docker-verified-publisher/
-    icon: check-badge
+    icon: check-verified
 @z
 
 @x

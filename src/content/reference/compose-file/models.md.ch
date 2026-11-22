@@ -28,9 +28,9 @@ The top-level `models` section declares AI models that are used by your Compose 
 @z
 
 @x
-Services can only access models when explicitly granted by a [`models` attribute](services.md#models) within the `services` top-level element.
+Services can only access models when explicitly granted by a [`models` attribute](container-spec.md#models) within the `services` top-level element.
 @y
-サービスがモデルにアクセスできるのは、トップレベル要素 `services` 内の [`models` 属性](services.md#models) によって明示的に許可された場合のみです。
+サービスがモデルにアクセスできるのは、トップレベル要素 `services` 内の [`models` 属性](container-spec.md#models) によって明示的に許可された場合のみです。
 @z
 
 @x

@@ -30,24 +30,24 @@ keywords: >-
 @x
   - title: Manage custom roles
     description: Create, edit, assign, and delete custom roles for users and teams.
-    icon: adjustments-horizontal
+    icon: sliders-horizontal
     link: /security/roles-and-permissions/custom-roles/manage/
 @y
   - title: Manage custom roles
     description: Create, edit, assign, and delete custom roles for users and teams.
-    icon: adjustments-horizontal
+    icon: sliders-horizontal
     link: __SUBDIR__/security/roles-and-permissions/custom-roles/manage/
 @z
 
 @x
   - title: Permissions reference
     description: Review every permission you can assign when building a custom role.
-    icon: list-bullet
+    icon: list
     link: /security/roles-and-permissions/custom-roles/permissions-reference/
 @y
   - title: Permissions reference
     description: Review every permission you can assign when building a custom role.
-    icon: list-bullet
+    icon: list
     link: __SUBDIR__/security/roles-and-permissions/custom-roles/permissions-reference/
 @z
 

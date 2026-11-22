@@ -25,72 +25,72 @@ keywords: Docker, Extensions, sdk
 @x
   - title: "The build and publish process"
     description: Understand the process for building and publishing an extension.
-    icon: clipboard-document-check
+    icon: clipboard-check
     link: "/extensions/extensions-sdk/process/"
 @y
   - title: "The build and publish process"
     description: Understand the process for building and publishing an extension.
-    icon: clipboard-document-check
+    icon: clipboard-check
     link: "__SUBDIR__/extensions/extensions-sdk/process/"
 @z
 
 @x
   - title: "Quickstart guide"
     description: Follow the quickstart guide to create a basic Docker extension quickly.
-    icon: magnifying-glass-plus
+    icon: zoom-in
     link: "/extensions/extensions-sdk/quickstart/"
 @y
   - title: "Quickstart guide"
     description: Follow the quickstart guide to create a basic Docker extension quickly.
-    icon: magnifying-glass-plus
+    icon: zoom-in
     link: "__SUBDIR__/extensions/extensions-sdk/quickstart/"
 @z
 
 @x
   - title: "View the design guidelines"
     description: Ensure your extension aligns to Docker's design guidelines and principles.
-    icon: paint-brush
+    icon: paintbrush
     link: "/extensions/extensions-sdk/design/design-guidelines/"
 @y
   - title: "View the design guidelines"
     description: Ensure your extension aligns to Docker's design guidelines and principles.
-    icon: paint-brush
+    icon: paintbrush
     link: "__SUBDIR__/extensions/extensions-sdk/design/design-guidelines/"
 @z
 
 @x
   - title: "Publish your extension"
     description: Understand how to publish your extension to the Marketplace.
-    icon: arrow-up-tray
+    icon: upload
     link: "/extensions/extensions-sdk/extensions/"
 @y
   - title: "Publish your extension"
     description: Understand how to publish your extension to the Marketplace.
-    icon: arrow-up-tray
+    icon: upload
     link: "__SUBDIR__/extensions/extensions-sdk/extensions/"
 @z
 
 @x
   - title: "Interacting with Kubernetes"
     description: Find information on how to interact indirectly with a Kubernetes cluster from your Docker extension.
-    icon: arrows-right-left
+    icon: arrow-right-left
     link: "/extensions/extensions-sdk/guides/kubernetes/"
 @y
   - title: "Interacting with Kubernetes"
     description: Find information on how to interact indirectly with a Kubernetes cluster from your Docker extension.
-    icon: arrows-right-left
+    icon: arrow-right-left
     link: "__SUBDIR__/extensions/extensions-sdk/guides/kubernetes/"
 @z
 
 @x
   - title: "Multi-arch extensions"
     description: Build your extension for multiple architectures.
-    icon: document-duplicate
+    icon: copy
     link: "/extensions/extensions-sdk/extensions/multi-arch/"
 @y
   - title: "Multi-arch extensions"
     description: Build your extension for multiple architectures.
-    icon: document-duplicate
+    icon: copy
     link: "__SUBDIR__/extensions/extensions-sdk/extensions/multi-arch/"
 @z
 
@@ -136,10 +136,4 @@ the extension to Docker Hub. See [Extensions distribution](extensions/DISTRIBUTI
 {{% include "extensions-form.md" %}}
 @y
 {{% include "extensions-form.md" %}}
-@z
-
-@x
-{{< grid >}}
-@y
-{{< grid >}}
 @z

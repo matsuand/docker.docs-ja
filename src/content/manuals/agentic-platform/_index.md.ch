@@ -34,48 +34,72 @@ keywords: docker agentic platform, agents, kits, sandboxes, mcp, secrets, networ
 @x
   - title: Get started
     description: Start your first sandbox.
-    icon: rocket-launch
+    icon: rocket
     link: /agentic-platform/get-started/
 @y
   - title: Get started
     description: Start your first sandbox.
-    icon: rocket-launch
+    icon: rocket
     link: __SUBDIR__/agentic-platform/get-started/
 @z
 
 @x
   - title: Kits
     description: Find a kit or run your own public kit.
-    icon: cube
+    icon: box
     link: /agentic-platform/kits/
 @y
   - title: Kits
     description: Find a kit or run your own public kit.
-    icon: cube
+    icon: box
     link: __SUBDIR__/agentic-platform/kits/
 @z
 
 @x
   - title: Sandboxes
     description: Access, pause, resume, and delete your sandboxes.
-    icon: command-line
+    icon: terminal
     link: /agentic-platform/sandboxes/
 @y
   - title: Sandboxes
     description: Access, pause, resume, and delete your sandboxes.
-    icon: command-line
+    icon: terminal
     link: __SUBDIR__/agentic-platform/sandboxes/
+@z
+
+@x
+  - title: Guides
+    description: Share an app, develop remotely, or continue local work in the cloud.
+    icon: terminal
+    link: /agentic-platform/guides/
+@y
+  - title: Guides
+    description: Share an app, develop remotely, or continue local work in the cloud.
+    icon: terminal
+    link: __SUBDIR__/agentic-platform/guides/
+@z
+
+@x
+  - title: Schedules
+    description: Run recurring tasks in a fresh sandbox.
+    icon: clock
+    link: /agentic-platform/schedules/
+@y
+  - title: Schedules
+    description: Run recurring tasks in a fresh sandbox.
+    icon: clock
+    link: __SUBDIR__/agentic-platform/schedules/
 @z
 
 @x
   - title: MCP
     description: Connect predefined or custom MCP servers.
-    icon: cpu-chip
+    icon: cpu
     link: /agentic-platform/mcp/
 @y
   - title: MCP
     description: Connect predefined or custom MCP servers.
-    icon: cpu-chip
+    icon: cpu
     link: __SUBDIR__/agentic-platform/mcp/
 @z
 
@@ -106,12 +130,12 @@ keywords: docker agentic platform, agents, kits, sandboxes, mcp, secrets, networ
 @x
   - title: FAQ
     description: Find answers about access, billing, and supported features.
-    icon: question-mark-circle
+    icon: circle-help
     link: /agentic-platform/faq/
 @y
   - title: FAQ
     description: Find answers about access, billing, and supported features.
-    icon: question-mark-circle
+    icon: circle-help
     link: __SUBDIR__/agentic-platform/faq/
 @z
 

@@ -43,10 +43,10 @@ A container's environment is not set until there's an explicit entry in the serv
 
 @x
 You can set environment variables directly in your container's environment with the
-[`environment` attribute](/reference/compose-file/services.md#environment) in your `compose.yaml`.
+[`environment` attribute](/reference/compose-file/container-spec.md#environment) in your `compose.yaml`.
 @y
 You can set environment variables directly in your container's environment with the
-[`environment` attribute](reference/compose-file/services.md#environment) in your `compose.yaml`.
+[`environment` attribute](reference/compose-file/container-spec.md#environment) in your `compose.yaml`.
 @z
 
 @x
@@ -86,9 +86,9 @@ services:
 @z
 
 @x
-See [`environment` attribute](/reference/compose-file/services.md#environment) for more examples on how to use it. 
+See [`environment` attribute](/reference/compose-file/container-spec.md#environment) for more examples on how to use it. 
 @y
-See [`environment` attribute](reference/compose-file/services.md#environment) for more examples on how to use it. 
+See [`environment` attribute](reference/compose-file/container-spec.md#environment) for more examples on how to use it. 
 @z
 
 @x
@@ -142,9 +142,9 @@ The value of the `DEBUG` variable in the container is taken from the value for t
 @z
 
 @x
-A container's environment can also be set using [`.env` files](variable-interpolation.md#env-file) along with the [`env_file` attribute](/reference/compose-file/services.md#env_file).
+A container's environment can also be set using [`.env` files](variable-interpolation.md#env-file) along with the [`env_file` attribute](/reference/compose-file/container-spec.md#env_file).
 @y
-A container's environment can also be set using [`.env` files](variable-interpolation.md#env-file) along with the [`env_file` attribute](reference/compose-file/services.md#env_file).
+A container's environment can also be set using [`.env` files](variable-interpolation.md#env-file) along with the [`env_file` attribute](reference/compose-file/container-spec.md#env_file).
 @z
 
 @x
@@ -174,9 +174,9 @@ It can also help you keep your environment variables separate from your main con
 @z
 
 @x
-The [`env_file` attribute](/reference/compose-file/services.md#env_file) also lets you use multiple `.env` files in your Compose application.  
+The [`env_file` attribute](/reference/compose-file/container-spec.md#env_file) also lets you use multiple `.env` files in your Compose application.  
 @y
-The [`env_file` attribute](reference/compose-file/services.md#env_file) also lets you use multiple `.env` files in your Compose application.  
+The [`env_file` attribute](reference/compose-file/container-spec.md#env_file) also lets you use multiple `.env` files in your Compose application.  
 @z
 
 @x
@@ -208,22 +208,26 @@ The paths to your `.env` file, specified in the `env_file` attribute, are relati
 @x
 - If multiple files are specified, they are evaluated in order and can override values set in previous files.
 - As of Docker Compose version 2.24.0, you can set your `.env` file, defined by the `env_file` attribute, to be optional by using the `required` field. When `required` is set to `false` and the `.env` file is missing, Compose silently ignores the entry.
-@y
-- If multiple files are specified, they are evaluated in order and can override values set in previous files.
-- As of Docker Compose version 2.24.0, you can set your `.env` file, defined by the `env_file` attribute, to be optional by using the `required` field. When `required` is set to `false` and the `.env` file is missing, Compose silently ignores the entry.
-@z
-
-% snip code...
-
-@x
-- As of Docker Compose version 2.30.0, you can use an alternative file format for the `env_file` with the `format` attribute. For more information, see [`format`](/reference/compose-file/services.md#format).
-@y
-- As of Docker Compose version 2.30.0, you can use an alternative file format for the `env_file` with the `format` attribute. For more information, see [`format`](reference/compose-file/services.md#format).
-@z
-
-@x
+  ```yaml
+  env_file:
+    - path: ./default.env
+      required: true # default
+    - path: ./override.env
+      required: false
+  ``` 
+- As of Docker Compose version 2.30.0, you can use an alternative file format for the `env_file` with the `format` attribute. For more information, see [`format`](/reference/compose-file/container-spec.md#format).
 - Values in your `.env` file can be overridden from the command line by using [`docker compose run -e`](#set-environment-variables-with-docker-compose-run---env). 
 @y
+- If multiple files are specified, they are evaluated in order and can override values set in previous files.
+- As of Docker Compose version 2.24.0, you can set your `.env` file, defined by the `env_file` attribute, to be optional by using the `required` field. When `required` is set to `false` and the `.env` file is missing, Compose silently ignores the entry.
+  ```yaml
+  env_file:
+    - path: ./default.env
+      required: true # default
+    - path: ./override.env
+      required: false
+  ``` 
+- As of Docker Compose version 2.30.0, you can use an alternative file format for the `env_file` with the `format` attribute. For more information, see [`format`](reference/compose-file/container-spec.md#format).
 - Values in your `.env` file can be overridden from the command line by using [`docker compose run -e`](#set-environment-variables-with-docker-compose-run---env). 
 @z
 

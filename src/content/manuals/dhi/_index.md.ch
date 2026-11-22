@@ -14,24 +14,24 @@ description: Secure, minimal, and production-ready base images
 @x
     - title: Quickstart
       description: Follow a step-by-step guide to explore and run a Docker Hardened Image.
-      icon: rocket-launch
+      icon: rocket
       link: /dhi/get-started/
 @y
     - title: クィックスタート
       description: ガイドを通じて Docker Hardened イメージを実行し確認します。
-      icon: rocket-launch
+      icon: rocket
       link: __SUBDIR__/dhi/get-started/
 @z
 
 @x
     - title: Explore
       description: Learn what Docker Hardened Images are, how they're built, and what sets them apart from typical base images.
-      icon: information-circle
+      icon: info
       link: /dhi/explore/
 @y
     - title: Explore
       description: Docker Hardened イメージとは何か、どのようにしてビルドされているか、他のベースイメージjとはどのように違うのかについて学びます。
-      icon: information-circle
+      icon: info
       link: __SUBDIR__/dhi/explore/
 @z
 
@@ -50,24 +50,24 @@ description: Secure, minimal, and production-ready base images
 @x
     - title: Security concepts
       description: Understand the secure supply chain principles that make Docker Hardened Images production-ready.
-      icon: clipboard-document-check
+      icon: clipboard-check
       link: /dhi/explore/security-concepts/
 @y
     - title: Security concepts
       description: Understand the secure supply chain principles that make Docker Hardened Images production-ready.
-      icon: clipboard-document-check
+      icon: clipboard-check
       link: __SUBDIR__/dhi/explore/security-concepts/
 @z
 
 @x
     - title: Tools
       description: Browse and manage Docker Hardened Images using Docker Hub, the CLI, MCP server, or Terraform.
-      icon: wrench-screwdriver
+      icon: wrench
       link: /dhi/tools/
 @y
     - title: Tools
       description: Browse and manage Docker Hardened Images using Docker Hub, the CLI, MCP server, or Terraform.
-      icon: wrench-screwdriver
+      icon: wrench
       link: __SUBDIR__/dhi/tools/
 @z
 

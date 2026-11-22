@@ -62,6 +62,74 @@ for a complete example.
 @z
 
 @x
+## Publish a development service
+@y
+## Publish a development service
+@z
+
+@x
+For a kit that starts a development server in a local sandbox, request an
+automatically assigned host port so users can reach the service without
+approving each publication. Add this grant to the kit descriptor and include
+the kit when creating the sandbox:
+@y
+For a kit that starts a development server in a local sandbox, request an
+automatically assigned host port so users can reach the service without
+approving each publication. Add this grant to the kit descriptor and include
+the kit when creating the sandbox:
+@z
+
+@x
+```yaml
+capabilities:
+  - type: com.docker.sandbox/api@1
+    config:
+      operation: ports.publish
+      approval: none
+```
+@y
+```yaml
+capabilities:
+  - type: com.docker.sandbox/api@1
+    config:
+      operation: ports.publish
+      approval: none
+```
+@z
+
+@x
+With the service listening on port 8080, run this request inside the sandbox:
+@y
+With the service listening on port 8080, run this request inside the sandbox:
+@z
+
+@x
+```console
+$ curl --noproxy '*' --max-time 60 --fail-with-body \
+    -H 'Content-Type: application/json' \
+    --data '[{"sandbox_port":8080}]' \
+    "${HTTP_PROXY%/}/_sbx/api/ports"
+```
+@y
+```console
+$ curl --noproxy '*' --max-time 60 --fail-with-body \
+    -H 'Content-Type: application/json' \
+    --data '[{"sandbox_port":8080}]' \
+    "${HTTP_PROXY%/}/_sbx/api/ports"
+```
+@z
+
+@x
+The response gives the assigned `host_ip` and `host_port`. The host binding
+is loopback-only and uses an ephemeral port because `host_port` is omitted.
+It disappears when the sandbox stops and isn't restored on the next start.
+@y
+The response gives the assigned `host_ip` and `host_port`. The host binding
+is loopback-only and uses an ephemeral port because `host_port` is omitted.
+It disappears when the sandbox stops and isn't restored on the next start.
+@z
+
+@x
 ## Leave build tools out of the mixin
 @y
 ## Leave build tools out of the mixin
@@ -195,11 +263,11 @@ files are present and before the agent launches.
 
 @x
 ```console
-$ sbx run docker.io/docker/sbx-kit-shell:1.0.0 --kit ./internal-ca
+$ sbx run docker.io/sbx/shell:1.0.0 --kit ./internal-ca
 ```
 @y
 ```console
-$ sbx run docker.io/docker/sbx-kit-shell:1.0.0 --kit ./internal-ca
+$ sbx run docker.io/sbx/shell:1.0.0 --kit ./internal-ca
 ```
 @z
 

@@ -3,8 +3,8 @@
 
 @x
 <!doctype html>
-<html lang="en">
+<html lang="en" class="tri-next">
 @y
 <!doctype html>
-<html lang="ja">
+<html lang="ja" class="tri-next">
 @z

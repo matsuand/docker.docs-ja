@@ -4,8 +4,6 @@
 
 bases = \
 	_index.md           \
-	api.md              \
-	audit-logs-api.md   \
 	audit-records.md    \
 	filesystem-rules.md \
 	mcp-policy.md       \

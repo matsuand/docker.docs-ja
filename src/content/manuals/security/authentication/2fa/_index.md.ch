@@ -29,13 +29,13 @@ keywords: two-factor authentication, 2FA, individual Docker account, TOTP,
   - title: Turn 2FA on or off
     description: >-
       Set up an authenticator app, save the recovery code, or turn 2FA off.
-    icon: device-phone-mobile
+    icon: smartphone
     link: /security/authentication/2fa/manage/
 @y
   - title: Turn 2FA on or off
     description: >-
       Set up an authenticator app, save the recovery code, or turn 2FA off.
-    icon: device-phone-mobile
+    icon: smartphone
     link: __SUBDIR__/security/authentication/2fa/manage/
 @z
 

@@ -38,11 +38,13 @@ Images product page](https://www.docker.com/products/hardened-images/).
 @z
 
 @x
-For guides that demonstrate how to use Docker Hardened Images in various
-scenarios, see the [guides section filtered by DHI](/guides/?tags=dhi).
+For tutorials on securing container images, follow the
+[Secure your software supply chain](https://docs.docker.com/learn/paths/secure-your-software-supply-chain/)
+learning path.
 @y
-For guides that demonstrate how to use Docker Hardened Images in various
-scenarios, see the [guides section filtered by DHI](__SUBDIR__/guides/?tags=dhi).
+For tutorials on securing container images, follow the
+[Secure your software supply chain](https://docs.docker.com/learn/paths/secure-your-software-supply-chain/)
+learning path.
 @z
 
 @x

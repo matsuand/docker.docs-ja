@@ -296,22 +296,19 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = _markup _partials _shortcodes guides samples
+SUBDIRS = _markup _partials _shortcodes
 bases = \
-	404.html                  \
-	api.html                  \
-	api.markdown.md           \
-	api-docs.html             \
-	api-docs.markdown.md      \
-	baseof.html               \
-	cli.html                  \
-	cli.markdown.md           \
-	get-started.html          \
-	glossary.html             \
-	list.markdown.md          \
-	sbx-cli.html              \
-	security-announcements.rss.xml \
-	series.html
+	404.html                       \
+	api.html                       \
+	api.markdown.md                \
+	api-docs.html                  \
+	api-docs.markdown.md           \
+	baseof.html                    \
+	cli.html                       \
+	cli.markdown.md                \
+	list.markdown.md               \
+	sbx-cli.html                   \
+	security-announcements.rss.xml
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
@@ -322,15 +319,23 @@ thisdate = `date +'%Y/%m/%d'`
 commitdate = `(cd @abs_origdir@ && git log -1 --pretty=format:"%ad" --date=short) | sed "s|\-|/|g"`
 commithash = `(cd @abs_origdir@ && git log -1 --pretty=format:"%h") | sed "s|\-|/|g"`
 copyfiles = \
-	home.llms.txt       \
-	home.llmsfull.txt   \
-	home.metadata.json  \
-	home.redirects.json \
-	home.robots.txt     \
-	list.html           \
-	single.html         \
-	single.markdown.md  \
-	sitemap.xml         \
+	category-directory.html         \
+	category-directory.markdown.md  \
+	category.html                   \
+	category.markdown.md            \
+	home.llms.txt                   \
+	home.llmsfull.txt               \
+	home.metadata.json              \
+	home.redirects.json             \
+	home.robots.txt                 \
+	installation.html               \
+	installation.markdown.md        \
+	list.html                       \
+	reference-directory.html        \
+	reference-directory.markdown.md \
+	single.html                     \
+	single.markdown.md              \
+	sitemap.xml                     \
 	wide.html
 
 all: all-recursive
@@ -671,9 +676,11 @@ all: _touch home.html
 home.html: $(abs_origdir)/home.html $(srcdir)/home.html.ch
 	@echo Processing home.html...
 	@$(top_builddir)/$(CTIE) -m $@ $(abs_origdir)/home.html $(srcdir)/home.html.ch >/dev/null
-	@sed -i -e "s@__THISDATE__@$(thisdate)@" \
-	        -e "s@__COMMITDATE__@$(commitdate)@" \
-	        -e "s@__COMMITHASH__@$(commithash)@g" $@
+	@sed -i -e "s@__THISDATE__@$(thisdate)@"      \
+	        -e "s@__COMMITDATE__@$(commitdate)@"  \
+	        -e "s@__COMMITHASH__@$(commithash)@g" \
+		-e "s@__SUBDIR__@/docker.docs-ja@g"   \
+		-e "s@__HOSTURL__@$(HOSTURL)@g" $@
 	@echo "commitdate: $(commitdate)" > ../../commit.txt
 	@echo "commithash: $(commithash)" >> ../../commit.txt
 
@@ -685,7 +692,7 @@ copyfiles.sub: $(top_srcdir)/bin/makecp.sh $(srcdir)/Makefile.am $(top_builddir)
 	@$(top_srcdir)/bin/makecp.sh copyfiles . $(copyfiles)
 
 _touch:
-	@touch $(srcdir)/index.html.ch
+	@touch $(srcdir)/home.html.ch
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

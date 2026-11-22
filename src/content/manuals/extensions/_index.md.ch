@@ -10,10 +10,10 @@ title: Docker Extensions
 @z
 
 @x
-description: Extensions
+description: Add debugging, testing, security, and networking tools to Docker Desktop.
 keywords: Docker Extensions, Docker Desktop, Linux, Mac, Windows
 @y
-description: Extensions
+description: Add debugging, testing, security, and networking tools to Docker Desktop.
 keywords: Docker Extensions, Docker Desktop, Linux, Mac, Windows
 @z
 

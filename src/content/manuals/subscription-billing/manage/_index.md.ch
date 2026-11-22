@@ -58,26 +58,26 @@ keywords: billing, docker home, billing overview, manage plans, payment
     description: >-
       Update billing information for your individual account or
       organization.
-    icon: pencil-square
+    icon: square-pen
     link: /subscription-billing/manage/details/
 @y
   - title: Update billing information
     description: >-
       Update billing information for your individual account or
       organization.
-    icon: pencil-square
+    icon: square-pen
     link: __SUBDIR__/subscription-billing/manage/details/
 @z
 
 @x
   - title: Invoices
     description: View billing history and download past invoices.
-    icon: receipt-percent
+    icon: receipt-text
     link: /subscription-billing/manage/history/
 @y
   - title: Invoices
     description: View billing history and download past invoices.
-    icon: receipt-percent
+    icon: receipt-text
     link: __SUBDIR__/subscription-billing/manage/history/
 @z
 
@@ -98,12 +98,12 @@ keywords: billing, docker home, billing overview, manage plans, payment
 @x
   - title: Taxes
     description: Submit a US tax exemption certificate or add a VAT number.
-    icon: document-text
+    icon: file-text
     link: /subscription-billing/manage/tax-certificate/
 @y
   - title: Taxes
     description: Submit a US tax exemption certificate or add a VAT number.
-    icon: document-text
+    icon: file-text
     link: __SUBDIR__/subscription-billing/manage/tax-certificate/
 @z
 

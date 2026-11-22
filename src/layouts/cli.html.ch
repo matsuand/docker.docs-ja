@@ -11,23 +11,23 @@
 % heading.html に受け渡す dict の第三引数追加
 
 @x {{ T "Description" }}
-            <th class="text-left w-32">Description</th>
+            <th scope="row" class="text-left w-32">Description</th>
 @y
-            <th class="text-left w-32">{{ T "Description" }}</th>
+            <th scope="row" class="text-left w-32">{{ T "Description" }}</th>
 @z
 
 @x {{ T "Usage" }}
-            <th class="text-left w-32">Usage</th>
+            <th scope="row" class="text-left w-32">Usage</th>
 @y
-            <th class="text-left w-32">{{ T "Usage" }}</th>
+            <th scope="row" class="text-left w-32">{{ T "Usage" }}</th>
 @z
 
 @x {{ T "Aliases" }}
-              <span>Aliases</span>
-              {{ partialCached "tooltip.html" "An alias is a short or memorable alternative for a longer command." "cli-alias" }}
+                <span>Aliases</span>
+                {{ partialCached "tooltip.html" "An alias is a short or memorable alternative for a longer command." "cli-alias" }}
 @y
-              <span>{{ T "Aliases" }}</span>
-              {{ partialCached "tooltip.html" "エイリアスとは長いコマンドに代わって覚えておくべき短めのコマンドのことです。" "cli-alias" }}
+                <span>{{ T "Aliases" }}</span>
+                {{ partialCached "tooltip.html" "エイリアスとは長いコマンドに代わって覚えておくべき短めのコマンドのことです。" "cli-alias" }}
 @z
 
 @x
@@ -112,13 +112,13 @@
 @z
 
 @x
-                <th class="p-2">Option</th>
-                <th class="p-2">Default</th>
-                <th class="p-2">Description</th>
+                <th scope="col" class="p-2">Option</th>
+                <th scope="col" class="p-2">Default</th>
+                <th scope="col" class="p-2">Description</th>
 @y
-                <th class="p-2">{{ T "Option" }}</th>
-                <th class="p-2">{{ T "Default" }}</th>
-                <th class="p-2">{{ T "Description" }}</th>
+                <th scope="col" class="p-2">{{ T "Option" }}</th>
+                <th scope="col" class="p-2">{{ T "Default" }}</th>
+                <th scope="col" class="p-2">{{ T "Description" }}</th>
 @z
 
 @x "以上"
@@ -139,18 +139,18 @@
 
 @x "試験的"
                     {{ with .experimental }}
-                      {{ partialCached "components/badge.html" (dict "color" "violet" "content" "experimental (daemon)") "exp" }}
+                      {{ partialCached "components/badge.html" (dict "color" "gray" "content" "experimental (daemon)") "exp" }}
 @y
                     {{ with .experimental }}
-                      {{ partialCached "components/badge.html" (dict "color" "violet" "content" "試験的 (デーモン)") "exp" }}
+                      {{ partialCached "components/badge.html" (dict "color" "gray" "content" "試験的 (デーモン)") "exp" }}
 @z
 
 @x "試験的"
                     {{ with .experimentalcli }}
-                      {{ partialCached "components/badge.html" (dict "color" "violet" "content" "experimental (CLI)") "exp-cli" }}
+                      {{ partialCached "components/badge.html" (dict "color" "gray" "content" "experimental (CLI)") "exp-cli" }}
 @y
                     {{ with .experimentalcli }}
-                      {{ partialCached "components/badge.html" (dict "color" "violet" "content" "試験的 (CLI)") "exp-cli" }}
+                      {{ partialCached "components/badge.html" (dict "color" "gray" "content" "試験的 (CLI)") "exp-cli" }}
 @z
 
 @x (T "Examples") ／dict 第三引数追加
@@ -167,9 +167,9 @@
       {{ $heading := dict "level" 2 "text" (T "Subcommands") }}
 @z
 @x
-            <th class="text-left">Command</th>
-            <th class="text-left">Description</th>
+            <th scope="col" class="text-left">Command</th>
+            <th scope="col" class="text-left">Description</th>
 @y
-            <th class="text-left">{{ T "Command" }}</th>
-            <th class="text-left">{{ T "Description" }}</th>
+            <th scope="col" class="text-left">{{ T "Command" }}</th>
+            <th scope="col" class="text-left">{{ T "Description" }}</th>
 @z

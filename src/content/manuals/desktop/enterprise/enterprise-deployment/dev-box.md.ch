@@ -140,10 +140,10 @@ For issues related to:
 @z
 
 @x
-- Docker Desktop configuration, usage, or licensing: Create a support ticket through [Docker Support](https://hub.docker.com/support).
+- Docker Desktop configuration, usage, or licensing: Create a support case through [Docker Support](https://hub.docker.com/support).
 - Dev Box creation, Azure portal configuration, or networking: Contact Azure Support.
 @y
-- Docker Desktop configuration, usage, or licensing: Create a support ticket through [Docker Support](https://hub.docker.com/support).
+- Docker Desktop configuration, usage, or licensing: Create a support case through [Docker Support](https://hub.docker.com/support).
 - Dev Box creation, Azure portal configuration, or networking: Contact Azure Support.
 @z
 

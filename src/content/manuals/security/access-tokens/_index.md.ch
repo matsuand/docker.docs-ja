@@ -32,38 +32,38 @@ keywords: >-
     description: >-
       Authenticate the Docker CLI and tools with a token tied to your
       account.
-    icon: lock-closed
+    icon: lock
     link: /security/access-tokens/personal-access-tokens/
 @y
   - title: Personal access tokens
     description: >-
       Authenticate the Docker CLI and tools with a token tied to your
       account.
-    icon: lock-closed
+    icon: lock
     link: __SUBDIR__/security/access-tokens/personal-access-tokens/
 @z
 
 @x
   - title: Organization access tokens
     description: Grant org-owned Hub access to CI/CD and other automation.
-    icon: building-office-2
+    icon: building-2
     link: /security/access-tokens/organization-access-tokens/
 @y
   - title: Organization access tokens
     description: Grant org-owned Hub access to CI/CD and other automation.
-    icon: building-office-2
+    icon: building-2
     link: __SUBDIR__/security/access-tokens/organization-access-tokens/
 @z
 
 @x
   - title: Reference
     description: Look up PAT permissions, OAT scopes, and Hub API support.
-    icon: list-bullet
+    icon: list
     link: /security/access-tokens/reference/
 @y
   - title: Reference
     description: Look up PAT permissions, OAT scopes, and Hub API support.
-    icon: list-bullet
+    icon: list
     link: __SUBDIR__/security/access-tokens/reference/
 @z
 

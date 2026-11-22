@@ -11,8 +11,7 @@ bases = \
 	errors.md         \
 	get-started.md    \
 	install.md        \
-	limits.md         \
-	reference.md
+	limits.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

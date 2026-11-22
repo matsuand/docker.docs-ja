@@ -56,9 +56,9 @@ Compose displays a warning.
 @z
 
 @x
-When Compose is confronted with both a `build` subsection for a service and an `image` attribute, it follows the rules defined by the [`pull_policy`](services.md#pull_policy) attribute.
+When Compose is confronted with both a `build` subsection for a service and an `image` attribute, it follows the rules defined by the [`pull_policy`](container-spec.md#pull_policy) attribute.
 @y
-When Compose is confronted with both a `build` subsection for a service and an `image` attribute, it follows the rules defined by the [`pull_policy`](services.md#pull_policy) attribute.
+When Compose is confronted with both a `build` subsection for a service and an `image` attribute, it follows the rules defined by the [`pull_policy`](container-spec.md#pull_policy) attribute.
 @z
 
 @x
@@ -722,9 +722,9 @@ entitlements:
 @z
 
 @x
-`extra_hosts` adds hostname mappings at build-time. Use the same syntax as [`extra_hosts`](services.md#extra_hosts).
+`extra_hosts` adds hostname mappings at build-time. Use the same syntax as [`extra_hosts`](container-spec.md#extra_hosts).
 @y
-`extra_hosts` adds hostname mappings at build-time. Use the same syntax as [`extra_hosts`](services.md#extra_hosts).
+`extra_hosts` adds hostname mappings at build-time. Use the same syntax as [`extra_hosts`](container-spec.md#extra_hosts).
 @z
 
 @x
@@ -810,10 +810,10 @@ configuration, which means for Linux `/etc/hosts` will get extra lines:
 @z
 
 @x
-`isolation` specifies a build’s container isolation technology. Like [isolation](services.md#isolation), supported values
+`isolation` specifies a build’s container isolation technology. Like [isolation](container-spec.md#isolation), supported values
 are platform specific.
 @y
-`isolation` specifies a build’s container isolation technology. Like [isolation](services.md#isolation), supported values
+`isolation` specifies a build’s container isolation technology. Like [isolation](container-spec.md#isolation), supported values
 are platform specific.
 @z
 
@@ -954,9 +954,9 @@ has been updated on registry (see [pull](#pull)).
 @z
 
 @x
-`platforms` defines a list of target [platforms](services.md#platform).
+`platforms` defines a list of target [platforms](container-spec.md#platform).
 @y
-`platforms` defines a list of target [platforms](services.md#platform).
+`platforms` defines a list of target [platforms](container-spec.md#platform).
 @z
 
 @x
@@ -1210,10 +1210,10 @@ build:
 @z
 
 @x
-`secrets` grants access to sensitive data defined by [secrets](services.md#secrets) on a per-service build basis. Two
+`secrets` grants access to sensitive data defined by [secrets](container-spec.md#secrets) on a per-service build basis. Two
 different syntax variants are supported: the short syntax and the long syntax.
 @y
-`secrets` grants access to sensitive data defined by [secrets](services.md#secrets) on a per-service build basis. Two
+`secrets` grants access to sensitive data defined by [secrets](container-spec.md#secrets) on a per-service build basis. Two
 different syntax variants are supported: the short syntax and the long syntax.
 @z
 
@@ -1376,11 +1376,11 @@ RUN --mount=type=secret,id=cert,required=true,target=/root/cert ...
 @x
 Service builds may be granted access to multiple secrets. Long and short syntax for secrets may be used in the
 same Compose file. Defining a secret in the top-level `secrets` must not imply granting any service build access to it.
-Such grant must be explicit within service specification as [secrets](services.md#secrets) service element.
+Such grant must be explicit within service specification as [secrets](container-spec.md#secrets) service element.
 @y
 Service builds may be granted access to multiple secrets. Long and short syntax for secrets may be used in the
 same Compose file. Defining a secret in the top-level `secrets` must not imply granting any service build access to it.
-Such grant must be explicit within service specification as [secrets](services.md#secrets) service element.
+Such grant must be explicit within service specification as [secrets](container-spec.md#secrets) service element.
 @z
 
 @x
@@ -1539,10 +1539,10 @@ build:
 
 @x
 `tags` defines a list of tag mappings that must be associated to the build image. This list comes in addition to
-the `image` [property defined in the service section](services.md#image)
+the `image` [property defined in the service section](container-spec.md#image)
 @y
 `tags` defines a list of tag mappings that must be associated to the build image. This list comes in addition to
-the `image` [property defined in the service section](services.md#image)
+the `image` [property defined in the service section](container-spec.md#image)
 @z
 
 @x

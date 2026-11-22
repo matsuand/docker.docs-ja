@@ -24,36 +24,36 @@ keywords: offload, offload v1, cloud, docker offload start
 @x
 - title: Quickstart
   description: Get up and running with Docker Offload v1.
-  icon: rocket-launch
+  icon: rocket
   link: /offload/v1/quickstart/
 @y
 - title: Quickstart
   description: Get up and running with Docker Offload v1.
-  icon: rocket-launch
+  icon: rocket
   link: __SUBDIR__/offload/v1/quickstart/
 @z
 
 @x
 - title: About
   description: Learn about Docker Offload v1 and how it works.
-  icon: information-circle
+  icon: info
   link: /offload/v1/about/
 @y
 - title: About
   description: Learn about Docker Offload v1 and how it works.
-  icon: information-circle
+  icon: info
   link: __SUBDIR__/offload/v1/about/
 @z
 
 @x
 - title: Configure
   description: Manage Docker Offload v1 for your organization and in Docker Desktop.
-  icon: adjustments-horizontal
+  icon: sliders-horizontal
   link: /offload/v1/configuration/
 @y
 - title: Configure
   description: Manage Docker Offload v1 for your organization and in Docker Desktop.
-  icon: adjustments-horizontal
+  icon: sliders-horizontal
   link: __SUBDIR__/offload/v1/configuration/
 @z
 
@@ -72,12 +72,12 @@ keywords: offload, offload v1, cloud, docker offload start
 @x
 - title: Troubleshoot
   description: Troubleshoot issues with Docker Offload v1.
-  icon: bug-ant
+  icon: bug
   link: /offload/v1/troubleshoot/
 @y
 - title: Troubleshoot
   description: Troubleshoot issues with Docker Offload v1.
-  icon: bug-ant
+  icon: bug
   link: __SUBDIR__/offload/v1/troubleshoot/
 @z
 

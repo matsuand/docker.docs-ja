@@ -2,16 +2,22 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS = admonitions api-reference components sidebar utils
+SUBDIRS = admonitions api-reference components navigation utils
 
 bases = \
-	footer.html       \
-	github-links.html \
-	head.html         \
-	header.html       \
-	heading.html      \
-	md-dropdown.html  \
-	search-bar.html   \
+	ask-dock.html        \
+	code-copy.html       \
+	discovery-entry.html \
+	footer.html          \
+	github-links.html    \
+	head.html            \
+	header.html          \
+	heading.html         \
+	meta.html            \
+	page-actions.html    \
+	search-bar.html      \
+	search-composer.html \
+	search-results.html  \
 	whats-new.html
 
 include $(top_srcdir)/build-aux/common.mk
@@ -25,11 +31,12 @@ copyfiles = \
 	icon.html                       \
 	interactive-diagram-script.html \
 	mermaid-script.html             \
-	meta.html                       \
 	pagemeta.html                   \
 	pagefind-meta.html              \
+	reading-header.html             \
 	schema.html                     \
 	tooltip.html                    \
+	ui-icon.html                    \
 	youtube-script.html
 
 include $(top_srcdir)/build-aux/copy.mk

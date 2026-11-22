@@ -2,106 +2,40 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-{{ define "left" }}
-{{ end }}
+      The page may have moved, or the address may be incorrect. Search the docs
+      or start with one of the links below.
 @y
-{{ define "left" }}
-{{ end }}
+      ページが移動したか URL が間違っているかもしれません。
+      以下のリンクからドキュメントを検索してみてください。
 @z
 
 @x
-{{ define "main" }}
-  <article class="prose max-w-none dark:prose-invert">
-    <h1>404</h1>
-    <p>
-      There might be a mistake in the URL or you might've clicked a link to
-      content that no longer exists. If you think it's the latter, please file
-      an issue in our issue tracker on GitHub.
-    </p>
+          Looking for a guide?
 @y
-{{ define "main" }}
-  <article class="prose max-w-none dark:prose-invert">
-    <h1>404</h1>
-    <p>
-      URL の指定に誤りがあるか、あるいは存在しないページへのリンクをクリックしたのかもしれません。
-      存在しないリンクに該当する場合は、GitHub 上の issue トラッカーに issue をあげてください。
-    </p>
+          ガイドをお探しですか？
 @z
 
 @x
-    <a
-      id="newissue"
-      class="link"
-      href="{{ site.Params.repo }}/issues/new"
-    >
-      <strong>Create a new issue</strong></a
-    >
+        Explore guides and learning paths on
+        <a href="https://docs.docker.com/learn/">Docker Learn</a>.
 @y
-    <a
-      id="newissue"
-      class="link"
-      href="{{ site.Params.repo }}/issues/new"
-    >
-      <strong>issue の新規生成</strong></a
-    >
-@z
-
-@x __SUBDIR__
-    <a href="{{ site.BaseURL }}">
-      <figure>
-        <img src="/assets/images/404-docs.png" alt="404 page not found" />
-        <figcaption class="link">Go to the homepage</figcaption>
-      </figure>
-    </a>
-@y
-    <a href="{{ site.BaseURL }}">
-      <figure>
-        <img src="__SUBDIR__/assets/images/404-docs.png" alt="404 page not found" />
-        <figcaption class="link">ホームページへ</figcaption>
-      </figure>
-    </a>
+        <a href="https://docs.docker.com/learn/">Docker を学ぼう</a> を通じて、ガイドや学習ページを調べてみてください。
 @z
 
 @x
-    <script>
-    let el = document.querySelector("#newissue");
-    if (el) {
-        let url = new URL("{{ site.Params.repo }}/issues/new");
-        url.searchParams.set("title", "404 at " + window.location.pathname);
-        let body = "I found a broken link : " + window.location.href;
-        if (document.referrer !== "") {
-            body += "\nI arrived on this page through: " + document.referrer
-        }
-        url.searchParams.set("body", body);
-        url.searchParams.set("template", "broken_link.yml")
-        url.searchParams.set("title", "[404]: " + window.location.pathname);
-        url.searchParams.set("target", window.location.href);
-        url.searchParams.set("location", document.referrer);
-        url.searchParams.set("labels", "status/triage");
-        el.setAttribute("href", url.toString());
-    }
-    </script>
-  </article>
-{{ end }}
+      Search documentation
 @y
-    <script>
-    let el = document.querySelector("#newissue");
-    if (el) {
-        let url = new URL("{{ site.Params.repo }}/issues/new");
-        url.searchParams.set("title", "404 at " + window.location.pathname);
-        let body = "以下のリンク切れを見つけました : " + window.location.href;
-        if (document.referrer !== "") {
-            body += "\n以下からこのページにきました: " + document.referrer
-        }
-        url.searchParams.set("body", body);
-        url.searchParams.set("template", "broken_link.yml")
-        url.searchParams.set("title", "[404]: " + window.location.pathname);
-        url.searchParams.set("target", window.location.href);
-        url.searchParams.set("location", document.referrer);
-        url.searchParams.set("labels", "status/triage");
-        el.setAttribute("href", url.toString());
-    }
-    </script>
-  </article>
-{{ end }}
+      ドキュメント検索
+@z
+
+@x
+        {{ $destinations := slice (dict "url" "/" "title" "Docs home" "description" "Explore Docker documentation.") }}
+@y
+        {{ $destinations := slice (dict "url" "/" "title" "ホームページ" "description" "Docker ドキュメントを調べよう") }}
+@z
+
+@x
+      >Report a broken link</a
+@y
+      >リンク切れの報告</a
 @z

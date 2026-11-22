@@ -22,7 +22,9 @@ copyfiles = \
 	.htmltest.yml      \
 	.prettierrc        \
 	.vale.ini          \
+	ACCESSIBILITY.md   \
 	AGENTS.md          \
+	ARCHITECTURE.md    \
 	CLAUDE.md          \
 	COMPONENTS.md      \
 	CONTRIBUTING.md    \

@@ -48,16 +48,18 @@ This page contains information about general system requirements, supported plat
 > Docker Desktop on Linux runs a Virtual Machine (VM) which creates and uses a custom docker context, `desktop-linux`, on startup.
 >
 > This means images and containers deployed on the Linux Docker Engine (before installation) are not available in Docker Desktop for Linux.
->
-> {{< accordion title=" Docker Desktop vs Docker Engine: What's the difference?" >}}
 @y
 > [!IMPORTANT]
 >
 > Docker Desktop on Linux runs a Virtual Machine (VM) which creates and uses a custom docker context, `desktop-linux`, on startup.
 >
 > This means images and containers deployed on the Linux Docker Engine (before installation) are not available in Docker Desktop for Linux.
->
-> {{< accordion title=" Docker Desktop vs Docker Engine: What's the difference?" >}}
+@z
+
+@x
+{{< accordion title="Docker Desktop vs Docker Engine: What's the difference?" >}}
+@y
+{{< accordion title="Docker Desktop vs Docker Engine: What's the difference?" >}}
 @z
 
 @x

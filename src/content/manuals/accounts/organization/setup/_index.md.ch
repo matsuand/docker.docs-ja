@@ -38,50 +38,62 @@ keywords:
 %grid:
 
 @x
+  - title: Plan your rollout
+    description: Coordinate settings, pilot testing, and deployment.
+    icon: zoom-in
+    link: /accounts/organization/setup/rollout/
+@y
+  - title: Plan your rollout
+    description: Coordinate settings, pilot testing, and deployment.
+    icon: zoom-in
+    link: __SUBDIR__/accounts/organization/setup/rollout/
+@z
+
+@x
   - title: Create your organization
     description: Choose a new namespace and subscription.
-    icon: building-storefront
+    icon: store
     link: /accounts/organization/setup/orgs/
 @y
   - title: Create your organization
     description: Choose a new namespace and subscription.
-    icon: building-storefront
+    icon: store
     link: __SUBDIR__/accounts/organization/setup/orgs/
 @z
 
 @x
   - title: Convert your account
     description: Keep an existing Docker ID as the organization namespace.
-    icon: arrows-right-left
+    icon: arrow-right-left
     link: /accounts/organization/setup/convert-account/
 @y
   - title: Convert your account
     description: Keep an existing Docker ID as the organization namespace.
-    icon: arrows-right-left
+    icon: arrow-right-left
     link: __SUBDIR__/accounts/organization/setup/convert-account/
 @z
 
 @x
   - title: Onboard your organization
     description: Invite members and configure sign-in.
-    icon: magnifying-glass-plus
+    icon: zoom-in
     link: /accounts/organization/setup/onboard/
 @y
   - title: Onboard your organization
     description: Invite members and configure sign-in.
-    icon: magnifying-glass-plus
+    icon: zoom-in
     link: __SUBDIR__/accounts/organization/setup/onboard/
 @z
 
 @x
   - title: Manage your organization
     description: Add members, teams, licenses, and seats after setup.
-    icon: user-group
+    icon: users
     link: /accounts/organization/manage/
 @y
   - title: Manage your organization
     description: Add members, teams, licenses, and seats after setup.
-    icon: user-group
+    icon: users
     link: __SUBDIR__/accounts/organization/manage/
 @z
 

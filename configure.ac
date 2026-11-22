@@ -36,8 +36,6 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/docker/buildx/docs/Makefile
 	src/_vendor/github.com/docker/cli/Makefile
 	src/_vendor/github.com/docker/cli/docs/Makefile
-	src/_vendor/github.com/docker/cli/docs/extend/Makefile
-	src/_vendor/github.com/docker/cli/docs/extend/images/Makefile
 	src/_vendor/github.com/docker/cli/docs/reference/Makefile
 	src/_vendor/github.com/docker/compose/Makefile
 	src/_vendor/github.com/docker/compose/v5/Makefile
@@ -184,28 +182,22 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/moby/moby/Makefile
 	src/_vendor/github.com/moby/moby/api/Makefile
 	src/_vendor/github.com/moby/moby/api/docs//Makefile
+	src/_vendor/github.com/moby/moby/v2/Makefile
+	src/_vendor/github.com/moby/moby/v2/docs/Makefile
+	src/_vendor/github.com/moby/moby/v2/docs/extend/Makefile
+	src/_vendor/github.com/moby/moby/v2/docs/extend/images/Makefile
+	src/_vendor/github.com/moby/moby/v2/docs/reference/Makefile
 	src/assets/Makefile
-	src/assets/api-reference/Makefile
 	src/assets/css/Makefile
-	src/assets/icons/Makefile
-	src/assets/images/Makefile
-	src/assets/images/guides/Makefile
+	src/assets/css/vendor/Makefile
+	src/assets/css/vendor/trident/Makefile
 	src/assets/js/Makefile
-	src/assets/js/gordon-cards/Makefile
-	src/assets/js/src/Makefile
 	src/content/Makefile
-	src/content/get-started/Makefile
-	src/content/get-started/docker-concepts/Makefile
-	src/content/get-started/docker-concepts/building-images/Makefile
-	src/content/get-started/docker-concepts/building-images/images/Makefile
-	src/content/get-started/docker-concepts/running-containers/Makefile
-	src/content/get-started/docker-concepts/running-containers/images/Makefile
-	src/content/get-started/docker-concepts/the-basics/Makefile
-	src/content/get-started/docker-concepts/the-basics/images/Makefile
-	src/content/get-started/images/Makefile
-	src/content/get-started/tutorials/Makefile
-	src/content/guides/Makefile
-	src/content/guides/images/Makefile
+	src/content/c/Makefile
+	src/content/c/admin/Makefile
+	src/content/c/ai/Makefile
+	src/content/c/dev/Makefile
+	src/content/get-docker/Makefile
 	src/content/includes/Makefile
 	src/content/includes/compose/Makefile
 	src/content/manuals/Makefile
@@ -405,7 +397,6 @@ AC_CONFIG_FILES([
 	src/content/reference/cli/Makefile
 	src/content/reference/cli/sbx/Makefile
 	src/content/reference/compose-file/Makefile
-	src/content/reference/samples/Makefile
 	src/data/Makefile
 	src/data/cli/Makefile
 	src/data/cli/buildx/Makefile
@@ -428,11 +419,9 @@ AC_CONFIG_FILES([
 	src/layouts/_partials/admonitions/icons/Makefile
 	src/layouts/_partials/api-reference/Makefile
 	src/layouts/_partials/components/Makefile
-	src/layouts/_partials/sidebar/Makefile
+	src/layouts/_partials/navigation/Makefile
 	src/layouts/_partials/utils/Makefile
 	src/layouts/_shortcodes/Makefile
-	src/layouts/guides/Makefile
-	src/layouts/samples/Makefile
 	src/static/Makefile
 ])
 AC_OUTPUT

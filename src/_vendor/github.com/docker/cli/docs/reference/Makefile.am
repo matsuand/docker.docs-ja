@@ -3,7 +3,6 @@
 ##
 
 bases = \
-	dockerd.md \
 	run.md
 
 include $(top_srcdir)/build-aux/common.mk

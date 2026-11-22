@@ -11,7 +11,7 @@ description: >-
 keywords: >-
   Docker roles, core roles, Member role, Editor role, Owner role, organization
   permissions, company owner, Docker Hub, Docker Scout, Docker Build Cloud,
-  OIDC, teams, access control, Docker Business, custom roles
+  OIDC, teams, access control, Docker Business, custom roles, Cloud Sandboxes
 @y
 title: Docker core roles and permissions
 linkTitle: Core roles
@@ -20,7 +20,7 @@ description: >-
 keywords: >-
   Docker roles, core roles, Member role, Editor role, Owner role, organization
   permissions, company owner, Docker Hub, Docker Scout, Docker Build Cloud,
-  OIDC, teams, access control, Docker Business, custom roles
+  OIDC, teams, access control, Docker Business, custom roles, Cloud Sandboxes
 @z
 
 @x
@@ -299,6 +299,46 @@ _\* If not part of a company_
 | Configure builder settings | ✅     | ✅     | ✅    |
 | Buy minutes                | ❌     | ❌     | ✅    |
 | Manage subscription        | ❌     | ❌     | ✅    |
+@z
+
+@x
+### Docker Cloud Sandboxes
+@y
+### Docker Cloud Sandboxes
+@z
+
+@x
+| Permission          | Member | Editor | Owner |
+| :------------------ | :----- | :----- | :---- |
+| Use Cloud Sandboxes | ❌     | ❌     | ✅    |
+@y
+| Permission          | Member | Editor | Owner |
+| :------------------ | :----- | :----- | :---- |
+| Use Cloud Sandboxes | ❌     | ❌     | ✅    |
+@z
+
+@x
+By default, only Owners can use Docker Cloud Sandboxes. To let Members or
+Editors use them, create a
+[custom role](/manuals/security/roles-and-permissions/custom-roles/_index.md)
+that includes the
+[Use Cloud Sandboxes permission](/manuals/security/roles-and-permissions/custom-roles/permissions-reference.md)
+and assign it to those users or to their team.
+@y
+By default, only Owners can use Docker Cloud Sandboxes. To let Members or
+Editors use them, create a
+[custom role](manuals/security/roles-and-permissions/custom-roles/_index.md)
+that includes the
+[Use Cloud Sandboxes permission](manuals/security/roles-and-permissions/custom-roles/permissions-reference.md)
+and assign it to those users or to their team.
+@z
+
+@x
+This permission applies to Cloud Sandboxes only. It doesn't apply to local
+sandboxes that you run with `sbx`.
+@y
+This permission applies to Cloud Sandboxes only. It doesn't apply to local
+sandboxes that you run with `sbx`.
 @z
 
 @x

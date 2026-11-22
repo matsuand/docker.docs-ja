@@ -6,6 +6,7 @@ bases = \
 	_index.md           \
 	build.md            \
 	configs.md          \
+	container-spec.md   \
 	deploy.md           \
 	develop.md          \
 	extension.md        \
@@ -21,7 +22,8 @@ bases = \
 	secrets.md          \
 	services.md         \
 	version-and-name.md \
-	volumes.md
+	volumes.md          \
+	workload-spec.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

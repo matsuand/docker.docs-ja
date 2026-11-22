@@ -536,14 +536,8 @@ Export VEX attestations to a JSON file:
 
 @x
 After exporting the VEX attestation, you can inspect its contents to
-understand what each statement means and filter by status. For a guided
-walkthrough of the VEX document structure, status values, and `jq` filtering
-commands, see [Explore VEX statements in Docker Hardened
-Images](/guides/dhi-vex-walkthrough/).
+understand what each statement means and filter by status.
 @y
 After exporting the VEX attestation, you can inspect its contents to
-understand what each statement means and filter by status. For a guided
-walkthrough of the VEX document structure, status values, and `jq` filtering
-commands, see [Explore VEX statements in Docker Hardened
-Images](__SUBDIR__/guides/dhi-vex-walkthrough/).
+understand what each statement means and filter by status.
 @z

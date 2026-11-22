@@ -28,12 +28,12 @@ description:
   - title: Quickstart
     link: /scout/quickstart/
     description: Learn what Docker Scout can do, and how to get started.
-    icon: magnifying-glass-plus
+    icon: zoom-in
 @y
   - title: クイックスタート
     link: __SUBDIR__/scout/quickstart/
     description: Docker Scout では何ができるか、どのように始めたら良いかを学びます。
-    icon: magnifying-glass-plus
+    icon: zoom-in
 @z
 
 @x
@@ -52,12 +52,12 @@ description:
   - title: Advisory database
     link: /scout/advisory-db-sources/
     description: Learn about the information sources that Docker Scout uses.
-    icon: circle-stack
+    icon: database
 @y
   - title: Advisory database
     link: __SUBDIR__/scout/advisory-db-sources/
     description: Learn about the information sources that Docker Scout uses.
-    icon: circle-stack
+    icon: database
 @z
 
 @x
@@ -65,13 +65,13 @@ description:
     description: |
       Connect Docker Scout with your CI, registries, and other third-party services.
     link: /scout/integrations/
-    icon: arrows-right-left
+    icon: arrow-right-left
 @y
   - title: Integrations
     description: |
       Connect Docker Scout with your CI, registries, and other third-party services.
     link: __SUBDIR__/scout/integrations/
-    icon: arrows-right-left
+    icon: arrow-right-left
 @z
 
 @x
@@ -79,13 +79,13 @@ description:
     link: /scout/dashboard/
     description: |
       The web interface for Docker Scout.
-    icon: squares-2x2
+    icon: layout-grid
 @y
   - title: ダッシュボード
     link: __SUBDIR__/scout/dashboard/
     description: |
       Docker Scout のウェブインターフェースです。
-    icon: squares-2x2
+    icon: layout-grid
 @z
 
 @x
@@ -107,13 +107,13 @@ description:
     link: /subscription-billing/manage/plans/
     description: |
       A Personal subscription includes up to 1 repository. Upgrade for more.
-    icon: arrow-up-circle
+    icon: circle-arrow-up
 @y
   - title: アップグレード
     link: __SUBDIR__/subscription-billing/manage/plans/
     description: |
       パーソナルサブスクリプションは 1 リポジトリまで。アップグレードによりさらに増やせます。
-    icon: arrow-up-circle
+    icon: circle-arrow-up
 @z
 
 @x
@@ -140,10 +140,4 @@ using Docker Hub, the Docker CLI, and the Docker Scout Dashboard.
 @y
 Docker Scout is a standalone service and platform that you can interact with
 using Docker Hub, the Docker CLI, and the Docker Scout Dashboard.
-@z
-
-@x
-{{< grid >}}
-@y
-{{< grid >}}
 @z

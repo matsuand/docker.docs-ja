@@ -2,56 +2,45 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-<!doctype html>
-<html lang="en">
+  <section class="home-hero">
 @y
-<!doctype html>
-<html lang="ja">
+  <section class="home-hero">
+    <div align="right" style="height:0;padding:0;margin:0;border:none;transform:translate(0,-60px);">
+     暫定公開中 __THISDATE__<br/>(<a href="https://github.com/docker/docs/commit/__COMMITHASH__" target="_blank">__COMMITHASH__ 対応, __COMMITDATE__</a>)
+    </div>
+@zs
+
+@x
+    <h1>How can Docker help?</h1>
+@y
+    <h1>何かお調べですか？</h1>
 @z
 
 @x
-      <section class="relative overflow-hidden py-16 md:py-20">
+      <h2 id="quick-install-title">Quick install</h2>
 @y
-      <section class="relative overflow-hidden py-16 md:py-20">
-          <div align="right" style="height:0;padding:0;margin:0;border:none;transform:translate(0,-60px);">
-           暫定公開中 __THISDATE__<br/>(<a href="https://github.com/docker/docs/commit/__COMMITHASH__" target="_blank">__COMMITHASH__ 対応, __COMMITDATE__</a>)
-          </div>
+      <h2 id="quick-install-title">クイックインストール</h2>
+@z
+@x
+            <a class="home-install-product" href="{{ .url }}">{{ .label }}</a>
+@y
+            <a class="home-install-product" href="__SUBDIR__{{ .url }}">{{ .label }}</a>
 @z
 
 @x
-            How can we help?
+            <p class="home-install-platform">Choose your platform</p>
 @y
-            何かお調べですか？
+            <p class="home-install-platform">プラットフォーム選択</p>
 @z
 
 @x
-                placeholder="Ask anything about Docker and get instant answers…"
+      <a href="/get-docker/">Other platforms &amp; installation options →</a>
 @y
-                placeholder="Docker について検索してください…"
+      <a href="get-docker/">他のプラットフォーム、インストールオプション →</a>
 @z
 
 @x
-              "How do I get started with Docker?"
-              "Can I run my AI agent in a sandbox?"
-              "How do I containerize an application?"
-              "What are Docker Hardened Images?"
-              "Why should I use Docker Compose?"
+  <nav class="home-sections" aria-label="Documentation sections">
 @y
-              "How do I get started with Docker?"
-              "Can I run my AI agent in a sandbox?"
-              "How do I containerize an application?"
-              "What are Docker Hardened Images?"
-              "Why should I use Docker Compose?"
-@z
-
-@x
-              (dict "url" "/get-started/" "icon" "rocket-launch" "title" "Get started" "description" "Containerize an app, sandbox an agent, or pilot Docker for your organization.")
-              (dict "url" "/guides/" "icon" "book-open" "title" "Guides" "description" "Optimize your development workflows with Docker.")
-              (dict "url" "/manuals/" "icon" "document-text" "title" "Manuals" "description" "Install, set up, configure, and use Docker products.")
-              (dict "url" "/reference/" "icon" "command-line" "title" "Reference" "description" "Browse the CLI and API documentation.")
-@y
-              (dict "url" "get-started/" "icon" "rocket-launch" "title" "はじめよう" "description" "アプリのコンテナー化、エージェントのサンドボックス化、組織におけるパイロット運用を行います。")
-              (dict "url" "guides/" "icon" "book-open" "title" "ガイド" "description" "Docker を使って開発ワークフローを最適化します。")
-              (dict "url" "manuals/" "icon" "document-text" "title" "マニュアル" "description" "Docker 製品のインストール、設定、利用方法を示します。")
-              (dict "url" "reference/" "icon" "command-line" "title" "リファレンス" "description" "CLI と API のドキュメントを参照します。")
+  <nav class="home-sections" aria-label="Documentation sections">
 @z

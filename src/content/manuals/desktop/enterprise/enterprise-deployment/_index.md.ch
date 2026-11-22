@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ ?Ή?
+% __SUBDIR__ 対応
 
 @x
 title: Deploy Docker Desktop 
@@ -99,10 +99,4 @@ Docker Desktop supports scalable deployment options tailored for enterprise IT e
 Learn how to use MSI and PKG installers, configure default settings, control updates, and ensure compliance with your organization's policies—across Windows, Mac, and Linux systems.
 @y
 Learn how to use MSI and PKG installers, configure default settings, control updates, and ensure compliance with your organization's policies—across Windows, Mac, and Linux systems.
-@z
-
-@x
-{{< grid >}}
-@y
-{{< grid >}}
 @z

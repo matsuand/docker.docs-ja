@@ -266,14 +266,6 @@ start, or manage the Ollama process.
 @z
 
 @x
-For Docker Model Runner, see
-[Run Claude Code in a Docker Sandbox with Docker Model Runner](/guides/claude-code-sandbox-model-runner/).
-@y
-For Docker Model Runner, see
-[Run Claude Code in a Docker Sandbox with Docker Model Runner](__SUBDIR__/guides/claude-code-sandbox-model-runner/).
-@z
-
-@x
 ## Use a hosted provider
 @y
 ## Use a hosted provider

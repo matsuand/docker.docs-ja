@@ -245,8 +245,7 @@ copyfiles = \
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
 copydirs = \
-	assets      \
-	get-started
+	assets
 
 all: all-am
 

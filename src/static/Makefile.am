@@ -12,8 +12,7 @@ include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk
 
 copydirs = \
-	assets      \
-	get-started
+	assets
 
 .PHONY: _copydirs
 all: _copydirs

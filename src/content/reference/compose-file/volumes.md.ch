@@ -23,9 +23,9 @@ keywords: compose, compose specification, volumes, compose file reference
 @z
 
 @x
-To use a volume across multiple services, you must explicitly grant each service access by using the [volumes](services.md#volumes) attribute within the `services` top-level element. The `volumes` attribute has additional syntax that provides more granular control.
+To use a volume across multiple services, you must explicitly grant each service access by using the [volumes](container-spec.md#volumes) attribute within the `services` top-level element. The `volumes` attribute has additional syntax that provides more granular control.
 @y
-To use a volume across multiple services, you must explicitly grant each service access by using the [volumes](services.md#volumes) attribute within the `services` top-level element. The `volumes` attribute has additional syntax that provides more granular control.
+To use a volume across multiple services, you must explicitly grant each service access by using the [volumes](container-spec.md#volumes) attribute within the `services` top-level element. The `volumes` attribute has additional syntax that provides more granular control.
 @z
 
 @x

@@ -497,12 +497,12 @@ services:
 The `image.subpath` option is available in Docker Compose version 2.35.0 and
 later. For more information about using mounts of the `image` type with Compose,
 see the
-[Compose reference on the volume attribute](/reference/compose-file/services.md#volumes).
+[Compose reference on the volume attribute](/reference/compose-file/container-spec.md#volumes).
 @y
 The `image.subpath` option is available in Docker Compose version 2.35.0 and
 later. For more information about using mounts of the `image` type with Compose,
 see the
-[Compose reference on the volume attribute](reference/compose-file/services.md#volumes).
+[Compose reference on the volume attribute](reference/compose-file/container-spec.md#volumes).
 @z
 
 @x

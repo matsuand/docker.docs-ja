@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Jobs
 description: Explore all the attributes the jobs top-level element can have, including triggers and schedules.
@@ -37,12 +39,40 @@ execution of a job with its state and exit code.
 
 @x
 `jobs` is a map whose keys are job names and whose values are job definitions.
-Job names can contain letters, digits, `.`, `_`, and `-`. A job name can't
-match the name of a service, because both are targets of `docker compose run`.
+Job names can contain letters, digits, `.`, `_`, and `-`.
 @y
 `jobs` is a map whose keys are job names and whose values are job definitions.
-Job names can contain letters, digits, `.`, `_`, and `-`. A job name can't
-match the name of a service, because both are targets of `docker compose run`.
+Job names can contain letters, digits, `.`, `_`, and `-`.
+@z
+
+@x
+A job definition supports all attributes defined in the [Container specification](container-spec.md)
+and the [Workload specification](workload-spec.md), as well as the following job-specific attributes.
+@y
+A job definition supports all attributes defined in the [Container specification](container-spec.md)
+and the [Workload specification](workload-spec.md), as well as the following job-specific attributes.
+@z
+
+@x
+A job can depend on services or on other jobs using `depends_on`, but a service cannot
+depend on a job: the "run this job before my service starts" pattern is not what jobs
+are for.
+@y
+A job can depend on services or on other jobs using `depends_on`, but a service cannot
+depend on a job: the "run this job before my service starts" pattern is not what jobs
+are for.
+@z
+
+@x
+Jobs and services share one namespace. A name can't belong to both a service
+and a job, so a name always refers to a single element, for example as the
+target of a `depends_on` entry or of `docker compose run`. Compose returns an
+error when a service and a job have the same name.
+@y
+Jobs and services share one namespace. A name can't belong to both a service
+and a job, so a name always refers to a single element, for example as the
+target of a `depends_on` entry or of `docker compose run`. Compose returns an
+error when a service and a job have the same name.
 @z
 
 @x
@@ -124,17 +154,23 @@ A job definition accepts the following attributes.
 @z
 
 @x
-### Service attributes
+### Container and workload attributes
 @y
-### Service attributes
+### Container and workload attributes
 @z
 
 @x
-A job accepts every attribute of a [service](services.md) except the ones that
-manage the lifecycle of a long-running service:
+A job accepts every attribute of the [container specification](container-spec.md)
+and the [workload specification](workload-spec.md), the same attributes that
+services share, and [`extends`](#extends). It doesn't accept the other
+[service-specific attributes](services.md), which manage the lifecycle of a
+long-running service:
 @y
-A job accepts every attribute of a [service](services.md) except the ones that
-manage the lifecycle of a long-running service:
+A job accepts every attribute of the [container specification](container-spec.md)
+and the [workload specification](workload-spec.md), the same attributes that
+services share, and [`extends`](#extends). It doesn't accept the other
+[service-specific attributes](services.md), which manage the lifecycle of a
+long-running service:
 @z
 
 @x
@@ -145,7 +181,7 @@ manage the lifecycle of a long-running service:
 | `post_start`, `pre_start`, `pre_stop`  | Lifecycle hooks of a long-running service               |
 | `container_name`                       | Each run creates its own container                      |
 | `attach`                               | `docker compose run` streams the output                 |
-| `develop`, `extends`, `provider`, `links`, `external_links` | Not supported for jobs           |
+| `develop`, `provider`, `links`, `external_links` | Not supported for jobs                  |
 @y
 | Attribute                              | Why it doesn't apply                                    |
 | -------------------------------------- | ------------------------------------------------------- |
@@ -154,17 +190,17 @@ manage the lifecycle of a long-running service:
 | `post_start`, `pre_start`, `pre_stop`  | Lifecycle hooks of a long-running service               |
 | `container_name`                       | Each run creates its own container                      |
 | `attach`                               | `docker compose run` streams the output                 |
-| `develop`, `extends`, `provider`, `links`, `external_links` | Not supported for jobs           |
+| `develop`, `provider`, `links`, `external_links` | Not supported for jobs                  |
 @z
 
 @x
-A job can set [`depends_on`](services.md#depends_on) to services and to other
+A job can set [`depends_on`](workload-spec.md#depends_on) to services and to other
 jobs. `docker compose run` starts the services and runs the jobs that a job
 depends on first. A job that another job depends on runs as a regular
 container and has no run record. Docker Engine doesn't evaluate `depends_on`
 when it starts a scheduled job. A service can't set `depends_on` to a job.
 @y
-A job can set [`depends_on`](services.md#depends_on) to services and to other
+A job can set [`depends_on`](workload-spec.md#depends_on) to services and to other
 jobs. `docker compose run` starts the services and runs the jobs that a job
 depends on first. A job that another job depends on runs as a regular
 container and has no run record. Docker Engine doesn't evaluate `depends_on`
@@ -187,6 +223,90 @@ it with `docker compose run`. In that case, Compose activates its profiles. See
 `profiles` is only active when one of its profiles is active, unless you target
 it with `docker compose run`. In that case, Compose activates its profiles. See
 [Profiles](profiles.md).
+@z
+
+@x
+### `extends`
+@y
+### `extends`
+@z
+
+@x
+`extends` lets a job share a common configuration with another job. It uses the
+same syntax and merge rules as the [`extends` attribute of services](services.md#extends).
+The value is a mapping with a required `service` key and an optional `file` key.
+The attributes that the extending job declares override or complete the ones of
+the base.
+@y
+`extends` lets a job share a common configuration with another job. It uses the
+same syntax and merge rules as the [`extends` attribute of services](services.md#extends).
+The value is a mapping with a required `service` key and an optional `file` key.
+The attributes that the extending job declares override or complete the ones of
+the base.
+@z
+
+@x
+Services and jobs are extended separately. A job can only extend another job,
+and a service can only extend another service. In the `extends` mapping,
+`service` therefore holds the name of the job you reference, and `file` is a
+Compose file that declares this job under its `jobs` top-level element. When
+`file` isn't set, the referenced job is declared in the same Compose file.
+@y
+Services and jobs are extended separately. A job can only extend another job,
+and a service can only extend another service. In the `extends` mapping,
+`service` therefore holds the name of the job you reference, and `file` is a
+Compose file that declares this job under its `jobs` top-level element. When
+`file` isn't set, the referenced job is declared in the same Compose file.
+@z
+
+@x
+```yaml
+jobs:
+  base-task:
+    image: myapp:latest
+    environment:
+      LOG_LEVEL: info
+    triggers:
+      manual: true
+@y
+```yaml
+jobs:
+  base-task:
+    image: myapp:latest
+    environment:
+      LOG_LEVEL: info
+    triggers:
+      manual: true
+@z
+
+@x
+  nightly-report:
+    extends:
+      service: base-task
+    command: ./generate-report.sh
+    triggers:
+      schedule:
+        - "0 3 * * *"
+```
+@y
+  nightly-report:
+    extends:
+      service: base-task
+    command: ./generate-report.sh
+    triggers:
+      schedule:
+        - "0 3 * * *"
+```
+@z
+
+@x
+The restrictions, the lookup of the referenced element, and the handling of
+circular references that apply to [services](services.md#extends) apply to jobs
+as well.
+@y
+The restrictions, the lookup of the referenced element, and the handling of
+circular references that apply to [services](services.md#extends) apply to jobs
+as well.
 @z
 
 @x

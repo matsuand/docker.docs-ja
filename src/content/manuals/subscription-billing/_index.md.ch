@@ -35,14 +35,14 @@ keywords:
       Compare billing models and tiers for Docker, Docker Hardened Images,
       Gordon, Docker Agentic Platform, AI Governance, and DVP.
     link: /subscription-billing/plans/
-    icon: chart-bar
+    icon: chart-column
 @y
   - title: Plans
     description: >-
       Compare billing models and tiers for Docker, Docker Hardened Images,
       Gordon, Docker Agentic Platform, AI Governance, and DVP.
     link: __SUBDIR__/subscription-billing/plans/
-    icon: chart-bar
+    icon: chart-column
 @z
 
 @x
@@ -81,26 +81,26 @@ keywords:
       Add or update a card, US bank account, or Stripe Link, or set up pay by
       invoice for annual organization plans.
     link: /subscription-billing/manage/payment-method/
-    icon: banknotes
+    icon: banknote
 @y
   - title: Payment methods
     description: >-
       Add or update a card, US bank account, or Stripe Link, or set up pay by
       invoice for annual organization plans.
     link: __SUBDIR__/subscription-billing/manage/payment-method/
-    icon: banknotes
+    icon: banknote
 @z
 
 @x
   - title: Invoices
     description: View billing history and download past invoices.
     link: /subscription-billing/manage/history/
-    icon: receipt-percent
+    icon: receipt-text
 @y
   - title: Invoices
     description: View billing history and download past invoices.
     link: __SUBDIR__/subscription-billing/manage/history/
-    icon: receipt-percent
+    icon: receipt-text
 @z
 
 @x

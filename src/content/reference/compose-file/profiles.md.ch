@@ -22,18 +22,18 @@ With profiles you can define a set of active profiles so your Compose applicatio
 @z
 
 @x
-The [services](services.md) top-level element supports a `profiles` attribute to define a list of named profiles. 
-Services without a `profiles` attribute are always enabled. 
+The [services](services.md) and [jobs](jobs.md) top-level elements support a `profiles` attribute to define a list of named profiles.
+Services and jobs without a `profiles` attribute are always enabled.
 @y
-The [services](services.md) top-level element supports a `profiles` attribute to define a list of named profiles. 
-Services without a `profiles` attribute are always enabled. 
+The [services](services.md) and [jobs](jobs.md) top-level elements support a `profiles` attribute to define a list of named profiles.
+Services and jobs without a `profiles` attribute are always enabled.
 @z
 
 @x
-A service is ignored by Compose when none of the listed `profiles` match the active ones, unless the service is
+A service or a job is ignored by Compose when none of the listed `profiles` match the active ones, unless it is
 explicitly targeted by a command. In that case its profile is added to the set of active profiles.
 @y
-A service is ignored by Compose when none of the listed `profiles` match the active ones, unless the service is
+A service or a job is ignored by Compose when none of the listed `profiles` match the active ones, unless it is
 explicitly targeted by a command. In that case its profile is added to the set of active profiles.
 @z
 

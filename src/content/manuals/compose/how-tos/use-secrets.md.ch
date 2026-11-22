@@ -48,11 +48,11 @@ secret はコンテナー内部において `/run/secrets/<secret_name>` 内の�
 @z
 
 @x
-Getting a secret into a container is a two-step process. First, define the secret using the [top-level secrets element in your Compose file](/reference/compose-file/secrets.md). Next, update your service definitions to reference the secrets they require with the [secrets attribute](/reference/compose-file/services.md#secrets). Compose grants access to secrets on a per-service basis.
+Getting a secret into a container is a two-step process. First, define the secret using the [top-level secrets element in your Compose file](/reference/compose-file/secrets.md). Next, update your service definitions to reference the secrets they require with the [secrets attribute](/reference/compose-file/container-spec.md#secrets). Compose grants access to secrets on a per-service basis.
 @y
 secret をコンテナーに含めるには 2 つのステップを経ます。
 まず [Compose ファイル内のトップレベル項目の secret](reference/compose-file/secrets.md) として secret を定義します。
-そしてその secret を利用して [secret の属性](reference/compose-file/services.md#secrets) を参照するサービスの定義を適切に設定します。
+そしてその secret を利用して [secret の属性](reference/compose-file/container-spec.md#secrets) を参照するサービスの定義を適切に設定します。
 Compose において secret へのアクセス権限は、各サービスごとに扱われます。
 @z
 
@@ -141,11 +141,11 @@ In the following example, the `npm_token` secret is made available at build time
 @x
 - [Familiarize yourself with Compose's trust model](/manuals/compose/trust-model.md)
 - [Secrets top-level element](/reference/compose-file/secrets.md)
-- [Secrets attribute for services top-level element](/reference/compose-file/services.md#secrets)
+- [Secrets attribute for services top-level element](/reference/compose-file/container-spec.md#secrets)
 - [Build secrets](https://docs.docker.com/build/building/secrets/)
 @y
 - [Familiarize yourself with Compose's trust model](manuals/compose/trust-model.md)
 - [secret のトップレベル要素](reference/compose-file/secrets.md)
-- [サービスのトップレベル要素に対する secret 属性](reference/compose-file/services.md#secrets)
+- [サービスのトップレベル要素に対する secret 属性](reference/compose-file/container-spec.md#secrets)
 - [secret のビルド](https://docs.docker.com/build/building/secrets/)
 @z
