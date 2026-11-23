@@ -4,19 +4,19 @@
 @x
     aria-label="Ask a question about Docker"
 @y
-    aria-label="Ask a question about Docker"
+    aria-label="Docker について尋ねる"
 @z
 
 @x
       >Ask a question about Docker</label
 @y
-      >Ask a question about Docker</label
+      >Docker について尋ねる</label
 @z
 
 @x
       placeholder="Ask a question about Docker…"
 @y
-      placeholder="Ask a question about Docker…"
+      placeholder="Docker について尋ねる…"
 @z
 
 @x

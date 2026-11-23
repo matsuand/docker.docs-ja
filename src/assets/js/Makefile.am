@@ -5,18 +5,18 @@
 THISDIR = assets/js
 
 bases = \
+	code-copy.js     \
 	docs-search.js   \
+	page-actions.js  \
 	quick-install.js
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
 
 copyfiles = \
-	code-copy.js           \
 	interactive-diagram.js \
 	main.js                \
 	mermaid.js             \
-	page-actions.js        \
 	theme.js
 
 include $(top_srcdir)/build-aux/copy.mk

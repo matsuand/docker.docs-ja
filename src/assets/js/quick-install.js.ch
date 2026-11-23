@@ -47,7 +47,7 @@
       url: "/get-docker/desktop/",
 @y
       product: "Docker Desktop",
-      label: "Windows · Installer",
+      label: "Windows · インストーラー",
       url: "__SUBDIR__/get-docker/desktop/",
 @z
 
@@ -63,7 +63,7 @@
       url: "/get-docker/sandboxes/",
 @y
       product: "Docker Sandboxes",
-      label: "Ubuntu 24.04+",
+      label: "Ubuntu 24.04 以上",
       url: "__SUBDIR__/get-docker/sandboxes/",
 @z
 

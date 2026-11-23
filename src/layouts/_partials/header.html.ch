@@ -8,6 +8,12 @@
 @z
 
 @x
+    <a class="learn-link" href="https://docs.docker.com/learn">Learn</a>
+@y
+    <a class="learn-link" href="https://docs.docker.com/learn">学ぼう</a>
+@z
+
+@x
         >Search or ask</span
 @y
         >検索や質問</span

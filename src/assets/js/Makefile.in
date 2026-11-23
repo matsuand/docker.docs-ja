@@ -240,7 +240,9 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 THISDIR = assets/js
 bases = \
+	code-copy.js     \
 	docs-search.js   \
+	page-actions.js  \
 	quick-install.js
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
@@ -249,11 +251,9 @@ changes = $(bases:=.ch) # change files
 transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 copyfiles = \
-	code-copy.js           \
 	interactive-diagram.js \
 	main.js                \
 	mermaid.js             \
-	page-actions.js        \
 	theme.js
 
 copydirs = \
