@@ -83,6 +83,10 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}"
+      - name: Flatten index.md to single .md files
+        run:
+          cd build/src
+          hack/flatten-and-resolve.js public
       - name: Build pagefind
         run: |
           cd build/src
