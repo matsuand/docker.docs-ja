@@ -7,7 +7,7 @@
       "version": "2-beta"
 @y
       "title": "Docker Hub",
-      "url": "__SUBDIR__/reference/api/hub/latest/",
+      "url": "/reference/api/hub/latest/",
       "version": "2-beta"
 @z
 
@@ -17,7 +17,7 @@
       "version": "1.0.0"
 @y
       "title": "Publisher analytics",
-      "url": "__SUBDIR__/reference/api/dvp/latest/",
+      "url": "/reference/api/dvp/latest/",
       "version": "1.0.0"
 @z
 
@@ -27,7 +27,7 @@
       "version": "2"
 @y
       "title": "Registry",
-      "url": "__SUBDIR__/reference/api/registry/latest/",
+      "url": "/reference/api/registry/latest/",
       "version": "2"
 @z
 
@@ -37,7 +37,7 @@
       "version": "1"
 @y
       "title": "AI Governance",
-      "url": "__SUBDIR__/reference/api/ai-governance/latest/",
+      "url": "/reference/api/ai-governance/latest/",
       "version": "1"
 @z
 
@@ -47,7 +47,7 @@
       "version": "1"
 @y
       "title": "AI Governance Audit Logs",
-      "url": "__SUBDIR__/reference/api/ai-governance-audit-logs/latest/",
+      "url": "/reference/api/ai-governance-audit-logs/latest/",
       "version": "1"
 @z
 
@@ -57,7 +57,7 @@
       "version": "v1"
 @y
       "title": "Docker Sandbox",
-      "url": "__SUBDIR__/reference/api/sandboxes/latest/",
+      "url": "/reference/api/sandboxes/latest/",
       "version": "v1"
 @z
 
@@ -67,6 +67,6 @@
       "version": "1.57"
 @y
       "title": "Docker Engine",
-      "url": "__SUBDIR__/reference/api/engine/version/v1.57/",
+      "url": "/reference/api/engine/version/v1.57/",
       "version": "1.57"
 @z
