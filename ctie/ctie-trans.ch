@@ -21,7 +21,7 @@ extern char *strerror();
 @x [6]
 @d buf_size 1024 /* maximum length of one input line */
 @y
-@d buf_size 8192 /* maximum length of one input line */
+@d buf_size 32768 /* maximum length of one input line */
 @z
 
 @x [8]
