@@ -69,6 +69,8 @@ jobs:
           curl -sSL https://github.com/daveshanley/vacuum/releases/download/v0.30.6/vacuum_0.30.6_linux_x86_64.tar.gz | tar -xz
           mv vacuum /usr/local/bin/
       - name: Generate API docs
+        env:
+          DOCS_URL: ${{ steps.pages.outputs.base_url }}
         run: |
           cd build/src
           hack/api-docs/run.sh test && hack/api-docs/run.sh generate

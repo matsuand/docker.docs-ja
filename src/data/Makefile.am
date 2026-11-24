@@ -16,3 +16,13 @@ bases = \
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
+
+#.PHONY: all
+#all: api-reference.json
+#
+#api-reference.json: api-reference.tmp $(srcdir)/api-reference.json.ch
+#	@echo Processing api-reference.json...
+#	@$(top_builddir)/$(CTIE) -m $@ api-reference.tmp $(srcdir)/api-reference.json.ch >/dev/null
+#	@rm -f api-reference.tmp
+#api-reference.tmp: $(abs_origdir)/api-reference.json
+#	@sed -e "s|\"url\": \"/reference|\"url\": \"/docker.docs-ja/reference|g" $^ >$@

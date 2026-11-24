@@ -239,7 +239,8 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	sidebar.html
+	sidebar.html \
+	url.html
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
@@ -253,7 +254,6 @@ copyfiles = \
 	context.html            \
 	reference-category.html \
 	tree.html               \
-	url.html                \
 	validate.html
 
 all: all-am

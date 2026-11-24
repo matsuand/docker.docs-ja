@@ -1,0 +1,9 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+{{- $url := .Params.sidebar.goto | default .RelPermalink -}}
+@y
+{{- $rawUrl := .Params.sidebar.goto | default .RelPermalink -}}
+{{- $url := printf "__SUBDIR__/%s" (strings.TrimPrefix "/" $rawUrl) | relURL  -}}
+@z

@@ -3,7 +3,8 @@
 ##
 
 bases = \
-	sidebar.html
+	sidebar.html \
+	url.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
@@ -15,7 +16,6 @@ copyfiles = \
 	context.html            \
 	reference-category.html \
 	tree.html               \
-	url.html                \
 	validate.html
 
 include $(top_srcdir)/build-aux/copy.mk

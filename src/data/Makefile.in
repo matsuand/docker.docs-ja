@@ -644,6 +644,16 @@ $(submakename): $(top_srcdir)/bin/makesub.sh $(srcdir)/Makefile.am $(top_builddi
 @MAINT@	    -e "s|\.ch$$||"` $@; \
 @MAINT@	fi
 
+#.PHONY: all
+#all: api-reference.json
+#
+#api-reference.json: api-reference.tmp $(srcdir)/api-reference.json.ch
+#	@echo Processing api-reference.json...
+#	@$(top_builddir)/$(CTIE) -m $@ api-reference.tmp $(srcdir)/api-reference.json.ch >/dev/null
+#	@rm -f api-reference.tmp
+#api-reference.tmp: $(abs_origdir)/api-reference.json
+#	@sed -e "s|\"url\": \"/reference|\"url\": \"/docker.docs-ja/reference|g" $^ >$@
+
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:
