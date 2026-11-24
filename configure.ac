@@ -410,6 +410,7 @@ AC_CONFIG_FILES([
 	src/data/cli/secrets/Makefile
 	src/data/cli/scout/Makefile
 	src/data/docsarchive/Makefile
+	src/data/navigation/Makefile
 	src/data/sbx_cli/Makefile
 	src/i18n/Makefile
 	src/layouts/Makefile

@@ -2,6 +2,12 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
+          <a class="api-card" href="{{ .url }}"
+@y
+          <a class="api-card" href="__SUBDIR__{{ .url }}"
+@z
+
+@x
                 Your daemon
 @y
                 Your daemon
@@ -18,9 +24,15 @@
             <p>API {{ .version }} · {{ len .operations }} operations</p>
             <span>Explore reference →</span></a
 @y
-            <h2>{{ .title }}{{ if .experimental }}· Experimental{{ end }}</h2>
-            <p>API {{ .version }} · {{ len .operations }} operations</p>
-            <span>Explore reference →</span></a
+            <h2>{{ .title }}{{ if .experimental }}· 試験的{{ end }}</h2>
+            <p>API {{ .version }} · API数 {{ len .operations }}</p>
+            <span>リファレンス参照 →</span></a
+@z
+
+@x
+          <a class="api-card" href="{{ .url }}">
+@y
+          <a class="api-card" href="__SUBDIR__{{ .url }}">
 @z
 
 @x
@@ -42,7 +54,7 @@
 @y
             <h2>{{ .title }}{{ if .experimental }}· Experimental{{ end }}</h2>
             <p>{{ .description }}</p>
-            <span>Explore reference →</span>
+            <span>リファレンス参照 →</span>
 @z
 
 @x
@@ -68,8 +80,10 @@
 @z
 
 @x
+                  value="{{ .url }}"
                   {{ if eq .id $api.id }}selected{{ end }}
 @y
+                  value="__SUBDIR__{{ .url }}"
                   {{ if eq .id $api.id }}selected{{ end }}
 @z
 

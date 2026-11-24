@@ -4,7 +4,7 @@
 @x
 {{- .AddPage (dict "path" "." "kind" "section" "title" "Docker APIs" "linkTitle" "API reference" "description" "Explore Docker HTTP APIs, connection requirements, and versioned references." "layout" "api-docs" "params" (dict "view" "catalog" "keywords" (slice "API" "HTTP" "OpenAPI"))) -}}
 @y
-{{- .AddPage (dict "path" "." "kind" "section" "title" "Docker API" "linkTitle" "API リファレンス" "description" "Explore Docker HTTP APIs, connection requirements, and versioned references." "layout" "api-docs" "params" (dict "view" "catalog" "keywords" (slice "API" "HTTP" "OpenAPI"))) -}}
+{{- .AddPage (dict "path" "." "kind" "section" "title" "Docker API" "linkTitle" "API リファレンス" "description" "Docker HTTP API, 接続要件, バージョン情報について調べてください。" "layout" "api-docs" "params" (dict "view" "catalog" "keywords" (slice "API" "HTTP" "OpenAPI"))) -}}
 @z
 
 @x
