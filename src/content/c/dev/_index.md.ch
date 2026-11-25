@@ -6,7 +6,7 @@ title: "Application development"
 description: Build, secure, and ship containerized applications.
 keywords: [Docker, documentation, dev]
 @y
-title: "Application development"
-description: Build, secure, and ship containerized applications.
+title: "アプリケーション開発"
+description: コンテナー化したアプリケーションをビルドし、安全に公開します。
 keywords: [Docker, documentation, dev]
 @z

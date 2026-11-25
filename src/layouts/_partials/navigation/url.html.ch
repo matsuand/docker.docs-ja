@@ -5,5 +5,16 @@
 {{- $url := .Params.sidebar.goto | default .RelPermalink -}}
 @y
 {{- $rawUrl := .Params.sidebar.goto | default .RelPermalink -}}
-{{- $url := printf "__SUBDIR__/%s" (strings.TrimPrefix "/" $rawUrl) | relURL  -}}
+{{- $url := printf "__SUBDIR__/%s" (strings.TrimPrefix "/" $rawUrl) -}}
+{{/*
+{{- $lenSub := len "__SUBDIR__" -}}
+{{- $lenSubSub := (mul $lenSub 2) -}}
+{{- $lenUrl := len $url -}}
+{{- if ge $lenUrl $lenSubSub -}}
+  {{- if strings.HasPrefix $url "__SUBDIR____SUBDIR__" -}}
+    {{- $url := strings.Substr $url $lenSub -}}
+    {{- warnf "url: %s" $url -}}
+  {{- end -}}
+{{- end -}}
+*/}}
 @z

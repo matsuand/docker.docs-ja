@@ -89,11 +89,11 @@ reference to create or run a container based on an image.
 @x
 An image tag is the image version, which defaults to `latest` when omitted. Use
 the tag to run a container from specific version of an image. For example, to
-run version `24.04` of the `ubuntu` image: `docker run ubuntu:24.04`.
+run version `26.04` of the `ubuntu` image: `docker run ubuntu:26.04`.
 @y
 イメージタグ (image tag) とはイメージのバージョンのことであり、これが省略された際のデフォルトは `latest` となります。
 特定バージョンのイメージに基づいてコンテナーを実行するには、このタグを利用します。
-たとえば `ubuntu` イメージのバージョン `24.04` を実行する場合は `docker run ubuntu:24.04` とします。
+たとえば `ubuntu` イメージのバージョン `26.04` を実行する場合は `docker run ubuntu:26.04` とします。
 @z
 
 @x

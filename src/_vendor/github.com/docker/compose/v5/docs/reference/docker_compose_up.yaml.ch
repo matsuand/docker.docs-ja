@@ -31,10 +31,12 @@ long: |-
 
 @x
     When the command exits, all containers are stopped. Running `docker compose up --detach` starts the containers in the
-    background and leaves them running.
+    background and leaves them running. With `--wait`, the command exits once the services are running or healthy, and
+    leaves them running.
 @y
     When the command exits, all containers are stopped. Running `docker compose up --detach` starts the containers in the
-    background and leaves them running.
+    background and leaves them running. With `--wait`, the command exits once the services are running or healthy, and
+    leaves them running.
 @z
 
 @x
@@ -218,9 +220,11 @@ usage: docker compose up [OPTIONS] [SERVICE...]
 @z
 
 @x wait
-      description: Wait for services to be running|healthy. Implies detached mode.
+      description: |
+        Wait for services to be running|healthy, streaming their logs unless --detach is set
 @y
-      description: Wait for services to be running|healthy. Implies detached mode.
+      description: |
+        Wait for services to be running|healthy, streaming their logs unless --detach is set
 @z
 
 @x wait-timeout

@@ -28,12 +28,6 @@ This information is then displayed as an overview of the extension, so users can
 @z
 
 @x
-![An extension overview, generated from labels](images/marketplace-details.png)
-@y
-![An extension overview, generated from labels](images/marketplace-details.png)
-@z
-
-@x
 You can define [image labels](/reference/dockerfile.md#label) in the extension's `Dockerfile`.
 @y
 You can define [image labels](reference/dockerfile.md#label) in the extension's `Dockerfile`.

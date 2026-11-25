@@ -606,49 +606,47 @@ Define a `dhi_customization` resource for each customization:
 @x
 ```hcl
 resource "dhi_customization" "golang_with_git" {
-  repository = "dhi-golang"
-  name       = "golang with git"
+  name              = "golang with git"
+  source            = "dhi/golang"
+  destination       = "my-org/dhi-golang"
+  tag_definition_id = "golang/alpine-3.23/1.25"
+  platforms         = ["linux/amd64"]
 @y
 ```hcl
 resource "dhi_customization" "golang_with_git" {
-  repository = "dhi-golang"
-  name       = "golang with git"
+  name              = "golang with git"
+  source            = "dhi/golang"
+  destination       = "my-org/dhi-golang"
+  tag_definition_id = "golang/alpine-3.23/1.25"
+  platforms         = ["linux/amd64"]
 @z
 
 @x
   contents {
     packages = ["git", "curl"]
   }
+}
+```
 @y
   contents {
     packages = ["git", "curl"]
   }
-@z
-
-@x
-  platform {
-    os           = "linux"
-    architecture = "amd64"
-  }
-}
-```
-@y
-  platform {
-    os           = "linux"
-    architecture = "amd64"
-  }
 }
 ```
 @z
 
 @x
-The `dhi_customization` resource also supports optional configuration blocks
-for `accounts`, `files`, `labels`, `annotations`, `environment`, `entrypoint`,
-`cmd`, `user`, `workdir`, and `stop_signal`.
+The `dhi_customization` resource also supports optional settings for
+`accounts`, `file`, `symlink`, `labels`, `annotations`, `environment`,
+`entrypoint`, `cmd`, `working_directory`, and `compression`. To apply one
+customization to several tag definitions, use `target` blocks instead of
+`source`, `destination`, and `tag_definition_id`.
 @y
-The `dhi_customization` resource also supports optional configuration blocks
-for `accounts`, `files`, `labels`, `annotations`, `environment`, `entrypoint`,
-`cmd`, `user`, `workdir`, and `stop_signal`.
+The `dhi_customization` resource also supports optional settings for
+`accounts`, `file`, `symlink`, `labels`, `annotations`, `environment`,
+`entrypoint`, `cmd`, `working_directory`, and `compression`. To apply one
+customization to several tag definitions, use `target` blocks instead of
+`source`, `destination`, and `tag_definition_id`.
 @z
 
 @x
@@ -808,13 +806,13 @@ targets:
 @x
 | Field | Description |
 |:---|:---|
-| `name` | Human-readable name. Converted to lowercase and hyphenated, it becomes the image tag suffix. For example, `golang with git` produces tags ending in `_golang-with-git`. |
+| `name` | Human-readable name. Use only letters, numbers, and spaces. Converted to lowercase and hyphenated, it becomes the image tag suffix. For example, `golang with git` produces tags ending in `_golang-with-git`. You can't change the name after the customization is created. `docker dhi customization edit` ignores a `name` that differs from the existing one. |
 | `targets[].destination` | Destination repository in Docker Hub, such as `my-org/dhi-golang`. |
 | `targets[].tag_definition_id` | Tag definition to customize, such as `golang/alpine-3.23/1.25`. Use `docker dhi customization prepare` with tab completion to find valid values. |
 @y
 | Field | Description |
 |:---|:---|
-| `name` | Human-readable name. Converted to lowercase and hyphenated, it becomes the image tag suffix. For example, `golang with git` produces tags ending in `_golang-with-git`. |
+| `name` | Human-readable name. Use only letters, numbers, and spaces. Converted to lowercase and hyphenated, it becomes the image tag suffix. For example, `golang with git` produces tags ending in `_golang-with-git`. You can't change the name after the customization is created. `docker dhi customization edit` ignores a `name` that differs from the existing one. |
 | `targets[].destination` | Destination repository in Docker Hub, such as `my-org/dhi-golang`. |
 | `targets[].tag_definition_id` | Tag definition to customize, such as `golang/alpine-3.23/1.25`. Use `docker dhi customization prepare` with tab completion to find valid values. |
 @z
@@ -823,14 +821,14 @@ targets:
 > [!NOTE]
 >
 > When `targets` has more than one entry, the fields `accounts`, `entrypoint`,
-> and `cmd` are not supported. Including them causes `docker dhi customization
-> create` to return an error.
+> `cmd`, and `working-directory` are not supported. Including them causes
+> `docker dhi customization create` to return an error.
 @y
 > [!NOTE]
 >
 > When `targets` has more than one entry, the fields `accounts`, `entrypoint`,
-> and `cmd` are not supported. Including them causes `docker dhi customization
-> create` to return an error.
+> `cmd`, and `working-directory` are not supported. Including them causes
+> `docker dhi customization create` to return an error.
 @z
 
 @x
@@ -969,16 +967,16 @@ paths:
 | `path` | Absolute path where the file will be placed in the image. |
 | `contents` | File content. Use a YAML block scalar (`\|`) for multi-line content. |
 | `mode` | Octal file permissions, such as `"0644"`. Quote the value to prevent YAML from treating the leading zero as octal notation. |
-| `uid` | User ID of the file owner. |
-| `gid` | Group ID of the file owner. |
+| `uid` | User ID of the file owner. Required. |
+| `gid` | Group ID of the file owner. Required. |
 @y
 | Field | Description |
 |:---|:---|
 | `path` | Absolute path where the file will be placed in the image. |
 | `contents` | File content. Use a YAML block scalar (`\|`) for multi-line content. |
 | `mode` | Octal file permissions, such as `"0644"`. Quote the value to prevent YAML from treating the leading zero as octal notation. |
-| `uid` | User ID of the file owner. |
-| `gid` | Group ID of the file owner. |
+| `uid` | User ID of the file owner. Required. |
+| `gid` | Group ID of the file owner. Required. |
 @z
 
 @x
@@ -1058,22 +1056,22 @@ accounts:
 |:---|:---|
 | `root` | Whether to enable the root user. Default is `false`. Required if `runs-as` is set to `root`. |
 | `runs-as` | The default user the container runs as. |
-| `users[].name` | Username. |
-| `users[].uid` | User ID. |
+| `users[].name` | Username. Required. |
+| `users[].uid` | User ID. Required. |
 | `users[].gid` | Primary group ID. Optional. |
-| `groups[].name` | Group name. |
-| `groups[].gid` | Group ID. |
+| `groups[].name` | Group name. Required. |
+| `groups[].gid` | Group ID. Required. |
 | `groups[].members` | Usernames to add to this group. Optional. |
 @y
 | Field | Description |
 |:---|:---|
 | `root` | Whether to enable the root user. Default is `false`. Required if `runs-as` is set to `root`. |
 | `runs-as` | The default user the container runs as. |
-| `users[].name` | Username. |
-| `users[].uid` | User ID. |
+| `users[].name` | Username. Required. |
+| `users[].uid` | User ID. Required. |
 | `users[].gid` | Primary group ID. Optional. |
-| `groups[].name` | Group name. |
-| `groups[].gid` | Group ID. |
+| `groups[].name` | Group name. Required. |
+| `groups[].gid` | Group ID. Required. |
 | `groups[].members` | Usernames to add to this group. Optional. |
 @z
 
@@ -1109,10 +1107,12 @@ environment:
 
 @x
 Quote values that a YAML parser would interpret as non-string types, for
-example `"false"`, `"0"`, and `"null"`.
+example `"false"`, `"0"`, and `"null"`. A variable can't have an empty value.
+To keep a variable from the base image, leave it out.
 @y
 Quote values that a YAML parser would interpret as non-string types, for
-example `"false"`, `"0"`, and `"null"`.
+example `"false"`, `"0"`, and `"null"`. A variable can't have an empty value.
+To keep a variable from the base image, leave it out.
 @z
 
 @x
@@ -1164,11 +1164,15 @@ annotations:
 @z
 
 @x
-To change how the container starts, use `entrypoint` and `cmd`. These arguments
-are appended to the base image's existing entrypoint and command.
+To change how the container starts, use `entrypoint` and `cmd`. Setting either
+field replaces the base image's existing value, so include any inherited
+arguments you still want. To change the working directory, use
+`working-directory`.
 @y
-To change how the container starts, use `entrypoint` and `cmd`. These arguments
-are appended to the base image's existing entrypoint and command.
+To change how the container starts, use `entrypoint` and `cmd`. Setting either
+field replaces the base image's existing value, so include any inherited
+arguments you still want. To change the working directory, use
+`working-directory`.
 @z
 
 @x
@@ -1194,11 +1198,27 @@ entrypoint:
 @x
 cmd:
   - /bin/bash
-```
 @y
 cmd:
   - /bin/bash
+@z
+
+@x
+working-directory: /app
 ```
+@y
+working-directory: /app
+```
+@z
+
+@x
+The `entrypoint` and `cmd` lists can't be empty or contain an empty argument,
+and `working-directory` can't be empty. To keep the base image's value, leave
+the field out.
+@y
+The `entrypoint` and `cmd` lists can't be empty or contain an empty argument,
+and `working-directory` can't be empty. To keep the base image's value, leave
+the field out.
 @z
 
 @x
@@ -1247,6 +1267,14 @@ compression: ZSTD
 ```yaml
 compression: ZSTD
 ```
+@z
+
+@x
+Scaffolds from `docker dhi customization prepare` set `compression: ZSTD`. To
+leave compression unset, remove the line.
+@y
+Scaffolds from `docker dhi customization prepare` set `compression: ZSTD`. To
+leave compression unset, remove the line.
 @z
 
 @x

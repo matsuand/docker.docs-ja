@@ -148,7 +148,7 @@ Palo Alto, CA 94306
 @z
 
 @x
-1. [Submit a Docker Support case](https://hub.docker.com/support/contact?topic=Billing&subtopic=Tax%20information)
+1. [Submit a Docker Support case](https://app.docker.com/support/contact?topic=Billing&subtopic=Tax%20information)
    to start the tax certificate registration process.
 1. Enter **Tax certificate** as the support case **Subject**.
 1. In the **Details** field, enter **Submitting a tax certificate**.
@@ -158,7 +158,7 @@ Palo Alto, CA 94306
    the file, or selecting **Browse files**.
 1. Select **Submit**.
 @y
-1. [Submit a Docker Support case](https://hub.docker.com/support/contact?topic=Billing&subtopic=Tax%20information)
+1. [Submit a Docker Support case](https://app.docker.com/support/contact?topic=Billing&subtopic=Tax%20information)
    to start the tax certificate registration process.
 1. Enter **Tax certificate** as the support case **Subject**.
 1. In the **Details** field, enter **Submitting a tax certificate**.

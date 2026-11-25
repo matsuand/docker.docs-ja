@@ -50,21 +50,9 @@ Use the [Docker Material UI Theme](https://www.npmjs.com/package/@docker/docker-
 @z
 
 @x
-  ![Light and dark mode](images/light_dark_mode.webp)
-@y
-  ![Light and dark mode](images/light_dark_mode.webp)
-@z
-
-@x
 - Ensure that your extension icon is visible both in light and dark mode.
 @y
 - Ensure that your extension icon is visible both in light and dark mode.
-@z
-
-@x
-  ![Icon colors in light and dark mode](images/icon_colors.webp)
-@y
-  ![Icon colors in light and dark mode](images/icon_colors.webp)
 @z
 
 @x
@@ -74,27 +62,9 @@ Use the [Docker Material UI Theme](https://www.npmjs.com/package/@docker/docker-
 @z
 
 @x
-  ![Header that sets the context](images/header.webp)
-@y
-  ![Header that sets the context](images/header.webp)
-@z
-
-@x
 - Avoid embedding terminal windows. The advantage we have with Docker Desktop over the CLI is that we have the opportunity to provide rich information to users. Make use of this interface as much as possible. 
 @y
 - Avoid embedding terminal windows. The advantage we have with Docker Desktop over the CLI is that we have the opportunity to provide rich information to users. Make use of this interface as much as possible. 
-@z
-
-@x
-  ![Terminal window used incorrectly](images/terminal_window_dont.webp)
-@y
-  ![Terminal window used incorrectly](images/terminal_window_dont.webp)
-@z
-
-@x
-  ![Terminal window used correctly](images/terminal_window_do.webp)
-@y
-  ![Terminal window used correctly](images/terminal_window_do.webp)
 @z
 
 @x
@@ -110,18 +80,6 @@ Use the [Docker Material UI Theme](https://www.npmjs.com/package/@docker/docker-
 @z
 
 @x
-  ![Incorrect way to switch context](images/switch_context_dont.webp)
-@y
-  ![Incorrect way to switch context](images/switch_context_dont.webp)
-@z
-
-@x
-  ![Correct way to switch context](images/switch_context_do.webp)
-@y
-  ![Correct way to switch context](images/switch_context_do.webp)
-@z
-
-@x
 ## Break down complicated user flows
 @y
 ## Break down complicated user flows
@@ -134,21 +92,9 @@ Use the [Docker Material UI Theme](https://www.npmjs.com/package/@docker/docker-
 @z
 
 @x
-  ![A complicated flow](images/complicated_flows.webp)
-@y
-  ![A complicated flow](images/complicated_flows.webp)
-@z
-
-@x
 - Where there are multiple call-to-actions, ensure you use the primary (filled button style) and secondary buttons (outline button style) to convey the importance of each action.
 @y
 - Where there are multiple call-to-actions, ensure you use the primary (filled button style) and secondary buttons (outline button style) to convey the importance of each action.
-@z
-
-@x
-  ![Call to action](images/cta.webp)
-@y
-  ![Call to action](images/cta.webp)
 @z
 
 @x
@@ -175,12 +121,6 @@ When creating your extension, ensure that first time users of the extension and 
   - A detailed description that covers what the purpose of the extension is, who would find it useful and how it works.
   - Link to necessary resources such as documentation.
 - If your extension has particularly complex functionality, add a demo or video to the start page. This helps onboard a first time user quickly.
-@z
-
-@x
-  ![start page](images/start_page.webp)
-@y
-  ![start page](images/start_page.webp)
 @z
 
 @x

@@ -43,6 +43,520 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.100.1
+@y
+## 4.100.1
+@z
+
+@x
+{{< release-date date="2026-11-23" >}}
+@y
+{{< release-date date="2026-11-23" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.100.1" build_path="/247138/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.100.1" build_path="/247138/" >}}
+@z
+
+@x
+### Bug fixes and enhancements {#41001-bug-fixes-and-enhancements}
+@y
+### バグフィックスと拡張 {#41001-bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms {#41001-for-all-platforms}
+@y
+#### 全プラットフォーム向け {#41001-for-all-platforms}
+@z
+
+@x
+- Additional rebranding updates.
+@y
+- Additional rebranding updates.
+@z
+
+@x
+## 4.100.0
+@y
+## 4.100.0
+@z
+
+@x
+{{< release-date date="2026-11-19" >}}
+@y
+{{< release-date date="2026-11-19" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.100.0" build_path="/246961/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.100.0" build_path="/246961/" >}}
+@z
+
+@x
+### New {#41000-new}
+@y
+### 新機能 {#41000-new}
+@z
+
+@x
+- Docker Desktop has a new look. The updated Moby logo is part of Docker’s new brand, which reflects where Docker is going: the same containers you rely on today, plus the isolation and governance you need to trust AI agents with real work. Read the full story in [Meet the New Docker: Built to Run on Trust](http://docker.com/blog/docker-new-brand-moby-run-on-trust).
+@y
+- Docker Desktop has a new look. The updated Moby logo is part of Docker’s new brand, which reflects where Docker is going: the same containers you rely on today, plus the isolation and governance you need to trust AI agents with real work. Read the full story in [Meet the New Docker: Built to Run on Trust](http://docker.com/blog/docker-new-brand-moby-run-on-trust).
+@z
+
+@x
+### Updates {#41000-updates}
+@y
+### 機能更新 {#41000-updates}
+@z
+
+@x
+- Docker Offload `v0.7.47`
+- Docker Hardened Images (`dhictl`) `v0.0.12`
+- Docker Agent `v1.156.2`
+- [Docker Compose v5.7.1](https://github.com/docker/compose/releases/tag/v5.7.1)
+@y
+- Docker Offload `v0.7.47`
+- Docker Hardened Images (`dhictl`) `v0.0.12`
+- Docker Agent `v1.156.2`
+- [Docker Compose v5.7.1](https://github.com/docker/compose/releases/tag/v5.7.1)
+@z
+
+@x
+### Bug fixes and enhancements {#41000-bug-fixes-and-enhancements}
+@y
+### バグフィックスと拡張 {#41000-bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms {#41000-for-all-platforms}
+@y
+#### 全プラットフォーム向け {#41000-for-all-platforms}
+@z
+
+@x
+- Fixed an issue where restarting Docker Desktop could cause ECI users running kind clusters to lose Kubernetes state.
+- Fixed Docker Desktop downloading an update again after a restart when it had already been downloaded.
+- Fixed Docker Desktop hanging and growing to several GB of memory when publishing host port `65535`. Fixes [docker/desktop-feedback#164](https://github.com/docker/desktop-feedback/issues/164).
+- Fixed an issue where installs with sign-in enforcement (`allowedOrgs`) could stop reporting usage analytics after a restart while the user stayed signed in.
+- Fixed the MCP Toolkit **Profiles** tab failing to load with "stdout maxBuffer length exceeded" when a profile contains many servers. Fixes [docker/desktop-feedback#681](https://github.com/docker/desktop-feedback/issues/681).
+- Fixed `docker build` API requests with a chunked request body hanging over keep-alive connections. Fixes [docker/desktop-feedback#805](https://github.com/docker/desktop-feedback/issues/805).
+- Fixed Docker Desktop getting stuck in the stopping state when the Docker VMM process did not exit after the VM powered off.
+- Fixed file locks, ownership changes and file-change notifications being ignored on the descriptor that created a file in a bind mount. [Fixes desktop-feedback/issues/765](https://github.com/docker/desktop-feedback/issues/765).
+- Fixed a bug in Enhanced Container Isolation (ECI) that was causing a pre-existing `kind` cluster to fail to come up after a Docker Desktop restart.
+@y
+- Fixed an issue where restarting Docker Desktop could cause ECI users running kind clusters to lose Kubernetes state.
+- Fixed Docker Desktop downloading an update again after a restart when it had already been downloaded.
+- Fixed Docker Desktop hanging and growing to several GB of memory when publishing host port `65535`. Fixes [docker/desktop-feedback#164](https://github.com/docker/desktop-feedback/issues/164).
+- Fixed an issue where installs with sign-in enforcement (`allowedOrgs`) could stop reporting usage analytics after a restart while the user stayed signed in.
+- Fixed the MCP Toolkit **Profiles** tab failing to load with "stdout maxBuffer length exceeded" when a profile contains many servers. Fixes [docker/desktop-feedback#681](https://github.com/docker/desktop-feedback/issues/681).
+- Fixed `docker build` API requests with a chunked request body hanging over keep-alive connections. Fixes [docker/desktop-feedback#805](https://github.com/docker/desktop-feedback/issues/805).
+- Fixed Docker Desktop getting stuck in the stopping state when the Docker VMM process did not exit after the VM powered off.
+- Fixed file locks, ownership changes and file-change notifications being ignored on the descriptor that created a file in a bind mount. [Fixes desktop-feedback/issues/765](https://github.com/docker/desktop-feedback/issues/765).
+- Fixed a bug in Enhanced Container Isolation (ECI) that was causing a pre-existing `kind` cluster to fail to come up after a Docker Desktop restart.
+@z
+
+@x
+#### For Mac {#41000-for-mac}
+@y
+#### Mac 向け {#41000-for-mac}
+@z
+
+@x
+- Fixed **Allow privileged port forwarding to external machines** being ignored with the Apple Virtualization engine. Privileged ports (below `1024`) published on all interfaces are now only reachable from the local machine unless the setting is enabled.
+@y
+- Fixed **Allow privileged port forwarding to external machines** being ignored with the Apple Virtualization engine. Privileged ports (below `1024`) published on all interfaces are now only reachable from the local machine unless the setting is enabled.
+@z
+
+@x
+#### For Windows {#41000-for-windows}
+@y
+#### Windows 向け {#41000-for-windows}
+@z
+
+@x
+- Fixed an issue where updating a Hyper-V installation enabled the WSL feature.
+- Updated the WSL2 engine to use single-distro (monodistro) mode by default, automatically migrating legacy dual-distro setups on next start for improved performance.
+- Added sparse raw disk format (`DockerDesktop.raw`) for new Docker VMM installations, replacing VHDX to prevent meta.db corruption; existing installations are unaffected.
+- Added a **Restart** option to the "WSL not installed" error so Docker Desktop can start once WSL has been installed, without quitting first.
+- Fixed [desktop-feedback/issues/820](https://github.com/docker/desktop-feedback/issues/820).
+@y
+- Fixed an issue where updating a Hyper-V installation enabled the WSL feature.
+- Updated the WSL2 engine to use single-distro (monodistro) mode by default, automatically migrating legacy dual-distro setups on next start for improved performance.
+- Added sparse raw disk format (`DockerDesktop.raw`) for new Docker VMM installations, replacing VHDX to prevent meta.db corruption; existing installations are unaffected.
+- Added a **Restart** option to the "WSL not installed" error so Docker Desktop can start once WSL has been installed, without quitting first.
+- Fixed [desktop-feedback/issues/820](https://github.com/docker/desktop-feedback/issues/820).
+@z
+
+@x
+#### For Linux {#41000-for-linux}
+@y
+#### Linux 向け {#41000-for-linux}
+@z
+
+@x
+- Fixed an issue where `.deb` package installation failed on systems with AppArmor userspace tools installed but the kernel LSM not active (e.g., CI containers or systems booted with `apparmor=0`).
+@y
+- Fixed an issue where `.deb` package installation failed on systems with AppArmor userspace tools installed but the kernel LSM not active (e.g., CI containers or systems booted with `apparmor=0`).
+@z
+
+@x
+## 4.99.0
+@y
+## 4.99.0
+@z
+
+@x
+{{< release-date date="2026-11-09" >}}
+@y
+{{< release-date date="2026-11-09" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.99.0" build_path="/245822/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.99.0" build_path="/245822/" >}}
+@z
+
+@x
+### Updates
+@y
+### 機能更新 {#updates}
+@z
+
+@x
+- Docker Offload `v0.7.36`
+- Docker Hardened Images (`dhictl`) `v0.0.10`
+- [Docker Agent v1.153.0](https://github.com/docker/docker-agent/releases/tag/v1.153.0)
+- Docker Scout CLI `v1.28.0`
+- Docker MCP CLI `v0.44.3`
+- [Docker Compose v5.7.0](https://github.com/docker/compose/releases/tag/v5.7.0)
+- [Docker Engine v29.9.3](https://docs.docker.com/engine/release-notes/29/#2993)
+@y
+- Docker Offload `v0.7.36`
+- Docker Hardened Images (`dhictl`) `v0.0.10`
+- [Docker Agent v1.153.0](https://github.com/docker/docker-agent/releases/tag/v1.153.0)
+- Docker Scout CLI `v1.28.0`
+- Docker MCP CLI `v0.44.3`
+- [Docker Compose v5.7.0](https://github.com/docker/compose/releases/tag/v5.7.0)
+- [Docker Engine v29.9.3](https://docs.docker.com/engine/release-notes/29/#2993)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Fixed a socket leak in the system proxy where plain HTTP requests from containers routed through an upstream proxy left one socket open per request until restart.
+- Fixed constant network traffic and CPU usage caused by Docker Desktop computing the size of NFS- or SMB-backed volumes. Fixes [docker/desktop-feedback#800](https://github.com/docker/desktop-feedback/issues/800). 
+- Fixed an issue where Docker Desktop could shut down ungracefully, causing resource leaks or a corrupted state by not allowing cleanup handlers to run.
+- Fixed the Containers list cutting off the ports when clicking **Show all ports**, which now lists all of them in a popover. Fixes [docker/desktop-feedback#794](https://github.com/docker/desktop-feedback/issues/794).
+- Fixed connection resets on published ports under bursts of new connections with Docker VMM.
+@y
+- Fixed a socket leak in the system proxy where plain HTTP requests from containers routed through an upstream proxy left one socket open per request until restart.
+- Fixed constant network traffic and CPU usage caused by Docker Desktop computing the size of NFS- or SMB-backed volumes. Fixes [docker/desktop-feedback#800](https://github.com/docker/desktop-feedback/issues/800). 
+- Fixed an issue where Docker Desktop could shut down ungracefully, causing resource leaks or a corrupted state by not allowing cleanup handlers to run.
+- Fixed the Containers list cutting off the ports when clicking **Show all ports**, which now lists all of them in a popover. Fixes [docker/desktop-feedback#794](https://github.com/docker/desktop-feedback/issues/794).
+- Fixed connection resets on published ports under bursts of new connections with Docker VMM.
+@z
+
+@x
+#### For Mac
+@y
+#### Mac 向け {#for-mac}
+@z
+
+@x
+- Fixed an issue where an update could fail with **Unable to install** because Docker Desktop killed the installer while quitting.
+@y
+- Fixed an issue where an update could fail with **Unable to install** because Docker Desktop killed the installer while quitting.
+@z
+
+@x
+#### For Windows
+@y
+#### Windows 向け {#for-windows}
+@z
+
+@x
+- Fixed Windows updates stopping Docker Desktop abruptly, which could corrupt the engine databases. 
+- Fixed an error that could occur when attempting to run `docker desktop` commands from inside a WSL distro while using the WSL integration.
+- Added BuildKit support for Windows containers when using the containerd image store.
+- Fixed WSL 2 engine start failing on slow machines when the data disk took more than a fraction of a second to appear.
+- Fixed per-user installs and updates on Windows failing with a "Virtual Machine Platform" error on machines where WSL 2 already works.
+- Fixed Docker Desktop hanging after closing an error dialog with its **Close** button. Closing an error dialog that offers **Continue now** continues instead of quitting Docker Desktop. 
+- Fixed Windows containers failing to start at login with **Starting windows containers: An error has occurred.** when a container took longer than 30 seconds to stop.
+- Fixed WSL 2 distributions flushing their systemd-resolved DNS cache every 30 seconds while Docker Desktop was running. Fixes [docker/desktop-feedback#761](https://github.com/docker/desktop-feedback/issues/761).
+- Fixed Windows installer launcher to report descriptive error reasons (e.g. **Disk full**) on update failure instead of a bare exit code.
+@y
+- Fixed Windows updates stopping Docker Desktop abruptly, which could corrupt the engine databases. 
+- Fixed an error that could occur when attempting to run `docker desktop` commands from inside a WSL distro while using the WSL integration.
+- Added BuildKit support for Windows containers when using the containerd image store.
+- Fixed WSL 2 engine start failing on slow machines when the data disk took more than a fraction of a second to appear.
+- Fixed per-user installs and updates on Windows failing with a "Virtual Machine Platform" error on machines where WSL 2 already works.
+- Fixed Docker Desktop hanging after closing an error dialog with its **Close** button. Closing an error dialog that offers **Continue now** continues instead of quitting Docker Desktop. 
+- Fixed Windows containers failing to start at login with **Starting windows containers: An error has occurred.** when a container took longer than 30 seconds to stop.
+- Fixed WSL 2 distributions flushing their systemd-resolved DNS cache every 30 seconds while Docker Desktop was running. Fixes [docker/desktop-feedback#761](https://github.com/docker/desktop-feedback/issues/761).
+- Fixed Windows installer launcher to report descriptive error reasons (e.g. **Disk full**) on update failure instead of a bare exit code.
+@z
+
+@x
+## 4.98.0
+@y
+## 4.98.0
+@z
+
+@x
+{{< release-date date="2026-11-03" >}}
+@y
+{{< release-date date="2026-11-03" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.98.0" build_path="/245422/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.98.0" build_path="/245422/" >}}
+@z
+
+@x
+### Updates
+@y
+### 機能更新 {#updates}
+@z
+
+@x
+- Docker Offload `v0.7.35`
+- The following Kubernetes images have been updated to bring in latest security fixes. New tags listed below:
+   - `docker/desktop-storage-provisioner:v5.0`
+   - `docker/desktop-vpnkit-controller:v5.0`
+   - `docker/desktop-containerd-registry-mirror:v0.0.5`
+   - `docker/desktop-cloud-provider-kind:v0.8.0`
+@y
+- Docker Offload `v0.7.35`
+- The following Kubernetes images have been updated to bring in latest security fixes. New tags listed below:
+   - `docker/desktop-storage-provisioner:v5.0`
+   - `docker/desktop-vpnkit-controller:v5.0`
+   - `docker/desktop-containerd-registry-mirror:v0.0.5`
+   - `docker/desktop-cloud-provider-kind:v0.8.0`
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Fixed Docker Hub model pulls failing on proxy-only networks where local DNS could not resolve the authentication endpoint.
+- Fixed Docker Desktop staying on the **Starting** page after Docker Engine had started. Fixes [docker/desktop-feedback#685](https://github.com/docker/desktop-feedback/issues/685)
+- Fixed `diagnose gather` on slow or stopped VMs by capping the VM start wait to 120 seconds.
+- Improved responsiveness of error dialogs.
+- Fixed moving the disk image to another volume failing when the copy took more than 5 minutes.
+- Fixed uncaught **Request aborted** errors each time the engine stopped.
+@y
+- Fixed Docker Hub model pulls failing on proxy-only networks where local DNS could not resolve the authentication endpoint.
+- Fixed Docker Desktop staying on the **Starting** page after Docker Engine had started. Fixes [docker/desktop-feedback#685](https://github.com/docker/desktop-feedback/issues/685)
+- Fixed `diagnose gather` on slow or stopped VMs by capping the VM start wait to 120 seconds.
+- Improved responsiveness of error dialogs.
+- Fixed moving the disk image to another volume failing when the copy took more than 5 minutes.
+- Fixed uncaught **Request aborted** errors each time the engine stopped.
+@z
+
+@x
+#### For Mac
+@y
+#### Mac 向け {#for-mac}
+@z
+
+@x
+- Removed the `com.docker.vmnetd` privileged helper. A helper installed by a previous version is uninstalled automatically, and the `install vmnetd` option of the command line installer is gone.
+@y
+- Removed the `com.docker.vmnetd` privileged helper. A helper installed by a previous version is uninstalled automatically, and the `install vmnetd` option of the command line installer is gone.
+@z
+
+@x
+#### For Windows
+@y
+#### Windows 向け {#for-windows}
+@z
+
+@x
+- Added Docker VMM to the **Clean up data** dialog.
+- Fixed WSL error code parsing so that users running newer WSL versions (3.0.x) receive accurate, actionable recovery instructions instead of a generic error message.
+- Fixed the Docker VMM backend option on Windows ARM64 to appear correctly disabled with an explanation in settings, and automatically fall back to WSL 2 during install or upgrade.
+- Fixed an intermittent **Being used by another process** error on the `desktop-linux` Docker context file when the engine started.
+- Fixed file sharing treating a directory as shared, or as allowed by Settings Management, when its name only started with that of a shared or allowed directory (e.g. `C:\foobar` for `C:\foo`). Allowed file share entries now match whole directory names only.
+- Fixed an issue where processes started in the Docker Desktop terminal could be left running after closing the terminal.
+- Added support for running `docker` and `docker compose` from WSL 2 distros when Docker VMM is the engine, including bind mounts of files on Windows drives such as `/mnt/c`.
+- Fixed Docker VMM re-enabling the WSL feature on update and showing a **Press any key to install WSL** prompt when WSL is uninstalled. Fixes [docker/desktop-feedback#775](https://github.com/docker/desktop-feedback/issues/775).
+@y
+- Added Docker VMM to the **Clean up data** dialog.
+- Fixed WSL error code parsing so that users running newer WSL versions (3.0.x) receive accurate, actionable recovery instructions instead of a generic error message.
+- Fixed the Docker VMM backend option on Windows ARM64 to appear correctly disabled with an explanation in settings, and automatically fall back to WSL 2 during install or upgrade.
+- Fixed an intermittent **Being used by another process** error on the `desktop-linux` Docker context file when the engine started.
+- Fixed file sharing treating a directory as shared, or as allowed by Settings Management, when its name only started with that of a shared or allowed directory (e.g. `C:\foobar` for `C:\foo`). Allowed file share entries now match whole directory names only.
+- Fixed an issue where processes started in the Docker Desktop terminal could be left running after closing the terminal.
+- Added support for running `docker` and `docker compose` from WSL 2 distros when Docker VMM is the engine, including bind mounts of files on Windows drives such as `/mnt/c`.
+- Fixed Docker VMM re-enabling the WSL feature on update and showing a **Press any key to install WSL** prompt when WSL is uninstalled. Fixes [docker/desktop-feedback#775](https://github.com/docker/desktop-feedback/issues/775).
+@z
+
+@x
+#### For Linux
+@y
+#### Linux 向け {#for-linux}
+@z
+
+@x
+- Added Docker VMM as a virtual machine manager option in Settings on Linux.
+@y
+- Added Docker VMM as a virtual machine manager option in Settings on Linux.
+@z
+
+@x
+### Security
+@y
+### セキュリティ {#security}
+@z
+
+@x
+- Fixed [CVE-2026-98432](https://www.cve.org/cverecord?id=CVE-2026-98432), a use-after-free in the Linux kernel's IPv4 TCP handling.
+- Fixed [CVE-2026-112917](https://www.cve.org/cverecord?id=CVE-2026-112917) where a container on the WSL 2 backend could bypass the AF_VSOCK restriction. Requires WSL 3.0.3 or later.
+@y
+- Fixed [CVE-2026-98432](https://www.cve.org/cverecord?id=CVE-2026-98432), a use-after-free in the Linux kernel's IPv4 TCP handling.
+- Fixed [CVE-2026-112917](https://www.cve.org/cverecord?id=CVE-2026-112917) where a container on the WSL 2 backend could bypass the AF_VSOCK restriction. Requires WSL 3.0.3 or later.
+@z
+
+@x
+## 4.97.0
+@y
+## 4.97.0
+@z
+
+@x
+{{< release-date date="2026-10-26" >}}
+@y
+{{< release-date date="2026-10-26" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.97.0" build_path="/244584/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.97.0" build_path="/244584/" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Fixed a spurious Resource Saver error when signing out while sign-in enforcement is enabled.
+- Fixed diagnostics collection being slow when the backend is unresponsive, reducing worst-case wait time from several minutes to approximately 3 seconds.
+- Fixed reliability issues with the container exec terminal: closing a container no longer triggers spurious error reports, and terminal resize now works correctly on startup.
+- Fixed an issue where the Date header in Docker API responses was incorrect after Docker Desktop entered Resource Saver mode.
+- Added the `-e`/`--env` flag to `docker pass run` for setting environment variables, including `se://` secret references.
+- Fixed `docker pass set` printing "context canceled" on Ctrl-C at the value prompt.
+- Improved responsiveness when searching the **Images**, **Containers** and **Volumes** lists.
+- Fixed an unhandled error when viewing the files of a Compose project whose config file no longer exists.
+@y
+- Fixed a spurious Resource Saver error when signing out while sign-in enforcement is enabled.
+- Fixed diagnostics collection being slow when the backend is unresponsive, reducing worst-case wait time from several minutes to approximately 3 seconds.
+- Fixed reliability issues with the container exec terminal: closing a container no longer triggers spurious error reports, and terminal resize now works correctly on startup.
+- Fixed an issue where the Date header in Docker API responses was incorrect after Docker Desktop entered Resource Saver mode.
+- Added the `-e`/`--env` flag to `docker pass run` for setting environment variables, including `se://` secret references.
+- Fixed `docker pass set` printing "context canceled" on Ctrl-C at the value prompt.
+- Improved responsiveness when searching the **Images**, **Containers** and **Volumes** lists.
+- Fixed an unhandled error when viewing the files of a Compose project whose config file no longer exists.
+@z
+
+@x
+#### For Mac
+@y
+#### Mac 向け {#for-mac}
+@z
+
+@x
+- Fixed adding Docker Desktop commands to the PATH failing for fish users without a `~/.config/fish` directory.
+- Added a setting to allow privileged ports (1-1024) to be exposed to other machines on the LAN.
+@y
+- Fixed adding Docker Desktop commands to the PATH failing for fish users without a `~/.config/fish` directory.
+- Added a setting to allow privileged ports (1-1024) to be exposed to other machines on the LAN.
+@z
+
+@x
+#### For Windows
+@y
+#### Windows 向け {#for-windows}
+@z
+
+@x
+- Added a Docker VMM (Beta) backend option to the Windows installer.
+- Fixed an issue on Windows where a slow WSL version check asked to update WSL.
+- Fixed Docker VMM requiring a Docker Desktop restart to share a new bind-mount directory from the host.
+- Fixed WSL installer errors (e.g. `Wsl/CallMsi/`) being misidentified as disk-related failures, preventing misleading 'disk file has been deleted' recovery messages.
+- Fixed Docker Desktop becoming unresponsive, with `docker` commands hanging and Quit not working, after the disk filled up or, on Windows, after the backend's console host process exited. Fixes [docker/desktop-feedback#429](https://github.com/docker/desktop-feedback/issues/429) and [docker/desktop-feedback#699](https://github.com/docker/desktop-feedback/issues/699).
+- Fixed an issue where the installer rejected `--backend=docker-vmm` when combined with `--user` flag or Microsoft Store installs.
+- Fixed factory reset to stop Docker engines before deleting data, surface cleanup failures as an error dialog, and clean up custom data-root directories.
+- Fixed Windows containers failing to start with a "Path contains symlink" error on `callback.sock`.
+- Fixed a bug where the installer could leave a file under `C:\ProgramData\DockerDesktop` with no permissions at all, making it unreadable to diagnostics and to later installs.
+- Fixed a bug where the disk image location could not be moved back to a folder it had previously been moved out of. Fixes [docker/desktop-feedback#565](https://github.com/docker/desktop-feedback/issues/565).
+- Fixed a bug where a failed update could put back Start Menu and desktop shortcuts that had been deleted on purpose.
+- Interactive installation using the `.EXE` installer now selects per-user install mode by default.
+@y
+- Added a Docker VMM (Beta) backend option to the Windows installer.
+- Fixed an issue on Windows where a slow WSL version check asked to update WSL.
+- Fixed Docker VMM requiring a Docker Desktop restart to share a new bind-mount directory from the host.
+- Fixed WSL installer errors (e.g. `Wsl/CallMsi/`) being misidentified as disk-related failures, preventing misleading 'disk file has been deleted' recovery messages.
+- Fixed Docker Desktop becoming unresponsive, with `docker` commands hanging and Quit not working, after the disk filled up or, on Windows, after the backend's console host process exited. Fixes [docker/desktop-feedback#429](https://github.com/docker/desktop-feedback/issues/429) and [docker/desktop-feedback#699](https://github.com/docker/desktop-feedback/issues/699).
+- Fixed an issue where the installer rejected `--backend=docker-vmm` when combined with `--user` flag or Microsoft Store installs.
+- Fixed factory reset to stop Docker engines before deleting data, surface cleanup failures as an error dialog, and clean up custom data-root directories.
+- Fixed Windows containers failing to start with a "Path contains symlink" error on `callback.sock`.
+- Fixed a bug where the installer could leave a file under `C:\ProgramData\DockerDesktop` with no permissions at all, making it unreadable to diagnostics and to later installs.
+- Fixed a bug where the disk image location could not be moved back to a folder it had previously been moved out of. Fixes [docker/desktop-feedback#565](https://github.com/docker/desktop-feedback/issues/565).
+- Fixed a bug where a failed update could put back Start Menu and desktop shortcuts that had been deleted on purpose.
+- Interactive installation using the `.EXE` installer now selects per-user install mode by default.
+@z
+
+@x
+### Security
+@y
+### セキュリティ {#security}
+@z
+
+@x
+- Addressed [CVE-2026-114409](https://www.cve.org/cverecord?id=CVE-2026-114409), where Docker Desktop could write third-party API keys and OAuth access tokens in cleartext to local application logs and diagnostics bundles. This release also cleans up existing host logs and crash dumps. These OAuth tokens are not Docker account tokens. If you've generated or shared diagnostics bundles with Docker Desktop 4.96.x or earlier, or kept copies of Docker Desktop logs elsewhere, delete or sanitize them.
+- Addressed [CVE-2026-99999](https://www.cve.org/cverecord?id=CVE-2026-99999), a kernel vulnerability where a container could exploit bad IPv4 checksum metadata via TUN or `AF_PACKET` to corrupt the VM's network stack.
+@y
+- Addressed [CVE-2026-114409](https://www.cve.org/cverecord?id=CVE-2026-114409), where Docker Desktop could write third-party API keys and OAuth access tokens in cleartext to local application logs and diagnostics bundles. This release also cleans up existing host logs and crash dumps. These OAuth tokens are not Docker account tokens. If you've generated or shared diagnostics bundles with Docker Desktop 4.96.x or earlier, or kept copies of Docker Desktop logs elsewhere, delete or sanitize them.
+- Addressed [CVE-2026-99999](https://www.cve.org/cverecord?id=CVE-2026-99999), a kernel vulnerability where a container could exploit bad IPv4 checksum metadata via TUN or `AF_PACKET` to corrupt the VM's network stack.
+@z
+
+@x
 ## 4.96.3
 @y
 ## 4.96.3

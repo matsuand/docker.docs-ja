@@ -167,11 +167,11 @@ community respond on a best-effort basis.
 
 @x
 If you have a paid Docker subscription,
-[contact the Support team](https://hub.docker.com/support/contact/) for
+[contact the Support team](https://app.docker.com/support/contact/) for
 help.
 @y
 If you have a paid Docker subscription,
-[contact the Support team](https://hub.docker.com/support/contact/) for
+[contact the Support team](https://app.docker.com/support/contact/) for
 help.
 @z
 

@@ -30,6 +30,36 @@ the full release history, including pre-releases and downloads, see the
 @z
 
 @x
+## 0.54.1
+@y
+## 0.54.1
+@z
+
+@x
+{{< release-date date="2026-11-24" >}}
+@y
+{{< release-date date="2026-11-24" >}}
+@z
+
+@x
+[GitHub release](https://github.com/docker/sbx-releases/releases/tag/v0.54.1)
+@y
+[GitHub release](https://github.com/docker/sbx-releases/releases/tag/v0.54.1)
+@z
+
+@x
+### What's New
+@y
+### What's New
+@z
+
+@x
+- On macOS, secrets saved before an upgrade can be removed without manually deleting their Keychain entries.
+@y
+- On macOS, secrets saved before an upgrade can be removed without manually deleting their Keychain entries.
+@z
+
+@x
 ## 0.54.0
 @y
 ## 0.54.0

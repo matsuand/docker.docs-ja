@@ -155,11 +155,11 @@ U.S. Trademark on a username.
 
 @x
 If you have a trademark for your Docker ID,
-[Docker Support](https://hub.docker.com/support/contact/) can retrieve the
+[Docker Support](https://app.docker.com/support/contact/) can retrieve the
 Docker ID for you.
 @y
 If you have a trademark for your Docker ID,
-[Docker Support](https://hub.docker.com/support/contact/) can retrieve the
+[Docker Support](https://app.docker.com/support/contact/) can retrieve the
 Docker ID for you.
 @z
 
