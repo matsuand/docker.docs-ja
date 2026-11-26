@@ -122,7 +122,9 @@ Docker Desktop はポートマッピング、ファイルシステム関連、�
 @x
 Docker Desktop integrates with your preferred development tools and languages, and gives you access to a vast ecosystem of trusted images and templates via Docker Hub. This empowers teams to accelerate development, automate builds, enable CI/CD workflows, and collaborate securely through shared repositories.
 @y
-Docker Desktop integrates with your preferred development tools and languages, and gives you access to a vast ecosystem of trusted images and templates via Docker Hub. This empowers teams to accelerate development, automate builds, enable CI/CD workflows, and collaborate securely through shared repositories.
+Docker Desktop は使い慣れた開発ツールやプログラミング言語を統合します。
+また Docker Hub を通じて、信頼性の高いイメージやテンプレートを活用する膨大なエコシステムを利用可能にします。
+ここからはチーム開発の加速、ビルドの自動化、CI/CD ワークフローの実現が可能となり、共有リポジトリを通じて安全に連携できるようになります。
 @z
 
 @x
@@ -153,7 +155,7 @@ Docker Desktop integrates with your preferred development tools and languages, a
 @x
 ## Products inside Docker Desktop
 @y
-## Products inside Docker Desktop
+## Docker Desktop 内の製品 {#products-inside-docker-desktop}
 @z
 
 @x
@@ -173,7 +175,7 @@ Docker Desktop integrates with your preferred development tools and languages, a
 - [Gordon](manuals/ai/gordon/_index.md)
 - [Docker Offload](manuals/offload/_index.md)
 - [Docker Engine](manuals/engine/_index.md)
-- Docker CLI client
+- Docker CLI クライアント
 - [Docker Build](manuals/build/_index.md)
 - [Docker Compose](manuals/compose/_index.md)
 - [Docker Scout](../scout/_index.md)
