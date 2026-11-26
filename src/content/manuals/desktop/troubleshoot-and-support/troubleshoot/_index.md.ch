@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md ƒŠƒ“ƒN‚Ö‚Ì (no slash) ‘Î‰ž
+% snip ‘Î‰ž
 
 @x
 description:
@@ -164,20 +165,12 @@ In some cases, it's useful to run the diagnostics yourself, for instance, if the
 @z
 
 @x
-Run the [`docker desktop diagnose`](/manuals/desktop/features/desktop-cli.md) command:
+Run the [`docker desktop diagnose`](/manuals/desktop/features/desktop-cli.md) command to create and upload diagnostics:
 @y
-Run the [`docker desktop diagnose`](manuals/desktop/features/desktop-cli.md) command:
+Run the [`docker desktop diagnose`](manuals/desktop/features/desktop-cli.md) command to create and upload diagnostics:
 @z
 
-@x
-```console
-$ docker desktop diagnose
-```
-@y
-```console
-$ docker desktop diagnose
-```
-@z
+% snip command...
 
 @x
 Gathering diagnostics may take several minutes. Wait for the process to complete before closing the terminal.

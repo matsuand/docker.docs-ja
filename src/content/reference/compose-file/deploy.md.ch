@@ -15,6 +15,16 @@ keywords: compose, compose specification, compose file reference, compose deploy
 @z
 
 @x
+> [!NOTE]
+>
+> This is an optional part of the Compose Specification.
+@y
+> [!NOTE]
+>
+> This is an optional part of the Compose Specification.
+@z
+
+@x
 {{% include "compose/deploy.md" %}}
 @y
 {{% include "compose/deploy.md" %}}

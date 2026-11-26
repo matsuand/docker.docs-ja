@@ -106,14 +106,6 @@ Azure blob:
 @z
 
 @x
-Build additional contexts:
-  requires: Docker Compose [2.17.0](https://github.com/docker/compose/releases/tag/v2.17.0) and later
-@y
-Build additional contexts:
-  requires: Docker Compose [2.17.0](https://github.com/docker/compose/releases/tag/v2.17.0) またはそれ以降
-@z
-
-@x
 Build checks:
   availability: Beta
   requires: Docker Buildx [0.15.0](https://github.com/docker/buildx/releases/tag/v0.15.0) and later
@@ -121,22 +113,6 @@ Build checks:
 Build checks:
   availability: ベータ
   requires: Docker Buildx [0.15.0](https://github.com/docker/buildx/releases/tag/v0.15.0) またはそれ以降
-@z
-
-@x
-Build dockerfile inline:
-  requires: Docker Compose [2.17.0](https://github.com/docker/compose/releases/tag/v2.17.0) and later
-@y
-Build dockerfile inline:
-  requires: Docker Compose [2.17.0](https://github.com/docker/compose/releases/tag/v2.17.0) またはそれ以降
-@z
-
-@x
-Build entitlements:
-  requires: Docker Compose [2.27.1](https://github.com/docker/compose/releases/tag/v2.27.1) and later
-@y
-Build entitlements:
-  requires: Docker Compose [2.27.1](https://github.com/docker/compose/releases/tag/v2.27.1) またはそれ以降
 @z
 
 @x
@@ -161,22 +137,6 @@ Buildkit host:
 @y
 Buildkit host:
   requires: Docker Buildx [0.9.0](https://github.com/docker/buildx/releases/tag/v0.9.0) またはそれ以降
-@z
-
-@x
-Build privileged:
-  requires: Docker Compose [2.15.0](https://github.com/docker/compose/releases/tag/v2.15.0) and later
-@y
-Build privileged:
-  requires: Docker Compose [2.15.0](https://github.com/docker/compose/releases/tag/v2.15.0) またはそれ以降
-@z
-
-@x
-Build ulimits:
-  requires: Docker Compose [2.23.1](https://github.com/docker/compose/releases/tag/v2.23.1) and later
-@y
-Build ulimits:
-  requires: Docker Compose [2.23.1](https://github.com/docker/compose/releases/tag/v2.23.1) またはそれ以降
 @z
 
 @x
@@ -364,14 +324,6 @@ Compose driver opts:
 @z
 
 @x
-Compose exec:
-  requires: Docker Compose [2.32.2](https://github.com/docker/compose/releases/tag/v2.32.2) and later
-@y
-Compose exec:
-  requires: Docker Compose [2.32.2](https://github.com/docker/compose/releases/tag/v2.32.2) またはそれ以降
-@z
-
-@x
 Compose experimental:
   requires: Docker Compose [2.26.0](https://github.com/docker/compose/releases/tag/v2.26.0) and later
 @y
@@ -468,14 +420,6 @@ Compose menu:
 @z
 
 @x
-Compose models:
-  requires: Docker Compose [2.38.0](https://github.com/docker/compose/releases/tag/v2.38.0) and later
-@y
-Compose models:
-  requires: Docker Compose [2.38.0](https://github.com/docker/compose/releases/tag/v2.38.0) またはそれ以降
-@z
-
-@x
 Compose model runner:
   requires: Docker Compose [2.38.0](https://github.com/docker/compose/releases/tag/v2.38.0) and later, and Docker Desktop 4.43 and later
 @y
@@ -508,14 +452,6 @@ Compose progress:
 @z
 
 @x
-Compose replace file:
-  requires: Docker Compose [2.24.4](https://github.com/docker/compose/releases/tag/v2.24.4) and later
-@y
-Compose replace file:
-  requires: Docker Compose [2.24.4](https://github.com/docker/compose/releases/tag/v2.24.4) またはそれ以降
-@z
-
-@x
 Compose required:
   requires: Docker Compose [2.24.0](https://github.com/docker/compose/releases/tag/v2.24.0) and later
 @y
@@ -540,35 +476,11 @@ Compose pre stop:
 @z
 
 @x
-Compose provenance:
-  requires: Docker Compose [2.39.0](https://github.com/docker/compose/releases/tag/v2.39.0) and later
-@y
-Compose provenance:
-  requires: Docker Compose [2.39.0](https://github.com/docker/compose/releases/tag/v2.39.0) またはそれ以降
-@z
-
-@x
 Compose uts:
   requires: Docker Compose [2.15.1](https://github.com/docker/compose/releases/tag/v2.15.1) and later
 @y
 Compose uts:
   requires: Docker Compose [2.15.1](https://github.com/docker/compose/releases/tag/v2.15.1) またはそれ以降
-@z
-
-@x
-Composefile include:
-  requires: Docker Compose [2.20.0](https://github.com/docker/compose/releases/tag/v2.20.0) and later
-@y
-Composefile include:
-  requires: Docker Compose [2.20.0](https://github.com/docker/compose/releases/tag/v2.20.0) またはそれ以降
-@z
-
-@x
-Compose sbom:
-  requires: Docker Compose [2.39.0](https://github.com/docker/compose/releases/tag/v2.39.0) and later
-@y
-Compose sbom:
-  requires: Docker Compose [2.39.0](https://github.com/docker/compose/releases/tag/v2.39.0) またはそれ以降
 @z
 
 @x
