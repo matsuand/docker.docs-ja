@@ -14,7 +14,7 @@ description: Explore Docker Desktop, what it has to offer, and its key features.
 keywords: how to use docker desktop, what is docker desktop used for, what does docker
   desktop do, using docker desktop
 @y
-description: Explore Docker Desktop, what it has to offer, and its key features. Take the next step by downloading or find additional resources
+description: Docker Desktop を操作して、何が出来るのか、その機能を確認してください。そしてその次にはさまざまな情報をダウンロードしたり探し出したりしてください。
 keywords: how to use docker desktop, what is docker desktop used for, what does docker
   desktop do, using docker desktop
 @z
@@ -32,10 +32,9 @@ keywords: how to use docker desktop, what is docker desktop used for, what does 
 @y
 - title: Docker Desktop のインストール
   description: |
-    Install Docker Desktop on
     [Mac](__SUBDIR__/desktop/setup/install/mac-install/),
-    [Windows](__SUBDIR__/desktop/setup/install/windows-install/), or
-    [Linux](__SUBDIR__/desktop/setup/install/linux/).
+    [Windows](__SUBDIR__/desktop/setup/install/windows-install/),
+    [Linux](__SUBDIR__/desktop/setup/install/linux/) に Docker Desktop をインストールします。
   icon: download
 @z
 
@@ -59,7 +58,7 @@ keywords: how to use docker desktop, what is docker desktop used for, what does 
 @y
 - title: 主要機能を確認
   description: |
-    Find information about [Networking](__SUBDIR__/desktop/features/networking/), [Docker VMM](__SUBDIR__/desktop/features/vmm/), [WSL](__SUBDIR__/desktop/features/wsl/), and more.
+    [ネットワーク機能](__SUBDIR__/desktop/features/networking/), [Docker VMM](__SUBDIR__/desktop/features/vmm/), [WSL](__SUBDIR__/desktop/features/wsl/) などについて確認してください。
   icon: layout-grid
 @z
 
@@ -184,7 +183,7 @@ Docker Desktop integrates with your preferred development tools and languages, a
 @x
 ## Next steps
 @y
-## Next steps
+## 次のステップ {#next-steps}
 @z
 
 @x
