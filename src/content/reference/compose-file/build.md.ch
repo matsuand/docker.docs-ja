@@ -228,12 +228,6 @@ Alternatively `build` can be an object with fields defined as follows:
 @z
 
 @x
-{{< summary-bar feature_name="Build additional contexts" >}}
-@y
-{{< summary-bar feature_name="Build additional contexts" >}}
-@z
-
-@x
 `additional_contexts` defines a list of named contexts the image builder should use during image build.
 @y
 `additional_contexts` defines a list of named contexts the image builder should use during image build.
@@ -646,12 +640,6 @@ build:
 @z
 
 @x
-{{< summary-bar feature_name="Build dockerfile inline" >}}
-@y
-{{< summary-bar feature_name="Build dockerfile inline" >}}
-@z
-
-@x
 `dockerfile_inline` defines the Dockerfile content as an inlined string in a Compose file. When set, the `dockerfile`
 attribute is not allowed and Compose rejects any Compose file having both set.
 @y
@@ -687,12 +675,6 @@ build:
 ### `entitlements`
 @y
 ### `entitlements`
-@z
-
-@x
-{{< summary-bar feature_name="Build entitlements" >}}
-@y
-{{< summary-bar feature_name="Build entitlements" >}}
 @z
 
 @x
@@ -1060,12 +1042,6 @@ Composes reports an error in the following cases:
 @z
 
 @x
-{{< summary-bar feature_name="Build privileged" >}}
-@y
-{{< summary-bar feature_name="Build privileged" >}}
-@z
-
-@x
 `privileged` configures the service image to build with elevated privileges. Support and actual impacts are platform specific.
 @y
 `privileged` configures the service image to build with elevated privileges. Support and actual impacts are platform specific.
@@ -1089,12 +1065,6 @@ build:
 ### `provenance`
 @y
 ### `provenance`
-@z
-
-@x
-{{< summary-bar feature_name="Compose provenance" >}}
-@y
-{{< summary-bar feature_name="Compose provenance" >}}
 @z
 
 @x
@@ -1157,12 +1127,6 @@ available in the local image store.
 ### `sbom`
 @y
 ### `sbom`
-@z
-
-@x
-{{< summary-bar feature_name="Compose sbom" >}}
-@y
-{{< summary-bar feature_name="Compose sbom" >}}
 @z
 
 @x
@@ -1589,12 +1553,6 @@ build:
 ### `ulimits`
 @y
 ### `ulimits`
-@z
-
-@x
-{{< summary-bar feature_name="Build ulimits" >}}
-@y
-{{< summary-bar feature_name="Build ulimits" >}}
 @z
 
 @x

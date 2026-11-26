@@ -2124,12 +2124,6 @@ There is a performance penalty for applications that swap memory to disk often.
 @z
 
 @x
-{{< summary-bar feature_name="Compose models" >}}
-@y
-{{< summary-bar feature_name="Compose models" >}}
-@z
-
-@x
 `models` defines which AI models the service should use at runtime. Each referenced model must be defined under the [`models` top-level element](models.md).
 @y
 `models` defines which AI models the service should use at runtime. Each referenced model must be defined under the [`models` top-level element](models.md).

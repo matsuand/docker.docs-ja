@@ -14,12 +14,6 @@ keywords: compose, compose specification, models, compose file reference
 @z
 
 @x
-{{< summary-bar feature_name="Compose models" >}}
-@y
-{{< summary-bar feature_name="Compose models" >}}
-@z
-
-@x
 The top-level `models` section declares AI models that are used by your Compose application. These models are typically pulled as OCI artifacts, run by a model runner, and exposed as an API that your service containers can consume.
 @y
 トップレベルの `models` セクションは AI モデルを宣言するものであり、Compose アプリケーションにおいて利用されます。

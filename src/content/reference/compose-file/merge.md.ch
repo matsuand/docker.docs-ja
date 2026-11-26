@@ -225,12 +225,6 @@ Results in:
 @z
 
 @x
-{{< summary-bar feature_name="Compose replace file" >}}
-@y
-{{< summary-bar feature_name="Compose replace file" >}}
-@z
-
-@x
 While `!reset` can be used to remove a declaration from a Compose file using an override file, `!override` allows you 
 to fully replace an attribute, bypassing the standard merge rules. A typical example is to fully replace a resource definition, to rely on a distinct model but using the same name.
 @y

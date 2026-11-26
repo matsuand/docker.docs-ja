@@ -106,11 +106,11 @@ The Support portal opens in your current browser tab.
 @x
 On Docker Home, **Support portal** is also in the account sidebar. **Help**
 shows **Contact support** for accounts that do not have the portal. That
-item opens the [support request form](https://hub.docker.com/support/contact/).
+item opens the [support request form](https://app.docker.com/support/contact/).
 @y
 On Docker Home, **Support portal** is also in the account sidebar. **Help**
 shows **Contact support** for accounts that do not have the portal. That
-item opens the [support request form](https://hub.docker.com/support/contact/).
+item opens the [support request form](https://app.docker.com/support/contact/).
 @z
 
 @x

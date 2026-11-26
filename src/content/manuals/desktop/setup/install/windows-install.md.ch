@@ -66,6 +66,14 @@ Docker Desktop supports two installation modes. Per-user installation is recomme
 @z
 
 @x
+> [!NOTE]
+Per-user installation allows end users to install Docker Desktop without administrator privileges. It should not be used by IT administrators deploying Docker Desktop, because it installs the application under the account running the installer, in %LOCALAPPDATA%\Programs\DockerDesktop.
+@y
+> [!NOTE]
+Per-user installation allows end users to install Docker Desktop without administrator privileges. It should not be used by IT administrators deploying Docker Desktop, because it installs the application under the account running the installer, in %LOCALAPPDATA%\Programs\DockerDesktop.
+@z
+
+@x
 | | Per-user (recommended) | All users |
 |---|---|---|
 | Install location | `%LOCALAPPDATA%\Programs\DockerDesktop` | `C:\Program Files\Docker\Docker` |

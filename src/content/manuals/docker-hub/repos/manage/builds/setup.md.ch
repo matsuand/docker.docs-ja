@@ -541,28 +541,6 @@ these in the **Docker Tag** field using `{\1}` through `{\9}`.
 @z
 
 @x
-<!-- Capture groups Not a priority
-#### Regex example: build from version number branch and tag with version number
-@y
-<!-- Capture groups Not a priority
-#### Regex example: build from version number branch and tag with version number
-@z
-
-@x
-You could also use capture groups to build and label images that come from various
-sources. For example, you might have
-@y
-You could also use capture groups to build and label images that come from various
-sources. For example, you might have
-@z
-
-@x
-`/(alice|bob)-v([0-9.]+)/` -->
-@y
-`/(alice|bob)-v([0-9.]+)/` -->
-@z
-
-@x
 ### Build images with BuildKit
 @y
 ### Build images with BuildKit

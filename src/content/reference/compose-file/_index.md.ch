@@ -26,18 +26,6 @@ title: Compose ファイルリファレンス
 % grid:
 
 @x
-  - title: Version and name top-level element
-    description: Understand version and name attributes for Compose.
-    icon: file-text
-    link: /reference/compose-file/version-and-name/
-@y
-  - title: トップレベル要素 version と name
-    description: Compose の version および name 属性を理解します。
-    icon: file-text
-    link: __SUBDIR__/reference/compose-file/version-and-name/
-@z
-
-@x
   - title: Services top-level element
     description: Explore all services attributes for Compose.
     icon: wrench
@@ -47,6 +35,30 @@ title: Compose ファイルリファレンス
     description: Compose の services 属性を確認します。
     icon: wrench
     link: __SUBDIR__/reference/compose-file/services/
+@z
+
+@x
+  - title: Container specification
+    description: Find the attributes shared by services, jobs, and init containers.
+    icon: container
+    link: /reference/compose-file/container-spec/
+@y
+  - title: コンテナー仕様
+    description: Find the attributes shared by services, jobs, and init containers.
+    icon: container
+    link: __SUBDIR__/reference/compose-file/container-spec/
+@z
+
+@x
+  - title: Workload specification
+    description: Find the attributes shared by services and jobs.
+    icon: layers
+    link: /reference/compose-file/workload-spec/
+@y
+  - title: ワークロード仕様
+    description: Find the attributes shared by services and jobs.
+    icon: layers
+    link: __SUBDIR__/reference/compose-file/workload-spec/
 @z
 
 @x
@@ -74,6 +86,18 @@ title: Compose ファイルリファレンス
 @z
 
 @x
+  - title: Include top-level element
+    description: Reuse and modularize Compose configurations by including other Compose files.
+    icon: file-text
+    link: /reference/compose-file/include/
+@y
+  - title: Include top-level element
+    description: Reuse and modularize Compose configurations by including other Compose files.
+    icon: file-text
+    link: __SUBDIR__/reference/compose-file/include/
+@z
+
+@x
   - title: Configs top-level element
     description: Find out about configs in Compose.
     icon: settings
@@ -95,6 +119,18 @@ title: Compose ファイルリファレンス
     description: Compose の secrets について学びます。
     icon: lock
     link: __SUBDIR__/reference/compose-file/secrets/
+@z
+
+@x
+  - title: Jobs top-level element
+    description: Run containers to completion, on demand or on a schedule.
+    icon: clock
+    link: /reference/compose-file/jobs/
+@y
+  - title: トップレベル要素 jobs
+    description: Run containers to completion, on demand or on a schedule.
+    icon: clock
+    link: __SUBDIR__/reference/compose-file/jobs/
 @z
 
 % snip aliases...
@@ -134,18 +170,6 @@ Compose 仕様に対して独自バージョンを実装したいと思う方は
 Use the following links to navigate key sections of the Compose Specification.
 @y
 以下に示すリンクから Compose 仕様の主要項目を確認してください。
-@z
-
-@x
-> [!TIP]
->
-> Want a better editing experience for Compose files in VS Code?
-> Check out the [Docker DX](https://marketplace.visualstudio.com/items?itemName=docker.docker) extension for linting, code navigation, and vulnerability scanning.
-@y
-> [!TIP]
->
-> Compose ファイルの編集を VS Code 内で賢く実現したいですか？
-> [Docker DX](https://marketplace.visualstudio.com/items?itemName=docker.docker) 拡張では、静的コード解析、コードナビゲーション、ぜい弱性スキャンなどを行うことができます。
 @z
 
 % snip grid...

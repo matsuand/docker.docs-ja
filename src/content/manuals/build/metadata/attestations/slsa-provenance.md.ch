@@ -474,12 +474,6 @@ RUN apt-get update
 @z
 
 @x
-<!-- TODO: add a link to the definitions page, imported from moby/buildkit -->
-@y
-<!-- TODO: add a link to the definitions page, imported from moby/buildkit -->
-@z
-
-@x
 The following example shows what a JSON representation of a provenance
 attestation with `mode=max` looks like:
 @y

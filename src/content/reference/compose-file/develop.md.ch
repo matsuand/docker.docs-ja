@@ -16,11 +16,11 @@ keywords: compose, compose specification, compose file reference, compose develo
 @x
 > [!NOTE] 
 >
-> Develop is an optional part of the Compose Specification. It is available with Docker Compose version 2.22.0 and later.
+> This is an optional part of the Compose Specification.
 @y
 > [!NOTE] 
 >
-> Develop is an optional part of the Compose Specification. It is available with Docker Compose version 2.22.0 and later.
+> This is an optional part of the Compose Specification.
 @z
 
 @x
@@ -133,28 +133,22 @@ Compose to monitor source code for changes. For more information, see [Use Compo
 
 @x
 - `rebuild`: Compose rebuilds the service image based on the `build` section and recreates the service with the updated image.
-- `restart`: Compose restarts the service container. Available with Docker Compose version 2.32.0 and later.
+- `restart`: Compose restarts the service container.
 - `sync`: Compose keeps the existing service container(s) running, but synchronizes source files with container content according to the `target` attribute.
-- `sync+restart`: Compose synchronizes source files with container content according to the `target` attribute, and then restarts the container. Available with Docker Compose version 2.23.0 and later.
-- `sync+exec`: Compose synchronizes source files with container content according to the `target` attribute, and then executes a command inside the container. Available with Docker Compose version 2.32.0 and later.
+- `sync+restart`: Compose synchronizes source files with container content according to the `target` attribute, and then restarts the container.
+- `sync+exec`: Compose synchronizes source files with container content according to the `target` attribute, and then executes a command inside the container.
 @y
 - `rebuild`: Compose rebuilds the service image based on the `build` section and recreates the service with the updated image.
-- `restart`: Compose restarts the service container. Available with Docker Compose version 2.32.0 and later.
+- `restart`: Compose restarts the service container.
 - `sync`: Compose keeps the existing service container(s) running, but synchronizes source files with container content according to the `target` attribute.
-- `sync+restart`: Compose synchronizes source files with container content according to the `target` attribute, and then restarts the container. Available with Docker Compose version 2.23.0 and later.
-- `sync+exec`: Compose synchronizes source files with container content according to the `target` attribute, and then executes a command inside the container. Available with Docker Compose version 2.32.0 and later.
+- `sync+restart`: Compose synchronizes source files with container content according to the `target` attribute, and then restarts the container.
+- `sync+exec`: Compose synchronizes source files with container content according to the `target` attribute, and then executes a command inside the container.
 @z
 
 @x
 #### `exec`
 @y
 #### `exec`
-@z
-
-@x
-{{< summary-bar feature_name="Compose exec" >}}
-@y
-{{< summary-bar feature_name="Compose exec" >}}
 @z
 
 @x

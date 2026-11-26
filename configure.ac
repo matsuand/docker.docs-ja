@@ -344,13 +344,10 @@ AC_CONFIG_FILES([
 	src/content/manuals/extensions/extensions-sdk/architecture/Makefile
 	src/content/manuals/extensions/extensions-sdk/architecture/images/Makefile
 	src/content/manuals/extensions/extensions-sdk/build/Makefile
-	src/content/manuals/extensions/extensions-sdk/build/images/Makefile
 	src/content/manuals/extensions/extensions-sdk/design/Makefile
-	src/content/manuals/extensions/extensions-sdk/design/images/Makefile
 	src/content/manuals/extensions/extensions-sdk/dev/Makefile
 	src/content/manuals/extensions/extensions-sdk/dev/api/Makefile
 	src/content/manuals/extensions/extensions-sdk/extensions/Makefile
-	src/content/manuals/extensions/extensions-sdk/extensions/images/Makefile
 	src/content/manuals/extensions/extensions-sdk/guides/Makefile
 	src/content/manuals/extensions/extensions-sdk/guides/images/Makefile
 	src/content/manuals/faqs/Makefile

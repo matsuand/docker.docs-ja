@@ -48,6 +48,14 @@ once, then reuse them across projects and share them with your team.
 @z
 
 @x
+Browse [sandbox kits from verified publishers](https://hub.docker.com/search?type=sbx_kit&badges=verified_publisher)
+on Docker Hub to find kits to use in your sandbox.
+@y
+Browse [sandbox kits from verified publishers](https://hub.docker.com/search?type=sbx_kit&badges=verified_publisher)
+on Docker Hub to find kits to use in your sandbox.
+@z
+
+@x
 To keep the configuration for a sandbox in an editable, shareable file, use a
 [sandbox environment file](/manuals/ai/sandboxes/configuration/environment-files.md).
 It selects kits alongside workspace paths, resources, credentials, and lifecycle

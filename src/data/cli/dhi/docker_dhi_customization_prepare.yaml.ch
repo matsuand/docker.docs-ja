@@ -52,6 +52,20 @@ long: |-
 @z
 
 @x
+    An image scaffold sets compression to ZSTD, the recommended default. It is optional: remove the line to
+    leave compression unset, or change it to GZIP.
+@y
+    An image scaffold sets compression to ZSTD, the recommended default. It is optional: remove the line to
+    leave compression unset, or change it to GZIP.
+@z
+
+@x
+    File and symlink paths must be absolute.
+@y
+    File and symlink paths must be absolute.
+@z
+
+@x
     For a Helm chart, every reference of the chart is listed under variable_mappings, pointing at dhi.io.
     To point a reference elsewhere, uncomment its repository and either tag_definition_id (another tag
     definition of a mirrored image) or customization_id (a customization). Sub-charts can only point at a
@@ -61,6 +75,12 @@ long: |-
     To point a reference elsewhere, uncomment its repository and either tag_definition_id (another tag
     definition of a mirrored image) or customization_id (a customization). Sub-charts can only point at a
     customization or dhi.io. Do not change the variable names.
+@z
+
+@x
+    The name of a customization can't be changed after it is created: edit ignores a name that differs from the existing one.
+@y
+    The name of a customization can't be changed after it is created: edit ignores a name that differs from the existing one.
 @z
 
 @x

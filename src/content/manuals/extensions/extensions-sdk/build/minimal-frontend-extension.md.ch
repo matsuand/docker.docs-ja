@@ -248,12 +248,6 @@ The left-hand menu displays a new tab with the name of your extension.
 @z
 
 @x
-![Minimal frontend extension](images/ui-minimal-extension.png)
-@y
-![Minimal frontend extension](images/ui-minimal-extension.png)
-@z
-
-@x
 ## What's next?
 @y
 ## What's next?

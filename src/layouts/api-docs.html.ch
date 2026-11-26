@@ -61,7 +61,7 @@
         <p class="api-label">Experimental</p>
         {{ if eq .Params.view "overview" }}
 @y
-        <p class="api-label">Experimental</p>
+        <p class="api-label">試験的</p>
         {{ if eq .Params.view "overview" }}
 @z
 
@@ -76,7 +76,7 @@
 @x
           >API version
 @y
-          >API version
+          >API バージョン
 @z
 
 @x
@@ -92,9 +92,9 @@
         ><a href="{{ $api.sourceURL }}">Download OpenAPI specification</a
         ><a href="{{ partial "utils/markdown-url.html" . }}">Markdown</a>
 @y
-        ><a href="{{ ref . $api.manual }}">Product manual</a
-        ><a href="{{ $api.sourceURL }}">Download OpenAPI specification</a
-        ><a href="{{ partial "utils/markdown-url.html" . }}">Markdown</a>
+        ><a href="{{ ref . $api.manual }}">製品マニュアル</a
+        ><a href="{{ $api.sourceURL }}">OpenAPI 仕様のダウンロード</a
+        ><a href="{{ partial "utils/markdown-url.html" . }}">マークダウン</a>
 @z
 
 @x
