@@ -15,6 +15,7 @@ bases = \
 	cli.markdown.md                \
 	list.markdown.md               \
 	sbx-cli.html                   \
+	sbx-cli.markdown.md            \
 	security-announcements.rss.xml
 
 include $(top_srcdir)/build-aux/common.mk

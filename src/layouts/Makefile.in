@@ -308,6 +308,7 @@ bases = \
 	cli.markdown.md                \
 	list.markdown.md               \
 	sbx-cli.html                   \
+	sbx-cli.markdown.md            \
 	security-announcements.rss.xml
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
